@@ -31,3 +31,38 @@ body {
     text-wrap: balance;
   }
 }
+
+
+.startArrow{
+  display: block;
+  position: absolute;
+  bottom: 50px;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  animation-name: float;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  background: transparent url("/down.png") center;
+  background-size: contain;
+  opacity: 80%;
+  transition: 1s;
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-15px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+[data-scroll='0'] .startArrow{
+  opacity: 80%;
+}
