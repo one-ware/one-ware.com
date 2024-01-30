@@ -1,10 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
-import { Container } from "@tsparticles/engine";
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export default function Home() {
   const [init, setInit] = useState(false);
@@ -22,103 +24,107 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col">
-      <div id="hero" className="h-screen w-screen">
-        <div className="particles absolute">
-          {init && (
-            <Particles
-              id="tsparticles"
-              particlesLoaded={particlesLoaded}
-              className="h-screen w-screen bg-gradient-to-r from-indigo-900 from-10% via-sky-900 via-30% to-emerald-900 to-90%"
-              options={{
-                fullScreen: {
-                  enable: false,
-                },
-                fpsLimit: 144,
-                interactivity: {
-                  events: {
-                    onClick: {
+    <>
+      <div className="flex flex-col">
+        <div id="hero" className="h-screen w-screen">
+          <div className="particles absolute">
+            {init && (
+              <Particles
+                id="tsparticles"
+                particlesLoaded={particlesLoaded}
+                className="h-screen w-screen bg-gradient-to-r from-indigo-950 from-10% via-sky-950 via-30% to-emerald-950 to-80%"
+                options={{
+                  fullScreen: {
+                    enable: false,
+                  },
+                  fpsLimit: 144,
+                  interactivity: {
+                    events: {
+                      onClick: {
+                        enable: true,
+                        mode: "push",
+                      },
+                      onHover: {
+                        enable: true,
+                        mode: "bubble",
+                      },
+                    },
+                    modes: {
+                      push: {
+                        quantity: 4,
+                      },
+                      bubble: {
+                        size: 6,
+                        distance: 40,
+                      },
+                    },
+                  },
+                  particles: {
+                    color: {
+                      value: "#ffffff",
+                    },
+                    links: {
+                      color: "#ffffff",
+                      distance: 150,
                       enable: true,
-                      mode: "push",
+                      opacity: 0.1,
+                      width: 1,
                     },
-                    onHover: {
+                    move: {
+                      direction: "bottom",
                       enable: true,
-                      mode: "bubble",
+                      outModes: {
+                        default: "out",
+                      },
+                      size: true,
+                      random: false,
+                      speed: {
+                        min: 0.2,
+                        max: 0.4,
+                      },
+                      straight: false,
+                    },
+                    number: {
+                      density: {
+                        enable: true,
+                      },
+                      value: 90,
+                    },
+                    opacity: {
+                      value: 0.3,
+                    },
+                    shape: {
+                      type: "circle",
+                    },
+                    size: {
+                      value: { min: 1, max: 4 },
                     },
                   },
-                  modes: {
-                    push: {
-                      quantity: 4,
-                    },
-                    bubble: {
-                      size: 6,
-                      distance: 40,
-                    },
-                  },
-                },
-                particles: {
-                  color: {
-                    value: "#ffffff",
-                  },
-                  links: {
-                    color: "#ffffff",
-                    distance: 150,
-                    enable: true,
-                    opacity: 0.1,
-                    width: 1,
-                  },
-                  move: {
-                    direction: "bottom",
-                    enable: true,
-                    outModes: {
-                      default: "out",
-                    },
-                    size: true,
-                    random: false,
-                    speed: {
-                      min: 0.2,
-                      max: 0.4,
-                    },
-                    straight: false,
-                  },
-                  number: {
-                    density: {
-                      enable: true,
-                    },
-                    value: 120,
-                  },
-                  opacity: {
-                    value: 0.5,
-                  },
-                  shape: {
-                    type: "circle",
-                  },
-                  size: {
-                    value: { min: 1, max: 5 },
-                  },
-                },
-                detectRetina: true,
-              }}
-            />
-          )}
-        </div>
-        <div className="absolute flex flex-col items-center justify-center w-full h-full">
-          <div className="flex flex-col items-center justify-center w-6/12 drop-shadow-2xl">
-            <img
-              src="/Logo_SVG-ONE-ware.svg"
-              alt="OneWare Logo"
-              className="drop-shadow"
-            />
-            <span className="text-4xl">Empowering Industrie 5.0</span>
+                  detectRetina: true,
+                }}
+              />
+            )}
           </div>
+          <div className="absolute flex flex-col items-center justify-center w-full h-full">
+            <div className="flex flex-col items-center justify-center w-full md:w-6/12 ">
+              <img
+                className="drop-shadow-4xl"
+                src="/Logo_SVG-ONE-ware.svg"
+                alt="OneWare Logo"
+              />
+              <span
+                className={`${montserrat.className} text-xl md:text-4xl drop-shadow-4xl text-gray-200`}
+              >
+                Empowering Industry 5.0
+              </span>
+            </div>
+          </div>
+
+          <div className="startArrow" />
         </div>
 
-        <div className="startArrow"/>
+        <main></main>
       </div>
-
-      <main>
-          
-      </main>
-    </div>
+    </>
   );
 }
