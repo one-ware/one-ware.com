@@ -41,7 +41,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className={`${montserrat.className} flex flex-col`}>
       <header className="container mx-auto">
         <nav className="fixed pointer-events-auto">
           <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -487,7 +487,7 @@ export default function Home() {
               alt="OneWare Logo"
             />
             <span
-              className={`${montserrat.className} text-xl md:text-4xl drop-shadow-4xl text-gray-200`}
+              className="text-xl md:text-4xl drop-shadow-4xl text-gray-200"
             >
               Empowering Industry 5.0
             </span>
@@ -497,7 +497,47 @@ export default function Home() {
         <div className="startArrow" />
       </div>
 
-      <main></main>
+      <main className="container mx-auto">
+        <section className="flex p-10 gap-10 my-10 basis-0">
+          <div>
+            <Image
+              src={"/Hardware_Connected.png"}
+              alt={"IDE"}
+              height={300}
+              width={1200}
+            />
+          </div>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+              distinctio earum repellat quaerat voluptatibus placeat nam,
+              commodi optio pariatur est quia magnam eum harum corrupti dicta,
+              aliquam sequi voluptate quas.
+            </p>
+
+            <button className="my-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+              Read more
+            </button>
+          </div>
+        </section>
+        <section className="flex p-10 gap-10 my-10">
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+              distinctio earum repellat quaerat voluptatibus placeat nam,
+              commodi optio pariatur est quia magnam eum harum corrupti dicta,
+              aliquam sequi voluptate quas.
+            </p>
+
+            <button className="my-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+              Read more
+            </button>
+          </div>
+          <div>
+            <Image src={"/Studio_Table.png"} alt={"IDE"} height={500} width={1200} />
+          </div>
+        </section>
+      </main>
 
       <footer className="flex flex-col items-center bg-neutral-900 text-center text-white">
         <div className="container px-6 pt-6">

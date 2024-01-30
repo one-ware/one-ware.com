@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "One Ware",
+  title: "One-Ware.com",
   description: "Empowering Industry 5.0"
 };
 
