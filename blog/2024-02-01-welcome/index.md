@@ -1,8 +1,8 @@
 ---
 slug: welcome
-title: Welcome
+title: Welcome!
 authors: [hmennen]
-tags: [oneware, hello]
+tags: [welcome]
 ---
 
 Welcome!

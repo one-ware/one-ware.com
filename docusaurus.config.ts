@@ -90,18 +90,35 @@ const config: Config = {
         alt: 'One Ware Logo',
         src: 'img/start/LOGO_SVG-ONE-ware.svg',
       },
+      hideOnScroll: false,
       items: [
         {
-          type: 'docSidebar',
+          type: 'dropdown',
           sidebarId: 'plcOneSidebar',
           position: 'left',
           label: 'PLC-ONE',
+          to: "/docs/plc-one/getstarted",
+          items: [
+            {
+              type: 'doc',
+              docId: 'plc-one/getstarted',
+              label: 'Setup',
+            }
+          ]
         },
         {
-          type: 'docSidebar',
+          type: 'dropdown',
           sidebarId: 'studioSidebar',
           position: 'left',
           label: 'Studio',
+          to: "/docs/oneware-studio/setup",
+          items: [
+            {
+                type: 'doc',
+                docId: 'oneware-studio/setup',
+                label: 'Setup',
+            }
+          ]
         },
         {to: '/blog', label: 'Blog', position: 'right'},
         {
@@ -118,8 +135,12 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
+              label: 'PLC-ONE Get Started',
+              to: '/docs/plc-one/getstarted',
+            },
+            {
+              label: 'Studio Setup',
+              to: '/docs/oneware-studio/setup',
             },
           ],
         },
@@ -128,15 +149,15 @@ const config: Config = {
           items: [
             {
               label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              href: 'https://stackoverflow.com/questions/tagged/oneware',
             },
             {
               label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              href: 'https://discordapp.com/invite/oneware',
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              href: 'https://twitter.com/oneware',
             },
           ],
         },
@@ -149,7 +170,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/one-ware',
             },
           ],
         },
