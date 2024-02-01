@@ -1,32 +1,32 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
+import { themes as prismThemes } from "prism-react-renderer";
+import type { Config } from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: 'One Ware',
-  tagline: 'Empowering Industry 5.0',
-  favicon: 'img/favicon.ico',
+  title: "One Ware",
+  tagline: "Empowering Industry 5.0",
+  favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: 'https://one-ware.com',
+  url: "https://one-ware.com",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'one-ware', // Usually your GitHub org/user name.
-  projectName: 'one-ware.com', // Usually your repo name.
+  organizationName: "one-ware", // Usually your GitHub org/user name.
+  projectName: "one-ware.com", // Usually your repo name.
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
 
   headTags: [
     {
-      tagName: 'link',
+      tagName: "link",
       attributes: {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Montserrat',
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css?family=Montserrat",
       },
     },
   ],
@@ -44,35 +44,35 @@ const config: Config = {
       };
     },
   ],
-  
+
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       {
         docs: {
-          sidebarPath: './sidebars.ts',
+          sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/one-ware/one-ware.com/tree/main/packages/create-docusaurus/templates/shared/',
+            "https://github.com/one-ware/one-ware.com/tree/main/packages/create-docusaurus/templates/shared/",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/one-ware/one-ware.com/tree/main/packages/create-docusaurus/templates/shared/',
+            "https://github.com/one-ware/one-ware.com/tree/main/packages/create-docusaurus/templates/shared/",
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.css",
         },
       } satisfies Preset.Options,
     ],
@@ -84,93 +84,98 @@ const config: Config = {
       disableSwitch: true,
     },
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: "img/docusaurus-social-card.jpg",
     navbar: {
       logo: {
-        alt: 'One Ware Logo',
-        src: 'img/start/LOGO_SVG-ONE-ware.svg',
+        alt: "One Ware Logo",
+        src: "img/start/LOGO_SVG-ONE-ware.svg",
       },
       hideOnScroll: false,
       items: [
         {
-          type: 'dropdown',
-          sidebarId: 'plcOneSidebar',
-          position: 'left',
-          label: 'PLC-ONE',
-          to: "/docs/plc-one/getstarted",
+          type: "dropdown",
+          sidebarId: "plcOneSidebar",
+          position: "left",
+          label: "PLC-ONE",
+          to: "/plc-one",
           items: [
             {
-              type: 'doc',
-              docId: 'plc-one/getstarted',
-              label: 'Setup',
-            }
-          ]
+              type: "doc",
+              docId: "plc-one/getstarted",
+              label: "Get Started",
+            },
+          ],
         },
         {
-          type: 'dropdown',
-          sidebarId: 'studioSidebar',
-          position: 'left',
-          label: 'Studio',
-          to: "/docs/oneware-studio/setup",
+          type: "dropdown",
+          sidebarId: "studioSidebar",
+          position: "left",
+          label: "Studio",
+          to: "/studio",
           items: [
             {
-                type: 'doc',
-                docId: 'oneware-studio/setup',
-                label: 'Setup',
-            }
-          ]
+              type: "doc",
+              docId: "oneware-studio/setup",
+              label: "Setup",
+            },
+          ],
         },
-        {to: '/blog', label: 'Blog', position: 'right'},
         {
-          href: 'https://github.com/one-ware',
-          label: 'GitHub',
-          position: 'right',
+          to: "/blog",
+          label: "Blog",
+          position: "right",
+        },
+        {
+          href: "https://github.com/one-ware",
+          position: "right",
+          className: "header-github-link",
+          "aria-label": "GitHub repository",
         },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Docs',
+          title: "Docs",
           items: [
             {
-              label: 'PLC-ONE Get Started',
-              to: '/docs/plc-one/getstarted',
+              label: "PLC-ONE Get Started",
+              to: "/docs/plc-one/getstarted",
             },
             {
-              label: 'Studio Setup',
-              to: '/docs/oneware-studio/setup',
+              label: "Studio Setup",
+              to: "/docs/oneware-studio/setup",
             },
           ],
         },
         {
-          title: 'Community',
+          title: "Community",
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/oneware',
+              label: "Stack Overflow",
+              href: "https://stackoverflow.com/questions/tagged/oneware",
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/oneware',
+              label: "Discord",
+              href: "https://discordapp.com/invite/oneware",
             },
             {
-              label: 'Twitter',
-              href: 'https://twitter.com/oneware',
+              label: "Twitter",
+              href: "https://twitter.com/oneware",
             },
           ],
         },
         {
-          title: 'More',
+          title: "More",
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
+              label: "Blog",
+              to: "/blog",
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/one-ware',
+              label: "GitHub",
+              href: "https://github.com/one-ware",
             },
           ],
         },

@@ -1,0 +1,102 @@
+---
+title: Get Started with OneWare
+sidebar_label: Setup Software
+description: Start using OneWare quickly
+keywords:
+    - OneWare
+    - oneware
+    - getstarted
+    - fpga
+---
+
+import Highlight from '@theme/CodeBlock'
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+:::danger OneWare Studio is currently in closed development
+
+The first open beta will be released soon.
+:::
+
+## Software Setup
+
+Use the benefits of code suggestions and vendor-independent libraries by using OneWare Studio, the easiest way to program your FPGA or Microcontroller.
+
+### Install OneWare Studio
+
+<Tabs
+  groupId="operating-systems"
+  defaultValue="windows"
+  values={[
+    {label: 'Windows', value: 'windows'},
+    {label: 'Linux', value: 'linux'},
+    {label: 'MacOS', value: 'macos'},
+  ]}>
+  <TabItem value="windows">
+
+1. Download device support¹ for your hardware:
+
+| Hardware | Download |
+|---|---|
+| MAX1000, ... | <a href="https://download.altera.com/akdlm/software/acdsinst/18.1std/625/ib_installers/max10-18.1.0.625.qdz" target="_blank">MAX 10 device support</a> |
+| CYC1000, ... | <a href="https://download.altera.com/akdlm/software/acdsinst/18.1std/625/ib_installers/cyclone10lp-18.1.0.625.qdz" target="_blank">Cyclone 10 device support</a> |
+| CYC5000, ... | <a href="https://download.altera.com/akdlm/software/acdsinst/18.1std/625/ib_installers/cyclonev-18.1.0.625.qdz" target="_blank">Cyclone 5 device support</a> |
+
+2. Download and install <a href="https://download.altera.com/akdlm/software/acdsinst/18.1std/625/ib_installers/QuartusLiteSetup-18.1.0.625-windows.exe" target="_blank">Quartus Prime Lite for Windows</a>²
+3. Download and install OneWare Studio:
+
+**Coming soon!**
+
+  </TabItem>
+  <TabItem value="linux">
+
+1. Download device support¹ for your hardware:
+
+| Hardware | Download |
+|---|---|
+| Core Max10, Core Max10 Ultra, MAX1000, ... | <a href="https://download.altera.com/akdlm/software/acdsinst/18.1std/625/ib_installers/max10-18.1.0.625.qdz" target="_blank">MAX 10 device support</a> |
+| CYC1000, ... | <a href="https://download.altera.com/akdlm/software/acdsinst/18.1std/625/ib_installers/cyclone10lp-18.1.0.625.qdz" target="_blank">Cyclone 10 device support</a> |
+| CYC5000, ... | <a href="https://download.altera.com/akdlm/software/acdsinst/18.1std/625/ib_installers/cyclonev-18.1.0.625.qdz" target="_blank">Cyclone 5 device support</a> |
+
+2. Download and install <a href="https://download.altera.com/akdlm/software/acdsinst/18.1std/625/ib_installers/QuartusLiteSetup-18.1.0.625-linux.run" target="_blank">Quartus Prime Lite for Linux</a>².
+3. Install OneWare Studio:
+
+You can install it by running:
+
+**Coming soon!**
+
+**Note:** If snap isn't available in your Linux distribution, please check the following [Installing Snapd guide](https://snapcraft.io/docs/installing-snapd), which can help you get that set up.
+
+  </TabItem>
+  <TabItem value="macos">
+
+:::danger MacOS Version
+Quartus does not support MacOS, compiling and programming the hardware is not possible.
+**The Application is not signed** yet, so it will be detected as broken by MacOS. 
+You can fix this by executing the following in the terminal **after installing it to /Applications using the .dmg**.
+```
+sudo xattr -r -d com.apple.quarantine /Applications/OneWareStudio.app
+``` 
+:::
+
+| Architecture | Download |
+|---|---|
+| x64 (Intel) | **Coming Soon!** |
+| arm64 (Apple Silicon) | **Coming Soon!** |
+
+  </TabItem>
+</Tabs>
+
+
+¹Device support:<br></br>
+The device support required from quartus to compile for your hardware. Select the device family depending on your development board.
+
+²Quartus Prime: <br></br>
+Quartus Prime is necessary for compiling your code and programming your FPGA.
+
+## Need Help?
+
+Starting to program FPGAs can be quite tricky.
+Here are a few options that can help you get started.
+
+**Coming Soon!**
