@@ -281,24 +281,39 @@ export default function Home() {
               src="/Logo_SVG-ONE-ware.svg"
               alt="OneWare Logo"
             />
-            <span
-              className="text-xl md:text-4xl drop-shadow-4xl text-gray-200"
-            >
+            <span className="text-xl md:text-4xl drop-shadow-4xl text-gray-200">
               Empowering Industry 5.0
             </span>
           </div>
         </div>
 
-        <div className="absolute top-40 right-28 drone hidden md:block">
-            <Image src={"/drone_transparent.png"} alt={""}
-            height={220} width={220}/>
+        <div className="w-full absolute h-screen">
+        <div className="container mx-auto h-full">
+          <div className="absolute top-40 right-28 drone hidden md:block">
+            <Image
+              src={"/drone_transparent.png"}
+              alt={""}
+              height={220}
+              width={220}
+            />
+          </div>
+
+          <div className="absolute bottom-20 left-25 hidden md:block">
+            <Image
+              src={"/roboter_transparent.png"}
+              alt={""}
+              height={320}
+              width={320}
+            />
+          </div>
+        </div>
         </div>
 
         <div className="startArrow" />
       </div>
 
       <header className="fixed w-full">
-        <Navbar/>
+        <Navbar />
       </header>
 
       <main className="container mx-auto">
@@ -338,12 +353,17 @@ export default function Home() {
             </button>
           </div>
           <div>
-            <Image src={"/Studio_Table.png"} alt={"IDE"} height={500} width={1200} />
+            <Image
+              src={"/Studio_Table.png"}
+              alt={"IDE"}
+              height={500}
+              width={1200}
+            />
           </div>
         </section>
       </main>
 
-      <Footer/>
+      <Footer />
     </div>
   );
 }
