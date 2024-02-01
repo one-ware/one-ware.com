@@ -356,7 +356,7 @@ export default function Home(): JSX.Element {
 
   return (
     <Layout
-      title={`${siteConfig.title}`}
+      title="Home"
       description="Empowering Industry 5.0"
     >
       <HomepageHeader />

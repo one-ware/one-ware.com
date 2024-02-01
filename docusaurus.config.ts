@@ -94,7 +94,6 @@ const config: Config = {
       items: [
         {
           type: "dropdown",
-          sidebarId: "plcOneSidebar",
           position: "left",
           label: "PLC-ONE",
           to: "/plc-one",
@@ -108,7 +107,6 @@ const config: Config = {
         },
         {
           type: "dropdown",
-          sidebarId: "studioSidebar",
           position: "left",
           label: "Studio",
           to: "/studio",
