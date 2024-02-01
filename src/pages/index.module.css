@@ -1,32 +1,39 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+ nav {
+  transition: 0.8s;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+ .heroBackground{
+  box-shadow: rgb(0 0 0 / 50%) 0px -10px 13px -7px inset; 
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-top: calc(var(--ifm-navbar-height)*-1);
+}
+
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: #353535
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
 
 .startArrow{
   display: block;
@@ -40,7 +47,7 @@ body {
   animation-name: float;
   animation-duration: 2s;
   animation-iteration-count: infinite;
-  background: transparent url("/down.png") center;
+  background: transparent url("/img/start/down.png") center;
   background-size: contain;
   opacity: 80%;
   transition: 1s;
