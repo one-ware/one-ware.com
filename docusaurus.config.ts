@@ -84,11 +84,11 @@ const config: Config = {
       disableSwitch: true,
     },
     // Replace with your project's social card
-    image: "img/docusaurus-social-card.jpg",
+    image: "/img/docusaurus-social-card.jpg",
     navbar: {
       logo: {
         alt: "One Ware Logo",
-        src: "img/start/LOGO_SVG-ONE-ware.svg",
+        src: "img/start/Logo_SVG-ONE-ware.svg",
       },
       hideOnScroll: false,
       items: [
