@@ -4,6 +4,7 @@ import "aos/dist/aos.css";
 import classnames from "classnames";
 import Slider from "react-slick";
 import Layout from "@theme/Layout";
+import Link from "@docusaurus/Link";
 
 const sliders = [
   {
@@ -62,9 +63,9 @@ export default function Studio(): JSX.Element {
             Download
           </button>
 
-          <button className="mt-5 button button--primary button--outline button--lg">
+          <Link className="mt-5 button button--primary button--outline button--lg" href="/docs/oneware-studio/setup">
             Get Started
-          </button>
+          </Link>
           </div>
         </div>
         <div style={{ overflowX: "hidden" }}>

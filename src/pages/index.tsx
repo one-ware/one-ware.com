@@ -279,7 +279,7 @@ function HomepageHeader() {
 
       <div className="w-full absolute h-screen hidden">
         <div className="container mx-auto h-full">
-          <div className={`absolute top-40 right-28 hidden md:block ${styles.drone}`}>
+          <div className={`absolute top-50 right-28 hidden md:block ${styles.drone}`}>
             <img
               src={"img/start/drone_transparent.png"}
               alt={""}
@@ -362,8 +362,9 @@ export default function Home(): JSX.Element {
     >
       <HomepageHeader />
       <main className="container">
-        <div className="my-10">
+        <div className="my-20 flex flex-col justify-center align-middle">
           <h1 className="text-5xl text-center font-medium">Get ready for the <span className="font-bold primary-text">Industrial Revolution</span></h1>
+          <img src="/img/start/Industry5.png" className="mx-auto"/>
         </div>
         <HomepageFeatures />
       </main>

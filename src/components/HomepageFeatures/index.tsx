@@ -67,7 +67,7 @@ export default function HomepageFeatures(): JSX.Element {
           className="md:p-5 flex-col flex gap-1 justify-center relative"
           data-aos="fade-right"
         >
-          <div className="absolute top-0 left-0 -rotate-12 negative-left-margin hidden xl:block">
+          <div className="absolute top-5 left-0 -rotate-12 negative-left-margin hidden xl:block">
             <img src="/img/start/drone_transparent.png" width={200} />
           </div>
 
