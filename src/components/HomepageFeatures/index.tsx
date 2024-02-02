@@ -1,17 +1,17 @@
-import clsx from 'clsx';
-import Heading from '@theme/Heading';
-import styles from './styles.module.css';
+import clsx from "clsx";
+import Heading from "@theme/Heading";
+import styles from "./styles.module.css";
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  Svg: React.ComponentType<React.ComponentProps<"svg">>;
   description: JSX.Element;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: null,//require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: "Easy to Use",
+    Svg: null, //require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
         Docusaurus was designed from the ground up to be easily installed and
@@ -20,7 +20,7 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: "Focus on What Matters",
     Svg: null,
     description: (
       <>
@@ -30,7 +30,7 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Powered by React',
+    title: "Powered by React",
     Svg: null,
     description: (
       <>
@@ -41,12 +41,10 @@ const FeatureList: FeatureItem[] = [
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({ title, Svg, description }: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        
-      </div>
+    <div className={clsx("col col--4")}>
+      <div className="text--center"></div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
         <p>{description}</p>
@@ -57,12 +55,34 @@ function Feature({title, Svg, description}: FeatureItem) {
 
 export default function HomepageFeatures(): JSX.Element {
   return (
-    <section className={styles.features}>
-      <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
+    <section className={`${styles.features} container`}>
+      <div className="grid md:grid-cols-2 my-5">
+        <div className="p-5 md:my-10 md:order-2">
+          <img src="/img/start/PLC_Schrank.png" />
+        </div>
+
+        <div className="md:p-5 flex-col flex gap-1 justify-center relative">
+          <div className="absolute top-20 left-0 -rotate-12 negative-left-margin hidden xl:block">
+            <img src="/img/start/drone_transparent.png" width={200} />
+          </div>
+
+          <span className="text-3xl text-center md:text-left">
+            See how to make your{" "}
+            <span className="font-bold primary-text">Product</span> ready for
+            the <span className="font-bold primary-text">Industry 5.0</span>
+            <p className="flex flex-row text-center justify-center md:justify-normal">
+              with{" "}
+              <img
+                height={37}
+                className="ml-2"
+                src="/img/start/PLC_One_Logo.png"
+              />
+            </p>
+          </span>
+
+          <button className="button button--primary button--outline button--lg md:mt-10">
+            Our Hardware Solutions
+          </button>
         </div>
       </div>
     </section>

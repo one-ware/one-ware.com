@@ -40,6 +40,14 @@ body {
   font-family: 'Montserrat', 'Sans Serrif';
 }
 
+.primary-text {
+  color: var(--ifm-color-primary);
+}
+
+.negative-left-margin{
+  margin-left: -60px;
+}
+
 .header-github-link::before {
   content: '';
   width: 24px;
