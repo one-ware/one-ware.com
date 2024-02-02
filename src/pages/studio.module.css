@@ -1,0 +1,20 @@
+.slickSlider {
+  max-width: 130vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  outline: none;
+}
+
+.slick-slide,
+.slick-slide * {
+  outline: none !important;
+}
+
+.slidebutton {
+  cursor: pointer;
+}
+
+.activeslide {
+  background-color: var(--ifm-color-emphasis-100);
+}

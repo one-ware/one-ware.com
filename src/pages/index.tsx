@@ -9,6 +9,7 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
 import type { Container, ISourceOptions } from "@tsparticles/engine";
 import AOS from "aos";
+import 'aos/dist/aos.css'; // You can also use <link> for styles
 
 import styles from "./index.module.css";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
@@ -360,7 +361,10 @@ export default function Home(): JSX.Element {
       description="Empowering Industry 5.0"
     >
       <HomepageHeader />
-      <main>
+      <main className="container">
+        <div className="my-10">
+          <h1 className="text-5xl text-center font-medium">Get ready for the <span className="font-bold primary-text">Industrial Revolution</span></h1>
+        </div>
         <HomepageFeatures />
       </main>
     </Layout>
