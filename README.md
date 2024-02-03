@@ -1,4 +1,4 @@
-# one-ware.com Website
+# one-ware.com
 
 [![Node.js CI](https://github.com/one-ware/one-ware.com/actions/workflows/test.yml/badge.svg)](https://github.com/one-ware/one-ware.com/actions/workflows/test.yml)
 
