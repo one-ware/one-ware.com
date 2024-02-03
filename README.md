@@ -1,4 +1,6 @@
-# Website
+# one-ware.com Website
+
+[![Node.js CI](https://github.com/one-ware/one-ware.com/actions/workflows/test.yml/badge.svg)](https://github.com/one-ware/one-ware.com/actions/workflows/test.yml)
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
