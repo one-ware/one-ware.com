@@ -6,7 +6,7 @@ on:
 
 jobs:
   # Build job
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -24,23 +24,12 @@ jobs:
           name: website-build
           path: build
           retention-days: 5
-
-  deploy:
-    permissions:
-      contents: write
-    needs: [ build ]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v3
-        with:
-          name: website-build
-          path: website
-
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: w01e537f.kasserver.com
-          username: w01e537f
+          server: w01ec151.kasserver.com
+          username: w01ec151
           password: ${{ secrets.ONEWARE_FTP }}
-          local-dir: website/
+          local-dir: build/
           server-dir: one-ware.com/
+
