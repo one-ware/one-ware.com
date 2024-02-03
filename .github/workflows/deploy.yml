@@ -43,4 +43,4 @@ jobs:
           username: w01e537f
           password: ${{ secrets.ONEWARE_FTP }}
           local-dir: website/
-          server-dir: one-ware/
+          server-dir: one-ware.com/
