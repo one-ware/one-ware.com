@@ -59,9 +59,9 @@ export default function Studio(): JSX.Element {
           </h1>
 
           <div className="flex-col space-x-5">
-          <button className="mt-5 button button--primary button--lg">
+          <Link className="mt-5 button button--primary button--lg" href="/docs/oneware-studio/setup">
             Download
-          </button>
+          </Link>
 
           <Link className="mt-5 button button--primary button--outline button--lg" href="/docs/oneware-studio/setup">
             Get Started
