@@ -19,7 +19,7 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: 📂 Sync files
+      - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: w01ec151.kasserver.com
