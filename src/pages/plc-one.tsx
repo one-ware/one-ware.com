@@ -270,41 +270,6 @@ export default function Studio(): JSX.Element {
           </div>
         </div>
 
-        <div className="bg-white text-black py-5 m-0 shadow-inner shadow-slate-800">
-          <div className="text-center max-w-2xl m-auto lg:mt-10">
-            <h2 className="text-4xl font-bold mt-0">Our Partners</h2>
-            <div className="md:grid md:grid-cols-4 text-center mt-10">
-              <div>
-                <img
-                  className="m-auto md:mt-0"
-                  src={"/img/plc/Partner/Partner1.jpg"}
-                  alt="EXIST"
-                />
-              </div>
-              <div>
-                <img
-                  className="m-auto md:mt-0"
-                  src={"/img/plc/Partner/Partner2.jpg"}
-                  alt="European Union"
-                />
-              </div>
-              <div>
-                <img
-                  className="m-auto md:mt-0"
-                  src={"/img/plc/Partner/Partner3.jpg"}
-                  alt="Bundesregierung für Wirtschaft und Klimaschutz"
-                />
-              </div>
-              <div>
-                <img
-                  className="m-auto md:mt-0"
-                  src={"/img/plc/Partner/Partner4.jpg"}
-                  alt="ESF"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
       </main>
     </Layout>
   );

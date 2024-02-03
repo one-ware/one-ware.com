@@ -120,6 +120,12 @@ const config: Config = {
           position: "right",
         },
         {
+          type: "doc",
+          docId: "contact/contact",
+          label: "Contact",
+          position: "right",
+        },
+        {
           href: "https://github.com/one-ware",
           position: "right",
           className: "header-github-link",
@@ -163,6 +169,10 @@ const config: Config = {
         {
           title: "More",
           items: [
+            {
+              label: "Contact",
+              to: "/docs/contact",
+            },
             {
               label: "Blog",
               to: "/blog",

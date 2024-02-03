@@ -364,7 +364,7 @@ export default function Home(): JSX.Element {
       <main className="container">
         <div className="my-20 flex flex-col justify-center align-middle">
           <h1 className="text-5xl text-center font-medium">Get ready for the <span className="font-bold primary-text">Industrial Revolution</span></h1>
-          <img src="/img/start/Industry5.png" className="mx-auto"/>
+          <img src="/img/start/Overview.png" className="mx-auto mt-10" width={1000}/>
         </div>
         <HomepageFeatures />
       </main>
