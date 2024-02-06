@@ -57,7 +57,7 @@ function Feature({ title, Svg, description }: FeatureItem) {
 export default function HomepageFeatures(): JSX.Element {
   
   return (
-    <section className={`${styles.features} container`}>
+    <section className={`${styles.features} container my-10 md:my-5`}>
       <div className="grid md:grid-cols-2 my-3">
         <div className="p-5 md:order-2" data-aos="fade-left">
           <img src="/img/start/PLC_Schrank.png" />
