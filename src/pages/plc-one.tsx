@@ -10,52 +10,37 @@ export default function Studio(): JSX.Element {
 
   return (
     <Layout title="PLC ONE" description="Empowering Industry 5.0">
-      <main className="pt-3 pb-0 m-0 overflow-hidden">
-        <title>PLC-ONE</title>
-        <div className="container m-auto text-white mb-24">
-          <header className="h-32 w-full flex flex-column absolute xl:ml-16">
-            <div>
+
+      <header>
+        <div className="flex">
+          <div className="flex justify-center mx-auto w-screen">
+            <img
+              src={"/img/plc/Schaltschrank.png"}
+              alt="PLC Logo" 
+            />
+            <div className="absolute flex justify-center w-full h-full">
               <img
                 src={"/img/plc/Logo_SVG-ONE-plc.svg"}
                 alt="PLC Logo"
-                className="mt-10"
-                width={260}
-                height={150}
-              />
-            </div>
-          </header>
-
-          <div className="flex">
-            <div className="flex flex-column items-center m-auto flex-wrap mt-32 md:mt-10">
-              <div
-                style={{ marginRight: "-94px" }}
-                className="text-4xl md:text-5xl whitespace-nowrap md:mt-20"
-              >
-                Get Ready for
-                <br />a <span className="font-bold">New Chapter</span> in
-                <br />
-                Industrial Automation
-                <br />
-              </div>
-              <img
-                style={{ marginRight: "-100px" }}
-                src={"/img/plc/PLC_G.png"}
-                alt="PLC Logo"
-                width={800}
-                height={500}
+                className="drop-shadow-4xl"
+                width={760}
               />
             </div>
           </div>
+        </div>
+      </header>
 
+      <main className="pb-0 m-0 overflow-hidden">
+        <div className="container m-auto text-white mb-24">
           <div className="grid grid-cols-3 text-center mt-20 md:mx-20">
             <div>
-              <img src="/img/plc/Fast.png" height={150}/>
+              <img src="/img/plc/Fast.png" height={150} />
             </div>
             <div>
-            <img src="/img/plc/Efficient.png" height={150}/>
+              <img src="/img/plc/Efficient.png" height={150} />
             </div>
             <div>
-            <img src="/img/plc/Simple.png" height={150}/>
+              <img src="/img/plc/Simple.png" height={150} />
             </div>
           </div>
 
@@ -74,7 +59,7 @@ export default function Studio(): JSX.Element {
             </h2>
             <img src={"/img/plc/Compare.png"} className="mt-10" alt="Compare" />
             <div className="text-xl mt-12">
-            With a completely new processing architecture, we create the first Industry 5.0 ready industrial controller. Up to 1 Mio. times higher processing speeds in a small, efficient and affordable controller, enable the implementation of AI in every factory, robot, vehicle or drone. 
+              With a completely new processing architecture, we create the first Industry 5.0 ready industrial controller. Up to 1 Mio. times higher processing speeds in a small, efficient and affordable controller, enable the implementation of AI in every factory, robot, vehicle or drone.
             </div>
           </div>
 
@@ -86,7 +71,7 @@ export default function Studio(): JSX.Element {
               src={"/img/plc/PLC_Example.png"}
               className="mt-10"
               alt="Compare"
-              height={500}
+              style={{ maxHeight: 500 }}
             />
             <div className="text-xl mt-12">
               All extensions are compliant with the CRUVI Standard. Use not just

@@ -184,7 +184,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} One Ware GmbH`,
+      copyright: `Copyright © ${new Date().getFullYear()} Beier & Wiegand Industrial Gbr`,
     },
     prism: {
       theme: prismThemes.github,
