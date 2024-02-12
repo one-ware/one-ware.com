@@ -55,7 +55,6 @@ function Feature({ title, Svg, description }: FeatureItem) {
 }
 
 export default function HomepageFeatures(): JSX.Element {
-  
   return (
     <section className={`${styles.features} container my-10 md:my-5`}>
       <div className="grid md:grid-cols-2 my-3">
@@ -85,13 +84,18 @@ export default function HomepageFeatures(): JSX.Element {
             </p>
           </span>
 
-          <Link className="button button--primary button--outline button--lg" href="/plc-one">
-            Our Hardware Solutions
-          </Link>
+          <div>
+            <Link
+              className="button button--primary button--outline button--lg"
+              href="/plc-one"
+            >
+              Our Hardware Solutions
+            </Link>
+          </div>
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 my-3">
+      <div className="grid md:grid-cols-2 my-10">
         <div className="p-5" data-aos="fade-right">
           <img src="/img/start/vhdl.png" />
         </div>
@@ -101,16 +105,22 @@ export default function HomepageFeatures(): JSX.Element {
           data-aos="fade-left"
         >
           <span className="text-3xl text-center md:text-left">
-            See how to bring <span className="font-bold primary-text">AI</span> in every{" "}
-            <span className="font-bold primary-text">Product</span> and speed up the development process
+            See how to bring <span className="font-bold primary-text">AI</span>{" "}
+            in every <span className="font-bold primary-text">Product</span> and
+            speed up the development process
             <p className="flex flex-row text-center justify-center md:justify-normal">
               with OneWare Studio
             </p>
           </span>
 
-          <Link className="button button--primary button--outline button--lg" href="/studio">
-            OneWare Studio
-          </Link>
+          <div>
+            <Link
+              className="button button--primary button--outline button--lg"
+              href="/studio"
+            >
+              OneWare Studio
+            </Link>
+          </div>
         </div>
       </div>
     </section>

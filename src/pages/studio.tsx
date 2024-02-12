@@ -5,6 +5,7 @@ import classnames from "classnames";
 import Slider from "react-slick";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
+import initWebsiteEffects from "../components/startEffects";
 
 const sliders = [
   {
@@ -47,6 +48,8 @@ const sliders = [
 export default function Studio(): JSX.Element {
   const slickRef = useRef<Slider>(null);
 
+  initWebsiteEffects();
+  
   return (
     <Layout title="Studio" description="OneWare Studio IDE">
       <main className="container">

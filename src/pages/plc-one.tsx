@@ -2,20 +2,108 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import styles from "./plc-one.module.css";
 import Link from "@docusaurus/Link";
-import { RiPlantLine } from "react-icons/ri";
-import { TfiWorld } from "react-icons/tfi";
-import { useEffect } from "react";
+import initWebsiteEffects from "../components/startEffects";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { useEffect, useState } from "react";
+import { loadFull } from "tsparticles";
 
-export default function Studio(): JSX.Element {
-  const { siteConfig } = useDocusaurusContext();
+export default function PLC(): JSX.Element {
+  const [init, setInit] = useState(false);
 
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadFull(engine);
+    }).then(() => {
+      setInit(true);
+    });
+  }, []);
+
+  initWebsiteEffects();
+  
   return (
     <Layout title="PLC ONE" description="Empowering Industry 5.0">
       <header>
         <div className="flex">
           <div
-            className={`flex flex-col justify-center align-middle items-center mx-auto h-screen w-screen bg-gradient-to-b from-cyan-900 from-5%  to-indigo-900 to-95% ${styles.heroBackground}`}
+            className={`flex flex-col justify-center align-middle items-center mx-auto h-screen w-screen ${styles.heroBackground}`}
           >
+               <div className="particles absolute w-full h-full">
+        {init && (
+          <Particles
+            id="stars"
+            className="h-full w-full absolute"
+            options={{
+              fullScreen: {
+                enable: false,
+              },
+              fpsLimit: 144,
+                interactivity: {
+                  events: {
+                    onClick: {
+                      enable: true,
+                      mode: "push",
+                    },
+                    onHover: {
+                      enable: true,
+                      mode: "bubble",
+                    },
+                  },
+                  modes: {
+                    push: {
+                      quantity: 4,
+                    },
+                    bubble: {
+                      size: 6,
+                      distance: 40,
+                    },
+                  },
+                },
+              particles: {
+                color: {
+                  value: "#ffffff",
+                },
+                links: {
+                  color: "#ffffff",
+                  distance: 150,
+                  enable: true,
+                  opacity: 0.1,
+                  width: 1,
+                },
+                move: {
+                  direction: "bottom",
+                  enable: true,
+                  outModes: {
+                    default: "out",
+                  },
+                  size: true,
+                  random: false,
+                  speed: {
+                    min: 0.2,
+                    max: 0.4,
+                  },
+                  straight: false,
+                },
+                number: {
+                  density: {
+                    enable: true,
+                  },
+                  value: 50,
+                },
+                opacity: {
+                  value: 0.2,
+                },
+                shape: {
+                  type: "circle",
+                },
+                size: {
+                  value: { min: 1, max: 4 },
+                },
+              },
+              detectRetina: true,
+            }}
+          />
+        )}
+      </div>
             <div className="absolute flex flex-col md:flex-row w-full container gap-10 md:gap-0">
               <div className="md:w-1/2 flex flex-col justify-center gap-10">
                 <img
@@ -55,11 +143,11 @@ export default function Studio(): JSX.Element {
 
       <main className="pb-0 overflow-hidden md:my-10">
         <div className="grid md:grid-cols-2 my-3 container">
-          <div className="p-5">
+          <div className="p-5" data-aos="fade-right">
             <img src="/img/start/PLC_Schrank.png" />
           </div>
 
-          <div className="md:p-5 flex-col flex gap-10 justify-center relative">
+          <div className="md:p-5 flex-col flex gap-10 justify-center relative" data-aos="fade-left">
             <span className="text-3xl text-center md:text-left">
               PLC ONE is the first{" "}
               <span className="font-bold primary-text">Industry 5.0</span> ready
@@ -83,8 +171,8 @@ export default function Studio(): JSX.Element {
             <h2 className="text-4xl font-bold mt-10">
               AI-Powered Industrial Controller
             </h2>
-            <img src={"/img/plc2/Drohne.png"} className="mt-10" alt="Compare" />
-            <div className="text-xl md:text-2xl mt-6">
+            <img src={"/img/plc2/Drohne.png"} className="mt-10" alt="Compare" data-aos="zoom-in" /> 
+            <div className="text-xl md:text-2xl mt-6" data-aos="slide-up">
               Elevate your <span className="font-bold primary-text">drone</span> capabilities with our unified controller
               managing both motors and cameras. <span className="font-bold primary-text">AI object recognition</span> assists in
               navigation, combining the functions of processors, graphics cards,
@@ -99,11 +187,12 @@ export default function Studio(): JSX.Element {
               One Simple Solution for the Tasks of the Future
             </h2>
             <img
+              data-aos="zoom-in"
               src={"/img/plc2/Steuerung.png"}
               className="mt-10"
               alt="Compare"
             />
-            <div className="text-xl md:text-2xl mt-6">
+            <div className="text-xl md:text-2xl mt-6" data-aos="slide-up">
               Discover the <span className="font-bold primary-text">next generation</span> of industrial automation: our
               controller features a new processor architecture for markedly
               <span className="font-bold primary-text">faster</span> response times than conventional PLCs. It centralizes

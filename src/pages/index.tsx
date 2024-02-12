@@ -7,11 +7,11 @@ import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
 import type { Container, ISourceOptions } from "@tsparticles/engine";
-import AOS from "aos";
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 
 import styles from "./index.module.css";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
+import initWebsiteEffects from "../components/startEffects";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -47,7 +47,7 @@ function HomepageHeader() {
   return (
     <header
       id="hero"
-      className={`h-screen w-full bg-gradient-to-b from-indigo-950 from-5%  to-emerald-900 to-95% heroBackground ${styles.heroBackground}`}
+      className={`h-screen w-full ${styles.heroBackground}`}
     >
       <div className="particles absolute w-full h-full">
         {init && (
@@ -60,7 +60,6 @@ function HomepageHeader() {
                 enable: false,
               },
               fpsLimit: 144,
-              /*
                 interactivity: {
                   events: {
                     onClick: {
@@ -82,7 +81,6 @@ function HomepageHeader() {
                     },
                   },
                 },
-                */
               particles: {
                 color: {
                   value: "#ffffff",
@@ -112,7 +110,7 @@ function HomepageHeader() {
                   density: {
                     enable: true,
                   },
-                  value: 90,
+                  value: 60,
                 },
                 opacity: {
                   value: 0.3,
@@ -317,41 +315,7 @@ function HomepageHeader() {
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
 
-  useEffect(() => {
-    if (ExecutionEnvironment.canUseDOM) {
-      AOS.init();
-    }
-
-    //Scroll
-    document.addEventListener("scroll", debounce(storeScroll), {
-      passive: true,
-    });
-
-    // Update scroll position for first time
-    storeScroll();
-
-    document.documentElement.dataset.isindex = "1";
-    return () => {
-      // Anything in here is fired on component unmount.
-      document.documentElement.dataset.isindex = "0";
-    };
-  });
-
-  const debounce = (fn: Function) => {
-    let frame: number;
-    return (...params: any[]) => {
-      if (frame) {
-        cancelAnimationFrame(frame);
-      }
-      frame = requestAnimationFrame(() => {
-        fn(...params);
-      });
-    };
-  };
-
-  const storeScroll = () => {
-    document.documentElement.dataset.scroll = window.scrollY.toString();
-  };
+  initWebsiteEffects();
 
   return (
     <Layout
