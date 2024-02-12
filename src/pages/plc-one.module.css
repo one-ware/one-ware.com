@@ -1,0 +1,7 @@
+.heroBackground{
+    box-shadow: rgb(0 0 0 / 50%) 0px -10px 13px -7px inset; 
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+}
