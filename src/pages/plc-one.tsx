@@ -133,7 +133,7 @@ export default function PLC(): JSX.Element {
                   src={"/img/plc2/Hero.png"}
                   alt="PLC Logo"
                   className={`drop-shadow-4xl ${styles.heroImage}`}
-                  width={860}
+                  width={1000}
                 />
               </div>
             </div>
