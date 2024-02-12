@@ -57,7 +57,7 @@ function Feature({ title, Svg, description }: FeatureItem) {
 export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={`${styles.features} container my-10 md:my-5`}>
-      <div className="grid md:grid-cols-2 my-3">
+      <div className="grid md:grid-cols-2 mt-10 md:mt-10">
         <div className="p-5 md:order-2" data-aos="fade-left">
           <img src="/img/start/PLC_Schrank.png" />
         </div>
@@ -86,7 +86,7 @@ export default function HomepageFeatures(): JSX.Element {
 
           <div>
             <Link
-              className="button button--primary button--outline button--lg"
+              className="button button--primary button--outline button--lg w-full md:w-fit"
               href="/plc-one"
             >
               Our Hardware Solutions
@@ -95,7 +95,7 @@ export default function HomepageFeatures(): JSX.Element {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 my-10">
+      <div className="grid md:grid-cols-2 my-20 md:my-10">
         <div className="p-5" data-aos="fade-right">
           <img src="/img/start/vhdl.png" />
         </div>
@@ -115,7 +115,7 @@ export default function HomepageFeatures(): JSX.Element {
 
           <div>
             <Link
-              className="button button--primary button--outline button--lg"
+              className="button button--primary button--outline button--lg w-full md:w-fit"
               href="/studio"
             >
               OneWare Studio
