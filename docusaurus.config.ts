@@ -95,6 +95,10 @@ const config: Config = {
           to: "/plc-one",
           items: [
             {
+              to: "/plc-one",
+              label: "Features",
+            },
+            {
               type: "doc",
               docId: "plc-one/getstarted",
               label: "Get Started",
@@ -107,6 +111,10 @@ const config: Config = {
           label: "Studio",
           to: "/studio",
           items: [
+            {
+              to: "/studio",
+              label: "Features",
+            },
             {
               type: "doc",
               docId: "oneware-studio/setup",
