@@ -105,7 +105,7 @@ export default function PLC(): JSX.Element {
         )}
       </div>
             <div className="absolute flex flex-col md:flex-row w-full container gap-10 md:gap-0">
-              <div className="md:w-1/2 flex flex-col justify-center gap-10">
+              <div className="md:w-1/2 flex flex-col justify-center gap-5 md:gap-10">
                 <img
                   src={"/img/plc2/Logo_SVG-ONE2-plc.svg"}
                   alt="PLC Logo"
