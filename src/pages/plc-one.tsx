@@ -109,7 +109,7 @@ export default function PLC(): JSX.Element {
                 <img
                   src={"/img/plc2/Logo_SVG-ONE2-plc.svg"}
                   alt="PLC Logo"
-                  className="drop-shadow-4xl"
+                  className={`drop-shadow-4xl`}
                   width={360}
                 />
                 <span className="text-xl md:text-4xl drop-shadow-4xl text-gray-200">
@@ -132,7 +132,7 @@ export default function PLC(): JSX.Element {
                 <img
                   src={"/img/plc2/Hero.png"}
                   alt="PLC Logo"
-                  className="drop-shadow-4xl"
+                  className={`drop-shadow-4xl ${styles.heroImage}`}
                   width={860}
                 />
               </div>
