@@ -13,9 +13,7 @@ const sliders = [
     imageSrc: <img alt="Code Assistant" src="/img/studio/slides/vhdl.png" />,
     description: (
       <>
-        OneWare Studio makes writing code as easy as possible. Multiple Features
-        like code suggestions, autocorrection and error listing work together to
-        help you program your Hardware in the most efficient way.
+        First class support for <span className="primary-text">VHDL</span>, <span className="primary-text">Verilog</span> and <span className="primary-text">C++</span> with lots of tools to help develop your designs as <span className="primary-text">efficiently</span> as possible.
       </>
     ),
   },
@@ -40,6 +38,15 @@ const sliders = [
         languages, Hardware Support, new Toolchains or Simulators with one
         click. This makes our tool a very lightweight software that can be
         easily customized for your needs.
+      </>
+    ),
+  },
+  {
+    title: "Ai Generator",
+    imageSrc: <img alt="Extensible" src="/img/studio/slides/ai.png" />,
+    description: (
+      <>
+        Use our AI Generator to develop and integrate AI Tasks into your designs.
       </>
     ),
   },
@@ -111,13 +118,13 @@ export default function Studio(): JSX.Element {
                   </div>
                 ))}
               </Slider>
-              <div className="columns-3 margin-vert--xl hidden md:block">
+              <div className="columns-4 margin-vert--xl hidden md:block">
                 {sliders.map(({ title, description }, idx) => (
                   <div
                     key={idx}
                     onClick={() => slickRef.current?.slickGoTo(idx)}
                     className={classnames(
-                      "padding-vert--lg p-2",
+                      "block padding-vert--lg p-2 overflow-hidden",
                       styles.slidebutton
                     )}
                     id={"slide" + idx}
