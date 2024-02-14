@@ -154,11 +154,11 @@ const config: Config = {
           title: "Docs",
           items: [
             {
-              label: "PLC-ONE Get Started",
+              label: "Get Started with PLC-ONE",
               to: "/docs/plc-one/getstarted",
             },
             {
-              label: "Studio Setup",
+              label: "OneWare Studio Setup",
               to: "/docs/oneware-studio/setup",
             },
           ],
@@ -170,17 +170,21 @@ const config: Config = {
               label: "Stack Overflow",
               href: "https://stackoverflow.com/questions/tagged/oneware",
             },
-            {
-              label: "Discord",
-              href: "https://discordapp.com/invite/oneware",
-            },
-            {
-              label: "Twitter",
-              href: "https://twitter.com/oneware",
-            },
+            //{
+            //  label: "Discord",
+            //  href: "https://discordapp.com/invite/oneware",
+            //},
+            //{
+            //  label: "Twitter",
+            //  href: "https://twitter.com/oneware",
+            //},
             {
               label: "LinkedIn",
               href: "https://www.linkedin.com/company/one-ware/",
+            },
+            {
+              label: "GitHub",
+              href: "https://github.com/one-ware",
             },
           ],
         },
@@ -201,8 +205,9 @@ const config: Config = {
               to: "blog",
             },
             {
-              label: "GitHub",
-              href: "https://github.com/one-ware",
+              type: "doc",
+              label: "Privacy Policy",
+              to: "/docs/contact/privacy",
             },
           ],
         },
