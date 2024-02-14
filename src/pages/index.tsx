@@ -40,8 +40,8 @@ function HomepageHeader() {
   };
 
   const activateFirework = () => {
-    fireworkContainer?.stop();
-    fireworkContainer?.start();
+    //fireworkContainer?.stop();
+    //fireworkContainer?.start();
   };
 
   return (
@@ -293,7 +293,7 @@ function HomepageHeader() {
         </div>
       </div>
 
-      <div className="absolute flex flex-col items-center justify-center w-full h-full">
+      <div className="absolute flex flex-col items-center justify-center w-full h-full pointer-events-none">
         <div className="flex flex-col items-center justify-center w-full md:w-6/12 ">
           <img
             onClick={() => activateFirework()}

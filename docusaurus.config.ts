@@ -128,6 +128,11 @@ const config: Config = {
           position: "right",
         },
         {
+          to: "/about-us",
+          label: "About Us",
+          position: "right",
+        },
+        {
           type: "doc",
           docId: "contact/contact",
           label: "Contact",
@@ -172,18 +177,27 @@ const config: Config = {
               label: "Twitter",
               href: "https://twitter.com/oneware",
             },
+            {
+              label: "LinkedIn",
+              href: "https://www.linkedin.com/company/one-ware/",
+            },
           ],
         },
         {
           title: "More",
           items: [
             {
+              type: "doc",
               label: "Contact",
               to: "/docs/contact",
             },
             {
+              label: "About us",
+              to: "about-us",
+            },
+            {
               label: "Blog",
-              to: "/blog",
+              to: "blog",
             },
             {
               label: "GitHub",
