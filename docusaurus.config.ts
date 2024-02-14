@@ -94,6 +94,7 @@ const config: Config = {
           position: "left",
           label: "PLC-ONE",
           to: "/plc-one",
+          activeBaseRegex: '(^.*/plc-one$)|(^.*/docs/plc-one/.*$)',
           items: [
             {
               to: "/plc-one",
@@ -111,6 +112,7 @@ const config: Config = {
           position: "left",
           label: "Studio",
           to: "/studio",
+          activeBaseRegex: '(^.*/studio$)|(^.*/docs/studio/.*$)',
           items: [
             {
               to: "/studio",
@@ -118,7 +120,7 @@ const config: Config = {
             },
             {
               type: "doc",
-              docId: "oneware-studio/setup",
+              docId: "studio/setup",
               label: "Setup",
             },
           ],
@@ -159,7 +161,7 @@ const config: Config = {
             },
             {
               label: "OneWare Studio Setup",
-              to: "/docs/oneware-studio/setup",
+              to: "/docs/studio/setup",
             },
           ],
         },

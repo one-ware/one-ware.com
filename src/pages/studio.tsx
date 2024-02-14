@@ -82,7 +82,7 @@ export default function Studio(): JSX.Element {
 
             <Link
               className="mt-5 button button--primary button--outline button--lg"
-              href="/docs/oneware-studio/setup"
+              href="/docs/studio/setup"
             >
               Get Started
             </Link>
