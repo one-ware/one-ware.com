@@ -53,19 +53,20 @@ const config: Config = {
     [
       "classic",
       {
+        sitemap: {
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
+        },
         docs: {
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/one-ware/one-ware.com/tree/main/packages/create-docusaurus/templates/shared/",
+            "https://github.com/one-ware/one-ware.com/edit/main/",
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/one-ware/one-ware.com/tree/main/packages/create-docusaurus/templates/shared/",
         },
         theme: {
           customCss: "./src/css/custom.css",
@@ -80,7 +81,7 @@ const config: Config = {
       disableSwitch: true,
     },
     // Replace with your project's social card
-    image: "/img/docusaurus-social-card.jpg",
+    image: "/img/social-card.jpg",
     navbar: {
       logo: {
         alt: "One Ware Logo",
@@ -206,7 +207,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Beier & Wiegand Industrial Gbr`,
+      copyright: `Copyright © ${new Date().getFullYear()} Beier, Durmaz, Mennen & Wiegand Gbr`,
     },
     prism: {
       theme: prismThemes.github,
