@@ -6,6 +6,7 @@ import initWebsiteEffects from "../components/startEffects";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { useEffect, useState } from "react";
 import { loadFull } from "tsparticles";
+import ContactUs from "../components/ContactUs";
 
 export default function PLC(): JSX.Element {
   const [init, setInit] = useState(false);
@@ -107,7 +108,7 @@ export default function PLC(): JSX.Element {
             <div className="absolute flex flex-col xl:flex-row w-full container gap-10 md:gap-0">
               <div className="xl:w-1/2 w-full flex flex-col justify-center gap-5 md:gap-10 mt-10">
                 <img
-                  src={"/img/plc2/Logo_SVG-ONE2-plc.svg"}
+                  src={"/img/plc/Logo_SVG-ONE2-plc.svg"}
                   alt="PLC Logo"
                   className={`drop-shadow-4xl`}
                   width={360}
@@ -130,7 +131,7 @@ export default function PLC(): JSX.Element {
 
               <div>
                 <img
-                  src={"/img/plc2/Hero.png"}
+                  src={"/img/plc/Hero.png"}
                   alt="PLC Logo"
                   className={`drop-shadow-4xl ${styles.heroImage}`}
                   width={1000}
@@ -144,7 +145,7 @@ export default function PLC(): JSX.Element {
       <main className="pb-0 overflow-hidden md:my-10">
         <div className="grid md:grid-cols-2 my-3 container">
           <div className="p-5" data-aos="fade-right">
-            <img src="/img/plc2/Schrank.png" />
+            <img src="/img/plc/Schrank.png" />
           </div>
 
           <div
@@ -158,21 +159,12 @@ export default function PLC(): JSX.Element {
               industrial controller that can adapt to the needs of the{" "}
               <span className="font-bold primary-text">future</span>
             </span>
-
-            <div>
-              <Link
-                className="button button--primary button--outline button--lg hidden sm:inline"
-                to={"/docs/plc-one/overview"}
-              >
-                See what it can do
-              </Link>
-            </div>
           </div>
         </div>
 
         <div className="grid md:grid-cols-2 my-3 container mt-10 md:mt-3">
           <div className="p-5 md:order-1" data-aos="fade-right">
-            <img src="/img/plc2/Roboter.png" />
+            <img src="/img/plc/Roboter.png" />
           </div>
 
           <div
@@ -187,9 +179,11 @@ export default function PLC(): JSX.Element {
               orchestrates a multitude of actuators and sensors. Our technology
               enables automation of tasks traditionally performed by humans,
               with AI object recognition running on the same controller that
-              directs motors, allowing for swift and precise responses. <a href="/contact" className="primary-text font-bold">Connect
-              with us</a> to elevate your robotic systems to new levels of
-              efficiency.
+              directs motors, allowing for swift and precise responses.{" "}
+              <a href="/contact" className="primary-text font-bold">
+                Connect with us
+              </a>{" "}
+              to elevate your robotic systems to new levels of efficiency.
             </div>
           </div>
         </div>
@@ -200,7 +194,7 @@ export default function PLC(): JSX.Element {
               AI-Powered Industrial Controller
             </h2>
             <img
-              src={"/img/plc2/Drohne.png"}
+              src={"/img/plc/Drohne.png"}
               className="mt-10"
               alt="Compare"
               data-aos="zoom-in"
@@ -226,7 +220,7 @@ export default function PLC(): JSX.Element {
             </h2>
             <img
               data-aos="zoom-in"
-              src={"/img/plc2/Steuerung.png"}
+              src={"/img/plc/Steuerung.png"}
               className="mt-10"
               alt="Compare"
             />
@@ -246,7 +240,30 @@ export default function PLC(): JSX.Element {
               your electronics with our next-level control technology.
             </div>
           </div>
+
+          <div className="text-center max-w-4xl m-auto mt-24">
+            <h2 className="text-4xl font-bold mt-10">
+              All you need for <span className="primary-text">ONE</span> modular system
+            </h2>
+            <img
+              data-aos="zoom-in"
+              src={"/img/plc/components.png"}
+              className="mt-10"
+              alt="Compare"
+            />
+            <div className="mt-10">
+              <Link
+                className="button button--primary button--outline button--lg hidden sm:inline"
+                to={"/docs/plc-one/overview"}
+              >
+                Discover our Components
+              </Link>
+            </div>
+          </div>
         </div>
+
+        <ContactUs/>
+        
       </main>
     </Layout>
   );

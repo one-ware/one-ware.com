@@ -5,4 +5,4 @@ authors: [hmennen]
 tags: [welcome]
 ---
 
-Welcome!
+Welcome to our new Website!

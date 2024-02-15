@@ -2,11 +2,7 @@
 title: Control View
 ---
 
-:::warning
 
-This documentation is incomplete and will soon be improved!
-
-:::
 
 ![Control View](img/Control.png)
 

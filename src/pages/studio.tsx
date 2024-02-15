@@ -6,8 +6,19 @@ import Slider from "react-slick";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import initWebsiteEffects from "../components/startEffects";
+import ContactUs from "../components/ContactUs";
 
 const sliders = [
+  {
+    title: "Ai Generator",
+    imageSrc: <img alt="Extensible" src="/img/studio/slides/ai.png" />,
+    description: (
+      <>
+        Use our AI Generator to easily develop and integrate{" "}
+        <span className="primary-text">AI Tasks</span> into your designs.
+      </>
+    ),
+  },
   {
     title: "Code Assistant",
     imageSrc: <img alt="Code Assistant" src="/img/studio/slides/vhdl.png" />,
@@ -16,8 +27,7 @@ const sliders = [
         First class support for <span className="primary-text">VHDL</span>,{" "}
         <span className="primary-text">Verilog</span> and{" "}
         <span className="primary-text">C++</span> with lots of tools to help
-        develop your designs as{" "}
-        <span className="primary-text">efficiently</span> as possible.
+        develop your designs as efficiently as possible.
       </>
     ),
   },
@@ -43,16 +53,6 @@ const sliders = [
       </>
     ),
   },
-  {
-    title: "Ai Generator",
-    imageSrc: <img alt="Extensible" src="/img/studio/slides/ai.png" />,
-    description: (
-      <>
-        Use our AI Generator to easily develop and integrate{" "}
-        <span className="primary-text">AI Tasks</span> into your designs.
-      </>
-    ),
-  },
 ];
 
 export default function Studio(): JSX.Element {
@@ -64,14 +64,14 @@ export default function Studio(): JSX.Element {
     <Layout title="Studio" description="OneWare Studio IDE">
       <main className="container mb-20">
         <div className="text-center mt-10">
-          <h1 className="font-medium">
+          <h1 className="font-medium mb-10">
             Try the{" "}
             <span className="primary-text font-bold">Next Generation IDE</span>{" "}
-            for Hardware Development{" "}
+            for Electronics Development{" "}
             <span className="primary-text font-bold">now!</span>
           </h1>
 
-          <div className="flex-col space-x-5">
+          <div className="flex-col space-x-5 hidden">
             <a
               className="mt-5 button button--primary button--lg"
               href="https://demo.oneware.studio"
@@ -90,7 +90,7 @@ export default function Studio(): JSX.Element {
         </div>
         <div style={{ overflowX: "hidden" }}>
           {sliders && sliders.length && (
-            <div className="margin-vert--lg">
+            <div className="">
               <Slider
                 ref={slickRef}
                 dots={true}
@@ -149,25 +149,50 @@ export default function Studio(): JSX.Element {
         </div>
 
         <div className="text-center max-w-4xl m-auto">
-          <h2 className="text-4xl font-bold mt-10">
+          <h2 className="text-4xl font-bold">
             The perfect companion for PLC ONE
           </h2>
           <img
             data-aos="zoom-in"
             src={"/img/studio/PLC_Studio.png"}
-            className="mt-10"
             alt="Compare"
           />
           <div className="text-xl md:text-2xl mt-6" data-aos="slide-up">
-            Program the  <span className="primary-text">PLC ONE</span> with  <span className="primary-text">ONE WARE Studio</span> and profit from the
-            automatic project configuration and easy device integration through
-            comprehensive libraries. It smartly allocates computing power for
-            peak efficiency and additionally, our AI generator feature allows
-            for seamless AI integration. With support for programming in Block
-            Diagram, Structured Text, Python, VHDL, VHDP or Verilog, it doesn't
-            matter if you have experience in software, FPGA or SPS development.
+            Program the <span className="primary-text">PLC ONE</span> with{" "}
+            <span className="primary-text">ONE WARE Studio</span> and profit
+            from the automatic project configuration and easy device integration
+            through comprehensive libraries. It smartly allocates computing
+            power for peak efficiency and additionally, our AI generator feature
+            allows for seamless AI integration. With support for programming in
+            Block Diagram, Structured Text, Python, VHDL, VHDP or Verilog, it
+            doesn't matter if you have experience in software, FPGA or SPS
+            development.
           </div>
         </div>
+
+        <div className="text-center max-w-4xl m-auto mt-16">
+          <h2 className="text-4xl font-bold">
+            Integrate AI without Experts faster
+          </h2>
+          <img
+            data-aos="zoom-in"
+            src={"/img/studio/Studio_AI.png"}
+            alt="Compare"
+          />
+          <div className="text-xl md:text-2xl mt-6" data-aos="slide-up">
+            Our software is the first solution that moves away from universal
+            yet inefficient neural networks and time consuming tailored AI
+            solutions that depend on AI experts. ONE WARE Studio streamlines AI
+            integration by guiding users without prior expertise through the
+            customization of neural networks. It automatically crafts efficient
+            and adaptable neural networks, which can then be effortlessly
+            deployed across a variety of hardware, from FPGAs to
+            microcontrollers, and processors equipped with TPUs or GPUs. Empower
+            your operations with AI that is both sophisticated and accessible.
+          </div>
+        </div>
+
+        <ContactUs />
       </main>
     </Layout>
   );

@@ -2,11 +2,7 @@
 title: Head Pro
 ---
 
-:::warning
 
-This documentation is incomplete and will soon be improved!
-
-:::
 
 ![Head Pro](img/Head_Pro.png)
 

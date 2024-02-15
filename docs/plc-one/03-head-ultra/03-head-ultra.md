@@ -2,11 +2,7 @@
 title: Head Ultra
 ---
 
-:::warning
 
-This documentation is incomplete and will soon be improved!
-
-:::
 
 ![Head Ultra](img/Head_Ultra.png)
 

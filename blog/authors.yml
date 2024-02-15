@@ -2,4 +2,9 @@ hmennen:
   name: Hendrik Mennen
   title: Software Developer
   url: https://github.com/hendrikmennen
-  image_url: https://avatars.githubusercontent.com/u/25281882?v=4
+  image_url: /img/AboutUs/Hendrik.png
+
+adurmaz:
+  name: Ali Durmaz
+  url: https://www.linkedin.com/in/ali-durmaz-1a0799215/
+  image_url: /img/AboutUs/Ali.png
