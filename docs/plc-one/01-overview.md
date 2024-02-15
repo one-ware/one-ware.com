@@ -17,35 +17,35 @@ title: Overview
 
 ### Interface
 
-- [100Mbps Ethernet Component](components/interface/ethernet-component)
-- [1G Ethernet Component](components/interface/1g-ethernet-component)
-- [CAN Component](components/interface/can-component)
-- [IO Link Component](components/interface/io-link-component)
-- [RS485 Component](components/interface/rs485-component)
-- [USB Component](components/interface/usb-component)
+- [100Mbps Ethernet Component](Components/Interface/ethernet-component)
+- [1G Ethernet Component](Components/Interface/1g-ethernet-component)
+- [CAN Component](Components/Interface/can-component)
+- [IO Link Component](Components/Interface/io-link-component)
+- [RS485 Component](Components/Interface/rs485-component)
+- [USB Component](Components/Interface/usb-component)
 
 ### I/O
 
-- [AI4 Component](components/io/ai4-component)
-- [AO4 Component](components/io/ao4-component)
-- [DI8 Component](components/io/di8-component)
-- [DO8 Component](components/io/do8-component)
-- [Relay Component](components/io/relay-component)
+- [AI4 Component](Components/IO/ai4-component)
+- [AO4 Component](Components/IO/ao4-component)
+- [DI8 Component](Components/IO/di8-component)
+- [DO8 Component](Components/IO/do8-component)
+- [Relay Component](Components/IO/relay-component)
 
 ### Motor
 
-- [Motor Component](components/motor/motor-component)
-- [Stepper Component](components/motor/stepper-component)
+- [Motor Component](Components/Motor/motor-component)
+- [Stepper Component](Components/Motor/stepper-component)
 
 ### Sensor
 
-- [Camera Component](components/sensor/camera-component)
+- [Camera Component](Components/Sensor/camera-component)
 
 ### Memory
 
-- [SD Component](components/memory/sd-component)
-- [SSD Component](components/memory/ssd-component)
+- [SD Component](Components/Memory/sd-component)
+- [SSD Component](Components/Memory/ssd-component)
 
 ### Coprocessor
 
-- [UC Accelerator Component](components/coprocessor/uc-accelerator-component)
+- [UC Accelerator Component](Components/Coprocessor/uc-accelerator-component)
