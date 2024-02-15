@@ -90,7 +90,7 @@ export default function Studio(): JSX.Element {
         </div>
         <div style={{ overflowX: "hidden" }}>
           {sliders && sliders.length && (
-            <div className="">
+            <div className="pb-20">
               <Slider
                 ref={slickRef}
                 dots={true}
@@ -128,7 +128,7 @@ export default function Studio(): JSX.Element {
                   </div>
                 ))}
               </Slider>
-              <div className="columns-4 margin-vert--xl hidden md:block">
+              <div className="columns-4 my-10 hidden md:block">
                 {sliders.map(({ title, description }, idx) => (
                   <div
                     key={idx}
