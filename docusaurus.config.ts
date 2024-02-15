@@ -102,8 +102,8 @@ const config: Config = {
             },
             {
               type: "doc",
-              docId: "plc-one/getstarted",
-              label: "Get Started",
+              docId: "plc-one/overview",
+              label: "Overview",
             },
           ],
         },
@@ -156,8 +156,8 @@ const config: Config = {
           title: "Docs",
           items: [
             {
-              label: "Get Started with PLC-ONE",
-              to: "/docs/plc-one/getstarted",
+              label: "PLC-ONE Overview",
+              to: "/docs/plc-one/overview",
             },
             {
               label: "OneWare Studio Setup",

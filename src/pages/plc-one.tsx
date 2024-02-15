@@ -121,9 +121,9 @@ export default function PLC(): JSX.Element {
                 <div>
                   <Link
                     className="button button--primary button--lg hidden sm:inline"
-                    to={"/docs/plc-one/getstarted"}
+                    to={"/docs/plc-one/overview"}
                   >
-                    Get Started
+                    Overview
                   </Link>
                 </div>
               </div>
@@ -162,7 +162,7 @@ export default function PLC(): JSX.Element {
             <div>
               <Link
                 className="button button--primary button--outline button--lg hidden sm:inline"
-                to={"/docs/plc-one/getstarted"}
+                to={"/docs/plc-one/overview"}
               >
                 See what it can do
               </Link>
