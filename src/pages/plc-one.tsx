@@ -142,7 +142,7 @@ export default function PLC(): JSX.Element {
         </div>
       </header>
 
-      <main className="pb-0 overflow-hidden md:my-10">
+      <main className="pb-0 overflow-hidden md:my-10 mb-20">
         <div className="grid md:grid-cols-2 my-3 container">
           <div className="p-5" data-aos="fade-right">
             <img src="/img/plc/Schrank.png" />
