@@ -247,7 +247,7 @@ export default function PLC(): JSX.Element {
             </h2>
             <img
               data-aos="zoom-in"
-              src={"/img/plc/components.png"}
+              src={"/img/plc/components2.png"}
               className="mt-10"
               alt="Compare"
             />
