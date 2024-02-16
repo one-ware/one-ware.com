@@ -152,7 +152,7 @@ export default function PLC(): JSX.Element {
             className="md:p-5 flex-col flex gap-10 justify-center relative"
             data-aos="fade-left"
           >
-            <h3 className="text-4xl primary-text mb-0">Industry 5.0 ready</h3>
+            <h3 className="text-4xl mb-0">Industry 5.0 ready</h3>
             <span className="text-3xl">
               PLC ONE is the first{" "}
               <span className="font-bold primary-text">Industry 5.0</span> ready
@@ -171,7 +171,7 @@ export default function PLC(): JSX.Element {
             className="md:p-5 flex-col flex gap-5 justify-center relative"
             data-aos="fade-left"
           >
-            <h3 className="text-4xl primary-text mb-0">
+            <h3 className="text-4xl mb-0">
               AI-Powered Industrial Controller
             </h3>
             <div className="text-xl md:text-2xl mt-6">
@@ -180,7 +180,7 @@ export default function PLC(): JSX.Element {
               enables automation of tasks traditionally performed by humans,
               with AI object recognition running on the same controller that
               directs motors, allowing for swift and precise responses.{" "}
-              <a href="/contact" className="primary-text font-bold">
+              <a href="/docs/contact" className="primary-text font-bold">
                 Connect with us
               </a>{" "}
               to elevate your robotic systems to new levels of efficiency.
@@ -191,7 +191,7 @@ export default function PLC(): JSX.Element {
         <div className="container m-auto text-white mb-24">
           <div className="text-center max-w-4xl m-auto mt-24">
             <h2 className="text-4xl font-bold mt-10">
-              AI-Powered Industrial Controller
+             Smart, Flexible and light as a feather
             </h2>
             <img
               src={"/img/plc/Drohne.png"}
