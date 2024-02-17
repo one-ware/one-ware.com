@@ -172,7 +172,7 @@ export default function Studio(): JSX.Element {
 
         <div className="text-center max-w-4xl m-auto mt-16">
           <h2 className="text-4xl font-bold">
-            Integrate AI without Experts faster
+             Integrate AI faster and without experts
           </h2>
           <img
             data-aos="zoom-in"
