@@ -319,7 +319,7 @@ export default function Home(): JSX.Element {
 
   return (
     <Layout
-      title="Industry Automation"
+      title="The Next Industrial Revolution"
       description="Empowering Industry 5.0"
     >
       <HomepageHeader />
