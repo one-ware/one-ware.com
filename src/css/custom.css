@@ -45,11 +45,6 @@ body {
   color: var(--ifm-color-primary);
 }
 
-.negative-left-margin{
-  margin-left: -70px;
-  margin-top: -10px;
-}
-
 .header-github-link::before {
   content: '';
   width: 24px;
