@@ -84,3 +84,10 @@ body {
 [data-theme="dark"] .slick-dots li button::before{
   color: white;
 }
+
+.prism-code{
+  border-radius: 8px 8px 8px 8px;
+  border: 1px solid var(--ifm-toc-border-color);
+  border-width: 1px 1px 1px 1px;
+  background-color: #141517 !important;
+}
