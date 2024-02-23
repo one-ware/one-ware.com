@@ -106,7 +106,7 @@ export default function PLC(): JSX.Element {
               )}
             </div>
             <div className="absolute flex flex-col xl:flex-row w-full container gap-10 md:gap-0">
-              <div className="xl:w-1/2 w-full flex flex-col justify-center gap-5 md:gap-10 mt-10">
+              <div className="xl:w-1/2 w-full flex flex-col justify-center gap-5 md:gap-10 mt-48 xl:mt-0">
                 <img
                   src={"/img/plc/Logo_SVG-ONE2-plc.svg"}
                   alt="PLC Logo"
@@ -133,7 +133,7 @@ export default function PLC(): JSX.Element {
                 <img
                   src={"/img/plc/Hero.png"}
                   alt="PLC Logo"
-                  className={`drop-shadow-4xl ${styles.heroImage}`}
+                  className={`drop-shadow-4xl ${styles.heroImage} md:px-32 xl:px-0`}
                   width={1000}
                 />
               </div>
