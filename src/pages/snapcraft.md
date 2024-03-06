@@ -1,0 +1,1 @@
+https://forum.snapcraft.io/t/request-for-classic-confinement-for-oneware/39014/4
