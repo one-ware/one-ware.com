@@ -123,6 +123,11 @@ const config: Config = {
               docId: "studio/setup",
               label: "Setup",
             },
+            {
+              type: "doc",
+              docId: "studio/changelog",
+              label: "Changelog",
+            },
           ],
         },
         {
