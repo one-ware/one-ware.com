@@ -64,21 +64,20 @@ export default function Studio(): JSX.Element {
     <Layout title="Studio" description="OneWare Studio IDE">
       <main className="container mb-20">
         <div className="text-center mt-10">
-          <h1 className="font-medium mb-10">
+          <h1 className="font-medium">
             Try the{" "}
             <span className="primary-text font-bold">Next Generation IDE</span>{" "}
             for Electronics Development{" "}
             <span className="primary-text font-bold">now!</span>
           </h1>
 
-          <div className="flex-col space-x-5 hidden">
-            <a
+          <div className="flex-col space-x-5 mb-10">
+          <Link
               className="mt-5 button button--primary button--lg"
-              href="https://demo.oneware.studio"
-              target="_blank"
+              href="/docs/studio/setup"
             >
-              Web Preview
-            </a>
+              Download
+            </Link>
 
             <Link
               className="mt-5 button button--primary button--outline button--lg"
