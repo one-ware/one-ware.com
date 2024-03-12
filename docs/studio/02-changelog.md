@@ -4,6 +4,10 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.16.2.0
+
+- Fix wrong VCD Path after Simulation
+  
 ## 0.16.1.0
 
 - Add Testbenches to Project System for easy GHDL/IVerilog settings
