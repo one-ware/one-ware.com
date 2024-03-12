@@ -73,7 +73,7 @@ export default function Studio(): JSX.Element {
 
           <div className="flex-col space-x-5 mb-10">
           <Link
-              className="mt-5 button button--primary button--lg"
+              className="mt-5 button button--primary button--lg hidden md:inline-block"
               href="/docs/studio/setup"
             >
               Download
