@@ -4,6 +4,11 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.16.4.0
+
+- Fix Internal environment settings
+- Fix VCD Parser not correctly showing values on all scopes
+
 ## 0.16.2.0
 
 - Fix wrong VCD Path after Simulation
