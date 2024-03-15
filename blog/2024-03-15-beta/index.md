@@ -139,4 +139,4 @@ Features that we plan to include in the near future:
 - Port the GDB Debugger from VHDPlus, allowing to Debug C++ Software
 - Support for more Tools, Toolchains and Hardware out of the box
 
-You are welcom to suggest more on [GitHub](https://github.com/one-ware/OneWare) or at <a href="mailto:info@one-ware.com">info@one-ware.com</a>!
+You are welcome to suggest more on [GitHub](https://github.com/one-ware/OneWare) or at <a href="mailto:info@one-ware.com">info@one-ware.com</a>!
