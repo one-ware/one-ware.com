@@ -1,5 +1,5 @@
 ---
-slug: OneWareStudioPreview
+slug: oneware-studio-preview
 title: OneWare Studio Preview and Roadmap ⭐
 authors: [hmennen]
 tags:

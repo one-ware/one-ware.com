@@ -1,5 +1,5 @@
 ---
-slug: MoonshotsundMoneten
+slug: moonshots-und-moneten
 title: Meet us at "moonshots & moneten" 🚀
 authors: [adurmaz]
 tags:
