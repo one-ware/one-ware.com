@@ -4,6 +4,12 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.16.6.0
+
+- Improve Package Manager System, allowing to directly update binaries such as GHDL
+- Add VHDL-LS Package for OSX-ARM64
+- Fix an issue with VCD Viewer reloading files after showing live simulation
+
 ## 0.16.4.0
 
 - Fix Internal environment settings
