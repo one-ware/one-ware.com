@@ -4,6 +4,20 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.16.8.0
+
+- Add Max10 and Max1000 to default FPGA list
+- Add Long Term Programming
+- Add device-conf for each device, allowing to customize Toolchain/Loader arguments
+- Add button for VCD Viewer to add signals
+- Minor Style changes
+
+## 0.16.6.0
+
+- Improve Package Manager System, allowing to directly update binaries such as GHDL
+- Add VHDL-LS Package for OSX-ARM64
+- Fix an issue with VCD Viewer reloading files after showing live simulation
+
 ## 0.16.4.0
 
 - Fix Internal environment settings
