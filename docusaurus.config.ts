@@ -81,6 +81,7 @@ const config: Config = {
       apiKey: '7d1be6ae06ba5fb5e97018bc2daab94a',
       indexName: 'one-ware',
       searchPagePath: 'search',
+      contextualSearch: false,
     },
     colorMode: {
       defaultMode: "dark",
