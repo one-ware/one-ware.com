@@ -7,9 +7,9 @@ sidebar_label:  Changelog
 ## 0.17.0.2
 
 - Add VCD Viewer support for REAL Type
-- Fix invalid value casting
-- Change styles
-- Fix an issue that hides small changes in a big timewindow
+- Fix VCD Viewer invalid value casting
+- Adjust VCD Viewer styles
+- Fix an VCD Viewer issue that hides small changes in a big timewindow
   
 ## 0.17.0.1
 
