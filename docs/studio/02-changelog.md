@@ -4,6 +4,13 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.17.0.2
+
+- Add VCD Viewer support for REAL Type
+- Fix invalid value casting
+- Change styles
+- Fix an issue that hides small changes in a big timewindow
+  
 ## 0.17.0.1
 
 - Fix binary packages not setting environment variables at all times
