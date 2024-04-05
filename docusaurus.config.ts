@@ -99,24 +99,6 @@ const config: Config = {
         {
           type: "dropdown",
           position: "left",
-          label: "PLC-ONE",
-          to: "/plc-one",
-          activeBaseRegex: '(^.*/plc-one$)|(^.*/docs/plc-one/.*$)',
-          items: [
-            {
-              to: "/plc-one",
-              label: "Features",
-            },
-            {
-              type: "doc",
-              docId: "plc-one/overview",
-              label: "Overview",
-            },
-          ],
-        },
-        {
-          type: "dropdown",
-          position: "left",
           label: "Studio",
           to: "/studio",
           activeBaseRegex: '(^.*/studio$)|(^.*/docs/studio/.*$)',
@@ -134,6 +116,24 @@ const config: Config = {
               type: "doc",
               docId: "studio/changelog",
               label: "Changelog",
+            },
+          ],
+        },
+        {
+          type: "dropdown",
+          position: "left",
+          label: "PLC-ONE",
+          to: "/plc-one",
+          activeBaseRegex: '(^.*/plc-one$)|(^.*/docs/plc-one/.*$)',
+          items: [
+            {
+              to: "/plc-one",
+              label: "Features",
+            },
+            {
+              type: "doc",
+              docId: "plc-one/overview",
+              label: "Overview",
             },
           ],
         },

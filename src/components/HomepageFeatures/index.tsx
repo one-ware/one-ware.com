@@ -57,7 +57,37 @@ function Feature({ title, Svg, description }: FeatureItem) {
 export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={`${styles.features} container my-10 md:my-5`}>
-      <div className="grid md:grid-cols-2 mt-10 md:mt-10">
+
+<div className="grid md:grid-cols-2 my-10 md:mt-10">
+        <div className="p-5" data-aos="fade-right">
+          <img src="/img/start/vhdl.png" />
+        </div>
+
+        <div
+          className="md:p-5 flex-col flex gap-1 justify-center relative"
+          data-aos="fade-left"
+        >
+          <span className="text-3xl text-center md:text-left">
+            See how to bring <span className="font-bold primary-text">AI</span>{" "}
+            in every <span className="font-bold primary-text">Product</span> and
+            speed up the development process
+            <p className="flex flex-row text-center justify-center md:justify-normal">
+              with OneWare Studio
+            </p>
+          </span>
+
+          <div>
+            <Link
+              className="button button--primary button--outline button--lg w-full md:w-fit"
+              href="/studio"
+            >
+              OneWare Studio
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid md:grid-cols-2 my-20 md:my-10">
         <div className="p-5 md:order-2" data-aos="fade-left">
           <img src="/img/start/PLC_Schrank.png" />
         </div>
@@ -95,34 +125,7 @@ export default function HomepageFeatures(): JSX.Element {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 my-20 md:my-10">
-        <div className="p-5" data-aos="fade-right">
-          <img src="/img/start/vhdl.png" />
-        </div>
-
-        <div
-          className="md:p-5 flex-col flex gap-1 justify-center relative"
-          data-aos="fade-left"
-        >
-          <span className="text-3xl text-center md:text-left">
-            See how to bring <span className="font-bold primary-text">AI</span>{" "}
-            in every <span className="font-bold primary-text">Product</span> and
-            speed up the development process
-            <p className="flex flex-row text-center justify-center md:justify-normal">
-              with OneWare Studio
-            </p>
-          </span>
-
-          <div>
-            <Link
-              className="button button--primary button--outline button--lg w-full md:w-fit"
-              href="/studio"
-            >
-              OneWare Studio
-            </Link>
-          </div>
-        </div>
-      </div>
+      
     </section>
   );
 }
