@@ -92,18 +92,13 @@ const config: Config = {
         {
           type: "dropdown",
           position: "left",
-          label: "PLC-ONE",
-          to: "/plc-one",
-          activeBaseRegex: '(^.*/plc-one$)|(^.*/docs/plc-one/.*$)',
+          label: "ONE AI",
+          to: "/one-ai",
+          activeBaseRegex: '(^.*/one-ai$)|(^.*/docs/one-ai/.*$)',
           items: [
             {
-              to: "/plc-one",
+              to: "/one-ai",
               label: "Features",
-            },
-            {
-              type: "doc",
-              docId: "plc-one/overview",
-              label: "Overview",
             },
           ],
         },
@@ -155,10 +150,6 @@ const config: Config = {
         {
           title: "Docs",
           items: [
-            {
-              label: "PLC-ONE Overview",
-              to: "/docs/plc-one/overview",
-            },
             {
               label: "OneWare Studio Setup",
               to: "/docs/studio/setup",
