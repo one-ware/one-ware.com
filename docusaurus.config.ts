@@ -76,6 +76,13 @@ const config: Config = {
   ],
 
   themeConfig: {
+    algolia: {
+      appId: 'GVARI8M72O',
+      apiKey: '7d1be6ae06ba5fb5e97018bc2daab94a',
+      indexName: 'one-ware',
+      searchPagePath: 'search',
+      contextualSearch: false,
+    },
     colorMode: {
       defaultMode: "dark",
       disableSwitch: true,
@@ -117,6 +124,29 @@ const config: Config = {
               type: "doc",
               docId: "studio/setup",
               label: "Setup",
+            },
+            {
+              type: "doc",
+              docId: "studio/changelog",
+              label: "Changelog",
+            },
+          ],
+        },
+        {
+          type: "dropdown",
+          position: "left",
+          label: "PLC-ONE",
+          to: "/plc-one",
+          activeBaseRegex: '(^.*/plc-one$)|(^.*/docs/plc-one/.*$)',
+          items: [
+            {
+              to: "/plc-one",
+              label: "Features",
+            },
+            {
+              type: "doc",
+              docId: "plc-one/overview",
+              label: "Overview",
             },
           ],
         },
@@ -208,8 +238,9 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} Beier, Durmaz, Mennen & Wiegand Gbr`,
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: prismThemes.vsLight,
+      darkTheme: prismThemes.vsDark,
+      additionalLanguages: ['json'],
     },
   } satisfies Preset.ThemeConfig,
 };

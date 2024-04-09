@@ -37,9 +37,9 @@ export default function AboutUs(): JSX.Element {
               <div>
                 <a
                   className="text-stone-300 hover:text-stone-100"
-                  href="mailto:lbeier@plc-one.net"
+                  href="mailto:lbeier@one-ware.com"
                 >
-                  lbeier@plc-one.net
+                  lbeier@one-ware.com
                 </a>
               </div>
             </div>
@@ -95,9 +95,9 @@ export default function AboutUs(): JSX.Element {
               <div>
                 <a
                   className="text-stone-300 hover:text-stone-100"
-                  href="mailto:lwiegand@plc-one.net"
+                  href="mailto:lwiegand@one-ware.com"
                 >
-                  lwiegand@plc-one.net
+                  lwiegand@one-ware.com
                 </a>
               </div>
             </div>
@@ -124,9 +124,9 @@ export default function AboutUs(): JSX.Element {
               <div>
                 <a
                   className="text-stone-300 hover:text-stone-100"
-                  href="mailto:adurmaz@plc-one.net"
+                  href="mailto:adurmaz@one-ware.com"
                 >
-                  adurmaz@plc-one.net
+                  adurmaz@one-ware.com
                 </a>
               </div>
             </div>
