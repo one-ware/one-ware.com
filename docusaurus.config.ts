@@ -27,8 +27,14 @@ const config: Config = {
     "https://fonts.googleapis.com/css?family=Montserrat"
   ],
 
-  scripts: [
-    "https://oneai.com/~widget?id=one-ai-1774"
+  headTags: [
+    {
+      tagName: "script",
+      attributes: {
+        id: "oneai-snippet",
+        src: "https://oneai.com/~widget?id=one-ai-1774",
+      }
+    }
   ],
 
   plugins: [
