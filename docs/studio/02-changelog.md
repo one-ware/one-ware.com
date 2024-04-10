@@ -4,6 +4,20 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.17.0.2
+
+- Add VCD Viewer support for REAL Type
+- Fix VCD Viewer invalid value casting
+- Adjust VCD Viewer styles
+- Fix an VCD Viewer issue that hides small changes in a big timewindow
+  
+## 0.17.0.1
+
+- Fix binary packages not setting environment variables at all times
+- Add Max1000 16k, Max10 Ultra and Cyc5000
+- Add more options to customize programming workflows
+- No longer remove empty folders while renaming them
+
 ## 0.16.8.0
 
 - Add Max10 and Max1000 to default FPGA list
