@@ -4,6 +4,12 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.17.0.3
+
+- Fix VCD Viewer error when loading small VCD Files with multiple threads
+- Add VCD Viewer Datatypes
+- Add Fixed Point Shift
+  
 ## 0.17.0.2
 
 - Add VCD Viewer support for REAL Type
