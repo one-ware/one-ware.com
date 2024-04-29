@@ -4,6 +4,11 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.17.0.4
+
+- Fix open project dialog on Unix
+- Allow selecting completion items by click
+  
 ## 0.17.0.3
 
 - Fix VCD Viewer error when loading small VCD Files with multiple threads
