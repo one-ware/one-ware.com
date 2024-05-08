@@ -21,7 +21,7 @@ const sliders = [
     ),
   },
   {
-    title: "Ai Generator",
+    title: "AI Generator",
     imageSrc: <img alt="Extensible" src="/img/studio/slides/ai.png" />,
     description: (
       <>
