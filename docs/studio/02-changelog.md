@@ -4,6 +4,14 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.17.1.0
+
+- Fix small version upgrades on windows
+- Update OneWare.Essentials Plugin base to 0.5.0
+- Update OneWare.UniversalFPGAProject Plugin base to 0.20.0
+- Fix auto bracket
+- Fix Completionwindow tooltip misplacement
+  
 ## 0.17.0.4
 
 - Fix open project dialog on Unix
