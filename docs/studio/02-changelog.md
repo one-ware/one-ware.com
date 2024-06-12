@@ -4,6 +4,11 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.17.2.0
+
+- Hide Hover box when alt tabbing
+- Update linux libraries
+
 ## 0.17.1.0
 
 - Fix small version upgrades on windows
