@@ -4,6 +4,13 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.17.3.0
+
+- Hide Hover box when focus lost
+- VCD Viewer now correctly shows all STD_LOGIC values in binary mode
+- Improved VCD Rendering
+- Improved VCD Parsing with multiple threads
+  
 ## 0.17.2.0
 
 - Hide Hover box when alt tabbing
