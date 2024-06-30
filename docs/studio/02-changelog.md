@@ -4,6 +4,11 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.17.4.0
+
+- Add VCD Viewer Horizontal Scrollbar
+- Fix an issue where errors in child processes (GHDL, ...) would get ignored
+  
 ## 0.17.3.0
 
 - Hide Hover box when focus lost
