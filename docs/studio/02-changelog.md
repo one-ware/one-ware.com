@@ -6,6 +6,7 @@ sidebar_label:  Changelog
 
 ## 0.17.5.0
 
+- Fix Signed Decimal Converter for VCD
 - Fix Hex Converter for VCD
 - Add ASCII Converter for VCD
 - Add IDE Updater for Windows/MacOS
