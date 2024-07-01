@@ -4,6 +4,12 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.17.5.0
+
+- Fix Hex Converter for VCD
+- Add ASCII Converter for VCD
+- Add IDE Updater for Windows/MacOS
+
 ## 0.17.4.0
 
 - Add VCD Viewer Horizontal Scrollbar
