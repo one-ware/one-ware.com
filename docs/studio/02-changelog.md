@@ -10,6 +10,7 @@ sidebar_label:  Changelog
 - Update VHDL / Verible support
 - Remove TOML Creator
 - Fix FixedPointShift for negative Signed Integers in VCD
+- Escape string produces by ASCII VCD lines
   
 ## 0.17.5.0
 
