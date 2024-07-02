@@ -4,6 +4,13 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.17.6.0
+
+- Fix IDE Updater download path
+- Update VHDL / Verible support
+- Remove TOML Creator
+- Fix FixedPointShift for negative Signed Integers in VCD
+  
 ## 0.17.5.0
 
 - Fix Signed Decimal Converter for VCD
