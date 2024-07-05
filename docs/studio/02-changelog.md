@@ -6,6 +6,9 @@ sidebar_label:  Changelog
 
 ## 0.17.7.0
 
+**There was a bug with the builtin updater, make sure to manually download this update**
+
+- Fix IDE Updater download path
 - Fix VCD Viewer for files with large amount of signals
 - Fix VCD Viewer vertical scrolling
 - Add VCD Viewer horizontal scrolling with Mousewheel + Shift
@@ -18,9 +21,6 @@ sidebar_label:  Changelog
 
 ## 0.17.6.0
 
-**There was a bug with the builtin updater, make sure to manually download this update**
-
-- Fix IDE Updater download path
 - Update VHDL / Verible support
 - Remove TOML Creator
 - Fix FixedPointShift for negative Signed Integers in VCD
