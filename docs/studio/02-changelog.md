@@ -4,6 +4,22 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.17.7.0
+
+**There was a bug with the builtin updater, make sure to manually download this update**
+
+- Fix VCD Viewer for files with large amount of signals
+- Fix VCD Viewer vertical scrolling
+- Add VCD Viewer horizontal scrolling with Mousewheel + Shift
+- Fix IDE Updater once again
+- Added LSP Document Highlighting functionality
+- Added LSP Inlay Hints functionality
+- Added LSP support for semantic token highlighting
+- Hide external errors on default (changeable in experimental settings)
+- Improve control and click action for LSP (was broken on MacOS)
+- Fix IDE updater download path
+- Added binaries for linux, if snap is not available
+
 ## 0.17.6.0
 
 - Fix IDE Updater download path
