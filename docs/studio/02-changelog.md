@@ -14,7 +14,6 @@ sidebar_label:  Changelog
 - Added LSP support for semantic token highlighting
 - Hide external errors on default (changeable in experimental settings)
 - Improve control and click action for LSP (was broken on MacOS)
-- Fix IDE updater download path
 - Added binaries for linux, if snap is not available
 
 ## 0.17.6.0
