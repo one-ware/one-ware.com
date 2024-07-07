@@ -11,28 +11,28 @@ import ContactUs from "../components/ContactUs";
 const sliders = [
   {
     title: "Extensibility",
-    imageSrc: <img alt="Extensible" src="/img/studio/slides/extensions.png" />,
+    imageSrc: <img alt="Extensible" src="/img/studio/slides2/extensions.png" />,
     description: (
       <>
         Download and Install <span className="primary-text">Extensions</span>{" "}
-        from inside the open source IDE to extend its features. Discover a growing selection
-        of <span className="primary-text">AI-Tools, Teamworking-Features, Hardware-Integrations, Simulators and More</span>
+        from to extend the functionality. Discover a growing selection
+        of <span className="primary-text">AI-Tools</span>, <span className="primary-text">Hardware-Integrations</span>, <span className="primary-text">Simulators and More</span>
       </>
     ),
   },
   {
-    title: "AI Generator",
-    imageSrc: <img alt="Extensible" src="/img/studio/slides/ai.png" />,
+    title: "Hardware Support",
+    imageSrc: <img alt="Hardware" src="/img/studio/slides2/hardware.png" />,
     description: (
       <>
-        Use our AI Generator to easily develop and integrate{" "}
-        <span className="primary-text">AI Tasks</span> into your designs.
+        Conveniently setup and compile your designs from your hardware.{" "}
+        <span className="primary-text">Directy</span> from the IDE, which a growing number of supported toolchains and boards.
       </>
     ),
   },
   {
     title: "Code Assistant",
-    imageSrc: <img alt="Code Assistant" src="/img/studio/slides/vhdl.png" />,
+    imageSrc: <img alt="Code Assistant" src="/img/studio/slides2/completion.png" />,
     description: (
       <>
         First class support for <span className="primary-text">C++</span>,{" "} 
@@ -46,7 +46,7 @@ const sliders = [
   },
   {
     title: "Simulation",
-    imageSrc: <img alt="Simulation" src="/img/studio/slides/vcd.png" />,
+    imageSrc: <img alt="Simulation" src="/img/studio/slides2/simulator.png" />,
     description: (
       <>
         Simulate your designs inside the IDE, using the lightning fast Simulation Viewer and the most popular{" "}
