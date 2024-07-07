@@ -10,27 +10,6 @@ import ContactUs from "../components/ContactUs";
 
 const sliders = [
   {
-    title: "Extensibility",
-    imageSrc: <img alt="Extensible" src="/img/studio/slides2/extensions.png" />,
-    description: (
-      <>
-        Download and Install <span className="primary-text">Extensions</span>{" "}
-        from to extend the functionality. Discover a growing selection
-        of <span className="primary-text">AI-Tools</span>, <span className="primary-text">Hardware-Integrations</span>, <span className="primary-text">Simulators and More</span>
-      </>
-    ),
-  },
-  {
-    title: "Hardware Support",
-    imageSrc: <img alt="Hardware" src="/img/studio/slides2/hardware.png" />,
-    description: (
-      <>
-        Conveniently setup and compile your designs from your hardware.{" "}
-        <span className="primary-text">Directy</span> from the IDE, which a growing number of supported toolchains and boards.
-      </>
-    ),
-  },
-  {
     title: "Code Assistant",
     imageSrc: <img alt="Code Assistant" src="/img/studio/slides2/completion.png" />,
     description: (
@@ -45,16 +24,36 @@ const sliders = [
     ),
   },
   {
+    title: "Hardware Support",
+    imageSrc: <img alt="Hardware" src="/img/studio/slides2/hardware.png" />,
+    description: (
+      <>
+        Conveniently setup and compile your designs from your hardware.{" "}
+        <span className="primary-text">Directy</span> from the IDE, which a growing number of supported toolchains and boards.
+      </>
+    ),
+  },
+  {
     title: "Simulation",
     imageSrc: <img alt="Simulation" src="/img/studio/slides2/simulator.png" />,
     description: (
       <>
         Simulate your designs inside the IDE, using the lightning fast Simulation Viewer and the most popular{" "}
-        <span className="primary-text">Debugging</span> tools.
+        <span className="primary-text">Simulation</span> tools.
       </>
     ),
   },
-  
+  {
+    title: "Extensibility",
+    imageSrc: <img alt="Extensible" src="/img/studio/slides2/extensions.png" />,
+    description: (
+      <>
+        Download and Install <span className="primary-text">Extensions</span>{" "}
+        from to extend the functionality. Discover a growing selection
+        of <span className="primary-text">AI-Tools</span>, <span className="primary-text">Hardware-Integrations</span>, <span className="primary-text">Simulators and More</span>
+      </>
+    ),
+  },
 ];
 
 export default function Studio(): JSX.Element {
