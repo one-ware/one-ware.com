@@ -15,9 +15,9 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@docusaurus/core": "3.1.1",
-    "@docusaurus/plugin-sitemap": "^3.1.1",
-    "@docusaurus/preset-classic": "3.1.1",
+    "@docusaurus/core": "3.4.0",
+    "@docusaurus/plugin-sitemap": "^3.4.0",
+    "@docusaurus/preset-classic": "3.4.0",
     "@mdx-js/react": "^3.0.0",
     "@tsparticles/react": "^3.0.0",
     "aos": "^2.3.4",
@@ -31,9 +31,9 @@
     "tsparticles": "^3.1.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.1.1",
-    "@docusaurus/tsconfig": "3.1.1",
-    "@docusaurus/types": "3.1.1",
+    "@docusaurus/module-type-aliases": "3.4.0",
+    "@docusaurus/tsconfig": "3.4.0",
+    "@docusaurus/types": "3.4.0",
     "@types/aos": "^3.0.7",
     "autoprefixer": "^10.4.17",
     "postcss": "^8.4.33",

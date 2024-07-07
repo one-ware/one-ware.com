@@ -167,7 +167,7 @@ export default function Studio(): JSX.Element {
           </div>
         </div>
 
-        <div className="text-center max-w-4xl m-auto mt-16">
+        <div className="text-center max-w-4xl m-auto mt-32">
           <h2 className="text-4xl font-bold">
              Integrate AI Faster and Without Experts
           </h2>
@@ -190,7 +190,7 @@ export default function Studio(): JSX.Element {
           </div>
         </div>
 
-        <ContactUs />
+        <ContactUs/>
       </main>
     </Layout>
   );
