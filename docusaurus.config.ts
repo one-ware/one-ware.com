@@ -199,10 +199,10 @@ const config: Config = {
               label: "Stack Overflow",
               href: "https://stackoverflow.com/questions/tagged/oneware",
             },
-            //{
-            //  label: "Discord",
-            //  href: "https://discordapp.com/invite/oneware",
-            //},
+            {
+              label: "Discord",
+              href: "https://discord.com/invite/NCN9VAh",
+            },
             //{
             //  label: "Twitter",
             //  href: "https://twitter.com/oneware",
