@@ -196,12 +196,12 @@ const config: Config = {
           title: "Community",
           items: [
             {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/oneware",
-            },
-            {
               label: "Discord",
               href: "https://discord.com/invite/NCN9VAh",
+            },
+            {
+              label: "Stack Overflow",
+              href: "https://stackoverflow.com/questions/tagged/oneware",
             },
             //{
             //  label: "Twitter",
