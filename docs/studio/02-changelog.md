@@ -4,6 +4,10 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.18.0.0
+
+- VCD ignore entries without value change
+  
 ## 0.17.7.0
 
 **There was a bug with the builtin updater, make sure to manually download this update**
