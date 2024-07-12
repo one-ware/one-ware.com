@@ -4,6 +4,10 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.18.1.0
+
+- Fix two possible crashes caused by invalid highlighting due to out of sync LS with editor
+
 ## 0.18.0.0
 
 - VCD ignore entries without value change
