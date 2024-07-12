@@ -7,6 +7,7 @@ sidebar_label:  Changelog
 ## 0.18.1.0
 
 - Fix two possible crashes caused by invalid highlighting due to out of sync LS with editor
+- Remove round bottom corners for main window in Windows 11
 
 ## 0.18.0.0
 
