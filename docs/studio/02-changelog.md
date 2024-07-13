@@ -4,6 +4,13 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.18.2.0
+
+- Add snippet support for completion
+- Added snippets for VHDL and Verilog completion
+- Fix changelog not loading after update
+- Fix completion getting out of sync with LSP
+
 ## 0.18.1.0
 
 - Fix two possible crashes caused by invalid highlighting due to out of sync LS with editor
