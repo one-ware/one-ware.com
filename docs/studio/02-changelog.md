@@ -4,6 +4,13 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.18.3.0
+
+- Update base packages
+- Add automatic package updates to IDE Updater system
+- Fix snippets for some c++ completions
+- Fix "update successful" notification showing every start
+
 ## 0.18.2.0
 
 - Add snippet support for completion
