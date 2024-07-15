@@ -118,6 +118,11 @@ const config: Config = {
               to: "/one-ai",
               label: "Features",
             },
+            {
+              type: "doc",
+              docId: "one-ai/ai-integration/ai-integration",
+              label: "Setup",
+            }
           ],
         },
         {
