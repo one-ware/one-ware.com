@@ -27,6 +27,17 @@ const config: Config = {
     "https://fonts.googleapis.com/css?family=Montserrat"
   ],
 
+
+  //headTags: [
+  //  {
+  //    tagName: "script",
+  //    attributes: {
+  //      id: "oneai-snippet",
+  //      src: "https://oneai.com/~widget?id=one-ware-ai",
+  //    }
+  //  }
+  //],
+
   plugins: [
     async function myPlugin(context, options) {
       return {
@@ -76,6 +87,13 @@ const config: Config = {
   ],
 
   themeConfig: {
+    algolia: {
+      appId: 'GVARI8M72O',
+      apiKey: '7d1be6ae06ba5fb5e97018bc2daab94a',
+      indexName: 'one-ware',
+      searchPagePath: 'search',
+      contextualSearch: false,
+    },
     colorMode: {
       defaultMode: "dark",
       disableSwitch: true,
@@ -92,18 +110,13 @@ const config: Config = {
         {
           type: "dropdown",
           position: "left",
-          label: "PLC-ONE",
-          to: "/plc-one",
-          activeBaseRegex: '(^.*/plc-one$)|(^.*/docs/plc-one/.*$)',
+          label: "ONE AI",
+          to: "/one-ai",
+          activeBaseRegex: '(^.*/one-ai$)|(^.*/docs/one-ai/.*$)',
           items: [
             {
-              to: "/plc-one",
+              to: "/one-ai",
               label: "Features",
-            },
-            {
-              type: "doc",
-              docId: "plc-one/overview",
-              label: "Overview",
             },
           ],
         },
@@ -122,11 +135,24 @@ const config: Config = {
               type: "doc",
               docId: "studio/setup",
               label: "Setup",
+            }
+          ],
+        },
+        {
+          type: "dropdown",
+          position: "left",
+          label: "PLC-ONE",
+          to: "/plc-one",
+          activeBaseRegex: '(^.*/plc-one$)|(^.*/docs/plc-one/.*$)',
+          items: [
+            {
+              to: "/plc-one",
+              label: "Features",
             },
             {
               type: "doc",
-              docId: "studio/changelog",
-              label: "Changelog",
+              docId: "plc-one/overview",
+              label: "Overview",
             },
           ],
         },
@@ -161,10 +187,6 @@ const config: Config = {
           title: "Docs",
           items: [
             {
-              label: "PLC-ONE Overview",
-              to: "/docs/plc-one/overview",
-            },
-            {
               label: "OneWare Studio Setup",
               to: "/docs/studio/setup",
             },
@@ -174,13 +196,13 @@ const config: Config = {
           title: "Community",
           items: [
             {
+              label: "Discord",
+              href: "https://discord.com/invite/NCN9VAh",
+            },
+            {
               label: "Stack Overflow",
               href: "https://stackoverflow.com/questions/tagged/oneware",
             },
-            //{
-            //  label: "Discord",
-            //  href: "https://discordapp.com/invite/oneware",
-            //},
             //{
             //  label: "Twitter",
             //  href: "https://twitter.com/oneware",

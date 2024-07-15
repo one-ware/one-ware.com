@@ -1,93 +1,74 @@
-import React, { useRef } from "react";
-import styles from "./studio.module.css";
-import "aos/dist/aos.css";
-import classnames from "classnames";
-import Slider from "react-slick";
 import Layout from "@theme/Layout";
-import Link from "@docusaurus/Link";
+import styles from "./one-ai.module.css";
 import initWebsiteEffects from "../components/startEffects";
 import ContactUs from "../components/ContactUs";
+import Slider from "react-slick";
+import React, { useRef } from "react";
+import "aos/dist/aos.css";
+import classnames from "classnames";
+import Link from "@docusaurus/Link";
 
 const sliders = [
   {
-    title: "Code Assistant",
-    imageSrc: <img alt="Code Assistant" src="/img/studio/slides2/completion.png" />,
+    title: "Universal Assistant",
+    imageSrc: <img alt="Extensible" src="/img/ai/Titel.png" />,
     description: (
       <>
-        First class support for <span className="primary-text">C++</span>,{" "} 
-        <span className="primary-text">Python</span>,{" "} 
-        <span className="primary-text">VHDL</span>,{" "}
-        <span className="primary-text">Verilog</span>{" "}and{" "}
-        more with lots of tools to help
-        develop your designs as efficiently as possible.
+        ONE AI lets you build efficient AIs to process <span className="primary-text">Images, Audio and Sensor Data</span>. 
+        Our assistant has the know how of all current AI research and you just have to answer a few questions to create your own individual AI.
+        Then <span className="primary-text">ONE WARE Studio</span> helps to integrate the AI in your product.
       </>
     ),
   },
   {
-    title: "Hardware Support",
-    imageSrc: <img alt="Hardware" src="/img/studio/slides2/hardware.png" />,
+    title: "Quality Control",
+    imageSrc: <img alt="Extensible" src="/img/ai/quality.png" />,
     description: (
       <>
-        Conveniently setup and compile your designs from your hardware.{" "}
-        <span className="primary-text">Directy</span> from the IDE, which a growing number of supported toolchains and boards.
+        Create your custom quality control with our AI based <span className="primary-text">Image Processing</span> framework.
+        ONE AI makes sure that you always use the newest scientific findings to get the <span className="primary-text">Most Accurate and Efficient AI</span>.
       </>
     ),
   },
   {
-    title: "Simulation",
-    imageSrc: <img alt="Simulation" src="/img/studio/slides2/simulator.png" />,
+    title: "Predictive Maintenance",
+    imageSrc: <img alt="Extensible" src="/img/ai/Predictive_Maintenance.png" />,
     description: (
       <>
-        Simulate your designs inside the IDE, using the lightning fast Simulation Viewer and the most popular{" "}
-        <span className="primary-text">Simulation</span> tools.
+        Fix problems before they occur. ONE AI takes sensor-data from your machine and can {" "}
+        <span className="primary-text">predict defects</span> before they occur, so your production can run without interruption.
       </>
     ),
   },
   {
-    title: "Extensibility",
-    imageSrc: <img alt="Extensible" src="/img/studio/slides2/extensions.png" />,
+    title: "Robots and Drones",
+    imageSrc: <img alt="Code Assistant" src="/img/ai/robots.png" />,
     description: (
       <>
-        Download and Install <span className="primary-text">Extensions</span>{" "}
-        from to extend the functionality. Discover a growing selection
-        of <span className="primary-text">AI-Tools</span>, <span className="primary-text">Hardware-Integrations</span>, <span className="primary-text">Simulators and More</span>
+        Replace the last manual steps of your production with autonomous robots and 
+        drones. ONE AI lets your robot or drone <span className="primary-text">See, Hear and Think for Itself</span>.
       </>
     ),
   },
+  
 ];
 
-export default function Studio(): JSX.Element {
+export default function PLC(): JSX.Element {
   const slickRef = useRef<Slider>(null);
 
   initWebsiteEffects();
 
   return (
-    <Layout title="Studio" description="OneWare Studio IDE">
+    <Layout title="ONE AI" description="Empowering Industry 5.0">
       <main className="container mb-20">
         <div className="text-center mt-10">
-          <h1 className="font-medium">
-            Try the{" "}
-            <span className="primary-text font-bold">Next Generation IDE</span>{" "}
-            for Electronics Development{" "}
-            <span className="primary-text font-bold">now!</span>
+          <h1 className="font-medium mb-10">
+            Elevate Your Productivity with {" "}
+            <span className="primary-text font-bold">ONE AI</span>{" "}
+            and integrate AI <span className="primary-text font-bold">Without Experts</span>
           </h1>
-
-          <div className="flex-col space-x-5 mb-10">
-          <Link
-              className="mt-5 button button--primary button--lg hidden md:inline-block"
-              href="/docs/studio/setup"
-            >
-              Download
-            </Link>
-
-            <Link
-              className="mt-5 button button--primary button--outline button--lg"
-              href="/docs/studio/setup"
-            >
-              Get Started
-            </Link>
-          </div>
         </div>
+        
         <div style={{ overflowX: "hidden" }}>
           {sliders && sliders.length && (
             <div className="pb-20">
@@ -148,25 +129,7 @@ export default function Studio(): JSX.Element {
           )}
         </div>
 
-        <div className="text-center max-w-4xl m-auto">
-          <h2 className="text-4xl font-bold">
-          Speedup your Electronics Development with Digital Twins
-          </h2>
-          <img
-            data-aos="zoom-in"
-            src={"/img/studio/Elec_Studio.png"}
-            alt="Compare"
-          />
-          <div className="text-xl md:text-2xl mt-6" data-aos="slide-up">
-            The ONE WARE Studio <span className="primary-text">Code Extension</span> transforms electronics development, 
-            integrating custom electronics with FPGAs and microcontrollers as digital twins directly within our IDE. 
-            Focus on firmware innovation with our seamless <span className="primary-text">Hardware-Firmware Interface</span>, streamline <span className="primary-text">Documentation</span>, 
-            and ease access to past work for future advancements. Tailor the IDE with specific software packages, 
-            optimizing your development process and perfectly matching your project requirements.
-          </div>
-        </div>
-
-        <div className="text-center max-w-4xl m-auto mt-32">
+        <div className="text-center max-w-4xl m-auto mt-16">
           <h2 className="text-4xl font-bold">
              Integrate AI Faster and Without Experts
           </h2>
@@ -189,7 +152,8 @@ export default function Studio(): JSX.Element {
           </div>
         </div>
 
-        <ContactUs/>
+        <ContactUs />
+        
       </main>
     </Layout>
   );
