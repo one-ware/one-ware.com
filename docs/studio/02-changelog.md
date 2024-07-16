@@ -4,6 +4,13 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.18.4.0
+
+- Fix possible terminal crash
+- Change default terminal on MacOS zo zsh (if available)
+- Open .GHW and .FST with GTKWave by default, if it is available
+- Extensions will no longer lose their settings if they turn incompatible
+
 ## 0.18.3.0
 
 - Update base packages
