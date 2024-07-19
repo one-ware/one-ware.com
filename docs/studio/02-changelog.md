@@ -4,6 +4,13 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.18.5.0
+
+- Fix terminal size on macos
+- Ignore VT_VERSION Environment for terminal
+- Improve scrolling in terminal
+- Fix crash for linux terminals
+
 ## 0.18.4.0
 
 - Fix possible terminal crash
