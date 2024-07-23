@@ -4,6 +4,14 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.19.0.0
+
+**Due to changes with the plugin system, some plugins might need to be removed and reinstalled afer installing this update!**
+
+- Update Plugin Base
+- Delete files using the delete key
+- Lots of small fixes and improvements (Avalonia Update)
+
 ## 0.18.5.0
 
 - Fix terminal size on macos
