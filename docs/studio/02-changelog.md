@@ -4,6 +4,10 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.19.1.0
+
+- Fix Comboboxsetting binding error
+
 ## 0.19.0.0
 
 **Due to changes with the plugin system, some plugins might need to be removed and reinstalled afer installing this update!**
