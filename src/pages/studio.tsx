@@ -214,8 +214,8 @@ export default function Studio(): JSX.Element {
   return (
     <Layout title="Studio" description="OneWare Studio IDE">
       <HomepageHeader />
-      <main className="container my-20">
-        <div style={{ overflowX: "hidden" }}>
+      <main className="my-20">
+        <div className="container" style={{ overflowX: "hidden" }}>
           {sliders && sliders.length && (
             <div className="pb-20">
               <Slider
@@ -275,80 +275,86 @@ export default function Studio(): JSX.Element {
           )}
         </div>
 
-        <div
-          className="text-center container m-auto flex space-x-5 justify-center"
-          data-aos="slide-up"
-        >
-          <div className="flex-col flex text-center">
-            <h1 className="text-5xl">Easy Setup!</h1>
+        <div className="diagclipcontainer">
 
-            <p className="text-xl my-5">
-              OneWare Studio is available for all major operating systems, using
-              the most modern installation methods.
-            </p>
+          <div style={{ background: "rgb(8, 47, 65)" }} className="bg-red-50 diagclip py-32">
+            <div
+              className="text-center container m-auto flex space-x-5 justify-center"
+              data-aos="slide-up"
+            >
+              <div className="flex-col flex text-center">
+                <h1 className="text-5xl">Easy Setup!</h1>
 
-            <div className="flex gap-5 flex-wrap">
-              <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 backdrop-blur">
-                <SiWindows size={50} />
-                <h5 className="mb-2 mt-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                  Windows 10+
-                </h5>
-                <a href="/docs/studio/setup?current-os=windows">
-                  <button className="mt-2 button button--primary">
-                    Download
-                  </button>
-                </a>
-              </div>
+                <p className="text-xl my-8">
+                  OneWare Studio is available for all major operating systems, using
+                  the most modern installation methods.
+                </p>
 
-              <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow bg-neutral-800 opacity-90 text-center">
-                <SiApple size={50} />
-                <h5 className="mb-2 mt-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                  MacOS 12.0+
-                </h5>
-                <a href="/docs/studio/setup?current-os=macos">
-                  <button className="mt-2 button button--primary">
-                    Download
-                  </button>
-                </a>
-              </div>
+                <div className="flex gap-5 flex-wrap">
+                  <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 backdrop-blur">
+                    <SiWindows size={50} />
+                    <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                      Windows 10+
+                    </h5>
+                    <a href="/docs/studio/setup?current-os=windows">
+                      <button className="mt-2 button button--primary">
+                        Download
+                      </button>
+                    </a>
+                  </div>
 
-              <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow bg-neutral-800 opacity-90 text-center">
-                <SiFlathub size={50} />
-                <h5 className="mb-2 mt-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                  Flathub
-                </h5>
-                <a href="https://flathub.org/apps/com.one_ware.OneWare" target="_blank">
-                  <button className="mt-2 button button--primary">
-                    Download
-                  </button>
-                </a>
-              </div>
+                  <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 backdrop-blur">
+                    <SiApple size={50} />
+                    <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                      MacOS 12.0+
+                    </h5>
+                    <a href="/docs/studio/setup?current-os=macos">
+                      <button className="mt-2 button button--primary">
+                        Download
+                      </button>
+                    </a>
+                  </div>
 
-              <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow bg-neutral-800 opacity-90 text-center">
-                <SiSnapcraft size={50} />
-                <h5 className="mb-2 mt-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                  Snapstore
-                </h5>
-                <a href="https://snapcraft.io/oneware" target="_blank">
-                  <button className="mt-2 button button--primary">
-                    Download
-                  </button>
-                </a>
-              </div>
+                  <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 backdrop-blur">
+                    <SiFlathub size={50} />
+                    <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                      Flathub
+                    </h5>
+                    <a href="https://flathub.org/apps/com.one_ware.OneWare" target="_blank">
+                      <button className="mt-2 button button--primary">
+                        Download
+                      </button>
+                    </a>
+                  </div>
 
-              <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow bg-neutral-800 opacity-90 text-center">
-                <SiLinux size={50} />
-                <h5 className="mb-2 mt-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                  Other Linux
-                </h5>
-                <a href="/docs/studio/setup?current-os=linux">
-                  <button className="mt-2 button button--primary">
-                    Download
-                  </button>
-                </a>
+                  <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 backdrop-blur">
+                    <SiSnapcraft size={50} />
+                    <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                      Snapstore
+                    </h5>
+                    <a href="https://snapcraft.io/oneware" target="_blank">
+                      <button className="mt-2 button button--primary">
+                        Download
+                      </button>
+                    </a>
+                  </div>
+
+                  <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 backdrop-blur">
+                    <SiLinux size={50} />
+                    <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                      Other Linux
+                    </h5>
+                    <a href="/docs/studio/setup?current-os=linux">
+                      <button className="mt-2 button button--primary">
+                        Download
+                      </button>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+
         </div>
 
         <div className="text-center max-w-4xl m-auto mt-32">
