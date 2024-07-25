@@ -207,7 +207,6 @@ function HomepageHeader() {
 }
 
 function DownloadSection() {
-
   return (
     <div className="diagclipcontainer">
 
@@ -220,8 +219,8 @@ function DownloadSection() {
             <h1 className="text-5xl">Easy Setup!</h1>
 
             <p className="text-xl my-8">
-              OneWare Studio is available for all major operating systems, using
-              the most modern installation methods.
+              OneWare Studio is available for <span className="primary-text">all major operating systems</span>, using all
+              the <span className="primary-text">modern</span> installation methods.
             </p>
 
             <div className="flex gap-5 flex-wrap">
@@ -293,6 +292,20 @@ function DownloadSection() {
   );
 }
 
+
+function VendorSection() {
+  return (
+    <div className="text-center container m-auto mt-32">
+    <h2 className="text-5xl font-bold">
+      Use any Hardware!
+    </h2>
+
+    <p className="text-xl my-8">Out goal is to provide first level support for any hardware, using our advanced extension system</p>
+
+    
+  </div>
+  );
+}
 
 
 export default function Studio(): JSX.Element {
@@ -366,56 +379,7 @@ export default function Studio(): JSX.Element {
 
         <DownloadSection />
 
-        <div className="text-center max-w-4xl m-auto mt-32">
-          <h2 className="text-4xl font-bold">
-            Speedup your Electronics Development with Digital Twins
-          </h2>
-          <img
-            data-aos="zoom-in"
-            src={"/img/studio/Elec_Studio.png"}
-            alt="Compare"
-          />
-          <div className="text-xl md:text-2xl mt-6" data-aos="slide-up">
-            The ONE WARE Studio{" "}
-            <span className="primary-text">Code Extension</span> transforms
-            electronics development, integrating custom electronics with FPGAs
-            and microcontrollers as digital twins directly within our IDE. Focus
-            on firmware innovation with our seamless{" "}
-            <span className="primary-text">Hardware-Firmware Interface</span>,
-            streamline <span className="primary-text">Documentation</span>, and
-            ease access to past work for future advancements. Tailor the IDE
-            with specific software packages, optimizing your development process
-            and perfectly matching your project requirements.
-          </div>
-        </div>
-
-        <div className="text-center max-w-4xl m-auto mt-32">
-          <h2 className="text-4xl font-bold">
-            Integrate AI Faster and Without Experts
-          </h2>
-          <img
-            data-aos="zoom-in"
-            src={"/img/studio/Studio_AI.png"}
-            alt="Compare"
-          />
-          <div className="text-xl md:text-2xl mt-6" data-aos="slide-up">
-            The ONE WARE Studio{" "}
-            <span className="primary-text">AI Extension</span> is the first
-            solution that moves away from universal yet inefficient neural
-            networks and time consuming tailored AI solutions that depend on AI
-            experts. ONE WARE Studio streamlines AI integration by{" "}
-            <span className="primary-text">Guiding Users</span> without prior
-            expertise through the customization of neural networks. It
-            automatically crafts{" "}
-            <span className="primary-text">
-              Efficient and Adaptable Neural Networks
-            </span>
-            , which can then be effortlessly deployed across a variety of
-            hardware, from FPGAs to microcontrollers, and processors equipped
-            with TPUs or GPUs. Empower your operations with AI that is both
-            sophisticated and accessible.
-          </div>
-        </div>
+        <VendorSection />
 
         <ContactUs />
       </main>
