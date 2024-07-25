@@ -288,7 +288,7 @@ export default function Studio(): JSX.Element {
             </p>
 
             <div className="flex gap-5 flex-wrap">
-              <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow bg-neutral-800 opacity-90 text-center">
+              <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 backdrop-blur">
                 <SiWindows size={50} />
                 <h5 className="mb-2 mt-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
                   Windows 10+
