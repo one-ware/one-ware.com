@@ -211,7 +211,7 @@ function HomepageHeader() {
 
 function DownloadSection() {
   return (
-    <div className="diagclipcontainer">
+    <div className="diagclipcontainer overflow-x-hidden">
 
       <div style={{ background: "rgb(8, 47, 65)" }} className="bg-red-50 diagclip py-40">
 
@@ -298,7 +298,7 @@ function DownloadSection() {
 
 function VendorSection() {
   return (
-    <div className="text-center container m-auto mt-32 max-w-6xl">
+    <div className="text-center container m-auto mt-32 max-w-6xl overflow-x-hidden">
       <h2 className="text-4xl md:text-5xl font-bold">
         Use any Hardware!
       </h2>
