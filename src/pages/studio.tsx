@@ -163,7 +163,7 @@ function HomepageHeader() {
 
       <div className="absolute flex flex-col items-center justify-center w-full h-full">
         <div className="flex">
-          <div className="flex-col max-w-3xl">
+          <div className="flex-col max-w-3xl m-5 mt-10">
             <div className="text-center mt-10">
               <h1 className="font-medium md:text-4xl">
                 The{" "}
