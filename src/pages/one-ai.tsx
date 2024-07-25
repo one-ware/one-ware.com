@@ -11,7 +11,7 @@ import Link from "@docusaurus/Link";
 const sliders = [
   {
     title: "Universal Assistant",
-    imageSrc: <img alt="Extensible" src="/img/ai/Titel.png" />,
+    imageSrc: <img alt="Extensible" src="/img/studio/slides/ai.png" />,
     description: (
       <>
         ONE AI lets you build efficient AIs to process <span className="primary-text">Images, Audio and Sensor Data</span>. 
@@ -42,7 +42,7 @@ const sliders = [
   },
   {
     title: "Robots and Drones",
-    imageSrc: <img alt="Code Assistant" src="/img/ai/robots.png" />,
+    imageSrc: <img alt="Code Assistant" src="/img/ai/Titel.png" />,
     description: (
       <>
         Replace the last manual steps of your production with autonomous robots and 
