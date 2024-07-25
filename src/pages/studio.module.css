@@ -1,3 +1,15 @@
+
+.heroBackground{
+  box-shadow: rgb(0 0 0 / 50%) 0px -12px 23px -3px inset; 
+  background: rgb(8, 47, 65);
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-top: calc(var(--ifm-navbar-height)*-1);
+}
+
+
 .slickSlider {
   max-width: 130vh;
   display: block;
