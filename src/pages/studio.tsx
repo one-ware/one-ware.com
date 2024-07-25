@@ -11,6 +11,13 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { loadFull } from "tsparticles";
 
+import { SiApple } from "react-icons/si";
+import { SiMacos } from "react-icons/si";
+import { SiWindows } from "react-icons/si";
+import { SiLinux } from "react-icons/si";
+import { SiFlathub } from "react-icons/si";
+import { SiSnapcraft } from "react-icons/si";
+
 const sliders = [
   {
     title: "Code Assistant",
@@ -192,7 +199,6 @@ function HomepageHeader() {
             </div>
           </div>
         </div>
-
       </div>
 
       <div className={styles.startArrow} />
@@ -269,7 +275,83 @@ export default function Studio(): JSX.Element {
           )}
         </div>
 
-        <div className="text-center max-w-4xl m-auto">
+        <div
+          className="text-center container m-auto flex space-x-5 justify-center"
+          data-aos="slide-up"
+        >
+          <div className="flex-col flex text-center">
+            <h1 className="text-5xl">Easy Setup!</h1>
+
+            <p className="text-xl my-5">
+              OneWare Studio is available for all major operating systems, using
+              the most modern installation methods.
+            </p>
+
+            <div className="flex gap-5 flex-wrap">
+              <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow bg-neutral-800 opacity-90 text-center">
+                <SiWindows size={50} />
+                <h5 className="mb-2 mt-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                  Windows 10+
+                </h5>
+                <a href="#">
+                  <button className="mt-2 button button--primary">
+                    Download
+                  </button>
+                </a>
+              </div>
+
+              <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow bg-neutral-800 opacity-90 text-center">
+                <SiApple size={50} />
+                <h5 className="mb-2 mt-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                  MacOS 12.0+
+                </h5>
+                <a href="#">
+                  <button className="mt-2 button button--primary">
+                    Download
+                  </button>
+                </a>
+              </div>
+
+              <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow bg-neutral-800 opacity-90 text-center">
+                <SiFlathub size={50} />
+                <h5 className="mb-2 mt-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                  Flathub
+                </h5>
+                <a href="#">
+                  <button className="mt-2 button button--primary">
+                    Download
+                  </button>
+                </a>
+              </div>
+
+              <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow bg-neutral-800 opacity-90 text-center">
+                <SiSnapcraft size={50} />
+                <h5 className="mb-2 mt-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                  Snapstore
+                </h5>
+                <a href="#">
+                  <button className="mt-2 button button--primary">
+                    Download
+                  </button>
+                </a>
+              </div>
+
+              <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow bg-neutral-800 opacity-90 text-center">
+                <SiLinux size={50} />
+                <h5 className="mb-2 mt-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                  Other Linux
+                </h5>
+                <a href="#">
+                  <button className="mt-2 button button--primary">
+                    Download
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="text-center max-w-4xl m-auto mt-32">
           <h2 className="text-4xl font-bold">
             Speedup your Electronics Development with Digital Twins
           </h2>
