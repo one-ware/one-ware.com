@@ -18,6 +18,9 @@ import { SiLinux } from "react-icons/si";
 import { SiFlathub } from "react-icons/si";
 import { SiSnapcraft } from "react-icons/si";
 
+import { HiOutlineCpuChip } from "react-icons/hi2";
+import { BiMicrochip } from "react-icons/bi";
+
 const sliders = [
   {
     title: "Code Assistant",
@@ -295,15 +298,29 @@ function DownloadSection() {
 
 function VendorSection() {
   return (
-    <div className="text-center container m-auto mt-32">
-    <h2 className="text-5xl font-bold">
-      Use any Hardware!
-    </h2>
+    <div className="text-center container m-auto mt-32 max-w-6xl">
+      <h2 className="text-5xl font-bold">
+        Use any Hardware!
+      </h2>
 
-    <p className="text-xl my-8">Out goal is to provide first level support for any hardware, using our advanced extension system</p>
+      <h5 className="text-2xl mt-10">Our goal is to provide first level support for <span className="primary-text">any hardware from any vendor</span>, using our advanced extension system.</h5>
 
-    
-  </div>
+      <div className="flex" data-aos="fade-up">
+        <div className="flex-col w-1/2 p-5">
+          <h3 className="text-3xl">FPGA</h3>
+          <HiOutlineCpuChip size={90} />
+          <p className="text-xl">We support a wide range of FPGA vendors, including Intel, Lattice and more</p>
+        </div>
+
+        <div className="flex-col w-1/2 p-5">
+          <h3 className="text-3xl">MCU</h3>
+          <BiMicrochip size={90} />
+          <p className="text-xl">We support a wide range of MCU vendors, including ST, NXP, Microchip and more</p>
+        </div>
+      </div>
+
+      <img src="/img/studio/hardware.png" alt="Hardware" />
+    </div>
   );
 }
 
@@ -316,7 +333,7 @@ export default function Studio(): JSX.Element {
   return (
     <Layout title="Studio" description="OneWare Studio IDE">
       <HomepageHeader />
-      <main className="my-20">
+      <main className="my-32">
         <div className="container" style={{ overflowX: "hidden" }}>
           {sliders && sliders.length && (
             <div className="pb-20">
