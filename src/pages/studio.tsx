@@ -213,7 +213,7 @@ function DownloadSection() {
   return (
     <div className="diagclipcontainer overflow-x-hidden">
 
-      <div style={{ background: "rgb(8, 47, 65)" }} className="bg-red-50 diagclip py-40">
+      <div style={{ background: "rgb(8, 47, 65)" }}  className="diagclip py-40">
 
         <div
           className="text-center container m-auto flex space-x-5 justify-center"
@@ -227,7 +227,7 @@ function DownloadSection() {
             </p>
 
             <div className="flex gap-5 flex-wrap">
-              <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 backdrop-blur">
+              <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50">
                 <SiWindows size={50} />
                 <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                   Windows 10+
@@ -239,7 +239,7 @@ function DownloadSection() {
                 </a>
               </div>
 
-              <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 backdrop-blur">
+              <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50">
                 <SiApple size={50} />
                 <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                   MacOS 12.0+
@@ -251,7 +251,7 @@ function DownloadSection() {
                 </a>
               </div>
 
-              <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 backdrop-blur">
+              <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50">
                 <SiFlathub size={50} />
                 <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                   Flathub
@@ -263,7 +263,7 @@ function DownloadSection() {
                 </a>
               </div>
 
-              <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 backdrop-blur">
+              <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50">
                 <SiSnapcraft size={50} />
                 <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                   Snapstore
@@ -275,7 +275,7 @@ function DownloadSection() {
                 </a>
               </div>
 
-              <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 backdrop-blur">
+              <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50">
                 <SiLinux size={50} />
                 <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                   Other Linux
