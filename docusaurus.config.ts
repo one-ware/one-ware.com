@@ -120,8 +120,8 @@ const config: Config = {
             },
             {
               type: "doc",
-              docId: "one-ai/ai-integration/index",
-              label: "Setup",
+              docId: "one-ai/services/index",
+              label: "Services",
             }
           ],
         },
