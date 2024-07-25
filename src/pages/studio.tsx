@@ -219,7 +219,7 @@ function DownloadSection() {
           className="text-center container m-auto flex space-x-5 justify-center"
         >
           <div className="flex-col flex text-center">
-            <h1 className="text-5xl">Easy Setup!</h1>
+            <h1 className="text-4xl md:text-5xl">Easy Setup!</h1>
 
             <p className="text-xl my-8">
               OneWare Studio is available for <span className="primary-text">all major operating systems</span>, using all
@@ -299,20 +299,20 @@ function DownloadSection() {
 function VendorSection() {
   return (
     <div className="text-center container m-auto mt-32 max-w-6xl">
-      <h2 className="text-5xl font-bold">
+      <h2 className="text-4xl md:text-5xl font-bold">
         Use any Hardware!
       </h2>
 
       <h5 className="text-2xl mt-10">Our goal is to provide first level support for <span className="primary-text">any hardware from any vendor</span>, using our advanced extension system.</h5>
 
-      <div className="flex" data-aos="fade-up">
-        <div className="flex-col w-1/2 p-5">
+      <div className="md:flex gap-5" data-aos="fade-up">
+        <div className="md:flex-col md:w-1/2 p-5">
           <h3 className="text-3xl">FPGA</h3>
           <HiOutlineCpuChip size={90} />
           <p className="text-xl">We support a wide range of FPGA vendors, including Intel, Lattice and more</p>
         </div>
 
-        <div className="flex-col w-1/2 p-5">
+        <div className="md:flex-col md:w-1/2 p-5">
           <h3 className="text-3xl">MCU</h3>
           <BiMicrochip size={90} />
           <p className="text-xl">We support a wide range of MCU vendors, including ST, NXP, Microchip and more</p>
