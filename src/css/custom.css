@@ -116,9 +116,6 @@ body {
   background-color: #141517 !important;
 }
 
-.diagclipcontainer{
-  filter: blur();
-}
 
 .diagclip{
   clip-path: polygon(0 0,100% 2vw,100% calc(100% - 2vw),0 100%);
