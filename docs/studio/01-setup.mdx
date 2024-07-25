@@ -21,13 +21,8 @@ Use the benefits of code suggestions and vendor-independent libraries by using O
 
 <Tabs
   groupId="operating-systems"
-  defaultValue="windows"
-  values={[
-    {label: 'Windows', value: 'windows'},
-    {label: 'Linux', value: 'linux'},
-    {label: 'MacOS', value: 'macos'},
-  ]}>
-  <TabItem value="windows">
+  queryString="current-os">
+  <TabItem value="windows" label='Windows'>
 
 Download OneWare Studio:
 
@@ -39,7 +34,7 @@ winget install OneWare.OneWareStudio
 ```
 
   </TabItem>
-  <TabItem value="linux">
+  <TabItem value="linux" label='Linux'>
 
 #### Using Snap (Recommended)
 
@@ -72,7 +67,7 @@ flatpak install flathub com.one_ware.OneWare
 If you can't install snap or flatpak on your machine, it is possible to download the binaries manually [here](https://cdn.one-ware.com/onewarestudio/) (select the .tar.gz version for universal linux support). Please note that as of now these binaries have no update functionality, so make sure to check for updates regularly.
 
   </TabItem>
-  <TabItem value="macos">
+  <TabItem value="macos" label='MacOS'>
 
 :::warning MacOS Version
 **The Application is not signed** yet, so it will be detected as broken by MacOS. 

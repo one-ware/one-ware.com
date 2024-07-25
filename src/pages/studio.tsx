@@ -293,7 +293,7 @@ export default function Studio(): JSX.Element {
                 <h5 className="mb-2 mt-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
                   Windows 10+
                 </h5>
-                <a href="#">
+                <a href="/docs/studio/setup?current-os=windows">
                   <button className="mt-2 button button--primary">
                     Download
                   </button>
@@ -305,7 +305,7 @@ export default function Studio(): JSX.Element {
                 <h5 className="mb-2 mt-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
                   MacOS 12.0+
                 </h5>
-                <a href="#">
+                <a href="/docs/studio/setup?current-os=macos">
                   <button className="mt-2 button button--primary">
                     Download
                   </button>
@@ -317,7 +317,7 @@ export default function Studio(): JSX.Element {
                 <h5 className="mb-2 mt-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
                   Flathub
                 </h5>
-                <a href="#">
+                <a href="https://flathub.org/apps/com.one_ware.OneWare" target="_blank">
                   <button className="mt-2 button button--primary">
                     Download
                   </button>
@@ -329,7 +329,7 @@ export default function Studio(): JSX.Element {
                 <h5 className="mb-2 mt-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
                   Snapstore
                 </h5>
-                <a href="#">
+                <a href="https://snapcraft.io/oneware" target="_blank">
                   <button className="mt-2 button button--primary">
                     Download
                   </button>
@@ -341,7 +341,7 @@ export default function Studio(): JSX.Element {
                 <h5 className="mb-2 mt-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
                   Other Linux
                 </h5>
-                <a href="#">
+                <a href="/docs/studio/setup?current-os=linux">
                   <button className="mt-2 button button--primary">
                     Download
                   </button>
