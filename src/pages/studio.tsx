@@ -128,7 +128,7 @@ function DownloadSection() {
           </p>
 
           <div className="flex gap-5 flex-wrap">
-            <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 backdrop-blur-sm">
+            <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm">
               <SiWindows size={50} />
               <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                 Windows 10+
@@ -140,7 +140,7 @@ function DownloadSection() {
               </a>
             </div>
 
-            <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 backdrop-blur-sm">
+            <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm">
               <SiApple size={50} />
               <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                 MacOS 12.0+
@@ -152,7 +152,7 @@ function DownloadSection() {
               </a>
             </div>
 
-            <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 backdrop-blur-sm">
+            <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm">
               <SiFlathub size={50} />
               <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                 Flathub
@@ -167,7 +167,7 @@ function DownloadSection() {
               </a>
             </div>
 
-            <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 backdrop-blur-sm">
+            <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm">
               <SiSnapcraft size={50} />
               <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                 Snapstore
@@ -179,7 +179,7 @@ function DownloadSection() {
               </a>
             </div>
 
-            <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 backdrop-blur-sm">
+            <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm">
               <SiLinux size={50} />
               <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                 Other Linux
@@ -236,7 +236,7 @@ export default function Studio(): JSX.Element {
         {init && (
           <Particles
             id="stars"
-            className="h-full w-full absolute"
+            className="h-full w-full absolute hidden md:block"
             options={{
               fullScreen: {
                 enable: false,
