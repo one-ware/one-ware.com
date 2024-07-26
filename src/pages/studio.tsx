@@ -204,11 +204,11 @@ function VendorSection() {
 
       <h5 className="text-2xl mt-10 max-w-2xl mx-auto">
         Our goal is to provide first level support for{" "}
-        <span className="primary-text">any hardware from any vendor</span>,
+        <span className="primary-text">any hardware</span>,
         using our advanced extension system.
       </h5>
 
-      <img src="/img/studio/hardware.png" alt="Hardware" />
+      <img src="/img/studio/hardware.png" className="my-10" alt="Hardware" />
     </div>
   );
 }
