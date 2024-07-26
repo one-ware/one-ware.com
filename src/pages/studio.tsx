@@ -8,11 +8,9 @@ import Link from "@docusaurus/Link";
 import initWebsiteEffects from "../components/startEffects";
 import ContactUs from "../components/ContactUs";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { loadFull } from "tsparticles";
 
 import { SiApple } from "react-icons/si";
-import { SiMacos } from "react-icons/si";
 import { SiWindows } from "react-icons/si";
 import { SiLinux } from "react-icons/si";
 import { SiFlathub } from "react-icons/si";
@@ -75,7 +73,169 @@ const sliders = [
 ];
 
 function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
+  return (
+    <header id="hero" className={`w-full ${styles.heroBackground} h-96`}>
+      <div className="absolute flex flex-col items-center justify-center w-full h-full">
+        <div className="flex">
+          <div className="flex-col max-w-3xl m-5 mt-10">
+            <div className="text-center mt-10">
+              <h1 className="font-medium md:text-4xl">
+                The{" "}
+                <span className="primary-text font-bold">
+                  Next Generation IDE
+                </span>{" "}
+                for Electronics Development{" "}
+                <span className="primary-text font-bold">is here</span>.
+              </h1>
+
+              <div className="flex-col md:space-x-5 mb-10">
+                <Link
+                  className="mt-5 button button--primary button--lg hidden md:inline-block"
+                  href="/docs/studio/setup"
+                >
+                  Download
+                </Link>
+
+                <Link
+                  className="mt-5 button button--primary button--outline button--lg"
+                  href="/docs/studio/setup"
+                >
+                  Get Started
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.startArrow} />
+    </header>
+  );
+}
+
+function DownloadSection() {
+  return (
+    <div className="py-40 overflow-x-hidden">
+      <div className="text-center container m-auto flex space-x-5 justify-center">
+        <div className="flex-col flex text-center">
+          <h1 className="text-4xl md:text-5xl">Easy Setup!</h1>
+
+          <p className="text-xl my-8">
+            OneWare Studio is available for{" "}
+            <span className="primary-text">all major operating systems</span>,
+            using all the <span className="primary-text">modern</span>{" "}
+            installation methods.
+          </p>
+
+          <div className="flex gap-5 flex-wrap">
+            <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 backdrop-blur-sm">
+              <SiWindows size={50} />
+              <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                Windows 10+
+              </h5>
+              <a href="/docs/studio/setup?current-os=windows">
+                <button className="mt-2 button button--primary">
+                  Download
+                </button>
+              </a>
+            </div>
+
+            <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 backdrop-blur-sm">
+              <SiApple size={50} />
+              <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                MacOS 12.0+
+              </h5>
+              <a href="/docs/studio/setup?current-os=macos">
+                <button className="mt-2 button button--primary">
+                  Download
+                </button>
+              </a>
+            </div>
+
+            <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 backdrop-blur-sm">
+              <SiFlathub size={50} />
+              <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                Flathub
+              </h5>
+              <a
+                href="https://flathub.org/apps/com.one_ware.OneWare"
+                target="_blank"
+              >
+                <button className="mt-2 button button--primary">
+                  Download
+                </button>
+              </a>
+            </div>
+
+            <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 backdrop-blur-sm">
+              <SiSnapcraft size={50} />
+              <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                Snapstore
+              </h5>
+              <a href="https://snapcraft.io/oneware" target="_blank">
+                <button className="mt-2 button button--primary">
+                  Download
+                </button>
+              </a>
+            </div>
+
+            <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 backdrop-blur-sm">
+              <SiLinux size={50} />
+              <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                Other Linux
+              </h5>
+              <a href="https://cdn.one-ware.com/onewarestudio/" target="_blank">
+                <button className="mt-2 button button--primary">
+                  Download
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function VendorSection() {
+  return (
+    <div className="text-center container m-auto mt-32 max-w-6xl overflow-x-hidden">
+      <h2 className="text-4xl md:text-5xl font-bold">Use any Hardware!</h2>
+
+      <h5 className="text-2xl mt-10">
+        Our goal is to provide first level support for{" "}
+        <span className="primary-text">any hardware from any vendor</span>,
+        using our advanced extension system.
+      </h5>
+
+      <div className="md:flex gap-5">
+        <div className="md:flex-col md:w-1/2 p-5" data-aos="fade-up">
+          <h3 className="text-3xl">FPGA</h3>
+          <HiOutlineCpuChip size={90} />
+          <p className="text-xl">
+            We support a wide range of FPGA vendors, including Intel, Lattice
+            and more
+          </p>
+        </div>
+
+        <div className="md:flex-col md:w-1/2 p-5" data-aos="fade-up">
+          <h3 className="text-3xl">MCU</h3>
+          <BiMicrochip size={90} />
+          <p className="text-xl">
+            We support a wide range of MCU vendors, including ST, NXP, Microchip
+            and more
+          </p>
+        </div>
+      </div>
+
+      <img src="/img/studio/hardware.png" alt="Hardware" />
+    </div>
+  );
+}
+
+export default function Studio(): JSX.Element {
+  const slickRef = useRef<Slider>(null);
+
   const [init, setInit] = useState(false);
 
   useEffect(() => {
@@ -86,9 +246,13 @@ function HomepageHeader() {
     });
   }, []);
 
+  initWebsiteEffects();
+
   return (
-    <header id="hero" className={`w-full ${styles.heroBackground} h-96`}>
-      <div className="particles absolute w-full h-full">
+    <Layout title="Studio" description="OneWare Studio">
+      <div
+        className={`particles absolute w-full -z-10 ${styles.particleBackground}`}
+      >
         {init && (
           <Particles
             id="stars"
@@ -130,9 +294,9 @@ function HomepageHeader() {
                 },
                 links: {
                   color: "#ffffff",
-                  distance: 150,
-                  enable: true,
-                  opacity: 0,
+                  distance: 550,
+                  enable: false,
+                  opacity: 0.1,
                   width: 1,
                 },
                 move: {
@@ -144,8 +308,8 @@ function HomepageHeader() {
                   size: true,
                   random: false,
                   speed: {
-                    min: 0.2,
-                    max: 0.4,
+                    min: 0.1,
+                    max: 0.3,
                   },
                   straight: false,
                 },
@@ -153,10 +317,10 @@ function HomepageHeader() {
                   density: {
                     enable: true,
                   },
-                  value: 60,
+                  value: 80,
                 },
                 opacity: {
-                  value: 0.4,
+                  value: 0.2,
                 },
                 shape: {
                   type: "polygon",
@@ -171,234 +335,83 @@ function HomepageHeader() {
         )}
       </div>
 
-      <div className="absolute flex flex-col items-center justify-center w-full h-full">
-        <div className="flex">
-          <div className="flex-col max-w-3xl m-5 mt-10">
-            <div className="text-center mt-10">
-              <h1 className="font-medium md:text-4xl">
-                The{" "}
-                <span className="primary-text font-bold">
-                  Next Generation IDE
-                </span>{" "}
-                for Electronics Development{" "}
-                <span className="primary-text font-bold">is here</span>.
-              </h1>
-
-              <div className="flex-col md:space-x-5 mb-10">
-                <Link
-                  className="mt-5 button button--primary button--lg hidden md:inline-block"
-                  href="/docs/studio/setup"
-                >
-                  Download
-                </Link>
-
-                <Link
-                  className="mt-5 button button--primary button--outline button--lg"
-                  href="/docs/studio/setup"
-                >
-                  Get Started
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className={styles.startArrow} />
-    </header>
-  );
-}
-
-function DownloadSection() {
-  return (
-    <div className="diagclipcontainer overflow-x-hidden">
-
-      <div style={{ background: "rgb(8, 47, 65)" }}  className="diagclip py-40">
-
-        <div
-          className="text-center container m-auto flex space-x-5 justify-center"
-        >
-          <div className="flex-col flex text-center">
-            <h1 className="text-4xl md:text-5xl">Easy Setup!</h1>
-
-            <p className="text-xl my-8">
-              OneWare Studio is available for <span className="primary-text">all major operating systems</span>, using all
-              the <span className="primary-text">modern</span> installation methods.
-            </p>
-
-            <div className="flex gap-5 flex-wrap">
-              <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50">
-                <SiWindows size={50} />
-                <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                  Windows 10+
-                </h5>
-                <a href="/docs/studio/setup?current-os=windows">
-                  <button className="mt-2 button button--primary">
-                    Download
-                  </button>
-                </a>
-              </div>
-
-              <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50">
-                <SiApple size={50} />
-                <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                  MacOS 12.0+
-                </h5>
-                <a href="/docs/studio/setup?current-os=macos">
-                  <button className="mt-2 button button--primary">
-                    Download
-                  </button>
-                </a>
-              </div>
-
-              <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50">
-                <SiFlathub size={50} />
-                <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                  Flathub
-                </h5>
-                <a href="https://flathub.org/apps/com.one_ware.OneWare" target="_blank">
-                  <button className="mt-2 button button--primary">
-                    Download
-                  </button>
-                </a>
-              </div>
-
-              <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50">
-                <SiSnapcraft size={50} />
-                <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                  Snapstore
-                </h5>
-                <a href="https://snapcraft.io/oneware" target="_blank">
-                  <button className="mt-2 button button--primary">
-                    Download
-                  </button>
-                </a>
-              </div>
-
-              <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50">
-                <SiLinux size={50} />
-                <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                  Other Linux
-                </h5>
-                <a href="https://cdn.one-ware.com/onewarestudio/" target="_blank">
-                  <button className="mt-2 button button--primary">
-                    Download
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  );
-}
-
-
-function VendorSection() {
-  return (
-    <div className="text-center container m-auto mt-32 max-w-6xl overflow-x-hidden">
-      <h2 className="text-4xl md:text-5xl font-bold">
-        Use any Hardware!
-      </h2>
-
-      <h5 className="text-2xl mt-10">Our goal is to provide first level support for <span className="primary-text">any hardware from any vendor</span>, using our advanced extension system.</h5>
-
-      <div className="md:flex gap-5" data-aos="fade-up">
-        <div className="md:flex-col md:w-1/2 p-5">
-          <h3 className="text-3xl">FPGA</h3>
-          <HiOutlineCpuChip size={90} />
-          <p className="text-xl">We support a wide range of FPGA vendors, including Intel, Lattice and more</p>
-        </div>
-
-        <div className="md:flex-col md:w-1/2 p-5">
-          <h3 className="text-3xl">MCU</h3>
-          <BiMicrochip size={90} />
-          <p className="text-xl">We support a wide range of MCU vendors, including ST, NXP, Microchip and more</p>
-        </div>
-      </div>
-
-      <img src="/img/studio/hardware.png" alt="Hardware" />
-    </div>
-  );
-}
-
-
-export default function Studio(): JSX.Element {
-  const slickRef = useRef<Slider>(null);
-
-  initWebsiteEffects();
-
-  return (
-    <Layout title="Studio" description="OneWare Studio IDE">
       <HomepageHeader />
-      <main className="my-32">
-        <div className="container" style={{ overflowX: "hidden" }}>
-          {sliders && sliders.length && (
-            <div className="pb-20">
-              <Slider
-                ref={slickRef}
-                dots={true}
-                arrows={false}
-                autoplaySpeed={20000}
-                infinite={true}
-                autoplay={true}
-                className={styles.slickSlider}
-                speed={500}
-                slidesToShow={1}
-                slidesToScroll={1}
-                beforeChange={(_c, n) => {
-                  var slideCount = sliders.length;
-                  for (var i = 0; i < slideCount; i++) {
-                    var slide = document.getElementById("slide" + i);
-                    if (slide) {
-                      if (i == n) slide.classList.add(styles.activeslide ?? "");
-                      else slide.classList.remove(styles.activeslide ?? "");
-                    }
-                  }
-                }}
-              >
-                {sliders.map(({ imageSrc, title, description }, idx) => (
-                  <div key={idx}>
-                    {imageSrc}
-                    <div
-                      className={classnames(
-                        "md:hidden mt-5",
-                        styles.slidecaption
-                      )}
-                    >
-                      <h3>{title}</h3>
-                      {description}
-                    </div>
-                  </div>
-                ))}
-              </Slider>
-              <div className="columns-4 my-10 hidden md:block">
-                {sliders.map(({ title, description }, idx) => (
-                  <div
-                    key={idx}
-                    onClick={() => slickRef.current?.slickGoTo(idx)}
-                    className={classnames(
-                      "block padding-vert--lg p-2 overflow-hidden",
-                      styles.slidebutton
-                    )}
-                    id={"slide" + idx}
+
+      <main className="pb-32">
+        <div className="dropshadowbottom">
+          <div className="default-background diagclipbottom pt-16">
+            <div className="container" style={{ overflowX: "hidden" }}>
+              {sliders && sliders.length && (
+                <div className="pb-20">
+                  <Slider
+                    ref={slickRef}
+                    dots={true}
+                    arrows={false}
+                    autoplaySpeed={20000}
+                    infinite={true}
+                    autoplay={true}
+                    className={styles.slickSlider}
+                    speed={500}
+                    slidesToShow={1}
+                    slidesToScroll={1}
+                    beforeChange={(_c, n) => {
+                      var slideCount = sliders.length;
+                      for (var i = 0; i < slideCount; i++) {
+                        var slide = document.getElementById("slide" + i);
+                        if (slide) {
+                          if (i == n)
+                            slide.classList.add(styles.activeslide ?? "");
+                          else slide.classList.remove(styles.activeslide ?? "");
+                        }
+                      }
+                    }}
                   >
-                    <h3>{title}</h3>
-                    <span>{description}</span>
+                    {sliders.map(({ imageSrc, title, description }, idx) => (
+                      <div key={idx}>
+                        {imageSrc}
+                        <div
+                          className={classnames(
+                            "md:hidden mt-5",
+                            styles.slidecaption
+                          )}
+                        >
+                          <h3>{title}</h3>
+                          {description}
+                        </div>
+                      </div>
+                    ))}
+                  </Slider>
+                  <div className="columns-4 my-10 hidden md:block">
+                    {sliders.map(({ title, description }, idx) => (
+                      <div
+                        key={idx}
+                        onClick={() => slickRef.current?.slickGoTo(idx)}
+                        className={classnames(
+                          "block padding-vert--lg p-2 overflow-hidden",
+                          styles.slidebutton
+                        )}
+                        id={"slide" + idx}
+                      >
+                        <h3>{title}</h3>
+                        <span>{description}</span>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
+                </div>
+              )}
             </div>
-          )}
+          </div>
         </div>
 
         <DownloadSection />
 
-        <VendorSection />
+        <div className="dropshadowtop">
+          <div className="default-background diagcliptop pt-32">
+            <VendorSection />
 
-        <ContactUs />
+            <ContactUs />
+          </div>
+        </div>
       </main>
     </Layout>
   );
