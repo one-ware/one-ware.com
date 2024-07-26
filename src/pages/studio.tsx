@@ -236,7 +236,7 @@ export default function Studio(): JSX.Element {
         {init && (
           <Particles
             id="stars"
-            className="h-full w-full absolute hidden md:block"
+            className="h-full w-full absolute"
             options={{
               fullScreen: {
                 enable: false,
@@ -320,7 +320,7 @@ export default function Studio(): JSX.Element {
       <main className="pb-32">
         <div className="dropshadowbottom">
           <div className="default-background diagclipbottom pt-16">
-            <div className="container" style={{ overflowX: "hidden" }}>
+            <div className="container overflow-x-hidden">
               {sliders && sliders.length && (
                 <div className="pb-20">
                   <Slider
@@ -367,7 +367,7 @@ export default function Studio(): JSX.Element {
                         key={idx}
                         onClick={() => slickRef.current?.slickGoTo(idx)}
                         className={classnames(
-                          "block padding-vert--lg p-2 overflow-hidden",
+                          "block padding-vert--lg p-2 overflow-x-hidden",
                           styles.slidebutton
                         )}
                         id={"slide" + idx}
