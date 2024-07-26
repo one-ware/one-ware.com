@@ -115,7 +115,7 @@ function HomepageHeader() {
 
 function DownloadSection() {
   return (
-    <div className="py-40 overflow-x-hidden">
+    <div className="py-24 md:py-40 overflow-x-hidden">
       <div className="text-center container m-auto flex space-x-5 justify-center">
         <div className="flex-col flex text-center">
           <h1 className="text-4xl md:text-5xl">Easy Setup!</h1>
@@ -199,34 +199,14 @@ function DownloadSection() {
 
 function VendorSection() {
   return (
-    <div className="text-center container m-auto mt-32 max-w-6xl overflow-x-hidden">
+    <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
       <h2 className="text-4xl md:text-5xl font-bold">Use any Hardware!</h2>
 
-      <h5 className="text-2xl mt-10">
+      <h5 className="text-2xl mt-10 max-w-2xl mx-auto">
         Our goal is to provide first level support for{" "}
         <span className="primary-text">any hardware from any vendor</span>,
         using our advanced extension system.
       </h5>
-
-      <div className="md:flex gap-5">
-        <div className="md:flex-col md:w-1/2 p-5" data-aos="fade-up">
-          <h3 className="text-3xl">FPGA</h3>
-          <HiOutlineCpuChip size={90} />
-          <p className="text-xl">
-            We support a wide range of FPGA vendors, including Intel, Lattice
-            and more
-          </p>
-        </div>
-
-        <div className="md:flex-col md:w-1/2 p-5" data-aos="fade-up">
-          <h3 className="text-3xl">MCU</h3>
-          <BiMicrochip size={90} />
-          <p className="text-xl">
-            We support a wide range of MCU vendors, including ST, NXP, Microchip
-            and more
-          </p>
-        </div>
-      </div>
 
       <img src="/img/studio/hardware.png" alt="Hardware" />
     </div>
@@ -256,7 +236,7 @@ export default function Studio(): JSX.Element {
         {init && (
           <Particles
             id="stars"
-            className="h-full w-full absolute"
+            className="h-full w-full absolute hidden md:block"
             options={{
               fullScreen: {
                 enable: false,
@@ -406,7 +386,7 @@ export default function Studio(): JSX.Element {
         <DownloadSection />
 
         <div className="dropshadowtop">
-          <div className="default-background diagcliptop pt-32">
+          <div className="default-background diagcliptop pt-32 md:pt-48">
             <VendorSection />
 
             <ContactUs />

@@ -116,34 +116,6 @@ body {
   background-color: #141517 !important;
 }
 
-.diagclip{
-  clip-path: polygon(0 0,100% 2vw,100% calc(100% - 2vw),0 100%);
-  position: relative;
-}
-
-.diagcliptop{
-  clip-path: polygon(0 0,100% 2vw, 100% 100%,0 100%);
-  position: relative;
-}
-
-.diagclipbottom{
-  clip-path: polygon(0 0,100% 0,100% calc(100% - 2vw),0 100%);
-  position: relative;
-  filter: drop-shadow(0px -10px 10px rgba(0, 0, 0, 0.5));
-}
-
-.default-background{
-  background: var(--ifm-background-color);
-}
-
-.dropshadowbottom{
-  filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.5));
-}
-
-.dropshadowtop{
-  filter: drop-shadow(0px -10px 5px rgba(0, 0, 0, 0.5));
-}
-
 /* .diagclip::before {
   content: '';
   position: absolute;
@@ -167,3 +139,33 @@ body {
   pointer-events: none;
   transform: rotate(-1.14576deg);
 } */
+
+.default-background{
+  background: var(--ifm-background-color);
+}
+
+.dropshadowbottom{
+  filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.5));
+}
+
+.dropshadowtop{
+  filter: drop-shadow(0px -10px 5px rgba(0, 0, 0, 0.5));
+}
+
+@media (min-width: 768px) { 
+  .diagclip{
+    clip-path: polygon(0 0,100% 2vw,100% calc(100% - 2vw),0 100%);
+    position: relative;
+  }
+  
+  .diagcliptop{
+    clip-path: polygon(0 0,100% 2vw, 100% 100%,0 100%);
+    position: relative;
+  }
+  
+  .diagclipbottom{
+    clip-path: polygon(0 0,100% 0,100% calc(100% - 2vw),0 100%);
+    position: relative;
+    filter: drop-shadow(0px -10px 10px rgba(0, 0, 0, 0.5));
+  }
+}
