@@ -144,14 +144,6 @@ body {
   background: var(--ifm-background-color);
 }
 
-.dropshadowbottom{
-  filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.5));
-}
-
-.dropshadowtop{
-  filter: drop-shadow(0px -10px 5px rgba(0, 0, 0, 0.5));
-}
-
 @media (min-width: 768px) { 
   .diagclip{
     clip-path: polygon(0 0,100% 2vw,100% calc(100% - 2vw),0 100%);
@@ -167,5 +159,13 @@ body {
     clip-path: polygon(0 0,100% 0,100% calc(100% - 2vw),0 100%);
     position: relative;
     filter: drop-shadow(0px -10px 10px rgba(0, 0, 0, 0.5));
+  }
+
+  .dropshadowbottom{
+    filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.5));
+  }
+  
+  .dropshadowtop{
+    filter: drop-shadow(0px -10px 5px rgba(0, 0, 0, 0.5));
   }
 }
