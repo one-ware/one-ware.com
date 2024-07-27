@@ -19,6 +19,11 @@ import { SiSnapcraft } from "react-icons/si";
 import { HiOutlineCpuChip } from "react-icons/hi2";
 import { BiMicrochip } from "react-icons/bi";
 
+type FancyParticlesProps =  {
+  id: string;
+  parallax: boolean;
+};
+
 const sliders = [
   {
     title: "Code Assistant",
@@ -204,12 +209,95 @@ function VendorSection() {
 
       <h5 className="text-2xl mt-10 max-w-2xl mx-auto">
         Our goal is to provide first level support for{" "}
-        <span className="primary-text">any hardware</span>,
-        using our advanced extension system.
+        <span className="primary-text">any hardware</span>, using our advanced
+        extension system.
       </h5>
 
       <img src="/img/studio/hardware.png" className="my-10" alt="Hardware" />
     </div>
+  );
+}
+
+function FancyParticles(props: FancyParticlesProps) {
+  return (
+    <Particles
+      className="w-full h-full hidden md:block"
+      id={props.id}
+      options={{
+        fullScreen: {
+          enable: false,
+        },
+        fpsLimit: 144,
+        interactivity: {
+          events: {
+            onClick: {
+              enable: false,
+              mode: "push",
+            },
+            onHover: {
+              enable: true,
+              mode: "none",
+              parallax: {
+                enable: props.parallax,
+                force: 60,
+                smooth: 10,
+              },
+            },
+          },
+          modes: {
+            push: {
+              quantity: 1,
+            },
+            bubble: {
+              size: 6,
+              distance: 10,
+            },
+          },
+        },
+        particles: {
+          color: {
+            value: "#ffffff",
+          },
+          links: {
+            color: "#ffffff",
+            distance: 550,
+            enable: false,
+            opacity: 0.1,
+            width: 1,
+          },
+          move: {
+            direction: "bottom",
+            enable: true,
+            outModes: {
+              default: "out",
+            },
+            size: true,
+            random: false,
+            speed: {
+              min: 0.1,
+              max: 0.3,
+            },
+            straight: false,
+          },
+          number: {
+            density: {
+              enable: true,
+            },
+            value: 80,
+          },
+          opacity: {
+            value: 0.2,
+          },
+          shape: {
+            type: "polygon",
+          },
+          size: {
+            value: { min: 1, max: 4 },
+          },
+        },
+        detectRetina: true,
+      }}
+    />
   );
 }
 
@@ -230,89 +318,8 @@ export default function Studio(): JSX.Element {
 
   return (
     <Layout title="Studio" description="OneWare Studio">
-      <div
-        className={`particles absolute w-full -z-10 ${styles.particleBackground}`}
-      >
-        {init && (
-          <Particles
-            id="stars"
-            className="h-full w-full absolute hidden md:block"
-            options={{
-              fullScreen: {
-                enable: false,
-              },
-              fpsLimit: 144,
-              interactivity: {
-                events: {
-                  onClick: {
-                    enable: false,
-                    mode: "push",
-                  },
-                  onHover: {
-                    enable: true,
-                    mode: "none",
-                    parallax: {
-                      enable: true,
-                      force: 60,
-                      smooth: 10,
-                    },
-                  },
-                },
-                modes: {
-                  push: {
-                    quantity: 1,
-                  },
-                  bubble: {
-                    size: 6,
-                    distance: 10,
-                  },
-                },
-              },
-              particles: {
-                color: {
-                  value: "#ffffff",
-                },
-                links: {
-                  color: "#ffffff",
-                  distance: 550,
-                  enable: false,
-                  opacity: 0.1,
-                  width: 1,
-                },
-                move: {
-                  direction: "bottom",
-                  enable: true,
-                  outModes: {
-                    default: "out",
-                  },
-                  size: true,
-                  random: false,
-                  speed: {
-                    min: 0.1,
-                    max: 0.3,
-                  },
-                  straight: false,
-                },
-                number: {
-                  density: {
-                    enable: true,
-                  },
-                  value: 80,
-                },
-                opacity: {
-                  value: 0.2,
-                },
-                shape: {
-                  type: "polygon",
-                },
-                size: {
-                  value: { min: 1, max: 4 },
-                },
-              },
-              detectRetina: true,
-            }}
-          />
-        )}
+      <div className={`absolute w-full -z-10 ${styles.particleBackground}`}>
+        <div className="h-96 absolute w-full">{init && <FancyParticles parallax={false} id="topParticles"/>}</div>
       </div>
 
       <HomepageHeader />
@@ -383,7 +390,12 @@ export default function Studio(): JSX.Element {
           </div>
         </div>
 
-        <DownloadSection />
+        <div className="relative">
+          <div className="absolute w-full -z-10" style={{top: -50, height: "50rem"}}>
+            {init && <FancyParticles parallax={true} id="downloadParticles"/>}
+          </div>
+          <DownloadSection />
+        </div>
 
         <div className="dropshadowtop">
           <div className="default-background diagcliptop pt-32 md:pt-48">
