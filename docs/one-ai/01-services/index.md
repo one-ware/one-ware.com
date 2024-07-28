@@ -12,7 +12,7 @@ Let us know if you are interested to be a beta tester for ONE AI and send us you
 ## AI integration with personal consultation
 
 ![AI Service Demo](/img/ai/quality_dev.png)
-Our personal AI integration and consultation is now available. We use our pre-release versions of ONE AI to get custom lowest latency and highest accuracy neural networks in every part of you production or product.
+Our personal AI integration and consultation is now available. We use our pre-release versions of ONE AI to get custom lowest latency and highest accuracy neural networks in every part of your production or product.
 At the moment we start our services with the focus on quality control, condition monitoring and predictive maintenance. But feel free to contact us about other applications, since ONE AI is beeing trained to accelerate AI development in each category.
 
 #### AI-based Quality Control for Industry-Application
@@ -48,6 +48,7 @@ Our AI to VHDL converter works best at the moment with the following FPGAs:
 - Altera® Cyclone V
 - Altera® Agilex 7
 - Altera® Agilex 5
+
 The universal AI models can also be integrated with other frameworks like the Intel® FPGA AI Suite in your hardware.
 Just contact us, if you want to know how to integrate our AI in your hardware at: [info@one-ware.com](mailto:info@oneware.com)
 
