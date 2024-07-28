@@ -109,7 +109,7 @@ function HomepageHeader() {
       </div>
 
       <div className="absolute flex flex-col items-center justify-center w-full h-full pointer-events-none">
-        <div className="flex flex-col items-center justify-center w-full md:w-6/12 ">
+        <div className="flex flex-col items-center justify-center w-full md:w-8/12 xl:w-6/12">
           <img
             className="drop-shadow-4xl"
             src="img/start/Logo_SVG-ONE-ware.svg"

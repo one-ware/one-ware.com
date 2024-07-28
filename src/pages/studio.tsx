@@ -319,7 +319,7 @@ export default function Studio(): JSX.Element {
   return (
     <Layout title="Studio" description="OneWare Studio">
       <div className={`absolute w-full -z-10 ${styles.particleBackground}`}>
-        <div className="h-96 absolute w-full">{init && <FancyParticles parallax={false} id="topParticles"/>}</div>
+        <div className="h-96 absolute w-full">{init && <FancyParticles parallax={true} id="topParticles"/>}</div>
       </div>
 
       <HomepageHeader />
