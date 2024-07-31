@@ -4,6 +4,13 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.19.2.0
+
+- Fix saving for custom device properties (Yosys/Quartus/...)
+- Improve VCD Scale
+- Improve Completion filtering
+- Change Releases to Github Releases
+
 ## 0.19.1.0
 
 - Fix Comboboxsetting binding error
