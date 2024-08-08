@@ -9,6 +9,7 @@ sidebar_label:  Changelog
 **This update changes the way FPGA Dev Boards are loaded. As of now (9th August), only Max1000 and IceBreaker are available as packages, the others will follow in the coming days!**
 
 - Add System that allows adding any FPGA Board by using JSON Files (with GUI!). **Documentation will follow**
+- You can now zoom and move around with rightclick (or WASD/Arrow keys) in the Connect and Compile window!
 - Add search combo box to some GUIs
 - Fix some package incompatibility issues for future versions.
 - Fix issue that caused the langauge server options not to be visible
