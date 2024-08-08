@@ -4,6 +4,16 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.20.0.0
+
+**This update changes the way FPGA Dev Boards are loaded. As of now (9th August), only Max1000 and IceBreaker are available as packages, the others will follow in the coming days!**
+
+- Add System that allows adding any FPGA Board by using JSON Files (with GUI!) **Documentation will follow**
+- Add search combo box to some GUIs
+- Fix some package incompatibility issues for future versions.
+- Fix issue that caused the langauge server options not to be visible
+- Fix SearchBox reset button
+
 ## 0.19.2.0
 
 - Fix saving for custom device properties (Yosys/Quartus/...)
