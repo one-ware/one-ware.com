@@ -4,6 +4,11 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.20.1.0
+
+- Add more elements for FPGA GUI Creation
+- Fix FPGA GUI for fractional scaling
+  
 ## 0.20.0.0
 
 **This update changes the way FPGA Dev Boards are loaded. As of now (9th August), only Max1000 and IceBreaker are available as packages, the others will follow in the coming days!**
