@@ -2,6 +2,10 @@
 title: Add Hardware Integration
 ---
 
+:::warning
+This doc is incomplete and WIP!
+:::
+
 OneWare Studio features a system that allows you to add any FPGA Dev Board with json files.
 This is useful for the GUI, and you will still need to make sure that your Toolchain supports your hardware.
 
