@@ -116,8 +116,8 @@ Pins are a simple array of json objects that look like this:
 
 ```json
 {
-    "description": "CLK",
-    "name": "H6"
+  "description": "CLK",
+  "name": "H6"
 }
 ```
 
@@ -170,6 +170,7 @@ This is how you would define the PMOD Interface for the MAX1000:
       ]
     },
     ...
+]
 ```
 
 The `pin` value must point to a pin that is already defined in [Pins](#pins), while the `name` value provides the respective name that extensions can use to know where the real pin is located.
@@ -185,6 +186,11 @@ Adding a GUI is similar for both FPGA Boards and Extensions.
 Start by adding a `gui.json` file to your hardware folder (same location as `fpga.json`)
 
 A `gui.json` file consists of `width`, `height` and an array of gui elements like this:
+
+:::important
+The width and height can be calculated by using the board size in mm and **multiplying it by 4**.
+A board that is 100x100mm would have a size of 400x400px. It is recommended to use a border of 40px in each direction, so you would set the width and height as 480x480.
+:::
 
 ```json
 {
@@ -204,48 +210,97 @@ A `gui.json` file consists of `width`, `height` and an array of gui elements lik
 }
 ```
 
-:::info
-The width and height can be calculated by using the board size in mm and multiplying it by 4.
-A board that is 100x100mm would have a size of 400x400px. It is recommended to use a border of 40px in each direction, so you would set the width and height as 480x480.
-:::
+
 
 Here is a list of valid GUI Elements that can be added, including their possible attributes:
+
+- The `textColor` will default to the IDEs default text color (white in darkmode / black in light mode). If you want to draw it ontop of rectangles, you should chose a color with good contrast.
+- The `fontSize` will default to 10.
 
 ### Rect
 
 Creates a Rectangle. This can be used as a background for the hardware.
 
-| Property    | Description                                | Required |
-| ----------- | ------------------------------------------ | -------- |
-| x           | X coordinate in px                         | ✅       |
-| y           | Y coordinate in px                         | ✅       |
-| rotation    | Angle to rotate in degree                  |          |
-| width       | Width in px                                | ✅       |
-| height      | Height in px                               | ✅       |
-| color       | Background color as hex color code         | ✅       |
-| cornerRadius| CornerRadius as string ("10 15 20 10")     |          |
-| boxShadow   | BoxShadow as string("0 0 5 5 #77000000")   |          |
-| text        | Text to draw in the middle                 |          |
-| textColor   | Text color as hex color code               |          |
-| fontSize    | Size for the text in pt                    |          |
+| Property     | Description                  | Type   | Example             | Required |
+| ------------ | ---------------------------- | ------ | ------------------- | -------- |
+| x            | X coordinate in px           | double | 100                 | ✅        |
+| y            | Y coordinate in px           | double | 100                 | ✅        |
+| rotation     | Angle to rotate in degree    | double | 90                  |          |
+| width        | Width in px                  | double | 100                 | ✅        |
+| height       | Height in px                 | double | 100                 | ✅        |
+| color        | Background color             | string | "#AA00BB"           | ✅        |
+| cornerRadius | CornerRadius                 | string | "10 15 20 10"       |          |
+| boxShadow    | shadow for the element       | string | "0 0 5 5 #77000000" |          |
+| text         | Text to draw in the center   | string | "Test"              |          |
+| textColor    | Text color as hex color code | string | "#FFFFFF"           |          |
+| fontSize     | Size for the text in pt      | int    | 10                  |          |
 
 ### Pin
 
-Creates an interactive Pin, that can be used to graphically select.
+Creates an interactive Button, that can be used to graphically select a pin. The default width/height is 10px
 
-| Property    | Description                                | Required |
-| ----------- | ------------------------------------------ | -------- |
-| x           | X coordinate in px                         | ✅       |
-| y           | Y coordinate in px                         | ✅       |
-| rotation    | Angle to rotate in degree                  |          |
-| width       | Width in px                                |          |
-| height      | Height in px                               |          |
-| color       | Background color as hex color code         |          |
-| bind        | Pin to connect as string ("A4")            |          |
-| label       | Text to draw next to the pin               |          |
-| flipLabel   | Show label on right side as boolean (true) |          |
-| textColor   | Label Text color as hex color code         |          |
-| fontSize    | Size for the label in pt                   |          |
+| Property  | Description                        | Type    | Example   | Required |
+| --------- | ---------------------------------- | ------- | --------- | -------- |
+| x         | X coordinate in px                 | double  | 100       | ✅        |
+| y         | Y coordinate in px                 | double  | 100       | ✅        |
+| rotation  | Angle to rotate in degree          | double  | 90        |          |
+| width     | Width in px                        | double  | 100       |          |
+| height    | Height in px                       | double  | 100       |          |
+| color     | Background color                   | string  | "#AA00BB" |          |
+| bind      | Pin to connect                     | string  | "A4"      |          |
+| label     | Text to draw next to the pin       | string  | "A4"      |          |
+| flipLabel | Show label on right side           | boolean | true      |          |
+| textColor | Label text color as hex color code | string  | "#FFFFFF" |          |
+| fontSize  | Size for the label in pt           | int     | 10        |          |
+
+### PinArray
+
+Creates an array of Pins, which makes it easier for multiple pins next to each other
+
+| Property   | Description                                | Type    | Example    | Required |
+| ---------- | ------------------------------------------ | ------- | ---------- | -------- |
+| x          | X coordinate in px                         | double  | 100        | ✅        |
+| y          | Y coordinate in px                         | double  | 100        | ✅        |
+| rotation   | Angle to rotate in degree                  | double  | 90         |          |
+| pinWidth   | Default width for pins                     | double  | 10         |          |
+| height     | Default height for pins                    | double  | 10         |          |
+| horizontal | If the pinArray is horizontal              | boolean | true       |          |
+| flipLabel  | Show label on right side                   | boolean | true       |          |
+| color      | Default background for all pins            | string  | "#AA00BB"  |          |
+| textColor  | Default label text color as hex color code | string  | "#FFFFFF"  |          |
+| pins       | Size for the label in pt                   | Pin[]   | View below | ✅        |
+
+#### Example for an horizontal pinArray:
+
+```json
+{
+  "type": "pinArray",
+  "x": 80,
+  "y": 168,
+  "horizontal": true,
+  "textColor": "white",
+  "pins": [
+    {
+      "bind": "39",
+      "label": "LED_R",
+      "color": "red"
+    },
+    {
+      "bind": "41",
+      "label": "LED_B",
+      "color": "blue"
+    },
+    {
+      "color": "GND",
+      "label": "GND"
+    },
+    {
+      "color": "3V3",
+      "label": "3V3"
+    }
+  ]
+}
+```
 
 ## Example Integrations
 
