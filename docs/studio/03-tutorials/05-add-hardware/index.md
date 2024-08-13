@@ -31,7 +31,7 @@ OneWareStudio
 ...
 ```
 
-`Local` is the package name that you can use to add your own Hardware, but its also **possible to create a new directory for your own Hardware Package**. This is useful if you want to sync your project with git. Just make sure that the paths inside your package match the same style as inside Local.
+`Local` is the package name that you can use to add your own Hardware, but its also **possible to create a new directory for your own Hardware Package**. This is useful if you want to sync your hardware integration with git. Just make sure that the paths inside your package match the same style as inside Local.
 
 - FPGA Boards are located inside `Packages/Hardware/<PACKAGENAME>/FPGA/<YOUR FPGA BOARD NAME>`.
 - Extension Boards are located inside `Packages/Hardware/<PACKAGENAME>/Extensions/<CONNECTOR>/<YOUR EXTENSION BOARD NAME>`
@@ -125,7 +125,7 @@ They simply set the pins that are available for your hardware, so you can connec
 
 ### Interfaces
 
-Interfaces can be used to graphically use extensions for your hardware.
+Interfaces can be used to graphically connect extensions for your hardware.
 
 This is how you would define the PMOD Interface for the MAX1000:
 
@@ -183,6 +183,69 @@ The `pin` value must point to a pin that is already defined in [Pins](#pins), wh
 Adding a GUI is similar for both FPGA Boards and Extensions.
 
 Start by adding a `gui.json` file to your hardware folder (same location as `fpga.json`)
+
+A `gui.json` file consists of `width`, `height` and an array of gui elements like this:
+
+```json
+{
+  "width": 480,
+  "height": 480,
+  "elements": [
+    {
+      "type": "rect",
+      "x": 40,
+      "y": 40,
+      "width": 400,
+      "height": 400,
+      "color": "#096845"
+    },
+    ...
+  ]
+}
+```
+
+:::info
+The width and height can be calculated by using the board size in mm and multiplying it by 4.
+A board that is 100x100mm would have a size of 400x400px. It is recommended to use a border of 40px in each direction, so you would set the width and height as 480x480.
+:::
+
+Here is a list of valid GUI Elements that can be added, including their possible attributes:
+
+### Rect
+
+Creates a Rectangle. This can be used as a background for the hardware.
+
+| Property    | Description                                | Required |
+| ----------- | ------------------------------------------ | -------- |
+| x           | X coordinate in px                         | ✅       |
+| y           | Y coordinate in px                         | ✅       |
+| rotation    | Angle to rotate in degree                  |          |
+| width       | Width in px                                | ✅       |
+| height      | Height in px                               | ✅       |
+| color       | Background color as hex color code         | ✅       |
+| cornerRadius| CornerRadius as string ("10 15 20 10")     |          |
+| boxShadow   | BoxShadow as string("0 0 5 5 #77000000")   |          |
+| text        | Text to draw in the middle                 |          |
+| textColor   | Text color as hex color code               |          |
+| fontSize    | Size for the text in pt                    |          |
+
+### Pin
+
+Creates an interactive Pin, that can be used to graphically select.
+
+| Property    | Description                                | Required |
+| ----------- | ------------------------------------------ | -------- |
+| x           | X coordinate in px                         | ✅       |
+| y           | Y coordinate in px                         | ✅       |
+| rotation    | Angle to rotate in degree                  |          |
+| width       | Width in px                                |          |
+| height      | Height in px                               |          |
+| color       | Background color as hex color code         |          |
+| bind        | Pin to connect as string ("A4")            |          |
+| label       | Text to draw next to the pin               |          |
+| flipLabel   | Show label on right side as boolean (true) |          |
+| textColor   | Label Text color as hex color code         |          |
+| fontSize    | Size for the label in pt                   |          |
 
 ## Example Integrations
 
