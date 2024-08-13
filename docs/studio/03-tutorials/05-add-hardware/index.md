@@ -196,6 +196,12 @@ The width and height can be calculated by using the board size in mm and **multi
 A board that is 100x100mm would have a size of 400x400px. It is recommended to use a border of 40px in each direction, so you would set the width and height as 480x480.
 :::
 
+:::tip
+The IDE will show a live preview of your gui.json file!
+Just open them next to each other, and view your changes on every save.
+![Live Reload](img/livereload.png)
+:::
+
 ```json
 {
   "width": 480,
