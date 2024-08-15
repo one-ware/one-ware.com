@@ -2,10 +2,6 @@
 title: Add Hardware Integration
 ---
 
-:::warning
-This doc is incomplete and WIP!
-:::
-
 OneWare Studio features a system that allows you to add any FPGA Dev Board with json files.
 This is useful for the GUI, and you will still need to make sure that your Toolchain supports your hardware.
 
@@ -233,17 +229,60 @@ Creates a Rectangle. This can be used as a background for the hardware.
 
 | Property     | Description                  | Type   | Example             | Required |
 | ------------ | ---------------------------- | ------ | ------------------- | -------- |
-| x            | X coordinate in px           | double | 100                 | ✅        |
-| y            | Y coordinate in px           | double | 100                 | ✅        |
+| x            | X coordinate in px           | double | 100                 | ✅       |
+| y            | Y coordinate in px           | double | 100                 | ✅       |
 | rotation     | Angle to rotate in degree    | double | 90                  |          |
-| width        | Width in px                  | double | 100                 | ✅        |
-| height       | Height in px                 | double | 100                 | ✅        |
-| color        | Background color             | string | "#AA00BB"           | ✅        |
+| width        | Width in px                  | double | 100                 | ✅       |
+| height       | Height in px                 | double | 100                 | ✅       |
+| color        | Background color             | string | "#AA00BB"           | ✅       |
 | cornerRadius | CornerRadius                 | string | "10 15 20 10"       |          |
 | boxShadow    | shadow for the element       | string | "0 0 5 5 #77000000" |          |
 | text         | Text to draw in the center   | string | "Test"              |          |
 | textColor    | Text color as hex color code | string | "#FFFFFF"           |          |
+| fontWeight   | Fontweight                   | string | "bold"              |          |
 | fontSize     | Size for the text in pt      | int    | 10                  |          |
+
+
+### Ellipse
+
+Creates an ellipse.
+
+| Property     | Description                  | Type   | Example             | Required |
+| ------------ | ---------------------------- | ------ | ------------------- | -------- |
+| x            | X coordinate in px           | double | 100                 | ✅       |
+| y            | Y coordinate in px           | double | 100                 | ✅       |
+| rotation     | Angle to rotate in degree    | double | 90                  |          |
+| width        | Width in px                  | double | 100                 | ✅       |
+| height       | Height in px                 | double | 100                 | ✅       |
+| color        | Background color             | string | "#AA00BB"           | ✅       |
+
+### Text
+
+Creates a text. It is recommended to use the `label` property from Pin for labeling pins, or the `text` property from Rect for writing inside rects.
+
+| Property     | Description                  | Type   | Example             | Required |
+| ------------ | ---------------------------- | ------ | ------------------- | -------- |
+| x            | X coordinate in px           | double | 100                 | ✅       |
+| y            | Y coordinate in px           | double | 100                 | ✅       |
+| rotation     | Angle to rotate in degree    | double | 90                  |          |
+| color        | Background color             | string | "#AA00BB"           | ✅       |
+| text         | Text to draw in the center   | string | "Test"              |          |
+| textColor    | Text color as hex color code | string | "#FFFFFF"           |          |
+| fontWeight   | Fontweight                   | string | "bold"              |          |
+| fontSize     | Size for the text in pt      | int    | 10                  |          |
+
+### Image
+
+Creates a text. It is recommended to use the `label` property from Pin for labeling pins, or the `text` property from Rect for writing inside rects.
+
+| Property     | Description                  | Type   | Example             | Required |
+| ------------ | ---------------------------- | ------ | ------------------- | -------- |
+| x            | X coordinate in px           | double | 100                 | ✅       |
+| y            | Y coordinate in px           | double | 100                 | ✅       |
+| rotation     | Angle to rotate in degree    | double | 90                  |          |
+| width        | Width in px                  | double | 100                 |          |
+| height       | Height in px                 | double | 100                 |          |
+| src          | Relative path to image       | string | /Assets/overlay.png | ✅       |
 
 ### Pin
 
@@ -251,8 +290,8 @@ Creates an interactive Button, that can be used to graphically select a pin. The
 
 | Property  | Description                        | Type    | Example   | Required |
 | --------- | ---------------------------------- | ------- | --------- | -------- |
-| x         | X coordinate in px                 | double  | 100       | ✅        |
-| y         | Y coordinate in px                 | double  | 100       | ✅        |
+| x         | X coordinate in px                 | double  | 100       | ✅       |
+| y         | Y coordinate in px                 | double  | 100       | ✅       |
 | rotation  | Angle to rotate in degree          | double  | 90        |          |
 | width     | Width in px                        | double  | 100       |          |
 | height    | Height in px                       | double  | 100       |          |
@@ -269,8 +308,8 @@ Creates an array of Pins, which makes it easier for multiple pins next to each o
 
 | Property   | Description                                | Type    | Example    | Required |
 | ---------- | ------------------------------------------ | ------- | ---------- | -------- |
-| x          | X coordinate in px                         | double  | 100        | ✅        |
-| y          | Y coordinate in px                         | double  | 100        | ✅        |
+| x          | X coordinate in px                         | double  | 100        | ✅       |
+| y          | Y coordinate in px                         | double  | 100        | ✅       |
 | rotation   | Angle to rotate in degree                  | double  | 90         |          |
 | pinWidth   | Default width for pins                     | double  | 10         |          |
 | height     | Default height for pins                    | double  | 10         |          |
@@ -278,7 +317,7 @@ Creates an array of Pins, which makes it easier for multiple pins next to each o
 | flipLabel  | Show label on right side                   | boolean | true       |          |
 | color      | Default background for all pins            | string  | "#AA00BB"  |          |
 | textColor  | Default label text color as hex color code | string  | "#FFFFFF"  |          |
-| pins       | Size for the label in pt                   | Pin[]   | View below | ✅        |
+| pins       | Size for the label in pt                   | Pin[]   | View below | ✅       |
 
 #### Example for an horizontal pinArray:
 
@@ -311,6 +350,51 @@ Creates an array of Pins, which makes it easier for multiple pins next to each o
   ]
 }
 ```
+
+### Gui
+
+Shows another gui.json file as an element.
+
+| Property   | Description                                | Type    | Example            | Required |
+| ---------- | ------------------------------------------ | ------- | ------------------ | -------- |
+| x          | X coordinate in px                         | double  | 100                | ✅       |
+| y          | Y coordinate in px                         | double  | 100                | ✅       |
+| rotation   | Angle to rotate in degree                  | double  | 90                 |          |
+| src        | Relative path to gui.json                  | string  | ../B1/gui.json.png | ✅       |
+
+### PMOD
+
+Adds a PMOD Connector.
+
+| Property       | Description                                | Type    | Example            | Required |
+| -------------- | ------------------------------------------ | ------- | ------------------ | -------- |
+| x              | X coordinate in px                         | double  | 100                | ✅       |
+| y              | Y coordinate in px                         | double  | 100                | ✅       |
+| rotation       | Angle to rotate in degree                  | double  | 90                 |          |
+| bind           | PMOD Interface to connect                  | string  | "PMOD_1"           |          |
+| connectorStyle | Adds an option to make connector smaller   | string  | "compact"          |          |
+
+### CruviLS
+
+Adds a CruviLS Connector.
+
+| Property       | Description                                | Type    | Example            | Required |
+| -------------- | ------------------------------------------ | ------- | ------------------ | -------- |
+| x              | X coordinate in px                         | double  | 100                | ✅       |
+| y              | Y coordinate in px                         | double  | 100                | ✅       |
+| rotation       | Angle to rotate in degree                  | double  | 90                 |          |
+| bind           | CruviLS Interface to connect               | string  | "CRUVI_LS_1"       |          |
+
+### CruviHS
+
+Adds a CruviHS Connector.
+
+| Property       | Description                                | Type    | Example            | Required |
+| -------------- | ------------------------------------------ | ------- | ------------------ | -------- |
+| x              | X coordinate in px                         | double  | 100                | ✅       |
+| y              | Y coordinate in px                         | double  | 100                | ✅       |
+| rotation       | Angle to rotate in degree                  | double  | 90                 |          |
+| bind           | CruviHS Interface to connect               | string  | "CRUVI_HS_1"       |          |
 
 ## Example Integrations
 
