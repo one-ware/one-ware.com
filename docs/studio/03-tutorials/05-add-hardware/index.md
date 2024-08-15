@@ -319,6 +319,19 @@ Creates an array of Pins, which makes it easier for multiple pins next to each o
 | textColor  | Default label text color as hex color code | string  | "#FFFFFF"  |          |
 | pins       | Size for the label in pt                   | Pin[]   | View below | ✅       |
 
+### USB
+
+Creates an usb control, that allows connecting RX and TX easily
+
+| Property   | Description                                | Type    | Example    | Required |
+| ---------- | ------------------------------------------ | ------- | ---------- | -------- |
+| x          | X coordinate in px                         | double  | 100        | ✅       |
+| y          | Y coordinate in px                         | double  | 100        | ✅       |
+| rotation   | Angle to rotate in degree                  | double  | 90         |          |
+| txBind     | Pin for TX                                 | string  | "B6"       |          |
+| rxBind     | Pin for RX                                 | double  | "B6"       |          |
+| flipLabel  | Show label on right side                   | boolean | true       |          |
+
 #### Example for an horizontal pinArray:
 
 ```json
