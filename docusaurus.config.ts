@@ -143,24 +143,24 @@ const config: Config = {
             }
           ],
         },
-        {
-          type: "dropdown",
-          position: "left",
-          label: "PLC-ONE",
-          to: "/plc-one",
-          activeBaseRegex: '(^.*/plc-one$)|(^.*/docs/plc-one/.*$)',
-          items: [
-            {
-              to: "/plc-one",
-              label: "Features",
-            },
-            {
-              type: "doc",
-              docId: "plc-one/overview",
-              label: "Overview",
-            },
-          ],
-        },
+        // {
+        //   type: "dropdown",
+        //   position: "left",
+        //   label: "PLC-ONE",
+        //   to: "/plc-one",
+        //   activeBaseRegex: '(^.*/plc-one$)|(^.*/docs/plc-one/.*$)',
+        //   items: [
+        //     {
+        //       to: "/plc-one",
+        //       label: "Features",
+        //     },
+        //     {
+        //       type: "doc",
+        //       docId: "plc-one/overview",
+        //       label: "Overview",
+        //     },
+        //   ],
+        // },
         {
           to: "/blog",
           label: "Blog",

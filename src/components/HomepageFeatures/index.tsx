@@ -119,7 +119,7 @@ export default function HomepageFeatures(): JSX.Element {
           </div>
         </div>
       </div>
-
+{/* 
       <div className="grid md:grid-cols-2 mt-10 md:mt-10">
         <div className="p-5 md:order-2" data-aos="fade-left">
           <img src="/img/start/PLC_Schrank.png" />
@@ -155,7 +155,7 @@ export default function HomepageFeatures(): JSX.Element {
             </Link>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }
