@@ -59,8 +59,36 @@ export default function HomepageFeatures(): JSX.Element {
     <section className={`${styles.features} container my-10 md:my-5`}>
 
       <div className="grid md:grid-cols-2 my-20 md:my-10">
+        <div className="p-5" data-aos="fade-right">
+          <img src="/img/studio/slides/extensions.png" />
+        </div>
+
+        <div
+          className="md:p-5 flex-col flex gap-1 justify-center relative"
+          data-aos="fade-left"
+        >
+          <span className="text-3xl text-center md:text-left">
+            See how to speed up the development of your 
+            electronics with our Open-Source
+            <p className="flex flex-row text-center justify-center md:justify-normal">
+            <span className="font-bold primary-text">Next-Generation IDE</span>
+            </p>
+          </span>
+
+          <div>
+            <Link
+              className="button button--primary button--outline button--lg w-full md:w-fit"
+              href="/studio"
+            >
+              OneWare Studio
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid md:grid-cols-2 my-20 md:my-10">
         <div className="p-5 md:order-2" data-aos="fade-left">
-          <img src="/img/start/ai_demo.png" />
+          <img src="/img/studio/slides/ai.png" />
         </div>
 
         <div
@@ -68,8 +96,8 @@ export default function HomepageFeatures(): JSX.Element {
           data-aos="fade-right"
         >
           <span className="text-3xl text-center md:text-left">
-            See how your{" "}
-            <span className="font-bold primary-text">Product</span> can think for itself
+            See how easy your
+            electronics can profit from AI and <span className="font-bold primary-text">think for itself</span>
             <p className="flex flex-row text-center justify-center md:justify-normal">
               with{" "}
               <img
@@ -91,34 +119,7 @@ export default function HomepageFeatures(): JSX.Element {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 my-20 md:my-10">
-        <div className="p-5" data-aos="fade-right">
-          <img src="/img/start/Elec_Studio.png" />
-        </div>
-
-        <div
-          className="md:p-5 flex-col flex gap-1 justify-center relative"
-          data-aos="fade-left"
-        >
-          <span className="text-3xl text-center md:text-left">
-            See how to bring <span className="font-bold primary-text">AI</span>{" "}
-            in every <span className="font-bold primary-text">Product</span> and
-            speed up the development process
-            <p className="flex flex-row text-center justify-center md:justify-normal">
-              with OneWare Studio
-            </p>
-          </span>
-
-          <div>
-            <Link
-              className="button button--primary button--outline button--lg w-full md:w-fit"
-              href="/studio"
-            >
-              OneWare Studio
-            </Link>
-          </div>
-        </div>
-      </div>
+      
 {/* 
       <div className="grid md:grid-cols-2 mt-10 md:mt-10">
         <div className="p-5 md:order-2" data-aos="fade-left">
