@@ -77,6 +77,51 @@ const sliders = [
   },
 ];
 
+const ai_sliders = [
+  {
+    title: "Universal Assistant",
+    imageSrc: <img alt="Extensible" src="/img/studio/slides/ai.png" />,
+    description: (
+      <>
+        ONE AI lets you build efficient AIs to process <span className="primary-text">Images, Audio and Sensor Data</span>. 
+        Our assistant has the know how of all current AI research and you just have to answer a few questions to create your own individual AI.
+        Then <span className="primary-text">ONE WARE Studio</span> helps to integrate the AI in your product.
+      </>
+    ),
+  },
+  {
+    title: "Quality Control",
+    imageSrc: <img alt="Extensible" src="/img/ai/quality.png" />,
+    description: (
+      <>
+        Create your custom quality control with our AI based <span className="primary-text">Image Processing</span> framework.
+        ONE AI makes sure that you always use the newest scientific findings to get the <span className="primary-text">Most Accurate and Efficient AI</span>.
+      </>
+    ),
+  },
+  {
+    title: "Predictive Maintenance",
+    imageSrc: <img alt="Extensible" src="/img/ai/Predictive_Maintenance.png" />,
+    description: (
+      <>
+        Fix problems before they occur. ONE AI takes sensor-data from your machine and can {" "}
+        <span className="primary-text">predict defects</span> before they occur, so your production can run without interruption.
+      </>
+    ),
+  },
+  {
+    title: "Robots and Drones",
+    imageSrc: <img alt="Code Assistant" src="/img/ai/Titel.png" />,
+    description: (
+      <>
+        Replace the last manual steps of your production with autonomous robots and 
+        drones. ONE AI lets your robot or drone <span className="primary-text">See, Hear and Think for Itself</span>.
+      </>
+    ),
+  },
+  
+];
+
 function HomepageHeader() {
   return (
     <header id="hero" className={`w-full ${styles.heroBackground} h-96`}>
@@ -107,7 +152,13 @@ function HomepageHeader() {
                 >
                   Get Started
                 </Link>
+
+                <span className="md:text-xl font-normal">
+              <br/><br/>(Yes, it is <span className="primary-text font-bold">Open Source</span>!)</span>
               </div>
+              
+
+              
             </div>
           </div>
         </div>
@@ -207,13 +258,42 @@ function VendorSection() {
     <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
       <h2 className="text-4xl md:text-5xl font-bold">Use any Hardware!</h2>
 
-      <h5 className="text-2xl mt-10 max-w-2xl mx-auto">
+      <h5 className="text-2xl md:text-3xl font-normal">
         Our goal is to provide first level support for{" "}
         <span className="primary-text">any hardware</span>, using our advanced
         extension system.
       </h5>
 
       <img src="/img/studio/hardware.png" className="my-10" alt="Hardware" />
+    </div>
+  );
+}
+
+function Extension() {
+  return (
+    <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
+      <h1 className="text-4xl md:text-6xl font-bold"><span className="primary-text font-bold"> Extensions</span> Are All You Need!</h1>
+
+      <h5 className="text-2xl md:text-3xl font-normal">
+        ONE WARE Studio extensions let you <span className="primary-text">customize your experience</span> to meet all your development needs. 
+        Add custom hardware as <span className="primary-text">digital twin</span>, make <span className="primary-text">AI</span> integration easier or add support for your favorite <span className="primary-text">simulation</span> tool.
+      </h5>
+
+      <img src="/img/start/Elec_Studio.png" className="my-10" alt="Hardware" />
+
+    </div>
+  );
+}
+
+function AI() {
+  return (
+    <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
+      <h2 className="text-4xl md:text-5xl font-bold">Develop and Integrate AI <span className="primary-text font-bold"> Without Experts</span></h2>
+
+      <h5 className="text-2xl md:text-3xl font-normal">
+        The ONE WARE Studio Extension ONE AI creates <span className="primary-text">industry leading</span> neural networks tailored to your needs.
+      </h5>
+
     </div>
   );
 }
@@ -303,6 +383,8 @@ function FancyParticles(props: FancyParticlesProps) {
 
 export default function Studio(): JSX.Element {
   const slickRef = useRef<Slider>(null);
+
+  const slickRef2 = useRef<Slider>(null);
 
   const [init, setInit] = useState(false);
 
@@ -399,7 +481,71 @@ export default function Studio(): JSX.Element {
 
         <div className="dropshadowtop">
           <div className="default-background diagcliptop pt-32 md:pt-48">
-            <VendorSection />
+            <Extension />
+
+            <AI />
+
+            <div style={{ overflowX: "hidden" }}>
+          {ai_sliders && ai_sliders.length && (
+            <div className="pb-20">
+              <Slider
+                ref={slickRef2}
+                dots={true}
+                arrows={false}
+                autoplaySpeed={20000}
+                infinite={true}
+                autoplay={true}
+                className={styles.slickSlider}
+                speed={500}
+                slidesToShow={1}
+                slidesToScroll={1}
+                beforeChange={(_c, n) => {
+                  var slideCount = ai_sliders.length;
+                  for (var i = 0; i < slideCount; i++) {
+                    var slide = document.getElementById("slide" + i);
+                    if (slide) {
+                      if (i == n) slide.classList.add(styles.activeslide ?? "");
+                      else slide.classList.remove(styles.activeslide ?? "");
+                    }
+                  }
+                }}
+              >
+                {ai_sliders.map(({ imageSrc, title, description }, idx2) => (
+                  <div key={idx2}>
+                    {imageSrc}
+                    <div
+                      className={classnames(
+                        "md:hidden mt-5",
+                        styles.slidecaption
+                      )}
+                    >
+                      <h3>{title}</h3>
+                      {description}
+                    </div>
+                  </div>
+                ))}
+              </Slider>
+              <div className="columns-4 my-10 hidden md:block">
+                {ai_sliders.map(({ title, description }, idx2) => (
+                  <div
+                    key={idx2}
+                    onClick={() => slickRef2.current?.slickGoTo(idx2)}
+                    className={classnames(
+                      "block padding-vert--lg p-2 overflow-hidden",
+                      styles.slidebutton
+                    )}
+                    id={"slide" + idx2}
+                  >
+                    <h3>{title}</h3>
+                    <span>{description}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+        <VendorSection />
 
             <ContactUs />
           </div>

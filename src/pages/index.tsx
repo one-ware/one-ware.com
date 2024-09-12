@@ -138,10 +138,6 @@ export default function Home(): JSX.Element {
     >
       <HomepageHeader />
       <main className="container overflow-x-hidden">
-        <div className="my-20 flex flex-col justify-center align-middle" data-aos="fade-up">
-          <h1 className="text-5xl text-center font-medium">Rethinking Embedded Systems Development</h1>
-          <img src="/img/studio/Elec_Studio.png" className="mx-auto mt-10" width={900}/>
-        </div>
         <HomepageFeatures />
       </main>
     </Layout>

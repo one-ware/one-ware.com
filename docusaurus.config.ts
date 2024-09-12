@@ -110,13 +110,13 @@ const config: Config = {
         {
           type: "dropdown",
           position: "left",
-          label: "ONE AI",
+          label: "Industry",
           to: "/one-ai",
           activeBaseRegex: '(^.*/one-ai$)|(^.*/docs/one-ai/.*$)',
           items: [
             {
               to: "/one-ai",
-              label: "Features",
+              label: "Overview",
             },
             {
               type: "doc",
@@ -128,13 +128,13 @@ const config: Config = {
         {
           type: "dropdown",
           position: "left",
-          label: "Studio",
+          label: "Development",
           to: "/studio",
           activeBaseRegex: '(^.*/studio$)|(^.*/docs/studio/.*$)',
           items: [
             {
               to: "/studio",
-              label: "Features",
+              label: "Studio",
             },
             {
               type: "doc",
