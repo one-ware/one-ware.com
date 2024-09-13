@@ -3,7 +3,7 @@ import styles from "./one-ai.module.css";
 import initWebsiteEffects from "../components/startEffects";
 import ContactUs from "../components/ContactUs";
 import Slider from "react-slick";
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "aos/dist/aos.css";
 import classnames from "classnames";
 import Link from "@docusaurus/Link";
@@ -55,78 +55,52 @@ const sliders = [
 
 export default function PLC(): JSX.Element {
   const slickRef = useRef<Slider>(null);
+  const [counter, setCounter] = useState(0); // Initialize counter state
 
   initWebsiteEffects();
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCounter((prevCounter) => prevCounter + 5612); // Increment counter by 560,000
+    }, 100); // Every 10 seconds
+
+    return () => clearInterval(interval); // Clean up the interval on unmount
+  }, []);
+
   return (
     <Layout title="ONE AI" description="Empowering Industry 5.0">
+      
       <main className="container mb-20">
         <div className="text-center mt-10">
-          <h1 className="font-medium mb-10">
-            Elevate Your Productivity with {" "}
-            <span className="primary-text font-bold">ONE AI</span>{" "}
-            and integrate AI <span className="primary-text font-bold">Without Experts</span>
+          <h1 className="font-medium mb-10 text-6xl" style={{ lineHeight: "1.3" }}>
+            On a <span className="font-bold">Mission</span> to {" "}
+            <span className="primary-text font-bold text-7xl">Save Trillions</span> {" "} Lost to <br/>
+             <span className="font-bold">Quality Issues</span> and {" "}
+            <span className="font-bold">Machine Failures</span>
           </h1>
+
+          <h2 className="font-light mb-10 text-5xl" style={{ lineHeight: "1.5" }}>
+          Money Lost Since Opening the Page: <br/>
+          <span className="font-bold text-6xl md:text-6xl">
+          ${counter.toLocaleString()}
+          </span>
+          </h2>
+
         </div>
         
-        <div style={{ overflowX: "hidden" }}>
-          {sliders && sliders.length && (
-            <div className="pb-20">
-              <Slider
-                ref={slickRef}
-                dots={true}
-                arrows={false}
-                autoplaySpeed={20000}
-                infinite={true}
-                autoplay={true}
-                className={styles.slickSlider}
-                speed={500}
-                slidesToShow={1}
-                slidesToScroll={1}
-                beforeChange={(_c, n) => {
-                  var slideCount = sliders.length;
-                  for (var i = 0; i < slideCount; i++) {
-                    var slide = document.getElementById("slide" + i);
-                    if (slide) {
-                      if (i == n) slide.classList.add(styles.activeslide ?? "");
-                      else slide.classList.remove(styles.activeslide ?? "");
-                    }
-                  }
-                }}
-              >
-                {sliders.map(({ imageSrc, title, description }, idx) => (
-                  <div key={idx}>
-                    {imageSrc}
-                    <div
-                      className={classnames(
-                        "md:hidden mt-5",
-                        styles.slidecaption
-                      )}
-                    >
-                      <h3>{title}</h3>
-                      {description}
-                    </div>
-                  </div>
-                ))}
-              </Slider>
-              <div className="columns-4 my-10 hidden md:block">
-                {sliders.map(({ title, description }, idx) => (
-                  <div
-                    key={idx}
-                    onClick={() => slickRef.current?.slickGoTo(idx)}
-                    className={classnames(
-                      "block padding-vert--lg p-2 overflow-hidden",
-                      styles.slidebutton
-                    )}
-                    id={"slide" + idx}
-                  >
-                    <h3>{title}</h3>
-                    <span>{description}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
+        <div className="flex justify-center items-center gap-4">
+          <div className="text-center">
+            <img src="/img/ai/quality_small.png" alt="Image 1" className="w-64" />
+            <p className="mt-4 text-xl">Description for Image 1</p>
+          </div>
+          <div className="text-center">
+            <img src="/img/ai/root.png" alt="Image 2" className="w-64" />
+            <p className="mt-4 text-xl">Description for Image 2</p>
+          </div>
+          <div className="text-center">
+            <img src="/img/ai/predict_small.png" alt="Image 3" className="w-64" />
+            <p className="mt-4 text-xl">Description for Image 3</p>
+          </div> 
         </div>
 
         <div className="text-center max-w-4xl m-auto mt-16">
