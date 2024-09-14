@@ -258,13 +258,13 @@ function VendorSection() {
     <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
       <h2 className="text-4xl md:text-5xl font-bold">Use any Hardware!</h2>
 
-      <h5 className="text-2xl md:text-3xl font-normal">
+      <h5 className="text-2xl md:text-3xl font-normal" data-aos="slide-up">
         Our goal is to provide first level support for{" "}
         <span className="primary-text">any hardware</span>, using our advanced
         extension system.
       </h5>
 
-      <img src="/img/studio/hardware.png" className="my-10" alt="Hardware" />
+      <img src="/img/studio/hardware.png" className="my-10" data-aos="zoom-in" alt="Hardware" />
     </div>
   );
 }
@@ -274,12 +274,12 @@ function Extension() {
     <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
       <h1 className="text-4xl md:text-6xl font-bold"><span className="primary-text font-bold"> Extensions</span> Are All You Need!</h1>
 
-      <h5 className="text-2xl md:text-3xl font-normal">
+      <h5 className="text-2xl md:text-3xl font-normal" data-aos="slide-up">
         ONE WARE Studio extensions let you <span className="primary-text">customize your experience</span> to meet all your development needs. 
         Add custom hardware as <span className="primary-text">digital twin</span>, make <span className="primary-text">AI</span> integration easier or add support for your favorite <span className="primary-text">simulation</span> tool.
       </h5>
 
-      <img src="/img/start/Elec_Studio.png" className="my-10" alt="Hardware" />
+      <img src="/img/start/Elec_Studio.png" className="my-10" data-aos="zoom-in" alt="Hardware" />
 
     </div>
   );
@@ -287,8 +287,8 @@ function Extension() {
 
 function AI() {
   return (
-    <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
-      <h2 className="text-4xl md:text-5xl font-bold">Develop and Integrate AI <span className="primary-text font-bold"> Without Experts</span></h2>
+    <div className="text-center container m-auto max-w-6xl overflow-x-hidden" data-aos="slide-up">
+      <h2 className="text-4xl md:text-5xl font-bold" >Develop and Integrate AI <span className="primary-text font-bold"> Without Experts</span></h2>
 
       <h5 className="text-2xl md:text-3xl font-normal">
         The ONE WARE Studio Extension ONE AI creates <span className="primary-text">industry leading</span> neural networks tailored to your needs.
