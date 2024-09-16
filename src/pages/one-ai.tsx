@@ -126,8 +126,8 @@ export default function PLC(): JSX.Element {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCounter((prevCounter) => prevCounter + 5612); // Increment counter by 560,000
-    }, 100); // Every 10 seconds
+      setCounter((prevCounter) => prevCounter + 2306); // Increment counter by 560,000
+    }, 50);
 
     return () => clearInterval(interval); // Clean up the interval on unmount
   }, []);
@@ -174,11 +174,10 @@ export default function PLC(): JSX.Element {
           The Easiest Way to Save Millions per Year
           </h2>
           <img
-            data-aos="zoom-in"
             src={"/img/start/saved.png"}
             alt="Compare"
           />
-          <div className="text-xl md:text-2xl mt-6" data-aos="slide-up">
+          <div className="text-xl md:text-2xl mt-6">
           ONE AI, our automated AI developer, can save you millions of dollars annually by <span className="primary-text">detecting quality issues</span>, {" "}
           <span className="primary-text">identifying root causes</span>, and <span className="primary-text">predicting machine failures</span> before they happen. 
           The cost of implementing ONE AI is only a <span className="primary-text">small fraction</span> of the potential savings.
@@ -186,17 +185,17 @@ export default function PLC(): JSX.Element {
         </div>
 
         <div className="text-center max-w-5xl m-auto mt-16">
-          <h2 className="text-5xl font-bold" data-aos="slide-up">
+          <h2 className="text-5xl font-bold">
           Lowest Risk, Highest Profit
           </h2>
 
-          <div className="text-2xl md:text-3xl mt-6" data-aos="slide-up">
+          <div className="text-2xl md:text-3xl mt-6">
           At ONE WARE, you only <span className="primary-text">pay when you're satisfied</span> with the results, not just to see them.
           </div>
 
         </div>
 
-        <div className="text-center max-w-5xl m-auto mt-16" data-aos="zoom-in">
+        <div className="text-center max-w-5xl m-auto mt-16">
 
           <h2 className="text-4xl font-bold">
           Upfront Cost Comparison
@@ -214,7 +213,7 @@ export default function PLC(): JSX.Element {
 
         </div>
 
-        <div className="text-center max-w-5xl m-auto mt-16" data-aos="zoom-in">
+        <div className="text-center max-w-5xl m-auto mt-16">
 
           <h2 className="text-4xl font-bold">
           Accuracy and Speed Comparison for PCB Quality Control
