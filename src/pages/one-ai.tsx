@@ -154,15 +154,15 @@ export default function PLC(): JSX.Element {
             Your Partner For:
           </h2>
           <div className="flex flex-col md:flex-row justify-center items-center gap-4" data-aos="slide-up">
-            <div className="text-center" data-aos="slide-up">
+            <div className="text-center">
               <img src="/img/ai/quality_small.png" alt="Image 1" className="w-96" />
               <p className="mt-4 font-bold text-3xl">Quality Control</p>
             </div>
-            <div className="text-center" data-aos="slide-up">
+            <div className="text-center">
               <img src="/img/ai/root.png" alt="Image 2" className="w-96" />
               <p className="mt-4 font-bold text-3xl">Root Cause Analysis</p>
             </div>
-            <div className="text-center" data-aos="slide-up">
+            <div className="text-center">
               <img src="/img/ai/predict_small.png" alt="Image 3" className="w-96" />
               <p className="mt-4 font-bold text-3xl">Predictive Maintenance</p>
             </div>
