@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 import { CiLinkedin, CiMail } from "react-icons/ci";
 
@@ -19,9 +20,19 @@ export default function ContactUs(): JSX.Element {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    // Here you would typically send the data to a server
-    alert('Thank you for your message!');
-    setFormData({ name: '', email: '', message: '' });
+
+    axios({
+      method: "POST",
+      url: "https://contact.one-ware.com/send",
+      data: formData
+    }).then((response) => {
+      if (response.data.status === 'success') {
+        alert("Message Sent. We will respond to you shortly!");
+        setFormData({ name: '', email: '', message: '' });
+      } else if (response.data.status === 'fail') {
+        alert("Message failed to send.")
+      }
+    })
   };
 
   return (
@@ -42,7 +53,7 @@ export default function ContactUs(): JSX.Element {
 
       </div>
 
-      <div className="max-w-lg mx-auto mt-10 p-6 rounded-lg shadow-md text-left">
+      <div className="max-w-xl mx-auto mt-10 p-3 rounded-lg shadow-md text-left">
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="name" className="block text-sm font-bold mb-1">Name</label>
@@ -74,14 +85,14 @@ export default function ContactUs(): JSX.Element {
               className="w-full px-3 py-2 border rounded-lg focus:outline-none"
               id="message"
               name="message"
-              rows={5}
+              rows={6}
               value={formData.message}
               onChange={handleChange}
               required
             ></textarea>
           </div>
-          <button type="submit" className="text-white w-full font-bold py-2 px-4 button button--primary button--outline button--md">
-              Send
+          <button type="submit" className="text-black w-full font-bold py-3 px-4 button button--primary button--md">
+            Send
           </button>
         </form>
       </div>
