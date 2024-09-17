@@ -265,7 +265,7 @@ function VendorSection() {
         extension system.
       </h5>
 
-      <img src="/img/studio/hardware.png" data-aos="zoom-in" alt="Hardware" />
+      <img src="/img/studio/hardware.png" alt="Hardware" />
     </div>
   );
 }
@@ -273,7 +273,7 @@ function VendorSection() {
 function Extension() {
   return (
     <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
-      <h1 className="text-4xl md:text-5xl font-bold"><span className="primary-text font-bold"> Extensions</span> Are All You Need!</h1>
+      <h1 className="text-4xl md:text-5xl font-bold"><span className="primary-text font-bold"> Extensions</span> For All Your Needs!</h1>
 
       <div className="row my-20">
         <div className="col">
