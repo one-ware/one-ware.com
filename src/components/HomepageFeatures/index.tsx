@@ -58,9 +58,9 @@ export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={`${styles.features} container my-10 md:my-5`}>
 
-      <div className="grid md:grid-cols-2 my-20 md:my-10">
+<div className="grid md:grid-cols-2 my-20 md:my-10">
         <div className="p-5 md:order-2" data-aos="fade-left">
-          <img src="/img/start/ai_demo.png" />
+          <img src="/img/start/industry.jpg" />
         </div>
 
         <div
@@ -68,15 +68,9 @@ export default function HomepageFeatures(): JSX.Element {
           data-aos="fade-right"
         >
           <span className="text-3xl text-center md:text-left">
-            See how your{" "}
-            <span className="font-bold primary-text">Product</span> can think for itself
+          <span className="font-bold primary-text">Our Industry Solutions:</span> See how to increase profits and production quality 
             <p className="flex flex-row text-center justify-center md:justify-normal">
-              with{" "}
-              <img
-                height={37}
-                className="ml-2"
-                src="/img/start/ai_logo.png"
-              />
+            with Industrial AI
             </p>
           </span>
 
@@ -85,7 +79,7 @@ export default function HomepageFeatures(): JSX.Element {
               className="button button--primary button--outline button--lg w-full md:w-fit"
               href="/one-ai"
             >
-              Our AI Solutions
+              Our Industry Solutions
             </Link>
           </div>
         </div>
@@ -93,7 +87,7 @@ export default function HomepageFeatures(): JSX.Element {
 
       <div className="grid md:grid-cols-2 my-20 md:my-10">
         <div className="p-5" data-aos="fade-right">
-          <img src="/img/start/Elec_Studio.png" />
+          <img src="/img/start/Studio_Table.png" />
         </div>
 
         <div
@@ -101,11 +95,10 @@ export default function HomepageFeatures(): JSX.Element {
           data-aos="fade-left"
         >
           <span className="text-3xl text-center md:text-left">
-            See how to bring <span className="font-bold primary-text">AI</span>{" "}
-            in every <span className="font-bold primary-text">Product</span> and
-            speed up the development process
+          <span className="font-bold primary-text">Our Development Solutions:</span> See how to integrate AI in your 
+            embedded systems and speed up the development
             <p className="flex flex-row text-center justify-center md:justify-normal">
-              with OneWare Studio
+            with ONE WARE Studio
             </p>
           </span>
 
@@ -119,6 +112,10 @@ export default function HomepageFeatures(): JSX.Element {
           </div>
         </div>
       </div>
+
+      
+
+      
 {/* 
       <div className="grid md:grid-cols-2 mt-10 md:mt-10">
         <div className="p-5 md:order-2" data-aos="fade-left">

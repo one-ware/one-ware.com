@@ -6,14 +6,15 @@ sidebar_label:  Overview
 ## ONE AI Extension for ONE WARE Studio
 
 ![AI Demo](/img/studio/slides/ai.png)
-Our main product, the AI extension, is currently under development. This will enable every electronics developer to create, train and integrate custom and efficient AI into the desired control system and allow AI researchers to gain insights many times faster.
+Our main product, the AI extension, is currently under development. This will enable every developer to create, train and integrate custom and efficient AI into the desired control system and allow AI researchers to gain insights many times faster. We are also working on an automated AI consultant, that helps with finding the right hardware and software aswell.
 Let us know if you are interested to be a beta tester for ONE AI and send us your inquiry at [info@one-ware.com](mailto:info@oneware.com).
 
 ## AI integration with personal consultation
 
 ![AI Service Demo](/img/ai/quality_dev.png)
-Our personal AI integration and consultation is now available. We use our pre-release versions of ONE AI to get custom lowest latency and highest accuracy neural networks in every part of your production or product.
-At the moment we start our services with the focus on quality control, condition monitoring and predictive maintenance. But feel free to contact us about other applications, since ONE AI is beeing trained to accelerate AI development in each category.
+Our personal AI integration and consultation is now available. We use our pre-release versions of ONE AI to get custom lowest latency and highest accuracy neural networks in every part of your production or product. 
+Our Experts will help you to find the solution with the best ROI.
+At the moment we start our services with the focus on quality control, root cause analysis, condition monitoring and predictive maintenance. But feel free to contact us about other applications, since ONE AI is beeing trained to accelerate AI development in each category.
 
 #### AI-based Quality Control for Industry-Application
 
