@@ -106,9 +106,9 @@ function HomepageHeader({ counter }) {
 
             <h2 className="font-light mb-10 text-5xl" style={{ lineHeight: "1.5" }}>
               Money Lost Since Opening the Page:
-              <span className="font-bold md:text-6xl">
+              <p className="font-bold md:text-6xl">
                 ${counter.toLocaleString()}
-              </span>
+              </p>
             </h2>
           </div>
         </div>
