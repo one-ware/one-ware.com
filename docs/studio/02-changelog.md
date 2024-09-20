@@ -4,6 +4,15 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.20.3.0
+
+**There might be some issues on Windows after this update, caused by the installer. To resolve them, simply remove and re-install!**
+
+- Fix VCD not showing small changes
+- Fix VCD showing changes when value doesn't change
+- Update VHDL support
+- Fix some smaller issues
+  
 ## 0.20.1.0
 
 - Add more elements for FPGA GUI Creation
