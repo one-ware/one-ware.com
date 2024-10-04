@@ -4,6 +4,12 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.20.4.0
+
+- Fix GTKWave not working from oss-cad-suite on Windows
+- Fix one bug with indentation in VHDL
+- Add "event" type to VCD Viewer
+
 ## 0.20.3.0
 
 **There might be some issues on Windows after this update, caused by the installer. To resolve them, simply remove and re-install!**
