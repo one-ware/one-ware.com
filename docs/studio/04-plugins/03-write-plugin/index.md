@@ -41,6 +41,31 @@ There you can set the path to your OneWareStudio Executable.
 The Runtime arguments should be `--modules ./`, which means that you are pointing the module to be loaded to your working directory. For this to work you finally need to set the working directory to your plugin folder and adding (`/bin/Debug/net8.0`) so that the working directory is the folder where your plugin gets compiled to. 
 
 If it works you can press on Run and should see that your plugin is loaded.
+This also allows debugging your plugin directly in Rider.
+
+### Using VSCode
+
+> Coming soon!
+
+## Plugin entry point
+
+The entry point for your extension will be a module.cs, which derives from IModule.
+In this file you can register types for dependency injection or add your own settings, toolchains, simulators, UI-Elements and much more.
+
+```csharp
+public class TestExtensionModule : IModule
+{       
+    public void RegisterTypes(IContainerRegistry containerRegistry)
+    {
+        //Register types for dependency injection
+    }
+
+    public void OnInitialized(IContainerProvider containerProvider)
+    {
+        //Register settings, toolchains, Add UI Elements ...
+    }
+}
+```
 
 ## API Documentation
 
