@@ -251,7 +251,7 @@ const config: Config = {
     prism: {
       theme: prismThemes.vsLight,
       darkTheme: prismThemes.vsDark,
-      additionalLanguages: ['json'],
+      additionalLanguages: ['json', 'csharp'],
     },
   } satisfies Preset.ThemeConfig,
 };
