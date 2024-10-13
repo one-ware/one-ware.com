@@ -23,9 +23,14 @@ dotnet install -g OneWare.Templates
 
 ## Create a new Plugin
 
+The following command can create an extension from a template for you.
+You can replace OneWare.MyExtension with your Extension name. To make integration with github pipelines easier, you can add `-G YOUR_GITHUB_NAME` using your GitHub name.
+
 ```bash
-dotnet new --TOOD
+dotnet new oneware.extension -o OneWare.MyExtension
 ```
+
+
 
 ## Run and Debug the Plugin
 
