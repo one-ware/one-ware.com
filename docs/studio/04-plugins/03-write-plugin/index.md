@@ -80,5 +80,3 @@ If you still want to experiment with OneWareStudio Plugins, it is recommended to
 - [OneWare Quartus Extension](https://github.com/one-ware/OneWare.Quartus)
 - [OneWare GHDL Extension](https://github.com/one-ware/OneWare.GhdlExtension)
 - [OneWare NetlistSVG Extension](https://github.com/one-ware/OneWare.NetlistSVG)
-
---TODO CHECK LINKS
