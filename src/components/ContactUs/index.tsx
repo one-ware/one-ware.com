@@ -53,7 +53,7 @@ export default function ContactUs(): JSX.Element {
 
       </div>
 
-      <div className="max-w-xl mx-auto mt-10 p-3 rounded-lg shadow-md text-left">
+      <div className="max-w-xl mx-auto mt-10 p-3 rounded-lg text-left">
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="name" className="block text-sm font-bold mb-1">Name</label>

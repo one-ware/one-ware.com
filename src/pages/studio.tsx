@@ -259,7 +259,7 @@ function VendorSection() {
     <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
       <h2 className="text-4xl md:text-5xl font-bold mb-10">Use any Hardware!</h2>
 
-      <h5 className="text-2xl md:text-3xl font-normal" data-aos="slide-up">
+      <h5 className="text-2xl md:text-3xl font-normal">
         Our goal is to provide first level support for{" "}
         <span className="primary-text">any hardware</span>, using our advanced
         extension system.
