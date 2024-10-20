@@ -72,12 +72,14 @@ public class TestExtensionModule : IModule
 }
 ```
 
-## The oneware-extension.json file
-
 ## Dependency management
 
-Your created plugin will contain a oneware-extension.json. There you can specify the compatible and required dependencies.
+Your created plugin will contain a oneware.json inside the main project folder.  There you can specify the compatible and required dependencies.
 For an empty plugin with basic dependencies it will look similar to this:
+
+:::info
+The need for a oneware.json file might be removed in future updates and replaced by automatic generation.
+:::
 
 ```json
 {
