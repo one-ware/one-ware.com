@@ -312,25 +312,13 @@ Creates an array of Pins, which makes it easier for multiple pins next to each o
 | y          | Y coordinate in px                         | double  | 100        | ✅       |
 | rotation   | Angle to rotate in degree                  | double  | 90         |          |
 | pinWidth   | Default width for pins                     | double  | 10         |          |
-| height     | Default height for pins                    | double  | 10         |          |
+| pinHeight  | Default height for pins                    | double  | 10         |          |
 | horizontal | If the pinArray is horizontal              | boolean | true       |          |
 | flipLabel  | Show label on right side                   | boolean | true       |          |
 | color      | Default background for all pins            | string  | "#AA00BB"  |          |
 | textColor  | Default label text color as hex color code | string  | "#FFFFFF"  |          |
-| pins       | Size for the label in pt                   | Pin[]   | View below | ✅       |
+| pins       | Included Pins                              | Pin[]   | View below | ✅       |
 
-### USB
-
-Creates an usb control, that allows connecting RX and TX easily
-
-| Property   | Description                                | Type    | Example    | Required |
-| ---------- | ------------------------------------------ | ------- | ---------- | -------- |
-| x          | X coordinate in px                         | double  | 100        | ✅       |
-| y          | Y coordinate in px                         | double  | 100        | ✅       |
-| rotation   | Angle to rotate in degree                  | double  | 90         |          |
-| txBind     | Pin for TX                                 | string  | "B6"       |          |
-| rxBind     | Pin for RX                                 | double  | "B6"       |          |
-| flipLabel  | Show label on right side                   | boolean | true       |          |
 
 #### Example for an horizontal pinArray:
 
@@ -363,6 +351,69 @@ Creates an usb control, that allows connecting RX and TX easily
   ]
 }
 ```
+
+### PinBlock
+
+Similar to PinArray, but requires a width. The Labels will be shown inside the Pins by default. 
+The Pins will wrap once the width is reached, making this control useful to display blocks of pins.
+
+| Property   | Description                                | Type    | Example    | Required |
+| ---------- | ------------------------------------------ | ------- | ---------- | -------- |
+| x          | X coordinate in px                         | double  | 100        | ✅       |
+| y          | Y coordinate in px                         | double  | 100        | ✅       |
+| width      | Max Width per row before wrapping          | double  | 100        | ✅       |
+| rotation   | Angle to rotate in degree                  | double  | 90         |          |
+| pinWidth   | Default width for pins                     | double  | 10         |          |
+| height     | Default height for pins                    | double  | 10         |          |
+| color      | Default background for all pins            | string  | "#AA00BB"  |          |
+| textColor  | Default label text color as hex color code | string  | "#FFFFFF"  |          |
+| pins       | Included Pins                              | Pin[]   | View below | ✅       |
+
+#### Example for a pinBlock:
+
+```json
+{
+  "type": "pinBlock",
+  "x": 80,
+  "y": 168,
+  "width": 80,
+  "pinWidth": 20,
+  "pinHeight": 20,
+  "pins": [
+    {
+      "bind": "39",
+      "label": "LED_R",
+      "color": "red"
+    },
+    {
+      "bind": "41",
+      "label": "LED_B",
+      "color": "blue"
+    },
+    {
+      "color": "GND",
+      "label": "GND"
+    },
+    {
+      "color": "3V3",
+      "label": "3V3"
+    }
+  ]
+}
+```
+
+### USB
+
+Creates an usb control, that allows connecting RX and TX easily
+
+| Property   | Description                                | Type    | Example    | Required |
+| ---------- | ------------------------------------------ | ------- | ---------- | -------- |
+| x          | X coordinate in px                         | double  | 100        | ✅       |
+| y          | Y coordinate in px                         | double  | 100        | ✅       |
+| rotation   | Angle to rotate in degree                  | double  | 90         |          |
+| txBind     | Pin for TX                                 | string  | "B6"       |          |
+| rxBind     | Pin for RX                                 | double  | "B6"       |          |
+| flipLabel  | Show label on right side                   | boolean | true       |          |
 
 ### Gui
 
