@@ -4,6 +4,13 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.20.5.0
+
+- Allow clicking on error messages (from GHDL) with control to jump to file
+- Allow adding custom sources for Packages
+- Add Library Explorer (needed for future updates)
+- Add new GUI Element for FPGAs (pinBlock)
+
 ## 0.20.4.0
 
 - Fix GTKWave not working from oss-cad-suite on Windows
