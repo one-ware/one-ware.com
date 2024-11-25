@@ -4,6 +4,12 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.21.0.0
+
+- Upgrade to NET9
+- New Plugin Compatibility System
+- Various fixes and improvements
+  
 ## 0.20.5.0
 
 - Allow clicking on error messages (from GHDL) with control to jump to file
