@@ -74,24 +74,6 @@ public class TestExtensionModule : IModule
 
 ## Dependency management
 
-Your created plugin will contain a oneware.json inside the main project folder.  There you can specify the compatible and required dependencies.
-For an empty plugin with basic dependencies it will look similar to this:
-
-:::info
-The need for a oneware.json file might be removed in future updates and replaced by automatic generation.
-:::
-
-```json
-{
-  "Dependencies": [
-    {
-      "Name": "OneWare.Essentials",
-      "MinVersion": "0.9.0.0",
-      "MaxVersion": "0.9.0.0"
-    }
-  ]
-}
-```
 
 Inside the .csproj file of your plugin you can see the added nuget packages:
 
@@ -102,8 +84,8 @@ Here you can see that OneWare Dependencies that are included in the IDE anyways 
  <ItemGroup>
     <PackageReference Include="OneWare.Essentials" Version="0.9.0" Private="false" ExcludeAssets="runtime;Native" />
     <PackageReference Include="OneWare.Settings" Version="0.30.3" Private="false" ExcludeAssets="runtime;Native" />
-    <PackageReference Include="OxyPlot.Avalonia" Version="2.1.0-Avalonia11" />
-    <PackageReference Include="SkiaImageView.Avalonia11" Version="1.5.0" />
+    <PackageReference Include="OxyPlot.Avalonia" Version="2.1.0-Avalonia11" Private="true" />
+    <PackageReference Include="SkiaImageView.Avalonia11" Version="1.5.0" Private="true" />
  </ItemGroup>
 ...
 ```
