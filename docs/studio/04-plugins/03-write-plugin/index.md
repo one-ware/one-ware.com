@@ -6,7 +6,7 @@ title: Write your own Plugin
 Writing a plugin for OneWareStudio can be considered experimental, as not all the API is 100% done yet. 
 Future updates can break your plugin. Documentation is incomplete and looking at the source code is nessesary. 
 A good understanding of C# and Avalonia is recommended.
-**If you just want to add your own hardware support, you can [do it without using C#](/docs/studio/tutorials/add-hardware)**
+**If you just want to add your own hardware support, you can [do it without using C#](/docs/studio/plugins/add-hardware)**
 :::
 
 ## Prerequisites
@@ -70,6 +70,24 @@ public class TestExtensionModule : IModule
         //Register settings, toolchains, Add UI Elements ...
     }
 }
+```
+
+## Dependency management
+
+
+Inside the .csproj file of your plugin you can see the added nuget packages:
+
+Here you can see that OneWare Dependencies that are included in the IDE anyways are market with `Private="false" ExcludeAssets="runtime;Native"`, so ensure that these dependencies are not copied to the plugin archive. They still need to be added to make compilation work.
+
+```xml
+...
+ <ItemGroup>
+    <PackageReference Include="OneWare.Essentials" Version="0.9.0" Private="false" ExcludeAssets="runtime;Native" />
+    <PackageReference Include="OneWare.Settings" Version="0.30.3" Private="false" ExcludeAssets="runtime;Native" />
+    <PackageReference Include="OxyPlot.Avalonia" Version="2.1.0-Avalonia11" Private="true" />
+    <PackageReference Include="SkiaImageView.Avalonia11" Version="1.5.0" Private="true" />
+ </ItemGroup>
+...
 ```
 
 ## API Documentation

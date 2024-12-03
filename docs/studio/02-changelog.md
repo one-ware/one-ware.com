@@ -4,6 +4,34 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.21.0.0
+
+- Upgrade to NET9
+- New Plugin Compatibility System
+- Various fixes and improvements
+  
+## 0.20.5.0
+
+- Allow clicking on error messages (from GHDL) with control to jump to file
+- Allow adding custom sources for Packages
+- Add Library Explorer (needed for future updates)
+- Add new GUI Element for FPGAs (pinBlock)
+
+## 0.20.4.0
+
+- Fix GTKWave not working from oss-cad-suite on Windows
+- Fix one bug with indentation in VHDL
+- Add "event" type to VCD Viewer
+
+## 0.20.3.0
+
+**There might be some issues on Windows after this update, caused by the installer. To resolve them, simply remove and re-install!**
+
+- Fix VCD not showing small changes
+- Fix VCD showing changes when value doesn't change
+- Update VHDL support
+- Fix some smaller issues
+  
 ## 0.20.1.0
 
 - Add more elements for FPGA GUI Creation

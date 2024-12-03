@@ -275,15 +275,16 @@ function Extension() {
     <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
       <h1 className="text-4xl md:text-5xl font-bold"><span className="primary-text font-bold"> Extensions</span> For All Your Needs!</h1>
 
-      <div className="row my-20">
-        <div className="col">
-          <p className="text-2xl font-normal md:text-left p-0" data-aos="slide-right">
+      <div className="row my-20 items-center">
+        <div className="col flex ">
+          <p className="text-2xl font-normal md:text-left p-0 m-0" data-aos="slide-right">
             ONE WARE Studio extensions let you <span className="primary-text">customize your experience</span> to meet all your development needs.
             Add custom hardware as <span className="primary-text">digital twin</span>, make <span className="primary-text">AI</span> integration easier or add support for your favorite <span className="primary-text">simulation</span> tool.
           </p>
+
         </div>
 
-        <div className="col">
+        <div className="col items-center">
           <img src="/img/start/Elec_Studio.png" data-aos="slide-left" alt="Hardware" />
         </div>
 
