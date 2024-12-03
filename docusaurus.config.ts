@@ -231,6 +231,11 @@ const config: Config = {
               to: "/docs/contact",
             },
             {
+              type: "doc",
+              label: "Impressum",
+              to: "/docs/contact/impressum",
+            },
+            {
               label: "About us",
               to: "about-us",
             },

@@ -58,10 +58,9 @@ We reserve the right to amend this privacy policy to always comply with the curr
 ## Questions to the Data Protection Officer
 If you have any questions about privacy, please email us or contact the person responsible for data protection in our organization:
 
-Leon Beier
-info@one-ware.com
-Annengasse 3
-49076 Osnabrück
-33034 Brakel
+Leon Beier<br></br>
+info@one-ware.com<br></br>
+Annengasse 3<br></br>
+33034 Brakel<br></br>
 
 The privacy policy was created with the help of <a href="https://www.activemind.de/datenschutz/generatoren/datenschutzerklaerung" target="_blank">activeMind AG</a>.

@@ -61,10 +61,9 @@ Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets de
 ## Fragen an den Datenschutzbeauftragten
 Wenn Sie Fragen zum Datenschutz haben, schreiben Sie uns bitte eine E-Mail oder wenden Sie sich direkt an die für den Datenschutz verantwortliche Person in unserer Organisation:
 
-Leon Beier
-info@one-ware.com
-Annengasse 3
-49076 Osnabrück
-33034 Brakel
+Leon Beier<br></br>
+info@one-ware.com<br></br>
+Annengasse 3<br></br>
+33034 Brakel<br></br>
 
 Die Datenschutzerklärung wurde mithilfe der <a href="https://www.activemind.de/datenschutz/generatoren/datenschutzerklaerung" target="_blank">activeMind AG</a> erstellt.
