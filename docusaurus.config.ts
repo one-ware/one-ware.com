@@ -256,7 +256,7 @@ const config: Config = {
     announcementBar: {
       id: 'closed_beta_one_ai', // Eine eindeutige ID
       content:
-        '🚀 <strong>Join the ONE AI Closed Beta!</strong> Experience the future of AI: Automatically generate tailored AI models with ONE AI. Sign up for the waitlist <a href="https://forms.office.com/e/J3HDid9fzw" target="_blank">here</a> to get exclusive free access to the closed beta.',
+        '🚀 <strong>Join the ONE AI Closed Beta!</strong> Automatically generate tailored AI models with ONE AI. <strong><a href="https://forms.office.com/e/J3HDid9fzw" target="_blank">Sign up for the waitlist here to get free access!</a></strong>',
       backgroundColor: '#f4f4f4', // Hintergrundfarbe des Banners
       textColor: '#333333', // Textfarbe des Banners
       isCloseable: true, // Ermöglicht das Schließen des Banners

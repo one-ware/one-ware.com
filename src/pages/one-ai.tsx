@@ -169,6 +169,30 @@ export default function PLC(): JSX.Element {
           </div>
         </div>
 
+        <div className="text-center max-w-6xl m-auto mt-8 mb-16">
+          <h2 className="text-4xl font-bold">
+            Join the ONE AI Closed Beta! 🚀
+          </h2>
+          <div className="text-xl md:text-2xl mt-6">
+            <strong>You Want to Build AI Models Yourself?</strong> {" "}
+            Experience the future of AI! Automatically generate tailored AI models with ONE AI. 
+            Sign up for the waitlist to get free exclusive access to the closed beta. <br/>
+            <div className="flex justify-center gap-4 mt-2">
+            <a href="https://forms.office.com/e/ptgVNPN9AL" target="_blank">
+              <button className="button button--secondary text-xl">
+                ONE AI Webinar
+              </button>
+              </a>
+              <a href="https://forms.office.com/e/J3HDid9fzw" target="_blank">
+              <button className="button button--primary text-xl">
+                ONE AI Waitlist
+              </button>
+              </a>
+              
+            </div>
+          </div>
+        </div>
+
         <div className="text-center max-w-5xl m-auto mt-20">
           <h2 className="text-5xl font-bold">
             The Easiest Way to Save Millions per Year
