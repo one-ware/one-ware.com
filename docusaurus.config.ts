@@ -253,6 +253,14 @@ const config: Config = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Beier, Durmaz, Mennen & Wiegand Gbr`,
     },
+    announcementBar: {
+      id: 'closed_beta_one_ai', // Eine eindeutige ID
+      content:
+        '🚀 <strong>Join the ONE AI Closed Beta!</strong> Experience the future of AI: Automatically generate tailored AI models with ONE AI. Sign up for the waitlist <a href="https://forms.office.com/e/J3HDid9fzw" target="_blank">here</a> to get exclusive free access to the closed beta.',
+      backgroundColor: '#f4f4f4', // Hintergrundfarbe des Banners
+      textColor: '#333333', // Textfarbe des Banners
+      isCloseable: true, // Ermöglicht das Schließen des Banners
+    },
     prism: {
       theme: prismThemes.vsLight,
       darkTheme: prismThemes.vsDark,
