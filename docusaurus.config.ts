@@ -251,7 +251,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Beier, Durmaz, Mennen & Wiegand Gbr`,
+      copyright: `Copyright © ${new Date().getFullYear()} ONE WARE GmbH i.G.`,
     },
     announcementBar: {
       id: 'closed_beta_one_ai', // Eine eindeutige ID
