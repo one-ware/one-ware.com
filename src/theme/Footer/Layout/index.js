@@ -11,7 +11,6 @@ export default function FooterLayout({style, links, logo, copyright}) {
         {links}
         {(logo || copyright) && (
           <div className="footer__bottom text--center">
-            <Partners/>
             {logo && <div className="margin-bottom--sm">{logo}</div>}
             {copyright}
           </div>
