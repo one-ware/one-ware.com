@@ -2,7 +2,7 @@
 title: Add Hardware Integration
 ---
 
-OneWare Studio is a comprehensive development environment designed for hardware and software integration. It features a system that allows you to add any FPGA Development Board using JSON configuration files.
+OneWare Studio is a comprehensive development environment designed for hardware and software integration. It features a system that allows you to add any FPGA development board using JSON configuration files.
 This is useful for configuring the graphical user interface (GUI) and ensuring that your toolchain supports your hardware.
 
 ![Graphical User Interface (GUI)](img/gui.png)
@@ -11,7 +11,7 @@ This is useful for configuring the graphical user interface (GUI) and ensuring t
 
 OneWare Studio organizes its files in a structured manner to facilitate easy management and integration of hardware components. Here is an overview of the directory structure:
 
-First, let's have a look at the OneWareStudio folder inside your home directory.
+First, let's have a look at the `OneWareStudio` folder inside your home directory.
 
 The directory structure within OneWare Studio looks similar to this:
 
@@ -35,8 +35,8 @@ OneWareStudio
 
 `Local` is the default package name where you can add your own hardware components. However, it's also possible to create a new directory for your own hardware package. This is useful if you want to sync your hardware integration with Git. Just ensure that the paths within your package follow the same structure as in `Local`.
 
-- FPGA Boards are located inside `Packages/Hardware/<PACKAGENAME>/FPGA/<YOUR FPGA BOARD NAME>`.
-- Extension Boards are located inside `Packages/Hardware/<PACKAGENAME>/Extensions/<CONNECTOR>/<YOUR EXTENSION BOARD NAME>`.
+- FPGA Boards are located inside `Packages/Hardware/<PACKAGENAME>/FPGA/<YOUR_FPGA_BOARD_NAME>`.
+- Extension Boards are located inside `Packages/Hardware/<PACKAGENAME>/Extensions/<CONNECTOR>/<YOUR_EXTENSION_BOARD_NAME>`.
 
 ## Adding an FPGA Board
 
@@ -113,7 +113,7 @@ This is an example that is valid for the [MAX1000](https://github.com/one-ware/O
 
 ### Pins
 
-Pins are a simple array of json objects that look like this:
+Pins are a simple array of JSON objects that look like this:
 
 ```json
 {
@@ -246,7 +246,7 @@ The width and height can be calculated by multiplying the board size in millimet
 :::
 
 :::tip
-The IDE will show a live preview of your gui.json file!
+The IDE will show a live preview of your `gui.json` file!
 Just open them next to each other, and view your changes on every save.
 ![Live Reload](img/livereload.png)
 :::
@@ -312,8 +312,8 @@ Creates an image.
 | x            | X coordinate in px           | double | 100                 | ✅       |
 | y            | Y coordinate in px           | double | 100                 | ✅       |
 | rotation     | Angle to rotate in degree    | double | 90                  |          |
-| width        | Width in px                  | double | 100                 |          |
-| height       | Height in px                 | double | 100                 |          |
+| width        | Width in px                  | double | 100                 | ✅       |
+| height       | Height in px                 | double | 100                 | ✅       |
 | src          | Relative path to image       | string | /Assets/overlay.png | ✅       |
 
 ### Pin
