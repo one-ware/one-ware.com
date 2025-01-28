@@ -1,5 +1,5 @@
 ---
-title: Write your own Plugin
+title: Write Your Own Plugin
 ---
 
 :::warning
@@ -11,11 +11,11 @@ A good understanding of C# and Avalonia is recommended.
 
 ## Prerequisites
 
-- NET 8.0 SDK
+- .NET 9.0 SDK
 - C# Code Editor (JetBrains Rider recommended)
 - Latest Version of OneWare Studio
 
-## Install the official templates (NET 8)
+## Install the official templates (.NET 9)
 
 ```bash
 dotnet install -g OneWare.Templates
@@ -43,7 +43,7 @@ You can use add Configuration and add a new configuration with the **.NET Execut
 ![Rider Run Configuration](img/rider-run-config.png)
 
 There you can set the path to your OneWareStudio Executable.
-The Runtime arguments should be `--modules ./`, which means that you are pointing the module to be loaded to your working directory. For this to work you finally need to set the working directory to your plugin folder and adding (`/bin/Debug/net8.0`) so that the working directory is the folder where your plugin gets compiled to. 
+The Runtime arguments should be `--modules ./`, which means that you are pointing the module to be loaded to your working directory. For this to work, you finally need to set the working directory to your plugin folder and adding (`/bin/Debug/net9.0`) so that the working directory is the folder where your plugin gets compiled to.
 
 If it works you can press on Run and should see that your plugin is loaded.
 This also allows debugging your plugin directly in Rider.
