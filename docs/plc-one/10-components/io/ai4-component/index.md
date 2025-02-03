@@ -2,18 +2,14 @@
 title: AI4 Component
 ---
 
-
-
-![Ai4 Component](img/Component_AI4.png)
+![AI4 Component](img/Component_AI4.png)
 
 ### Connectors:
--	SPI CRUVI Connector
+- SPI CRUVI Connector
 
-### Features: 
--	4 protected industrial analog voltage sensing inputs 
--	4 protected industrial analog current sensing inputs 
+### Features:
+- 4 protected industrial analog voltage sensing inputs.
+- 4 protected industrial analog current sensing inputs.
 
-
-### Applications: 
--	Analog sensors and other devices with analog interface
-
+### Applications:
+- Analog sensors and other devices with an analog interface.
