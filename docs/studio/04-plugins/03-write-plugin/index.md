@@ -18,7 +18,7 @@ A good understanding of C# and Avalonia is recommended.
 ## Install the official templates (.NET 9)
 
 ```bash
-dotnet install -g OneWare.Templates
+dotnet new install OneWare.Templates
 ```
 
 ## Create a new Plugin
