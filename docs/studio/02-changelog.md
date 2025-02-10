@@ -9,6 +9,8 @@ sidebar_label:  Changelog
 - Improve VCD Live View
 - Switch RX and TX in USB Component
 - Add VHDL Standard to Project Properties
+- Fix a pissuble VCD Viewer crash when zooming in
+- Make VCD Viewer Signals Selectable (needed for Extensions)
 - Small bug fixes
 
 ## 0.21.0.0
