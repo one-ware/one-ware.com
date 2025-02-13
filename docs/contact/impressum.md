@@ -22,5 +22,3 @@ Handelsregisternummer: HRB 17581<br></br>
 
 ### Deutsche Version:
 <a href="/docs/contact/privacy_de">Datenschutzerklärung</a>
-
-

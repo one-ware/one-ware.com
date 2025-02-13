@@ -6,7 +6,7 @@ sidebar_label:  Overview
 ## ONE AI Extension for ONE WARE Studio
 
 ![AI Demo](/img/studio/slides/ai.png)
-Our main product, the AI extension, is currently under development. This will enable every developer to create, train and integrate custom and efficient AI into the desired control system and allow AI researchers to gain insights many times faster. We are also working on an automated AI consultant, that helps with finding the right hardware and software aswell.
+Our main product, the AI extension, is currently under development. This will enable every developer to create, train, and integrate custom and efficient AI into the desired control system and allow AI researchers to gain insights many times faster. We are also working on an automated AI consultant that helps with finding the right hardware and software as well.
 Let us know if you are interested to be a beta tester for ONE AI and send us your inquiry at [info@one-ware.com](mailto:info@oneware.com).
 
 ## AI integration with personal consultation
@@ -14,7 +14,7 @@ Let us know if you are interested to be a beta tester for ONE AI and send us you
 ![AI Service Demo](/img/ai/quality_dev.png)
 Our personal AI integration and consultation is now available. We use our pre-release versions of ONE AI to get custom lowest latency and highest accuracy neural networks in every part of your production or product. 
 Our Experts will help you to find the solution with the best ROI.
-At the moment we start our services with the focus on quality control, root cause analysis, condition monitoring and predictive maintenance. But feel free to contact us about other applications, since ONE AI is beeing trained to accelerate AI development in each category.
+At the moment, we start our services with a focus on quality control, root cause analysis, condition monitoring, and predictive maintenance. But feel free to contact us about other applications, since ONE AI is being trained to accelerate AI development in each category.
 
 #### AI-based Quality Control for Industry-Application
 
@@ -26,7 +26,7 @@ Want to develop a product that stands out through artificial intelligence? We su
 
 #### AI-driven Condition Monitoring
 
-Our AI solutions for condition monitoring enable real-time tracking and analysis of your systems. Whether it's identifying weeds in agricultural fields or monitoring machinery health, our AI models can detect anomalies and provide actionable insights, helping you maintain optimal operational conditions and prevent unexpected downtime.
+Our AI solutions for condition monitoring enable real-time tracking and analysis of your systems. Whether it is identifying weeds in agricultural fields or monitoring machinery health, our AI models can detect anomalies and provide actionable insights, helping you maintain optimal operational conditions and prevent unexpected downtime.
 
 #### Predictive Maintenance with AI
 
@@ -34,7 +34,7 @@ Leveraging advanced AI algorithms, our predictive maintenance solutions forecast
 
 ### Tailored to Your Needs
 
-**Consultation and Planning**: Our experts analyze your specific needs from fast AI development, electronics design and AI integration to designing precise AI systems suitable for both existing facilities and new plans.
+**Consultation and Planning**: Our experts analyze your specific needs, including fast AI development, electronics design, and AI integration, as well as designing precise AI systems suitable for both existing facilities and new plans.
 
 **Fast and Efficient Development**: Using our superior methods and tools, we develop AI solutions that can be implemented swiftly and price efficient, offering you a significant competitive edge.
 
@@ -43,7 +43,7 @@ Leveraging advanced AI algorithms, our predictive maintenance solutions forecast
 ## Find the Right Hardware
 
 We can export our AI solutions for every hardware. Currently universal C++ or Python code for processors and VHDL code for FPGAs are supported.
-Our AI to VHDL converter works best at the moment with the following FPGAs:
+Our AI-to-VHDL converter works best at the moment with the following FPGAs:
 - Altera® MAX 10
 - Altera® Cyclone 10
 - Altera® Cyclone V
@@ -51,9 +51,8 @@ Our AI to VHDL converter works best at the moment with the following FPGAs:
 - Altera® Agilex 5
 
 The universal AI models can also be integrated with other frameworks like the Intel® FPGA AI Suite in your hardware.
-Just contact us, if you want to know how to integrate our AI in your hardware at: [info@one-ware.com](mailto:info@oneware.com)
+Just contact us if you want to know how to integrate our AI into your hardware at: [info@one-ware.com](mailto:info@oneware.com)
 
 ## Contact Us
 
 Want to start a project together? Send us your inquiry at [info@one-ware.com](mailto:info@oneware.com). We look forward to shaping the future of the industry with you!
-

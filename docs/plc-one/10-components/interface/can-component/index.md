@@ -2,15 +2,13 @@
 title: CAN Component
 ---
 
-
-
-![Camera Component](img/Component_CAN.png)
+![CAN Component](img/Component_CAN.png)
 
 ### Connectors:
--	Full-Speed/SPI CRUVI Connector
+- Full-Speed/SPI CRUVI Connector
 
-### Features: 
--	1 Mbps CAN-Bus controllers
+### Features:
+- 1 Mbps CAN-Bus controller.
 
-### Applications: 
--	CANopen communication
+### Applications:
+- CANopen communication.
