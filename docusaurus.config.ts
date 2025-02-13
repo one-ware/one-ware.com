@@ -251,7 +251,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} ONE WARE GmbH i.G.`,
+      copyright: `Copyright © ${new Date().getFullYear()} ONE WARE GmbH`,
     },
     announcementBar: {
       id: 'closed_beta_one_ai', // Eine eindeutige ID
