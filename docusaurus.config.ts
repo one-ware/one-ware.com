@@ -24,9 +24,8 @@ const config: Config = {
   stylesheets: [
     "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css",
     "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css",
-    "https://fonts.googleapis.com/css?family=Montserrat"
+    "https://fonts.googleapis.com/css?family=Montserrat",
   ],
-
 
   //headTags: [
   //  {
@@ -66,15 +65,14 @@ const config: Config = {
       {
         sitemap: {
           priority: 0.5,
-          ignorePatterns: ['/tags/**'],
-          filename: 'sitemap.xml',
+          ignorePatterns: ["/tags/**"],
+          filename: "sitemap.xml",
         },
         docs: {
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/one-ware/one-ware.com/edit/main/",
+          editUrl: "https://github.com/one-ware/one-ware.com/edit/main/",
         },
         blog: {
           blogSidebarTitle: 'All posts',
@@ -90,10 +88,10 @@ const config: Config = {
 
   themeConfig: {
     algolia: {
-      appId: 'GVARI8M72O',
-      apiKey: '7d1be6ae06ba5fb5e97018bc2daab94a',
-      indexName: 'one-ware',
-      searchPagePath: 'search',
+      appId: "GVARI8M72O",
+      apiKey: "7d1be6ae06ba5fb5e97018bc2daab94a",
+      indexName: "one-ware",
+      searchPagePath: "search",
       contextualSearch: false,
     },
     colorMode: {
@@ -114,7 +112,7 @@ const config: Config = {
           position: "left",
           label: "Industry",
           to: "/one-ai",
-          activeBaseRegex: '(^.*/one-ai$)|(^.*/docs/one-ai/.*$)',
+          activeBaseRegex: "(^.*/one-ai$)|(^.*/docs/one-ai/.*$)",
           items: [
             {
               to: "/one-ai",
@@ -124,7 +122,7 @@ const config: Config = {
               type: "doc",
               docId: "one-ai/services/index",
               label: "Services",
-            }
+            },
           ],
         },
         {
@@ -132,7 +130,7 @@ const config: Config = {
           position: "left",
           label: "Development",
           to: "/studio",
-          activeBaseRegex: '(^.*/studio$)|(^.*/docs/studio/.*$)',
+          activeBaseRegex: "(^.*/studio$)|(^.*/docs/studio/.*$)",
           items: [
             {
               to: "/studio",
@@ -142,7 +140,7 @@ const config: Config = {
               type: "doc",
               docId: "studio/setup",
               label: "Setup",
-            }
+            },
           ],
         },
         // {
@@ -174,11 +172,17 @@ const config: Config = {
           position: "right",
         },
         {
+          to: "/careers",
+          label: "Careers",
+          position: "right",
+        },
+        {
           type: "doc",
           docId: "contact/contact",
           label: "Contact",
           position: "right",
         },
+
         {
           href: "https://github.com/one-ware",
           position: "right",
@@ -233,6 +237,11 @@ const config: Config = {
               to: "/docs/contact",
             },
             {
+              to: "/careers",
+              label: "Careers",
+
+            },
+            {
               type: "doc",
               label: "Impressum",
               to: "/docs/contact/impressum",
@@ -256,17 +265,17 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} ONE WARE GmbH`,
     },
     announcementBar: {
-      id: 'closed_beta_one_ai', // Eine eindeutige ID
+      id: "closed_beta_one_ai", // Eine eindeutige ID
       content:
         '🚀 <strong>Join the ONE AI Closed Beta!</strong> Automatically generate tailored AI models with ONE AI. <strong><a href="https://forms.office.com/e/J3HDid9fzw" target="_blank">Sign up for the waitlist here to get free access!</a></strong>',
-      backgroundColor: '#f4f4f4', // Hintergrundfarbe des Banners
-      textColor: '#333333', // Textfarbe des Banners
+      backgroundColor: "#f4f4f4", // Hintergrundfarbe des Banners
+      textColor: "#333333", // Textfarbe des Banners
       isCloseable: true, // Ermöglicht das Schließen des Banners
     },
     prism: {
       theme: prismThemes.vsLight,
       darkTheme: prismThemes.vsDark,
-      additionalLanguages: ['json', 'csharp'],
+      additionalLanguages: ["json", "csharp"],
     },
   } satisfies Preset.ThemeConfig,
 };
