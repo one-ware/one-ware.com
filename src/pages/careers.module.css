@@ -1,0 +1,76 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+ nav {
+    transition: 0.8s;
+  }
+  
+   .heroBackground{
+    box-shadow: rgb(0 0 0 / 50%) 0px -10px 13px -7px inset; 
+    background-image: linear-gradient(0deg,#0b1216,#152f3a,#184b48);
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-top: calc(var(--ifm-navbar-height)*-1);
+  }
+  
+  .heroBanner {
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+
+  
+  .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+ 
+  
+  .drone{
+    animation-name: drone;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes float {
+      0% {
+          transform: translatey(0px);
+      }
+      50% {
+          transform: translatey(-5px);
+      }
+      100% {
+          transform: translatey(0px);
+      }
+  }
+  
+  @keyframes drone {
+      0% {
+          transform: translatey(0px);
+      transform: translatex(0px);
+      }
+      25% {
+          transform: translatey(-10px);
+      }
+    50% {
+      transform: translatex(10px);
+      }
+    75% {
+          transform: translatey(0px);
+      }
+      100% {
+      transform: translatex(0px);
+      }
+  }
+  
+  [data-scroll='0'] .startArrow{
+    opacity: 80%;
+  }
