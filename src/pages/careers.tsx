@@ -93,8 +93,8 @@ export default function CareersPage(): JSX.Element {
               Hiring
             </span>
             <h2 className="mt-6 text-3xl font-bold">
-              Let’s find you an{" "}
-              <span className="primary-text">open position</span>.
+              Join {" "}
+              <span className="primary-text">One Ware</span> today!
             </h2>
             <div className="flex justify-center my-6">
               <p className="text-xl text-white max-w-xl">

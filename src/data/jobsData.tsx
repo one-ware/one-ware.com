@@ -9,7 +9,7 @@ export const JOBS_DATA: JobCategory[] = [
         title: ".ASP.NET / Blazor Backend Developer",
         description: "Help us build and maintain the OneWare Cloud",
         more_details:
-          "We are looking for a .NET Developer to help us build a Server Backend",
+          "We are looking for a .NET Developer to help us build a Server Backend for our OneAI Extension. The Server has a REST API to communicate with the OneAI Extension. The Server is written in C# and uses ASP.NET Core and Blazor for the Web UI. More details will be provided during the interview.",
         type: "Full Time",
         location: "Osnabrück - Remote",
       },
@@ -18,7 +18,7 @@ export const JOBS_DATA: JobCategory[] = [
         title: ".NET Desktop Developer (Avalonia / WPF)",
         description: "Help us develop OneWare Studio!",
         more_details:
-          "We are looking for a .NET Developer with experience in Avalonia or WPF to help us develop OneWare Studio",
+          "We are looking for a .NET Developer with experience in Avalonia or WPF to help us develop OneWare Studio and its extensions. OneWare Studio is an open source IDE for Electronics Development",
         type: "Full Time",
         location: "Osnabrück - Remote",
       }
