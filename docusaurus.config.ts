@@ -77,7 +77,8 @@ const config: Config = {
             "https://github.com/one-ware/one-ware.com/edit/main/",
         },
         blog: {
-          showReadingTime: true,
+          blogSidebarTitle: 'All posts',
+          blogSidebarCount: 'ALL',
         },
         theme: {
           customCss: "./src/css/custom.css",
