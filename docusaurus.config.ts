@@ -79,6 +79,7 @@ const config: Config = {
         blog: {
           blogSidebarTitle: 'All posts',
           blogSidebarCount: 'ALL',
+          postsPerPage: 1
         },
         theme: {
           customCss: "./src/css/custom.css",
