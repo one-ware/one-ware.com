@@ -2,46 +2,26 @@ import { JobCategory } from "../types/jobTypes";
 
 export const JOBS_DATA: JobCategory[] = [
   {
-    category: "Engineering",
+    category: "Software Engineer",
     positions: [
       {
         id: "software-engineer",
-        title: "Software Engineer",
-        description: "Help us build the best UI toolkit for .NET developers",
+        title: ".ASP.NET / Blazor Backend Developer",
+        description: "Help us build and maintain the OneWare Cloud",
         more_details:
-          "We are looking for a Software Engineer to join our team and help us build the best UI toolkit for .NET developers. You will work on the development of our cross-platform UI components, and you will have the opportunity to contribute to the design and implementation of our product roadmap. You will work closely with our product and design teams to deliver high-quality software that meets the needs of our customers.",
+          "We are looking for a .NET Developer to help us build a Server Backend",
         type: "Full Time",
-        location: "Remote - EMEA",
+        location: "Osnabrück - Remote",
       },
       {
-        id: "ux-brand-designer",
-        title: "UX & Brand Designer",
-        description: "Help us design the future of cross-platform development",
+        id: "software-engineer",
+        title: ".NET Desktop Developer (Avalonia / WPF)",
+        description: "Help us develop OneWare Studio!",
+        more_details:
+          "We are looking for a .NET Developer with experience in Avalonia or WPF to help us develop OneWare Studio",
         type: "Full Time",
-        location: "Remote - EMEA",
-        more_details: "We are looking for a UX & Brand Designer to join our team and help us design the future of cross-platform development. You will work on the design of our cross-platform UI components, and you will have the opportunity to contribute to the design and implementation of our product roadmap. You will work closely with our product and engineering teams to deliver high-quality software that meets the needs of our customers.",
-      },
-      {
-        id: "frontend-engineer",
-        title: "Frontend Engineer",
-        description: "Build beautiful user experiences with React & TypeScript",
-        type: "Full Time",
-        location: "Remote - Global",
-        more_details: "We are looking for a Frontend Engineer to join our team and help us build beautiful user experiences with React & TypeScript. You will work on the development of our cross-platform UI components, and you will have the opportunity to contribute to the design and implementation of our product roadmap. You will work closely with our product and design teams to deliver high-quality software that meets the needs of our customers.",
-      },
-    ],
-  },
-  {
-    category: "Sales",
-    positions: [
-      {
-        id: "head-of-sales",
-        title: "Head of Sales & Business Development",
-        description: "Lead the commercial evolution of our offerings",
-        type: "Full Time",
-        location: "Remote - EMEA",
-        more_details: "We are looking for a Head of Sales & Business Development to join our team and lead the commercial evolution of our offerings. You will work closely with our product and engineering teams to deliver high-quality software that meets the needs of our customers. You will be responsible for developing and executing our sales strategy, and you will have the opportunity to build and lead a high-performing sales team.",
-      },
+        location: "Osnabrück - Remote",
+      }
     ],
   },
   {
