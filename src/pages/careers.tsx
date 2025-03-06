@@ -55,6 +55,12 @@ function Modal({
           <div className="py-4">
             <p className="text-gray-300 text-lg">{Body}</p>
           </div>
+
+          <p className="">
+            If you're interested in this position, please send us your CV
+            and introduction to{" "}
+            <a href="mailto:career@one-ware.com">career@one-ware.com</a>.
+          </p>
         </div>
       </div>
     </>
@@ -86,13 +92,14 @@ export default function CareersPage(): JSX.Element {
             <span className="inline-block px-4 py-1 border-solid border border-gray-400 primary-text rounded-full text-sm uppercase tracking-wide">
               Hiring
             </span>
-            <h2 className="mt-4 text-3xl font-bold">
+            <h2 className="mt-6 text-3xl font-bold">
               Let’s find you an{" "}
               <span className="primary-text">open position</span>.
             </h2>
-            <div className="flex justify-center my-10">
+            <div className="flex justify-center my-6">
               <p className="text-xl text-white max-w-xl">
-                If you're interested in any of the positions, please send us your CV and introduction to{" "}
+                If you're interested in any of the positions, please send us
+                your CV and introduction to{" "}
                 <a href="mailto:career@one-ware.com">career@one-ware.com</a>.
               </p>
             </div>
