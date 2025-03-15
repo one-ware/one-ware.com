@@ -56,11 +56,10 @@ function Feature({ title, Svg, description }: FeatureItem) {
 
 export default function HomepageFeatures(): JSX.Element {
   return (
-    <section className={`${styles.features} container my-10 md:my-5`}>
-
-<div className="grid md:grid-cols-2 my-20 md:my-10">
-        <div className="p-5 md:order-2" data-aos="fade-left">
-          <img src="/img/start/industry.jpg" />
+    <section className={`${styles.features} container my-20`}>
+      <div className="grid md:grid-cols-2 my-20 md:my-10 bottomsplit pb-20">
+        <div data-aos="fade-left" className="md:px-10">
+          <img src="/img/plc/Schrank.png" />
         </div>
 
         <div
@@ -68,10 +67,11 @@ export default function HomepageFeatures(): JSX.Element {
           data-aos="fade-right"
         >
           <span className="text-3xl text-center md:text-left">
-          <span className="font-bold primary-text">Our Industry Solutions:</span> See how to increase profits and production quality 
-            <p className="flex flex-row text-center justify-center md:justify-normal">
-            with Industrial AI
+            <h2 className="primary-text text-4xl">Our Industry Solutions</h2>
+            <p className="mb-5">
+            See how to increase profits and production quality with Industrial AI
             </p>
+            
           </span>
 
           <div>
@@ -85,9 +85,9 @@ export default function HomepageFeatures(): JSX.Element {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 my-20 md:my-10">
-        <div className="p-5" data-aos="fade-right">
-          <img src="/img/start/Studio_Table.png" />
+      <div className="grid md:grid-cols-2 md:my-10 md:pt-10">
+        <div className="p-5 md:order-2" data-aos="fade-right">
+          <img src="/img/studio/slides/vhdl.png" />
         </div>
 
         <div
@@ -95,10 +95,10 @@ export default function HomepageFeatures(): JSX.Element {
           data-aos="fade-left"
         >
           <span className="text-3xl text-center md:text-left">
-          <span className="font-bold primary-text">Our Development Solutions:</span> See how to integrate AI in your 
-            embedded systems and speed up the development
-            <p className="flex flex-row text-center justify-center md:justify-normal">
-            with ONE WARE Studio
+            <h2 className="primary-text text-4xl">Our Development Solutions</h2>
+            <p className="mb-5">
+              See how to integrate AI in your embedded systems and speed up the
+              development with ONE WARE Studio
             </p>
           </span>
 
@@ -113,10 +113,7 @@ export default function HomepageFeatures(): JSX.Element {
         </div>
       </div>
 
-      
-
-      
-{/* 
+      {/* 
       <div className="grid md:grid-cols-2 mt-10 md:mt-10">
         <div className="p-5 md:order-2" data-aos="fade-left">
           <img src="/img/start/PLC_Schrank.png" />

@@ -83,9 +83,12 @@ const ai_sliders = [
     imageSrc: <img alt="Extensible" src="/img/studio/slides/ai.png" />,
     description: (
       <>
-        ONE AI lets you build efficient AIs to process <span className="primary-text">Images, Audio and Sensor Data</span>.
-        Our assistant has the know how of all current AI research and you just have to answer a few questions to create your own individual AI.
-        Then <span className="primary-text">ONE WARE Studio</span> helps to integrate the AI in your product.
+        ONE AI lets you build efficient AIs to process{" "}
+        <span className="primary-text">Images, Audio and Sensor Data</span>. Our
+        assistant has the know how of all current AI research and you just have
+        to answer a few questions to create your own individual AI. Then{" "}
+        <span className="primary-text">ONE WARE Studio</span> helps to integrate
+        the AI in your product.
       </>
     ),
   },
@@ -94,8 +97,10 @@ const ai_sliders = [
     imageSrc: <img alt="Extensible" src="/img/ai/quality.png" />,
     description: (
       <>
-        Create your custom quality control with our AI based <span className="primary-text">Image Processing</span> framework.
-        ONE AI makes sure that you always use the newest scientific findings to get the <span className="primary-text">Most Accurate and Efficient AI</span>.
+        Create your custom quality control with our AI based{" "}
+        <span className="primary-text">Image Processing</span> framework. ONE AI
+        makes sure that you always use the newest scientific findings to get the{" "}
+        <span className="primary-text">Most Accurate and Efficient AI</span>.
       </>
     ),
   },
@@ -104,8 +109,9 @@ const ai_sliders = [
     imageSrc: <img alt="Extensible" src="/img/ai/Predictive_Maintenance.png" />,
     description: (
       <>
-        Fix problems before they occur. ONE AI takes sensor-data from your machine and can {" "}
-        <span className="primary-text">predict defects</span> before they occur, so your production can run without interruption.
+        Fix problems before they occur. ONE AI takes sensor-data from your
+        machine and can <span className="primary-text">predict defects</span>{" "}
+        before they occur, so your production can run without interruption.
       </>
     ),
   },
@@ -114,12 +120,12 @@ const ai_sliders = [
     imageSrc: <img alt="Code Assistant" src="/img/ai/Titel.png" />,
     description: (
       <>
-        Replace the last manual steps of your production with autonomous robots and
-        drones. ONE AI lets your robot or drone <span className="primary-text">See, Hear and Think for Itself</span>.
+        Replace the last manual steps of your production with autonomous robots
+        and drones. ONE AI lets your robot or drone{" "}
+        <span className="primary-text">See, Hear and Think for Itself</span>.
       </>
     ),
   },
-
 ];
 
 function HomepageHeader() {
@@ -152,14 +158,19 @@ function HomepageHeader() {
                 >
                   Get Started
                 </Link>
-
               </div>
 
-
               <p className="md:text-xl font-normal mt-10">
-                (Yes, it is <a href="https://github.com/one-ware" target="_blank" className="primary-text font-bold">Open Source</a>!)
+                (Yes, it is{" "}
+                <a
+                  href="https://github.com/one-ware"
+                  target="_blank"
+                  className="primary-text font-bold"
+                >
+                  Open Source
+                </a>
+                !)
               </p>
-
             </div>
           </div>
         </div>
@@ -257,7 +268,9 @@ function DownloadSection() {
 function VendorSection() {
   return (
     <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
-      <h2 className="text-4xl md:text-5xl font-bold mb-10">Use any Hardware!</h2>
+      <h2 className="text-4xl md:text-5xl font-bold mb-10">
+        Use any Hardware!
+      </h2>
 
       <h5 className="text-2xl md:text-3xl font-normal">
         Our goal is to provide first level support for{" "}
@@ -273,25 +286,35 @@ function VendorSection() {
 function Extension() {
   return (
     <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
-      <h1 className="text-4xl md:text-5xl font-bold"><span className="primary-text font-bold"> Extensions</span> For All Your Needs!</h1>
+      <h1 className="text-4xl md:text-5xl font-bold">
+        <span className="primary-text font-bold"> Extensions</span> For All Your
+        Needs!
+      </h1>
 
-      <div className="row my-20 items-center">
+      <div className="row mt-20 items-center">
         <div className="col flex ">
-          <p className="text-2xl font-normal md:text-left p-0 m-0" data-aos="slide-right">
-            ONE WARE Studio extensions let you <span className="primary-text">customize your experience</span> to meet all your development needs.
-            Add custom hardware as <span className="primary-text">digital twin</span>, make <span className="primary-text">AI</span> integration easier or add support for your favorite <span className="primary-text">simulation</span> tool.
+          <p
+            className="text-2xl font-normal md:text-left p-0 m-0"
+            data-aos="slide-right"
+          >
+            ONE WARE Studio extensions let you{" "}
+            <span className="primary-text">customize your experience</span> to
+            meet all your development needs. Add custom hardware as{" "}
+            <span className="primary-text">digital twin</span>, make{" "}
+            <span className="primary-text">AI</span> integration easier or add
+            support for your favorite{" "}
+            <span className="primary-text">simulation</span> tool.
           </p>
-
         </div>
 
         <div className="col items-center">
-          <img src="/img/start/Elec_Studio.png" data-aos="slide-left" alt="Hardware" />
+          <img
+            src="/img/start/Elec_Studio.png"
+            data-aos="slide-left"
+            alt="Hardware"
+          />
         </div>
-
       </div>
-
-
-
     </div>
   );
 }
@@ -299,12 +322,16 @@ function Extension() {
 function AI() {
   return (
     <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
-      <h2 className="text-4xl md:text-5xl font-bold" >Develop and Integrate AI <span className="primary-text font-bold"> Without Experts</span></h2>
+      <h2 className="text-4xl md:text-5xl font-bold">
+        Develop and Integrate AI{" "}
+        <span className="primary-text font-bold"> Without Experts</span>
+      </h2>
 
       <h5 className="text-2xl font-normal my-10">
-        The ONE WARE Studio Extension ONE AI creates <span className="primary-text">industry leading</span> neural networks tailored to your needs.
+        The ONE WARE Studio Extension ONE AI creates{" "}
+        <span className="primary-text">industry leading</span> neural networks
+        tailored to your needs.
       </h5>
-
     </div>
   );
 }
@@ -312,26 +339,24 @@ function AI() {
 function Beta() {
   return (
     <div className="text-center max-w-6xl m-auto mt-8 mb-16">
-      <h2 className="text-4xl font-bold">
-        Join the ONE AI Closed Beta! 🚀
-      </h2>
+      <h2 className="text-4xl font-bold">Join the ONE AI Closed Beta! 🚀</h2>
       <div className="text-xl md:text-2xl mt-6">
-        <strong>You Want to Build Custom AI Models?</strong> {" "}
-        Experience the future of AI! Automatically generate tailored AI models with ONE AI. 
-        Sign up for the waitlist to get free exclusive access to the closed beta. <br/>
+        <strong>You Want to Build Custom AI Models?</strong> Experience the
+        future of AI! Automatically generate tailored AI models with ONE AI.
+        Sign up for the waitlist to get free exclusive access to the closed
+        beta. <br />
         <div className="flex justify-center gap-4 mt-2">
-            <a href="https://forms.office.com/e/ptgVNPN9AL" target="_blank">
-              <button className="button button--secondary text-xl">
-                ONE AI Webinar
-              </button>
-              </a>
-              <a href="https://forms.office.com/e/J3HDid9fzw" target="_blank">
-              <button className="button button--primary text-xl">
-                ONE AI Waitlist
-              </button>
-              </a>
-              
-            </div>
+          <a href="https://forms.office.com/e/ptgVNPN9AL" target="_blank">
+            <button className="button button--secondary text-xl">
+              ONE AI Webinar
+            </button>
+          </a>
+          <a href="https://forms.office.com/e/J3HDid9fzw" target="_blank">
+            <button className="button button--primary text-xl">
+              ONE AI Waitlist
+            </button>
+          </a>
+        </div>
       </div>
     </div>
   );
@@ -440,12 +465,14 @@ export default function Studio(): JSX.Element {
   return (
     <Layout title="Studio" description="OneWare Studio">
       <div className={`absolute w-full -z-10 ${styles.particleBackground}`}>
-        <div className="h-96 absolute w-full">{init && <FancyParticles parallax={true} id="topParticles" />}</div>
+        <div className="h-96 absolute w-full">
+          {init && <FancyParticles parallax={true} id="topParticles" />}
+        </div>
       </div>
 
       <HomepageHeader />
 
-      <main className="pb-32">
+      <main>
         <div className="dropshadowbottom">
           <div className="default-background diagclipbottom pt-16">
             <div className="container overflow-x-hidden">
@@ -512,7 +539,10 @@ export default function Studio(): JSX.Element {
         </div>
 
         <div className="relative">
-          <div className="absolute w-full -z-10" style={{ top: -50, height: "50rem" }}>
+          <div
+            className="absolute w-full -z-10"
+            style={{ top: -50, height: "50rem" }}
+          >
             {init && <FancyParticles parallax={true} id="downloadParticles" />}
           </div>
           <DownloadSection />
@@ -520,12 +550,9 @@ export default function Studio(): JSX.Element {
 
         <div className="dropshadowtop">
           <div className="default-background diagcliptop pt-32 md:pt-48">
-
-            
-
-            <Extension />
-
-            <Beta />
+            <div className="bottomsplit pb-24 mb-24 container">
+              <Extension />
+            </div>
 
             <AI />
 
@@ -548,26 +575,29 @@ export default function Studio(): JSX.Element {
                       for (var i = 0; i < slideCount; i++) {
                         var slide = document.getElementById("slide" + i);
                         if (slide) {
-                          if (i == n) slide.classList.add(styles.activeslide ?? "");
+                          if (i == n)
+                            slide.classList.add(styles.activeslide ?? "");
                           else slide.classList.remove(styles.activeslide ?? "");
                         }
                       }
                     }}
                   >
-                    {ai_sliders.map(({ imageSrc, title, description }, idx2) => (
-                      <div key={idx2}>
-                        {imageSrc}
-                        <div
-                          className={classnames(
-                            "md:hidden mt-5",
-                            styles.slidecaption
-                          )}
-                        >
-                          <h3>{title}</h3>
-                          {description}
+                    {ai_sliders.map(
+                      ({ imageSrc, title, description }, idx2) => (
+                        <div key={idx2}>
+                          {imageSrc}
+                          <div
+                            className={classnames(
+                              "md:hidden mt-5",
+                              styles.slidecaption
+                            )}
+                          >
+                            <h3>{title}</h3>
+                            {description}
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      )
+                    )}
                   </Slider>
                   <div className="columns-4 my-10 hidden md:block">
                     {ai_sliders.map(({ title, description }, idx2) => (
@@ -589,11 +619,19 @@ export default function Studio(): JSX.Element {
               )}
             </div>
 
-            
-
             <VendorSection />
+          </div>
+        </div>
 
-            <ContactUs />
+        <div className="default-background mt-20">
+          <div className="dropshadowtop">
+            <div className="alternative-background diagcliptop pt-6">
+              <div className="container pb-20 mt-20">
+                <div className="mb-10">
+                  <ContactUs />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </main>
