@@ -14,6 +14,7 @@ Geschäftsführer: Leon Alexander Beier, Ali Durmaz
 
 Registergericht: Amtsgericht Paderborn<br></br>
 Handelsregisternummer: HRB 17581<br></br>
+Umsatzsteuer-Identifikationsnummer: DE 452 242 211<br></br>
 
 ## Privacy Policy | Datenschutzerklärung
 

@@ -14,6 +14,7 @@ Managing Directors: Leon Alexander Beier, Ali Durmaz <br></br>
 
 Local court: Amtsgericht Paderborn<br></br>
 Registration number: HRB 17581<br></br>
+VAT Reg. No.: DE 452 242 211<br></br>
 
 
 ## Privacy Policy | Datenschutzerklärung
