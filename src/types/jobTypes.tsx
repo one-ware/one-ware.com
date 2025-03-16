@@ -2,7 +2,7 @@ export type Job = {
     id: string;
     title: string;
     description: string;
-    pdf: string;
+    url: string;
     type: string;
     location: string;
   };

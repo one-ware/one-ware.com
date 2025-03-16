@@ -70,7 +70,7 @@ export default function CareersPage(): JSX.Element {
                           description,
                           type,
                           location,
-                          pdf,
+                          url: pdf,
                         }) => (
                           <React.Fragment key={title}>
                             <tr
