@@ -11,8 +11,8 @@ export default function CareersPage(): JSX.Element {
 
   return (
     <Layout
-      title="Careers at one-ware.com"
-      description="Join one-ware.com and help empower Industry 5.0"
+      title="Careers at OneWare"
+      description="Join OneWare and help empower Industry 5.0"
     >
       {/* Open Positions Section */}
       <section id="positions" className="py-12">
