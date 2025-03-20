@@ -21,5 +21,18 @@ export const JOBS_DATA: JobCategory[] = [
         location: "Osnabrück - Remote",
       }
     ],
+  },
+  {
+    category: "AI Engineer",
+    positions: [
+      {
+        id: "ai-engineer",
+        title: "AI Developer",
+        description: "Help us improve the OneAI System",
+        url: "/career/OneWare_AI_Developer.pdf",
+        type: "Full Time",
+        location: "Osnabrück - Remote",
+      }
+    ],
   }
 ];
