@@ -32,7 +32,7 @@ jobs:
           onlyNewer: true
           settings: 'sftp:auto-confirm=yes'
           # Mirror command options
-          localDir: 'build'
+          localDir: 'build/'
           remoteDir: 'one-ware.com/'
           reverse: true
 
