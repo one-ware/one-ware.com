@@ -22,17 +22,13 @@ jobs:
       - name: Build
         run: npm run build
       - name: Deploy files via SFTP
-        uses: pressidium/lftp-mirror-action@v1
+        uses: wangyucode/sftp-upload-action@v2.0.4
         with:
           host: 5017617850.ssh.w2.strato.hosting
-          port: 22
           user: su165987
           pass: ${{ secrets.STRATO_SFTP }}
-          # lftp settings
-          onlyNewer: true
           settings: 'sftp:auto-confirm=yes'
-          # Mirror command options
           localDir: 'build/'
           remoteDir: 'one-ware.com/'
-          reverse: true
+          removeExtraFilesOnServer: true
 
