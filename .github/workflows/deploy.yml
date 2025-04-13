@@ -24,9 +24,9 @@ jobs:
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: w01ec151.kasserver.com
-          username: w01ec151
-          password: ${{ secrets.ONEWARE_FTP }}
+          server: 5017617850.ssh.w2.strato.hosting
+          username: su165987
+          password: ${{ secrets.STRATO_SFTP }}
           local-dir: build/
           server-dir: one-ware.com/
 
