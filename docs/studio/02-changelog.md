@@ -4,6 +4,11 @@ title: OneWare Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.21.2.0
+
+- Allow plugins to load additional plugins
+- Add project settings functionality
+
 ## 0.21.1.0
 
 - Improve VCD Live View
