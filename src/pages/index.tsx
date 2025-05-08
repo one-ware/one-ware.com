@@ -40,27 +40,27 @@ function HomepageHeader() {
                 enable: false,
               },
               fpsLimit: 144,
-                interactivity: {
-                  events: {
-                    onClick: {
-                      enable: true,
-                      mode: "push",
-                    },
-                    onHover: {
-                      enable: true,
-                      mode: "bubble",
-                    },
+              interactivity: {
+                events: {
+                  onClick: {
+                    enable: true,
+                    mode: "push",
                   },
-                  modes: {
-                    push: {
-                      quantity: 1,
-                    },
-                    bubble: {
-                      size: 6,
-                      distance: 40,
-                    },
+                  onHover: {
+                    enable: true,
+                    mode: "bubble",
                   },
                 },
+                modes: {
+                  push: {
+                    quantity: 1,
+                  },
+                  bubble: {
+                    size: 6,
+                    distance: 40,
+                  },
+                },
+              },
               particles: {
                 color: {
                   value: "#ffffff",
@@ -108,18 +108,30 @@ function HomepageHeader() {
         )}
       </div>
 
-      <div className="absolute flex flex-col items-center justify-center w-full h-full pointer-events-none">
-        <div className="flex flex-col items-center justify-center w-full md:w-8/12 xl:w-6/12">
-          <img
-            className="drop-shadow-4xl"
-            src="img/start/Logo_SVG-ONE-ware.svg"
-            alt="OneWare Logo"
-          />
-          <span className="text-xl md:text-4xl drop-shadow-4xl text-gray-200">
-            Empowering Industry 5.0
-          </span>
+      <div className="absolute flex items-center justify-center w-full h-full pointer-events-none px-4">
+        <div className="flex flex-col md:flex-row items-center justify-center w-full md:w-10/12 xl:w-8/12 space-y-4 md:space-y-0 md:space-x-16">
+
+          {/* Logo Section */}
+          <div className="w-24 md:w-36 xl:w-64">
+            <img
+              src="/img/com.one_ware.OneWare.svg"  // Replace with your actual logo path
+              alt="Logo"
+              className="w-full h-auto"
+            />
+          </div>
+
+          {/* Text Section */}
+          <div className="text-center md:text-left w-full md:w-7/12">
+            <span className="text-2xl md:text-5xl xl:text-6xl drop-shadow-4xl text-gray-200 font-bold leading-snug">
+              The <span className="primary-text">fastest</span> way to turn your ideas into high-performance AI for any Hardware
+            </span>
+          </div>
+
+
+
         </div>
       </div>
+
 
       <div className={styles.startArrow} />
     </header>
