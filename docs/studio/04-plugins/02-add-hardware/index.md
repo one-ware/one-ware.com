@@ -2,18 +2,18 @@
 title: Add Hardware Integration
 ---
 
-OneWare Studio is a comprehensive development environment designed for hardware and software integration. It features a system that allows you to add any FPGA development board using JSON configuration files.
+ONE WARE Studio is a comprehensive development environment designed for hardware and software integration. It features a system that allows you to add any FPGA development board using JSON configuration files.
 This is useful for configuring the graphical user interface (GUI) and ensuring that your toolchain supports your hardware.
 
 ![Graphical User Interface (GUI)](img/gui.png)
 
 ## Directory Structure
 
-OneWare Studio organizes its files in a structured manner to facilitate easy management and integration of hardware components. Here is an overview of the directory structure:
+ONE WARE Studio organizes its files in a structured manner to facilitate easy management and integration of hardware components. Here is an overview of the directory structure:
 
 First, let's have a look at the `OneWareStudio` folder inside your home directory.
 
-The directory structure within OneWare Studio looks similar to this:
+The directory structure within ONE WARE Studio looks similar to this:
 
 ```
 OneWareStudio
@@ -492,7 +492,7 @@ Adds a CruviHS connector.
 
 ## Example Integrations
 
-Here are some example integrations that demonstrate how to add hardware components using OneWare Studio:
+Here are some example integrations that demonstrate how to add hardware components using ONE WARE Studio:
 
 - [Core MAX10](https://github.com/one-ware/OneWare.CoreMax10)
 - [IceBreaker](https://github.com/one-ware/OneWare.IceBreaker)

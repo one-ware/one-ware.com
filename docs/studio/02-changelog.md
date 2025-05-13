@@ -1,6 +1,6 @@
 ---
 id: changelog
-title: OneWare Studio Changelog
+title: ONE WARE Studio Changelog
 sidebar_label:  Changelog
 ---
 

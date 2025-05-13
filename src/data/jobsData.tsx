@@ -7,7 +7,7 @@ export const JOBS_DATA: JobCategory[] = [
       {
         id: "software-engineer",
         title: ".ASP.NET / Blazor Developer",
-        description: "Help us build and maintain the OneWare Cloud",
+        description: "Help us build and maintain the ONE WARE Cloud",
         url: "/career/OneWare_NET_WebDeveloper.pdf",
         type: "Full Time",
         location: "Osnabrück - Remote",
@@ -15,7 +15,7 @@ export const JOBS_DATA: JobCategory[] = [
       {
         id: "software-engineer",
         title: ".NET Desktop Developer (Avalonia / WPF)",
-        description: "Help us develop OneWare Studio",
+        description: "Help us develop ONE WARE Studio",
         url: "/career/OneWare_NET_DesktopDeveloper.pdf",
         type: "Full Time",
         location: "Osnabrück - Remote",

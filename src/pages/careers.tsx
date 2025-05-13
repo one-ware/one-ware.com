@@ -23,7 +23,7 @@ export default function CareersPage(): JSX.Element {
             </span>
             <h2 className="mt-6 text-3xl font-bold">
               Join {" "}
-              <span className="primary-text">OneWare</span> today!
+              <span className="primary-text">ONE WARE</span> today!
             </h2>
             <div className="flex justify-center my-6">
               <p className="text-xl text-white max-w-xl">

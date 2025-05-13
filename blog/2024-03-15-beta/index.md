@@ -1,6 +1,6 @@
 ---
 slug: oneware-studio-preview
-title: OneWare Studio Preview and Roadmap ⭐
+title: ONE WARE Studio Preview and Roadmap ⭐
 authors: [hmennen]
 tags:
   [
@@ -12,19 +12,19 @@ tags:
 
 ## Preview Release
 
-A Preview for OneWare Studio is released and can be [tested](/docs/studio/setup) for Windows, MacOS and Linux as of now. 
-OneWare Studio is all about extensibility and its features will be gradually extended over time.
+A Preview for ONE WARE Studio is released and can be [tested](/docs/studio/setup) for Windows, MacOS and Linux as of now. 
+ONE WARE Studio is all about extensibility and its features will be gradually extended over time.
 
 Feel free to provide feedback to us at [GitHub](https://github.com/one-ware/OneWare) or at <a href="mailto:info@one-ware.com">info@one-ware.com</a>
 
 ## Current Features
 
-The Preview of OneWare Studio offers a lot of useful features to start programming FPGAs.
+The Preview of ONE WARE Studio offers a lot of useful features to start programming FPGAs.
 **VHDL** aswell as **Verilog** / **SystemVerilog** are supported out of the box.
 
 ### Code Editor
 
-The OneWare Studio Code Editor integrates the [LSP Protocoll](https://microsoft.github.io/language-server-protocol/) and can therefore be used with already available Language servers like [Rust HDL](https://github.com/VHDL-LS/rust_hdl) for VHDL and [Verible](https://github.com/chipsalliance/verible) for Verilog/SystemVerilog.
+The ONE WARE Studio Code Editor integrates the [LSP Protocoll](https://microsoft.github.io/language-server-protocol/) and can therefore be used with already available Language servers like [Rust HDL](https://github.com/VHDL-LS/rust_hdl) for VHDL and [Verible](https://github.com/chipsalliance/verible) for Verilog/SystemVerilog.
 
 These servers can offer a wide range of features, a few of them are:
 - Real time Error Checking / Linting
@@ -37,7 +37,7 @@ These servers can offer a wide range of features, a few of them are:
 
 ### Project System
 
-OneWare Studio features a project system that is simple and no more limited to any choice of tools. This means that extensions can add their own properties.
+ONE WARE Studio features a project system that is simple and no more limited to any choice of tools. This means that extensions can add their own properties.
 
 Project files feature the `.fpaproj` extension and can look this way:
 ```json
@@ -114,7 +114,7 @@ They are used to save settings for the view, such as which signals are currently
 
 ### Teamworking
 
-Similar to VSCode, OneWare Studio integrates GIT to allow for easy teamworking.
+Similar to VSCode, ONE WARE Studio integrates GIT to allow for easy teamworking.
 Projects can be synchronized with GIT Providers, changes can be compared, comitted and merged.
 All the features you would expect from a modern IDE, out of the box.
 
@@ -122,12 +122,12 @@ All the features you would expect from a modern IDE, out of the box.
 
 ### Extensions
 
-As already said, OneWare Studio focuses on extensibility. 
+As already said, ONE WARE Studio focuses on extensibility. 
 Plugins can be easily installed using the package manager and are capable of offering all kinds of new features.
 
 ![Extensions](img/extensions.png)
 
-As OneWare Studio uses .NET 8.0 and Avalonia, a template for generating UI Extensions can be found [here](https://github.com/one-ware/OneWare.Templates)
+As ONE WARE Studio uses .NET 8.0 and Avalonia, a template for generating UI Extensions can be found [here](https://github.com/one-ware/OneWare.Templates)
 Precise documentation on how to create Extensions (Adding new FPGAs, Simulators, Toolchains and more) will be available soon!
 
 ## Roadmap

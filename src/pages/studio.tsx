@@ -189,7 +189,7 @@ function DownloadSection() {
           <h1 className="text-4xl md:text-5xl">Easy Setup!</h1>
 
           <p className="text-xl my-8">
-            OneWare Studio is available for{" "}
+            ONE WARE Studio is available for{" "}
             <span className="primary-text">all major operating systems</span>,
             using all the <span className="primary-text">modern</span>{" "}
             installation methods.

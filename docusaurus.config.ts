@@ -198,7 +198,7 @@ const config: Config = {
           title: "Docs",
           items: [
             {
-              label: "OneWare Studio Setup",
+              label: "ONE WARE Studio Setup",
               to: "/docs/studio/setup",
             },
           ],
