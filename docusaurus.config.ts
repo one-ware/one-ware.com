@@ -3,8 +3,8 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "One Ware",
-  tagline: "Empowering Industry 5.0",
+  title: "ONE WARE",
+  tagline: "One Software, Infinite Solutions: From Development to Custom AI",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -110,7 +110,7 @@ const config: Config = {
         {
           type: "dropdown",
           position: "left",
-          label: "Industry",
+          label: "ONE AI",
           to: "/one-ai",
           activeBaseRegex: "(^.*/one-ai$)|(^.*/docs/one-ai/.*$)",
           items: [
@@ -128,7 +128,7 @@ const config: Config = {
         {
           type: "dropdown",
           position: "left",
-          label: "Development",
+          label: "ONE WARE Studio",
           to: "/studio",
           activeBaseRegex: "(^.*/studio$)|(^.*/docs/studio/.*$)",
           items: [

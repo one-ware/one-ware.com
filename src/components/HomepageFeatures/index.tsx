@@ -67,9 +67,9 @@ export default function HomepageFeatures(): JSX.Element {
           data-aos="fade-right"
         >
           <span className="text-3xl text-center md:text-left">
-            <h2 className="primary-text text-4xl">Our Industry Solutions</h2>
+            <h2 className="primary-text text-4xl">ONE AI</h2>
             <p className="mb-5">
-            See how to increase profits and production quality with Industrial AI
+            See how ONE AI creates custom neural network in seconds that fits your exact Hardware, performance and use case requirements.
             </p>
             
           </span>
@@ -79,7 +79,7 @@ export default function HomepageFeatures(): JSX.Element {
               className="button button--primary button--outline button--lg w-full md:w-fit"
               href="/one-ai"
             >
-              Our Industry Solutions
+              ONE AI
             </Link>
           </div>
         </div>
@@ -95,7 +95,7 @@ export default function HomepageFeatures(): JSX.Element {
           data-aos="fade-left"
         >
           <span className="text-3xl text-center md:text-left">
-            <h2 className="primary-text text-4xl">Our Development Solutions</h2>
+            <h2 className="primary-text text-4xl">ONE WARE Studio</h2>
             <p className="mb-5">
               See how to integrate AI in your embedded systems and speed up the
               development with ONE WARE Studio
@@ -107,7 +107,7 @@ export default function HomepageFeatures(): JSX.Element {
               className="button button--primary button--outline button--lg w-full md:w-fit"
               href="/studio"
             >
-              OneWare Studio
+              ONE WARE Studio
             </Link>
           </div>
         </div>

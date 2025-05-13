@@ -116,7 +116,7 @@ function HomepageHeader() {
             alt="OneWare Logo"
           />
           <span className="text-xl md:text-4xl drop-shadow-4xl text-gray-200">
-            Empowering Industry 5.0
+            Any Hardware. Any Application. ONE Software.
           </span>
         </div>
       </div>
