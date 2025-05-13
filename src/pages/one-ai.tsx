@@ -450,15 +450,13 @@ export default function Studio(): JSX.Element {
           <DownloadSection />
         </div>
 
-        <div className="default-background mt-20">
-          <div className="dropshadowtop">
-            <div className="alternative-background diagcliptop pt-6">
-              <div className="container pb-20 mt-20">
+        <div className="dropshadowtop">
+          <div className="default-background diagcliptop pt-6">
+          <div className="container pb-20 mt-20">
                 <div id="contact" className="mb-10">
                   <ContactUs />
                 </div>
               </div>
-            </div>
           </div>
         </div>
       </main>
