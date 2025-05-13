@@ -1,249 +1,254 @@
-import Layout from "@theme/Layout";
-import styles from "./one-ai.module.css";
-import initWebsiteEffects from "../components/startEffects";
-import ContactUs from "../components/ContactUs";
-import Slider from "react-slick";
-import React, { useRef, useState, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import styles from "./studio.module.css";
 import "aos/dist/aos.css";
 import classnames from "classnames";
+import Slider from "react-slick";
+import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
+import initWebsiteEffects from "../components/startEffects";
+import ContactUs from "../components/ContactUs";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
 
-const ParticlesComponent = React.memo(() => (
-  <Particles
-    id="stars"
-    className="h-full w-full absolute"
-    options={{
-      fullScreen: {
-        enable: false,
-      },
-      fpsLimit: 144,
-      interactivity: {
-        events: {
-          onClick: {
-            enable: true,
-            mode: "push",
-          },
-          onHover: {
-            enable: true,
-            mode: "bubble",
-          },
-        },
-        modes: {
-          push: {
-            quantity: 4,
-          },
-          bubble: {
-            size: 6,
-            distance: 40,
-          },
-        },
-      },
-      particles: {
-        color: {
-          value: "#ffffff",
-        },
-        links: {
-          color: "#ffffff",
-          distance: 150,
-          enable: true,
-          opacity: 0.1,
-          width: 1,
-        },
-        move: {
-          direction: "bottom",
-          enable: true,
-          outModes: {
-            default: "out",
-          },
-          size: true,
-          random: false,
-          speed: {
-            min: 0.2,
-            max: 0.4,
-          },
-          straight: false,
-        },
-        number: {
-          density: {
-            enable: true,
-          },
-          value: 50,
-        },
-        opacity: {
-          value: 0.2,
-        },
-        shape: {
-          type: "circle",
-        },
-        size: {
-          value: { min: 1, max: 4 },
-        },
-      },
-      detectRetina: true,
-    }}
-  />
-));
+import { SiApple } from "react-icons/si";
+import { SiWindows } from "react-icons/si";
+import { SiLinux } from "react-icons/si";
+import { SiFlathub } from "react-icons/si";
+import { SiSnapcraft } from "react-icons/si";
 
-function HomepageHeader({ counter }) {
+import { HiOutlineCpuChip } from "react-icons/hi2";
+import { BiMicrochip } from "react-icons/bi";
+
+type FancyParticlesProps = {
+  id: string;
+  parallax: boolean;
+};
+
+const sliders = [
+  {
+    title: "Capture and Label",
+    imageSrc: (
+      <img alt="Capture" src="/img/ai/Capture.png" />
+    ),
+    description: (
+      <>
+        Capture just a few images, label them - ONE AI takes care of the rest.
+        ONE AI requires only a <span className="primary-text">small dataset</span> to deliver a <span className="primary-text">fully functional AI model</span>.
+        Its adaptive architecture automatically scales with your data.
+      </>
+    ),
+  },
+  {
+    title: "Guide and Select",
+    imageSrc: <img alt="Hardware" src="/img/ai/Pre.png" />,
+    description: (
+      <>
+        Use our <span className="primary-text">intuitive and visual process</span> to teach the AI what is important, where to generalize and what to predict.
+You can specify your <span className="primary-text">exact hardware and performance requirements</span> and then let ONE AI create the perfect model for your needs.
+      </>
+    ),
+  },
+  {
+    title: "Predict and Train",
+    imageSrc: <img alt="Simulation" src="/img/ai/Train.png" />,
+    description: (
+      <>
+        After you start training, ONE AI will automatically generate a <span className="primary-text">custom neural network</span> for your <span className="primary-text">hardware and application</span>.  
+The AI then trains on your data, but only learns <span className="primary-text">what is important</span>. This ensures <span className="primary-text">highest performance and accuracy</span>.
+      </>
+    ),
+  },
+  {
+    title: "Extensibility",
+    imageSrc: <img alt="Extensible" src="/img/studio/slides2/extensions.png" />,
+    description: (
+      <>
+        Download and Install <span className="primary-text">Extensions</span>{" "}
+        from to extend the functionality. Discover a growing selection of{" "}
+        <span className="primary-text">AI-Tools</span>,{" "}
+        <span className="primary-text">Hardware-Integrations</span>,{" "}
+        <span className="primary-text">Simulators and More</span>
+      </>
+    ),
+  },
+];
+
+
+function HomepageHeader() {
   return (
-    <header>
-      <div className="flex">
-        <div
-          className={`flex flex-col justify-center align-middle items-center mx-auto h-screen w-screen ${styles.heroBackground}`}
-        >
-          <div className="particles absolute w-full h-full">
-            <ParticlesComponent />
-          </div>
-          <div className="text-center mt-10">
-            <h1
-              className="font-medium mb-10 md:text-6xl"
-              style={{ lineHeight: "1.3" }}
-            >
-              On a <span className="font-bold">Mission</span> to{" "}
-              <span className="primary-text font-bold md:text-7xl">
-                Save Trillions
-              </span>{" "}
-              Lost to <br />
-              <span className="font-bold">Quality Issues</span> and{" "}
-              <span className="font-bold">Machine Failures</span>
-            </h1>
+    <header id="hero" className={`w-full ${styles.heroBackground} h-96`}>
+      <div className="absolute flex flex-col items-center justify-center w-full h-full">
+        <div className="flex">
+          <div className="flex-col max-w-3xl m-5 mt-10">
+            <div className="text-center mt-10">
+              <h1 className="font-medium md:text-4xl">
+                The{" "}
+                <span className="primary-text font-bold">
+                  Next Generation
+                </span>{" "}
+                of AI Development:<br />
+                Any Hardware. Any Application. <span className="primary-text font-bold">ONE AI</span>.
+              </h1>
 
-            <h2
-              className="font-light mb-10 text-5xl"
-              style={{ lineHeight: "1.5" }}
-            >
-              Money Lost Since Opening the Page:
-              <p className="font-bold md:text-6xl">
-                ${counter.toLocaleString()}
-              </p>
-            </h2>
+              <div className="flex-col md:space-x-5 mb-10">
+                <Link
+                  className="mt-5 button button--primary button--lg hidden md:inline-block"
+                  href="https://forms.office.com/e/J3HDid9fzw"
+                >
+                  Join Waitlist
+                </Link>
+
+                <Link
+                  className="mt-5 button button--primary button--outline button--lg"
+                  href="#contact"
+                >
+                  Contact Us
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      <div className={styles.startArrow} />
     </header>
   );
 }
 
-function YourPartnerFor() {
+function DownloadSection() {
   return (
-    <div className="text-center">
-      <h2 className="text-5xl font-bold" data-aos="slide-up">
-        Your Partner For:
-      </h2>
-      <div
-        className="flex flex-col md:flex-row justify-center items-center gap-6"
-        data-aos="slide-up"
-      >
-        <div className="text-center">
-          <img src="/img/ai/quality_small.png" alt="Image 1" className="w-72" />
-          <p className="mt-4 font-bold text-2xl">Quality Control</p>
+    <div className="py-24 md:py-40 overflow-x-hidden">
+      <div className="text-center container m-auto flex space-x-5 justify-center">
+        <div className="flex-col flex text-center">
+          <h1 className="text-4xl md:text-5xl">Don't Upgrade Your Hardware — Upgrade Your AI!</h1>
+
+          <p className="text-3xl my-8 font-bold primary-text">
+            ONE AI makes decade-old chips outperform todays leading edge AI hardware! 
+          </p>
+          <p className="text-2xl  font-normal">
+            Read the Whitepaper from out Partner Altera<br/>and see how Altera's MAX® 10 can now outperform Nvidia's Jetson Orin Nano with:
+          </p>
+
+          <div className="flex my-8 gap-5 flex-wrap justify-center">
+            <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm">
+              <h5 className="mb-2 mt-2 text-5xl tracking-tight primary-text font-bold">
+                488x
+              </h5>
+              <p className="mb-3 text-xl font-normal text-gray-900 dark:text-white">
+                Lower Latency
+              </p>
+            </div>
+
+            <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm">
+              <h5 className="mb-2 mt-2 text-5xl tracking-tight primary-text font-bold">
+                24x
+              </h5>
+              <p className="mb-3 text-xl font-normal text-gray-900 dark:text-white">
+                Higher Accuracy
+              </p>
+            </div>
+
+            <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm">
+              <h5 className="mb-2 mt-2 text-5xl tracking-tight primary-text font-bold">
+                20x
+              </h5>
+              <p className="mb-3 text-xl font-normal text-gray-900 dark:text-white">
+                Lower Power
+              </p>
+            </div>
+
+            <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm">
+              <h5 className="mb-2 mt-2 text-5xl tracking-tight primary-text font-bold">
+                6x
+              </h5>
+              <p className="mb-3 text-xl font-normal text-gray-900 dark:text-white">
+                Lower Cost
+              </p>
+            </div>
+          </div>
+
+          <div className="flex justify-center gap-4 mt-8 flex-col md:flex-row">
+            <a href="https://go.altera.com/l/1090322/2025-04-18/2vvzbn" target="_blank">
+              <button className="button button--primary text-xl">
+                Read the Whitepaper
+              </button>
+              
+            </a>
+
+            <a href="https://forms.office.com/e/J3HDid9fzw" target="_blank">
+              <button className="button button--secondary text-xl">
+                Join ONE AI Waitlist
+              </button>
+            </a>
+          </div>
+
         </div>
-        <div className="text-center">
-          <img src="/img/ai/root.png" alt="Image 2" className="w-72" />
-          <p className="mt-4 font-bold text-2xl">Root Cause Analysis</p>
-        </div>
-        <div className="text-center">
-          <img src="/img/ai/predict_small.png" alt="Image 3" className="w-72" />
-          <p className="mt-4 font-bold text-2xl">Predictive Maintenance</p>
-        </div>
       </div>
     </div>
   );
 }
 
-function SaveMillions() {
+function VendorSection() {
   return (
-    <div className="text-center max-w-5xl m-auto ">
-      <h2 className="text-5xl font-bold">
-        The Easiest Way to Save Millions per Year
-      </h2>
-      <div className="flex md:mx-24 my-10">
-        <img src={"/img/start/saved.png"} alt="Compare" />
-      </div>
-      <div className="text-xl md:text-2xl mt-6">
-        ONE AI, our automated AI developer, can save you millions of dollars
-        annually by{" "}
-        <span className="primary-text">detecting quality issues</span>,{" "}
-        <span className="primary-text">identifying root causes</span>, and{" "}
-        <span className="primary-text">predicting machine failures</span> before
-        they happen. The cost of implementing ONE AI is only a{" "}
-        <span className="primary-text">small fraction</span> of the potential
-        savings.
-      </div>
-    </div>
-  );
-}
-
-function LowRiskHighReward() {
-  return (
-    <div className="text-center max-w-5xl m-auto mt-16">
-      <h2 className="text-5xl">Lowest Risk, Highest Profit</h2>
-
-      <div className="text-2xl md:text-3xl mt-10">
-        At ONE WARE, you only{" "}
-        <span className="primary-text">pay when you're satisfied</span> with the
-        results, not just to see them.
-      </div>
-    </div>
-  );
-}
-
-function UpFrontCostComparision() {
-  return (
-    <div className="text-center max-w-5xl m-auto mt-16">
-      <h2 className="text-4xl font-bold">Upfront Cost Comparison</h2>
-
-      <img src={"/img/start/cost.png"} alt="Compare" />
-
-      <div className="text-xl md:text-2xl mt-6">
-        Get in touch with our experts today so we can{" "}
-        <span className="primary-text">identify optimization points</span> in
-        your company at no cost, create impactful{" "}
-        <span className="primary-text">return on investment analyses</span> with
-        ONE AI and minimal upfront expenses, and then implement the{" "}
-        <span className="primary-text">final system</span>.
-      </div>
-    </div>
-  );
-}
-
-function SpeedComparision() {
-  return (
-    <div className="text-center max-w-5xl m-auto">
-      <h2 className="text-4xl font-bold">
-        Accuracy and Speed Comparison for PCB Quality Control
+    <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
+      <h2 className="text-4xl md:text-5xl font-bold mb-10">
+        Foundation Models <span className="primary-text">Weren't Built for You</span>.<br/>
+        <span className="primary-text">ONE AI</span> Creates Models That Are.
       </h2>
 
-      <img src={"/img/start/compare.png"} alt="Compare" />
+      <h5 className="text-2xl mb-16 md:text-3xl font-normal">
+        With ONE AI you always get a <span className="primary-text">custom neural network in seconds</span> that fits your exact Hardware, performance and use case requirements.
+      </h5>
+    </div>
+  );
+}
 
-      <div className="text-xl md:text-2xl mt-6">
-        With ONE AI, you get{" "}
-        <span className="primary-text">tailored AI solutions</span> that are not
-        only cheaper. In our tests, like for industrial PCB defect detection,
-        the AI created by ONE AI is{" "}
-        <span className="primary-text">more accurate</span> and even{" "}
-        <span className="primary-text">multiple times faster</span> than the
-        results of human experts. So you can save money and run your production
-        as fast as possible.
+function Extension() {
+  return (
+    <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
+      <h1 className="text-4xl md:text-5xl font-bold">
+        <span className="primary-text font-bold"> Extensions</span> For All Your
+        Needs!
+      </h1>
+
+      <div className="row mt-20 items-center">
+        <div className="col flex ">
+          <p
+            className="text-2xl font-normal md:text-left p-0 m-0"
+            data-aos="slide-right"
+          >
+            ONE WARE Studio extensions let you{" "}
+            <span className="primary-text">customize your experience</span> to
+            meet all your development needs. Add custom hardware as{" "}
+            <span className="primary-text">digital twin</span>, make{" "}
+            <span className="primary-text">AI</span> integration easier or add
+            support for your favorite{" "}
+            <span className="primary-text">simulation</span> tool.
+          </p>
+        </div>
+
+        <div className="col items-center">
+          <img
+            src="/img/start/Elec_Studio.png"
+            data-aos="slide-left"
+            alt="Hardware"
+          />
+        </div>
       </div>
     </div>
   );
 }
 
-function JoinAiBeta() {
+function Beta() {
   return (
-    <div className="text-center max-w-6xl m-auto">
+    <div className="text-center max-w-6xl m-auto mt-8 mb-16">
       <h2 className="text-4xl font-bold">Join the ONE AI Closed Beta! 🚀</h2>
       <div className="text-xl md:text-2xl mt-6">
-        <span className="primary-text">
-          You Want to Build AI Models Yourself?
-        </span>{" "}
-        Experience the future of AI! Automatically generate tailored AI models
-        with ONE AI. Sign up for the waitlist to get free exclusive access to
-        the closed beta. <br />
-        <div className="flex justify-center gap-4 mt-2 flex-col md:flex-row">
+        <strong>You Want to Build Custom AI Models?</strong> Experience the
+        future of AI! Automatically generate tailored AI models with ONE AI.
+        Sign up for the waitlist to get free exclusive access to the closed
+        beta. <br />
+        <div className="flex justify-center gap-4 mt-2">
           <a href="https://forms.office.com/e/ptgVNPN9AL" target="_blank">
             <button className="button button--secondary text-xl">
               ONE AI Webinar
@@ -260,71 +265,199 @@ function JoinAiBeta() {
   );
 }
 
-export default function OneAI(): JSX.Element {
+function FancyParticles(props: FancyParticlesProps) {
+  return (
+    <Particles
+      className="w-full h-full hidden md:block"
+      id={props.id}
+      options={{
+        fullScreen: {
+          enable: false,
+        },
+        fpsLimit: 144,
+        interactivity: {
+          events: {
+            onClick: {
+              enable: false,
+              mode: "push",
+            },
+            onHover: {
+              enable: true,
+              mode: "none",
+              parallax: {
+                enable: props.parallax,
+                force: 60,
+                smooth: 10,
+              },
+            },
+          },
+          modes: {
+            push: {
+              quantity: 1,
+            },
+            bubble: {
+              size: 6,
+              distance: 10,
+            },
+          },
+        },
+        particles: {
+          color: {
+            value: "#ffffff",
+          },
+          links: {
+            color: "#ffffff",
+            distance: 550,
+            enable: false,
+            opacity: 0.1,
+            width: 1,
+          },
+          move: {
+            direction: "bottom",
+            enable: true,
+            outModes: {
+              default: "out",
+            },
+            size: true,
+            random: false,
+            speed: {
+              min: 0.1,
+              max: 0.3,
+            },
+            straight: false,
+          },
+          number: {
+            density: {
+              enable: true,
+            },
+            value: 80,
+          },
+          opacity: {
+            value: 0.2,
+          },
+          shape: {
+            type: "polygon",
+          },
+          size: {
+            value: { min: 1, max: 4 },
+          },
+        },
+        detectRetina: true,
+      }}
+    />
+  );
+}
+
+export default function Studio(): JSX.Element {
   const slickRef = useRef<Slider>(null);
-  const [counter, setCounter] = useState(0); // Initialize counter state
-  const [particlesInitialized, setParticlesInitialized] = useState(false);
+
+  const slickRef2 = useRef<Slider>(null);
+
+  const [init, setInit] = useState(false);
+
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadFull(engine);
+    }).then(() => {
+      setInit(true);
+    });
+  }, []);
 
   initWebsiteEffects();
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCounter((prevCounter) => prevCounter + 2306); // Increment counter by 560,000
-    }, 50);
-
-    return () => clearInterval(interval); // Clean up the interval on unmount
-  }, []);
-
-  useEffect(() => {
-    if (!particlesInitialized) {
-      initParticlesEngine(async (engine) => {
-        await loadFull(engine);
-      }).then(() => {
-        setParticlesInitialized(true);
-      });
-    }
-  }, [particlesInitialized]);
-
   return (
-    <Layout title="ONE AI" description="Empowering Industry 5.0">
-      <HomepageHeader counter={counter} />
+    <Layout title="ONE AI" description="ONE AI for Any Hardware and Any Application">
+      <div className={`absolute w-full -z-10 ${styles.particleBackground}`}>
+        <div className="h-96 absolute w-full">
+          {init && <FancyParticles parallax={true} id="topParticles" />}
+        </div>
+      </div>
 
-      <main className="alternative-background">
+      <HomepageHeader />
+
+      <main>
         <div className="dropshadowbottom">
-          <div className="default-background diagclipbottom">
-            <div className="container pb-32 pt-28">
-              <div className="pb-14 mb-14 bottomsplit">
-                <YourPartnerFor />
-              </div>
-              <div>
-                <SaveMillions />
-              </div>
+          <div className="default-background diagclipbottom pt-16">
+              <VendorSection />
+
+            <div className="container overflow-x-hidden">
+              {sliders && sliders.length && (
+                <div className="pb-20">
+                  <Slider
+                    ref={slickRef}
+                    dots={true}
+                    arrows={false}
+                    autoplaySpeed={20000}
+                    infinite={true}
+                    autoplay={true}
+                    className={styles.slickSlider}
+                    speed={500}
+                    slidesToShow={1}
+                    slidesToScroll={1}
+                    beforeChange={(_c, n) => {
+                      var slideCount = sliders.length;
+                      for (var i = 0; i < slideCount; i++) {
+                        var slide = document.getElementById("slide" + i);
+                        if (slide) {
+                          if (i == n)
+                            slide.classList.add(styles.activeslide ?? "");
+                          else slide.classList.remove(styles.activeslide ?? "");
+                        }
+                      }
+                    }}
+                  >
+                    {sliders.map(({ imageSrc, title, description }, idx) => (
+                      <div key={idx}>
+                        {imageSrc}
+                        <div
+                          className={classnames(
+                            "md:hidden mt-5",
+                            styles.slidecaption
+                          )}
+                        >
+                          <h3>{title}</h3>
+                          {description}
+                        </div>
+                      </div>
+                    ))}
+                  </Slider>
+                  <div className="columns-4 my-10 hidden md:block">
+                    {sliders.map(({ title, description }, idx) => (
+                      <div
+                        key={idx}
+                        onClick={() => slickRef.current?.slickGoTo(idx)}
+                        className={classnames(
+                          "block padding-vert--lg p-2 overflow-x-hidden",
+                          styles.slidebutton
+                        )}
+                        id={"slide" + idx}
+                      >
+                        <h3>{title}</h3>
+                        <span>{description}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
 
-        <div className="container pb-32 mt-32">
-          <JoinAiBeta />
-        </div>
-
-        <div className="dropshadowtop">
-          <div className="default-background diagcliptop pt-24">
-            <div className="container pb-20">
-              <div className="pb-14 mb-14 bottomsplit">
-                <LowRiskHighReward />
-                <UpFrontCostComparision />
-              </div>
-
-              <SpeedComparision />
-            </div>
+        <div className="relative">
+          <div
+            className="absolute w-full -z-10"
+            style={{ top: -50, height: "50rem" }}
+          >
+            {init && <FancyParticles parallax={true} id="downloadParticles" />}
           </div>
+          <DownloadSection />
         </div>
 
-        <div className="default-background">
+        <div className="default-background mt-20">
           <div className="dropshadowtop">
             <div className="alternative-background diagcliptop pt-6">
               <div className="container pb-20 mt-20">
-                <div className="mb-10">
+                <div id="contact" className="mb-10">
                   <ContactUs />
                 </div>
               </div>
