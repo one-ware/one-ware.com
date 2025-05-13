@@ -319,23 +319,6 @@ function Extension() {
   );
 }
 
-function AI() {
-  return (
-    <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
-      <h2 className="text-4xl md:text-5xl font-bold">
-        Develop and Integrate AI{" "}
-        <span className="primary-text font-bold"> Without Experts</span>
-      </h2>
-
-      <h5 className="text-2xl font-normal my-10">
-        The ONE WARE Studio Extension ONE AI creates{" "}
-        <span className="primary-text">industry leading</span> neural networks
-        tailored to your needs.
-      </h5>
-    </div>
-  );
-}
-
 function Beta() {
   return (
     <div className="text-center max-w-6xl m-auto mt-8 mb-16">
@@ -554,70 +537,7 @@ export default function Studio(): JSX.Element {
               <Extension />
             </div>
 
-            <AI />
-
-            <div className="container" style={{ overflowX: "hidden" }}>
-              {ai_sliders && ai_sliders.length && (
-                <div className="pb-20">
-                  <Slider
-                    ref={slickRef2}
-                    dots={true}
-                    arrows={false}
-                    autoplaySpeed={20000}
-                    infinite={true}
-                    autoplay={true}
-                    className={styles.slickSlider}
-                    speed={500}
-                    slidesToShow={1}
-                    slidesToScroll={1}
-                    beforeChange={(_c, n) => {
-                      var slideCount = ai_sliders.length;
-                      for (var i = 0; i < slideCount; i++) {
-                        var slide = document.getElementById("slide" + i);
-                        if (slide) {
-                          if (i == n)
-                            slide.classList.add(styles.activeslide ?? "");
-                          else slide.classList.remove(styles.activeslide ?? "");
-                        }
-                      }
-                    }}
-                  >
-                    {ai_sliders.map(
-                      ({ imageSrc, title, description }, idx2) => (
-                        <div key={idx2}>
-                          {imageSrc}
-                          <div
-                            className={classnames(
-                              "md:hidden mt-5",
-                              styles.slidecaption
-                            )}
-                          >
-                            <h3>{title}</h3>
-                            {description}
-                          </div>
-                        </div>
-                      )
-                    )}
-                  </Slider>
-                  <div className="columns-4 my-10 hidden md:block">
-                    {ai_sliders.map(({ title, description }, idx2) => (
-                      <div
-                        key={idx2}
-                        onClick={() => slickRef2.current?.slickGoTo(idx2)}
-                        className={classnames(
-                          "block padding-vert--lg p-2 overflow-hidden",
-                          styles.slidebutton
-                        )}
-                        id={"slide" + idx2}
-                      >
-                        <h3>{title}</h3>
-                        <span>{description}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
+            
 
             <VendorSection />
           </div>

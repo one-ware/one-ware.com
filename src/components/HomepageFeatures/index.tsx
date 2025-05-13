@@ -59,7 +59,7 @@ export default function HomepageFeatures(): JSX.Element {
     <section className={`${styles.features} container my-20`}>
       <div className="grid md:grid-cols-2 my-20 md:my-10 bottomsplit pb-20">
         <div data-aos="fade-left" className="md:px-10">
-          <img src="/img/plc/Schrank.png" />
+          <img src="/img/ai/Capture.png" />
         </div>
 
         <div
@@ -87,7 +87,7 @@ export default function HomepageFeatures(): JSX.Element {
 
       <div className="grid md:grid-cols-2 md:my-10 md:pt-10">
         <div className="p-5 md:order-2" data-aos="fade-right">
-          <img src="/img/studio/slides/vhdl.png" />
+          <img src="/img/studio/slides2/simulator.png" />
         </div>
 
         <div

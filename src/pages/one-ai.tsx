@@ -33,7 +33,7 @@ const sliders = [
     description: (
       <>
         Capture just a few images, label them - ONE AI takes care of the rest.
-        ONE AI requires only a <span className="primary-text">small dataset</span> to deliver a <span className="primary-text">fully functional AI model</span>.
+        ONE AI requires only a <span className="primary-text">small dataset</span>{" "}to deliver a <span className="primary-text">fully functional AI model</span>.
         Its adaptive architecture automatically scales with your data.
       </>
     ),
@@ -43,8 +43,8 @@ const sliders = [
     imageSrc: <img alt="Hardware" src="/img/ai/Pre.png" />,
     description: (
       <>
-        Use our <span className="primary-text">intuitive and visual process</span> to teach the AI what is important, where to generalize and what to predict.
-You can specify your <span className="primary-text">exact hardware and performance requirements</span> and then let ONE AI create the perfect model for your needs.
+        Use our <span className="primary-text">intuitive and visual process</span>{" "}to teach the AI what is important, where to generalize and what to predict.
+You can specify your <span className="primary-text">exact hardware and performance requirements</span>{" "}and then let ONE AI create the perfect model for your needs.
       </>
     ),
   },
@@ -53,21 +53,18 @@ You can specify your <span className="primary-text">exact hardware and performan
     imageSrc: <img alt="Simulation" src="/img/ai/Train.png" />,
     description: (
       <>
-        After you start training, ONE AI will automatically generate a <span className="primary-text">custom neural network</span> for your <span className="primary-text">hardware and application</span>.  
+        After you start training, ONE AI will automatically generate a <span className="primary-text">custom neural network</span>{" "}for your <span className="primary-text">hardware and application</span>.  
 The AI then trains on your data, but only learns <span className="primary-text">what is important</span>. This ensures <span className="primary-text">highest performance and accuracy</span>.
       </>
     ),
   },
   {
-    title: "Extensibility",
-    imageSrc: <img alt="Extensible" src="/img/studio/slides2/extensions.png" />,
+    title: "Test and Deploy",
+    imageSrc: <img alt="Extensible" src="/img/ai/Export.png" />,
     description: (
       <>
-        Download and Install <span className="primary-text">Extensions</span>{" "}
-        from to extend the functionality. Discover a growing selection of{" "}
-        <span className="primary-text">AI-Tools</span>,{" "}
-        <span className="primary-text">Hardware-Integrations</span>,{" "}
-        <span className="primary-text">Simulators and More</span>
+        While training and testing, the AI already behaves like on your target hardware. No matter if you are using an <span className="primary-text">FPGA</span>, <span className="primary-text">Microcontroller</span>, <span className="primary-text">GPU</span>, <span className="primary-text">CPU</span>{" "}or <span className="primary-text">TPU</span>.
+        If you are sattisfied with the results, you can export the AI as cross-platform <span className="primary-text">executable</span>, universal <span className="primary-text">HDL</span>{" "}code, <span className="primary-text">C++</span>{" "}project or <span className="primary-text">ONNX/TF/TF-Lite Model</span>.
       </>
     ),
   },
