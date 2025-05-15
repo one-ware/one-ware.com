@@ -239,7 +239,7 @@ function Extension() {
 function Beta() {
   return (
     <div className="text-center max-w-6xl m-auto mt-8 mb-16">
-      <h2 className="text-4xl font-bold">Join the ONE AI Closed Beta! 🚀</h2>
+      <h2 className="text-4xl font-bold">Be the first to test ONE AI! 🚀</h2>
       <div className="text-xl md:text-2xl mt-6">
         <strong>You Want to Build Custom AI Models?</strong> Experience the
         future of AI! Automatically generate tailored AI models with ONE AI.

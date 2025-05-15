@@ -69,7 +69,7 @@ export default function HomepageFeatures(): JSX.Element {
           <span className="text-3xl text-center md:text-left">
             <h2 className="primary-text text-4xl">ONE AI</h2>
             <p className="mb-5">
-            See how ONE AI creates custom neural network in seconds that fits your exact Hardware, performance and use case requirements.
+            See how ONE AI creates custom neural networks in seconds that fit your exact Hardware, performance and use case requirements.
             </p>
             
           </span>
