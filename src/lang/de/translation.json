@@ -1,0 +1,14 @@
+{
+  "heropage": {
+    "catchphrase1": "Benötigen Sie einen KI-Experten für Ihr Unternehmen?",
+    "catchphrase2": "Nein, nicht wirklich!"
+  },
+  "followpage": {
+    "headtext": "Folge uns auf unseren Social Media Kanälen!",
+    "subtext": "Bleibe auf dem Laufenden und erhalte exklusive Angebote."
+  },
+  "common": {
+    "login": "Einloggen",
+    "signup": "Registrieren"
+  }
+}

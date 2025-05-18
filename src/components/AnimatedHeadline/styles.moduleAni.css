@@ -1,0 +1,91 @@
+/* Base styles */
+.cd-headline {
+  font-size: 2rem;
+  font-weight: 600;
+  display: inline-block;
+  position: relative;
+
+}
+
+.cd-words-wrapper {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+  vertical-align: top;
+  overflow: hidden;
+}
+
+.cd-words-wrapper b {
+  display: inline-block;
+  position: absolute;
+  opacity: 0;
+  white-space: nowrap;
+  top: 0;
+  left: 0;
+}
+
+.cd-words-wrapper b.is-visible {
+  position: relative;
+  opacity: 1;
+}
+
+/* Letter animation */
+.cd-headline.letters b i {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.cd-headline.letters b i.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cd-headline.letters b i.out {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+/* Type animation */
+.cd-headline.type .cd-words-wrapper::after {
+  content: '|';
+  animation: blink 1s infinite;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-weight: 400;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Clip effect */
+.cd-headline.clip .cd-words-wrapper {
+  overflow: hidden;
+  border-right: 2px solid #000;
+  transition: width 0.4s ease;
+}
+
+/* Loading bar */
+.cd-headline.loading-bar .cd-words-wrapper {
+  position: relative;
+  padding: 0 .2em;
+}
+
+.cd-headline.loading-bar .cd-words-wrapper::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 3px;
+  width: 0;
+  background: #000;
+  transition: width 3s ease;
+}
+
+.cd-headline.loading-bar .cd-words-wrapper.is-loading::after {
+  width: 100%;
+}
