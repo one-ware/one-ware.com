@@ -60,6 +60,23 @@
   animation-iteration-count: infinite;
 }
 
+.animatedWord {
+  display: inline-block;
+  min-width: 10px;
+  color: #00FFD1; /* or any highlight color you prefer */
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 @keyframes float {
 	0% {
 		transform: translatey(0px);
