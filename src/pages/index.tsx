@@ -75,11 +75,12 @@ function HomepageHeader() {
       <div className="absolute flex flex-col items-center justify-center w-full h-full pointer-events-none">
         <div className="flex flex-col items-center justify-center w-full md:w-8/12 xl:w-8/12">
           <span className="text-lg md:text-2xl font-bold drop-shadow-4xl text-gray-300 mb-4 text-center">
-            There Is No AI That Can <span className="primary-text">Automate Everything</span> -<br/>
-            But <span className="primary-text">ONE AI</span> Will Build The AI Models That Can!
+            There Is No AI That Can <span className="primary-text">Automate Everything</span>{" "}-{" "} 
+            <span className="inline xl:block">But <span className="primary-text">ONE AI</span> will Build The AI Models That Can!</span>
           </span>
-          <span className="text-3xl md:text-5xl lg:text-6xl font-bold drop-shadow-4xl text-gray-200 whitespace-nowrap">
-            Every <span className={styles.animatedWord}>{displayText}</span><span className={styles.cursor}>|</span>. ONE Software.
+          <span className="text-3xl text-center md:text-5xl lg:text-6xl font-bold drop-shadow-4xl text-gray-200 whitespace-nowrap">
+            Every <span className={styles.animatedWord}>{displayText}</span><span className={styles.cursor}>|</span>.{" "} 
+            <span className="block xl:inline"><span className="primary-text">ONE</span> Software.</span>
           </span>
         </div>
       </div>

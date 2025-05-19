@@ -537,7 +537,7 @@ export default function Studio(): JSX.Element {
               <Extension />
             </div>
 
-            
+        
 
             <VendorSection />
           </div>
