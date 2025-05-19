@@ -9,11 +9,13 @@
 
  .heroBackground{
   box-shadow: rgb(0 0 0 / 50%) 0px -10px 13px -7px inset; 
-  background-image: linear-gradient(0deg,#0b1216,#152f3a,#184b48);
+  background-image: linear-gradient(0deg,#11252a,#0b0e0c,#1f1f1f);
   position: relative;
   top: 0;
   left: 0;
   right: 0;
+  height: 50vh;
+  min-height: 300px;
   margin-top: calc(var(--ifm-navbar-height)*-1);
 }
 
@@ -46,8 +48,9 @@
   left: 0;
   right: 0;
   animation-name: float;
-  animation-duration: 2s;  animation-iteration-count: infinite;
-  background: transparent url("@site/static/img/start/down.png") center;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  background: transparent url("/img/start/down.png") center;
   background-size: contain;
   opacity: 80%;
   transition: 1s;
@@ -63,17 +66,6 @@
   display: inline-block;
   min-width: 10px;
   color: #00FFD1; /* or any highlight color you prefer */
-}
-
-.cursor {
-  display: inline-block;
-  margin-left: 2px;
-  animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-  from, to { opacity: 1; }
-  50% { opacity: 0; }
 }
 
 @keyframes float {

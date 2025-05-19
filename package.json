@@ -29,7 +29,8 @@
     "react-icons": "^5.0.1",
     "react-slick": "^0.30.1",
     "react-social-media-embed": "^2.5.9",
-    "tsparticles": "^3.1.0"
+    "tsparticles": "^3.1.0",
+    "typewriter-effect": "^2.22.0"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.4.0",

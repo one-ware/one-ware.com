@@ -1,0 +1,14 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.studioSidebar.category.Tutorials": {
+    "message": "Tutorials",
+    "description": "The label for category Tutorials in sidebar studioSidebar"
+  },
+  "sidebar.studioSidebar.category.Plugins": {
+    "message": "Plugins",
+    "description": "The label for category Plugins in sidebar studioSidebar"
+  }
+}
