@@ -63,6 +63,76 @@ function HomepageHeader() {
   );
 }
 
+function TestimonialsSection() {
+  return (
+
+      <div className="container mx-auto px-4 mb-24">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-200 mb-12">
+          What Others Say About Us
+        </h2>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Testimonial 1 */}
+          <div className="bg-gray-900 bg-opacity-50 p-6 rounded-lg shadow-xl">
+            <p className="text-gray-300 italic mb-6 text-lg">
+              "Working with ONE WARE demonstrates the incredible potential that
+              emerges when intelligent AI development meets highly efficient FPGA
+              technology. ONE WARE takes our MAX® 10 platform to a new level –
+              delivering solutions that not only push technological boundaries, together
+              we're building solutions that are far more precise, more efficient and drive
+              meaningful change in industrial practice. This partnership represents a
+              new generation of industrial AI: scalable, resource-efficient, and
+              universally applicable."
+            </p>
+            <div className="flex items-center">
+              <div>
+                <p className="text-primary-text font-bold">Mark Moran</p>
+                <p className="text-gray-400 text-sm">Director of Boards, Development Kits, and Partners at Altera</p>
+              </div>
+            </div>
+          </div>
+          
+          {/* Testimonial 2 */}
+          <div className="bg-gray-900 bg-opacity-50 p-6 rounded-lg shadow-xl">
+            <p className="text-gray-300 italic mb-6 text-lg">
+              "From day one, working with ONE WARE was pragmatic and focused.
+              Using AI-powered image processing, we established a robust defect
+              detection system on high-gloss surfaces in just a few weeks – a milestone
+              that traditional metrology would have taken up to 18 months to reach.
+              We're enthusiastic about ONE WARE's solution. Its potential in AI is
+              impressive and a true lever for strengthening our competitiveness."
+            </p>
+            <div className="flex items-center">
+              <div>
+                <p className="text-primary-text font-bold">Christian Leon</p>
+                <p className="text-gray-400 text-sm">COO & Managing Director at HDO</p>
+              </div>
+            </div>
+          </div>
+          
+          {/* Testimonial 3 */}
+          <div className="bg-gray-900 bg-opacity-50 p-6 rounded-lg shadow-xl">
+            <p className="text-gray-300 italic mb-6 text-lg">
+              "Through our European Digital Infrastructure investment thesis, we seek
+              out entrepreneurs building the foundations of future global digital
+              systems. ONE WARE is such a company. With its mission to make
+              advanced technologies more accessible and universally applicable, the
+              team around Leon, Leo, Hendrik, and Ali is fundamentally changing the
+              way AI and electronics development is approached across industries."
+            </p>
+            <div className="flex items-center">
+              <div>
+                <p className="text-primary-text font-bold">Jan Sessenhausen</p>
+                <p className="text-gray-400 text-sm">Investor & General Partner at Cusp Capital</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  );
+}
+
 // Default export function (unchanged)
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
@@ -79,6 +149,7 @@ export default function Home(): JSX.Element {
       <HomepageHeader />
       <main className="container overflow-x-hidden">
         <HomepageFeatures />
+        <TestimonialsSection />
       </main>
     </Layout>
   );
