@@ -6,28 +6,28 @@ export default function Partners(): JSX.Element {
         <div className="bg-white rounded-xl p-2 m-5 sm:m-1">
           <img
             className="m-auto md:mt-0"
-            src={"/img/Partner/Partner1.jpg"}
+            src={require('@site/static/img/Partner/Partner1.jpg').default}
             alt="EXIST"
           />
         </div>
         <div className="bg-white rounded-xl p-2 m-5 sm:m-1">
           <img
             className="m-auto md:mt-0"
-            src={"/img/Partner/Partner2.jpg"}
+            src={require('@site/static/img/Partner/Partner2.jpg').default}
             alt="European Union"
           />
         </div>
         <div className="bg-white rounded-xl p-2 m-5 sm:m-1">
           <img
             className="m-auto md:mt-0"
-            src={"/img/Partner/Partner3.jpg"}
+            src={require('@site/static/img/Partner/Partner3.jpg').default}
             alt="Bundesregierung für Wirtschaft und Klimaschutz"
           />
         </div>
         <div className="bg-white rounded-xl p-2 m-5 sm:m-1">
           <img
             className="m-auto md:mt-0"
-            src={"/img/Partner/Partner4.jpg"}
+            src={require('@site/static/img/Partner/Partner4.jpg').default}
             alt="ESF"
           />
         </div>

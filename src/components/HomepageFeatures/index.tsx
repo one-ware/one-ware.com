@@ -59,7 +59,7 @@ export default function HomepageFeatures(): JSX.Element {
     <section className={`${styles.features} container my-20`}>
       <div className="grid md:grid-cols-2 my-20 md:my-10 bottomsplit pb-20">
         <div data-aos="fade-left" className="md:px-10">
-          <img src="/img/ai/Capture.png" />
+          <img src={require('@site/static/img/ai/Capture.png').default} />
         </div>
 
         <div
@@ -85,9 +85,8 @@ export default function HomepageFeatures(): JSX.Element {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 md:my-10 md:pt-10">
-        <div className="p-5 md:order-2" data-aos="fade-right">
-          <img src="/img/studio/slides2/simulator.png" />
+      <div className="grid md:grid-cols-2 md:my-10 md:pt-10">        <div className="p-5 md:order-2" data-aos="fade-right">
+          <img src={require('@site/static/img/studio/slides2/simulator.png').default} />
         </div>
 
         <div
@@ -114,17 +113,15 @@ export default function HomepageFeatures(): JSX.Element {
       </div>
 
       {/* 
-      <div className="grid md:grid-cols-2 mt-10 md:mt-10">
-        <div className="p-5 md:order-2" data-aos="fade-left">
-          <img src="/img/start/PLC_Schrank.png" />
+      <div className="grid md:grid-cols-2 mt-10 md:mt-10">        <div className="p-5 md:order-2" data-aos="fade-left">
+          <img src={require('@site/static/img/start/PLC_Schrank.png').default} />
         </div>
 
         <div
           className="md:p-5 flex-col flex gap-1 justify-center relative"
           data-aos="fade-right"
-        >
-          <div className="absolute top-5 left-0 -rotate-12 hidden xl:block">
-            <img src="/img/start/drone_transparent.png" width={200} />
+        >          <div className="absolute top-5 left-0 -rotate-12 hidden xl:block">
+            <img src={require('@site/static/img/start/drone_transparent.png').default} width={200} />
           </div>
 
           <span className="text-3xl text-center md:text-left">
@@ -135,7 +132,7 @@ export default function HomepageFeatures(): JSX.Element {
               <img
                 height={37}
                 className="ml-2"
-                src="/img/start/PLC_One_Logo.png"
+                src={require('@site/static/img/start/PLC_One_Logo.png').default}
               />
             </p>
           </span>

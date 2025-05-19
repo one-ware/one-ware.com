@@ -28,7 +28,7 @@ const sliders = [
   {
     title: "Capture and Label",
     imageSrc: (
-      <img alt="Capture" src="/img/ai/Capture.png" />
+      <img alt="Capture" src={require('@site/static/img/ai/Capture.png').default} />
     ),
     description: (
       <>
@@ -40,7 +40,7 @@ const sliders = [
   },
   {
     title: "Guide and Select",
-    imageSrc: <img alt="Hardware" src="/img/ai/Pre.png" />,
+    imageSrc: <img alt="Hardware" src={require('@site/static/img/ai/Pre.png').default} />,
     description: (
       <>
         Use our <span className="primary-text">intuitive and visual process</span>{" "}to teach the AI what is important, where to generalize and what to predict.
@@ -50,7 +50,7 @@ You can specify your <span className="primary-text">exact hardware and performan
   },
   {
     title: "Predict and Train",
-    imageSrc: <img alt="Simulation" src="/img/ai/Train.png" />,
+    imageSrc: <img alt="Simulation" src={require('@site/static/img/ai/Train.png').default} />,
     description: (
       <>
         After you start training, ONE AI will automatically generate a <span className="primary-text">custom neural network</span>{" "}for your <span className="primary-text">hardware and application</span>.  
@@ -60,7 +60,7 @@ The AI then trains on your data, but only learns <span className="primary-text">
   },
   {
     title: "Test and Deploy",
-    imageSrc: <img alt="Extensible" src="/img/ai/Export.png" />,
+    imageSrc: <img alt="Extensible" src={require('@site/static/img/ai/Export.png').default} />,
     description: (
       <>
         While training and testing, the AI already behaves like on your target hardware. No matter if you are using an <span className="primary-text">FPGA</span>, <span className="primary-text">Microcontroller</span>, <span className="primary-text">GPU</span>, <span className="primary-text">CPU</span>{" "}or <span className="primary-text">TPU</span>.
@@ -226,7 +226,7 @@ function Extension() {
 
         <div className="col items-center">
           <img
-            src="/img/start/Elec_Studio.png"
+            src={require('@site/static/img/start/Elec_Studio.png').default}
             data-aos="slide-left"
             alt="Hardware"
           />

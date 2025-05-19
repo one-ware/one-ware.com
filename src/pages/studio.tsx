@@ -26,9 +26,8 @@ type FancyParticlesProps = {
 
 const sliders = [
   {
-    title: "Code Assistant",
-    imageSrc: (
-      <img alt="Code Assistant" src="/img/studio/slides2/completion.png" />
+    title: "Code Assistant",    imageSrc: (
+      <img alt="Code Assistant" src={require('@site/static/img/studio/slides2/completion.png').default} />
     ),
     description: (
       <>
@@ -42,7 +41,7 @@ const sliders = [
   },
   {
     title: "Hardware Support",
-    imageSrc: <img alt="Hardware" src="/img/studio/slides2/hardware.png" />,
+    imageSrc: <img alt="Hardware" src={require('@site/static/img/studio/slides2/hardware.png').default} />,
     description: (
       <>
         Conveniently setup and compile your designs from your hardware.{" "}
@@ -53,7 +52,7 @@ const sliders = [
   },
   {
     title: "Simulation",
-    imageSrc: <img alt="Simulation" src="/img/studio/slides2/simulator.png" />,
+    imageSrc: <img alt="Simulation" src={require('@site/static/img/studio/slides2/simulator.png').default} />,
     description: (
       <>
         Simulate your designs inside the IDE, using the lightning fast
@@ -64,7 +63,7 @@ const sliders = [
   },
   {
     title: "Extensibility",
-    imageSrc: <img alt="Extensible" src="/img/studio/slides2/extensions.png" />,
+    imageSrc: <img alt="Extensible" src={require('@site/static/img/studio/slides2/extensions.png').default} />,
     description: (
       <>
         Download and Install <span className="primary-text">Extensions</span>{" "}
@@ -80,7 +79,7 @@ const sliders = [
 const ai_sliders = [
   {
     title: "Universal Assistant",
-    imageSrc: <img alt="Extensible" src="/img/studio/slides/ai.png" />,
+    imageSrc: <img alt="Extensible" src={require('@site/static/img/studio/slides/ai.png').default} />,
     description: (
       <>
         ONE AI lets you build efficient AIs to process{" "}
@@ -94,7 +93,7 @@ const ai_sliders = [
   },
   {
     title: "Quality Control",
-    imageSrc: <img alt="Extensible" src="/img/ai/quality.png" />,
+    imageSrc: <img alt="Extensible" src={require('@site/static/img/ai/quality.png').default} />,
     description: (
       <>
         Create your custom quality control with our AI based{" "}
@@ -106,7 +105,7 @@ const ai_sliders = [
   },
   {
     title: "Predictive Maintenance",
-    imageSrc: <img alt="Extensible" src="/img/ai/Predictive_Maintenance.png" />,
+    imageSrc: <img alt="Extensible" src={require('@site/static/img/ai/Predictive_Maintenance.png').default} />,
     description: (
       <>
         Fix problems before they occur. ONE AI takes sensor-data from your
@@ -117,7 +116,7 @@ const ai_sliders = [
   },
   {
     title: "Robots and Drones",
-    imageSrc: <img alt="Code Assistant" src="/img/ai/Titel.png" />,
+    imageSrc: <img alt="Code Assistant" src={require('@site/static/img/ai/Titel.png').default} />,
     description: (
       <>
         Replace the last manual steps of your production with autonomous robots
@@ -278,7 +277,7 @@ function VendorSection() {
         extension system.
       </h5>
 
-      <img src="/img/studio/hardware.png" alt="Hardware" />
+      <img src={require('@site/static/img/studio/hardware.png').default} alt="Hardware" />
     </div>
   );
 }
@@ -309,7 +308,7 @@ function Extension() {
 
         <div className="col items-center">
           <img
-            src="/img/start/Elec_Studio.png"
+            src={require('@site/static/img/start/Elec_Studio.png').default}
             data-aos="slide-left"
             alt="Hardware"
           />

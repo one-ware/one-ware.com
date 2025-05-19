@@ -46,9 +46,8 @@
   left: 0;
   right: 0;
   animation-name: float;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  background: transparent url("/img/start/down.png") center;
+  animation-duration: 2s;  animation-iteration-count: infinite;
+  background: transparent url("@site/static/img/start/down.png") center;
   background-size: contain;
   opacity: 80%;
   transition: 1s;

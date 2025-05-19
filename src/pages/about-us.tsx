@@ -10,7 +10,7 @@ export default function AboutUs(): JSX.Element {
   return (
     <Layout title="About Us" description="About our Team">
       <main className="container my-20">
-        <img src="/img/AboutUs/Team.jpeg" />
+        <img src={require('@site/static/img/AboutUs/Team.jpeg').default} />
         <div className="text-center max-w-5xl m-auto mt-16">
           <h2 className="text-5xl font-bold">Our Team</h2>
           <div className="md:grid md:grid-cols-4 text-center mt-10 gap-10">
@@ -18,7 +18,7 @@ export default function AboutUs(): JSX.Element {
               <div className="m-auto md:mt-0">
                 <img
                   className="m-auto md:mt-0"
-                  src={"/img/AboutUs/Leon.png"}
+                  src={require('@site/static/img/AboutUs/Leon.png').default}
                   alt="Modular"
                   height={170}
                   width={170}
@@ -47,7 +47,7 @@ export default function AboutUs(): JSX.Element {
               <div className="m-auto md:mt-0">
                 <img
                   className="m-auto md:mt-0"
-                  src={"/img/AboutUs/Hendrik.png"}
+                  src={require('@site/static/img/AboutUs/Hendrik.png').default}
                   alt="Modular"
                   height={170}
                   width={170}
@@ -76,7 +76,7 @@ export default function AboutUs(): JSX.Element {
               <div className="m-auto md:mt-0">
                 <img
                   className="m-auto md:mt-0"
-                  src={"/img/AboutUs/Leo.png"}
+                  src={require('@site/static/img/AboutUs/Leo.png').default}
                   alt="Modular"
                   height={170}
                   width={170}
@@ -105,7 +105,7 @@ export default function AboutUs(): JSX.Element {
               <div className="m-auto md:mt-0">
                 <img
                   className="m-auto md:mt-0"
-                  src={"/img/AboutUs/Ali.png"}
+                  src={require('@site/static/img/AboutUs/Ali.png').default}
                   alt="Modular"
                   height={170}
                   width={170}

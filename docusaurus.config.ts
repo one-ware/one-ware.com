@@ -97,8 +97,8 @@ const config: Config = {
     colorMode: {
       defaultMode: "dark",
       disableSwitch: true,
-    },
-    // Replace with your project's social card
+    },    // Replace with your project's social card
+    // For meta tags, we still use the path without require
     image: "/img/social-card.jpg",
     navbar: {
       logo: {
@@ -143,24 +143,10 @@ const config: Config = {
             },
           ],
         },
-        // {
-        //   type: "dropdown",
-        //   position: "left",
-        //   label: "PLC-ONE",
-        //   to: "/plc-one",
-        //   activeBaseRegex: '(^.*/plc-one$)|(^.*/docs/plc-one/.*$)',
-        //   items: [
-        //     {
-        //       to: "/plc-one",
-        //       label: "Features",
-        //     },
-        //     {
-        //       type: "doc",
-        //       docId: "plc-one/overview",
-        //       label: "Overview",
-        //     },
-        //   ],
-        // },
+        {
+          type: 'localeDropdown',
+          position: 'right',
+        },
         {
           to: "/blog",
           label: "Blog",
@@ -182,7 +168,6 @@ const config: Config = {
           label: "Contact",
           position: "right",
         },
-
         {
           href: "https://github.com/one-ware",
           position: "right",
@@ -277,6 +262,15 @@ const config: Config = {
       darkTheme: prismThemes.vsDark,
       additionalLanguages: ["json", "csharp"],
     },
+    i18n: {
+      defaultLocale: 'en',
+      locales: ['en', 'de'],
+      localeConfigs: {
+        en: {
+          htmlLang: 'en-GB',
+        }
+      },
+    }
   } satisfies Preset.ThemeConfig,
 };
 

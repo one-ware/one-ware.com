@@ -108,7 +108,7 @@ export default function PLC(): JSX.Element {
             <div className="absolute flex flex-col xl:flex-row w-full container gap-10 md:gap-0">
               <div className="xl:w-1/2 w-full flex flex-col justify-center gap-5 md:gap-10 md:mt-48 xl:mt-0">
                 <img
-                  src={"/img/plc/Logo_SVG-ONE2-plc.svg"}
+                  src={require('@site/static/img/plc/Logo_SVG-ONE2-plc.svg').default}
                   alt="PLC Logo"
                   className={`drop-shadow-4xl`}
                   width={360}
@@ -131,7 +131,7 @@ export default function PLC(): JSX.Element {
 
               <div>
                 <img
-                  src={"/img/plc/Hero.png"}
+                  src={require('@site/static/img/plc/Hero.png').default}
                   alt="PLC Logo"
                   className={`drop-shadow-4xl ${styles.heroImage} md:px-32 xl:px-0`}
                   width={1000}
@@ -145,7 +145,7 @@ export default function PLC(): JSX.Element {
       <main className="pb-0 overflow-hidden md:my-10 mb-20">
         <div className="grid md:grid-cols-2 my-3 container">
           <div className="p-5" data-aos="fade-right">
-            <img src="/img/plc/Schrank.png" />
+            <img src={require('@site/static/img/plc/Schrank.png').default} />
           </div>
 
           <div
@@ -164,7 +164,7 @@ export default function PLC(): JSX.Element {
 
         <div className="grid md:grid-cols-2 my-3 container mt-10 md:mt-3">
           <div className="p-5 md:order-1" data-aos="fade-right">
-            <img src="/img/plc/Roboter.png" />
+            <img src={require('@site/static/img/plc/Roboter.png').default} />
           </div>
 
           <div
@@ -194,7 +194,7 @@ export default function PLC(): JSX.Element {
              Smart, Flexible and light as a feather
             </h2>
             <img
-              src={"/img/plc/Drohne.png"}
+              src={require('@site/static/img/plc/Drohne.png').default}
               className="mt-10"
               alt="Compare"
               data-aos="zoom-in"
@@ -220,7 +220,7 @@ export default function PLC(): JSX.Element {
             </h2>
             <img
               data-aos="zoom-in"
-              src={"/img/plc/Steuerung.png"}
+              src={require('@site/static/img/plc/Steuerung.png').default}
               className="mt-10"
               alt="Compare"
             />
@@ -247,7 +247,7 @@ export default function PLC(): JSX.Element {
             </h2>
             <img
               data-aos="zoom-in"
-              src={"/img/plc/components2.png"}
+              src={require('@site/static/img/plc/components2.png').default}
               className="mt-10"
               alt="Compare"
             />
