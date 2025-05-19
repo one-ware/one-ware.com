@@ -38,6 +38,7 @@ function HomepageHeader() {
                 message: 'Every ',
               })
             }
+            <span className="primary-text">
             <Typewriter
               options={{
                 strings: [
@@ -49,8 +50,9 @@ function HomepageHeader() {
                 loop: true,
               }}
             />
+            </span>
             <span className="block xl:inline">
-              <span className="primary-text">ONE</span> Software.
+              ONE Software.
             </span>
           </span>
 
