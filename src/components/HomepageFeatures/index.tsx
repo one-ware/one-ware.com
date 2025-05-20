@@ -17,7 +17,9 @@ export default function HomepageFeatures(): JSX.Element {
           <span className="text-3xl text-center md:text-left">
             <h2 className="primary-text text-4xl">ONE AI</h2>
             <p className="mb-5">
-              <Translate id="homepage.features.oneai" />
+              <Translate id="homepage.features.oneai">
+                See how ONE AI creates custom neural networks in seconds that fit your exact Hardware, performance and use case requirements.
+              </Translate>
             </p>
 
           </span>
@@ -33,10 +35,10 @@ export default function HomepageFeatures(): JSX.Element {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 md:my-10 md:pt-10">        
+      <div className="grid md:grid-cols-2 md:my-10 md:pt-10">
         <div className="p-5 md:order-2" data-aos="fade-right">
-        <img src={require('@site/static/img/studio/slides2/simulator.png').default} />
-      </div>
+          <img src={require('@site/static/img/studio/slides2/simulator.png').default} />
+        </div>
 
         <div
           className="md:p-5 flex-col flex gap-1 justify-center relative"
@@ -45,8 +47,10 @@ export default function HomepageFeatures(): JSX.Element {
           <span className="text-3xl text-center md:text-left">
             <h2 className="primary-text text-4xl">ONE WARE Studio</h2>
             <p className="mb-5">
-              See how to integrate AI in your embedded systems and speed up the
-              development with ONE WARE Studio
+              <Translate id="homepage.features.onewarestudio">
+                See how to integrate AI in your embedded systems and speed up the
+                development with ONE WARE Studio
+              </Translate>
             </p>
           </span>
 

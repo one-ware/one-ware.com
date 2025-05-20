@@ -16,15 +16,15 @@
     "description": "Navbar item with label Blog"
   },
   "item.label.About Us": {
-    "message": "About Us",
+    "message": "Über Uns",
     "description": "Navbar item with label About Us"
   },
   "item.label.Careers": {
-    "message": "Careers",
+    "message": "Kariere",
     "description": "Navbar item with label Careers"
   },
   "item.label.Contact": {
-    "message": "Contact",
+    "message": "Impressum",
     "description": "Navbar item with label Contact"
   },
   "item.label.Overview": {
