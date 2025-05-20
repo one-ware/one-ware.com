@@ -50,7 +50,6 @@ function HomepageHeader() {
             </span>
           </span>
           
-          {/* Buttons hinzugefügt */}
           <div className="flex justify-center gap-4 mt-8 flex-col md:flex-row">
             <a href="one-ai">
               <button className="button button--primary text-xl">
@@ -146,7 +145,7 @@ function TestimonialsSection() {
             href="https://go.altera.com/l/1090322/2025-04-18/2vvzbn"
             target="_blank"
             rel="noopener noreferrer"
-            className="block no-underline"
+            className="block no-underline hover:no-underline"
           >
             <p className="text-gray-800 italic mb-6 font-bold text-lg">
               <Translate id="testimonials.1.text">
@@ -173,14 +172,14 @@ function TestimonialsSection() {
             href="https://hdo-gmbh.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="block no-underline"
+            className="block no-underline hover:no-underline"
           >
             <p className="text-gray-800 italic mb-6 font-bold text-lg">
               <Translate id="testimonials.2.text">
                 "From day one, working with ONE WARE was pragmatic and focused..."
               </Translate>
             </p>
-            <div className="mb-20">
+            <div className="mb-24">
               <p className="text-gray-900 text-2xl font-bold">Christian Leon</p>
               <p className="text-gray-700 font-bold text-l">
                 <Translate id="testimonials.2.authorTitle">
@@ -200,7 +199,7 @@ function TestimonialsSection() {
             href="https://www.cuspcapital.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="block no-underline"
+            className="block no-underline hover:no-underline"
           >
             <p className="text-gray-800 italic mb-6 font-bold text-lg">
               <Translate id="testimonials.3.text">
@@ -225,7 +224,7 @@ function TestimonialsSection() {
   );
 }
 
-export default function Home(): JSX.Element {
+export default function Home() {
   const { siteConfig } = useDocusaurusContext();
 
   if (ExecutionEnvironment.canUseDOM) {
