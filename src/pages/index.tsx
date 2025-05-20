@@ -18,9 +18,9 @@ import initWebsiteEffects from "../components/startEffects";
 function HomepageHeader() {
   return (
     <header id="hero" className={styles.heroBackground}>
-      <div className="absolute flex flex-col items-center justify-center w-full h-full pointer-events-none">
+      <div className="absolute flex flex-col items-center justify-center w-full h-full">
         <div className="flex flex-col items-center justify-center w-full md:w-8/12 xl:w-8/12">
-          <div className="text-center">
+          <div className="text-center pointer-events-none">
             <div className="text-3xl md:text-5xl lg:text-6xl font-bold drop-shadow-4xl text-gray-200 whitespace-nowrap inlinetypewriter">
               {translate({ id: 'homepage.every', message: 'Every ' })}
               <span className="primary-text">
@@ -43,12 +43,21 @@ function HomepageHeader() {
             </div>
           </div>
 
-          <span className="text-md md:text-3xl font-bold drop-shadow-4xl text-gray-300 mt-6 text-center">
+          <span className="text-md md:text-3xl font-bold drop-shadow-4xl text-gray-300 mt-6 text-center pointer-events-none">
             <Translate id="homepage.subtitle">Meet the World's First</Translate>{" "}
             <span className="primary-text">
               <Translate id="homepage.subtitle.ai">AI-Powered AI Developer</Translate>
             </span>
           </span>
+          
+          {/* Buttons hinzugefügt */}
+          <div className="flex justify-center gap-4 mt-8 flex-col md:flex-row">
+            <a href="one-ai">
+              <button className="button button--primary text-xl">
+                ONE AI
+              </button>
+            </a>
+          </div>
         </div>
       </div>
     </header>
@@ -109,13 +118,13 @@ function HeaderSection() {
       <div className="flex justify-center gap-4 mt-8 flex-col md:flex-row">
         <a href="docs/studio/setup">
           <button className="button button--primary text-xl">
-            Download ONE WARE Studio
+            ONE WARE Studio
           </button>
         </a>
 
         <a href="https://forms.office.com/e/J3HDid9fzw" target="_blank">
           <button className="button button--secondary text-xl">
-            Join ONE AI Waitlist
+            ONE AI Waitlist
           </button>
         </a>
       </div>
