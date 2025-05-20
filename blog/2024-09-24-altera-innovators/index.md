@@ -19,6 +19,8 @@ tags:
 
 Yesterday, we had the privilege of participating in **Altera Innovators Day**, and we were truly impressed by the **groundbreaking innovations** showcased—especially the **Agilex 3 series**.  
 
+<!-- truncate -->
+
 The **potential of this platform** for our own **Edge AI** solutions is enormous, unlocking **exciting new possibilities** for advancing our **AI technologies**.  
 
 ## Showcasing ‘AI in the Box’ & Engaging Discussions  

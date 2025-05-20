@@ -16,6 +16,8 @@ After our successful appearances at the **embedded world Exhibition & Conference
 
 ![Power Up 2024](img/1714991961613.jpeg)
 
+<!-- truncate -->
+
 ## What is Power Up Expo?  
 
 📍 **Date:** May 8, 2024  

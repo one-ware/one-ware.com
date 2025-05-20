@@ -20,6 +20,8 @@ tags:
 
 After embedded world Exhibition&Conference our exhibition journey continues: ONE WARE is live at HANNOVER MESSE – Startup Area | Hall 2, Booth D51 – from March 31 to April 4.
 
+<!-- truncate -->
+
 ![2025-04-03-hannovermesse](img/1743501724220.jpg)
 
 Experience our powerful new #demo and see what ONE AI is capable of:

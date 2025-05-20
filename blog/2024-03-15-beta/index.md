@@ -17,6 +17,8 @@ ONE WARE Studio is all about extensibility and its features will be gradually ex
 
 Feel free to provide feedback to us at [GitHub](https://github.com/one-ware/OneWare) or at <a href="mailto:info@one-ware.com">info@one-ware.com</a>
 
+<!-- truncate -->
+
 ## Current Features
 
 The Preview of ONE WARE Studio offers a lot of useful features to start programming FPGAs.

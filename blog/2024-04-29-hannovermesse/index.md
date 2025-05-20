@@ -18,6 +18,8 @@ tags:
 
 Last week, we had the privilege of representing **ONE WARE** at the **OWL Community Booth** at **HANNOVER MESSE**, alongside **34 leading companies, research institutions, and startups**.  
 
+<!-- truncate -->
+
 Organized by **OstWestfalenLippe GmbH**, **owl maschinenbau e. V.**, and **it's OWL**, this booth was dedicated to the visionary theme of **Industrie.Zero**—a groundbreaking initiative focused on making industrial production both **sustainable** and **intelligent**, paving the way for the future of global manufacturing.  
 
 At the heart of this transformation are **Artificial Intelligence** and **Sustainability**—key forces driving innovation and progress.  

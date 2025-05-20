@@ -15,6 +15,8 @@ tags:
 
 The **embedded world Exhibition & Conference 2024** provided us with an excellent platform to showcase our commitment to **AI** and demonstrate how our **AI-Generator** significantly improves the implementation of AI on **compact processors** and **FPGAs**.  
 
+<!-- truncate -->
+
 ## A Valuable Experience for ONE WARE  
 
 As an **AI startup**, it was particularly valuable for us not only to attend as visitors but also to **exhibit** at the **Arrow Electronics booth**. The sheer variety and number of **manufacturers** displaying their latest **innovations** were truly impressive.  

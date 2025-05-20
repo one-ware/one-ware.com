@@ -18,6 +18,8 @@ tags:
 
 Step into the future by participating in the Closed Beta of **ONE AI**. Get exclusive access to our automatic #AI generator that creates customized AI models tailored just for your needs – at no cost.
 
+<!-- truncate -->
+
 ## Apply to Join the Closed Beta
 
 🔗 [Apply here](https://lnkd.in/ewQH8-wr) to get exclusive access to our Closed Beta program.

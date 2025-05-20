@@ -17,6 +17,8 @@ tags:
 
 We had the privilege of participating in the **Business Breakfast** organized by **Wirtschaftsförderung Paderborn**, bringing together numerous **entrepreneurs** from diverse industries.  
 
+<!-- truncate -->
+
 The newly established **Startup Campus OWL**, powered by **garage33**, has quickly become a key **hub for innovation and entrepreneurship**. The **network** being created there is truly impressive, and the **future plans** for the campus sound extremely promising.  
 
 ## Showcasing AI Innovation  

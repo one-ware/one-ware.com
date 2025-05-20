@@ -18,6 +18,8 @@ tags:
 
 Access the recording of our recent webinar, created in collaboration with **Arrow Electronics** and **Altera**. Discover how to seamlessly integrate AI into FPGAs to develop powerful and customized applications.
 
+<!-- truncate -->
+
 ## What to Expect?
 
 - **Insights into the Latest Developments:** Learn about the most recent advancements and best practices in FPGA-based AI.

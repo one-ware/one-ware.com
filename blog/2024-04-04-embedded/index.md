@@ -15,6 +15,8 @@ tags:
 
 The answer lies at the **embedded world Exhibition & Conference**, where the latest **technologies** are showcased, and innovative solutions emerge to tackle this challenge.
 
+<!-- truncate -->
+
 ## Simplifying AI Integration for Industrial Applications  
 
 🎯 To address the dynamic requirements of the **AI** and **electronics** industry, we are committed to our **mission** of making advanced AI integration more accessible for industrial applications.  

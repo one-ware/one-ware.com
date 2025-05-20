@@ -488,5 +488,56 @@
   "theme.contentVisibility.draftBanner.message": {
     "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
     "description": "The draft content banner message"
+  },
+  "headersection.title.prefix": {
+    "message": "Download"
+  },
+  "headersection.title.product": {
+    "message": "ONE WARE Studio"
+  },
+  "headersection.title.suffix1": {
+    "message": "And Use"
+  },
+  "headersection.title.ai": {
+    "message": "ONE AI"
+  },
+  "headersection.title.suffix2": {
+    "message": "to Deploy Your First"
+  },
+  "headersection.title.customai": {
+    "message": "Fully Custom AI"
+  },
+  "headersection.title.suffix3": {
+    "message": "!"
+  },
+  "headersection.description.prefix": {
+    "message": "ONE WARE Studio together with ONE AI makes"
+  },
+  "headersection.description.everydeveloper": {
+    "message": "every developer"
+  },
+  "headersection.description.middle": {
+    "message": "an AI expert. You only need to know your application and"
+  },
+  "headersection.description.seconds": {
+    "message": "in seconds"
+  },
+  "headersection.description.tail": {
+    "message": "ONE AI invents completely new AI models for your use case. AI Models that only learn what is important for"
+  },
+  "headersection.description.yourapp": {
+    "message": "your application"
+  },
+  "headersection.description.and": {
+    "message": "and"
+  },
+  "headersection.description.ready": {
+    "message": "ready to deploy"
+  },
+  "headersection.description.withstudio": {
+    "message": "with ONE WARE Studio."
+  },
+  "homepage.features.onewarestudio": {
+    "message": "See how to integrate AI in your embedded systems and speed up the development with ONE WARE Studio"
   }
 }

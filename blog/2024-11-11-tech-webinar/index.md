@@ -19,6 +19,8 @@ tags:
 
 Last week, we hosted the **Tech Webinar: AI on FPGAs**, in collaboration with industry giants **Arrow Electronics** and **Altera**. The event was a resounding success, showcasing the powerful capabilities of our **ONE AI tool** on the **MAX10 FPGA** platform.
 
+<!-- truncate -->
+
 ## A Pioneering Live Demonstration
 
 🎤 The webinar featured a live demonstration, where we walked participants through the **integration of AI into FPGA environments** using our **Open Source IDE and ONE AI tool**. This session highlighted the seamless transformation of #TensorFlow models into #VHDL implementations, exemplifying the synergy between AI and FPGA technology.

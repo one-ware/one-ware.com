@@ -6,3 +6,5 @@ tags: [welcome]
 ---
 
 Welcome to our new Website!
+
+<!-- truncate -->
