@@ -57,46 +57,46 @@
     "message": "ONE WARE Studio"
   },
   "headersection.title.suffix1": {
-    "message": "And Use"
+    "message": "Und nutze"
   },
   "headersection.title.ai": {
     "message": "ONE AI"
   },
   "headersection.title.suffix2": {
-    "message": "to Deploy Your First"
+    "message": "und erstelle deine Erste"
   },
   "headersection.title.customai": {
-    "message": "Fully Custom AI"
+    "message": "100% Angepasste KI"
   },
   "headersection.title.suffix3": {
     "message": "!"
   },
   "headersection.description.prefix": {
-    "message": "ONE WARE Studio together with ONE AI makes"
+    "message": "ONE WARE Studio zusammen mit ONE AI macht"
   },
   "headersection.description.everydeveloper": {
-    "message": "every developer"
+    "message": "jeden Entwickler"
   },
   "headersection.description.middle": {
-    "message": "an AI expert. You only need to know your application and"
+    "message": "zu einem KI-Experten. Du musst nur deine Anwendung kennen und"
   },
   "headersection.description.seconds": {
-    "message": "in seconds"
+    "message": "in Sekunden"
   },
   "headersection.description.tail": {
-    "message": "ONE AI invents completely new AI models for your use case. AI Models that only learn what is important for"
+    "message": "entwickelt ONE AI völlig neue KI-Modelle für deinen Anwendungsfall. Modelle, die nur das lernen, was für"
   },
   "headersection.description.yourapp": {
-    "message": "your application"
+    "message": "deine Anwendung notwendig"
   },
   "headersection.description.and": {
-    "message": "and"
+    "message": "ist sowie unterstützer"
   },
   "headersection.description.ready": {
-    "message": "ready to deploy"
+    "message": "Deploy"
   },
   "headersection.description.withstudio": {
-    "message": "with ONE WARE Studio."
+    "message": "mit ONE WARE Studio."
   },
   "theme.ErrorPageContent.title": {
     "message": "Die Seite ist abgestürzt.",
