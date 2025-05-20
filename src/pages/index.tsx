@@ -58,9 +58,9 @@ function HomepageHeader() {
 function HeaderSection() {
   return (
     <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
-      <h2 className="text-4xl md:text-5xl font-bold mt-10">
+      <h2 className="text-4xl md:text-5xl font-semibold mt-16">
         Download <span className="primary-text">ONE WARE Studio</span>
-        <span className="text-2xl md:text-3xl font-bold mt-3 block text-gray-300">
+        <span className="text-2xl md:text-3xl font-normal mt-3 block text-gray-300">
           And Use <span className="primary-text">ONE AI</span> to Deploy Your First <span className="primary-text">Fully Custom AI</span>!
         </span>
       </h2>
@@ -77,14 +77,14 @@ function HeaderSection() {
       <div className="flex justify-center gap-4 mt-8 flex-col md:flex-row">
         <a href="docs/studio/setup">
           <button className="button button--primary text-xl">
-            Download ONE WARE Studio
+            ONE WARE Studio
           </button>
           
         </a>
 
         <a href="https://forms.office.com/e/J3HDid9fzw" target="_blank">
           <button className="button button--secondary text-xl">
-            Join ONE AI Waitlist
+            ONE AI Waitlist
           </button>
         </a>
       </div>
