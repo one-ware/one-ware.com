@@ -51,12 +51,9 @@ const config: Config = {
     },
   ],
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: "en",
-    locales: ["en"],
+    locales: ["en", "de"],
   },
 
   presets: [
@@ -262,15 +259,6 @@ const config: Config = {
       darkTheme: prismThemes.vsDark,
       additionalLanguages: ["json", "csharp"],
     },
-    i18n: {
-      defaultLocale: 'en',
-      locales: ['en', 'de'],
-      localeConfigs: {
-        en: {
-          htmlLang: 'en-GB',
-        }
-      },
-    }
   } satisfies Preset.ThemeConfig,
 };
 

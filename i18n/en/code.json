@@ -1,10 +1,4 @@
 {
-  "homepage.features.easyToUse": {
-    "message": "homepage.features.easyToUse"
-  },
-  "homepage.features.oneai": {
-    "message": "See how ONE AI creates custom neural networks in seconds that fit your exact Hardware, performance and use case requirements."
-  },
   "theme.ErrorPageContent.title": {
     "message": "This page crashed.",
     "description": "The title of the fallback page when the page crashed"
@@ -415,12 +409,84 @@
     "message": "Tags",
     "description": "The title of the tag list page"
   },
-  "theme.unlistedContent.title": {
+  "homepage.every": {
+    "message": "Every "
+  },
+  "typewriter.task": {
+    "message": "Task."
+  },
+  "typewriter.hardware": {
+    "message": "Hardware."
+  },
+  "typewriter.industry": {
+    "message": "Industry."
+  },
+  "homepage.software": {
+    "message": "ONE Software."
+  },
+  "homepage.subtitle": {
+    "message": "Meet the World's First"
+  },
+  "homepage.subtitle.ai": {
+    "message": "AI-Powered AI Developer"
+  },
+  "testimonials.title": {
+    "message": "What Others Say About Us"
+  },
+  "testimonials.1.text": {
+    "message": "\"Working with ONE WARE demonstrates the incredible potential that emerges when intelligent AI development meets highly efficient FPGA technology. ONE WARE takes our MAX® 10 platform to a new level – delivering solutions that not only push technological boundaries, together we're building solutions that are far more precise, more efficient and drive meaningful change in industrial practice. This partnership represents a new generation of industrial AI: scalable, resource-efficient, and universally applicable.\""
+  },
+  "testimonials.1.authorTitle": {
+    "message": "Director of Boards, Development Kits, and Partners at Altera"
+  },
+  "testimonials.2.text": {
+    "message": "\"From day one, working with ONE WARE was pragmatic and focused. Using AI-powered image processing, we established a robust defect detection system on high-gloss surfaces in just a few weeks – a milestone that traditional metrology would have taken up to 18 months to reach. We're enthusiastic about ONE WARE's solution. Its potential in AI is impressive and a true lever for strengthening our competitiveness.\""
+  },
+  "testimonials.2.authorTitle": {
+    "message": "COO & Managing Director at HDO"
+  },
+  "testimonials.3.text": {
+    "message": "\"Through our European Digital Infrastructure investment thesis, we seek out entrepreneurs building the foundations of future global digital systems. ONE WARE is such a company. With its mission to make advanced technologies more accessible and universally applicable, the team around Leon, Leo, Hendrik, and Ali is fundamentally changing the way AI and electronics development is approached across industries.\""
+  },
+  "testimonials.3.authorTitle": {
+    "message": "Investor & General Partner at Cusp Capital"
+  },
+  "homepage.meta.description": {
+    "message": "Every Task. Every Hardware. Every Industry. ONE Software."
+  },
+  "homepage.features.oneai": {
+    "message": "See how ONE AI creates custom neural networks in seconds that fit your exact Hardware, performance and use case requirements."
+  },
+  "theme.blog.author.pageTitle": {
+    "message": "{authorName} - {nPosts}",
+    "description": "The title of the page for a blog author"
+  },
+  "theme.blog.authorsList.pageTitle": {
+    "message": "Authors",
+    "description": "The title of the authors page"
+  },
+  "theme.blog.authorsList.viewAll": {
+    "message": "View all authors",
+    "description": "The label of the link targeting the blog authors page"
+  },
+  "theme.blog.author.noPosts": {
+    "message": "This author has not written any posts yet.",
+    "description": "The text for authors with 0 blog post"
+  },
+  "theme.contentVisibility.unlistedBanner.title": {
     "message": "Unlisted page",
     "description": "The unlisted content banner title"
   },
-  "theme.unlistedContent.message": {
+  "theme.contentVisibility.unlistedBanner.message": {
     "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
     "description": "The unlisted content banner message"
+  },
+  "theme.contentVisibility.draftBanner.title": {
+    "message": "Draft page",
+    "description": "The draft content banner title"
+  },
+  "theme.contentVisibility.draftBanner.message": {
+    "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
+    "description": "The draft content banner message"
   }
 }
