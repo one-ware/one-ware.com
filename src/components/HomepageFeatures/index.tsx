@@ -5,7 +5,7 @@ import Translate, { translate } from '@docusaurus/Translate';
 export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={`${styles.features} container my-20`}>
-      <div className="grid md:grid-cols-2 my-20 md:my-10 bottomsplit pb-20">
+      <div className="grid md:grid-cols-2  md:my-10 bottomsplit pb-20">
         <div data-aos="fade-left" className="md:px-10">
           <img src={require('@site/static/img/ai/Capture.png').default} />
         </div>

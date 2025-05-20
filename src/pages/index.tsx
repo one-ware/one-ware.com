@@ -48,7 +48,7 @@ function HomepageHeader() {
               }}
             />
             </span>
-            <span className="block xl:inline">
+            <span className="block xl:inline"  >
               ONE Software.
             </span>
           </span>
@@ -63,6 +63,41 @@ function HomepageHeader() {
   );
 }
 
+function HeaderSection() {
+  return (
+    <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
+      <h2 className="text-4xl md:text-5xl font-bold mt-16 mb-10">
+        Download <span className="primary-text">ONE WARE Studio</span>
+        <span className="text-2xl md:text-3xl font-bold mt-4 block text-gray-300">
+          And Use <span className="primary-text">ONE AI</span> to Deploy Your First <span className="primary-text">Fully Custom AI</span>!
+        </span>
+      </h2>
+
+      <h5 className="text-xl md:text-2xl font-normal text-gray-300">
+        ONE WARE Studio together with ONE AI makes <span className="primary-text">every developer</span> an AI expert. 
+        You only need to know your application and <span className="primary-text">in seconds</span> ONE AI invents completely 
+        new AI models for your use case. AI Models that only learn what is important
+        for <span className="primary-text">your application</span> and <span className="primary-text">ready to deploy</span> with ONE WARE Studio.
+      </h5>
+
+      <div className="flex justify-center gap-4 mt-8 flex-col md:flex-row">
+        <a href="docs/studio/setup">
+          <button className="button button--primary text-xl">
+            Download ONE WARE Studio
+          </button>
+          
+        </a>
+
+        <a href="https://forms.office.com/e/J3HDid9fzw" target="_blank">
+          <button className="button button--secondary text-xl">
+            Join ONE AI Waitlist
+          </button>
+        </a>
+      </div>
+    </div>
+  );
+}
+
 function TestimonialsSection() {
   return (
     <div className="px-4 md:px-8 lg:px-12 max-w-screen-2xl mx-auto mb-24">
@@ -73,7 +108,7 @@ function TestimonialsSection() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Testimonial 1 */}
         <div className="bg-gray-300 bg-opacity-95 p-6 rounded-lg shadow-xl relative min-h-[280px]">
-          <p className="text-gray-800 italic mb-6 text-lg">
+          <p className="text-gray-800 italic mb-6 text-lg font-bold">
             "Working with ONE WARE demonstrates the incredible potential that
             emerges when intelligent AI development meets highly efficient FPGA
             technology. ONE WARE takes our MAX® 10 platform to a new level –
@@ -84,8 +119,8 @@ function TestimonialsSection() {
             universally applicable."
           </p>
           <div className="mb-20">
-            <p className="text-gray-900 font-bold">Mark Moran</p>
-            <p className="text-gray-700 text-sm">Director of Boards, Development Kits, and Partners at Altera</p>
+            <p className="text-gray-900 font-bold text-2xl">Mark Moran</p>
+            <p className="text-gray-700 font-bold">Director of Boards, Development Kits, and Partners at Altera</p>
           </div>
           <div className="absolute right-6 bottom-6">
             <img src="/img/Partner/altera.png" alt="Altera logo" className="h-16 w-48 object-contain" />
@@ -149,6 +184,7 @@ export default function Home(): JSX.Element {
     >
       <HomepageHeader />
       <main className="container overflow-x-hidden">
+        <HeaderSection />
         <HomepageFeatures />
         <TestimonialsSection />
       </main>
