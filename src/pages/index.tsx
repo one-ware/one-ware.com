@@ -152,8 +152,8 @@ function TestimonialsSection() {
                 "Working with ONE WARE demonstrates the incredible potential that emerges when intelligent AI development meets highly efficient FPGA technology..."
               </Translate>
             </p>
-            <div className="mb-20">
-              <p className="text-gray-900 text-2xl font-bold">Mark Moran</p>
+            <div className="mb-24">
+              <p className="text-gray-900 text-2xl font-bold mb-2">Mark Moran</p>
               <p className="text-gray-700 font-bold text-l">
                 <Translate id="testimonials.1.authorTitle">
                   Director of Boards, Development Kits, and Partners at Altera
@@ -180,7 +180,7 @@ function TestimonialsSection() {
               </Translate>
             </p>
             <div className="mb-24">
-              <p className="text-gray-900 text-2xl font-bold">Christian Leon</p>
+              <p className="text-gray-900 text-2xl font-bold mb-2">Christian Leon</p>
               <p className="text-gray-700 font-bold text-l">
                 <Translate id="testimonials.2.authorTitle">
                   COO & Managing Director at HDO
@@ -206,8 +206,8 @@ function TestimonialsSection() {
                 "Through our European Digital Infrastructure investment thesis, we seek out entrepreneurs..."
               </Translate>
             </p>
-            <div className="mb-20">
-              <p className="text-gray-900 text-2xl font-bold">Jan Sessenhausen</p>
+            <div className="mb-24">
+              <p className="text-gray-900 text-2xl font-bold mb-2">Jan Sessenhausen</p>
               <p className="text-gray-700 font-bold text-l">
                 <Translate id="testimonials.3.authorTitle">
                   Investor & General Partner at Cusp Capital
