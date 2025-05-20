@@ -59,16 +59,16 @@ function HeaderSection() {
   return (
     <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
       <h2 className="text-4xl md:text-5xl font-bold mt-10">
-        <Translate id="headersection.title.prefix">Download </Translate>
+        <Translate id="headersection.title.prefix">Download</Translate>{" "}
         <span className="primary-text">
           <Translate id="headersection.title.product">ONE WARE Studio</Translate>
         </span>
         <span className="text-2xl md:text-3xl font-bold mt-3 block text-gray-300">
-          <Translate id="headersection.title.suffix1">And Use </Translate>
+          <Translate id="headersection.title.suffix1">And Use</Translate>{" "}
           <span className="primary-text">
-            <Translate id="headersection.title.ai">ONE AI</Translate>
+            <Translate id="headersection.title.ai">ONE AI</Translate>{" "}
           </span>
-          <Translate id="headersection.title.suffix2"> to Deploy Your First </Translate>
+          <Translate id="headersection.title.suffix2"> to Deploy Your First </Translate>{" "}
           <span className="primary-text">
             <Translate id="headersection.title.customai">Fully Custom AI</Translate>
           </span>
@@ -98,7 +98,7 @@ function HeaderSection() {
         <span className="primary-text">
           <Translate id="headersection.description.yourapp">your application</Translate>
         </span>{" "}
-        <Translate id="headersection.description.and"> and </Translate>
+        <Translate id="headersection.description.and">and</Translate>{" "}
         <span className="primary-text">
           <Translate id="headersection.description.ready">ready to deploy</Translate>
         </span>{" "}
