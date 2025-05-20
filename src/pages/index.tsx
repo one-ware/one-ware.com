@@ -49,10 +49,10 @@ function HomepageHeader() {
               <Translate id="homepage.subtitle.ai">AI-Powered AI Developer</Translate>
             </span>
           </span>
-          
+
           <div className="flex justify-center gap-4 mt-8 flex-col md:flex-row">
             <a href="one-ai">
-              <button className="button button--primary text-xl">
+              <button className="button button button--primary button--outline button--lg">
                 ONE AI
               </button>
             </a>
@@ -63,7 +63,7 @@ function HomepageHeader() {
   );
 }
 
-function HeaderSection() {
+function PreviewSection() {
   return (
     <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
       <h2 className="text-4xl md:text-5xl font-bold mt-10">
@@ -116,13 +116,13 @@ function HeaderSection() {
 
       <div className="flex justify-center gap-4 mt-8 flex-col md:flex-row">
         <a href="docs/studio/setup">
-          <button className="button button--primary text-xl">
+          <button className="button button--primary button--lg">
             ONE WARE Studio
           </button>
         </a>
 
         <a href="https://forms.office.com/e/J3HDid9fzw" target="_blank">
-          <button className="button button--secondary text-xl">
+          <button className="button button--secondary button--outline button--lg">
             ONE AI Waitlist
           </button>
         </a>
@@ -133,7 +133,7 @@ function HeaderSection() {
 
 function TestimonialsSection() {
   return (
-    <div className="px-4 md:px-8 lg:px-12 max-w-screen-2xl mx-auto mb-24">
+    <div className="px-4 md:px-8 lg:px-12 max-w-screen-2xl mx-auto">
       <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-200 mb-12">
         <Translate id="testimonials.title">What Others Say About Us</Translate>
       </h2>
@@ -240,10 +240,26 @@ export default function Home() {
       })}
     >
       <HomepageHeader />
-      <main className="container overflow-x-hidden">
-        <HeaderSection />
-        <HomepageFeatures />
-        <TestimonialsSection />
+      <main className="overflow-x-hidden alternative-background ">
+
+        <div className="dropshadowbottom">
+
+          <div className="diagclipbottom default-background pb-24">
+            <PreviewSection />
+          </div>
+
+        </div>
+
+        <div className="">
+          <HomepageFeatures />
+        </div>
+
+        <div className="dropshadowtop">
+          <div className="default-background diagcliptop pt-20 pb-20">
+            <TestimonialsSection />
+          </div>
+        </div>
+
       </main>
     </Layout>
   );
