@@ -149,7 +149,7 @@ function TestimonialsSection() {
             </p>
           </div>
           <div className="absolute right-6 bottom-6">
-            <img src="/img/Partner/hdo.png" alt="HDO logo" className="h-16 w-48 object-contain" />
+            <img src={require('@site/static/img/Partner/hdo.png').default} alt="HDO logo" className="h-16 w-48 object-contain" />
           </div>
           </a>
         </div>
