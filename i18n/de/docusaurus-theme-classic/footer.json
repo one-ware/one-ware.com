@@ -32,19 +32,15 @@
     "description": "The label of footer link with label=GitHub linking to https://github.com/one-ware"
   },
   "link.item.label.Contact": {
-    "message": "Contact",
+    "message": "Impressum",
     "description": "The label of footer link with label=Contact linking to /docs/contact"
   },
   "link.item.label.Careers": {
-    "message": "Careers",
+    "message": "Karriere",
     "description": "The label of footer link with label=Careers linking to /careers"
   },
-  "link.item.label.Impressum": {
-    "message": "Impressum",
-    "description": "The label of footer link with label=Impressum linking to /docs/contact/impressum"
-  },
   "link.item.label.About us": {
-    "message": "About us",
+    "message": "Über uns",
     "description": "The label of footer link with label=About us linking to about-us"
   },
   "link.item.label.Blog": {
@@ -52,7 +48,7 @@
     "description": "The label of footer link with label=Blog linking to blog"
   },
   "link.item.label.Privacy Policy": {
-    "message": "Privacy Policy",
+    "message": "Datenschutzerklärung",
     "description": "The label of footer link with label=Privacy Policy linking to /docs/contact/privacy"
   },
   "copyright": {

@@ -16,10 +16,7 @@ Registergericht: Amtsgericht Paderborn<br></br>
 Handelsregisternummer: HRB 17581<br></br>
 Umsatzsteuer-Identifikationsnummer: DE 452 242 211<br></br>
 
-## Privacy Policy | Datenschutzerklärung
+## Datenschutzerklärung
 
-### English version:
-<a href="/docs/contact/privacy">Privacy Policy</a>
+<a href="/de/docs/contact/privacy">Datenschutzerklärung</a>
 
-### Deutsche Version:
-<a href="/docs/contact/privacy_de">Datenschutzerklärung</a>
