@@ -5,18 +5,17 @@
 
  nav {
   transition: 0.8s;
-}
-
- .heroBackground{
+} .heroBackground{
   box-shadow: rgb(0 0 0 / 50%) 0px -10px 13px -7px inset; 
   background-image: linear-gradient(0deg,#11252a,#0b0e0c,#1f1f1f);
   position: relative;
   top: 0;
   left: 0;
   right: 0;
-  height: 50vh;
+  height: 80vh; /* Geändert von 50vh auf 80vh */
   min-height: 300px;
-  margin-top: calc(var(--ifm-navbar-height)*-1);
+  margin-top: 0;
+  padding-top: calc(var(--ifm-navbar-height) * 0.5); /* Reduzierter Abstand zur Navbar */
 }
 
 .heroBanner {

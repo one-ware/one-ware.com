@@ -18,9 +18,8 @@ import initWebsiteEffects from "../components/startEffects";
 function HomepageHeader() {
   return (
     <header id="hero" className={styles.heroBackground}>
-      <div className="absolute flex flex-col items-center justify-center w-full h-full">
-        <div className="flex flex-col items-center justify-center w-full md:w-8/12 xl:w-8/12">
-          <div className="text-center pointer-events-none">
+      <div className="flex flex-col items-center justify-center w-full h-full">
+        <div className="flex flex-col items-center justify-center w-full md:w-8/12 xl:w-8/12">          <div className="text-center pointer-events-none">
             <div className="text-3xl md:text-5xl lg:text-6xl font-bold drop-shadow-4xl text-gray-200 whitespace-nowrap inlinetypewriter">
               {translate({ id: 'homepage.every', message: 'Every ' })}
               <span className="primary-text">
@@ -43,19 +42,17 @@ function HomepageHeader() {
             </div>
           </div>
 
-          <span className="text-md md:text-3xl font-bold drop-shadow-4xl text-gray-300 mt-6 text-center pointer-events-none">
-            <Translate id="homepage.subtitle">Meet the World's First</Translate>{" "}
-            <span className="primary-text">
+          <span className="text-base md:text-3xl font-bold drop-shadow-4xl text-gray-300 mt-6 text-center pointer-events-none">
+            <Translate id="homepage.subtitle">Meet the World's First</Translate>{" "}            <span className="primary-text">
               <Translate id="homepage.subtitle.ai">AI-Powered AI Developer</Translate>
-            </span>
-          </span>
-
-          <div className="flex justify-center gap-4 mt-8 flex-col md:flex-row">
+            </span>          </span><div className="flex justify-center gap-4 mt-8 flex-col md:flex-row">
             <a href="one-ai">
               <button className="button button button--primary button--outline button--lg">
                 ONE AI
               </button>
             </a>
+          </div>            <div className="mt-16 flex justify-center w-full"> 
+            <img src={require('@site/static/img/ai/Laptop.png').default} alt="Laptop" className="w-1/2" />
           </div>
         </div>
       </div>
@@ -66,69 +63,50 @@ function HomepageHeader() {
 function PreviewSection() {
   return (
     <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
-      <h2 className="text-4xl md:text-5xl font-bold mt-10">
-        <Translate id="headersection.title.prefix">Download</Translate>{" "}
-        <span className="primary-text">
-          <Translate id="headersection.title.product">ONE WARE Studio</Translate>
-        </span>
-        <span className="text-2xl md:text-3xl font-bold mt-3 block text-gray-300">
-          <Translate id="headersection.title.suffix1">And Use</Translate>{" "}
-          <span className="primary-text">
-            <Translate id="headersection.title.ai">ONE AI</Translate>{" "}
-          </span>
-          <Translate id="headersection.title.suffix2"> to Deploy Your First </Translate>{" "}
-          <span className="primary-text">
-            <Translate id="headersection.title.customai">Fully Custom AI</Translate>
-          </span>
-          <Translate id="headersection.title.suffix3">!</Translate>
-        </span>
-      </h2>
+      
+      <div className="mt-16">
+        <h3 className="text-2xl md:text-3xl font-bold text-center text-gray-200 mb-8">
+          <Translate id="partners.title">Trusted by Industry Leaders and Investors</Translate>
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Partner 1 - Altera */}
+          <div className="bg-gray-300 hover:bg-gray-400 bg-opacity-95 p-6 rounded-lg shadow-xl flex items-center justify-center transition-colors duration-300 h-28">
+            <a
+              href="https://go.altera.com/l/1090322/2025-04-18/2vvzbn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block no-underline hover:no-underline"
+            >
+              <img src={require('@site/static/img/Partner/altera.png').default} alt="Altera logo" className="h-16 object-contain" />
+            </a>
+          </div>
 
-      <img src={require('@site/static/img/ai/Laptop.png').default} alt="Laptop" />
+          {/* Partner 2 - HDO */}
+          <div className="bg-gray-300 hover:bg-gray-400 bg-opacity-95 p-6 rounded-lg shadow-xl flex items-center justify-center transition-colors duration-300 h-28">
+            <a
+              href="https://hdo-gmbh.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block no-underline hover:no-underline"
+            >
+              <img src={require('@site/static/img/Partner/hdo.png').default} alt="HDO logo" className="h-16 object-contain" />
+            </a>
+          </div>
 
-      <h5 className="text-xl md:text-2xl font-normal text-gray-300">
-        <Translate id="headersection.description.prefix">
-          ONE WARE Studio together with ONE AI makes
-        </Translate>{" "}
-        <span className="primary-text">
-          <Translate id="headersection.description.everydeveloper">every developer</Translate>
-        </span>{" "}
-        <Translate id="headersection.description.middle">
-          an AI expert. You only need to know your application and
-        </Translate>{" "}
-        <span className="primary-text">
-          <Translate id="headersection.description.seconds">in seconds</Translate>
-        </span>{" "}
-        <Translate id="headersection.description.tail">
-          ONE AI invents completely new AI models for your use case. AI Models that only learn what is important
-          for
-        </Translate>{" "}
-        <span className="primary-text">
-          <Translate id="headersection.description.yourapp">your application</Translate>
-        </span>{" "}
-        <Translate id="headersection.description.and">and</Translate>{" "}
-        <span className="primary-text">
-          <Translate id="headersection.description.ready">ready to deploy</Translate>
-        </span>{" "}
-        <Translate id="headersection.description.withstudio">with ONE WARE Studio.</Translate>
-      </h5>
-
-
-      <div className="flex justify-center gap-4 mt-8 flex-col md:flex-row">
-        <a href="docs/studio/setup">
-          <button className="button button--primary button--lg">
-            ONE WARE Studio
-          </button>
-        </a>
-
-        <a href="https://forms.office.com/e/J3HDid9fzw" target="_blank">
-          <button className="button button--secondary button--outline button--lg">
-            ONE AI Waitlist
-          </button>
-        </a>
+          {/* Partner 3 - Cusp Capital */}
+          <div className="bg-gray-300 hover:bg-gray-400 bg-opacity-95 p-6 rounded-lg shadow-xl flex items-center justify-center transition-colors duration-300 h-28">
+            <a
+              href="https://www.cuspcapital.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block no-underline hover:no-underline"
+            >
+              <img src={require('@site/static/img/Partner/cusp.png').default} alt="Cusp Capital logo" className="h-16 object-contain" />
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
-  );
+    </div>  );
 }
 
 function TestimonialsSection() {
@@ -248,9 +226,7 @@ export default function Home() {
             <PreviewSection />
           </div>
 
-        </div>
-
-        <div className="">
+        </div>        <div className="">
           <HomepageFeatures />
         </div>
 

@@ -25,53 +25,79 @@ type FancyParticlesProps = {
   parallax: boolean;
 };
 
+
 const sliders = [
   {
-    title: "Code Assistant",    imageSrc: (
+    title: <Translate id="slider.codeAssistant.title"> "Code Assistant"</Translate>,
+    imageSrc: (
       <img alt="Code Assistant" src={require('@site/static/img/studio/slides2/completion.png').default} />
     ),
     description: (
       <>
-        First class support for <span className="primary-text">C++</span>,{" "}
+        <Translate id="slider.codeAssistant.description.1">First class support for</Translate>{" "}<span className="primary-text">C++</span>,{" "}
         <span className="primary-text">Python</span>,{" "}
         <span className="primary-text">VHDL</span>,{" "}
-        <span className="primary-text">Verilog</span> and more with lots of
-        tools to help develop your designs as efficiently as possible.
+        <span className="primary-text">Verilog</span> <Translate id="slider.codeAssistant.description.2">and more with lots of
+        tools to help develop your designs as efficiently as possible.</Translate>
       </>
     ),
   },
   {
-    title: "Hardware Support",
-    imageSrc: <img alt="Hardware" src={require('@site/static/img/studio/slides2/hardware.png').default} />,
-    description: (
+    title: (
+      <Translate id="slider.hardwareSupport.title">Hardware Support</Translate>
+    ),
+    imageSrc: (
+      <img
+        alt="Hardware"
+        src={require('@site/static/img/studio/slides2/hardware.png').default}
+      />
+    ),
+     description: (
       <>
-        Conveniently setup and compile your designs from your hardware.{" "}
-        <span className="primary-text">Directy</span> from the IDE, which a
-        growing number of supported toolchains and boards.
+        <Translate id="slider.hardwareSupport.description.1">Conveniently setup and compile your designs from your hardware.</Translate>{" "}
+        <span className="primary-text"><Translate id="slider.hardwareSupport.description.2">Directy</Translate></span>{" "}<Translate id="slider.hardwareSupport.description.3"> from the IDE, which a
+        growing number of supported toolchains and boards.</Translate>
       </>
     ),
   },
   {
-    title: "Simulation",
-    imageSrc: <img alt="Simulation" src={require('@site/static/img/studio/slides2/simulator.png').default} />,
+    title: (
+      <Translate id="slider.simulation.title">Simulation</Translate>
+    ),
+    imageSrc: (
+      <img
+        alt="Simulation"
+        src={require('@site/static/img/studio/slides2/simulator.png').default}
+      />
+    ),
     description: (
       <>
+      <Translate id="slider.simulation.description.1">
         Simulate your designs inside the IDE, using the lightning fast
-        Simulation Viewer and the most popular{" "}
-        <span className="primary-text">Simulation</span> tools.
+        Simulation Viewer and the most popular</Translate>{" "}
+        <span className="primary-text"><Translate id="slider.simulation.description.2">Simulation</Translate></span><Translate id="slider.simulation.description.3"> tools.</Translate>    
       </>
     ),
   },
   {
-    title: "Extensibility",
-    imageSrc: <img alt="Extensible" src={require('@site/static/img/studio/slides2/extensions.png').default} />,
+    title: (
+      <Translate id="slider.extensibility.title">Extensibility</Translate>
+    ),
+    imageSrc: (
+      <img
+        alt="Extensible"
+        src={require('@site/static/img/studio/slides2/extensions.png').default}
+      />
+    ),
     description: (
       <>
-        Download and Install <span className="primary-text">Extensions</span>{" "}
-        from to extend the functionality. Discover a growing selection of{" "}
+      <Translate id="slider.extensibility.description.1">
+        Download and install</Translate>{" "}<span className="primary-text"><Translate id="slider.extensibility.description.2">Extensions</Translate></span>{" "}<Translate id="slider.extensibility.description.3">to
+        extend the functionality. Discover a growing selection of</Translate>{" "}
         <span className="primary-text">AI-Tools</span>,{" "}
-        <span className="primary-text">Hardware-Integrations</span>,{" "}
-        <span className="primary-text">Simulators and More</span>
+        <span className="primary-text"><Translate id="slider.extensibility.description.4">Hardware-Integrations</Translate></span>,{" "}
+        <span className="primary-text"><Translate id="slider.extensibility.description.5">Simulators and More</Translate></span>.
+      
       </>
     ),
   },
@@ -79,50 +105,91 @@ const sliders = [
 
 const ai_sliders = [
   {
-    title: "Universal Assistant",
-    imageSrc: <img alt="Extensible" src={require('@site/static/img/studio/slides/ai.png').default} />,
+    title: (
+      <Translate id="aiSlider.universalAssistant.title">
+        Universal Assistant
+      </Translate>
+    ),
+    imageSrc: (
+      <img
+        alt="Extensible"
+        src={require('@site/static/img/studio/slides/ai.png').default}
+      />
+    ),
     description: (
       <>
-        ONE AI lets you build efficient AIs to process{" "}
-        <span className="primary-text">Images, Audio and Sensor Data</span>. Our
-        assistant has the know how of all current AI research and you just have
-        to answer a few questions to create your own individual AI. Then{" "}
-        <span className="primary-text">ONE WARE Studio</span> helps to integrate
-        the AI in your product.
+      <Translate id="aiSlider.universalAssistant.description.1">
+        ONE AI lets you build efficient AIs to process</Translate>{" "}
+        <span className="primary-text"><Translate id="aiSlider.universalAssistant.description.2">Images, Audio and Sensor Data</Translate></span>.<Translate id="aiSlider.universalAssistant.description.3">Our
+        assistant has the know-how of all current AI research and you just have
+        to answer a few questions to create your own individual AI. Then</Translate>{" "}
+        <span className="primary-text">ONE WARE Studio</span><Translate id="aiSlider.universalAssistant.description.4"> helps to integrate
+        the AI in your product.</Translate>     
       </>
     ),
   },
   {
-    title: "Quality Control",
-    imageSrc: <img alt="Extensible" src={require('@site/static/img/ai/quality.png').default} />,
+    title: (
+      <Translate id="aiSlider.qualityControl.title">
+        Quality Control
+      </Translate>
+    ),
+    imageSrc: (
+      <img
+        alt="Extensible"
+        src={require('@site/static/img/ai/quality.png').default}
+      />
+    ),
     description: (
       <>
-        Create your custom quality control with our AI based{" "}
-        <span className="primary-text">Image Processing</span> framework. ONE AI
-        makes sure that you always use the newest scientific findings to get the{" "}
-        <span className="primary-text">Most Accurate and Efficient AI</span>.
+      <Translate id="aiSlider.qualityControl.description.1">
+        Create your custom quality control with our AI based</Translate>{" "}
+        <span className="primary-text"><Translate id="aiSlider.qualityControl.description.2">Image Processing</Translate></span> framework. ONE AI
+        <Translate id="aiSlider.qualityControl.description.3">makes sure that you always use the newest scientific findings to get the</Translate>{" "}
+        <span className="primary-text"><Translate id="aiSlider.qualityControl.description.4">Most Accurate and Efficient AI</Translate></span>.
       </>
     ),
   },
   {
-    title: "Predictive Maintenance",
-    imageSrc: <img alt="Extensible" src={require('@site/static/img/ai/Predictive_Maintenance.png').default} />,
+    title: (
+      <Translate id="aiSlider.predictiveMaintenance.title">
+        Predictive Maintenance
+      </Translate>
+    ),
+    imageSrc: (
+      <img
+        alt="Extensible"
+        src={require('@site/static/img/ai/Predictive_Maintenance.png').default}
+      />
+    ),
     description: (
       <>
+      <Translate id="aiSlider.predictiveMaintenance.description.1">
         Fix problems before they occur. ONE AI takes sensor-data from your
-        machine and can <span className="primary-text">predict defects</span>{" "}
-        before they occur, so your production can run without interruption.
+        machine and can </Translate><span className="primary-text"><Translate id="aiSlider.predictiveMaintenance.description.2">predict defects </Translate></span>{" "}
+        <Translate id="aiSlider.predictiveMaintenance.description.3">before they occur, so your production can run without interruption.</Translate>    
       </>
     ),
   },
   {
-    title: "Robots and Drones",
-    imageSrc: <img alt="Code Assistant" src={require('@site/static/img/ai/Titel.png').default} />,
+    title: (
+      <Translate id="aiSlider.robotsAndDrones.title">
+        Robots and Drones
+      </Translate>
+    ),
+    imageSrc: (
+      <img
+        alt="Code Assistant"
+        src={require('@site/static/img/ai/Titel.png').default}
+      />
+    ),
     description: (
       <>
+      <Translate id="aiSlider.robotsAndDrones.description.1">
         Replace the last manual steps of your production with autonomous robots
-        and drones. ONE AI lets your robot or drone{" "}
-        <span className="primary-text">See, Hear and Think for Itself</span>.
+        and drones. ONE AI lets your robot or drone</Translate>{" "}
+        <span className="primary-text"><Translate id="aiSlider.robotsAndDrones.description.2">See, Hear and Think for Itself</Translate></span>.
+      
       </>
     ),
   },
@@ -136,12 +203,9 @@ function HomepageHeader() {
           <div className="flex-col max-w-3xl m-5 mt-10">
             <div className="text-center mt-10">
               <h1 className="font-medium md:text-4xl">
-                The{" "}
-                <span className="primary-text font-bold">
-                  Next Generation IDE
-                </span>{" "}
-                for Electronics Development{" "}
-                <span className="primary-text font-bold">is here</span>.
+                <Translate id="homepage.hero.title.1">
+                  The</Translate> <span className="primary-text font-bold"><Translate id="homepage.hero.title.2">Next Generation IDE</Translate></span>{" "}<Translate id="homepage.hero.title.3"> for Electronics Development </Translate>{" "}<span className="primary-text font-bold"><Translate id="homepage.hero.title.4">is here</Translate></span>.
+             
               </h1>
 
               <div className="flex-col md:space-x-5 mb-10">
@@ -149,27 +213,21 @@ function HomepageHeader() {
                   className="mt-5 button button--primary button--lg hidden md:inline-block"
                   href="/docs/studio/setup"
                 >
-                  Download
+                  <Translate id="homepage.hero.download">Download</Translate>
                 </Link>
 
                 <Link
                   className="mt-5 button button--primary button--outline button--lg"
                   href="/docs/studio/setup"
                 >
-                  Get Started
+                  <Translate id="homepage.hero.getStarted">Get Started</Translate>
                 </Link>
               </div>
 
               <p className="md:text-xl font-normal mt-10">
-                (Yes, it is{" "}
-                <a
-                  href="https://github.com/one-ware"
-                  target="_blank"
-                  className="primary-text font-bold"
-                >
-                  Open Source
-                </a>
-                !)
+                
+                  (<Translate id="homepage.hero.opensource.1">Yes, it is</Translate> <a href="https://github.com/one-ware" target="_blank" className="primary-text font-bold"><Translate id="homepage.hero.opensource.2">Open Source</Translate></a>!)
+                
               </p>
             </div>
           </div>
