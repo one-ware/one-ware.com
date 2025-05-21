@@ -396,7 +396,6 @@
     "message": "Suche",
     "description": "The ARIA label and placeholder for search button"
   },
-
   "theme.SearchModal.searchBox.resetButtonTitle": {
     "message": "Suchanfrage löschen",
     "description": "The label and ARIA label for search box reset button"
@@ -491,7 +490,7 @@
   },
   "theme.blog.post.plurals": {
     "message": "Ein Beitrag|{count} Beiträge",
-    "description": "Pluralized label for \"{count} posts\"."
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.tagTitle": {
     "message": "{nPosts} getaggt mit \"{tagName}\"",
@@ -531,14 +530,201 @@
   },
   "theme.ErrorPageContent.tryAgain": {
     "message": "Erneut versuchen",
-    "description": "The label of the button to try again rendering"
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
   },
   "theme.common.skipToMainContent": {
     "message": "Zum Hauptinhalt springen",
-    "description": "The skip to content label used for accessibility"
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
   },
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "slider.capture.title": {
+    "message": "Erfassen und Kennzeichnen"
+  },
+  "slider.capture.description": {
+    "message": "Erfassen Sie nur wenige Bilder, kennzeichnen Sie sie – ONE AI erledigt den Rest. ONE AI benötigt nur einen kleinen Datensatz, um ein voll funktionsfähiges KI-Modell zu liefern. Seine adaptive Architektur skaliert automatisch mit Ihren Daten."
+  },
+  "slider.guide.title": {
+    "message": "Anleiten und Auswählen"
+  },
+  "slider.guide.description": {
+    "message": "Verwenden Sie unseren intuitiven und visuellen Prozess, um der KI zu zeigen, was wichtig ist, wo verallgemeinert werden soll und was vorhergesagt werden soll. Sie können Ihre genauen Hardware- und Leistungsanforderungen spezifizieren und ONE AI das perfekte Modell für Ihre Bedürfnisse erstellen lassen."
+  },
+  "slider.predict.title": {
+    "message": "Vorhersagen und Trainieren"
+  },
+  "slider.predict.description": {
+    "message": "Nachdem Sie das Training gestartet haben, generiert ONE AI automatisch ein maßgeschneidertes neuronales Netzwerk für Ihre Hardware und Anwendung. Die KI trainiert dann mit Ihren Daten, lernt jedoch nur, was wichtig ist. Das gewährleistet höchste Leistung und Genauigkeit."
+  },
+  "slider.test.title": {
+    "message": "Testen und Bereitstellen"
+  },
+  "slider.test.description": {
+    "message": "Während des Trainings und Testens verhält sich die KI bereits wie auf Ihrer Zielhardware – egal ob FPGA, Mikrocontroller, GPU, CPU oder TPU. Wenn Sie mit den Ergebnissen zufrieden sind, können Sie die KI als plattformübergreifende ausführbare Datei, universellen HDL-Code, C++-Projekt oder ONNX/TF/TF-Lite-Modell exportieren."
+  },
+  "homepage.hero.start": {
+    "message": "Die",
+    "description": "First part of the hero title"
+  },
+  "homepage.hero.highlight1": {
+    "message": "nächste Generation",
+    "description": "Highlighted phrase in hero title"
+  },
+  "homepage.hero.middle": {
+    "message": "der KI-Entwicklung:",
+    "description": "Middle part of the hero title"
+  },
+  "homepage.hero.subtext": {
+    "message": "Jede Hardware. Jede Anwendung.",
+    "description": "Subheading of hero title"
+  },
+  "homepage.hero.highlight2": {
+    "message": "ONE AI",
+    "description": "ONE AI text"
+  },
+  "homepage.hero.join": {
+    "message": "Auf Warteliste Eintragen",
+    "description": "Join waitlist button"
+  },
+  "homepage.hero.contact": {
+    "message": "Kontaktieren Sie uns",
+    "description": "Contact us button"
+  },
+  "download.heading": {
+    "message": "Einfache Einrichtung!"
+  },
+  "download.subheading": {
+    "message": "ONE AI lässt jahrzehntealte Chips heutige Spitzen-Hardware übertreffen!",
+    "description": "Subheading about ONE AI's hardware performance"
+  },
+  "download.description1": {
+    "message": "Lesen Sie das Whitepaper unseres Partners Altera",
+    "description": "Intro to whitepaper"
+  },
+  "download.description2": {
+    "message": "und sehen Sie, wie Alteras MAX® 10 jetzt Nvidias Jetson Orin Nano übertrifft mit:",
+    "description": "Comparison line to Jetson Orin"
+  },
+  "download.metric1": {
+    "message": "Geringere Latenz",
+    "description": "Lower latency metric"
+  },
+  "download.metric2": {
+    "message": "Höhere Genauigkeit",
+    "description": "Higher accuracy metric"
+  },
+  "download.metric3": {
+    "message": "Niedrigerer Stromverbrauch",
+    "description": "Lower power metric"
+  },
+  "download.metric4": {
+    "message": "Niedrigere Kosten",
+    "description": "Lower cost metric"
+  },
+  "download.cta.whitepaper": {
+    "message": "Whitepaper lesen",
+    "description": "Button text to read the whitepaper"
+  },
+  "download.cta.waitlist": {
+    "message": "Zur ONE AI-Warteliste",
+    "description": "Button text to join waitlist"
+  },
+  "hero.title": {
+    "message": "Die nächste Generation der KI-Entwicklung: Jede Hardware. Jede Anwendung. ONE AI."
+  },
+  "download.subheading.1": {
+    "message": "ONE WARE Studio ist verfügbar für"
+  },
+  "download.subheading.2": {
+    "message": "alle gängigen Betriebssysteme"
+  },
+  "download.subheading.3": {
+    "message": "mit allen"
+  },
+  "download.subheading.4": {
+    "message": "modernen"
+  },
+  "download.subheading.5": {
+    "message": "Installationsmethoden."
+  },
+  "download.windows.label": {
+    "message": "Windows 10+"
+  },
+  "download.button": {
+    "message": "Herunterladen"
+  },
+  "download.macos.label": {
+    "message": "MacOS 12.0+"
+  },
+  "download.flathub.label": {
+    "message": "Flathub"
+  },
+  "download.snapstore.label": {
+    "message": "Snapstore"
+  },
+  "download.linux.label": {
+    "message": "Anderes Linux"
+  },
+  "vendor.title": {
+    "message": "Verwenden Sie beliebige Hardware!"
+  },
+  "vendor.subtitle.1": {
+    "message": "Unser Ziel ist es, erstklassigen Support für"
+  },
+  "vendor.subtitle.2": {
+    "message": "jede Hardware"
+  },
+  "vendor.subtitle.3": {
+    "message": "mit unserem fortschrittlichen Erweiterungssystem zu bieten."
+  },
+  "extension.title.1": {
+    "message": "Erweiterungen"
+  },
+  "extension.title.2": {
+    "message": "Für alle Ihre Bedürfnisse!"
+  },
+  "extension.description.1": {
+    "message": "Mit ONE WARE Studio-Erweiterungen können Sie"
+  },
+  "extension.description.2": {
+    "message": "Ihr Erlebnis anpassen"
+  },
+  "extension.description.3": {
+    "message": "und all Ihre Entwicklungsanforderungen erfüllen. Fügen Sie benutzerdefinierte Hardware als"
+  },
+  "extension.description.4": {
+    "message": "Digital Twin"
+  },
+  "extension.description.5": {
+    "message": "hinzu,"
+  },
+  "extension.description.6": {
+    "message": "machen Sie"
+  },
+  "extension.description.7": {
+    "message": "die KI-Integration einfacher oder fügen Sie Unterstützung für Ihr bevorzugtes"
+  },
+  "extension.description.8": {
+    "message": "Simulationstool"
+  },
+  "extension.description.9": {
+    "message": "hinzu."
+  },
+  "beta.title": {
+    "message": "Seien Sie einer der Ersten, die ONE AI testen! 🚀"
+  },
+  "beta.description.1": {
+    "message": "Möchten Sie benutzerdefinierte KI-Modelle erstellen?"
+  },
+  "beta.description.2": {
+    "message": "Erleben Sie die Zukunft der KI! Generieren Sie automatisch maßgeschneiderte KI-Modelle mit ONE AI. Melden Sie sich für die Warteliste an und erhalten Sie kostenlosen exklusiven Zugang zur Closed Beta."
+  },
+  "beta.webinar": {
+    "message": "ONE AI Webinar"
+  },
+  "beta.waitlist": {
+    "message": "ONE AI Warteliste"
   }
 }

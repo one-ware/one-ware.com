@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { CiLinkedin, CiMail } from "react-icons/ci";
 
-export default function ContactUs(): JSX.Element {
+export default function ContactUs() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
