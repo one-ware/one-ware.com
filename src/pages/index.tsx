@@ -38,7 +38,7 @@ function HomepageHeader() {
             </div>
 
             <div className="text-3xl md:text-5xl lg:text-6xl font-bold drop-shadow-4xl text-gray-200 mt-2 md:mt-2">
-              {translate({ id: 'homepage.software', message: 'ONE Software. ONE Click. ONE AI.' })}
+              {translate({ id: 'homepage.software', message: 'ONE Software. ONE AI.' })}
             </div>
           </div>
 
