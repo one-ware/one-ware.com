@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { CiLinkedin, CiMail } from "react-icons/ci";
+import Translate, { translate } from '@docusaurus/Translate';
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({
@@ -37,7 +38,7 @@ export default function ContactUs() {
 
   return (
     <div className="text-center max-w-4xl m-auto">
-      <h2 className="text-3xl md:text-5xl font-bold">Interested? Contact us!</h2>
+      <h2 className="text-3xl md:text-5xl font-bold"> <Translate id="contactus.headline">Interested? Contact us!</Translate></h2>
 
       <div className="grid grid-flow-col auto-cols-max mx-auto justify-center gap-5 text-7xl">
         <div>
@@ -80,7 +81,7 @@ export default function ContactUs() {
             />
           </div>
           <div className="mb-6">
-            <label htmlFor="message" className="block text-sm font-bold mb-1">Message</label>
+            <label htmlFor="message" className="block text-sm font-bold mb-1"> <Translate id="contactus.form.1">Message</Translate></label>
             <textarea
               className="w-full px-3 py-2 border rounded-lg focus:outline-none"
               id="message"
@@ -92,7 +93,7 @@ export default function ContactUs() {
             ></textarea>
           </div>
           <button type="submit" className="text-black w-full font-bold py-3 px-4 button button--primary button--md">
-            Send
+             <Translate id="contactus.buttonsend">Send</Translate>
           </button>
         </form>
       </div>

@@ -43,16 +43,13 @@ function HomepageHeader() {
           </div>
 
           <span className="text-base md:text-3xl font-bold drop-shadow-4xl text-gray-300 mt-6 text-center pointer-events-none">
-            <Translate id="homepage.subtitle">Meet the World's First</Translate>{" "}            <span className="primary-text">
-              <Translate id="homepage.subtitle.ai">AI-Powered AI Developer</Translate>
-            </span>          </span><div className="flex justify-center gap-4 mt-8 flex-col md:flex-row">
+            <Translate id="homepage.subtitle">Meet the World's First</Translate>{" "}<span className="primary-text">
+              <Translate id="homepage.subtitle.ai">AI-Powered AI Developer</Translate></span></span><div className="flex justify-center gap-4 mt-8 flex-col md:flex-row">
             <a href="one-ai">
               <button className="button button button--primary button--outline button--lg">
                 ONE AI
-              </button>
-            </a>
-          </div>            <div className="mt-16 flex justify-center w-full"> 
-            <img src={require('@site/static/img/ai/Laptop.png').default} alt="Laptop" className="w-1/2" />
+              </button>            </a>          </div>            <div className="mt-4 flex justify-center w-full"> 
+            <img src={require('@site/static/img/ai/Laptop.png').default} alt="Laptop" className="w-[79%] md:w-[70%] lg:w-[55%] xl:w-[44%] transition-all duration-300" />
           </div>
         </div>
       </div>
@@ -63,7 +60,6 @@ function HomepageHeader() {
 function PreviewSection() {
   return (
     <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
-      
       <div className="mt-16">
         <h3 className="text-2xl md:text-3xl font-bold text-center text-gray-200 mb-8">
           <Translate id="partners.title">Trusted by Industry Leaders and Investors</Translate>

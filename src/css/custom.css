@@ -167,9 +167,9 @@ body {
 }
 
 .diagclipbottom{
-  clip-path: polygon(0 0,100% 0,100% calc(100% - 2vw),0 100%);
+  clip-path: polygon(0 0,100% 0,100% 100%,0 calc(100% - 2vw));
   position: relative;
-  filter: drop-shadow(0px -10px 10px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.5));
 }
 
 .dropshadowbottom{

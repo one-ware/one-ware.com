@@ -18,7 +18,7 @@
     "message": "Industry."
   },
   "homepage.software": {
-    "message": "ONE Software."
+    "message": "ONE Software. ONE AI."
   },
   "homepage.subtitle": {
     "message": "Der weltweit erste "
@@ -728,129 +728,141 @@
     "message": "ONE AI Warteliste"
   },
   "slider.codeAssistant.title": {
-  "message": "\"Code-Assistent\""
-},
-"slider.codeAssistant.description.1": {
-  "message": "Erstklassige Unterstützung für"
-},
-"slider.codeAssistant.description.2": {
-  "message": "und mehr mit zahlreichen Tools, um Ihre Designs so effizient wie möglich zu entwickeln."
-},
-"slider.hardwareSupport.title": {
-  "message": "Hardwareunterstützung"
-},
-"slider.hardwareSupport.description.1": {
-  "message": "Richten Sie Ihre Designs bequem ein und kompilieren Sie sie direkt von Ihrer Hardware."
-},
-"slider.hardwareSupport.description.2": {
-  "message": "Direkt"
-},
-"slider.hardwareSupport.description.3": {
-  "message": "aus der IDE mit einer wachsenden Anzahl unterstützter Toolchains und Boards."
-},
-"slider.simulation.title": {
-  "message": "Simulation"
-},
-"slider.simulation.description.1": {
-  "message": "Simulieren Sie Ihre Designs direkt in der IDE mit dem blitzschnellen Simulations-Viewer und den beliebtesten"
-},
-"slider.simulation.description.2": {
-  "message": "Simulations-"
-},
-"slider.simulation.description.3": {
-  "message": "tools."
-},
-"slider.extensibility.title": {
-  "message": "Erweiterbarkeit"
-},
-"slider.extensibility.description.1": {
-  "message": "Laden Sie"
-},
-"slider.extensibility.description.2": {
-  "message": "Erweiterungen"
-},
-"slider.extensibility.description.3": {
-  "message": "herunter und installieren Sie sie, um die Funktionalität zu erweitern. Entdecken Sie eine wachsende Auswahl an"
-},
-"slider.extensibility.description.4": {
-  "message": "Hardware-Integrationen"
-},
-"slider.extensibility.description.5": {
-  "message": "Simulatoren und mehr"
-},
-"aiSlider.universalAssistant.title": {
-  "message": "Universeller Assistent"
-},
-"aiSlider.universalAssistant.description.1": {
-  "message": "ONE AI ermöglicht Ihnen, effiziente KIs zur Verarbeitung von"
-},
-"aiSlider.universalAssistant.description.2": {
-  "message": "Bildern, Audio- und Sensordaten"
-},
-"aiSlider.universalAssistant.description.3": {
-  "message": "Unser Assistent verfügt über das Wissen aus der aktuellen KI-Forschung – beantworten Sie einfach ein paar Fragen, um Ihre individuelle KI zu erstellen. Danach"
-},
-"aiSlider.universalAssistant.description.4": {
-  "message": "hilft bei der Integration der KI in Ihr Produkt."
-},
-"aiSlider.qualityControl.title": {
-  "message": "Qualitätskontrolle"
-},
-"aiSlider.qualityControl.description.1": {
-  "message": "Erstellen Sie Ihre individuelle Qualitätskontrolle mit unserer KI-basierten"
-},
-"aiSlider.qualityControl.description.2": {
-  "message": "Bildverarbeitung"
-},
-"aiSlider.qualityControl.description.3": {
-  "message": "stellt sicher, dass Sie stets die neuesten wissenschaftlichen Erkenntnisse nutzen, um die"
-},
-"aiSlider.qualityControl.description.4": {
-  "message": "präziseste und effizienteste KI"
-},
-"aiSlider.predictiveMaintenance.title": {
-  "message": "Vorausschauende Wartung"
-},
-"aiSlider.predictiveMaintenance.description.1": {
-  "message": "Beheben Sie Probleme, bevor sie auftreten. ONE AI verarbeitet Sensordaten Ihrer Maschine und kann"
-},
-"aiSlider.predictiveMaintenance.description.2": {
-  "message": "Defekte vorhersagen"
-},
-"aiSlider.predictiveMaintenance.description.3": {
-  "message": "bevor sie auftreten, damit Ihre Produktion ununterbrochen weiterläuft."
-},
-"aiSlider.robotsAndDrones.title": {
-  "message": "Roboter und Drohnen"
-},
-"aiSlider.robotsAndDrones.description.1": {
-  "message": "Ersetzen Sie die letzten manuellen Produktionsschritte durch autonome Roboter und Drohnen. ONE AI ermöglicht es Ihrem Roboter oder Ihrer Drohne,"
-},
-"aiSlider.robotsAndDrones.description.2": {
-  "message": "selbstständig zu sehen, zu hören und zu denken"
-},
-"homepage.hero.title.1": {
-  "message": "Die"
-},
-"homepage.hero.title.2": {
-  "message": "IDE der nächsten Generation"
-},
-"homepage.hero.title.3": {
-  "message": "für Elektronikentwicklung"
-},
-"homepage.hero.title.4": {
-  "message": "ist da"
-},
-"homepage.hero.download": {
-  "message": "Herunterladen"
-},
-"homepage.hero.getStarted": {
-  "message": "Loslegen"
-},
-"homepage.hero.opensource.1": {
-  "message": "Ja, es ist"
-},
-"homepage.hero.opensource.2": {
-  "message": "Open Source"
-}
+    "message": "\"Code-Assistent\""
+  },
+  "slider.codeAssistant.description.1": {
+    "message": "Erstklassige Unterstützung für"
+  },
+  "slider.codeAssistant.description.2": {
+    "message": "und mehr mit zahlreichen Tools, um Ihre Designs so effizient wie möglich zu entwickeln."
+  },
+  "slider.hardwareSupport.title": {
+    "message": "Hardwareunterstützung"
+  },
+  "slider.hardwareSupport.description.1": {
+    "message": "Richten Sie Ihre Designs bequem ein und kompilieren Sie sie direkt von Ihrer Hardware."
+  },
+  "slider.hardwareSupport.description.2": {
+    "message": "Direkt"
+  },
+  "slider.hardwareSupport.description.3": {
+    "message": "aus der IDE mit einer wachsenden Anzahl unterstützter Toolchains und Boards."
+  },
+  "slider.simulation.title": {
+    "message": "Simulation"
+  },
+  "slider.simulation.description.1": {
+    "message": "Simulieren Sie Ihre Designs direkt in der IDE mit dem blitzschnellen Simulations-Viewer und den beliebtesten"
+  },
+  "slider.simulation.description.2": {
+    "message": "Simulations-"
+  },
+  "slider.simulation.description.3": {
+    "message": "tools."
+  },
+  "slider.extensibility.title": {
+    "message": "Erweiterbarkeit"
+  },
+  "slider.extensibility.description.1": {
+    "message": "Laden Sie"
+  },
+  "slider.extensibility.description.2": {
+    "message": "Erweiterungen"
+  },
+  "slider.extensibility.description.3": {
+    "message": "herunter und installieren Sie sie, um die Funktionalität zu erweitern. Entdecken Sie eine wachsende Auswahl an"
+  },
+  "slider.extensibility.description.4": {
+    "message": "Hardware-Integrationen"
+  },
+  "slider.extensibility.description.5": {
+    "message": "Simulatoren und mehr"
+  },
+  "aiSlider.universalAssistant.title": {
+    "message": "Universeller Assistent"
+  },
+  "aiSlider.universalAssistant.description.1": {
+    "message": "ONE AI ermöglicht Ihnen, effiziente KIs zur Verarbeitung von"
+  },
+  "aiSlider.universalAssistant.description.2": {
+    "message": "Bildern, Audio- und Sensordaten"
+  },
+  "aiSlider.universalAssistant.description.3": {
+    "message": "Unser Assistent verfügt über das Wissen aus der aktuellen KI-Forschung – beantworten Sie einfach ein paar Fragen, um Ihre individuelle KI zu erstellen. Danach"
+  },
+  "aiSlider.universalAssistant.description.4": {
+    "message": "hilft bei der Integration der KI in Ihr Produkt."
+  },
+  "aiSlider.qualityControl.title": {
+    "message": "Qualitätskontrolle"
+  },
+  "aiSlider.qualityControl.description.1": {
+    "message": "Erstellen Sie Ihre individuelle Qualitätskontrolle mit unserer KI-basierten"
+  },
+  "aiSlider.qualityControl.description.2": {
+    "message": "Bildverarbeitung"
+  },
+  "aiSlider.qualityControl.description.3": {
+    "message": "stellt sicher, dass Sie stets die neuesten wissenschaftlichen Erkenntnisse nutzen, um die"
+  },
+  "aiSlider.qualityControl.description.4": {
+    "message": "präziseste und effizienteste KI"
+  },
+  "aiSlider.predictiveMaintenance.title": {
+    "message": "Vorausschauende Wartung"
+  },
+  "aiSlider.predictiveMaintenance.description.1": {
+    "message": "Beheben Sie Probleme, bevor sie auftreten. ONE AI verarbeitet Sensordaten Ihrer Maschine und kann"
+  },
+  "aiSlider.predictiveMaintenance.description.2": {
+    "message": "Defekte vorhersagen"
+  },
+  "aiSlider.predictiveMaintenance.description.3": {
+    "message": "bevor sie auftreten, damit Ihre Produktion ununterbrochen weiterläuft."
+  },
+  "aiSlider.robotsAndDrones.title": {
+    "message": "Roboter und Drohnen"
+  },
+  "aiSlider.robotsAndDrones.description.1": {
+    "message": "Ersetzen Sie die letzten manuellen Produktionsschritte durch autonome Roboter und Drohnen. ONE AI ermöglicht es Ihrem Roboter oder Ihrer Drohne,"
+  },
+  "aiSlider.robotsAndDrones.description.2": {
+    "message": "selbstständig zu sehen, zu hören und zu denken"
+  },
+  "homepage.hero.title.1": {
+    "message": "Die"
+  },
+  "homepage.hero.title.2": {
+    "message": "IDE der nächsten Generation"
+  },
+  "homepage.hero.title.3": {
+    "message": "für Elektronikentwicklung"
+  },
+  "homepage.hero.title.4": {
+    "message": "ist da"
+  },
+  "homepage.hero.download": {
+    "message": "Herunterladen"
+  },
+  "homepage.hero.getStarted": {
+    "message": "Loslegen"
+  },
+  "homepage.hero.opensource.1": {
+    "message": "Ja, es ist"
+  },
+  "homepage.hero.opensource.2": {
+    "message": "Open Source"
+  },
+  "partners.title": {
+    "message": "Vertraut von Branchenführern und Investoren"
+  },
+  "contactus.headline": {
+    "message": "Interessiert? Kontaktieren Sie uns!"
+  },
+  "contactus.form.1": {
+    "message": "Nachricht"
+  },
+  "contactus.buttonsend": {
+    "message": "Absenden"
+  }
 }
