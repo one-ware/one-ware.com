@@ -38,7 +38,7 @@ function HomepageHeader() {
             </div>
 
             <div className="text-3xl md:text-5xl lg:text-6xl font-bold drop-shadow-4xl text-gray-200 mt-2 md:mt-2">
-              {translate({ id: 'homepage.software', message: 'ONE Software. ONE AI.' })}
+              {translate({ id: 'homepage.software', message: 'ONE Software. ONE Click. ONE AI.' })}
             </div>
           </div>
 
@@ -51,7 +51,7 @@ function HomepageHeader() {
                 ONE AI
               </button>
             </a>
-          </div>            <div className="mt-16 flex justify-center w-full"> 
+          </div>            <div className="mt-8 flex justify-center w-full"> 
             <img src={require('@site/static/img/ai/Laptop.png').default} alt="Laptop" className="w-1/2" />
           </div>
         </div>
@@ -66,7 +66,7 @@ function PreviewSection() {
       
       <div className="mt-16">
         <h3 className="text-2xl md:text-3xl font-bold text-center text-gray-200 mb-8">
-          <Translate id="partners.title">Trusted by Industry Leaders and Investors</Translate>
+          <Translate id="partners.title">Trusted by Industry Leaders and Experts</Translate>
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Partner 1 - Altera */}
