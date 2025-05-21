@@ -539,5 +539,192 @@
   },
   "homepage.features.onewarestudio": {
     "message": "See how to integrate AI in your embedded systems and speed up the development with ONE WARE Studio"
+  },
+  "hero.title": {
+    "message": "The Next Generation of AI Development: Any Hardware. Any Application. ONE AI."
+  },
+  "slider.capture.title": {
+    "message": "Capture and Label"
+  },
+  "slider.capture.description": {
+    "message": "Capture just a few images, label them - ONE AI takes care of the rest. ONE AI requires only a small dataset to deliver a fully functional AI model. Its adaptive architecture automatically scales with your data."
+  },
+  "slider.guide.title": {
+    "message": "Guide and Select"
+  },
+  "slider.guide.description": {
+    "message": "Use our intuitive and visual process to teach the AI what is important, where to generalize and what to predict. You can specify your exact hardware and performance requirements and then let ONE AI create the perfect model for your needs."
+  },
+  "slider.predict.title": {
+    "message": "Predict and Train"
+  },
+  "slider.predict.description": {
+    "message": "After you start training, ONE AI will automatically generate a custom neural network for your hardware and application. The AI then trains on your data, but only learns what is important. This ensures highest performance and accuracy."
+  },
+  "slider.test.title": {
+    "message": "Test and Deploy"
+  },
+  "slider.test.description": {
+    "message": "While training and testing, the AI already behaves like on your target hardware. No matter if you are using an FPGA, Microcontroller, GPU, CPU or TPU. If you are satisfied with the results, you can export the AI as cross-platform executable, universal HDL code, C++ project or ONNX/TF/TF-Lite Model."
+  },
+  "homepage.hero.start": {
+    "message": "The",
+    "description": "First part of the hero title"
+  },
+  "homepage.hero.highlight1": {
+    "message": "Next Generation",
+    "description": "Highlighted phrase in hero title"
+  },
+  "homepage.hero.middle": {
+    "message": "of AI Development:",
+    "description": "Middle part of the hero title"
+  },
+  "homepage.hero.subtext": {
+    "message": "Any Hardware. Any Application.",
+    "description": "Subheading of hero title"
+  },
+  "homepage.hero.highlight2": {
+    "message": "ONE AI",
+    "description": "ONE AI text"
+  },
+  "homepage.hero.join": {
+    "message": "Join Waitlist",
+    "description": "Join waitlist button"
+  },
+  "homepage.hero.contact": {
+    "message": "Contact Us",
+    "description": "Contact us button"
+  },
+  "download.heading": {
+    "message": "Don't Upgrade Your Hardware — Upgrade Your AI!"
+  },
+  "download.subheading": {
+    "message": "ONE AI makes decade-old chips outperform todays leading edge AI hardware!",
+    "description": "Subheading about ONE AI's hardware performance"
+  },
+  "download.description1": {
+    "message": "Read the Whitepaper from our Partner Altera",
+    "description": "Intro to whitepaper"
+  },
+  "download.description2": {
+    "message": "and see how Altera's MAX® 10 can now outperform Nvidia's Jetson Orin Nano with:",
+    "description": "Comparison line to Jetson Orin"
+  },
+  "download.metric1": {
+    "message": "Lower Latency",
+    "description": "Lower latency metric"
+  },
+  "download.metric2": {
+    "message": "Higher Accuracy",
+    "description": "Higher accuracy metric"
+  },
+  "download.metric3": {
+    "message": "Lower Power",
+    "description": "Lower power metric"
+  },
+  "download.metric4": {
+    "message": "Lower Cost",
+    "description": "Lower cost metric"
+  },
+  "download.cta.whitepaper": {
+    "message": "Read the Whitepaper",
+    "description": "Button text to read the whitepaper"
+  },
+  "download.cta.waitlist": {
+    "message": "Join ONE AI Waitlist",
+    "description": "Button text to join waitlist"
+  },
+  "download.subheading.1": {
+    "message": "ONE WARE Studio is available for"
+  },
+  "download.subheading.2": {
+    "message": "all major operating systems"
+  },
+  "download.subheading.3": {
+    "message": "using all the"
+  },
+  "download.subheading.4": {
+    "message": "modern"
+  },
+  "download.subheading.5": {
+    "message": "installation methods."
+  },
+  "download.button": {
+    "message": "Download"
+  },
+  "vendor.title": {
+    "message": "Use any Hardware!"
+  },
+  "vendor.subtitle.1": {
+    "message": "Our goal is to provide first level support for"
+  },
+  "vendor.subtitle.2": {
+    "message": "any hardware"
+  },
+  "vendor.subtitle.3": {
+    "message": "using our advanced extension system."
+  },
+  "extension.title.1": {
+    "message": "Extensions"
+  },
+  "extension.title.2": {
+    "message": "For All Your Needs!"
+  },
+  "extension.description.1": {
+    "message": "ONE WARE Studio extensions let you"
+  },
+  "extension.description.2": {
+    "message": "customize your experience"
+  },
+  "extension.description.3": {
+    "message": "to meet all your development needs. Add custom hardware as"
+  },
+  "extension.description.4": {
+    "message": "digital twin"
+  },
+  "extension.description.5": {
+    "message": "make"
+  },
+  "extension.description.6": {
+    "message": "AI"
+  },
+  "extension.description.7": {
+    "message": "integration easier or add support for your favorite"
+  },
+  "extension.description.8": {
+    "message": "simulation"
+  },
+  "extension.description.9": {
+    "message": "tool."
+  },
+  "beta.title": {
+    "message": "Be one of the first to test ONE AI! 🚀"
+  },
+  "beta.description.1": {
+    "message": "You Want to Build Custom AI Models?"
+  },
+  "beta.description.2": {
+    "message": "Experience the future of AI! Automatically generate tailored AI models with ONE AI. Sign up for the waitlist to get free exclusive access to the closed beta."
+  },
+  "beta.webinar": {
+    "message": "ONE AI Webinar"
+  },
+  "beta.waitlist": {
+    "message": "ONE AI Waitlist"
+  },
+  "download.windows.label": {
+    "message": "Windows 10+"
+  },
+  "download.macos.label": {
+    "message": "MacOS 12.0+"
+  },
+  "download.flathub.label": {
+    "message": "Flathub"
+  },
+  "download.snapstore.label": {
+    "message": "Snapstore"
+  },
+  "download.linux.label": {
+    "message": "Other Linux"
   }
 }

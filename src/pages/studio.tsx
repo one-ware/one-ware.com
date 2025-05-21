@@ -9,6 +9,7 @@ import initWebsiteEffects from "../components/startEffects";
 import ContactUs from "../components/ContactUs";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
+import Translate, { translate } from "@docusaurus/Translate";
 
 import { SiApple } from "react-icons/si";
 import { SiWindows } from "react-icons/si";
@@ -185,24 +186,27 @@ function DownloadSection() {
     <div className="py-24 md:py-40 overflow-x-hidden">
       <div className="text-center container m-auto flex space-x-5 justify-center">
         <div className="flex-col flex text-center">
-          <h1 className="text-4xl md:text-5xl">Easy Setup!</h1>
+          <h1 className="text-4xl md:text-5xl">
+            <Translate id="download.heading">Easy Setup!</Translate>
+          </h1>
 
           <p className="text-xl my-8">
-            ONE WARE Studio is available for{" "}
-            <span className="primary-text">all major operating systems</span>,
-            using all the <span className="primary-text">modern</span>{" "}
-            installation methods.
+            <Translate id="download.subheading.1">
+              ONE WARE Studio is available for </Translate>
+              <span className="primary-text">{" "}<Translate id="download.subheading.2">all major operating systems</Translate></span>,{" "}
+              <Translate id="download.subheading.3">using all the </Translate><span className="primary-text">{" "}<Translate id="download.subheading.4">modern</Translate></span>{" "}
+              <Translate id="download.subheading.5">installation methods.</Translate>
+           
           </p>
-
           <div className="flex gap-5 flex-wrap">
             <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm">
               <SiWindows size={50} />
               <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                Windows 10+
+                <Translate id="download.windows.label">Windows 10+</Translate>
               </h5>
               <a href="/docs/studio/setup?current-os=windows">
                 <button className="mt-2 button button--primary">
-                  Download
+                  <Translate id="download.button">Download</Translate>
                 </button>
               </a>
             </div>
@@ -210,11 +214,11 @@ function DownloadSection() {
             <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm">
               <SiApple size={50} />
               <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                MacOS 12.0+
+                <Translate id="download.macos.label">MacOS 12.0+</Translate>
               </h5>
               <a href="/docs/studio/setup?current-os=macos">
                 <button className="mt-2 button button--primary">
-                  Download
+                  <Translate id="download.button">Download</Translate>
                 </button>
               </a>
             </div>
@@ -222,14 +226,11 @@ function DownloadSection() {
             <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm">
               <SiFlathub size={50} />
               <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                Flathub
+                <Translate id="download.flathub.label">Flathub</Translate>
               </h5>
-              <a
-                href="https://flathub.org/apps/com.one_ware.OneWare"
-                target="_blank"
-              >
+              <a href="https://flathub.org/apps/com.one_ware.OneWare" target="_blank">
                 <button className="mt-2 button button--primary">
-                  Download
+                  <Translate id="download.button">Download</Translate>
                 </button>
               </a>
             </div>
@@ -237,11 +238,11 @@ function DownloadSection() {
             <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm">
               <SiSnapcraft size={50} />
               <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                Snapstore
+                <Translate id="download.snapstore.label">Snapstore</Translate>
               </h5>
               <a href="https://snapcraft.io/oneware" target="_blank">
                 <button className="mt-2 button button--primary">
-                  Download
+                  <Translate id="download.button">Download</Translate>
                 </button>
               </a>
             </div>
@@ -249,11 +250,11 @@ function DownloadSection() {
             <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm">
               <SiLinux size={50} />
               <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                Other Linux
+                <Translate id="download.linux.label">Other Linux</Translate>
               </h5>
               <a href="https://cdn.one-ware.com/onewarestudio/" target="_blank">
                 <button className="mt-2 button button--primary">
-                  Download
+                  <Translate id="download.button">Download</Translate>
                 </button>
               </a>
             </div>
@@ -268,16 +269,21 @@ function VendorSection() {
   return (
     <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
       <h2 className="text-4xl md:text-5xl font-bold mb-10">
-        Use any Hardware!
+        <Translate id="vendor.title">Use any Hardware!</Translate>
       </h2>
 
       <h5 className="text-2xl md:text-3xl font-normal">
-        Our goal is to provide first level support for{" "}
-        <span className="primary-text">any hardware</span>, using our advanced
-        extension system.
+        <Translate id="vendor.subtitle.1">
+          Our goal is to provide first level support for</Translate>{" "}
+          <span className="primary-text"><Translate id="vendor.subtitle.2">any hardware</Translate></span>, <Translate id="vendor.subtitle.3">using our advanced
+          extension system.</Translate>
+        
       </h5>
 
-      <img src={require('@site/static/img/studio/hardware.png').default} alt="Hardware" />
+      <img
+        src={require('@site/static/img/studio/hardware.png').default}
+        alt="Hardware"
+      />
     </div>
   );
 }
@@ -285,24 +291,25 @@ function VendorSection() {
 function Extension() {
   return (
     <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
-      <h1 className="text-4xl md:text-5xl font-bold">
-        <span className="primary-text font-bold"> Extensions</span> For All Your
-        Needs!
+      <h1 className="text-4xl md:text-5xl font-bold">     
+          <span className="primary-text font-bold"><Translate id="extension.title.1">Extensions</Translate>{" "}</span><Translate id="extension.title.2"> For All Your Needs!</Translate>      
       </h1>
 
       <div className="row mt-20 items-center">
-        <div className="col flex ">
+        <div className="col flex">
           <p
             className="text-2xl font-normal md:text-left p-0 m-0"
             data-aos="slide-right"
           >
-            ONE WARE Studio extensions let you{" "}
-            <span className="primary-text">customize your experience</span> to
-            meet all your development needs. Add custom hardware as{" "}
-            <span className="primary-text">digital twin</span>, make{" "}
-            <span className="primary-text">AI</span> integration easier or add
-            support for your favorite{" "}
-            <span className="primary-text">simulation</span> tool.
+            <Translate id="extension.description.1">
+              ONE WARE Studio extensions let you </Translate>{" "}
+              <span className="primary-text"><Translate id="extension.description.2">customize your experience</Translate>{" "}</span><Translate id="extension.description.3"> to
+              meet all your development needs. Add custom hardware as</Translate>{" "}
+              <span className="primary-text"><Translate id="extension.description.4">digital twin</Translate></span>, <Translate id="extension.description.5">make</Translate>{" "}
+              <span className="primary-text"><Translate id="extension.description.6">AI</Translate>{" "}</span><Translate id="extension.description.7"> integration easier or add
+              support for your favorite</Translate>{" "}
+              <span className="primary-text"> <Translate id="extension.description.8">simulation</Translate>{" "}</span><Translate id="extension.description.9"> tool.</Translate>
+            
           </p>
         </div>
 
@@ -321,21 +328,26 @@ function Extension() {
 function Beta() {
   return (
     <div className="text-center max-w-6xl m-auto mt-8 mb-16">
-      <h2 className="text-4xl font-bold">Be one of the first to test ONE AI! 🚀</h2>
+      <h2 className="text-4xl font-bold">
+        <Translate id="beta.title">Be one of the first to test ONE AI! 🚀</Translate>
+      </h2>
       <div className="text-xl md:text-2xl mt-6">
-        <strong>You Want to Build Custom AI Models?</strong> Experience the
-        future of AI! Automatically generate tailored AI models with ONE AI.
-        Sign up for the waitlist to get free exclusive access to the closed
-        beta. <br />
+        
+          <strong><Translate id="beta.description.1">You Want to Build Custom AI Models? </Translate></strong><Translate id="beta.description.2"> Experience the
+          future of AI! Automatically generate tailored AI models with ONE AI.
+          Sign up for the waitlist to get free exclusive access to the closed
+          beta.</Translate>
+       
+        <br />
         <div className="flex justify-center gap-4 mt-2">
           <a href="https://forms.office.com/e/ptgVNPN9AL" target="_blank">
             <button className="button button--secondary text-xl">
-              ONE AI Webinar
+              <Translate id="beta.webinar">ONE AI Webinar</Translate>
             </button>
           </a>
           <a href="https://forms.office.com/e/J3HDid9fzw" target="_blank">
             <button className="button button--primary text-xl">
-              ONE AI Waitlist
+              <Translate id="beta.waitlist">ONE AI Waitlist</Translate>
             </button>
           </a>
         </div>
@@ -343,6 +355,7 @@ function Beta() {
     </div>
   );
 }
+
 
 function FancyParticles(props: FancyParticlesProps) {
   return (
