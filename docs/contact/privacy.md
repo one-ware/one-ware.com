@@ -1,9 +1,7 @@
 ---
 title: Privacy Policy
-sidebar_label: EN Privacy Policy
+sidebar_label: Privacy Policy
 ---
-
-**Deutsche Version:** [Datenschutzerklärung](/docs/contact/privacy_de)
 
 The use of our website is usually possible without providing personal data. If there is any personal data requested, it will not be disclosed to third parties without your explicit consent.
 

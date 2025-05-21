@@ -11,15 +11,6 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
 import Translate, { translate } from "@docusaurus/Translate";
 
-import { SiApple } from "react-icons/si";
-import { SiWindows } from "react-icons/si";
-import { SiLinux } from "react-icons/si";
-import { SiFlathub } from "react-icons/si";
-import { SiSnapcraft } from "react-icons/si";
-
-import { HiOutlineCpuChip } from "react-icons/hi2";
-import { BiMicrochip } from "react-icons/bi";
-
 type FancyParticlesProps = {
   id: string;
   parallax: boolean;
@@ -355,7 +346,7 @@ function FancyParticles(props: FancyParticlesProps) {
   );
 }
 
-export default function Studio(): JSX.Element {
+export default function Studio() {
   const slickRef = useRef<Slider>(null);
 
   const slickRef2 = useRef<Slider>(null);

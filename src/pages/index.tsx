@@ -49,11 +49,10 @@ function HomepageHeader() {
               <Translate id="homepage.subtitle.ai">AI-Powered AI Developer</Translate>
             </span>
           </span>
-          
-          {/* Buttons hinzugefügt */}
+
           <div className="flex justify-center gap-4 mt-8 flex-col md:flex-row">
             <a href="one-ai">
-              <button className="button button--primary text-xl">
+              <button className="button button button--primary button--outline button--lg">
                 ONE AI
               </button>
             </a>
@@ -64,7 +63,7 @@ function HomepageHeader() {
   );
 }
 
-function HeaderSection() {
+function PreviewSection() {
   return (
     <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
       <h2 className="text-4xl md:text-5xl font-bold mt-10">
@@ -117,13 +116,13 @@ function HeaderSection() {
 
       <div className="flex justify-center gap-4 mt-8 flex-col md:flex-row">
         <a href="docs/studio/setup">
-          <button className="button button--primary text-xl">
+          <button className="button button--primary button--lg">
             ONE WARE Studio
           </button>
         </a>
 
         <a href="https://forms.office.com/e/J3HDid9fzw" target="_blank">
-          <button className="button button--secondary text-xl">
+          <button className="button button--secondary button--outline button--lg">
             ONE AI Waitlist
           </button>
         </a>
@@ -134,7 +133,7 @@ function HeaderSection() {
 
 function TestimonialsSection() {
   return (
-    <div className="px-4 md:px-8 lg:px-12 max-w-screen-2xl mx-auto mb-24">
+    <div className="px-4 md:px-8 lg:px-12 max-w-screen-2xl mx-auto">
       <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-200 mb-12">
         <Translate id="testimonials.title">What Others Say About Us</Translate>
       </h2>
@@ -146,15 +145,15 @@ function TestimonialsSection() {
             href="https://go.altera.com/l/1090322/2025-04-18/2vvzbn"
             target="_blank"
             rel="noopener noreferrer"
-            className="block no-underline"
+            className="block no-underline hover:no-underline"
           >
             <p className="text-gray-800 italic mb-6 font-bold text-lg">
               <Translate id="testimonials.1.text">
                 "Working with ONE WARE demonstrates the incredible potential that emerges when intelligent AI development meets highly efficient FPGA technology..."
               </Translate>
             </p>
-            <div className="mb-20">
-              <p className="text-gray-900 text-2xl font-bold">Mark Moran</p>
+            <div className="mb-24">
+              <p className="text-gray-900 text-2xl font-bold mb-2">Mark Moran</p>
               <p className="text-gray-700 font-bold text-l">
                 <Translate id="testimonials.1.authorTitle">
                   Director of Boards, Development Kits, and Partners at Altera
@@ -173,15 +172,15 @@ function TestimonialsSection() {
             href="https://hdo-gmbh.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="block no-underline"
+            className="block no-underline hover:no-underline"
           >
             <p className="text-gray-800 italic mb-6 font-bold text-lg">
               <Translate id="testimonials.2.text">
                 "From day one, working with ONE WARE was pragmatic and focused..."
               </Translate>
             </p>
-            <div className="mb-20">
-              <p className="text-gray-900 text-2xl font-bold">Christian Leon</p>
+            <div className="mb-24">
+              <p className="text-gray-900 text-2xl font-bold mb-2">Christian Leon</p>
               <p className="text-gray-700 font-bold text-l">
                 <Translate id="testimonials.2.authorTitle">
                   COO & Managing Director at HDO
@@ -200,15 +199,15 @@ function TestimonialsSection() {
             href="https://www.cuspcapital.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="block no-underline"
+            className="block no-underline hover:no-underline"
           >
             <p className="text-gray-800 italic mb-6 font-bold text-lg">
               <Translate id="testimonials.3.text">
                 "Through our European Digital Infrastructure investment thesis, we seek out entrepreneurs..."
               </Translate>
             </p>
-            <div className="mb-20">
-              <p className="text-gray-900 text-2xl font-bold">Jan Sessenhausen</p>
+            <div className="mb-24">
+              <p className="text-gray-900 text-2xl font-bold mb-2">Jan Sessenhausen</p>
               <p className="text-gray-700 font-bold text-l">
                 <Translate id="testimonials.3.authorTitle">
                   Investor & General Partner at Cusp Capital
@@ -225,7 +224,7 @@ function TestimonialsSection() {
   );
 }
 
-export default function Home(): JSX.Element {
+export default function Home() {
   const { siteConfig } = useDocusaurusContext();
 
   if (ExecutionEnvironment.canUseDOM) {
@@ -241,10 +240,26 @@ export default function Home(): JSX.Element {
       })}
     >
       <HomepageHeader />
-      <main className="container overflow-x-hidden">
-        <HeaderSection />
-        <HomepageFeatures />
-        <TestimonialsSection />
+      <main className="overflow-x-hidden alternative-background ">
+
+        <div className="dropshadowbottom">
+
+          <div className="diagclipbottom default-background pb-24">
+            <PreviewSection />
+          </div>
+
+        </div>
+
+        <div className="">
+          <HomepageFeatures />
+        </div>
+
+        <div className="dropshadowtop">
+          <div className="default-background diagcliptop pt-20 pb-20">
+            <TestimonialsSection />
+          </div>
+        </div>
+
       </main>
     </Layout>
   );

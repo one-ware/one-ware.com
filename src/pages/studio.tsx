@@ -12,7 +12,7 @@ import { loadFull } from "tsparticles";
 import Translate, { translate } from "@docusaurus/Translate";
 
 import { SiApple } from "react-icons/si";
-import { SiWindows } from "react-icons/si";
+import { FaWindows } from "react-icons/fa";
 import { SiLinux } from "react-icons/si";
 import { SiFlathub } from "react-icons/si";
 import { SiSnapcraft } from "react-icons/si";
@@ -200,7 +200,7 @@ function DownloadSection() {
           </p>
           <div className="flex gap-5 flex-wrap">
             <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm">
-              <SiWindows size={50} />
+              <FaWindows size={50} />
               <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                 <Translate id="download.windows.label">Windows 10+</Translate>
               </h5>
@@ -440,7 +440,7 @@ function FancyParticles(props: FancyParticlesProps) {
   );
 }
 
-export default function Studio(): JSX.Element {
+export default function Studio() {
   const slickRef = useRef<Slider>(null);
 
   const slickRef2 = useRef<Slider>(null);

@@ -17,10 +17,6 @@ Registration number: HRB 17581<br></br>
 VAT Reg. No.: DE 452 242 211<br></br>
 
 
-## Privacy Policy | Datenschutzerklärung
+## Privacy Policy
 
-### English version:
 <a href="/docs/contact/privacy">Privacy Policy</a>
-
-### Deutsche Version:
-<a href="/docs/contact/privacy_de">Datenschutzerklärung</a>
