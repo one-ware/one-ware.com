@@ -62,7 +62,7 @@ function PreviewSection() {
     <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
       <div className="mt-16">
         <h3 className="text-2xl md:text-3xl font-bold text-center text-gray-200 mb-8">
-          <Translate id="partners.title">Trusted by Industry Leaders and Investors</Translate>
+          <Translate id="partners.title">Trusted by Industry Leaders and Experts</Translate>
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Partner 1 - Altera */}

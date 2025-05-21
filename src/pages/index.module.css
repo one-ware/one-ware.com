@@ -5,7 +5,9 @@
 
  nav {
   transition: 0.8s;
-} .heroBackground{
+} 
+
+.heroBackground{
   box-shadow: rgb(0 0 0 / 50%) 0px -10px 13px -7px inset; 
   background-image: linear-gradient(0deg,#163238,#0b0e0c,#1f1f1f);
   position: relative;
