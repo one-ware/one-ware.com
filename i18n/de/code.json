@@ -864,5 +864,23 @@
   },
   "contactus.buttonsend": {
     "message": "Absenden"
+  },
+  "vendorSection.headline.1": {
+    "message": "Basis KI-Modelle"
+  },
+  "vendorSection.headline.2": {
+    "message": "wurden nicht für Sie entwickelt."
+  },
+  "vendorSection.headline.3": {
+    "message": "entwickelt Modelle, die es sind."
+  },
+  "vendorSection.subline.1": {
+    "message": "Mit ONE AI erhalten Sie in Sekundenschnelle"
+  },
+  "vendorSection.subline.2": {
+    "message": "ein maßgeschneidertes neuronales Netzwerk"
+  },
+  "vendorSection.subline.3": {
+    "message": ", das exakt auf deine Hardware, Leistungsanforderungen und deinen Anwendungsfall abgestimmt ist."
   }
 }

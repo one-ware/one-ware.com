@@ -200,12 +200,35 @@ function VendorSection() {
   return (
     <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
       <h2 className="text-4xl md:text-5xl font-bold mb-10">
-        Foundation Models <span className="primary-text">Weren't Built for You</span>.<br/>
-        <span className="primary-text">ONE AI</span> Creates Models That Are.
+          <Translate id="vendorSection.headline.1" description="">
+          Foundation Models
+          </Translate>{" "}
+          <span className="primary-text">
+            <Translate id="vendorSection.headline.2" description="">
+            Weren't Built for You.
+            </Translate>
+          </span>
+          <br/>
+          <span className="primary-text">
+          ONE AI
+          </span>{" "}
+          <Translate id="vendorSection.headline.3" description="">
+            Creates Models That Are.
+          </Translate>
       </h2>
 
       <h5 className="text-2xl mb-16 md:text-3xl font-normal">
-        With ONE AI you always get a <span className="primary-text">custom neural network in seconds</span> that fits your exact Hardware, performance and use case requirements.
+        <Translate id="vendorSection.subline.1" description="">
+          With ONE AI you always get a 
+        </Translate>{" "}
+        <span className="primary-text">
+           <Translate id="vendorSection.subline.2" description="">
+          custom neural network in seconds
+          </Translate>
+        </span>{" "}
+        <Translate id="vendorSection.subline.3" description="">
+           that fits your exact Hardware, performance and use case requirements.
+        </Translate>
       </h5>
     </div>
   );
