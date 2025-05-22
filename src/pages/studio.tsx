@@ -9,6 +9,7 @@ import initWebsiteEffects from "../components/startEffects";
 import ContactUs from "../components/ContactUs";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
+import Translate, { translate } from "@docusaurus/Translate";
 
 import { SiApple } from "react-icons/si";
 import { FaWindows } from "react-icons/fa";
@@ -24,53 +25,79 @@ type FancyParticlesProps = {
   parallax: boolean;
 };
 
+
 const sliders = [
   {
-    title: "Code Assistant",    imageSrc: (
+    title: <Translate id="slider.codeAssistant.title"> "Code Assistant"</Translate>,
+    imageSrc: (
       <img alt="Code Assistant" src={require('@site/static/img/studio/slides2/completion.png').default} />
     ),
     description: (
       <>
-        First class support for <span className="primary-text">C++</span>,{" "}
+        <Translate id="slider.codeAssistant.description.1">First class support for</Translate>{" "}<span className="primary-text">C++</span>,{" "}
         <span className="primary-text">Python</span>,{" "}
         <span className="primary-text">VHDL</span>,{" "}
-        <span className="primary-text">Verilog</span> and more with lots of
-        tools to help develop your designs as efficiently as possible.
+        <span className="primary-text">Verilog</span> <Translate id="slider.codeAssistant.description.2">and more with lots of
+        tools to help develop your designs as efficiently as possible.</Translate>
       </>
     ),
   },
   {
-    title: "Hardware Support",
-    imageSrc: <img alt="Hardware" src={require('@site/static/img/studio/slides2/hardware.png').default} />,
-    description: (
+    title: (
+      <Translate id="slider.hardwareSupport.title">Hardware Support</Translate>
+    ),
+    imageSrc: (
+      <img
+        alt="Hardware"
+        src={require('@site/static/img/studio/slides2/hardware.png').default}
+      />
+    ),
+     description: (
       <>
-        Conveniently setup and compile your designs from your hardware.{" "}
-        <span className="primary-text">Directy</span> from the IDE, which a
-        growing number of supported toolchains and boards.
+        <Translate id="slider.hardwareSupport.description.1">Conveniently setup and compile your designs from your hardware.</Translate>{" "}
+        <span className="primary-text"><Translate id="slider.hardwareSupport.description.2">Directy</Translate></span>{" "}<Translate id="slider.hardwareSupport.description.3"> from the IDE, which a
+        growing number of supported toolchains and boards.</Translate>
       </>
     ),
   },
   {
-    title: "Simulation",
-    imageSrc: <img alt="Simulation" src={require('@site/static/img/studio/slides2/simulator.png').default} />,
+    title: (
+      <Translate id="slider.simulation.title">Simulation</Translate>
+    ),
+    imageSrc: (
+      <img
+        alt="Simulation"
+        src={require('@site/static/img/studio/slides2/simulator.png').default}
+      />
+    ),
     description: (
       <>
+      <Translate id="slider.simulation.description.1">
         Simulate your designs inside the IDE, using the lightning fast
-        Simulation Viewer and the most popular{" "}
-        <span className="primary-text">Simulation</span> tools.
+        Simulation Viewer and the most popular</Translate>{" "}
+        <span className="primary-text"><Translate id="slider.simulation.description.2">Simulation</Translate></span><Translate id="slider.simulation.description.3"> tools.</Translate>    
       </>
     ),
   },
   {
-    title: "Extensibility",
-    imageSrc: <img alt="Extensible" src={require('@site/static/img/studio/slides2/extensions.png').default} />,
+    title: (
+      <Translate id="slider.extensibility.title">Extensibility</Translate>
+    ),
+    imageSrc: (
+      <img
+        alt="Extensible"
+        src={require('@site/static/img/studio/slides2/extensions.png').default}
+      />
+    ),
     description: (
       <>
-        Download and Install <span className="primary-text">Extensions</span>{" "}
-        from to extend the functionality. Discover a growing selection of{" "}
+      <Translate id="slider.extensibility.description.1">
+        Download and install</Translate>{" "}<span className="primary-text"><Translate id="slider.extensibility.description.2">Extensions</Translate></span>{" "}<Translate id="slider.extensibility.description.3">to
+        extend the functionality. Discover a growing selection of</Translate>{" "}
         <span className="primary-text">AI-Tools</span>,{" "}
-        <span className="primary-text">Hardware-Integrations</span>,{" "}
-        <span className="primary-text">Simulators and More</span>
+        <span className="primary-text"><Translate id="slider.extensibility.description.4">Hardware-Integrations</Translate></span>,{" "}
+        <span className="primary-text"><Translate id="slider.extensibility.description.5">Simulators and More</Translate></span>.
+      
       </>
     ),
   },
@@ -78,50 +105,91 @@ const sliders = [
 
 const ai_sliders = [
   {
-    title: "Universal Assistant",
-    imageSrc: <img alt="Extensible" src={require('@site/static/img/studio/slides/ai.png').default} />,
+    title: (
+      <Translate id="aiSlider.universalAssistant.title">
+        Universal Assistant
+      </Translate>
+    ),
+    imageSrc: (
+      <img
+        alt="Extensible"
+        src={require('@site/static/img/studio/slides/ai.png').default}
+      />
+    ),
     description: (
       <>
-        ONE AI lets you build efficient AIs to process{" "}
-        <span className="primary-text">Images, Audio and Sensor Data</span>. Our
-        assistant has the know how of all current AI research and you just have
-        to answer a few questions to create your own individual AI. Then{" "}
-        <span className="primary-text">ONE WARE Studio</span> helps to integrate
-        the AI in your product.
+      <Translate id="aiSlider.universalAssistant.description.1">
+        ONE AI lets you build efficient AIs to process</Translate>{" "}
+        <span className="primary-text"><Translate id="aiSlider.universalAssistant.description.2">Images, Audio and Sensor Data</Translate></span>.<Translate id="aiSlider.universalAssistant.description.3">Our
+        assistant has the know-how of all current AI research and you just have
+        to answer a few questions to create your own individual AI. Then</Translate>{" "}
+        <span className="primary-text">ONE WARE Studio</span><Translate id="aiSlider.universalAssistant.description.4"> helps to integrate
+        the AI in your product.</Translate>     
       </>
     ),
   },
   {
-    title: "Quality Control",
-    imageSrc: <img alt="Extensible" src={require('@site/static/img/ai/quality.png').default} />,
+    title: (
+      <Translate id="aiSlider.qualityControl.title">
+        Quality Control
+      </Translate>
+    ),
+    imageSrc: (
+      <img
+        alt="Extensible"
+        src={require('@site/static/img/ai/quality.png').default}
+      />
+    ),
     description: (
       <>
-        Create your custom quality control with our AI based{" "}
-        <span className="primary-text">Image Processing</span> framework. ONE AI
-        makes sure that you always use the newest scientific findings to get the{" "}
-        <span className="primary-text">Most Accurate and Efficient AI</span>.
+      <Translate id="aiSlider.qualityControl.description.1">
+        Create your custom quality control with our AI based</Translate>{" "}
+        <span className="primary-text"><Translate id="aiSlider.qualityControl.description.2">Image Processing</Translate></span> framework. ONE AI
+        <Translate id="aiSlider.qualityControl.description.3">makes sure that you always use the newest scientific findings to get the</Translate>{" "}
+        <span className="primary-text"><Translate id="aiSlider.qualityControl.description.4">Most Accurate and Efficient AI</Translate></span>.
       </>
     ),
   },
   {
-    title: "Predictive Maintenance",
-    imageSrc: <img alt="Extensible" src={require('@site/static/img/ai/Predictive_Maintenance.png').default} />,
+    title: (
+      <Translate id="aiSlider.predictiveMaintenance.title">
+        Predictive Maintenance
+      </Translate>
+    ),
+    imageSrc: (
+      <img
+        alt="Extensible"
+        src={require('@site/static/img/ai/Predictive_Maintenance.png').default}
+      />
+    ),
     description: (
       <>
+      <Translate id="aiSlider.predictiveMaintenance.description.1">
         Fix problems before they occur. ONE AI takes sensor-data from your
-        machine and can <span className="primary-text">predict defects</span>{" "}
-        before they occur, so your production can run without interruption.
+        machine and can </Translate><span className="primary-text"><Translate id="aiSlider.predictiveMaintenance.description.2">predict defects </Translate></span>{" "}
+        <Translate id="aiSlider.predictiveMaintenance.description.3">before they occur, so your production can run without interruption.</Translate>    
       </>
     ),
   },
   {
-    title: "Robots and Drones",
-    imageSrc: <img alt="Code Assistant" src={require('@site/static/img/ai/Titel.png').default} />,
+    title: (
+      <Translate id="aiSlider.robotsAndDrones.title">
+        Robots and Drones
+      </Translate>
+    ),
+    imageSrc: (
+      <img
+        alt="Code Assistant"
+        src={require('@site/static/img/ai/Titel.png').default}
+      />
+    ),
     description: (
       <>
+      <Translate id="aiSlider.robotsAndDrones.description.1">
         Replace the last manual steps of your production with autonomous robots
-        and drones. ONE AI lets your robot or drone{" "}
-        <span className="primary-text">See, Hear and Think for Itself</span>.
+        and drones. ONE AI lets your robot or drone</Translate>{" "}
+        <span className="primary-text"><Translate id="aiSlider.robotsAndDrones.description.2">See, Hear and Think for Itself</Translate></span>.
+      
       </>
     ),
   },
@@ -135,12 +203,9 @@ function HomepageHeader() {
           <div className="flex-col max-w-3xl m-5 mt-10">
             <div className="text-center mt-10">
               <h1 className="font-medium md:text-4xl">
-                The{" "}
-                <span className="primary-text font-bold">
-                  Next Generation IDE
-                </span>{" "}
-                for Electronics Development{" "}
-                <span className="primary-text font-bold">is here</span>.
+                <Translate id="homepage.hero.title.1">
+                  The</Translate> <span className="primary-text font-bold"><Translate id="homepage.hero.title.2">Next Generation IDE</Translate></span>{" "}<Translate id="homepage.hero.title.3"> for Electronics Development </Translate>{" "}<span className="primary-text font-bold"><Translate id="homepage.hero.title.4">is here</Translate></span>.
+             
               </h1>
 
               <div className="flex-col md:space-x-5 mb-10">
@@ -148,27 +213,21 @@ function HomepageHeader() {
                   className="mt-5 button button--primary button--lg hidden md:inline-block"
                   href="/docs/studio/setup"
                 >
-                  Download
+                  <Translate id="homepage.hero.download">Download</Translate>
                 </Link>
 
                 <Link
                   className="mt-5 button button--primary button--outline button--lg"
                   href="/docs/studio/setup"
                 >
-                  Get Started
+                  <Translate id="homepage.hero.getStarted">Get Started</Translate>
                 </Link>
               </div>
 
               <p className="md:text-xl font-normal mt-10">
-                (Yes, it is{" "}
-                <a
-                  href="https://github.com/one-ware"
-                  target="_blank"
-                  className="primary-text font-bold"
-                >
-                  Open Source
-                </a>
-                !)
+                
+                  (<Translate id="homepage.hero.opensource.1">Yes, it is</Translate> <a href="https://github.com/one-ware" target="_blank" className="primary-text font-bold"><Translate id="homepage.hero.opensource.2">Open Source</Translate></a>!)
+                
               </p>
             </div>
           </div>
@@ -185,24 +244,27 @@ function DownloadSection() {
     <div className="py-24 md:py-40 overflow-x-hidden">
       <div className="text-center container m-auto flex space-x-5 justify-center">
         <div className="flex-col flex text-center">
-          <h1 className="text-4xl md:text-5xl">Easy Setup!</h1>
+          <h1 className="text-4xl md:text-5xl">
+            <Translate id="download.heading">Easy Setup!</Translate>
+          </h1>
 
           <p className="text-xl my-8">
-            ONE WARE Studio is available for{" "}
-            <span className="primary-text">all major operating systems</span>,
-            using all the <span className="primary-text">modern</span>{" "}
-            installation methods.
+            <Translate id="download.subheading.1">
+              ONE WARE Studio is available for </Translate>
+              <span className="primary-text">{" "}<Translate id="download.subheading.2">all major operating systems</Translate></span>,{" "}
+              <Translate id="download.subheading.3">using all the </Translate><span className="primary-text">{" "}<Translate id="download.subheading.4">modern</Translate></span>{" "}
+              <Translate id="download.subheading.5">installation methods.</Translate>
+           
           </p>
-
           <div className="flex gap-5 flex-wrap">
             <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm">
               <FaWindows size={50} />
               <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                Windows 10+
+                <Translate id="download.windows.label">Windows 10+</Translate>
               </h5>
               <a href="/docs/studio/setup?current-os=windows">
                 <button className="mt-2 button button--primary">
-                  Download
+                  <Translate id="download.button">Download</Translate>
                 </button>
               </a>
             </div>
@@ -210,11 +272,11 @@ function DownloadSection() {
             <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm">
               <SiApple size={50} />
               <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                MacOS 12.0+
+                <Translate id="download.macos.label">MacOS 12.0+</Translate>
               </h5>
               <a href="/docs/studio/setup?current-os=macos">
                 <button className="mt-2 button button--primary">
-                  Download
+                  <Translate id="download.button">Download</Translate>
                 </button>
               </a>
             </div>
@@ -222,14 +284,11 @@ function DownloadSection() {
             <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm">
               <SiFlathub size={50} />
               <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                Flathub
+                <Translate id="download.flathub.label">Flathub</Translate>
               </h5>
-              <a
-                href="https://flathub.org/apps/com.one_ware.OneWare"
-                target="_blank"
-              >
+              <a href="https://flathub.org/apps/com.one_ware.OneWare" target="_blank">
                 <button className="mt-2 button button--primary">
-                  Download
+                  <Translate id="download.button">Download</Translate>
                 </button>
               </a>
             </div>
@@ -237,11 +296,11 @@ function DownloadSection() {
             <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm">
               <SiSnapcraft size={50} />
               <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                Snapstore
+                <Translate id="download.snapstore.label">Snapstore</Translate>
               </h5>
               <a href="https://snapcraft.io/oneware" target="_blank">
                 <button className="mt-2 button button--primary">
-                  Download
+                  <Translate id="download.button">Download</Translate>
                 </button>
               </a>
             </div>
@@ -249,11 +308,11 @@ function DownloadSection() {
             <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm">
               <SiLinux size={50} />
               <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                Other Linux
+                <Translate id="download.linux.label">Other Linux</Translate>
               </h5>
               <a href="https://cdn.one-ware.com/onewarestudio/" target="_blank">
                 <button className="mt-2 button button--primary">
-                  Download
+                  <Translate id="download.button">Download</Translate>
                 </button>
               </a>
             </div>
@@ -268,16 +327,21 @@ function VendorSection() {
   return (
     <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
       <h2 className="text-4xl md:text-5xl font-bold mb-10">
-        Use any Hardware!
+        <Translate id="vendor.title">Use any Hardware!</Translate>
       </h2>
 
       <h5 className="text-2xl md:text-3xl font-normal">
-        Our goal is to provide first level support for{" "}
-        <span className="primary-text">any hardware</span>, using our advanced
-        extension system.
+        <Translate id="vendor.subtitle.1">
+          Our goal is to provide first level support for</Translate>{" "}
+          <span className="primary-text"><Translate id="vendor.subtitle.2">any hardware</Translate></span>, <Translate id="vendor.subtitle.3">using our advanced
+          extension system.</Translate>
+        
       </h5>
 
-      <img src={require('@site/static/img/studio/hardware.png').default} alt="Hardware" />
+      <img
+        src={require('@site/static/img/studio/hardware.png').default}
+        alt="Hardware"
+      />
     </div>
   );
 }
@@ -285,24 +349,25 @@ function VendorSection() {
 function Extension() {
   return (
     <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
-      <h1 className="text-4xl md:text-5xl font-bold">
-        <span className="primary-text font-bold"> Extensions</span> For All Your
-        Needs!
+      <h1 className="text-4xl md:text-5xl font-bold">     
+          <span className="primary-text font-bold"><Translate id="extension.title.1">Extensions</Translate>{" "}</span><Translate id="extension.title.2"> For All Your Needs!</Translate>      
       </h1>
 
       <div className="row mt-20 items-center">
-        <div className="col flex ">
+        <div className="col flex">
           <p
             className="text-2xl font-normal md:text-left p-0 m-0"
             data-aos="slide-right"
           >
-            ONE WARE Studio extensions let you{" "}
-            <span className="primary-text">customize your experience</span> to
-            meet all your development needs. Add custom hardware as{" "}
-            <span className="primary-text">digital twin</span>, make{" "}
-            <span className="primary-text">AI</span> integration easier or add
-            support for your favorite{" "}
-            <span className="primary-text">simulation</span> tool.
+            <Translate id="extension.description.1">
+              ONE WARE Studio extensions let you </Translate>{" "}
+              <span className="primary-text"><Translate id="extension.description.2">customize your experience</Translate>{" "}</span><Translate id="extension.description.3"> to
+              meet all your development needs. Add custom hardware as</Translate>{" "}
+              <span className="primary-text"><Translate id="extension.description.4">digital twin</Translate></span>, <Translate id="extension.description.5">make</Translate>{" "}
+              <span className="primary-text"><Translate id="extension.description.6">AI</Translate>{" "}</span><Translate id="extension.description.7"> integration easier or add
+              support for your favorite</Translate>{" "}
+              <span className="primary-text"> <Translate id="extension.description.8">simulation</Translate>{" "}</span><Translate id="extension.description.9"> tool.</Translate>
+            
           </p>
         </div>
 
@@ -318,31 +383,6 @@ function Extension() {
   );
 }
 
-function Beta() {
-  return (
-    <div className="text-center max-w-6xl m-auto mt-8 mb-16">
-      <h2 className="text-4xl font-bold">Be one of the first to test ONE AI! 🚀</h2>
-      <div className="text-xl md:text-2xl mt-6">
-        <strong>You Want to Build Custom AI Models?</strong> Experience the
-        future of AI! Automatically generate tailored AI models with ONE AI.
-        Sign up for the waitlist to get free exclusive access to the closed
-        beta. <br />
-        <div className="flex justify-center gap-4 mt-2">
-          <a href="https://forms.office.com/e/ptgVNPN9AL" target="_blank">
-            <button className="button button--secondary text-xl">
-              ONE AI Webinar
-            </button>
-          </a>
-          <a href="https://forms.office.com/e/J3HDid9fzw" target="_blank">
-            <button className="button button--primary text-xl">
-              ONE AI Waitlist
-            </button>
-          </a>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 function FancyParticles(props: FancyParticlesProps) {
   return (
@@ -525,7 +565,7 @@ export default function Studio() {
             className="absolute w-full -z-10"
             style={{ top: -50, height: "50rem" }}
           >
-            {init && <FancyParticles parallax={true} id="downloadParticles" />}
+            {/*init && <FancyParticles parallax={true} id="downloadParticles" />*/}
           </div>
           <DownloadSection />
         </div>

@@ -9,6 +9,7 @@ import initWebsiteEffects from "../components/startEffects";
 import ContactUs from "../components/ContactUs";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
+import Translate, { translate } from "@docusaurus/Translate";
 
 type FancyParticlesProps = {
   id: string;
@@ -17,47 +18,26 @@ type FancyParticlesProps = {
 
 const sliders = [
   {
-    title: "Capture and Label",
+    title: <Translate id="slider.capture.title">Capture and Label</Translate>,
     imageSrc: (
       <img alt="Capture" src={require('@site/static/img/ai/Capture.png').default} />
     ),
-    description: (
-      <>
-        Capture just a few images, label them - ONE AI takes care of the rest.
-        ONE AI requires only a <span className="primary-text">small dataset</span>{" "}to deliver a <span className="primary-text">fully functional AI model</span>.
-        Its adaptive architecture automatically scales with your data.
-      </>
-    ),
+    description: <Translate id="slider.capture.description">Capture just a few images, label them - ONE AI takes care of the rest. ONE AI requires only a small dataset to deliver a fully functional AI model. Its adaptive architecture automatically scales with your data.</Translate>
   },
   {
-    title: "Guide and Select",
+    title: <Translate id="slider.guide.title">Guide and Select</Translate>,
     imageSrc: <img alt="Hardware" src={require('@site/static/img/ai/Pre.png').default} />,
-    description: (
-      <>
-        Use our <span className="primary-text">intuitive and visual process</span>{" "}to teach the AI what is important, where to generalize and what to predict.
-You can specify your <span className="primary-text">exact hardware and performance requirements</span>{" "}and then let ONE AI create the perfect model for your needs.
-      </>
-    ),
+    description: <Translate id="slider.guide.description">Use our intuitive and visual process to teach the AI what is important, where to generalize and what to predict. You can specify your exact hardware and performance requirements and then let ONE AI create the perfect model for your needs.</Translate>
   },
   {
-    title: "Predict and Train",
+    title: <Translate id="slider.predict.title">Predict and Train</Translate>,
     imageSrc: <img alt="Simulation" src={require('@site/static/img/ai/Train.png').default} />,
-    description: (
-      <>
-        After you start training, ONE AI will automatically generate a <span className="primary-text">custom neural network</span>{" "}for your <span className="primary-text">hardware and application</span>.  
-The AI then trains on your data, but only learns <span className="primary-text">what is important</span>. This ensures <span className="primary-text">highest performance and accuracy</span>.
-      </>
-    ),
+    description: <Translate id="slider.predict.description">After you start training, ONE AI will automatically generate a custom neural network for your hardware and application. The AI then trains on your data, but only learns what is important. This ensures highest performance and accuracy.</Translate>
   },
   {
-    title: "Test and Deploy",
+    title: <Translate id="slider.test.title">Test and Deploy</Translate>,
     imageSrc: <img alt="Extensible" src={require('@site/static/img/ai/Export.png').default} />,
-    description: (
-      <>
-        While training and testing, the AI already behaves like on your target hardware. No matter if you are using an <span className="primary-text">FPGA</span>, <span className="primary-text">Microcontroller</span>, <span className="primary-text">GPU</span>, <span className="primary-text">CPU</span>{" "}or <span className="primary-text">TPU</span>.
-        If you are sattisfied with the results, you can export the AI as cross-platform <span className="primary-text">executable</span>, universal <span className="primary-text">HDL</span>{" "}code, <span className="primary-text">C++</span>{" "}project or <span className="primary-text">ONNX/TF/TF-Lite Model</span>.
-      </>
-    ),
+    description: <Translate id="slider.test.description">While training and testing, the AI already behaves like on your target hardware. No matter if you are using an FPGA, Microcontroller, GPU, CPU or TPU. If you are satisfied with the results, you can export the AI as cross-platform executable, universal HDL code, C++ project or ONNX/TF/TF-Lite Model.</Translate>
   },
 ];
 
@@ -70,12 +50,26 @@ function HomepageHeader() {
           <div className="flex-col max-w-3xl m-5 mt-10">
             <div className="text-center mt-10">
               <h1 className="font-medium md:text-4xl">
-                The{" "}
+                <Translate id="homepage.hero.start" description="First part of the hero title">
+                  The
+                </Translate>{" "}
                 <span className="primary-text font-bold">
-                  Next Generation
+                  <Translate id="homepage.hero.highlight1" description="Highlighted phrase in hero title">
+                    Next Generation
+                  </Translate>
                 </span>{" "}
-                of AI Development:<br />
-                Any Hardware. Any Application. <span className="primary-text font-bold">ONE AI</span>.
+                <Translate id="homepage.hero.middle" description="Middle part of the hero title">
+                  of AI Development:
+                </Translate>
+                <br />
+                <Translate id="homepage.hero.subtext" description="Subheading of hero title">
+                  Any Hardware. Any Application.
+                </Translate>{" "}
+                <span className="primary-text font-bold">
+                  <Translate id="homepage.hero.highlight2" description="ONE AI text">
+                    ONE AI
+                  </Translate>
+                </span>.
               </h1>
 
               <div className="flex-col md:space-x-5 mb-10">
@@ -83,21 +77,24 @@ function HomepageHeader() {
                   className="mt-5 button button--primary button--lg hidden md:inline-block"
                   href="https://forms.office.com/e/J3HDid9fzw"
                 >
-                  Join Waitlist
+                  <Translate id="homepage.hero.join" description="Join waitlist button">
+                    Join Waitlist
+                  </Translate>
                 </Link>
 
                 <Link
                   className="mt-5 button button--primary button--outline button--lg"
                   href="#contact"
                 >
-                  Contact Us
+                  <Translate id="homepage.hero.contact" description="Contact us button">
+                    Contact Us
+                  </Translate>
                 </Link>
               </div>
             </div>
           </div>
         </div>
       </div>
-
       <div className={styles.startArrow} />
     </header>
   );
@@ -108,13 +105,26 @@ function DownloadSection() {
     <div className="py-24 md:py-40 overflow-x-hidden">
       <div className="text-center container m-auto flex space-x-5 justify-center">
         <div className="flex-col flex text-center">
-          <h1 className="text-4xl md:text-5xl">Don't Upgrade Your Hardware — Upgrade Your AI!</h1>
+          <h1 className="text-4xl md:text-5xl">
+            <Translate id="download.heading" description="Main heading in download section">
+              Don't Upgrade Your Hardware — Upgrade Your AI!
+            </Translate>
+          </h1>
 
           <p className="text-3xl my-8 font-bold primary-text">
-            ONE AI makes decade-old chips outperform todays leading edge AI hardware! 
+            <Translate id="download.subheading" description="Subheading about ONE AI's hardware performance">
+              ONE AI makes decade-old chips outperform todays leading edge AI hardware!
+            </Translate>
           </p>
-          <p className="text-2xl  font-normal">
-            Read the Whitepaper from out Partner Altera<br/>and see how Altera's MAX® 10 can now outperform Nvidia's Jetson Orin Nano with:
+
+          <p className="text-2xl font-normal">
+            <Translate id="download.description1" description="Intro to whitepaper">
+              Read the Whitepaper from our Partner Altera
+            </Translate>
+            <br />
+            <Translate id="download.description2" description="Comparison line to Jetson Orin">
+              and see how Altera's MAX® 10 can now outperform Nvidia's Jetson Orin Nano with:
+            </Translate>
           </p>
 
           <div className="flex my-8 gap-5 flex-wrap justify-center">
@@ -123,7 +133,9 @@ function DownloadSection() {
                 488x
               </h5>
               <p className="mb-3 text-xl font-normal text-gray-900 dark:text-white">
-                Lower Latency
+                <Translate id="download.metric1" description="Lower latency metric">
+                  Lower Latency
+                </Translate>
               </p>
             </div>
 
@@ -132,7 +144,9 @@ function DownloadSection() {
                 24x
               </h5>
               <p className="mb-3 text-xl font-normal text-gray-900 dark:text-white">
-                Higher Accuracy
+                <Translate id="download.metric2" description="Higher accuracy metric">
+                  Higher Accuracy
+                </Translate>
               </p>
             </div>
 
@@ -141,7 +155,9 @@ function DownloadSection() {
                 20x
               </h5>
               <p className="mb-3 text-xl font-normal text-gray-900 dark:text-white">
-                Lower Power
+                <Translate id="download.metric3" description="Lower power metric">
+                  Lower Power
+                </Translate>
               </p>
             </div>
 
@@ -150,7 +166,9 @@ function DownloadSection() {
                 6x
               </h5>
               <p className="mb-3 text-xl font-normal text-gray-900 dark:text-white">
-                Lower Cost
+                <Translate id="download.metric4" description="Lower cost metric">
+                  Lower Cost
+                </Translate>
               </p>
             </div>
           </div>
@@ -158,18 +176,20 @@ function DownloadSection() {
           <div className="flex justify-center gap-4 mt-8 flex-col md:flex-row">
             <a href="https://go.altera.com/l/1090322/2025-04-18/2vvzbn" target="_blank">
               <button className="button button--primary text-xl">
-                Read the Whitepaper
+                <Translate id="download.cta.whitepaper" description="Button text to read the whitepaper">
+                  Read the Whitepaper
+                </Translate>
               </button>
-              
             </a>
 
             <a href="https://forms.office.com/e/J3HDid9fzw" target="_blank">
               <button className="button button--secondary text-xl">
-                Join ONE AI Waitlist
+                <Translate id="download.cta.waitlist" description="Button text to join waitlist">
+                  Join ONE AI Waitlist
+                </Translate>
               </button>
             </a>
           </div>
-
         </div>
       </div>
     </div>
@@ -180,75 +200,36 @@ function VendorSection() {
   return (
     <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
       <h2 className="text-4xl md:text-5xl font-bold mb-10">
-        Foundation Models <span className="primary-text">Weren't Built for You</span>.<br/>
-        <span className="primary-text">ONE AI</span> Creates Models That Are.
+          <Translate id="vendorSection.headline.1" description="">
+          Foundation Models
+          </Translate>{" "}
+          <span className="primary-text">
+            <Translate id="vendorSection.headline.2" description="">
+            Weren't Built for You.
+            </Translate>
+          </span>
+          <br/>
+          <span className="primary-text">
+          ONE AI
+          </span>{" "}
+          <Translate id="vendorSection.headline.3" description="">
+            Creates Models That Are.
+          </Translate>
       </h2>
 
       <h5 className="text-2xl mb-16 md:text-3xl font-normal">
-        With ONE AI you always get a <span className="primary-text">custom neural network in seconds</span> that fits your exact Hardware, performance and use case requirements.
+        <Translate id="vendorSection.subline.1" description="">
+          With ONE AI you always get a 
+        </Translate>{" "}
+        <span className="primary-text">
+           <Translate id="vendorSection.subline.2" description="">
+          custom neural network in seconds
+          </Translate>
+        </span>{" "}
+        <Translate id="vendorSection.subline.3" description="">
+           that fits your exact Hardware, performance and use case requirements.
+        </Translate>
       </h5>
-    </div>
-  );
-}
-
-function Extension() {
-  return (
-    <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
-      <h1 className="text-4xl md:text-5xl font-bold">
-        <span className="primary-text font-bold"> Extensions</span> For All Your
-        Needs!
-      </h1>
-
-      <div className="row mt-20 items-center">
-        <div className="col flex ">
-          <p
-            className="text-2xl font-normal md:text-left p-0 m-0"
-            data-aos="slide-right"
-          >
-            ONE WARE Studio extensions let you{" "}
-            <span className="primary-text">customize your experience</span> to
-            meet all your development needs. Add custom hardware as{" "}
-            <span className="primary-text">digital twin</span>, make{" "}
-            <span className="primary-text">AI</span> integration easier or add
-            support for your favorite{" "}
-            <span className="primary-text">simulation</span> tool.
-          </p>
-        </div>
-
-        <div className="col items-center">
-          <img
-            src={require('@site/static/img/start/Elec_Studio.png').default}
-            data-aos="slide-left"
-            alt="Hardware"
-          />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Beta() {
-  return (
-    <div className="text-center max-w-6xl m-auto mt-8 mb-16">
-      <h2 className="text-4xl font-bold">Be one of the first to test ONE AI! 🚀</h2>
-      <div className="text-xl md:text-2xl mt-6">
-        <strong>You Want to Build Custom AI Models?</strong> Experience the
-        future of AI! Automatically generate tailored AI models with ONE AI.
-        Sign up for the waitlist to get free exclusive access to the closed
-        beta. <br />
-        <div className="flex justify-center gap-4 mt-2">
-          <a href="https://forms.office.com/e/ptgVNPN9AL" target="_blank">
-            <button className="button button--secondary text-xl">
-              ONE AI Webinar
-            </button>
-          </a>
-          <a href="https://forms.office.com/e/J3HDid9fzw" target="_blank">
-            <button className="button button--primary text-xl">
-              ONE AI Waitlist
-            </button>
-          </a>
-        </div>
-      </div>
     </div>
   );
 }
@@ -436,7 +417,6 @@ export default function Studio() {
             className="absolute w-full -z-10"
             style={{ top: -50, height: "50rem" }}
           >
-            {init && <FancyParticles parallax={true} id="downloadParticles" />}
           </div>
           <DownloadSection />
         </div>
