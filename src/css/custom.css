@@ -166,20 +166,18 @@ body {
   position: relative;
 }
 
-.diagclipbottom {
-  clip-path: polygon(100% 0, 0% 0, 0% calc(100% - 2vw), 100% 100%);
+.diagclipbottom{
+  clip-path: polygon(100% 0, 0 0, 0 100%, 100% calc(100% - 2vw));
   position: relative;
-  filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.5));
 }
 
-.dropshadowbottom {
+.dropshadowbottom{
   filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.5));
 }
 
-.dropshadowtop {
+.dropshadowtop{
   filter: drop-shadow(0px -10px 5px rgba(0, 0, 0, 0.5));
 }
-
 
 .inlinetypewriter .Typewriter{
   display: inline;

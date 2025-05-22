@@ -394,7 +394,6 @@ export default function Studio() {
             className="absolute w-full -z-10"
             style={{ top: -50, height: "50rem" }}
           >
-            {init && <FancyParticles parallax={true} id="downloadParticles" />}
           </div>
           <DownloadSection />
         </div>

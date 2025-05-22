@@ -383,37 +383,6 @@ function Extension() {
   );
 }
 
-function Beta() {
-  return (
-    <div className="text-center max-w-6xl m-auto mt-8 mb-16">
-      <h2 className="text-4xl font-bold">
-        <Translate id="beta.title">Be one of the first to test ONE AI! 🚀</Translate>
-      </h2>
-      <div className="text-xl md:text-2xl mt-6">
-        
-          <strong><Translate id="beta.description.1">You Want to Build Custom AI Models? </Translate></strong><Translate id="beta.description.2"> Experience the
-          future of AI! Automatically generate tailored AI models with ONE AI.
-          Sign up for the waitlist to get free exclusive access to the closed
-          beta.</Translate>
-       
-        <br />
-        <div className="flex justify-center gap-4 mt-2">
-          <a href="https://forms.office.com/e/ptgVNPN9AL" target="_blank">
-            <button className="button button--secondary text-xl">
-              <Translate id="beta.webinar">ONE AI Webinar</Translate>
-            </button>
-          </a>
-          <a href="https://forms.office.com/e/J3HDid9fzw" target="_blank">
-            <button className="button button--primary text-xl">
-              <Translate id="beta.waitlist">ONE AI Waitlist</Translate>
-            </button>
-          </a>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 
 function FancyParticles(props: FancyParticlesProps) {
   return (
@@ -596,7 +565,7 @@ export default function Studio() {
             className="absolute w-full -z-10"
             style={{ top: -50, height: "50rem" }}
           >
-            {init && <FancyParticles parallax={true} id="downloadParticles" />}
+            {/*init && <FancyParticles parallax={true} id="downloadParticles" />*/}
           </div>
           <DownloadSection />
         </div>

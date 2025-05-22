@@ -66,7 +66,7 @@ function HomepageHeader() {
           </a>
         </div>
 
-        <div className="mt-4 flex justify-center grow items-center overflow-hidden">
+        <div className="my-4 flex justify-center grow items-center overflow-hidden">
           <img
             src={require("@site/static/img/ai/Laptop.png").default}
             alt="Laptop"
@@ -265,7 +265,6 @@ export default function Home() {
 
   return (
     <Layout
-      title="ONE WARE"
       description={translate({
         id: "homepage.meta.description",
         message: "Every Task. Every Hardware. Every Industry. ONE Software.",
