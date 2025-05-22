@@ -9,7 +9,7 @@
 
 .heroBackground{
   box-shadow: rgb(0 0 0 / 50%) 0px -10px 13px -7px inset; 
-  background-image: linear-gradient(0deg,#163238,#0b0e0c,#1f1f1f);
+  background-image: linear-gradient(0deg,#132c32,#171d19,#171717);
   position: relative;
   top: 0;
   left: 0;
@@ -18,10 +18,12 @@
   min-height: 300px;
   margin-top: 0;
   margin-top: calc(var(--ifm-navbar-height)*-1);
+  padding: 10px;
 }
 
 .heroBanner {
-  padding: 4rem 0;
+  margin-top: var(--ifm-navbar-height);
+  padding-bottom: var(--ifm-navbar-height);
   text-align: center;
   position: relative;
   overflow: hidden;

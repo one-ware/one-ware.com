@@ -161,24 +161,25 @@ body {
   position: relative;
 }
 
-.diagcliptop{
-  clip-path: polygon(0 0,100% 2vw, 100% 100%,0 100%);
+.diagcliptop {
+  clip-path: polygon(100% 0, 0% 2vw, 0% 100%, 100% 100%);
   position: relative;
 }
 
-.diagclipbottom{
-  clip-path: polygon(0 0,100% 0,100% 100%,0 calc(100% - 2vw));
+.diagclipbottom {
+  clip-path: polygon(100% 0, 0% 0, 0% calc(100% - 2vw), 100% 100%);
   position: relative;
   filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.5));
 }
 
-.dropshadowbottom{
+.dropshadowbottom {
   filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.5));
 }
 
-.dropshadowtop{
+.dropshadowtop {
   filter: drop-shadow(0px -10px 5px rgba(0, 0, 0, 0.5));
 }
+
 
 .inlinetypewriter .Typewriter{
   display: inline;

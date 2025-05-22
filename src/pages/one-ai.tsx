@@ -200,68 +200,16 @@ function VendorSection() {
   return (
     <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
       <h2 className="text-4xl md:text-5xl font-bold mb-10">
-        <Translate id="hero.title">The Next Generation of AI Development: Any Hardware. Any Application. ONE AI.</Translate>
+        Foundation Models <span className="primary-text">Weren't Built for You</span>.<br/>
+        <span className="primary-text">ONE AI</span> Creates Models That Are.
       </h2>
+
       <h5 className="text-2xl mb-16 md:text-3xl font-normal">
-        <Translate id="hero.title">The Next Generation of AI Development: Any Hardware. Any Application. ONE AI.</Translate>
+        With ONE AI you always get a <span className="primary-text">custom neural network in seconds</span> that fits your exact Hardware, performance and use case requirements.
       </h5>
     </div>
   );
 }
-
-function Extension() {
-  return (
-    <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
-      <h1 className="text-4xl md:text-5xl font-bold">
-        <Translate id="hero.title">The Next Generation of AI Development: Any Hardware. Any Application. ONE AI.</Translate>
-      </h1>
-      <div className="row mt-20 items-center">
-        <div className="col flex">
-          <p
-            className="text-2xl font-normal md:text-left p-0 m-0"
-            data-aos="slide-right"
-          >
-            <Translate id="hero.title">The Next Generation of AI Development: Any Hardware. Any Application. ONE AI.</Translate>
-          </p>
-        </div>
-        <div className="col items-center">
-          <img
-            src={require('@site/static/img/start/Elec_Studio.png').default}
-            data-aos="slide-left"
-            alt="Hardware"
-          />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Beta() {
-  return (
-    <div className="text-center max-w-6xl m-auto mt-8 mb-16">
-      <h2 className="text-4xl font-bold">
-        <Translate id="hero.title">The Next Generation of AI Development: Any Hardware. Any Application. ONE AI.</Translate>
-      </h2>
-      <div className="text-xl md:text-2xl mt-6">
-        <Translate id="hero.title">The Next Generation of AI Development: Any Hardware. Any Application. ONE AI.</Translate>
-        <div className="flex justify-center gap-4 mt-2">
-          <a href="https://forms.office.com/e/ptgVNPN9AL" target="_blank">
-            <button className="button button--secondary text-xl">
-              <Translate id="hero.title">The Next Generation of AI Development: Any Hardware. Any Application. ONE AI.</Translate>
-            </button>
-          </a>
-          <a href="https://forms.office.com/e/J3HDid9fzw" target="_blank">
-            <button className="button button--primary text-xl">
-              <Translate id="hero.title">The Next Generation of AI Development: Any Hardware. Any Application. ONE AI.</Translate>
-            </button>
-          </a>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-
 
 function FancyParticles(props: FancyParticlesProps) {
   return (

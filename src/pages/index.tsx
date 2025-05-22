@@ -19,6 +19,7 @@ function HomepageHeader() {
   return (
     <header id="hero" className={styles.heroBackground}>
       <div className={styles.heroBanner}>
+        
         <div className="text-center pointer-events-none">
           <div className="text-3xl md:text-5xl lg:text-6xl font-bold drop-shadow-4xl text-gray-200 whitespace-nowrap inlinetypewriter">
             {translate({ id: "homepage.every", message: "Every " })}
@@ -44,10 +45,8 @@ function HomepageHeader() {
           </div>
 
           <div className="text-3xl md:text-5xl lg:text-6xl font-bold drop-shadow-4xl text-gray-200 mt-2 md:mt-2">
-            {translate({
-              id: "homepage.software",
-              message: "ONE Software. ONE AI.",
-            })}
+            <span className="block md:inline">ONE Software.</span>{" "}
+            <span>ONE AI.</span>
           </div>
         </div>
 
