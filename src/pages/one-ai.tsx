@@ -338,7 +338,7 @@ export default function Studio() {
     <Layout title="ONE AI" description="ONE AI for Any Hardware and Any Application">
       <div className={`absolute w-full -z-10 ${styles.particleBackground}`}>
         <div className="h-96 absolute w-full">
-          {init && <FancyParticles parallax={true} id="topParticles" />}
+          {/*init && <FancyParticles parallax={true} id="topParticles" />*/}
         </div>
       </div>
 
@@ -413,11 +413,7 @@ export default function Studio() {
         </div>
 
         <div className="relative">
-          <div
-            className="absolute w-full -z-10"
-            style={{ top: -50, height: "50rem" }}
-          >
-          </div>
+          <div className="absolute fancybackground"/>
           <DownloadSection />
         </div>
 

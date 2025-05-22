@@ -486,11 +486,6 @@ export default function Studio() {
 
   return (
     <Layout title="Studio" description="OneWare Studio">
-      <div className={`absolute w-full -z-10 ${styles.particleBackground}`}>
-        <div className="h-96 absolute w-full">
-          {init && <FancyParticles parallax={true} id="topParticles" />}
-        </div>
-      </div>
 
       <HomepageHeader />
 
@@ -561,12 +556,7 @@ export default function Studio() {
         </div>
 
         <div className="relative">
-          <div
-            className="absolute w-full -z-10"
-            style={{ top: -50, height: "50rem" }}
-          >
-            {/*init && <FancyParticles parallax={true} id="downloadParticles" />*/}
-          </div>
+          <div className="absolute fancybackground"/>
           <DownloadSection />
         </div>
 
@@ -575,8 +565,6 @@ export default function Studio() {
             <div className="bottomsplit pb-24 mb-24 container">
               <Extension />
             </div>
-
-        
 
             <VendorSection />
           </div>

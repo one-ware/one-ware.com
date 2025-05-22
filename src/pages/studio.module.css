@@ -1,17 +1,11 @@
-
 .heroBackground{
   position: relative;
   top: 0;
   left: 0;
   right: 0;
   margin-top: calc(var(--ifm-navbar-height)*-1);
-}
-
-.particleBackground {
-  margin-top: calc(var(--ifm-navbar-height)*-1);
-  background: rgb(28,57,78);
-  background-image: linear-gradient(45deg,#235059,#111111,#262626);
-  height: 3000px;
+  background-image: linear-gradient(135deg,#235059,#111111,#262626);
+  box-shadow: rgb(0 0 0 / 50%) 0px -10px 13px -7px inset; 
 }
 
 .slickSlider {
