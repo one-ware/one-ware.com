@@ -7,9 +7,9 @@ import { useEffect, useState, useRef, memo, useMemo } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
 import type { Container, ISourceOptions } from "@tsparticles/engine";
-import 'aos/dist/aos.css';
-import Typewriter from 'typewriter-effect';
-import Translate, { translate } from '@docusaurus/Translate';
+import "aos/dist/aos.css";
+import Typewriter from "typewriter-effect";
+import Translate, { translate } from "@docusaurus/Translate";
 
 import styles from "./index.module.css";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
@@ -18,39 +18,61 @@ import initWebsiteEffects from "../components/startEffects";
 function HomepageHeader() {
   return (
     <header id="hero" className={styles.heroBackground}>
-      <div className="flex flex-col items-center justify-center w-full h-full">
-        <div className="flex flex-col items-center justify-center w-full md:w-8/12 xl:w-8/12">          <div className="text-center pointer-events-none">
-            <div className="text-3xl md:text-5xl lg:text-6xl font-bold drop-shadow-4xl text-gray-200 whitespace-nowrap inlinetypewriter">
-              {translate({ id: 'homepage.every', message: 'Every ' })}
-              <span className="primary-text">
-                <Typewriter
-                  options={{
-                    strings: [
-                      translate({ id: 'typewriter.task', message: 'Task.' }),
-                      translate({ id: 'typewriter.hardware', message: 'Hardware.' }),
-                      translate({ id: 'typewriter.industry', message: 'Industry.' }),
-                    ],
-                    autoStart: true,
-                    loop: true,
-                  }}
-                />
-              </span>
-            </div>
-
-            <div className="text-3xl md:text-5xl lg:text-6xl font-bold drop-shadow-4xl text-gray-200 mt-2 md:mt-2">
-              {translate({ id: 'homepage.software', message: 'ONE Software. ONE AI.' })}
-            </div>
+      <div className={styles.heroBanner}>
+        <div className="text-center pointer-events-none">
+          <div className="text-3xl md:text-5xl lg:text-6xl font-bold drop-shadow-4xl text-gray-200 whitespace-nowrap inlinetypewriter">
+            {translate({ id: "homepage.every", message: "Every " })}
+            <span className="primary-text">
+              <Typewriter
+                options={{
+                  strings: [
+                    translate({ id: "typewriter.task", message: "Task." }),
+                    translate({
+                      id: "typewriter.hardware",
+                      message: "Hardware.",
+                    }),
+                    translate({
+                      id: "typewriter.industry",
+                      message: "Industry.",
+                    }),
+                  ],
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
+            </span>
           </div>
 
-          <span className="text-base md:text-3xl font-bold drop-shadow-4xl text-gray-300 mt-6 text-center pointer-events-none">
-            <Translate id="homepage.subtitle">Meet the World's First</Translate>{" "}<span className="primary-text">
-              <Translate id="homepage.subtitle.ai">AI-Powered AI Developer</Translate></span></span><div className="flex justify-center gap-4 mt-8 flex-col md:flex-row">
-            <a href="one-ai">
-              <button className="button button button--primary button--outline button--lg">
-                ONE AI
-              </button>            </a>          </div>            <div className="mt-4 flex justify-center w-full"> 
-            <img src={require('@site/static/img/ai/Laptop.png').default} alt="Laptop" className="w-[79%] md:w-[70%] lg:w-[55%] xl:w-[44%] transition-all duration-300" />
+          <div className="text-3xl md:text-5xl lg:text-6xl font-bold drop-shadow-4xl text-gray-200 mt-2 md:mt-2">
+            {translate({
+              id: "homepage.software",
+              message: "ONE Software. ONE AI.",
+            })}
           </div>
+        </div>
+
+        <span className="text-base md:text-3xl font-bold drop-shadow-4xl text-gray-300 mt-6 text-center pointer-events-none">
+          <Translate id="homepage.subtitle">Meet the World's First</Translate>{" "}
+          <span className="primary-text">
+            <Translate id="homepage.subtitle.ai">
+              AI-Powered AI Developer
+            </Translate>
+          </span>
+        </span>
+        <div className="flex justify-center gap-4 mt-8 flex-col md:flex-row">
+          <a href="one-ai">
+            <button className="button button button--primary button--outline button--lg">
+              ONE AI
+            </button>
+          </a>
+        </div>
+
+        <div className="mt-4 flex justify-center grow items-center overflow-hidden">
+          <img
+            src={require("@site/static/img/ai/Laptop.png").default}
+            alt="Laptop"
+            className="max-w-full max-h-full object-contain"
+          />
         </div>
       </div>
     </header>
@@ -62,7 +84,9 @@ function PreviewSection() {
     <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
       <div className="mt-16">
         <h3 className="text-2xl md:text-3xl font-bold text-center text-gray-200 mb-8">
-          <Translate id="partners.title">Trusted by Industry Leaders and Experts</Translate>
+          <Translate id="partners.title">
+            Trusted by Industry Leaders and Experts
+          </Translate>
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Partner 1 - Altera */}
@@ -73,7 +97,11 @@ function PreviewSection() {
               rel="noopener noreferrer"
               className="block no-underline hover:no-underline"
             >
-              <img src={require('@site/static/img/Partner/altera.png').default} alt="Altera logo" className="h-16 object-contain" />
+              <img
+                src={require("@site/static/img/Partner/altera.png").default}
+                alt="Altera logo"
+                className="h-16 object-contain"
+              />
             </a>
           </div>
 
@@ -85,7 +113,11 @@ function PreviewSection() {
               rel="noopener noreferrer"
               className="block no-underline hover:no-underline"
             >
-              <img src={require('@site/static/img/Partner/hdo.png').default} alt="HDO logo" className="h-16 object-contain" />
+              <img
+                src={require("@site/static/img/Partner/hdo.png").default}
+                alt="HDO logo"
+                className="h-16 object-contain"
+              />
             </a>
           </div>
 
@@ -97,12 +129,17 @@ function PreviewSection() {
               rel="noopener noreferrer"
               className="block no-underline hover:no-underline"
             >
-              <img src={require('@site/static/img/Partner/cusp.png').default} alt="Cusp Capital logo" className="h-16 object-contain" />
+              <img
+                src={require("@site/static/img/Partner/cusp.png").default}
+                alt="Cusp Capital logo"
+                className="h-16 object-contain"
+              />
             </a>
           </div>
         </div>
       </div>
-    </div>  );
+    </div>
+  );
 }
 
 function TestimonialsSection() {
@@ -123,11 +160,15 @@ function TestimonialsSection() {
           >
             <p className="text-gray-800 italic mb-6 font-bold text-lg">
               <Translate id="testimonials.1.text">
-                "Working with ONE WARE demonstrates the incredible potential that emerges when intelligent AI development meets highly efficient FPGA technology..."
+                "Working with ONE WARE demonstrates the incredible potential
+                that emerges when intelligent AI development meets highly
+                efficient FPGA technology..."
               </Translate>
             </p>
             <div className="mb-24">
-              <p className="text-gray-900 text-2xl font-bold mb-2">Mark Moran</p>
+              <p className="text-gray-900 text-2xl font-bold mb-2">
+                Mark Moran
+              </p>
               <p className="text-gray-700 font-bold text-l">
                 <Translate id="testimonials.1.authorTitle">
                   Director of Boards, Development Kits, and Partners at Altera
@@ -135,7 +176,11 @@ function TestimonialsSection() {
               </p>
             </div>
             <div className="absolute right-6 bottom-6">
-              <img src={require('@site/static/img/Partner/altera.png').default} alt="Altera logo" className="h-16 w-48 object-contain" />
+              <img
+                src={require("@site/static/img/Partner/altera.png").default}
+                alt="Altera logo"
+                className="h-16 w-48 object-contain"
+              />
             </div>
           </a>
         </div>
@@ -150,11 +195,14 @@ function TestimonialsSection() {
           >
             <p className="text-gray-800 italic mb-6 font-bold text-lg">
               <Translate id="testimonials.2.text">
-                "From day one, working with ONE WARE was pragmatic and focused..."
+                "From day one, working with ONE WARE was pragmatic and
+                focused..."
               </Translate>
             </p>
             <div className="mb-24">
-              <p className="text-gray-900 text-2xl font-bold mb-2">Christian Leon</p>
+              <p className="text-gray-900 text-2xl font-bold mb-2">
+                Christian Leon
+              </p>
               <p className="text-gray-700 font-bold text-l">
                 <Translate id="testimonials.2.authorTitle">
                   COO & Managing Director at HDO
@@ -162,7 +210,11 @@ function TestimonialsSection() {
               </p>
             </div>
             <div className="absolute right-6 bottom-6">
-              <img src={require('@site/static/img/Partner/hdo.png').default} alt="HDO logo" className="h-16 w-48 object-contain" />
+              <img
+                src={require("@site/static/img/Partner/hdo.png").default}
+                alt="HDO logo"
+                className="h-16 w-48 object-contain"
+              />
             </div>
           </a>
         </div>
@@ -177,11 +229,14 @@ function TestimonialsSection() {
           >
             <p className="text-gray-800 italic mb-6 font-bold text-lg">
               <Translate id="testimonials.3.text">
-                "Through our European Digital Infrastructure investment thesis, we seek out entrepreneurs..."
+                "Through our European Digital Infrastructure investment thesis,
+                we seek out entrepreneurs..."
               </Translate>
             </p>
             <div className="mb-24">
-              <p className="text-gray-900 text-2xl font-bold mb-2">Jan Sessenhausen</p>
+              <p className="text-gray-900 text-2xl font-bold mb-2">
+                Jan Sessenhausen
+              </p>
               <p className="text-gray-700 font-bold text-l">
                 <Translate id="testimonials.3.authorTitle">
                   Investor & General Partner at Cusp Capital
@@ -189,7 +244,11 @@ function TestimonialsSection() {
               </p>
             </div>
             <div className="absolute right-6 bottom-6">
-              <img src={require('@site/static/img/Partner/cusp.png').default} alt="Cusp Capital logo" className="h-16 w-48 object-contain" />
+              <img
+                src={require("@site/static/img/Partner/cusp.png").default}
+                alt="Cusp Capital logo"
+                className="h-16 w-48 object-contain"
+              />
             </div>
           </a>
         </div>
@@ -209,29 +268,25 @@ export default function Home() {
     <Layout
       title="ONE WARE"
       description={translate({
-        id: 'homepage.meta.description',
-        message: 'Every Task. Every Hardware. Every Industry. ONE Software.'
+        id: "homepage.meta.description",
+        message: "Every Task. Every Hardware. Every Industry. ONE Software.",
       })}
     >
       <HomepageHeader />
       <main className="overflow-x-hidden alternative-background ">
-
         <div className="dropshadowbottom">
-
           <div className="diagclipbottom default-background pb-24">
             <PreviewSection />
           </div>
-
-        </div>        <div className="">
+        </div>{" "}
+        <div className="">
           <HomepageFeatures />
         </div>
-
         <div className="dropshadowtop">
           <div className="default-background diagcliptop pt-20 pb-20">
             <TestimonialsSection />
           </div>
         </div>
-
       </main>
     </Layout>
   );

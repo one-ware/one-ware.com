@@ -14,10 +14,10 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 80vh; /* Geändert von 50vh auf 80vh */
+  height: 80vh;
   min-height: 300px;
   margin-top: 0;
-  padding-top: calc(var(--ifm-navbar-height) * 0.5); /* Reduzierter Abstand zur Navbar */
+  margin-top: calc(var(--ifm-navbar-height)*-1);
 }
 
 .heroBanner {
@@ -25,12 +25,9 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-}
-
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .buttons {
