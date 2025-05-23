@@ -1,10 +1,4 @@
 {
-  "homepage.features.oneai": {
-    "message": "Erleben Sie, wie ONE AI in Sekundenschnelle maßgeschneiderte neuronale Netzwerke erstellt, die genau zu Ihrer Hardware, Leistung und Ihrem Anwendungsfall passen."
-  },
-  "homepage.features.onewarestudio": {
-    "message": "Entwickeln Sie Ihre KI-Modelle in einer benutzerfreundlichen Umgebung, die speziell für die Entwicklung von KI-Software auf FPGAs entwickelt wurde."
-  },
   "homepage.every": {
     "message": "Every "
   },
@@ -17,14 +11,14 @@
   "typewriter.industry": {
     "message": "Industry."
   },
-  "homepage.software": {
-    "message": "ONE Software. ONE AI."
-  },
   "homepage.subtitle": {
-    "message": "Der weltweit erste "
+    "message": "Meet the World's First"
   },
   "homepage.subtitle.ai": {
-    "message": "KI-gesteuerte KI-Entwickler"
+    "message": "AI-Powered AI Developer"
+  },
+  "partners.title": {
+    "message": "Trusted by Industry Leaders and Experts"
   },
   "testimonials.title": {
     "message": "Was andere über uns sagen"
@@ -48,55 +42,247 @@
     "message": "Investor & General Partner bei Cusp Capital"
   },
   "homepage.meta.description": {
-    "message": "Jede Aufgabe. Jede Hardware. Jede Industrie. ONE Software."
+    "message": "Every Task. Every Hardware. Every Industry. ONE Software."
   },
-  "headersection.title.prefix": {
-    "message": "Download"
+  "oneai.slider.capture": {
+    "message": "Capture and Label"
   },
-  "headersection.title.product": {
-    "message": "ONE WARE Studio"
+  "oneai.slider.capture.description": {
+    "message": "Capture just a few images, label them - ONE AI takes care of the rest. ONE AI requires only a small dataset to deliver a fully functional AI model. Its adaptive architecture automatically scales with your data."
   },
-  "headersection.title.suffix1": {
-    "message": "Und nutze"
+  "oneai.slider.guide": {
+    "message": "Guide and Select"
   },
-  "headersection.title.ai": {
+  "oneai.slider.guide.description": {
+    "message": "Use our intuitive and visual process to teach the AI what is important, where to generalize and what to predict. You can specify your exact hardware and performance requirements and then let ONE AI create the perfect model for your needs."
+  },
+  "oneai.slider.train": {
+    "message": "Predict and Train"
+  },
+  "oneai.slider.train.description": {
+    "message": "After you start training, ONE AI will automatically generate a custom neural network for your hardware and application. The AI then trains on your data, but only learns what is important. This ensures highest performance and accuracy."
+  },
+  "oneai.slider.deploy": {
+    "message": "Test and Deploy"
+  },
+  "oneai.slider.deploy.description": {
+    "message": "While training and testing, the AI already behaves like on your target hardware. No matter if you are using an FPGA, Microcontroller, GPU, CPU or TPU. If you are satisfied with the results, you can export the AI as cross-platform executable, universal HDL code, C++ project or ONNX/TF/TF-Lite Model."
+  },
+  "oneai.hero.start": {
+    "message": "The"
+  },
+  "oneai.hero.highlight1": {
+    "message": "Next Generation"
+  },
+  "oneai.hero.middle": {
+    "message": "of AI Development:"
+  },
+  "oneai.hero.subtext": {
+    "message": "Any Hardware. Any Application."
+  },
+  "oneai.hero.name": {
     "message": "ONE AI"
   },
-  "headersection.title.suffix2": {
-    "message": "und erstelle deine Erste"
+  "oneai.hero.cta.join": {
+    "message": "Join Waitlist"
   },
-  "headersection.title.customai": {
-    "message": "maßgeschneiderte KI"
+  "oneai.hero.cta.contact": {
+    "message": "Contact Us"
   },
-  "headersection.title.suffix3": {
-    "message": "!"
+  "oneai.compare.heading": {
+    "message": "Don't Upgrade Your Hardware — Upgrade Your AI!"
   },
-  "headersection.description.prefix": {
-    "message": "ONE WARE Studio zusammen mit ONE AI macht"
+  "oneai.compare.subheading": {
+    "message": "ONE AI makes decade-old chips outperform todays leading edge AI hardware!"
   },
-  "headersection.description.everydeveloper": {
-    "message": "jeden Entwickler"
+  "oneai.compare.whitepaper": {
+    "message": "Read the Whitepaper from our Partner Altera"
   },
-  "headersection.description.middle": {
-    "message": "zu einem KI-Experten. Du musst nur deine Anwendung kennen und"
+  "oneai.compare.benchmark": {
+    "message": "and see how Altera's MAX® 10 can now outperform Nvidia's Jetson Orin Nano with:"
   },
-  "headersection.description.seconds": {
-    "message": "in Sekunden"
+  "oneai.compare.cta.whitepaper": {
+    "message": "Read the Whitepaper"
   },
-  "headersection.description.tail": {
-    "message": "entwickelt ONE AI völlig neue KI-Modelle für deinen Anwendungsfall. Modelle, die nur das lernen, was für"
+  "oneai.compare.cta.waitlist": {
+    "message": "Join ONE AI Waitlist"
   },
-  "headersection.description.yourapp": {
-    "message": "deine Anwendung notwendig"
+  "oneai.showcase.title.1": {
+    "message": "Foundation Models"
   },
-  "headersection.description.and": {
-    "message": "ist sowie unterstützer"
+  "oneai.showcase.title.2": {
+    "message": "Weren't Built for You."
   },
-  "headersection.description.ready": {
-    "message": "Deploy"
+  "oneai.showcase.title.3": {
+    "message": "Creates Models That Are."
   },
-  "headersection.description.withstudio": {
-    "message": "mit ONE WARE Studio."
+  "oneai.showcase.desc.1": {
+    "message": "With ONE AI you always get a"
+  },
+  "oneai.showcase.desc.2": {
+    "message": "custom neural network in seconds"
+  },
+  "oneai.showcase.desc.3": {
+    "message": "that fits your exact Hardware, performance and use case requirements."
+  },
+  "studio.slider.codeAssistant.title": {
+    "message": "Code Assistant"
+  },
+  "studio.slider.codeAssistant.description.1": {
+    "message": "First class support for"
+  },
+  "studio.slider.codeAssistant.description.2": {
+    "message": "and more with lots of tools to help develop your designs as efficiently as possible."
+  },
+  "studio.slider.hardwareSupport.title": {
+    "message": "Hardware Support"
+  },
+  "studio.slider.hardwareSupport.description.1": {
+    "message": "Conveniently setup and compile your designs from your hardware."
+  },
+  "studio.,slider.hardwareSupport.description.2": {
+    "message": "Directly"
+  },
+  "studio.slider.hardwareSupport.description.3": {
+    "message": "from the IDE, which a growing number of supported toolchains and boards."
+  },
+  "studio.slider.simulation.title": {
+    "message": "Simulation"
+  },
+  "studio.slider.simulation.description.1": {
+    "message": "Simulate your designs inside the IDE, using the lightning fast Simulation Viewer and the most popular"
+  },
+  "studio.slider.simulation.description.2": {
+    "message": "Simulation"
+  },
+  "studio.slider.simulation.description.3": {
+    "message": "tools."
+  },
+  "studio.slider.extensibility.title": {
+    "message": "Extensibility"
+  },
+  "studio.slider.extensibility.description.1": {
+    "message": "Download and install"
+  },
+  "studio.slider.extensibility.description.2": {
+    "message": "Extensions"
+  },
+  "studio.slider.extensibility.description.3": {
+    "message": "to extend the functionality. Discover a growing selection of"
+  },
+  "studio.slider.extensibility.description.4": {
+    "message": "Hardware-Integrations"
+  },
+  "studio.slider.extensibility.description.5": {
+    "message": "Simulators and More"
+  },
+  "studio.homepage.hero.title.1": {
+    "message": "The"
+  },
+  "studio.homepage.hero.title.2": {
+    "message": "Next Generation IDE"
+  },
+  "studio.homepage.hero.title.3": {
+    "message": "for Electronics Development"
+  },
+  "studio.homepage.hero.title.4": {
+    "message": "is here"
+  },
+  "studio.homepage.hero.getStarted": {
+    "message": "Get Started"
+  },
+  "studio.homepage.hero.opensource.1": {
+    "message": "Yes, it is"
+  },
+  "studio.homepage.hero.opensource.2": {
+    "message": "Open Source"
+  },
+  "studio.download.heading": {
+    "message": "Easy Setup!"
+  },
+  "studio.download.subheading.1": {
+    "message": "ONE WARE Studio is available for"
+  },
+  "studio.download.subheading.2": {
+    "message": "all major operating systems"
+  },
+  "studio.download.subheading.3": {
+    "message": "using all the"
+  },
+  "studio.download.subheading.4": {
+    "message": "modern"
+  },
+  "studio.download.subheading.5": {
+    "message": "installation methods."
+  },
+  "studio.download.windows.label": {
+    "message": "Windows 10+"
+  },
+  "studio.download.button": {
+    "message": "Download"
+  },
+  "download.linux.label": {
+    "message": "Other Linux"
+  },
+  "studio.vendor.title": {
+    "message": "Use any Hardware!"
+  },
+  "studio.vendor.subtitle.1": {
+    "message": "Our goal is to provide first level support for"
+  },
+  "studio.vendor.subtitle.2": {
+    "message": "any hardware"
+  },
+  "studio.vendor.subtitle.3": {
+    "message": "using our advanced extension system."
+  },
+  "studio.extension.title.1": {
+    "message": "Extensions"
+  },
+  "studio.extension.title.2": {
+    "message": "For All Your Needs!"
+  },
+  "studio.extension.description.1": {
+    "message": "ONE WARE Studio extensions let you"
+  },
+  "studio.extension.description.2": {
+    "message": "customize your experience"
+  },
+  "studio.extension.description.3": {
+    "message": "to meet all your development needs. Add custom hardware as"
+  },
+  "extension.description.4": {
+    "message": "digital twin"
+  },
+  "extension.description.5": {
+    "message": "make"
+  },
+  "extension.description.6": {
+    "message": "AI"
+  },
+  "studio.extension.description.7": {
+    "message": "integration easier or add support for your favorite"
+  },
+  "studio.extension.description.8": {
+    "message": "simulation"
+  },
+  "studio.extension.description.9": {
+    "message": "tool."
+  },
+  "contactus.headline": {
+    "message": "Interested? Contact us!"
+  },
+  "contactus.form.1": {
+    "message": "Message"
+  },
+  "contactus.buttonsend": {
+    "message": "Send"
+  },
+  "homepage.features.oneai": {
+    "message": "See how ONE AI creates custom neural networks in seconds that fit your exact Hardware, performance and use case requirements."
+  },
+  "homepage.features.onewarestudio": {
+    "message": "See how to integrate AI in your embedded systems and speed up the development with ONE WARE Studio"
   },
   "theme.ErrorPageContent.title": {
     "message": "Die Seite ist abgestürzt.",
@@ -158,10 +344,6 @@
     "message": "Breadcrumbs",
     "description": "The ARIA label for the breadcrumbs"
   },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "1 Eintrag|{count} Einträge",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
-  },
   "theme.docs.paginator.navAriaLabel": {
     "message": "Dokumentation Seiten",
     "description": "The ARIA label for the docs pagination"
@@ -173,6 +355,10 @@
   "theme.docs.paginator.next": {
     "message": "Weiter",
     "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1 Eintrag|{count} Einträge",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.tagDocListPageTitle.nDocsTagged": {
     "message": "Ein doc getaggt|{count} docs getaggt",
@@ -221,13 +407,13 @@
     "message": "Letztes Update{atDate}{byUser}",
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
-  "theme.NotFound.title": {
-    "message": "Seite nicht gefunden",
-    "description": "The title of the 404 page"
-  },
   "theme.navbar.mobileVersionsDropdown.label": {
     "message": "Versionen",
     "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.NotFound.title": {
+    "message": "Seite nicht gefunden",
+    "description": "The title of the 404 page"
   },
   "theme.tags.tagsListLabel": {
     "message": "Tags:",
@@ -286,12 +472,16 @@
     "description": "The ARIA label to expand the sidebar category"
   },
   "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "Einklappen dr Kategorie '{label}'",
+    "message": "Collapse sidebar category '{label}'",
     "description": "The ARIA label to collapse the sidebar category"
   },
   "theme.NavBar.navAriaLabel": {
     "message": "Main",
     "description": "The ARIA label for the main navigation"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "Sprachen",
+    "description": "The label for the mobile language switcher dropdown"
   },
   "theme.NotFound.p1": {
     "message": "Wir konnten nicht finden, wonach Sie gesucht haben.",
@@ -301,17 +491,9 @@
     "message": "Bitte kontaktieren Sie den Besitzer der Seite, die Sie mit der ursprünglichen URL verlinkt hat, und teilen Sie ihm mit, dass der Link nicht mehr funktioniert.",
     "description": "The 2nd paragraph of the 404 page"
   },
-  "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "Sprachen",
-    "description": "The label for the mobile language switcher dropdown"
-  },
   "theme.TOCCollapsible.toggleButtonLabel": {
     "message": "Auf dieser Seite",
     "description": "The label used by the button on the collapsible TOC component"
-  },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "Eine Minute Lesezeit|{readingTime} Minuten Lesezeit",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readMore": {
     "message": "Mehr lesen",
@@ -320,6 +502,10 @@
   "theme.blog.post.readMoreLabel": {
     "message": "Mehr lesen über {title}",
     "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "Eine Minute Lesezeit|{readingTime} Minuten Lesezeit",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.docs.breadcrumbs.home": {
     "message": "Home page",
@@ -341,13 +527,13 @@
     "message": "Close navigation bar",
     "description": "The ARIA label for close button of mobile sidebar"
   },
-  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
-    "message": "Toggle navigation bar",
-    "description": "The ARIA label for hamburger menu button of mobile navigation"
-  },
   "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
     "message": "← Zurück zum Hauptmenü",
     "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "Toggle navigation bar",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
   "theme.docs.sidebar.expandButtonTitle": {
     "message": "Seitenleiste ausklappen",
@@ -397,99 +583,99 @@
     "description": "The ARIA label and placeholder for search button"
   },
   "theme.SearchModal.searchBox.resetButtonTitle": {
-    "message": "Suchanfrage löschen",
+    "message": "Clear the query",
     "description": "The label and ARIA label for search box reset button"
   },
   "theme.SearchModal.searchBox.cancelButtonText": {
-    "message": "Abbrechen",
+    "message": "Cancel",
     "description": "The label and ARIA label for search box cancel button"
   },
   "theme.SearchModal.startScreen.recentSearchesTitle": {
-    "message": "Zuletzt gesucht",
+    "message": "Recent",
     "description": "The title for recent searches"
   },
   "theme.SearchModal.startScreen.noRecentSearchesText": {
-    "message": "Keine letzten Suchanfragen",
+    "message": "No recent searches",
     "description": "The text when no recent searches"
   },
   "theme.SearchModal.startScreen.saveRecentSearchButtonTitle": {
-    "message": "Diese Suche speichern",
+    "message": "Save this search",
     "description": "The label for save recent search button"
   },
   "theme.SearchModal.startScreen.removeRecentSearchButtonTitle": {
-    "message": "Diese Suche aus dem Verlauf entfernen",
+    "message": "Remove this search from history",
     "description": "The label for remove recent search button"
   },
   "theme.SearchModal.startScreen.favoriteSearchesTitle": {
-    "message": "Favoriten",
+    "message": "Favorite",
     "description": "The title for favorite searches"
   },
   "theme.SearchModal.startScreen.removeFavoriteSearchButtonTitle": {
-    "message": "Diese Suche aus den Favoriten entfernen",
+    "message": "Remove this search from favorites",
     "description": "The label for remove favorite search button"
   },
   "theme.SearchModal.errorScreen.titleText": {
-    "message": "Ergebnisse konnten nicht geladen werden",
+    "message": "Unable to fetch results",
     "description": "The title for error screen of search modal"
   },
   "theme.SearchModal.errorScreen.helpText": {
-    "message": "Bitte überprüfe deine Netzwerkverbindung.",
+    "message": "You might want to check your network connection.",
     "description": "The help text for error screen of search modal"
   },
   "theme.SearchModal.footer.selectText": {
-    "message": "zum Auswählen",
+    "message": "to select",
     "description": "The explanatory text of the action for the enter key"
   },
   "theme.SearchModal.footer.selectKeyAriaLabel": {
-    "message": "Eingabetaste",
+    "message": "Enter key",
     "description": "The ARIA label for the Enter key button that makes the selection"
   },
   "theme.SearchModal.footer.navigateText": {
-    "message": "zum Navigieren",
+    "message": "to navigate",
     "description": "The explanatory text of the action for the Arrow up and Arrow down key"
   },
   "theme.SearchModal.footer.navigateUpKeyAriaLabel": {
-    "message": "Pfeil nach oben",
+    "message": "Arrow up",
     "description": "The ARIA label for the Arrow up key button that makes the navigation"
   },
   "theme.SearchModal.footer.navigateDownKeyAriaLabel": {
-    "message": "Pfeil nach unten",
+    "message": "Arrow down",
     "description": "The ARIA label for the Arrow down key button that makes the navigation"
   },
   "theme.SearchModal.footer.closeText": {
-    "message": "zum Schließen",
+    "message": "to close",
     "description": "The explanatory text of the action for Escape key"
   },
   "theme.SearchModal.footer.closeKeyAriaLabel": {
-    "message": "Esc-Taste",
+    "message": "Escape key",
     "description": "The ARIA label for the Escape key button that close the modal"
   },
   "theme.SearchModal.footer.searchByText": {
-    "message": "Suche von",
+    "message": "Search by",
     "description": "The text explain that the search is making by Algolia"
   },
   "theme.SearchModal.noResultsScreen.noResultsText": {
-    "message": "Keine Ergebnisse für",
+    "message": "No results for",
     "description": "The text explains that there are no results for the following search"
   },
   "theme.SearchModal.noResultsScreen.suggestedQueryText": {
-    "message": "Versuche stattdessen:",
+    "message": "Try searching for",
     "description": "The text for the suggested query when no results are found for the following search"
   },
   "theme.SearchModal.noResultsScreen.reportMissingResultsText": {
-    "message": "Du denkst, diese Suche sollte Ergebnisse liefern?",
+    "message": "Believe this query should return results?",
     "description": "The text for the question where the user thinks there are missing results"
   },
   "theme.SearchModal.noResultsScreen.reportMissingResultsLinkText": {
-    "message": "Sag uns Bescheid.",
+    "message": "Let us know.",
     "description": "The text for the link to report missing results"
   },
   "theme.SearchModal.placeholder": {
-    "message": "Dokumentation durchsuchen",
+    "message": "Search docs",
     "description": "The placeholder of the input of the DocSearch pop-up modal"
   },
   "theme.blog.post.plurals": {
-    "message": "Ein Beitrag|{count} Beiträge",
+    "message": "Ein Post|{count} Posts",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.tagTitle": {
@@ -497,39 +683,39 @@
     "description": "The title of the page for a blog tag"
   },
   "theme.blog.author.pageTitle": {
-    "message": "{authorName} – {nPosts}",
+    "message": "{authorName} - {nPosts}",
     "description": "The title of the page for a blog author"
   },
   "theme.blog.authorsList.pageTitle": {
-    "message": "Autoren",
+    "message": "Authors",
     "description": "The title of the authors page"
   },
   "theme.blog.authorsList.viewAll": {
-    "message": "Alle Autoren anzeigen",
+    "message": "View All Authors",
     "description": "The label of the link targeting the blog authors page"
   },
   "theme.blog.author.noPosts": {
-    "message": "Dieser Autor hat noch keine Beiträge geschrieben.",
+    "message": "This author has not written any posts yet.",
     "description": "The text for authors with 0 blog post"
   },
   "theme.contentVisibility.unlistedBanner.title": {
-    "message": "Nicht gelistete Seite",
+    "message": "Unlisted page",
     "description": "The unlisted content banner title"
   },
   "theme.contentVisibility.unlistedBanner.message": {
-    "message": "Diese Seite ist nicht gelistet. Sie wird nicht von Suchmaschinen indexiert und ist nur über einen direkten Link zugänglich.",
+    "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
     "description": "The unlisted content banner message"
   },
   "theme.contentVisibility.draftBanner.title": {
-    "message": "Entwurfsseite",
+    "message": "Draft page",
     "description": "The draft content banner title"
   },
   "theme.contentVisibility.draftBanner.message": {
-    "message": "Diese Seite ist ein Entwurf. Sie ist nur im Entwicklungsmodus sichtbar und wird nicht in den Produktions-Build aufgenommen.",
+    "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
     "description": "The draft content banner message"
   },
   "theme.ErrorPageContent.tryAgain": {
-    "message": "Erneut versuchen",
+    "message": "Nochmal versuchen",
     "description": "The label of the button to try again rendering when the React error boundary captures an error"
   },
   "theme.common.skipToMainContent": {
@@ -539,348 +725,5 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
-  },
-  "slider.capture.title": {
-    "message": "Erfassen und Kennzeichnen"
-  },
-  "slider.capture.description": {
-    "message": "Erfassen Sie nur wenige Bilder, kennzeichnen Sie sie – ONE AI erledigt den Rest. ONE AI benötigt nur einen kleinen Datensatz, um ein voll funktionsfähiges KI-Modell zu liefern. Seine adaptive Architektur skaliert automatisch mit Ihren Daten."
-  },
-  "slider.guide.title": {
-    "message": "Anleiten und Auswählen"
-  },
-  "slider.guide.description": {
-    "message": "Verwenden Sie unseren intuitiven und visuellen Prozess, um der KI zu zeigen, was wichtig ist, wo verallgemeinert werden soll und was vorhergesagt werden soll. Sie können Ihre genauen Hardware- und Leistungsanforderungen spezifizieren und ONE AI das perfekte Modell für Ihre Bedürfnisse erstellen lassen."
-  },
-  "slider.predict.title": {
-    "message": "Vorhersagen und Trainieren"
-  },
-  "slider.predict.description": {
-    "message": "Nachdem Sie das Training gestartet haben, generiert ONE AI automatisch ein maßgeschneidertes neuronales Netzwerk für Ihre Hardware und Anwendung. Die KI trainiert dann mit Ihren Daten, lernt jedoch nur, was wichtig ist. Das gewährleistet höchste Leistung und Genauigkeit."
-  },
-  "slider.test.title": {
-    "message": "Testen und Bereitstellen"
-  },
-  "slider.test.description": {
-    "message": "Während des Trainings und Testens verhält sich die KI bereits wie auf Ihrer Zielhardware – egal ob FPGA, Mikrocontroller, GPU, CPU oder TPU. Wenn Sie mit den Ergebnissen zufrieden sind, können Sie die KI als plattformübergreifende ausführbare Datei, universellen HDL-Code, C++-Projekt oder ONNX/TF/TF-Lite-Modell exportieren."
-  },
-  "homepage.hero.start": {
-    "message": "Die",
-    "description": "First part of the hero title"
-  },
-  "homepage.hero.highlight1": {
-    "message": "nächste Generation",
-    "description": "Highlighted phrase in hero title"
-  },
-  "homepage.hero.middle": {
-    "message": "der KI-Entwicklung:",
-    "description": "Middle part of the hero title"
-  },
-  "homepage.hero.subtext": {
-    "message": "Jede Hardware. Jede Anwendung.",
-    "description": "Subheading of hero title"
-  },
-  "homepage.hero.highlight2": {
-    "message": "ONE AI",
-    "description": "ONE AI text"
-  },
-  "homepage.hero.join": {
-    "message": "Warteliste",
-    "description": "Join waitlist button"
-  },
-  "homepage.hero.contact": {
-    "message": "Kontaktieren Sie uns",
-    "description": "Contact us button"
-  },
-  "download.heading": {
-    "message": "Rüste Nicht Deine Hardware Auf – Sondern Deine KI!"
-  },
-  "download.subheading": {
-    "message": "ONE AI lässt jahrzehntealte Chips heutige Spitzen-Hardware übertreffen!",
-    "description": "Subheading about ONE AI's hardware performance"
-  },
-  "download.description1": {
-    "message": "Lesen Sie das Whitepaper unseres Partners Altera",
-    "description": "Intro to whitepaper"
-  },
-  "download.description2": {
-    "message": "und sehen Sie, wie Alteras MAX® 10 jetzt Nvidias Jetson Orin Nano übertrifft mit:",
-    "description": "Comparison line to Jetson Orin"
-  },
-  "download.metric1": {
-    "message": "Geringere Latenz",
-    "description": "Lower latency metric"
-  },
-  "download.metric2": {
-    "message": "Höhere Genauigkeit",
-    "description": "Higher accuracy metric"
-  },
-  "download.metric3": {
-    "message": "Niedrigerer Stromverbrauch",
-    "description": "Lower power metric"
-  },
-  "download.metric4": {
-    "message": "Niedrigere Kosten",
-    "description": "Lower cost metric"
-  },
-  "download.cta.whitepaper": {
-    "message": "Whitepaper lesen",
-    "description": "Button text to read the whitepaper"
-  },
-  "download.cta.waitlist": {
-    "message": "Zur ONE AI-Warteliste",
-    "description": "Button text to join waitlist"
-  },
-  "hero.title": {
-    "message": "Die nächste Generation der KI-Entwicklung: Jede Hardware. Jede Anwendung. ONE AI."
-  },
-  "download.subheading.1": {
-    "message": "ONE WARE Studio ist verfügbar für"
-  },
-  "download.subheading.2": {
-    "message": "alle gängigen Betriebssysteme"
-  },
-  "download.subheading.3": {
-    "message": "mit allen"
-  },
-  "download.subheading.4": {
-    "message": "modernen"
-  },
-  "download.subheading.5": {
-    "message": "Installationsmethoden."
-  },
-  "download.windows.label": {
-    "message": "Windows 10+"
-  },
-  "download.button": {
-    "message": "Download"
-  },
-  "download.macos.label": {
-    "message": "MacOS 12.0+"
-  },
-  "download.flathub.label": {
-    "message": "Flathub"
-  },
-  "download.snapstore.label": {
-    "message": "Snapstore"
-  },
-  "download.linux.label": {
-    "message": "Anderes Linux"
-  },
-  "vendor.title": {
-    "message": "Verwenden Sie beliebige Hardware!"
-  },
-  "vendor.subtitle.1": {
-    "message": "Unser Ziel ist es, erstklassigen Support für"
-  },
-  "vendor.subtitle.2": {
-    "message": "jede Hardware"
-  },
-  "vendor.subtitle.3": {
-    "message": "mit unserem fortschrittlichen Erweiterungssystem zu bieten."
-  },
-  "extension.title.1": {
-    "message": "Erweiterungen"
-  },
-  "extension.title.2": {
-    "message": "Für alle Ihre Bedürfnisse!"
-  },
-  "extension.description.1": {
-    "message": "Mit ONE WARE Studio-Erweiterungen können Sie"
-  },
-  "extension.description.2": {
-    "message": "Ihr Erlebnis anpassen"
-  },
-  "extension.description.3": {
-    "message": "und all Ihre Entwicklungsanforderungen erfüllen. Fügen Sie benutzerdefinierte Hardware als"
-  },
-  "extension.description.4": {
-    "message": "Digital Twin"
-  },
-  "extension.description.5": {
-    "message": "hinzu,"
-  },
-  "extension.description.6": {
-    "message": "machen Sie"
-  },
-  "extension.description.7": {
-    "message": "die KI-Integration einfacher oder fügen Sie Unterstützung für Ihr bevorzugtes"
-  },
-  "extension.description.8": {
-    "message": "Simulationstool"
-  },
-  "extension.description.9": {
-    "message": "hinzu."
-  },
-  "beta.title": {
-    "message": "Seien Sie einer der Ersten, die ONE AI testen! 🚀"
-  },
-  "beta.description.1": {
-    "message": "Möchten Sie benutzerdefinierte KI-Modelle erstellen?"
-  },
-  "beta.description.2": {
-    "message": "Erleben Sie die Zukunft der KI! Generieren Sie automatisch maßgeschneiderte KI-Modelle mit ONE AI. Melden Sie sich für die Warteliste an und erhalten Sie kostenlosen exklusiven Zugang zur Closed Beta."
-  },
-  "beta.webinar": {
-    "message": "ONE AI Webinar"
-  },
-  "beta.waitlist": {
-    "message": "ONE AI Warteliste"
-  },
-  "slider.codeAssistant.title": {
-    "message": "\"Code-Assistent\""
-  },
-  "slider.codeAssistant.description.1": {
-    "message": "Erstklassige Unterstützung für"
-  },
-  "slider.codeAssistant.description.2": {
-    "message": "und mehr mit zahlreichen Tools, um Ihre Designs so effizient wie möglich zu entwickeln."
-  },
-  "slider.hardwareSupport.title": {
-    "message": "Hardwareunterstützung"
-  },
-  "slider.hardwareSupport.description.1": {
-    "message": "Richten Sie Ihre Designs bequem ein und kompilieren Sie sie direkt von Ihrer Hardware."
-  },
-  "slider.hardwareSupport.description.2": {
-    "message": "Direkt"
-  },
-  "slider.hardwareSupport.description.3": {
-    "message": "aus der IDE mit einer wachsenden Anzahl unterstützter Toolchains und Boards."
-  },
-  "slider.simulation.title": {
-    "message": "Simulation"
-  },
-  "slider.simulation.description.1": {
-    "message": "Simulieren Sie Ihre Designs direkt in der IDE mit dem blitzschnellen Simulations-Viewer und den beliebtesten"
-  },
-  "slider.simulation.description.2": {
-    "message": "Simulations-"
-  },
-  "slider.simulation.description.3": {
-    "message": "tools."
-  },
-  "slider.extensibility.title": {
-    "message": "Erweiterbarkeit"
-  },
-  "slider.extensibility.description.1": {
-    "message": "Laden Sie"
-  },
-  "slider.extensibility.description.2": {
-    "message": "Erweiterungen"
-  },
-  "slider.extensibility.description.3": {
-    "message": "herunter und installieren Sie sie, um die Funktionalität zu erweitern. Entdecken Sie eine wachsende Auswahl an"
-  },
-  "slider.extensibility.description.4": {
-    "message": "Hardware-Integrationen"
-  },
-  "slider.extensibility.description.5": {
-    "message": "Simulatoren und mehr"
-  },
-  "aiSlider.universalAssistant.title": {
-    "message": "Universeller Assistent"
-  },
-  "aiSlider.universalAssistant.description.1": {
-    "message": "ONE AI ermöglicht Ihnen, effiziente KIs zur Verarbeitung von"
-  },
-  "aiSlider.universalAssistant.description.2": {
-    "message": "Bildern, Audio- und Sensordaten"
-  },
-  "aiSlider.universalAssistant.description.3": {
-    "message": "Unser Assistent verfügt über das Wissen aus der aktuellen KI-Forschung – beantworten Sie einfach ein paar Fragen, um Ihre individuelle KI zu erstellen. Danach"
-  },
-  "aiSlider.universalAssistant.description.4": {
-    "message": "hilft bei der Integration der KI in Ihr Produkt."
-  },
-  "aiSlider.qualityControl.title": {
-    "message": "Qualitätskontrolle"
-  },
-  "aiSlider.qualityControl.description.1": {
-    "message": "Erstellen Sie Ihre individuelle Qualitätskontrolle mit unserer KI-basierten"
-  },
-  "aiSlider.qualityControl.description.2": {
-    "message": "Bildverarbeitung"
-  },
-  "aiSlider.qualityControl.description.3": {
-    "message": "stellt sicher, dass Sie stets die neuesten wissenschaftlichen Erkenntnisse nutzen, um die"
-  },
-  "aiSlider.qualityControl.description.4": {
-    "message": "präziseste und effizienteste KI"
-  },
-  "aiSlider.predictiveMaintenance.title": {
-    "message": "Vorausschauende Wartung"
-  },
-  "aiSlider.predictiveMaintenance.description.1": {
-    "message": "Beheben Sie Probleme, bevor sie auftreten. ONE AI verarbeitet Sensordaten Ihrer Maschine und kann"
-  },
-  "aiSlider.predictiveMaintenance.description.2": {
-    "message": "Defekte vorhersagen"
-  },
-  "aiSlider.predictiveMaintenance.description.3": {
-    "message": "bevor sie auftreten, damit Ihre Produktion ununterbrochen weiterläuft."
-  },
-  "aiSlider.robotsAndDrones.title": {
-    "message": "Roboter und Drohnen"
-  },
-  "aiSlider.robotsAndDrones.description.1": {
-    "message": "Ersetzen Sie die letzten manuellen Produktionsschritte durch autonome Roboter und Drohnen. ONE AI ermöglicht es Ihrem Roboter oder Ihrer Drohne,"
-  },
-  "aiSlider.robotsAndDrones.description.2": {
-    "message": "selbstständig zu sehen, zu hören und zu denken"
-  },
-  "homepage.hero.title.1": {
-    "message": "Die"
-  },
-  "homepage.hero.title.2": {
-    "message": "Next-Generation IDE"
-  },
-  "homepage.hero.title.3": {
-    "message": "für die Elektronikentwicklung"
-  },
-  "homepage.hero.title.4": {
-    "message": "ist da"
-  },
-  "homepage.hero.download": {
-    "message": "Download"
-  },
-  "homepage.hero.getStarted": {
-    "message": "Loslegen"
-  },
-  "homepage.hero.opensource.1": {
-    "message": "Ja, es ist"
-  },
-  "homepage.hero.opensource.2": {
-    "message": "Open Source"
-  },
-  "partners.title": {
-    "message": "Vertraut von Branchenführern und Experten"
-  },
-  "contactus.headline": {
-    "message": "Interesse? Kontaktieren Sie uns!"
-  },
-  "contactus.form.1": {
-    "message": "Nachricht"
-  },
-  "contactus.buttonsend": {
-    "message": "Absenden"
-  },
-  "vendorSection.headline.1": {
-    "message": "Basis KI-Modelle"
-  },
-  "vendorSection.headline.2": {
-    "message": "wurden nicht für Sie entwickelt."
-  },
-  "vendorSection.headline.3": {
-    "message": "entwickelt Modelle, die es sind."
-  },
-  "vendorSection.subline.1": {
-    "message": "Mit ONE AI erhalten Sie in Sekundenschnelle"
-  },
-  "vendorSection.subline.2": {
-    "message": "ein maßgeschneidertes neuronales Netzwerk"
-  },
-  "vendorSection.subline.3": {
-    "message": ", das exakt auf deine Hardware, Leistungsanforderungen und deinen Anwendungsfall abgestimmt ist."
   }
 }

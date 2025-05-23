@@ -161,9 +161,7 @@ function TestimonialsSection() {
           >
             <p className="text-gray-800 italic mb-6 font-bold text-lg">
               <Translate id="testimonials.1.text">
-                "Working with ONE WARE demonstrates the incredible potential
-                that emerges when intelligent AI development meets highly
-                efficient FPGA technology..."
+                "“Working with ONE WARE demonstrates the incredible potential that emerges when intelligent AI development meets highly efficient FPGA technology. ONE WARE takes our MAX® 10 platform to a new level – delivering solutions that not only push technological boundaries, together we're building solutions that are far more precise, more efficient and drive meaningful change in industrial practice. This partnership represents a new generation of industrial AI: scalable, resource-efficient, and universally applicable.“"
               </Translate>
             </p>
             <div className="mb-24">
@@ -196,8 +194,7 @@ function TestimonialsSection() {
           >
             <p className="text-gray-800 italic mb-6 font-bold text-lg">
               <Translate id="testimonials.2.text">
-                "From day one, working with ONE WARE was pragmatic and
-                focused..."
+                "“From day one, working with ONE WARE was pragmatic and focused. Using AI-powered image processing, we established a robust defect detection system on high-gloss surfaces in just a few weeks – a milestone that traditional metrology would have taken up to 18 months to reach. We're enthusiastic about ONE WARE's solution. Its potential in AI is impressive and a true lever for strengthening our competitiveness.“"
               </Translate>
             </p>
             <div className="mb-24">
@@ -230,8 +227,7 @@ function TestimonialsSection() {
           >
             <p className="text-gray-800 italic mb-6 font-bold text-lg">
               <Translate id="testimonials.3.text">
-                "Through our European Digital Infrastructure investment thesis,
-                we seek out entrepreneurs..."
+                “Through our European Digital Infrastructure investment thesis, we seek out entrepreneurs building the foundations of future global digital systems. ONE WARE is such a company. With its mission to make advanced technologies more accessible and universally applicable, the team around Leon, Leo, Hendrik, and Ali is fundamentally changing the way AI and electronics development is approached across industries.“
               </Translate>
             </p>
             <div className="mb-24">
