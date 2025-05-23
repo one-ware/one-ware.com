@@ -1,24 +1,24 @@
 {
   "homepage.every": {
-    "message": "Every "
+    "message": "Jede "
   },
   "typewriter.task": {
-    "message": "Task."
+    "message": "Aufgabe."
   },
   "typewriter.hardware": {
     "message": "Hardware."
   },
   "typewriter.industry": {
-    "message": "Industry."
+    "message": "Branche."
   },
   "homepage.subtitle": {
-    "message": "Meet the World's First"
+    "message": "Lernen Sie die weltweit erste"
   },
   "homepage.subtitle.ai": {
-    "message": "AI-Powered AI Developer"
+    "message": "KI-gestützten KI-Entwickler kennen"
   },
   "partners.title": {
-    "message": "Trusted by Industry Leaders and Experts"
+    "message": "Vertraut von Branchenführern und Experten"
   },
   "testimonials.title": {
     "message": "Was andere über uns sagen"
@@ -42,247 +42,247 @@
     "message": "Investor & General Partner bei Cusp Capital"
   },
   "homepage.meta.description": {
-    "message": "Every Task. Every Hardware. Every Industry. ONE Software."
+    "message": "Jede Aufgabe. Jede Hardware. Jede Branche. ONE Software."
   },
   "oneai.slider.capture": {
-    "message": "Capture and Label"
+    "message": "Aufnehmen und Beschriften"
   },
   "oneai.slider.capture.description": {
-    "message": "Capture just a few images, label them - ONE AI takes care of the rest. ONE AI requires only a small dataset to deliver a fully functional AI model. Its adaptive architecture automatically scales with your data."
+    "message": "Nehmen Sie nur wenige Bilder auf, beschriften Sie sie – ONE AI erledigt den Rest. ONE AI benötigt nur einen kleinen Datensatz, um ein voll funktionsfähiges KI-Modell zu liefern. Die adaptive Architektur passt sich automatisch Ihren Daten an."
   },
   "oneai.slider.guide": {
-    "message": "Guide and Select"
+    "message": "Anleiten und Auswählen"
   },
   "oneai.slider.guide.description": {
-    "message": "Use our intuitive and visual process to teach the AI what is important, where to generalize and what to predict. You can specify your exact hardware and performance requirements and then let ONE AI create the perfect model for your needs."
+    "message": "Nutzen Sie unseren intuitiven und visuellen Prozess, um der KI beizubringen, was wichtig ist, wo sie generalisieren und was sie vorhersagen soll. Sie können Ihre genauen Hardware- und Leistungsanforderungen angeben und dann ONE AI das perfekte Modell für Ihre Bedürfnisse erstellen lassen."
   },
   "oneai.slider.train": {
-    "message": "Predict and Train"
+    "message": "Vorhersagen und Trainieren"
   },
   "oneai.slider.train.description": {
-    "message": "After you start training, ONE AI will automatically generate a custom neural network for your hardware and application. The AI then trains on your data, but only learns what is important. This ensures highest performance and accuracy."
+    "message": "Nachdem Sie das Training gestartet haben, generiert ONE AI automatisch ein individuelles neuronales Netzwerk für Ihre Hardware und Anwendung. Die KI trainiert dann mit Ihren Daten, lernt aber nur das Wesentliche. Das sorgt für höchste Leistung und Genauigkeit."
   },
   "oneai.slider.deploy": {
-    "message": "Test and Deploy"
+    "message": "Testen und Ausrollen"
   },
   "oneai.slider.deploy.description": {
-    "message": "While training and testing, the AI already behaves like on your target hardware. No matter if you are using an FPGA, Microcontroller, GPU, CPU or TPU. If you are satisfied with the results, you can export the AI as cross-platform executable, universal HDL code, C++ project or ONNX/TF/TF-Lite Model."
+    "message": "Während des Trainings und Testens verhält sich die KI bereits wie auf Ihrer Zielhardware. Egal ob FPGA, Mikrocontroller, GPU, CPU oder TPU – wenn Sie mit den Ergebnissen zufrieden sind, können Sie die KI als plattformübergreifende Anwendung, universellen HDL-Code, C++-Projekt oder ONNX/TF/TF-Lite-Modell exportieren."
   },
   "oneai.hero.start": {
-    "message": "The"
+    "message": "Die"
   },
   "oneai.hero.highlight1": {
-    "message": "Next Generation"
+    "message": "nächste Generation"
   },
   "oneai.hero.middle": {
-    "message": "of AI Development:"
+    "message": "der KI-Entwicklung:"
   },
   "oneai.hero.subtext": {
-    "message": "Any Hardware. Any Application."
+    "message": "Jede Hardware. Jede Anwendung."
   },
   "oneai.hero.name": {
     "message": "ONE AI"
   },
   "oneai.hero.cta.join": {
-    "message": "Join Waitlist"
+    "message": "Warteliste beitreten"
   },
   "oneai.hero.cta.contact": {
-    "message": "Contact Us"
+    "message": "Kontaktieren Sie uns"
   },
   "oneai.compare.heading": {
-    "message": "Don't Upgrade Your Hardware — Upgrade Your AI!"
+    "message": "Rüsten Sie nicht Ihre Hardware auf – Rüsten Sie Ihre KI auf!"
   },
   "oneai.compare.subheading": {
-    "message": "ONE AI makes decade-old chips outperform todays leading edge AI hardware!"
+    "message": "ONE AI lässt Jahrzehnte alte Chips die modernste KI-Hardware von heute übertreffen!"
   },
   "oneai.compare.whitepaper": {
-    "message": "Read the Whitepaper from our Partner Altera"
+    "message": "Lesen Sie das Whitepaper von unserem Partner Altera"
   },
   "oneai.compare.benchmark": {
-    "message": "and see how Altera's MAX® 10 can now outperform Nvidia's Jetson Orin Nano with:"
+    "message": "und sehen Sie, wie Alteras MAX® 10 jetzt Nvidias Jetson Orin Nano übertrifft mit:"
   },
   "oneai.compare.cta.whitepaper": {
-    "message": "Read the Whitepaper"
+    "message": "Whitepaper lesen"
   },
   "oneai.compare.cta.waitlist": {
-    "message": "Join ONE AI Waitlist"
+    "message": "ONE AI Warteliste beitreten"
   },
   "oneai.showcase.title.1": {
-    "message": "Foundation Models"
+    "message": "Basis-Modelle"
   },
   "oneai.showcase.title.2": {
-    "message": "Weren't Built for You."
+    "message": "waren nicht für Sie gemacht."
   },
   "oneai.showcase.title.3": {
-    "message": "Creates Models That Are."
+    "message": "Erstellt Modelle, die es sind."
   },
   "oneai.showcase.desc.1": {
-    "message": "With ONE AI you always get a"
+    "message": "Mit ONE AI erhalten Sie immer ein"
   },
   "oneai.showcase.desc.2": {
-    "message": "custom neural network in seconds"
+    "message": "individuelles neuronales Netzwerk in Sekunden"
   },
   "oneai.showcase.desc.3": {
-    "message": "that fits your exact Hardware, performance and use case requirements."
+    "message": "das genau zu Ihren Hardware-, Leistungs- und Anwendungsanforderungen passt."
   },
   "studio.slider.codeAssistant.title": {
-    "message": "Code Assistant"
+    "message": "Code-Assistent"
   },
   "studio.slider.codeAssistant.description.1": {
-    "message": "First class support for"
+    "message": "Erstklassige Unterstützung für"
   },
   "studio.slider.codeAssistant.description.2": {
-    "message": "and more with lots of tools to help develop your designs as efficiently as possible."
+    "message": "und mehr mit vielen Tools, um Ihre Designs so effizient wie möglich zu entwickeln."
   },
   "studio.slider.hardwareSupport.title": {
-    "message": "Hardware Support"
+    "message": "Hardware-Unterstützung"
   },
   "studio.slider.hardwareSupport.description.1": {
-    "message": "Conveniently setup and compile your designs from your hardware."
+    "message": "Richten Sie Ihre Designs bequem von Ihrer Hardware aus ein und kompilieren Sie sie."
   },
-  "studio.,slider.hardwareSupport.description.2": {
-    "message": "Directly"
+  "studio.slider.hardwareSupport.description.2": {
+    "message": "Direkt"
   },
   "studio.slider.hardwareSupport.description.3": {
-    "message": "from the IDE, which a growing number of supported toolchains and boards."
+    "message": "aus der IDE, mit einer wachsenden Anzahl unterstützter Toolchains und Boards."
   },
   "studio.slider.simulation.title": {
     "message": "Simulation"
   },
   "studio.slider.simulation.description.1": {
-    "message": "Simulate your designs inside the IDE, using the lightning fast Simulation Viewer and the most popular"
+    "message": "Simulieren Sie Ihre Designs direkt in der IDE mit dem blitzschnellen Simulations-Viewer und den beliebtesten"
   },
   "studio.slider.simulation.description.2": {
-    "message": "Simulation"
+    "message": "Simulations"
   },
   "studio.slider.simulation.description.3": {
     "message": "tools."
   },
   "studio.slider.extensibility.title": {
-    "message": "Extensibility"
+    "message": "Erweiterbarkeit"
   },
   "studio.slider.extensibility.description.1": {
-    "message": "Download and install"
+    "message": "Laden Sie"
   },
   "studio.slider.extensibility.description.2": {
-    "message": "Extensions"
+    "message": "Erweiterungen"
   },
   "studio.slider.extensibility.description.3": {
-    "message": "to extend the functionality. Discover a growing selection of"
+    "message": "herunter und installieren Sie sie, um die Funktionalität zu erweitern. Entdecken Sie eine wachsende Auswahl an"
   },
   "studio.slider.extensibility.description.4": {
-    "message": "Hardware-Integrations"
+    "message": "Hardware-Integrationen"
   },
   "studio.slider.extensibility.description.5": {
-    "message": "Simulators and More"
+    "message": "Simulations-Tools und mehr"
   },
   "studio.homepage.hero.title.1": {
-    "message": "The"
+    "message": "Die"
   },
   "studio.homepage.hero.title.2": {
-    "message": "Next Generation IDE"
+    "message": "nächste Generation der IDE"
   },
   "studio.homepage.hero.title.3": {
-    "message": "for Electronics Development"
+    "message": "für die Elektronikentwicklung"
   },
   "studio.homepage.hero.title.4": {
-    "message": "is here"
+    "message": "ist da"
   },
   "studio.homepage.hero.getStarted": {
-    "message": "Get Started"
+    "message": "Loslegen"
   },
   "studio.homepage.hero.opensource.1": {
-    "message": "Yes, it is"
+    "message": "Ja, es ist"
   },
   "studio.homepage.hero.opensource.2": {
     "message": "Open Source"
   },
   "studio.download.heading": {
-    "message": "Easy Setup!"
+    "message": "Einfache Einrichtung!"
   },
   "studio.download.subheading.1": {
-    "message": "ONE WARE Studio is available for"
+    "message": "ONE WARE Studio ist verfügbar für"
   },
   "studio.download.subheading.2": {
-    "message": "all major operating systems"
+    "message": "alle wichtigen Betriebssysteme"
   },
   "studio.download.subheading.3": {
-    "message": "using all the"
+    "message": "mit allen"
   },
   "studio.download.subheading.4": {
-    "message": "modern"
+    "message": "modernen"
   },
   "studio.download.subheading.5": {
-    "message": "installation methods."
+    "message": "Installationsmethoden."
   },
   "studio.download.windows.label": {
     "message": "Windows 10+"
   },
   "studio.download.button": {
-    "message": "Download"
+    "message": "Herunterladen"
   },
   "download.linux.label": {
-    "message": "Other Linux"
+    "message": "Andere Linux-Versionen"
   },
   "studio.vendor.title": {
-    "message": "Use any Hardware!"
+    "message": "Verwenden Sie jede Hardware!"
   },
   "studio.vendor.subtitle.1": {
-    "message": "Our goal is to provide first level support for"
+    "message": "Unser Ziel ist es, erstklassige Unterstützung für"
   },
   "studio.vendor.subtitle.2": {
-    "message": "any hardware"
+    "message": "jede Hardware"
   },
   "studio.vendor.subtitle.3": {
-    "message": "using our advanced extension system."
+    "message": "mit unserem fortschrittlichen Erweiterungssystem zu bieten."
   },
   "studio.extension.title.1": {
-    "message": "Extensions"
+    "message": "Erweiterungen"
   },
   "studio.extension.title.2": {
-    "message": "For All Your Needs!"
+    "message": "Für alle Ihre Bedürfnisse!"
   },
   "studio.extension.description.1": {
-    "message": "ONE WARE Studio extensions let you"
+    "message": "ONE WARE Studio-Erweiterungen ermöglichen es Ihnen,"
   },
   "studio.extension.description.2": {
-    "message": "customize your experience"
+    "message": "Ihre Erfahrung anzupassen"
   },
   "studio.extension.description.3": {
-    "message": "to meet all your development needs. Add custom hardware as"
+    "message": "um alle Ihre Entwicklungsanforderungen zu erfüllen. Fügen Sie benutzerdefinierte Hardware als"
   },
   "extension.description.4": {
-    "message": "digital twin"
+    "message": "digitalen Zwilling"
   },
   "extension.description.5": {
-    "message": "make"
+    "message": "hinzu, machen Sie"
   },
   "extension.description.6": {
-    "message": "AI"
+    "message": "KI"
   },
   "studio.extension.description.7": {
-    "message": "integration easier or add support for your favorite"
+    "message": "Integration einfacher oder fügen Sie Unterstützung für Ihr bevorzugtes"
   },
   "studio.extension.description.8": {
-    "message": "simulation"
+    "message": "Simulations"
   },
   "studio.extension.description.9": {
-    "message": "tool."
+    "message": "tool hinzu."
   },
   "contactus.headline": {
-    "message": "Interested? Contact us!"
+    "message": "Interessiert? Kontaktieren Sie uns!"
   },
   "contactus.form.1": {
-    "message": "Message"
+    "message": "Nachricht"
   },
   "contactus.buttonsend": {
-    "message": "Send"
+    "message": "Senden"
   },
   "homepage.features.oneai": {
-    "message": "See how ONE AI creates custom neural networks in seconds that fit your exact Hardware, performance and use case requirements."
+    "message": "Sehen Sie, wie ONE AI individuelle neuronale Netzwerke in Sekunden erstellt, die genau zu Ihren Hardware-, Leistungs- und Anwendungsanforderungen passen."
   },
   "homepage.features.onewarestudio": {
-    "message": "See how to integrate AI in your embedded systems and speed up the development with ONE WARE Studio"
+    "message": "Sehen Sie, wie Sie KI in Ihre eingebetteten Systeme integrieren und die Entwicklung mit ONE WARE Studio beschleunigen können."
   },
   "theme.ErrorPageContent.title": {
     "message": "Die Seite ist abgestürzt.",
@@ -464,20 +464,20 @@
     "description": "The copy button label on code blocks"
   },
   "theme.CodeBlock.wordWrapToggle": {
-    "message": "Toggle word wrap",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
+    "message": "Zeilenumbruch umschalten",
+    "description": "Der Titelattribut für die Schaltfläche zum Umschalten des Zeilenumbruchs im Codeblock"
   },
   "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "Expand sidebar category '{label}'",
-    "description": "The ARIA label to expand the sidebar category"
+    "message": "Seitenleistenkategorie '{label}' erweitern",
+    "description": "Die ARIA-Beschriftung zum Erweitern der Seitenleistenkategorie"
   },
   "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "Collapse sidebar category '{label}'",
-    "description": "The ARIA label to collapse the sidebar category"
+    "message": "Seitenleistenkategorie '{label}' einklappen",
+    "description": "Die ARIA-Beschriftung zum Einklappen der Seitenleistenkategorie"
   },
   "theme.NavBar.navAriaLabel": {
-    "message": "Main",
-    "description": "The ARIA label for the main navigation"
+    "message": "Hauptnavigation",
+    "description": "Die ARIA-Beschriftung für die Hauptnavigation"
   },
   "theme.navbar.mobileLanguageDropdown.label": {
     "message": "Sprachen",
@@ -532,7 +532,7 @@
     "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
   },
   "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
-    "message": "Toggle navigation bar",
+    "message": "Navigationsleiste einklappen",
     "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
   "theme.docs.sidebar.expandButtonTitle": {
@@ -583,96 +583,96 @@
     "description": "The ARIA label and placeholder for search button"
   },
   "theme.SearchModal.searchBox.resetButtonTitle": {
-    "message": "Clear the query",
-    "description": "The label and ARIA label for search box reset button"
+    "message": "Abfrage löschen",
+    "description": "Die Beschriftung und ARIA-Beschriftung für die Schaltfläche zum Zurücksetzen der Suchabfrage"
   },
   "theme.SearchModal.searchBox.cancelButtonText": {
-    "message": "Cancel",
-    "description": "The label and ARIA label for search box cancel button"
+    "message": "Abbrechen",
+    "description": "Die Beschriftung und ARIA-Beschriftung für die Schaltfläche zum Abbrechen der Suchabfrage"
   },
   "theme.SearchModal.startScreen.recentSearchesTitle": {
-    "message": "Recent",
-    "description": "The title for recent searches"
+    "message": "Kürzlich",
+    "description": "Der Titel für kürzlich durchgeführte Suchen"
   },
   "theme.SearchModal.startScreen.noRecentSearchesText": {
-    "message": "No recent searches",
-    "description": "The text when no recent searches"
+    "message": "Keine kürzlichen Suchen",
+    "description": "Der Text, wenn keine kürzlichen Suchen vorhanden sind"
   },
   "theme.SearchModal.startScreen.saveRecentSearchButtonTitle": {
-    "message": "Save this search",
-    "description": "The label for save recent search button"
+    "message": "Diese Suche speichern",
+    "description": "Die Beschriftung für die Schaltfläche zum Speichern einer kürzlichen Suche"
   },
   "theme.SearchModal.startScreen.removeRecentSearchButtonTitle": {
-    "message": "Remove this search from history",
-    "description": "The label for remove recent search button"
+    "message": "Diese Suche aus dem Verlauf entfernen",
+    "description": "Die Beschriftung für die Schaltfläche zum Entfernen einer kürzlichen Suche"
   },
   "theme.SearchModal.startScreen.favoriteSearchesTitle": {
-    "message": "Favorite",
-    "description": "The title for favorite searches"
+    "message": "Favoriten",
+    "description": "Der Titel für Favoritensuchen"
   },
   "theme.SearchModal.startScreen.removeFavoriteSearchButtonTitle": {
-    "message": "Remove this search from favorites",
-    "description": "The label for remove favorite search button"
+    "message": "Diese Suche aus den Favoriten entfernen",
+    "description": "Die Beschriftung für die Schaltfläche zum Entfernen einer Favoritensuche"
   },
   "theme.SearchModal.errorScreen.titleText": {
-    "message": "Unable to fetch results",
-    "description": "The title for error screen of search modal"
+    "message": "Ergebnisse konnten nicht abgerufen werden",
+    "description": "Der Titel für den Fehlerbildschirm des Suchmodals"
   },
   "theme.SearchModal.errorScreen.helpText": {
-    "message": "You might want to check your network connection.",
-    "description": "The help text for error screen of search modal"
+    "message": "Überprüfen Sie Ihre Netzwerkverbindung.",
+    "description": "Der Hilfetext für den Fehlerbildschirm des Suchmodals"
   },
   "theme.SearchModal.footer.selectText": {
-    "message": "to select",
-    "description": "The explanatory text of the action for the enter key"
+    "message": "zum Auswählen",
+    "description": "Der erklärende Text für die Aktion der Eingabetaste"
   },
   "theme.SearchModal.footer.selectKeyAriaLabel": {
-    "message": "Enter key",
-    "description": "The ARIA label for the Enter key button that makes the selection"
+    "message": "Eingabetaste",
+    "description": "Die ARIA-Beschriftung für die Eingabetaste, die die Auswahl trifft"
   },
   "theme.SearchModal.footer.navigateText": {
-    "message": "to navigate",
-    "description": "The explanatory text of the action for the Arrow up and Arrow down key"
+    "message": "zum Navigieren",
+    "description": "Der erklärende Text für die Aktion der Pfeiltasten nach oben und unten"
   },
   "theme.SearchModal.footer.navigateUpKeyAriaLabel": {
-    "message": "Arrow up",
-    "description": "The ARIA label for the Arrow up key button that makes the navigation"
+    "message": "Pfeil nach oben",
+    "description": "Die ARIA-Beschriftung für die Pfeiltaste nach oben, die die Navigation durchführt"
   },
   "theme.SearchModal.footer.navigateDownKeyAriaLabel": {
-    "message": "Arrow down",
-    "description": "The ARIA label for the Arrow down key button that makes the navigation"
+    "message": "Pfeil nach unten",
+    "description": "Die ARIA-Beschriftung für die Pfeiltaste nach unten, die die Navigation durchführt"
   },
   "theme.SearchModal.footer.closeText": {
-    "message": "to close",
-    "description": "The explanatory text of the action for Escape key"
+    "message": "zum Schließen",
+    "description": "Der erklärende Text für die Aktion der Escape-Taste"
   },
   "theme.SearchModal.footer.closeKeyAriaLabel": {
-    "message": "Escape key",
-    "description": "The ARIA label for the Escape key button that close the modal"
+    "message": "Escape-Taste",
+    "description": "Die ARIA-Beschriftung für die Escape-Taste, die das Modal schließt"
   },
   "theme.SearchModal.footer.searchByText": {
-    "message": "Search by",
-    "description": "The text explain that the search is making by Algolia"
+    "message": "Suche durch",
+    "description": "Der Text erklärt, dass die Suche durch Algolia durchgeführt wird"
   },
   "theme.SearchModal.noResultsScreen.noResultsText": {
-    "message": "No results for",
-    "description": "The text explains that there are no results for the following search"
+    "message": "Keine Ergebnisse für",
+    "description": "Der Text erklärt, dass es keine Ergebnisse für die folgende Suche gibt"
   },
   "theme.SearchModal.noResultsScreen.suggestedQueryText": {
-    "message": "Try searching for",
-    "description": "The text for the suggested query when no results are found for the following search"
+    "message": "Versuchen Sie, nach folgendem zu suchen",
+    "description": "Der Text für die vorgeschlagene Abfrage, wenn keine Ergebnisse für die folgende Suche gefunden werden"
   },
   "theme.SearchModal.noResultsScreen.reportMissingResultsText": {
-    "message": "Believe this query should return results?",
-    "description": "The text for the question where the user thinks there are missing results"
+    "message": "Glauben Sie, dass diese Abfrage Ergebnisse liefern sollte?",
+    "description": "Der Text für die Frage, bei der der Benutzer denkt, dass Ergebnisse fehlen"
   },
   "theme.SearchModal.noResultsScreen.reportMissingResultsLinkText": {
-    "message": "Let us know.",
-    "description": "The text for the link to report missing results"
+    "message": "Lassen Sie es uns wissen.",
+    "description": "Der Text für den Link, um fehlende Ergebnisse zu melden"
   },
   "theme.SearchModal.placeholder": {
-    "message": "Search docs",
-    "description": "The placeholder of the input of the DocSearch pop-up modal"
+    "message": "Dokumente durchsuchen",
+    "description": "Der Platzhalter des Eingabefelds des DocSearch-Pop-up-Modals"
   },
   "theme.blog.post.plurals": {
     "message": "Ein Post|{count} Posts",
@@ -687,43 +687,43 @@
     "description": "The title of the page for a blog author"
   },
   "theme.blog.authorsList.pageTitle": {
-    "message": "Authors",
-    "description": "The title of the authors page"
+    "message": "Autoren",
+    "description": "Der Titel der Autorenseite"
   },
   "theme.blog.authorsList.viewAll": {
-    "message": "View All Authors",
-    "description": "The label of the link targeting the blog authors page"
+    "message": "Alle Autoren anzeigen",
+    "description": "Die Beschriftung des Links zur Autorenseite"
   },
   "theme.blog.author.noPosts": {
-    "message": "This author has not written any posts yet.",
-    "description": "The text for authors with 0 blog post"
+    "message": "Dieser Autor hat noch keine Beiträge geschrieben.",
+    "description": "Der Text für Autoren ohne Blogbeiträge"
   },
   "theme.contentVisibility.unlistedBanner.title": {
-    "message": "Unlisted page",
-    "description": "The unlisted content banner title"
+    "message": "Nicht gelistete Seite",
+    "description": "Der Titel des Banners für nicht gelistete Inhalte"
   },
   "theme.contentVisibility.unlistedBanner.message": {
-    "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
-    "description": "The unlisted content banner message"
+    "message": "Diese Seite ist nicht gelistet. Suchmaschinen werden sie nicht indexieren, und nur Benutzer mit einem direkten Link können darauf zugreifen.",
+    "description": "Die Nachricht des Banners für nicht gelistete Inhalte"
   },
   "theme.contentVisibility.draftBanner.title": {
-    "message": "Draft page",
-    "description": "The draft content banner title"
+    "message": "Entwurfsseite",
+    "description": "Der Titel des Banners für Entwurfsinhalte"
   },
   "theme.contentVisibility.draftBanner.message": {
-    "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
-    "description": "The draft content banner message"
+    "message": "Diese Seite ist ein Entwurf. Sie ist nur in der Entwicklungsumgebung sichtbar und wird nicht in den Produktions-Build aufgenommen.",
+    "description": "Die Nachricht des Banners für Entwurfsinhalte"
   },
   "theme.ErrorPageContent.tryAgain": {
-    "message": "Nochmal versuchen",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+    "message": "Erneut versuchen",
+    "description": "Die Beschriftung des Buttons, um es erneut zu versuchen, wenn ein Fehler von der React-Fehlergrenze abgefangen wurde"
   },
   "theme.common.skipToMainContent": {
     "message": "Zum Hauptinhalt springen",
-    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+    "description": "Die Beschriftung für 'Zum Inhalt springen', die für Barrierefreiheit genutzt wird, um mit Tab-/Enter-Navigation schnell zum Hauptinhalt zu gelangen"
   },
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
-    "description": "The title of the tag list page"
+    "description": "Der Titel der Seite mit der Liste aller Tags"
   }
 }

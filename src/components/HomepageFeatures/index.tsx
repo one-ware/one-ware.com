@@ -1,6 +1,7 @@
 import styles from "./styles.module.css";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from '@docusaurus/Translate';
+import { JSX } from "react";
 
 export default function HomepageFeatures(): JSX.Element {
   return (
