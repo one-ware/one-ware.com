@@ -12,7 +12,7 @@
     "message": "Branche."
   },
   "homepage.subtitle": {
-    "message": "Lernen Sie die weltweit erste"
+    "message": "Lernen Sie den weltweit ersten"
   },
   "homepage.subtitle.ai": {
     "message": "KI-gestützten KI-Entwickler kennen"
@@ -126,7 +126,7 @@
     "message": "individuelles neuronales Netzwerk in Sekunden"
   },
   "oneai.showcase.desc.3": {
-    "message": "das genau zu Ihren Hardware-, Leistungs- und Anwendungsanforderungen passt."
+    "message": "das genau zu Ihren Hardware-, Leistungs- und Einsatzanforderungen passt."
   },
   "studio.slider.codeAssistant.title": {
     "message": "Code-Assistent"
