@@ -63,7 +63,9 @@ function HomepageHeader() {
         <div className="flex justify-center gap-4 mt-8 flex-col md:flex-row">
           <a href="one-ai">
             <button className="button button button--primary button--outline button--lg">
-              Generate Your Custom AI
+              <Translate id="homepage.subtitle.ai.buttonGenerate">
+                Generate Your Custom AI
+              </Translate>
             </button>
           </a>
         </div>

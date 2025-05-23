@@ -17,6 +17,9 @@
   "homepage.subtitle.ai": {
     "message": "KI-gestützten KI-Entwickler kennen"
   },
+  "homepage.subtitle.ai.buttonGenerate": {
+    "message": "Erstelle deine eigene KI"
+  },
   "partners.title": {
     "message": "Vertraut von Branchenführern und Experten"
   },
@@ -93,7 +96,7 @@
     "message": "Rüsten Sie nicht Ihre Hardware auf – Rüsten Sie Ihre KI auf!"
   },
   "oneai.compare.subheading": {
-    "message": "ONE AI lässt Jahrzehnte alte Chips die modernste KI-Hardware von heute übertreffen!"
+    "message": "ONE AI übertifft die Performance der modernsten KI-Hardware, sogar auf Jahrzehnte alten Chips!"
   },
   "oneai.compare.whitepaper": {
     "message": "Lesen Sie das Whitepaper von unserem Partner Altera"

@@ -60,7 +60,7 @@ const sliders = [
           Conveniently setup and compile your designs from your hardware.
         </Translate>{" "}
         <span className="primary-text">
-          <Translate id="studio.,slider.hardwareSupport.description.2">
+          <Translate id="studio.slider.hardwareSupport.description.2">
             Directly
           </Translate>
         </span>{" "}
@@ -87,7 +87,7 @@ const sliders = [
         </Translate>{" "}
         <span className="primary-text">
           <Translate id="studio.slider.simulation.description.2">Simulation</Translate>
-        </span>
+        </span>{" "}
         <Translate id="studio.slider.simulation.description.3"> tools.</Translate>
       </>
     ),
