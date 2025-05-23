@@ -45,23 +45,25 @@ function HomepageHeader() {
           </div>
 
           <div className="text-3xl md:text-5xl lg:text-6xl font-bold drop-shadow-4xl text-gray-200 mt-2 md:mt-2">
-            <span className="block md:inline">ONE Software.</span>{" "}
+            <span>ONE Software.</span>{" "}
             <span>ONE AI.</span>
           </div>
         </div>
 
-        <span className="text-base md:text-3xl font-bold drop-shadow-4xl text-gray-300 mt-6 text-center pointer-events-none">
-          <Translate id="homepage.subtitle">Meet the World's First</Translate>{" "}
-          <span className="primary-text">
+        <div className="flex flex-col md:flex-row justify-center items-center text-2xl md:text-3xl font-bold drop-shadow-4xl text-gray-300 mt-6 text-center pointer-events-none">
+          <span className="block mb-2 md:mb-0">
+            <Translate id="homepage.subtitle">Meet the World's First</Translate>
+          </span>
+          <span className="primary-text block md:inline md:ml-2">
             <Translate id="homepage.subtitle.ai">
               AI-Powered AI Developer
             </Translate>
           </span>
-        </span>
+        </div>
         <div className="flex justify-center gap-4 mt-8 flex-col md:flex-row">
           <a href="one-ai">
             <button className="button button button--primary button--outline button--lg">
-              ONE AI
+              Generate Your Custom AI
             </button>
           </a>
         </div>
