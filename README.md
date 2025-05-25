@@ -4,6 +4,10 @@
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
+### Requirements
+
+- Node 20
+
 ### Installation
 
 ```
@@ -14,6 +18,13 @@ $ npm i
 
 ```
 $ npm run start
+```
+
+### Local Development using a different language
+
+Run in German:
+```
+$ npm run start -- --locale de
 ```
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
