@@ -50,7 +50,74 @@ This also allows debugging your plugin directly in Rider.
 
 ### Using VSCode
 
-> Coming soon!
+#### 1. Open the Project
+
+* Launch **VS Code**
+* Open the folder containing your plugin (e.g., `OneWare.MyExtension`)
+
+#### 2. Configure the Debugger
+
+1. In your root folder, create a `.vscode` folder if it doesn't exist.
+2. Inside `.vscode`, create a file called `launch.json` and paste the following:
+
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Plugin",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "<full-path-to-OneWareStudio.exe>",
+      "args": ["--modules", "./"],
+      "cwd": "${workspaceFolder}\\src\\OneWare.MyExtension\\bin\\Debug\\net9.0",
+      "stopAtEntry": false,
+      "env": {},
+      "runtimeArgs": [],
+      "console": "internalConsole"
+    }
+  ]
+}
+```
+
+> Replace `<full-path-to-OneWareStudio.exe>` with the actual path to your OneWareStudio executable.
+
+#### 3. Add a Build Task
+
+1. In the same `.vscode` folder, create a file called `tasks.json`:
+
+```json
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Solution",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "OneWare.MyExtension.sln",
+        "--configuration",
+        "Debug"
+      ],
+      "problemMatcher": "$msCompile",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
+```
+
+#### 4. Build and Debug
+
+* Press `Ctrl + Shift + B` (or `Cmd + Shift + B` on macOS) to build.
+* Open the **Run and Debug** view (`Ctrl + Shift + D`).
+* Select **Run Plugin** from the dropdown and press `F5` to start debugging.
+
+> You should now see your plugin loaded into OneWareStudio with full debugging support.
+
 
 ## Plugin entry point
 
