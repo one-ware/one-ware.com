@@ -68,7 +68,7 @@ This also allows debugging your plugin directly in Rider.
       "name": "Run Plugin",
       "type": "coreclr",
       "request": "launch",
-      "program": "<full-path-to-OneWareStudio.exe>",
+      "program": "<path-to-your-OneWareStudio-executable>",
       "args": ["--modules", "./"],
       "cwd": "${workspaceFolder}\\src\\OneWare.MyExtension\\bin\\Debug\\net9.0",
       "stopAtEntry": false,
@@ -80,7 +80,7 @@ This also allows debugging your plugin directly in Rider.
 }
 ```
 
-> Replace `<full-path-to-OneWareStudio.exe>` with the actual path to your OneWareStudio executable.
+> Replace `<path-to-your-OneWareStudio-executable>` with the actual path to your OneWareStudio executable.
 
 #### 3. Add a Build Task
 
