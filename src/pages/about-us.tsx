@@ -3,6 +3,7 @@ import "aos/dist/aos.css";
 import Slider from "react-slick";
 import Layout from "@theme/Layout";
 import initWebsiteEffects from "../components/startEffects";
+import {JSX} from "react";
 
 export default function AboutUs(): JSX.Element {
   //initWebsiteEffects();

@@ -468,19 +468,19 @@
   },
   "theme.CodeBlock.wordWrapToggle": {
     "message": "Zeilenumbruch umschalten",
-    "description": "Der Titelattribut für die Schaltfläche zum Umschalten des Zeilenumbruchs im Codeblock"
+    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.DocSidebarItem.expandCategoryAriaLabel": {
     "message": "Seitenleistenkategorie '{label}' erweitern",
-    "description": "Die ARIA-Beschriftung zum Erweitern der Seitenleistenkategorie"
+    "description": "The ARIA label to expand the sidebar category"
   },
   "theme.DocSidebarItem.collapseCategoryAriaLabel": {
     "message": "Seitenleistenkategorie '{label}' einklappen",
-    "description": "Die ARIA-Beschriftung zum Einklappen der Seitenleistenkategorie"
+    "description": "The ARIA label to collapse the sidebar category"
   },
   "theme.NavBar.navAriaLabel": {
     "message": "Hauptnavigation",
-    "description": "Die ARIA-Beschriftung für die Hauptnavigation"
+    "description": "The ARIA label for the main navigation"
   },
   "theme.navbar.mobileLanguageDropdown.label": {
     "message": "Sprachen",
@@ -587,95 +587,95 @@
   },
   "theme.SearchModal.searchBox.resetButtonTitle": {
     "message": "Abfrage löschen",
-    "description": "Die Beschriftung und ARIA-Beschriftung für die Schaltfläche zum Zurücksetzen der Suchabfrage"
+    "description": "The label and ARIA label for search box reset button"
   },
   "theme.SearchModal.searchBox.cancelButtonText": {
     "message": "Abbrechen",
-    "description": "Die Beschriftung und ARIA-Beschriftung für die Schaltfläche zum Abbrechen der Suchabfrage"
+    "description": "The label and ARIA label for search box cancel button"
   },
   "theme.SearchModal.startScreen.recentSearchesTitle": {
     "message": "Kürzlich",
-    "description": "Der Titel für kürzlich durchgeführte Suchen"
+    "description": "The title for recent searches"
   },
   "theme.SearchModal.startScreen.noRecentSearchesText": {
     "message": "Keine kürzlichen Suchen",
-    "description": "Der Text, wenn keine kürzlichen Suchen vorhanden sind"
+    "description": "The text when no recent searches"
   },
   "theme.SearchModal.startScreen.saveRecentSearchButtonTitle": {
     "message": "Diese Suche speichern",
-    "description": "Die Beschriftung für die Schaltfläche zum Speichern einer kürzlichen Suche"
+    "description": "The label for save recent search button"
   },
   "theme.SearchModal.startScreen.removeRecentSearchButtonTitle": {
     "message": "Diese Suche aus dem Verlauf entfernen",
-    "description": "Die Beschriftung für die Schaltfläche zum Entfernen einer kürzlichen Suche"
+    "description": "The label for remove recent search button"
   },
   "theme.SearchModal.startScreen.favoriteSearchesTitle": {
     "message": "Favoriten",
-    "description": "Der Titel für Favoritensuchen"
+    "description": "The title for favorite searches"
   },
   "theme.SearchModal.startScreen.removeFavoriteSearchButtonTitle": {
     "message": "Diese Suche aus den Favoriten entfernen",
-    "description": "Die Beschriftung für die Schaltfläche zum Entfernen einer Favoritensuche"
+    "description": "The label for remove favorite search button"
   },
   "theme.SearchModal.errorScreen.titleText": {
     "message": "Ergebnisse konnten nicht abgerufen werden",
-    "description": "Der Titel für den Fehlerbildschirm des Suchmodals"
+    "description": "The title for error screen of search modal"
   },
   "theme.SearchModal.errorScreen.helpText": {
     "message": "Überprüfen Sie Ihre Netzwerkverbindung.",
-    "description": "Der Hilfetext für den Fehlerbildschirm des Suchmodals"
+    "description": "The help text for error screen of search modal"
   },
   "theme.SearchModal.footer.selectText": {
     "message": "zum Auswählen",
-    "description": "Der erklärende Text für die Aktion der Eingabetaste"
+    "description": "The explanatory text of the action for the enter key"
   },
   "theme.SearchModal.footer.selectKeyAriaLabel": {
     "message": "Eingabetaste",
-    "description": "Die ARIA-Beschriftung für die Eingabetaste, die die Auswahl trifft"
+    "description": "The ARIA label for the Enter key button that makes the selection"
   },
   "theme.SearchModal.footer.navigateText": {
     "message": "zum Navigieren",
-    "description": "Der erklärende Text für die Aktion der Pfeiltasten nach oben und unten"
+    "description": "The explanatory text of the action for the Arrow up and Arrow down key"
   },
   "theme.SearchModal.footer.navigateUpKeyAriaLabel": {
     "message": "Pfeil nach oben",
-    "description": "Die ARIA-Beschriftung für die Pfeiltaste nach oben, die die Navigation durchführt"
+    "description": "The ARIA label for the Arrow up key button that makes the navigation"
   },
   "theme.SearchModal.footer.navigateDownKeyAriaLabel": {
     "message": "Pfeil nach unten",
-    "description": "Die ARIA-Beschriftung für die Pfeiltaste nach unten, die die Navigation durchführt"
+    "description": "The ARIA label for the Arrow down key button that makes the navigation"
   },
   "theme.SearchModal.footer.closeText": {
     "message": "zum Schließen",
-    "description": "Der erklärende Text für die Aktion der Escape-Taste"
+    "description": "The explanatory text of the action for Escape key"
   },
   "theme.SearchModal.footer.closeKeyAriaLabel": {
     "message": "Escape-Taste",
-    "description": "Die ARIA-Beschriftung für die Escape-Taste, die das Modal schließt"
+    "description": "The ARIA label for the Escape key button that close the modal"
   },
   "theme.SearchModal.footer.searchByText": {
     "message": "Suche durch",
-    "description": "Der Text erklärt, dass die Suche durch Algolia durchgeführt wird"
+    "description": "The text explain that the search is making by Algolia"
   },
   "theme.SearchModal.noResultsScreen.noResultsText": {
     "message": "Keine Ergebnisse für",
-    "description": "Der Text erklärt, dass es keine Ergebnisse für die folgende Suche gibt"
+    "description": "The text explains that there are no results for the following search"
   },
   "theme.SearchModal.noResultsScreen.suggestedQueryText": {
     "message": "Versuchen Sie, nach folgendem zu suchen",
-    "description": "Der Text für die vorgeschlagene Abfrage, wenn keine Ergebnisse für die folgende Suche gefunden werden"
+    "description": "The text for the suggested query when no results are found for the following search"
   },
   "theme.SearchModal.noResultsScreen.reportMissingResultsText": {
     "message": "Glauben Sie, dass diese Abfrage Ergebnisse liefern sollte?",
-    "description": "Der Text für die Frage, bei der der Benutzer denkt, dass Ergebnisse fehlen"
+    "description": "The text for the question where the user thinks there are missing results"
   },
   "theme.SearchModal.noResultsScreen.reportMissingResultsLinkText": {
     "message": "Lassen Sie es uns wissen.",
-    "description": "Der Text für den Link, um fehlende Ergebnisse zu melden"
+    "description": "The text for the link to report missing results"
   },
   "theme.SearchModal.placeholder": {
     "message": "Dokumente durchsuchen",
-    "description": "Der Platzhalter des Eingabefelds des DocSearch-Pop-up-Modals"
+    "description": "The placeholder of the input of the DocSearch pop-up modal"
   },
   "theme.blog.post.plurals": {
     "message": "Ein Post|{count} Posts",
@@ -691,42 +691,144 @@
   },
   "theme.blog.authorsList.pageTitle": {
     "message": "Autoren",
-    "description": "Der Titel der Autorenseite"
+    "description": "The title of the authors page"
   },
   "theme.blog.authorsList.viewAll": {
     "message": "Alle Autoren anzeigen",
-    "description": "Die Beschriftung des Links zur Autorenseite"
+    "description": "The label of the link targeting the blog authors page"
   },
   "theme.blog.author.noPosts": {
     "message": "Dieser Autor hat noch keine Beiträge geschrieben.",
-    "description": "Der Text für Autoren ohne Blogbeiträge"
+    "description": "The text for authors with 0 blog post"
   },
   "theme.contentVisibility.unlistedBanner.title": {
     "message": "Nicht gelistete Seite",
-    "description": "Der Titel des Banners für nicht gelistete Inhalte"
+    "description": "The unlisted content banner title"
   },
   "theme.contentVisibility.unlistedBanner.message": {
     "message": "Diese Seite ist nicht gelistet. Suchmaschinen werden sie nicht indexieren, und nur Benutzer mit einem direkten Link können darauf zugreifen.",
-    "description": "Die Nachricht des Banners für nicht gelistete Inhalte"
+    "description": "The unlisted content banner message"
   },
   "theme.contentVisibility.draftBanner.title": {
     "message": "Entwurfsseite",
-    "description": "Der Titel des Banners für Entwurfsinhalte"
+    "description": "The draft content banner title"
   },
   "theme.contentVisibility.draftBanner.message": {
     "message": "Diese Seite ist ein Entwurf. Sie ist nur in der Entwicklungsumgebung sichtbar und wird nicht in den Produktions-Build aufgenommen.",
-    "description": "Die Nachricht des Banners für Entwurfsinhalte"
+    "description": "The draft content banner message"
   },
   "theme.ErrorPageContent.tryAgain": {
     "message": "Erneut versuchen",
-    "description": "Die Beschriftung des Buttons, um es erneut zu versuchen, wenn ein Fehler von der React-Fehlergrenze abgefangen wurde"
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
   },
   "theme.common.skipToMainContent": {
     "message": "Zum Hauptinhalt springen",
-    "description": "Die Beschriftung für 'Zum Inhalt springen', die für Barrierefreiheit genutzt wird, um mit Tab-/Enter-Navigation schnell zum Hauptinhalt zu gelangen"
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
   },
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
-    "description": "Der Titel der Seite mit der Liste aller Tags"
+    "description": "The title of the tag list page"
+  },
+  "positions.hiring": {
+    "message": "Wir suchen"
+  },
+  "positions.join.1": {
+    "message": "Werde noch heute Teil des"
+  },
+  "positions.join.2": {
+    "message": "Teams!"
+  },
+  "positions.cta": {
+    "message": "Wenn du an einer der Positionen interessiert bist, schicke uns deinen Lebenslauf und eine kurze Vorstellung an"
+  },
+  "positions.openJobscounter.1": {
+    "message": "Stelle"
+  },
+  "positions.openJobscounter.2": {
+    "message": "Stellen"
+  },
+  "table.role": {
+    "message": "Position"
+  },
+  "table.type": {
+    "message": "Typ"
+  },
+  "table.location": {
+    "message": "Ort"
+  },
+  "job.title.software-engineer.1":{
+    "message":".ASP.NET / Blazor Developer"
+  },
+  "job.description.software-engineer.1":{
+    "message":"Hilf uns, die ONE WARE Cloud aufzubauen und zu pflegen"
+  },
+   "job.url.software-engineer.1":{
+    "message":"/career/OneWare_NET_WebDeveloper_Deutsch.pdf"
+  },
+  "job.type.software-engineer.1":{
+    "message":"Vollzeit"
+  },
+   "job.location.software-engineer.1":{
+    "message":"Osnabrück - Remote"
+  },
+  "job.title.software-engineer.2":{
+    "message":".NET Desktop Developer (Avalonia / WPF)"
+  },
+  "job.description.software-engineer.2":{
+    "message":"Hilf uns, die ONE WARE Studio Desktop-Anwendung zu Entwickeln"
+  },
+  "job.url.software-engineer.2":{
+    "message":"/career/OneWare_NET_DesktopDeveloper_Deutsch.pdf"
+  },
+  "job.type.software-engineer.2":{
+    "message":"Vollzeit"
+  },
+  "job.location.software-engineer.2":{
+    "message":"Osnabrück - Remote"
+  },
+  "job.title.ai-engineer.1":{
+    "message":"AI Developer"
+  },
+  "job.description.ai-engineer.1":{
+    "message":"Hilf uns ONE AI zu verbessern"
+  },
+  "job.url.ai-engineer.1":{
+    "message":"/career/OneWare_AI_Developer_Deutsch.pdf"
+  },
+  "job.type.ai-engineer.1":{
+    "message":"Vollzeit"
+  },
+  "job.location.ai-engineer.1":{
+    "message":"Osnabrück - Remote"
+  },
+  "job.title.ai-engineer.2":{
+    "message":"AI Developer (FPGA)"
+  },
+  "job.description.ai-engineer.2":{
+    "message":"Hilf uns, ONE AI auf FPGAs zu integrieren"
+  },
+  "job.url.ai-engineer.2":{
+    "message":"/career/OneWare_AI_Developer_FPGA_Deutsch.pdf"
+  },
+  "job.type.ai-engineer.2":{
+    "message":"Vollzeit"
+  },
+  "job.location.ai-engineer.2":{
+    "message":"Osnabrück - Remote"
+  },
+  "job.title.ai-engineer.3":{
+    "message":"AI Developer Microcontrollers / TF Lite"
+  },
+  "job.description.ai-engineer.3":{
+    "message":"Hilf uns, ONE AI auf Microcontrollers / TF Lite zu integrieren"
+  },
+  "job.url.ai-engineer.3":{
+    "message":"/career/OneWare_AI_Developer_MicrocontrollerITF_Lite_Deutsch.pdf"
+  },
+  "job.type.ai-engineer.3":{
+    "message":"Vollzeit"
+  },
+  "job.location.ai-engineer.3":{
+    "message":"Osnabrück - Remote"
   }
 }
