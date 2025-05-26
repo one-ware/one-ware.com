@@ -83,7 +83,7 @@ const locale =  i18n.currentLocale;
                         <React.Fragment key={id}>
                           <tr
                             onClick={() =>
-                              openLinkInNewWindow(`/career/${locale}/${url}`)
+                              openLinkInNewWindow(require(`@site/static/career/${locale}/${url}`).default)
                             }
                             className="cursor-pointer hover:bg-zinc-700 "
                           >
