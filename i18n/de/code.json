@@ -48,28 +48,28 @@
     "message": "Jede Aufgabe. Jede Hardware. Jede Branche. ONE Software."
   },
   "oneai.slider.capture": {
-    "message": "Aufnehmen und Beschriften"
+    "message": "Erfassen und Beschriften"
   },
   "oneai.slider.capture.description": {
-    "message": "Nehmen Sie nur wenige Bilder auf, beschriften Sie sie – ONE AI erledigt den Rest. ONE AI benötigt nur einen kleinen Datensatz, um ein voll funktionsfähiges KI-Modell zu liefern. Die adaptive Architektur passt sich automatisch Ihren Daten an."
+    "message": "Einfach ein paar Bilder aufnehmen und labeln – ONE AI übernimmt den Rest. Schon ein kleiner Datensatz genügt, um ein voll funktionsfähiges KIModell zu erstellen. Die adaptive Architektur passt sich automatisch den Daten an."
   },
   "oneai.slider.guide": {
-    "message": "Anleiten und Auswählen"
+    "message": "„Vorgeben und Auswählen"
   },
   "oneai.slider.guide.description": {
-    "message": "Nutzen Sie unseren intuitiven und visuellen Prozess, um der KI beizubringen, was wichtig ist, wo sie generalisieren und was sie vorhersagen soll. Sie können Ihre genauen Hardware- und Leistungsanforderungen angeben und dann ONE AI das perfekte Modell für Ihre Bedürfnisse erstellen lassen."
+    "message": "Nutze unseren intuitiven und visuellen Prozess, um der KI zu zeigen, was wichtig ist – welche Merkmale relevant sind, wo generalisiert werden soll und was vorhergesagt werden muss. Anhand definierter Hardware- und Leistungsanforderungen erstellt ONE AI automatisch ein passgenaues Modell."
   },
   "oneai.slider.train": {
     "message": "Vorhersagen und Trainieren"
   },
   "oneai.slider.train.description": {
-    "message": "Nachdem Sie das Training gestartet haben, generiert ONE AI automatisch ein individuelles neuronales Netzwerk für Ihre Hardware und Anwendung. Die KI trainiert dann mit Ihren Daten, lernt aber nur das Wesentliche. Das sorgt für höchste Leistung und Genauigkeit."
+    "message": "Nach dem Start des Trainings generiert ONE AI automatisch ein neuronales Netzwerk – individuell zugeschnitten auf Hardware und Anwendung.  Das Modell trainiert gezielt mit den bereitgestellten Daten und konzentriert sich dabei ausschließlich auf das Wesentliche."
   },
   "oneai.slider.deploy": {
-    "message": "Testen und Ausrollen"
+    "message": "Testen und Implementieren"
   },
   "oneai.slider.deploy.description": {
-    "message": "Während des Trainings und Testens verhält sich die KI bereits wie auf Ihrer Zielhardware. Egal ob FPGA, Mikrocontroller, GPU, CPU oder TPU – wenn Sie mit den Ergebnissen zufrieden sind, können Sie die KI als plattformübergreifende Anwendung, universellen HDL-Code, C++-Projekt oder ONNX/TF/TF-Lite-Modell exportieren."
+    "message": "Während des Trainings und Testens verhält sich die KI bereits wie auf der Zielhardware. Egal ob FPGA, Mikrocontroller, GPU, CPU oder TPU – wenn die Ergebnisse überzeugen, lässt sich die KI als plattformübergreifende Anwendung, HDLCode, C++-Projekt oder ONNX-/TF-/TF-Lite-Modell implementieren."
   },
   "oneai.hero.start": {
     "message": "Die"
@@ -87,46 +87,46 @@
     "message": "ONE AI"
   },
   "oneai.hero.cta.join": {
-    "message": "Warteliste beitreten"
+    "message": "Zur Warteliste"
   },
   "oneai.hero.cta.contact": {
-    "message": "Kontaktieren Sie uns"
+    "message": "Kontakt aufnehmen"
   },
   "oneai.compare.heading": {
-    "message": "Rüsten Sie nicht Ihre Hardware auf – Rüsten Sie Ihre KI auf!"
+    "message": "Warum neue Hardware kaufen? Rüste die KI auf – nicht die Chips. "
   },
   "oneai.compare.subheading": {
-    "message": "ONE AI übertifft die Performance der modernsten KI-Hardware, sogar auf Jahrzehnte alten Chips!"
+    "message": "ONE AI liefert High-End-Leistung – selbst auf Hardware von gestern. "
   },
   "oneai.compare.whitepaper": {
-    "message": "Lesen Sie das Whitepaper von unserem Partner Altera"
+    "message": "Lese im Whitepaper von Altera,"
   },
   "oneai.compare.benchmark": {
-    "message": "und sehen Sie, wie Alteras MAX® 10 jetzt Nvidias Jetson Orin Nano übertrifft mit:"
+    "message": "wie der MAX® 10 moderne KI-Beschleuniger den Jetson Orin Nano von Nvidia schlägt."
   },
   "oneai.compare.cta.whitepaper": {
-    "message": "Whitepaper lesen"
+    "message": "Zum Whitepaper"
   },
   "oneai.compare.cta.waitlist": {
-    "message": "ONE AI Warteliste beitreten"
+    "message": "Zur ONE AI Warteliste"
   },
   "oneai.showcase.title.1": {
-    "message": "Basis-Modelle"
+    "message": "Komplexe Herausforderungen"
   },
   "oneai.showcase.title.2": {
-    "message": "waren nicht für Sie gemacht."
+    "message": "verlangen mehr als Standard-KI."
   },
   "oneai.showcase.title.3": {
-    "message": "Erstellt Modelle, die es sind."
+    "message": "liefert die Antwort."
   },
   "oneai.showcase.desc.1": {
-    "message": "Mit ONE AI erhalten Sie immer ein"
+    "message": "In Sekunden generiert ONE AI"
   },
   "oneai.showcase.desc.2": {
-    "message": "individuelles neuronales Netzwerk in Sekunden"
+    "message": "ein neuronales Netzwerk,"
   },
   "oneai.showcase.desc.3": {
-    "message": "das genau zu Ihren Hardware-, Leistungs- und Einsatzanforderungen passt."
+    "message": "das genau auf Hardware-, Performance- und Anwendungsanforderungen zugeschnitten ist."
   },
   "studio.slider.codeAssistant.title": {
     "message": "Code-Assistent"
@@ -243,34 +243,34 @@
     "message": "Erweiterungen"
   },
   "studio.extension.title.2": {
-    "message": "Für alle Ihre Bedürfnisse!"
+    "message": "für individuelle Anforderungen!"
   },
   "studio.extension.description.1": {
-    "message": "ONE WARE Studio-Erweiterungen ermöglichen es Ihnen,"
+    "message": "ONE WARE Studio-Erweiterungen bieten"
   },
   "studio.extension.description.2": {
-    "message": "Ihre Erfahrung anzupassen"
+    "message": "flexible Möglichkeiten,"
   },
   "studio.extension.description.3": {
-    "message": "um alle Ihre Entwicklungsanforderungen zu erfüllen. Fügen Sie benutzerdefinierte Hardware als"
+    "message": "um verschiedenste Entwicklungsanforderungen abzudecken. So lassen sich beispielsweise benutzerdefinierte Hardware als"
   },
   "extension.description.4": {
-    "message": "digitalen Zwilling"
+    "message": "digitale Zwillinge"
   },
   "extension.description.5": {
-    "message": "hinzu, machen Sie"
+    "message": "integrieren,"
   },
   "extension.description.6": {
     "message": "KI"
   },
   "studio.extension.description.7": {
-    "message": "Integration einfacher oder fügen Sie Unterstützung für Ihr bevorzugtes"
+    "message": "-Anbindungen unkompliziert umsetzen oder weitere"
   },
   "studio.extension.description.8": {
     "message": "Simulations"
   },
   "studio.extension.description.9": {
-    "message": "tool hinzu."
+    "message": "-Tools einbinden."
   },
   "contactus.headline": {
     "message": "Interessiert? Kontaktieren Sie uns!"
@@ -282,10 +282,10 @@
     "message": "Senden"
   },
   "homepage.features.oneai": {
-    "message": "Sehen Sie, wie ONE AI individuelle neuronale Netzwerke in Sekunden erstellt, die genau zu Ihren Hardware-, Leistungs- und Anwendungsanforderungen passen."
+    "message": "Entdecke ONE AI – neuronale Netzwerke, die in Sekunden erstellt und exakt auf Hardware-, Performance- und Anwendungsanforderungen zugeschnitten sind"
   },
   "homepage.features.onewarestudio": {
-    "message": "Sehen Sie, wie Sie KI in Ihre eingebetteten Systeme integrieren und die Entwicklung mit ONE WARE Studio beschleunigen können."
+    "message": "Entdecke, wie ONE WARE Studio die KI-Integration in Embedded Systems vereinfacht und die Entwicklung beschleunigt"
   },
   "theme.ErrorPageContent.title": {
     "message": "Die Seite ist abgestürzt.",
