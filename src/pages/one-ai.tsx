@@ -89,7 +89,7 @@ function HomepageHeader() {
         <div className="flex">
           <div className="flex-col max-w-3xl m-5 mt-10">
             <div className="text-center mt-10">
-              <h1 className="font-medium md:text-4xl">
+              <h1 className="font-medium text-2xl md:text-4xl">
                 <Translate id="oneai.hero.start">The</Translate>{" "}
                 <span className="primary-text font-bold">
                   <Translate id="oneai.hero.highlight1">Next Generation</Translate>
@@ -105,14 +105,14 @@ function HomepageHeader() {
 
               <div className="flex-col md:space-x-5 mb-10">
                 <Link
-                  className="mt-5 button button--primary button--lg hidden md:inline-block"
+                  className="mt-5 button button--primary button--lg text-sm md:text-lg"
                   href="https://forms.office.com/e/J3HDid9fzw"
                 >
                   <Translate id="oneai.hero.cta.join">Join Waitlist</Translate>
                 </Link>
 
                 <Link
-                  className="mt-5 button button--primary button--outline button--lg"
+                  className=" mt-5 button button--primary button--outline button--lg text-sm md:text-lg"
                   href="#contact"
                 >
                   <Translate id="oneai.hero.cta.contact">Contact Us</Translate>

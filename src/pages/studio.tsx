@@ -7,8 +7,6 @@ import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import initWebsiteEffects from "../components/startEffects";
 import ContactUs from "../components/ContactUs";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadFull } from "tsparticles";
 import Translate, { translate } from "@docusaurus/Translate";
 
 import { SiApple } from "react-icons/si";
@@ -138,7 +136,7 @@ function HomepageHeader() {
         <div className="flex">
           <div className="flex-col max-w-3xl m-5 mt-10">
             <div className="text-center mt-10">
-              <h1 className="font-medium md:text-4xl">
+              <h1 className="font-medium text-2xl md:text-4xl">
                 <Translate id="studio.homepage.hero.title.1">The</Translate>{" "}
                 <span className="primary-text font-bold">
                   <Translate id="studio.homepage.hero.title.2">
@@ -156,7 +154,7 @@ function HomepageHeader() {
 
               <div className="flex-col md:space-x-5 mb-10">
                 <Link
-                  className="mt-5 button button--primary button--lg hidden md:inline-block"
+                  className="mt-5 button button--primary button--lg hidden md:inline-block text-sm md:text-lg"
                   href="/docs/studio/setup"
                 >
                   Download
