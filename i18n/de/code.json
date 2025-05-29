@@ -54,7 +54,7 @@
     "message": "Einfach ein paar Bilder aufnehmen und labeln – ONE AI übernimmt den Rest. Schon ein kleiner Datensatz genügt, um ein voll funktionsfähiges KIModell zu erstellen. Die adaptive Architektur passt sich automatisch den Daten an."
   },
   "oneai.slider.guide": {
-    "message": "„Vorgeben und Auswählen"
+    "message": "Vorgeben und Auswählen"
   },
   "oneai.slider.guide.description": {
     "message": "Nutze unseren intuitiven und visuellen Prozess, um der KI zu zeigen, was wichtig ist – welche Merkmale relevant sind, wo generalisiert werden soll und was vorhergesagt werden muss. Anhand definierter Hardware- und Leistungsanforderungen erstellt ONE AI automatisch ein passgenaues Modell."
