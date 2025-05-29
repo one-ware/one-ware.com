@@ -52,11 +52,11 @@ function HomepageHeader() {
 
         <div className="flex flex-col justify-center items-center text-2xl md:text-3xl font-bold drop-shadow-4xl text-gray-300 mt-6 text-center pointer-events-none">
           <span className="block mb-2">
-            <Translate id="homepage.subtitle">The Only Platform to Outperform Human AI Experts -</Translate>
+            <Translate id="homepage.subtitle">The Only AI Platform to Outperform Experts in Seconds —</Translate>
           </span>
           <span className="primary-text block">
             <Translate id="homepage.subtitle.ai">
-              Instantly and for Everyone
+              Enabling Anyone to Build Tailored AI
             </Translate>
           </span>
         </div>
