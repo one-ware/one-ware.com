@@ -57,6 +57,8 @@
   --docsearch-highlight-color: var(--ifm-color-primary-dark);
 }
 
+
+
 .footer{
   --ifm-footer-background-color: var(--ifm-navbar-background-color);
 }

@@ -12,10 +12,10 @@
     "message": "Branche."
   },
   "homepage.subtitle": {
-    "message": "Lernen Sie den weltweit ersten"
+    "message": "Die einzige Plattform, die menschliche KI-Experten übertrifft -"
   },
   "homepage.subtitle.ai": {
-    "message": "KI-gestützten KI-Entwickler kennen"
+    "message": "In Sekunden und für Jeden"
   },
   "homepage.subtitle.ai.buttonGenerate": {
     "message": "Erstelle deine eigene KI"
@@ -282,7 +282,7 @@
     "message": "Senden"
   },
   "homepage.features.oneai": {
-    "message": "Entdecke ONE AI – neuronale Netzwerke, die in Sekunden erstellt und exakt auf Hardware-, Performance- und Anwendungsanforderungen zugeschnitten sind"
+    "message": "Entdecke ONE AI – neuronale Netzwerke, die in Sekunden erstellt und exakt auf die Anforderungen an Hardware, Performance und Anwendung zugeschnitten sind"
   },
   "homepage.features.onewarestudio": {
     "message": "Entdecke, wie ONE WARE Studio die KI-Integration in Embedded Systems vereinfacht und die Entwicklung beschleunigt"

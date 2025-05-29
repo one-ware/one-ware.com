@@ -201,7 +201,7 @@ function DownloadSection() {
     <div className="py-24 md:py-40 overflow-x-hidden">
       <div className="text-center container m-auto flex space-x-5 justify-center">
         <div className="flex-col flex text-center">
-          <h1 className="text-4xl md:text-5xl">
+          <h1 className="text-3xl md:text-5xl">
             <Translate id="studio.download.heading">Easy Setup!</Translate>
           </h1>
 
@@ -302,11 +302,11 @@ function DownloadSection() {
 function VendorSection() {
   return (
     <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
-      <h2 className="text-4xl md:text-5xl font-bold mb-10">
+      <h2 className="text-3xl md:text-5xl font-bold mb-10">
         <Translate id="studio.vendor.title">Use any Hardware!</Translate>
       </h2>
 
-      <h5 className="text-2xl md:text-3xl font-normal">
+      <h5 className="text-xl md:text-3xl font-normal">
         <Translate id="studio.vendor.subtitle.1">
           Our goal is to provide first level support for
         </Translate>{" "}
@@ -330,17 +330,17 @@ function VendorSection() {
 function Extension() {
   return (
     <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
-      <h1 className="text-4xl md:text-5xl font-bold">
+      <h1 className="text-3xl md:text-5xl font-bold">
         <span className="primary-text font-bold">
           <Translate id="studio.extension.title.1">Extensions</Translate>{" "}
         </span>
         <Translate id="studio.extension.title.2"> For All Your Needs!</Translate>
       </h1>
 
-      <div className="row mt-20 items-center">
+      <div className="row mt-10 items-center">
         <div className="col flex">
           <p
-            className="text-2xl font-normal md:text-left p-0 m-0"
+            className="text-xl md:text-2xl font-normal md:text-left p-0 m-0"
             data-aos="slide-right"
           >
             <Translate id="studio.extension.description.1">
@@ -374,7 +374,7 @@ function Extension() {
           </p>
         </div>
 
-        <div className="col items-center">
+        <div className="col items-center mt-10 md:mt-0">
           <img
             src={require("@site/static/img/start/Elec_Studio.png").default}
             data-aos="slide-left"

@@ -103,16 +103,16 @@ function HomepageHeader() {
                 .
               </h1>
 
-              <div className="flex-col md:space-x-5 mb-10">
+              <div className="flex flex-row justify-center items-center space-x-3 md:space-x-5 mb-10">
                 <Link
-                  className="mt-5 button button--primary button--lg text-sm md:text-lg"
+                  className="button button--primary button--lg text-sm md:text-lg"
                   href="https://forms.office.com/e/J3HDid9fzw"
                 >
                   <Translate id="oneai.hero.cta.join">Join Waitlist</Translate>
                 </Link>
-
+                  
                 <Link
-                  className=" mt-5 button button--primary button--outline button--lg text-sm md:text-lg"
+                  className="button button--primary button--outline button--lg text-sm md:text-lg"
                   href="#contact"
                 >
                   <Translate id="oneai.hero.cta.contact">Contact Us</Translate>
@@ -132,19 +132,19 @@ function ComparisonSection() {
     <div className="py-24 md:py-40 overflow-x-hidden">
       <div className="text-center container m-auto flex space-x-5 justify-center">
         <div className="flex-col flex text-center">
-          <h1 className="text-4xl md:text-5xl">
+          <h1 className="text-2xl md:text-4xl">
             <Translate id="oneai.compare.heading">
               Don't Upgrade Your Hardware — Upgrade Your AI!
             </Translate>
           </h1>
 
-          <p className="text-3xl my-8 font-bold primary-text">
+          <p className="text-xl md:text-2xl my-8 font-bold primary-text">
             <Translate id="oneai.compare.subheading">
               ONE AI makes decade-old chips outperform todays leading edge AI hardware!
             </Translate>
           </p>
 
-          <p className="text-2xl font-normal">
+          <p className="text-md md:text-xl font-normal">
             <Translate id="oneai.compare.whitepaper">
               Read the Whitepaper from our Partner Altera
             </Translate>
@@ -197,7 +197,7 @@ function ComparisonSection() {
 function ShowcaseSection() {
   return (
     <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
-      <h2 className="text-4xl md:text-5xl font-bold mb-10">
+      <h2 className="text-2xl md:text-4xl font-bold mb-10">
         <Translate id="oneai.showcase.title.1">Foundation Models</Translate>{" "}
         <span className="primary-text">
           <Translate id="oneai.showcase.title.2">Weren't Built for You.</Translate>
@@ -207,7 +207,7 @@ function ShowcaseSection() {
         <Translate id="oneai.showcase.title.3">Creates Models That Are.</Translate>
       </h2>
 
-      <h5 className="text-2xl mb-16 md:text-3xl font-normal">
+      <h5 className="text-xl mb-16 md:text-2xl font-normal">
         <Translate id="oneai.showcase.desc.1">With ONE AI you always get a</Translate>{" "}
         <span className="primary-text">
           <Translate id="oneai.showcase.desc.2">custom neural network in seconds</Translate>

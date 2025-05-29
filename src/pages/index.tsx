@@ -50,13 +50,13 @@ function HomepageHeader() {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-center items-center text-2xl md:text-3xl font-bold drop-shadow-4xl text-gray-300 mt-6 text-center pointer-events-none">
-          <span className="block mb-2 md:mb-0">
-            <Translate id="homepage.subtitle">Meet the World's First</Translate>
+        <div className="flex flex-col justify-center items-center text-2xl md:text-3xl font-bold drop-shadow-4xl text-gray-300 mt-6 text-center pointer-events-none">
+          <span className="block mb-2">
+            <Translate id="homepage.subtitle">The Only Platform to Outperform Human AI Experts -</Translate>
           </span>
-          <span className="primary-text block md:inline md:ml-2">
+          <span className="primary-text block">
             <Translate id="homepage.subtitle.ai">
-              AI-Powered AI Developer
+              Instantly and for Everyone
             </Translate>
           </span>
         </div>
@@ -148,7 +148,7 @@ function PreviewSection() {
 function TestimonialsSection() {
   return (
     <div className="px-4 md:px-8 lg:px-12 max-w-screen-2xl mx-auto">
-      <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-200 mb-12">
+      <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-200 mb-12">
         <Translate id="testimonials.title">What Others Say About Us</Translate>
       </h2>
 

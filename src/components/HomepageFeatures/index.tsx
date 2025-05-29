@@ -15,7 +15,7 @@ export default function HomepageFeatures(): JSX.Element {
           className="md:p-5 flex-col flex gap-1 justify-center relative"
           data-aos="fade-right"
         >
-          <span className="text-3xl text-center md:text-left">
+          <span className="text-2xl md:text-3xl text-center md:text-left">
             <h2 className="primary-text text-4xl">ONE AI</h2>
             <p className="mb-5">
               <Translate id="homepage.features.oneai">
@@ -45,7 +45,7 @@ export default function HomepageFeatures(): JSX.Element {
           className="md:p-5 flex-col flex gap-1 justify-center relative"
           data-aos="fade-left"
         >
-          <span className="text-3xl text-center md:text-left">
+          <span className="text-2xl md:text-3xl text-center md:text-left">
             <h2 className="primary-text text-4xl">ONE WARE Studio</h2>
             <p className="mb-5">
               <Translate id="homepage.features.onewarestudio">
