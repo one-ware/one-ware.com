@@ -103,7 +103,7 @@ function HomepageHeader() {
                 .
               </h1>
 
-              <div className="flex flex-row justify-center items-center space-x-3 md:space-x-5 mb-10">
+              <div className="flex flex-col md:flex-row justify-center items-center space-y-3 md:space-y-0 md:space-x-5 mb-10">
                 <Link
                   className="button button--primary button--lg text-sm md:text-lg"
                   href="https://forms.office.com/e/J3HDid9fzw"
