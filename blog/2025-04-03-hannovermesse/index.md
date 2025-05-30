@@ -1,6 +1,6 @@
 ---
 slug: hannovermesse2025
-title: 🚀 From Nuremberg straight to Hannover!
+title: From Nuremberg straight to Hannover!
 authors: [adurmaz]
 tags:
   [

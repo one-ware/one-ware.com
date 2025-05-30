@@ -1,6 +1,6 @@
 ---
 slug: moonshots-moneten-recap
-title: Moonshots & Moneten Recap 🚀🌟
+title: Moonshots & Moneten Recap 🌟
 authors: [adurmaz]
 tags:
   [
@@ -13,7 +13,7 @@ tags:
   ]
 ---
 
-# "Moonshots & Moneten" Recap 🚀🌟
+# "Moonshots & Moneten" Recap 🌟
 
 ![OWL Startup Pitch](img/1739807380178.jpeg)
 

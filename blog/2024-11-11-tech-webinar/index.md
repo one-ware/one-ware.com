@@ -1,6 +1,6 @@
 ---
 slug: tech-webinar-ai-on-fpgas
-title: A Deep Dive into AI on FPGAs – Our Tech Webinar Experience 🚀
+title: A Deep Dive into AI on FPGAs – Our Tech Webinar Experience
 authors: [adurmaz]
 tags:
   [
