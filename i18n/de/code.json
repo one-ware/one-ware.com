@@ -830,5 +830,11 @@
   },
   "job.location.ai-engineer.3":{
     "message":"Osnabrück - Remote"
+  },
+  "aboutUs.1.text":{
+    "message":"Die Gründer"
+  },
+  "aboutUs.2.text":{
+    "message":"Das sind wir"
   }
 }

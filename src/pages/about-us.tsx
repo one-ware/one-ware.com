@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import Layout from "@theme/Layout";
 import initWebsiteEffects from "../components/startEffects";
 import {JSX} from "react";
+import Translate, { translate } from "@docusaurus/Translate";
 
 export default function AboutUs(): JSX.Element {
   //initWebsiteEffects();
@@ -13,10 +14,10 @@ export default function AboutUs(): JSX.Element {
       <main className="container mb-20">
         
         <div className="text-center max-w-5xl m-auto mt-16">
-        <h2 className="text-5xl font-bold mb-10">The Founders</h2>
+        <h2 className="text-5xl font-bold mb-10"><Translate id="aboutUs.1.text">The Founders</Translate></h2>
         <img src={require('@site/static/img/AboutUs/Team.jpeg').default} />
         <hr className="border-gray-400 my-8 mx-auto max-w-3xl mt-20 h-0.5" />
-        <div className="text-4xl mt-8 mb-5" >Who We Are</div>
+        <div className="text-4xl mt-8 mb-5" ><Translate id="aboutUs.2.text">Who We Are</Translate></div>
           <div className="md:grid md:grid-cols-4 text-center gap-10">
             <div className="mt-10">
               <div className="m-auto md:mt-0">
