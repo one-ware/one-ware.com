@@ -4,6 +4,12 @@ title: ONE WARE Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.21.3.0
+
+- Update Packages and Language Support
+- Extended Connectivity with OneWare Cloud
+- Small fixes and adjustments
+
 ## 0.21.2.0
 
 - Allow plugins to load additional plugins
