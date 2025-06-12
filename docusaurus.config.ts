@@ -115,6 +115,11 @@ const config: Config = {
               to: "/one-ai",
               label: "Overview",
             },
+            {
+              type: "doc",
+              docId: "one-ai/get-started",
+              label: "Get Started",
+            },
           ],
         },
         {

@@ -1,5 +1,7 @@
 ---
+id: get-started
 title: Getting Started with One AI for Object Detection
+sidebar_label: Get Started
 ---
 
 # Getting Started with One AI for Object Detection

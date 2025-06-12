@@ -1,5 +1,5 @@
 ---
-sidebar_label:  Overview
+sidebar_label:  Our Services
 ---
 # Our AI Services at OneWare
 
