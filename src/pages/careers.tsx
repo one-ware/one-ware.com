@@ -51,7 +51,7 @@ const locale =  i18n.currentLocale;
                 </h3>
                 <span className="inline-block px-4 py-1 primary-background text-black rounded-full text-sm uppercase">    
                     {positions.length}{" "}
-                    {positions.length === 1 ?  <Translate id="positions.openJobscounter.1">"Opening"</Translate> : <Translate id="positions.openJobscounter.2">"Openings"</Translate>}            
+                    {positions.length === 1 ?  <Translate id="positions.openJobscounter.1">Opening</Translate> : <Translate id="positions.openJobscounter.2">Openings</Translate>}            
                 </span>
               </div>
 
