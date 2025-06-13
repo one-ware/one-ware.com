@@ -50,7 +50,7 @@ Feel free to test around with the filter and augmentation settings. You can add 
 ![augmentations](/img/ai/one_ai_plugin/demos/potato_chip/chips_augmentations.jpg)
 
 ## Model Settings
-Now that we have set up our data processing pipeline, we configure the model settings. First, we need to specify the *Classification Type*. Since each image image has either the class *defective* or *non-defective*, we set it to *One Class per Image*. Next, we set the *Minimum FPS* to 20 and the *Maximum Memory Usage* at 10%.
+Now that we have set up our data processing pipeline, we configure the model settings. First, we need to specify the *Classification Type*. Since each image image has either the class *defective* or *non-defective*, we set it to *One Class per Image*. Next, we set the *Minimum FPS* to 20 and the *Maximum Memory Usage* to 10%.
 
 Afterwards, we provide some additional information on the characteristics of the data. First, we estimate the area the model needs to analyze to make a decision. In our example, it is enough for the model to see the burnt part of the potato chip. There is no need to analyze the whole chip. Other applications might require the model to see the whole object or even to look at the area surrounding the objects. We set the surrounding area to (10, 10) for small objects and to (30, 30) for large objects.
 
