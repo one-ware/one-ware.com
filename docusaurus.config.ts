@@ -123,7 +123,7 @@ const config: Config = {
             {
               type: "doc",
               docId: "ai/potato-chip-demo",
-              label: "Potato Chip Demo",
+              label: "Demo: Potato Chip Classification",
             },
           ],
         },

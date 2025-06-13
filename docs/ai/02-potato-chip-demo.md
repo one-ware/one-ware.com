@@ -1,9 +1,9 @@
 ---
 id: potato-chip-demo
 title: Getting Started with One AI for Object Detection
-sidebar_label: Potato Chip Demo
+sidebar_label: Demo: Potato Chip Classification
 ---
-# PepsiCo Lab Potato Chips Quality Control
+# Potato Chip Classification Demo
 
 ## About this Demo
 This demo showcases the usage of OneWare Studio and the OneAI Extension for a demo case. If you are unfamiliar with the OneAI Extension, we recommend to first take a look at our guide [Getting Started with One AI for Object Detection](/docs/ai/01-get-started.md).
@@ -16,12 +16,11 @@ Here are a few examples from the dataset:
 <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
     <img src="/img/ai/one_ai_plugin/demos/potato_chip/chips_non-defective_01.jpg" alt="chips_example_non-defective_01" style={{ width: '48%' }} />
     <img src="/img/ai/one_ai_plugin/demos/potato_chip/chips_non-defective_02.jpg" alt="chips_example_non-defective_02" style={{ width: '48%' }} />
-</div>
-
-<div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
     <img src="/img/ai/one_ai_plugin/demos/potato_chip/chips_defective_01.jpg" alt="chips_example_defective_01" style={{ width: '48%' }} />
     <img src="/img/ai/one_ai_plugin/demos/potato_chip/chips_defective_02.jpg" alt="chips_example_defective_02" style={{ width: '48%' }} />
 </div>
+
+We created a modified version of this dataset with scaled down images. We also added annotation files that are compatible with the current version of the OneAI Extension. You can download the dataset [here](https://github.com/one-ware/OneAI_demo_datasets/blob/main/Pepsico%20RnD%20Potato%20Lab%20Dataset%20512x512.zip).
 
 ## Setting up the Project
 First we need to create a new project by clicking on *File* > *New* > *Project*. To create a new AI Generator, click on *AI* > *Open AI Generator*, enter a name and select *Image Detection*.
@@ -44,7 +43,8 @@ In addition, we use the following augmentations:
 - Flip Augmentation: The flip augmentation randomly flips the image horizontally, vertically or in both dimensions. For this demo, we select both flips.
 - Resize Augmentation: The resize augmentation varies the scale of the images. We set it from 80% to 120% in both dimensions.
 - Color Augmentation: The color augmentation changes the brightness, contrast, saturation and hue of the image. It helps the model to be more robust against changes in lighting. We set the brightness adjustment to ±20, the contrast and saturation to (80, 120) and leave the hue unchanged at (0, 0).
-- Noise Augmentation: The noise augmentation reduces the image quality by adding a noise (Todo: what kind of noise?). We reduce the settings of this augmentation to 0% and 5%.
+- Noise Augmentation: The noise augmentation reduces the image quality by adding a noise. We reduce the settings of this augmentation to 0% and 5%.
+
 Feel free to test around with the filter and augmentation settings. You can add additional filters and augmentations, remove them or change their parameters. Remember to set the checkmarks in the list of augmentations to enable them.
 
 ![augmentations](/img/ai/one_ai_plugin/demos/potato_chip/chips_augmentations.jpg)
