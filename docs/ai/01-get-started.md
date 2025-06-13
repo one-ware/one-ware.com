@@ -9,25 +9,24 @@ sidebar_label: Get Started
 ## 1. Create a New Project
 Open the Project Creator by `File -> New -> Project`
 
-![New Project](/img/ai/one_ai_plugin/newProject.png)
+<img src="/img/ai/one_ai_plugin/newProject.png" alt="New Project" style={{ width: '40%' }} />
 
 ### Set Project options
 ![New Project Options](/img/ai/one_ai_plugin/setProjectOptions.png)
 
-You can change the following properties:
-- Name  
-- Template  
-- Location  
-- Toolchain  
-- Loader  
+You need to specify the name.
+Other settings are only important if you want to program an FPGA.<br/>
+You can find more infomation for that [here](/docs/studio/tutorials/create-project/)
 
 ---
 
-## 2. Initialize the AI-Generator
+## 2. Initialize the AI Project
+Make sure that the correct project is selected before you create a new AI project. <br/>
 Navigate to the **AI** tab and choose **“Open AI Generator”**.
+
 ![AI Generator Modal](/img/ai/one_ai_plugin/ai_generator_modal.png)
 
-Enter your **Project Name** and choose the **AI Type**. 
+Enter your **AI Project Name** and choose the **AI Type**. 
 
 **Note:** Currently, only “Image Detection” is available as the AI type.
 
@@ -44,7 +43,7 @@ Access the **Dataset** tab in your ONE AI workspace to prepare your visual train
 
 - Use **“Select Images”** to load files directly from your device.  
 - Select **“Camera Tool”** to capture and load images directly within ONE AI for real-time data collection.  
-- **Preview Size** - Adjust how images display in your workspace for efficient labeling.
+- Additional Settings - Use **Preview Size** to adjust how images display in your workspace for efficient labeling.
 
 ### 3.2 Choose Labeling Mode
 ![Label Mode](/img/ai/one_ai_plugin/label_mode.png)
@@ -57,11 +56,13 @@ Proper dataset organization is crucial for building reliable AI models. Follow t
 
 #### Training-Set
 The training set teaches your AI what to recognize - it's your model's foundation.  
-Use **70%** of your total dataset with properly labeled images. Include at least **50 images per class**. More variety means better real-world performance.
+Use about **70%** of your total dataset with properly labeled images. Idealy it sould include at least **50 images per class**. More variety means better real-world performance.
 
 #### Validation-Set
 The validation set monitors your model's performance on unseen data during training.  
-This evaluates performance without direct training involvement. Labels are required for monitoring and prevent overfitting while tracking generalization.
+This evaluates performance without direct training involvement. Labels are required for the validation set aswell to monitor the AI performance on unseen data while training.
+
+![Validation Setting](/img/ai/one_ai_plugin/val_setting.png)
 
 **Using Validation Split:** No separate validation images? Enable **"Use Validation Split"** to auto-divide your training set:
 - 20% for standard datasets  
@@ -73,6 +74,11 @@ The test set provides final performance evaluation after training.
 Keep this completely separate from training and validation data. Labels are optional but recommended. Make sure it represents real deployment conditions for objective accuracy measurement.
 
 > This organized approach ensures your AI model will be robust, accurate, and ready for real-world deployment with ONE AI.
+
+![Test Setting](/img/ai/one_ai_plugin/test_setting.png)
+
+If you don't have a separate test dataset, you can just use your images from the test or train dataset to test the AI.
+Because ONE AI doesn't use the validation dataset for hyperparameter settings and just to stop training when there is no more improvement, the results should not be too far off, if you use just the validation dataset.
 
 ### 3.4 Add Your Labels
 Open the **Labels** tab and create labels for each class you want to detect, like "defect" or "strawberry". Assign unique colors to make annotation faster and easier.
@@ -93,20 +99,16 @@ Open the **Labels** tab and create labels for each class you want to detect, lik
         <img src="/img/ai/one_ai_plugin/yolo_img_2.png" alt="yolo Image 2" style={{ width: '48%' }} />
     </div>
 
-**Simply put:**  
-- **Classification =** Choose category for whole image  
-- **Object Detection =** Draw boxes around objects to detect
-
 ---
 
 ## 4. Prefilters - Optimize Your Dataset
-Apply prefilters before or after augmentation to standardize your dataset and boost model performance.
+Apply prefilters before or after augmentation to optimize your dataset and boost model performance.
 
 ![Prefilter View](/img/ai/one_ai_plugin/prefilter_view.png)
 
 ### When to Use Prefilters
-- **Before Augmentation:** Standardize your raw dataset for consistent training data  
-- **After Augmentation:** Refine generated images to remove artifacts and improve quality  
+- **Before Augmentation:** Optimize your dataset for higher generalization and easier detection
+- **After Augmentation:** Some prefilters only represent real world performance if they are applied after augmentation
 
 ### Resize Filter
 
@@ -138,7 +140,7 @@ Eliminate visual clutter and zero in on your target areas. Focus on regions wher
 
 #### Frequency Filtering
 Simplify images while preserving critical details.  
-- **Highpass** - Sharpens edges and fine details for better object definition  
+- **Highpass** - Removes background and just focusses on changes in the image  
 - **Lowpass** - Smooths textures and removes visual noise that confuses models  
 
 
@@ -212,26 +214,32 @@ Add random noise to images to help the model become robust against real-world im
 ### Tune Model Complexity
 Optimize your model according to your specific requirements
 
-- **X Position** - Predict the x position of objects in the image  
-- **Y Position** - Predict the y position of objects in the image  
-- **Width** - Predict the width of objects in the image. Uncheck to make the AI more efficient and if a default size for the objects is enough.
-- **Height** - Predict the height of objects in the image. Uncheck to make the AI more efficient and if a default size for the objects is enough.
+In Classification Mode:
+- **Classification Type** - Select if all class types should be detected separatly or if the image always has one class
+
+In Annotation Mode:
+- **Prediction Type** - Select if the size and position of objects or only the position should be detected
+
+It is possible aswell to annotate objects in the dataset and then only train to detect the classes in the image or the one class of the image. Compared to classification labels, this helps ONE AI to predict the right AI model and you can experiment with more detection types
+
 - **X/Y Precision (%)** - Set the precision level for predicting coordinates  
-- **Allow Overlap**  
-  - For example, with a 100x100 image and a position precision of 10%, the prediction operates on a 10x10 grid  
-  - If two objects fall within the same grid cell, they are merged into one object when "Allow Overlap" is enabled  
-  - If disabled, ONE AI refines the grid to avoid overlap  
 - **Size Precision (%)** - Controls prediction of object sizes  
 - **Prioritize Precision** - Adjust the model's balance between false positives and false negatives  
 - **Minimum FPS** - Minimum predictions per second with selected hardware  
 - **Maximum Memory Usage (%)** - Percentage of memory used for weights and calculations 
+
+FPGA related:
+- **Maximum Multiplier Usage (%)** - Limit the amout of DSP elements that are used of your FPGA
+- **FPGA Clock Speed (MHz)** - Set the clock speed of you FPGA
   
     <img src="/img/ai/one_ai_plugin/model_settings.png" alt="Model Tune Settings" style={{ width: '70%' }} /> 
 ### Input Settings
 - **Estimated Surrounding Min Width (%)** - Estimate the minimum width of the area required to detect the smallest object correctly
 - **Estimated Surrounding Min Height (%)**  - Estimate the minimum height of the area required to detect the smallest object correctly.
-- **Estimated Surrounding Max Width (%)** -  Estimate the minimum width of the area required to detect the smallest object correctly
-- **Estimated Surrounding Max Height (%)**  - Estimate the maximum height of the area required to detect the smallest object correctly.
+- **Estimated Surrounding Max Width (%)** -  Estimate the minimum width of the area required to detect the biggest object correctly
+- **Estimated Surrounding Max Height (%)**  - Estimate the minimum height of the area required to detect the biggest object correctly.
+- **Same Class Difference** - Compare how different the objects in one class are
+- **Background Difference** - Compare how different the backgrounds are in the images
 - **Detect Simplicity (%)** - Estimate how easy it is to detect the object class
 
     <img src="/img/ai/one_ai_plugin/model_input_settings.png" alt="Model Input Settings" style={{ width: '70%' }} /> 
@@ -248,15 +256,12 @@ Choose the hardware that is used to run the AI model.
 - **hardwareType** - Select hardware type  
 - **Prioritize Speed Optimization** - Enable this if your hardware, such as an FPGA with limited internal RAM, requires efficient memory usage for higher accuracy with fewer model parameters.
 - **Compute Capability** - Specify the computational power of your hardware
-- **Compute Capability Unit**  
-  - GFLOPS (Giga Floating Point Operations Per Second)  
-  - TOPS (Tera Operations Per Second), especially for NPUs/ASICs  
 - **Prioritize Memory Optimization**  
-- **Memory Limit** - Define memory available  
-- **Memory Limit Unit** - For FPGA SRAM in bits, divide by 8000 to convert to KB  
+- **Memory Limit** - Define memory available 
 - **Optimize for Parallel Execution** - Enable for FPGA/ASIC parallel architectures  
 
-### Quantized Calculations
+**Quantized Calculations**
+
 Enable quantization to boost performance. This can slightly reduce accuracy but significantly increases speed. For most applications, especially on microcontrollers, TPUs, FPGAs, or ASICs, quantization is highly recommended 
 - **Bits per Value** - Set precision level for neural network calculations  
 
@@ -264,17 +269,24 @@ Enable quantization to boost performance. This can slightly reduce accuracy but 
 
 ## 10. Training
 
+> For these steps you need to be connected to the ONE AI Cloud
+
 Ensure that your training data is uploaded, labeled, and properly prepared. This includes applying any necessary prefilters and selecting the most effective augmentations. Once your data is ready, double-check your model and hardware settings before starting the training process
 
-### Sync  
 ### Create  
+
+You can use one project to train different AI models, so you can test our different configurations.
+
+<img src="/img/ai/one_ai_plugin/train.png" alt="Train" style={{ width: '100%' }} /> 
+
 ### Test  
+
+You can test the AI with your test data.
+
+<img src="/img/ai/one_ai_plugin/test.png" alt="Test" style={{ width: '100%' }} /> 
+
 ### Export  
 
 #### Create Tool
 Choose tool format based on target hardware and application needs.
-<img src="/img/ai/one_ai_plugin/export_tool.png" alt="Model Settings" style={{ width: '70%' }} /> 
-
-#### Export Type
-Select method for integrating AI model into the target system.
-<img src="/img/ai/one_ai_plugin/export_type.png" alt="Model Settings" style={{ width: '70%' }} /> 
+<img src="/img/ai/one_ai_plugin/export_tool.png" alt="Model Settings" style={{ width: '40%' }} /> 
