@@ -15,8 +15,8 @@ Open the Project Creator by `File -> New -> Project`
 ![New Project Options](/img/ai/one_ai_plugin/setProjectOptions.png)
 
 You need to specify the name.
-Other settings are only important if you want to program an FPGA.<br/>
-You can find more infomation for that [here](/docs/studio/tutorials/create-project/)
+The other settings are only important if you want to program an FPGA.<br/>
+You can find more infomation about that [here](/docs/studio/tutorials/create-project/).
 
 ---
 
@@ -56,29 +56,29 @@ Proper dataset organization is crucial for building reliable AI models. Follow t
 
 #### Training-Set
 The training set teaches your AI what to recognize - it's your model's foundation.  
-Use about **70%** of your total dataset with properly labeled images. Idealy it sould include at least **50 images per class**. More variety means better real-world performance.
+Use about **70%** of your total dataset with properly labeled images. Ideally it should include at least **50 images per class**. More variety means better real-world performance.
 
 #### Validation-Set
 The validation set monitors your model's performance on unseen data during training.  
-This evaluates performance without direct training involvement. Labels are required for the validation set aswell to monitor the AI performance on unseen data while training.
+This evaluates performance without direct training involvement. Labels are required for the validation set as well to monitor the AI performance on unseen data while training.
 
 ![Validation Setting](/img/ai/one_ai_plugin/val_setting.png)
 
-**Using Validation Split:** No separate validation images? Enable **"Use Validation Split"** to auto-divide your training set:
+**Using Validation Split:** If you don't have separate validation images, you can enable **"Use Validation Split"** to auto-divide your training set:
 - 20% for standard datasets  
 - 30% for small datasets  
 - 10% for large datasets  
 
 #### Test-Set
-The test set provides final performance evaluation after training.  
-Keep this completely separate from training and validation data. Labels are optional but recommended. Make sure it represents real deployment conditions for objective accuracy measurement.
+The test set provides a final performance evaluation after training.  
+Keep this completely separate from training and validation data. Labels are optional but recommended. Make sure it represents real deployment conditions for an objective accuracy measurement.
 
 > This organized approach ensures your AI model will be robust, accurate, and ready for real-world deployment with ONE AI.
 
 ![Test Setting](/img/ai/one_ai_plugin/test_setting.png)
 
-If you don't have a separate test dataset, you can just use your images from the test or train dataset to test the AI.
-Because ONE AI doesn't use the validation dataset for hyperparameter settings and just to stop training when there is no more improvement, the results should not be too far off, if you use just the validation dataset.
+If you don't have a separate test dataset, you can use the images from the train or validation dataset to test the AI.
+Because ONE AI only uses the validation dataset to stop the training when there is no more improvement and not for hyperparameter settings, the results should not be too far off, if you use the validation dataset for the final evaluation.
 
 ### 3.4 Add Your Labels
 Open the **Labels** tab and create labels for each class you want to detect, like "defect" or "strawberry". Assign unique colors to make annotation faster and easier.
@@ -140,8 +140,8 @@ Eliminate visual clutter and zero in on your target areas. Focus on regions wher
 
 #### Frequency Filtering
 Simplify images while preserving critical details.  
-- **Highpass** - Removes background and just focusses on changes in the image  
-- **Lowpass** - Smooths textures and removes visual noise that confuses models  
+- **Highpass** - Removes background and just focuses on changes in the image  
+- **Lowpass** - Smoothes textures and removes visual noise that confuses models  
 
 
     <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
@@ -155,7 +155,7 @@ Simplify images while preserving critical details.
 - **Color Space Conversion** - Switch between HSV and RGB for optimal color processing  
 - **Edge Sharpening** - Emphasizes object boundaries for clearer detection  
 - **Threshold Processing** - Creates high-contrast black and white images for specific applications  
-- **Dataset Normalization** - Balances pixel values across your entire dataset  
+- **Dataset Normalization** - Rescales the image's brightness so that the darkest pixels become black and the brightest pixels become white
 - **Channel Filtering** 
   
     <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
@@ -169,7 +169,7 @@ Simplify images while preserving critical details.
 
 ## 7. Augmentations
 
-Augmentation filters are applied during training with random values within specified ranges. Their purpose is to increase the diversity of training data, helping AI to generalize better.
+Augmentations are applied during training with random values within specified ranges. Their purpose is to increase the diversity of the training data, helping the AI to generalize better. By varying the training data it is possible to increase the size of the dataset without the need to record or annotate additional data. Furthermore, it is possible to make the AI model more robust against certain variations in the data by intentionally reproducing these variations with augmentations.
 
 ### Move Augmentation
 Shifts the image along the X and Y axes within a specified range to introduce positional variability.
@@ -192,7 +192,7 @@ Scales the image in different dimensions for better object size detection.
 <img src="/img/ai/one_ai_plugin/aug_resize.png" alt="Flip Augmentation" style={{ width: '40%' }} />
 
 ### Color Augmentation
-Enhance object detection by adjusting saturation, contrast, etc.
+Enhances object detection under varying lighting conditions by adjusting brightness, contrast, saturation and hue.
 
 <img src="/img/ai/one_ai_plugin/aug_color.png" alt="Color Augmentation" style={{ width: '40%' }} />
 
@@ -215,12 +215,12 @@ Add random noise to images to help the model become robust against real-world im
 Optimize your model according to your specific requirements
 
 In Classification Mode:
-- **Classification Type** - Select if all class types should be detected separatly or if the image always has one class
+- **Classification Type** - Select if all class types should be detected separately or if the image always has one class
 
 In Annotation Mode:
 - **Prediction Type** - Select if the size and position of objects or only the position should be detected
 
-It is possible aswell to annotate objects in the dataset and then only train to detect the classes in the image or the one class of the image. Compared to classification labels, this helps ONE AI to predict the right AI model and you can experiment with more detection types
+It is possible as well to annotate objects in the dataset and then only train to detect the classes in the image or the one class of the image. Compared to classification labels, this helps ONE AI to predict the right AI model and you can experiment with more detection types
 
 - **X/Y Precision (%)** - Set the precision level for predicting coordinates  
 - **Size Precision (%)** - Controls prediction of object sizes  
@@ -235,34 +235,41 @@ FPGA related:
     <img src="/img/ai/one_ai_plugin/model_settings.png" alt="Model Tune Settings" style={{ width: '70%' }} /> 
 ### Input Settings
 - **Estimated Surrounding Min Width (%)** - Estimate the minimum width of the area required to detect the smallest object correctly
-- **Estimated Surrounding Min Height (%)**  - Estimate the minimum height of the area required to detect the smallest object correctly.
-- **Estimated Surrounding Max Width (%)** -  Estimate the minimum width of the area required to detect the biggest object correctly
-- **Estimated Surrounding Max Height (%)**  - Estimate the minimum height of the area required to detect the biggest object correctly.
+- **Estimated Surrounding Min Height (%)**  - Estimate the minimum height of the area required to detect the smallest object correctly
+- **Estimated Surrounding Max Width (%)** -  Estimate the minimum width of the area required to detect the largest object correctly
+- **Estimated Surrounding Max Height (%)**  - Estimate the minimum height of the area required to detect the largest object correctly
 - **Same Class Difference** - Compare how different the objects in one class are
 - **Background Difference** - Compare how different the backgrounds are in the images
 - **Detect Simplicity (%)** - Estimate how easy it is to detect the object class
 
-    <img src="/img/ai/one_ai_plugin/model_input_settings.png" alt="Model Input Settings" style={{ width: '70%' }} /> 
+    <img src="/img/ai/one_ai_plugin/model_input_settings.png" alt="Model Input Settings" style={{ width: '70%' }} />
+
+In Classification Mode:
+- **Estimated Min Object Width (%)** - The width of the smallest object or area used for classification
+- **Estimated Min Object Height (%)** - The height of the smallest object or area used for classification
+- **Estimated Average Object Width (%)** - The width of the average object or area used for classification
+- **Estimated Average Object Height (%)** - The height of the average object or area used for classification
+- **Estimated Max Object Width (%)** - The width of the largest object or area used for classification
+- **Estimated Max Object Height (%)** - The height of the largest object or area used for classification
+- **Maximum Number of Features for Classification** - The maximum number of features used for classification
+- **Average Number of Features for Classification** - The average number of features used for classification
 ---
 
 ## 9. Hardware Settings
 
-Select or define hardware resources to help ONE AI with model prediction.
+Select or define hardware resources to create a model that is optimized for your hardware.
 
 ### Used Hardware
 Choose the hardware that is used to run the AI model.
 
 ### Advanced Settings
-- **hardwareType** - Select hardware type  
+- **Hardware Type** - Select the hardware type  
 - **Prioritize Speed Optimization** - Enable this if your hardware, such as an FPGA with limited internal RAM, requires efficient memory usage for higher accuracy with fewer model parameters.
 - **Compute Capability** - Specify the computational power of your hardware
 - **Prioritize Memory Optimization**  
-- **Memory Limit** - Define memory available 
-- **Optimize for Parallel Execution** - Enable for FPGA/ASIC parallel architectures  
-
-**Quantized Calculations**
-
-Enable quantization to boost performance. This can slightly reduce accuracy but significantly increases speed. For most applications, especially on microcontrollers, TPUs, FPGAs, or ASICs, quantization is highly recommended 
+- **Memory Limit** - Define the available memory  
+- **Optimize for Parallel Execution** - Enable this option for FPGA/ASIC parallel architectures  
+- **Quantized Calculations** - Enable quantization to boost performance. This can slightly reduce accuracy but significantly increases speed. For most applications, especially on microcontrollers, TPUs, FPGAs, or ASICs, quantization is highly recommended.
 - **Bits per Value** - Set precision level for neural network calculations  
 
 ---
@@ -275,7 +282,7 @@ Ensure that your training data is uploaded, labeled, and properly prepared. This
 
 ### Create  
 
-You can use one project to train different AI models, so you can test our different configurations.
+You can train different AI models for the same project, so you can test our different configurations.
 
 <img src="/img/ai/one_ai_plugin/train.png" alt="Train" style={{ width: '100%' }} /> 
 
@@ -288,5 +295,5 @@ You can test the AI with your test data.
 ### Export  
 
 #### Create Tool
-Choose tool format based on target hardware and application needs.
+Choose the tool format based on target hardware and application needs.
 <img src="/img/ai/one_ai_plugin/export_tool.png" alt="Model Settings" style={{ width: '40%' }} /> 
