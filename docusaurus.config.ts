@@ -117,13 +117,8 @@ const config: Config = {
             },
             {
               type: "doc",
-              docId: "ai/get-started",
+              docId: "one-ai/get-started",
               label: "Get Started",
-            },
-            {
-              type: "doc",
-              docId: "ai/potato-chip-demo",
-              label: "Demo: Potato Chip Classification",
             },
           ],
         },
