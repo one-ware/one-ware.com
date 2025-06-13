@@ -120,6 +120,11 @@ const config: Config = {
               docId: "ai/get-started",
               label: "Get Started",
             },
+            {
+              type: "doc",
+              docId: "ai/potato-chip-demo",
+              label: "Potato Chip Demo",
+            },
           ],
         },
         {
