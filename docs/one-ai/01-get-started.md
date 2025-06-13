@@ -7,7 +7,7 @@ sidebar_label: Get Started
 # Getting Started with One AI for Object Detection
 
 ## 1. Create a New Project
-Open the Project Creator by `File -> New -> Project`
+Open the Project Creator by clicking on `File -> New -> Project`
 
 <img src="/img/ai/one_ai_plugin/newProject.png" alt="New Project" style={{ width: '40%' }} />
 
@@ -47,18 +47,18 @@ Access the **Dataset** tab in your ONE AI workspace to prepare your visual train
 
 ### 3.2 Choose Labeling Mode
 ![Label Mode](/img/ai/one_ai_plugin/label_mode.png)
-- **Classification:** Just select the class of the images. If your images are already in folders that define the image class, the classification is done automatically.  
+- **Classification:** Selecting a single class for each image. If your images are already in folders that define the image class, the classification is done automatically.  
 - **Annotation:** Mark objects in the image by drawing boxes around objects/defects. Needed for object detection.
 
 ### 3.3 Dataset Organization for AI Training
 
 Proper dataset organization is crucial for building reliable AI models. Follow these steps to split your data effectively.
 
-#### Training-Set
+#### Training Set
 The training set teaches your AI what to recognize - it's your model's foundation.  
 Use about **70%** of your total dataset with properly labeled images. Ideally it should include at least **50 images per class**. More variety means better real-world performance.
 
-#### Validation-Set
+#### Validation Set
 The validation set monitors your model's performance on unseen data during training.  
 This evaluates performance without direct training involvement. Labels are required for the validation set as well to monitor the AI performance on unseen data while training.
 
@@ -69,9 +69,9 @@ This evaluates performance without direct training involvement. Labels are requi
 - 30% for small datasets  
 - 10% for large datasets  
 
-#### Test-Set
+#### Test Set
 The test set provides a final performance evaluation after training.  
-Keep this completely separate from training and validation data. Labels are optional but recommended. Make sure it represents real deployment conditions for an objective accuracy measurement.
+Keep this set completely separate from training and validation data. Labels are optional but recommended. Make sure it represents real deployment conditions for an objective accuracy measurement.
 
 > This organized approach ensures your AI model will be robust, accurate, and ready for real-world deployment with ONE AI.
 
@@ -167,7 +167,7 @@ Simplify images while preserving critical details.
 
 ---
 
-## 7. Augmentations
+## 5. Augmentations
 
 Augmentations are applied during training with random values within specified ranges. Their purpose is to increase the diversity of the training data, helping the AI to generalize better. By varying the training data it is possible to increase the size of the dataset without the need to record or annotate additional data. Furthermore, it is possible to make the AI model more robust against certain variations in the data by intentionally reproducing these variations with augmentations.
 
@@ -189,7 +189,7 @@ Apply random flips to increase diversity.
 ### Resize Augmentation
 Scales the image in different dimensions for better object size detection.
 
-<img src="/img/ai/one_ai_plugin/aug_resize.png" alt="Flip Augmentation" style={{ width: '40%' }} />
+<img src="/img/ai/one_ai_plugin/aug_resize.png" alt="Resize Augmentation" style={{ width: '40%' }} />
 
 ### Color Augmentation
 Enhances object detection under varying lighting conditions by adjusting brightness, contrast, saturation and hue.
@@ -209,7 +209,7 @@ Add random noise to images to help the model become robust against real-world im
 
 ---
 
-## 8. Model Settings
+## 6. Model Settings
 
 ### Tune Model Complexity
 Optimize your model according to your specific requirements
@@ -255,7 +255,7 @@ In Classification Mode:
 - **Average Number of Features for Classification** - The average number of features used for classification
 ---
 
-## 9. Hardware Settings
+## 7. Hardware Settings
 
 Select or define hardware resources to create a model that is optimized for your hardware.
 
@@ -274,7 +274,7 @@ Choose the hardware that is used to run the AI model.
 
 ---
 
-## 10. Training
+## 8. Training
 
 > For these steps you need to be connected to the ONE AI Cloud
 
@@ -282,7 +282,7 @@ Ensure that your training data is uploaded, labeled, and properly prepared. This
 
 ### Create  
 
-You can train different AI models for the same project, so you can test our different configurations.
+You can train different AI models for the same project, so you can test out different configurations.
 
 <img src="/img/ai/one_ai_plugin/train.png" alt="Train" style={{ width: '100%' }} /> 
 
