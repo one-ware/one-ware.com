@@ -4,6 +4,10 @@ title: ONE WARE Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.21.5.0
+
+- Fix window scaling issues
+
 ## 0.21.3.0
 
 - Update Packages and Language Support
