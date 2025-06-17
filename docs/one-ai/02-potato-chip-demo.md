@@ -28,7 +28,7 @@ To load the data, right click on the project folder and select *Open in File Man
 
 Since we want to train a classification model, we need to change the *Mode* from *Annotation* to *Classification*. Because we don't have a predefined validation split, we let ONE AI create a validation split from the training data. The required settings are in the *Validation* tab but are already activated by default.
 
-If you followed all the steps correctly, the images will show up in the *Train* and *Test* tab of the *Dataset* section. Make sure that the images have a green checkmark in the bottom left corner, which shows that they are annotated.
+If you followed all the steps correctly, the images will show up in the *Train* and *Test* tab of the *Dataset* section. Make sure that the images have a green checkmark in the bottom left corner, which shows that they are annotated. It is expected that the labels are named "Undefined Label", since we never specified a name. We can do so in the *Labels* tab or when viewing an annotation but it isn't necessary.
 
 ![loaded_dataset](/img/ai/one_ai_plugin/demos/potato_chip/chips_loaded_dataset.jpg)
 

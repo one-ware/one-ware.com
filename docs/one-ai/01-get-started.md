@@ -1,10 +1,10 @@
 ---
 id: get-started
-title: Getting Started with One AI for Object Detection
-sidebar_label: Get Started
+title: Getting Started with One AI
+sidebar_label: Getting Started
 ---
 
-# Getting Started with One AI for Object Detection
+# Getting Started with One AI
 
 ## 1. Create a New Project
 Open the Project Creator by clicking on `File -> New -> Project`
@@ -47,7 +47,7 @@ Access the **Dataset** tab in your ONE AI workspace to prepare your visual train
 
 ### 3.2 Choose Labeling Mode
 ![Label Mode](/img/ai/one_ai_plugin/label_mode.png)
-- **Classification:** Selecting a single class for each image. If your images are already in folders that define the image class, the classification is done automatically.  
+- **Classification:** Assigning one or more classes to each image.  
 - **Annotation:** Mark objects in the image by drawing boxes around objects/defects. Needed for object detection.
 
 ### 3.3 Dataset Organization for AI Training
@@ -121,7 +121,7 @@ Adjust image resolution based on your smallest target objects.
 
 Keep resolution high enough to preserve key details but avoid excessive size, as this increases prediction time and may reduce accuracy when the AI struggles with too much detail.
 
-### Essential Prefilters
+### Basic Prefilters
 
 #### Color Enhancement
 
@@ -132,9 +132,9 @@ Keep resolution high enough to preserve key details but avoid excessive size, as
 
 Make objects stand out when they blend into similar backgrounds. Boost saturation, contrast, brightness, and hue to create clear visual separation. Add threshold filtering for sharp background removal while preserving critical object features.
 
-#### Smart Cropping
+#### Cropping
 
-![Smart Crop](/img/ai/one_ai_plugin/smart_crop.png)
+![Cropping](/img/ai/one_ai_plugin/smart_crop.png)
 
 Eliminate visual clutter and zero in on your target areas. Focus on regions where objects consistently appear to cut background noise, sharpen detection accuracy, and accelerate training performance.
 
@@ -197,7 +197,7 @@ Enhances object detection under varying lighting conditions by adjusting brightn
 <img src="/img/ai/one_ai_plugin/aug_color.png" alt="Color Augmentation" style={{ width: '40%' }} />
 
 ### Frequency Augmentation
-Use high- and lowpass filters to reduce noise and improve generalization.
+Use high- and lowpass filters to sharpen edges or blur your images.
 
 <img src="/img/ai/one_ai_plugin/aug_frequency.png" alt="Frequency Augmentation" style={{ width: '40%' }} />
 
@@ -264,9 +264,9 @@ Choose the hardware that is used to run the AI model.
 
 ### Advanced Settings
 - **Hardware Type** - Select the hardware type  
-- **Prioritize Speed Optimization** - Enable this if your hardware, such as an FPGA with limited internal RAM, requires efficient memory usage for higher accuracy with fewer model parameters.
+- **Prioritize Speed Optimization** - Enable this if your hardware, such as a microcontroller, has limited computational capabilities and benefits from a prioritization of speed over memory usage.
 - **Compute Capability** - Specify the computational power of your hardware
-- **Prioritize Memory Optimization**  
+- **Prioritize Memory Optimization** - Enable this if your hardware, such as an FPGA with limited internal RAM, requires efficient memory usage for higher accuracy with fewer model parameters.
 - **Memory Limit** - Define the available memory  
 - **Optimize for Parallel Execution** - Enable this option for FPGA/ASIC parallel architectures  
 - **Quantized Calculations** - Enable quantization to boost performance. This can slightly reduce accuracy but significantly increases speed. For most applications, especially on microcontrollers, TPUs, FPGAs, or ASICs, quantization is highly recommended.
