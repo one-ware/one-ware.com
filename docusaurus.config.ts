@@ -99,7 +99,7 @@ const config: Config = {
     image: "/img/social-card.jpg",
     navbar: {
       logo: {
-        alt: "One Ware Logo",
+        alt: "ONE WARE",
         src: "img/start/Logo_SVG-ONE-ware.svg",
       },
       hideOnScroll: false,
