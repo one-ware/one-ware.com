@@ -47,3 +47,5 @@ Then, we estimate the variance of numbers from the same class. We observe quite 
 Now, it's time to set up the training configuration for the model. In the **Hardware Settings** tab we select the **Altera™ Max® 10 16K** as the **Used Hardware**.
 
 In the **Training** tab we need to click on **Sync** to synchronize our data and existing model trainings with the ONE WARE servers. After that, we create a new training configuration. For this demo, a **training time** of **10 minutes** is sufficient to fully train the model. We leave the **patience** at the default value of **30%**. Since we want to export the model to an FPGA, we **Enable Quantization Optimization** to increase its performance.
+
+Finally, we click on the **Train** button in the top-right corner to start the training. You can monitor the training progress in the **Logs** and **Statistics** tabs.
