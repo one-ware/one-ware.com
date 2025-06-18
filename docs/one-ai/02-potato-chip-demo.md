@@ -1,6 +1,6 @@
 ---
 id: potato-chip-demo
-title: Getting Started with One AI for Object Detection
+title: Potato Chip Classification Demo
 sidebar_label: Demo - Potato Chips
 ---
 # Potato Chip Classification Demo
