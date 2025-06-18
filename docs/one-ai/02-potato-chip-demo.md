@@ -62,3 +62,5 @@ Next we need to estimate the difference within the same class. There is some mod
 Lastly, we set up the parameters for the hardware and the model training. In the **Hardware Settings** tab we select the **Altera™ Max® 10 16K** as the **Used Hardware**. If you want to deploy your model to a different kind of hardware, you can set it up here.
 
 In the **Training** tab we need to click on **Sync** to synchronize our data and existing model trainings with the ONE WARE servers. After that, we click on **Create** to create a new training configuration. A **training time** of **30 minutes** is sufficient for this task. We leave the **patience** at the default value of **30%**, which will stop our training early if there are no further improvements to our model. Since we want to export the model to an FPGA, we **Enable Quantization Optimization** to increase its performance.
+
+Finally, we click on the **Train** button in the top-right corner to start the training. You can monitor the training progress in the **Logs** and **Statistics** tabs.
