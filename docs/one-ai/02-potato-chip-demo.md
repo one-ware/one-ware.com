@@ -1,6 +1,6 @@
 ---
 id: potato-chip-demo
-title: Getting Started with One AI for Object Detection
+title: Potato Chip Classification Demo
 sidebar_label: Demo - Potato Chips
 ---
 # Potato Chip Classification Demo
@@ -37,7 +37,7 @@ If you followed all the steps correctly, the images will show up in the **Train*
 ## Filters and Augmentations
 Now, we need to set up our data processing pipeline by specifying the filters and augmentations. Filters are applied once to every image and are the same every time. They are used to preprocess the images. Augmentations on the other hand contain random elements and are different for every image and epoch of the training. They are used to increase the size of the dataset without the need to record and annotate new data. Furthermore, augmentations can increase the model's robustness against variations in the data by intentionally reproducing these variations. OneWare Studio allows us to set up two sets of filters - one that is applied before the augmentations and one that is applied afterwards.
 
-For this demo we are using a **Resize Filter** that is set to **12.5%** to reduce the 512x512 images to 64x64. This allows us to reduce the size of the image and thus the required computations while still being able to distinguish key details. For this project, we don't need any further filters.
+For this demo we are using a **Resize Filter** that is set to **10%** to reduce the 512x512 images to 51x51. This allows us to reduce the size of the image and thus the required computations while still being able to distinguish key details. For this project, we don't need any further filters.
 
 In addition, we use the following augmentations:
 - **Move Augmentation**: This augmentation varies the image by shifting it. This makes the model more robust against shifts in the position of the potato chips. We set the amount of shift to **±15%** in both directions.
@@ -61,4 +61,6 @@ Next we need to estimate the difference within the same class. There is some mod
 ## Training the Model
 Lastly, we set up the parameters for the hardware and the model training. In the **Hardware Settings** tab we select the **Altera™ Max® 10 16K** as the **Used Hardware**. If you want to deploy your model to a different kind of hardware, you can set it up here.
 
-In the **Training** tab we need to click on **Sync** to upload our data to the ONE WARE servers. After that, we click on **Create** to create a new training configuration. A training time of 30 minutes is sufficient for this task. We leave the patience at the default value of 30% to ensure that the model is fully trained. Since we want to export the model to an FPGA, we **Enable Quantization Optimization** to increase its performance.
+In the **Training** tab we need to click on **Sync** to synchronize our data and existing model trainings with the ONE WARE servers. After that, we click on **Create** to create a new training configuration. A **training time** of **2 minutes** is already sufficient for this task. Since the training time for this example is so short, the setting for the **patience**, which will stop our training early if there are no further improvements, doesn't really matter. We can set it to **0%** or leave it at the default value of **30%**. Since we want to export the model to an FPGA, we **Enable Quantization Optimization** to increase its performance.
+
+Finally, we click on the **Train** button in the top-right corner to start the training. You can monitor the training progress in the **Logs** and **Statistics** tabs.
