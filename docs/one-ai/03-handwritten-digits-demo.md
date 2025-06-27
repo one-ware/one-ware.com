@@ -66,7 +66,7 @@ Finally, we click on the **Train** button in the top-right corner to start the t
 
 ---
 
-**Note:** The model export is still under development at the moment so you won't be able to follow this part of the demo yet, but this feature will be available soon. We provide an exported ONNX model that you can download [here](https://github.com/one-ware/OneAI_demo_datasets/blob/main/export/) instead. To use the model in the next chapter, right click on your project folder in OneWare Studio, select **Open in File Manager** and insert the model into the folder ``[selected_name]/Models``. You might need to restart OneWare Studio for the model to show up in the **Camera Tool**.
+**Note:** The model export is still under development at the moment so you won't be able to follow this part of the demo yet, but this feature will be available soon. We provide an exported ONNX model that you can download [here](https://github.com/one-ware/OneAI_demo_datasets/blob/main/export/onnx/nist_sd19.onnx) instead. To use the model in the next chapter, right click on your project folder in OneWare Studio, select **Open in File Manager** and insert the model into the folder ``[selected_name]/Models``. You might need to restart OneWare Studio for the model to show up in the **Camera Tool**.
 
 ---
 
