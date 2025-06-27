@@ -66,7 +66,7 @@ Finally, we click on the **Train** button in the top-right corner to start the t
 
 ---
 
-**Note:** The model export is still under development at the moment so you won't be able to follow this part of the demo yet, but this feature will be available soon. We provide an exported ONNX model that you can download [here](https://github.com/one-ware/OneAI_demo_datasets/blob/main/nist_sd19.onnx) instead. To use the model in the next chapter, right click on your project folder in OneWare Studio, select **Open in File Manager** and insert the model into the folder ``[selected_name]/Models``. You might need to restart OneWare Studio for the model to show up in the **Camera Tool**.
+**Note:** The model export is still under development at the moment so you won't be able to follow this part of the demo yet, but this feature will be available soon. We provide an exported ONNX model that you can download [here](https://github.com/one-ware/OneAI_demo_datasets/blob/main/export/) instead. To use the model in the next chapter, right click on your project folder in OneWare Studio, select **Open in File Manager** and insert the model into the folder ``[selected_name]/Models``. You might need to restart OneWare Studio for the model to show up in the **Camera Tool**.
 
 ---
 
@@ -79,7 +79,7 @@ The last check box allows us to select whether we want to export the last or the
 ![model_export](/img/ai/one_ai_plugin/demos/handwritten-digits/nist_sd19_export.jpg)
 
 ## Testing the Model
-Now it's time to test our trained model. To do so, we go back to the **Dataset** tab. In the top-right corner, we open the **Camera Tool**. Select your camera in the drop-down menu, then click on the plus icon to add it. Next, you need to change the camera's resolution by clicking on the gear icon and setting the **Width** and **Height** to **128** to match the resolution of our images. We also recommend turning on **Auto Exposure** further down in the settings.
+Now it's time to test our trained model. To do so, we go back to the **Dataset** tab. In the top-right corner, we open the **Camera Tool**. Select your camera in the drop-down menu, then click on the plus icon to add it. Next, you need to change the camera's resolution by clicking on the gear icon and setting the **Width** and **Height** to **128** to match the resolution of our images. If your camera doesn't support a resolution of 128x128, you can also select 640x480 and crop in the preview to a 20% x 27% image, so it gets about 128x128. We also recommend turning on **Auto Exposure** further down in the settings and try to increase brightness and contrast, so the paper is bright and the text on the paper is dark.
 
 ![camera_settings](/img/ai/one_ai_plugin/demos/handwritten-digits/nist_sd19_camera_settings.jpg)
 
