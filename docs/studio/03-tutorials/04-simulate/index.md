@@ -26,5 +26,3 @@ To use GHDL, download the [GHDL Extension](https://github.com/one-ware/OneWare.G
 
 You can select the simulator to use with your testbench in the testbench toolbar:
 ![Select Simulator](img/selectsimulator.png)
-
-There are many 
