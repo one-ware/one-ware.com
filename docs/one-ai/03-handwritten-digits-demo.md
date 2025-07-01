@@ -9,7 +9,7 @@ sidebar_label: Demo - Handwritten Digits
 This demo showcases the usage of OneWare Studio and the OneAI Extension for a demo case. If you are unfamiliar with the OneAI Extension, we recommend to first take a look at our guide [Getting Started with One AI for Object Detection](/docs/one-ai/01-get-started.md). We also recommend to read the [Potato Chip Classification Demo](/docs/one-ai/02-potato-chip-demo.md), since it goes into more detail than this demo.
 
 ## Dataset Overview
-The dataset for this demo can be downloaded [here](https://github.com/one-ware/OneAI_demo_datasets/blob/main/nist_sd19_subset.zip). It is a subset of the [NIST Special Database 19](https://www.nist.gov/srd/nist-special-database-19) and contains images of handwritten digits. The training set contains 3000 images, 300 for each digit, while the test set contains 500 images.
+The dataset for this demo can be downloaded [here](https://github.com/one-ware/OneAI_demo_datasets/blob/main/datasets/nist_sd19_subset_sorted.zip). It is a subset of the [NIST Special Database 19](https://www.nist.gov/srd/nist-special-database-19) and contains images of handwritten digits. The training set contains 3000 images, 300 for each digit, while the test set contains 500 images.
 
 Here are a few examples from the dataset:
 
@@ -66,7 +66,7 @@ Finally, we click on the **Train** button in the top-right corner to start the t
 
 ---
 
-**Note:** The model export is still under development at the moment so you won't be able to follow this part of the demo yet, but this feature will be available soon. We provide an exported ONNX model that you can download [here](https://github.com/one-ware/OneAI_demo_datasets/blob/main/export/onnx/nist_sd19.onnx) instead. To use the model in the next chapter, right click on your project folder in OneWare Studio, select **Open in File Manager** and insert the model into the folder ``[selected_name]/Models``. You might need to restart OneWare Studio for the model to show up in the **Camera Tool**.
+**Note:** The model export is still under development at the moment so you won't be able to follow this part of the demo yet, but this feature will be available soon. We provide an exported ONNX model that you can download [here](https://github.com/one-ware/OneAI_demo_datasets/blob/main/models/nist_sd19_sorted/onnx/nist_sd19_sorted.onnx) instead. To use the model in the next chapter, right click on your project folder in OneWare Studio, select **Open in File Manager** and insert the model into the folder ``[selected_name]/Models``. You might need to restart OneWare Studio for the model to show up in the **Camera Tool**.
 
 ---
 
@@ -86,3 +86,15 @@ Now it's time to test our trained model. To do so, we go back to the **Dataset**
 To test our model, we switch to the **Run Model** tab. In the drop-down menu in the top-left corner, we can select our trained model. We also need to select our camera in the top-right corner. Afterwards we click on the play-button on the top-left of the image to run the model. The predicted class will be shown on the bottom-right. You'll get the best results if you write your numbers on a white piece of paper without any markings and use a black pen with a thick line width.
 
 ![model_prediction](/img/ai/one_ai_plugin/demos/handwritten-digits/nist_sd19_prediction.jpg)
+
+## Room for Improvement
+
+You might have noticed that the model has trouble to classify some of the numbers you presented to the camera. It might be that you wrote your number in an european style, while the dataset only contains numbers that are written in an american style. There are differences for the numbers one, seven and nine. The european version of the number one consists of two lines while the american version contains only a single line and the european seven typically has a horizontal line that is missing in the american seven. The difference between the two versions of the number nine is a bit more subtle. Europeans usually add a curved hook at the bottom of the number while americans draw a straight line.
+
+![number_style](/img/ai/one_ai_plugin/demos/handwritten-digits/nist_sd19_american_vs_european.png)
+
+Even though these differences might seem trivial to us, the model is struggling with them. For our model, this effect is especially strong with the number nine. It is often mistaken for the numbers three or five, because those numbers have a curve at the bottom that is similar to the bottom of the european nine.
+
+This observation shows the importance of collecting a dataset with many variations. If an important feature doesn't occur in the training data, the model won't know what to do with it, which typically results in low quality predictions. This is also the reason why we use augmentations. By introducing variation into the training data, the model becomes more robust against these types of variation.
+
+You might recall that the dataset we provided to you is a small subset of the full NIST Special Database 19. When we selected the training images, we took the first 300 images for each digit. Because the dataset is sorted, we only selected numbers from a small subset of people resulting in small variance in our data. We created a second dataset, which contains randomly selected samples. You can download the dataset [here](https://github.com/one-ware/OneAI_demo_datasets/blob/main/datasets/nist_sd19_subset_random.zip) as well as a trained model [here](https://github.com/one-ware/OneAI_demo_datasets/blob/main/models/nist_sd19_random/onnx/nist_sd19_random.onnx). When you look at the images, you'll see that they feature a much higher variance in writing styles. You'll also notice that the new model is a lot better at detecting the number nine.
