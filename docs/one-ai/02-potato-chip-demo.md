@@ -20,7 +20,7 @@ Here are a few examples from the dataset:
     <img src="/img/ai/one_ai_plugin/demos/potato_chip/chips_defective_02.jpg" alt="chips_example_defective_02" style={{ width: '48%' }} />
 </div>
 
-We created a modified version of this dataset with scaled down images. We also added annotation files that are compatible with the current version of the OneAI Extension. You can download the dataset [here](https://github.com/one-ware/OneAI_demo_datasets/blob/main/Pepsico%20RnD%20Potato%20Lab%20Dataset%20512x512.zip).
+We created a modified version of this dataset with scaled down images. We also added annotation files that are compatible with the current version of the OneAI Extension. You can download the dataset [here](https://github.com/one-ware/OneAI_demo_datasets/blob/main/datasets/Pepsico%20RnD%20Potato%20Lab%20Dataset%20512x512.zip).
 
 ## Setting up the Project and Loading the Data
 First we need to create a new project by clicking on **File** > **New** > **Project**. To create a new AI Generator, click on **AI** > **Open AI Generator**, enter a name and select **Image Detection**.

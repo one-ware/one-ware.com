@@ -19,7 +19,7 @@ Here are a few examples from the dataset:
     <img src="/img/ai/one_ai_plugin/demos/dice/dice_example_mass_grouping.jpg" alt="dice_example_mass_grouping" style={{ width: '32%' }} />
 </div>
 
-We created a modified version of this dataset with annotation files that are compatible with the current version of the OneAI Extension. You can download the dataset [here](https://github.com/one-ware/OneAI_demo_datasets/blob/main/roboflow_dice.zip).
+We created a modified version of this dataset with annotation files that are compatible with the current version of the OneAI Extension. You can download the dataset [here](https://github.com/one-ware/OneAI_demo_datasets/blob/main/datasets/roboflow_dice.zip).
 ## Setting up the Project
 The setup process is similar to the [Potato Chip Demo](/docs/one-ai/02-potato-chip-demo.md#setting-up-the-project-and-loading-the-data). First, we create a new project and a new AI Generator. Then we open the project folder in a file manager to copy the training data. Since this demo deals with an object detection task we leave the **Mode** at **Annotation** and do not change it to **Classification** like before. In the **Validation** tab, we set up an auto-generated validation split that we set to **30%** due to the small size of the dataset. We don't have a separate test set for this dataset, so we go to the **Test** tab and ensure that the **Validation Image Percentage** is set to **100%**.
 
