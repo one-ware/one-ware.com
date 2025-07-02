@@ -15,7 +15,9 @@ Here are a few examples from the dataset:
 
 ![nist_sd19_examples](/img/ai/one_ai_plugin/demos/handwritten-digits/nist_sd19_examples.jpg)
 
-The goal of this demo is to create an AI model that is able to recognize handwritten digits. At the end of this demo, you will be able to test the model with live data from your webcam with your own handwritten numbers. During this demo, we will pretend that we want to train a model for an Altera™ Max® 10 16K FPGA to show the workflow and abilities of ONE AI, although the webcam demonstration will run on the CPU of your computer.
+The goal of this demo is to create an AI model that is able to recognize handwritten digits. At the end of this demo, you will be able to test the model with live data from your webcam with your own handwritten numbers. We also provide a [reference model]((https://github.com/one-ware/OneAI_demo_datasets/blob/main/models/nist_sd19_sorted/onnx/nist_sd19_sorted.onnx)) that you can use if you don't want to train your own model.
+
+During this demo, we will pretend that we want to train a model for an Altera™ Max® 10 16K FPGA to show the workflow and abilities of ONE AI, although the webcam demonstration will run on the CPU of your computer.
 
 ## Setting up the Project
 The setup process is similar to the [Potato Chip Demo](/docs/one-ai/02-potato-chip-demo.md#setting-up-the-project-and-loading-the-data). First, we create a new project and a new AI Generator. Then we open the project folder in a file manager to copy the train and test data. Like before, we change the **Mode** to **Classification** and use an auto-generated validation split. Because our dataset contains a separate test set, we set both **Train Image Percentage** and **Validation Image Percentage** to **0%**.
@@ -63,13 +65,6 @@ In the **Training** tab we need to click on **Sync** to synchronize our data and
 Finally, we click on the **Train** button in the top-right corner to start the training. You can monitor the training progress in the **Logs** and **Statistics** tabs.
 
 ## Model Export
-
----
-
-**Note:** The model export is still under development at the moment so you won't be able to follow this part of the demo yet, but this feature will be available soon. We provide an exported ONNX model that you can download [here](https://github.com/one-ware/OneAI_demo_datasets/blob/main/models/nist_sd19_sorted/onnx/nist_sd19_sorted.onnx) instead. To use the model in the next chapter, right click on your project folder in OneWare Studio, select **Open in File Manager** and insert the model into the folder ``[selected_name]/Models``. You might need to restart OneWare Studio for the model to show up in the **Camera Tool**.
-
----
-
 After the training is completed, we need to export our model. We configured our model to run on an Altera™ Max® 10 16K, but for now we are content with testing its capabilities on a computer. To use the model inside of OneWare Studio's camera tool, we need to export it as an ONNX model. To do so, we click on the **Export** button, which opens a new window with configurations. In the **Export type** drop-down menu, we select ONNX since that is the format we need.
 
 Next we can activate different settings, that change how our model is exported. If we check the **Export with pre- and postprocessing** checkbox, ONE AI will build all of our filters directly into the model. We activate this setting, because the filter pipeline is an important part of our model. The next setting allows us to change between exporting a floating point or quantized model. At the moment, the ONNX model export supports only floating point models, so we will receive a floating point model whether we check the box or not.
@@ -77,6 +72,10 @@ Next we can activate different settings, that change how our model is exported. 
 The last check box allows us to select whether we want to export the last or the best model. This setting is only relevant for object detection tasks, so we can deactivate it.
 
 ![model_export](/img/ai/one_ai_plugin/demos/handwritten-digits/nist_sd19_export.jpg)
+
+After the export is finished, we can download the exported ONNX model by clicking on the green arrow. This will save the model in the folder ``[selected_name]/Models``. It will automatically be available to the **Camera Tool** that we use for testing in the next section. You can also download a trained model [here](https://github.com/one-ware/OneAI_demo_datasets/blob/main/models/nist_sd19_sorted/onnx/nist_sd19_sorted.onnx). To use this model, right click on your project folder in OneWare Studio, select **Open in File Manager** and insert the model into the folder ``[selected_name]/Models``. You might need to restart OneWare Studio for the model to show up in the **Camera Tool**.
+
+![model_download](/img/ai/one_ai_plugin/demos/handwritten-digits/nist_sd19_download.jpg)
 
 ## Testing the Model
 Now it's time to test our trained model. To do so, we go back to the **Dataset** tab and open the **Camera Tool** in the top-right corner. Select your camera in the drop-down menu, then click on the plus icon to add it. Next, we need to change the camera's resolution by clicking on the gear icon and setting the **Width** and **Height** to **128** to match the resolution of our images. Please check whether your camera actually supports a resolution of 128x128. You can do so by going to the **Capture** tab of the **Camera Tool** and recording an image by pressing the camera button followed by the save button. This saves the current camera image to ``[selected_name]/Dataset/Train``. You can check its size by opening it with the Windows App **Photo**, which shows the size on the bottom-left. If it is larger than 128x128, you can draw a region onto the camera preview in the camera settings to crop it. It doesn't matter if the cropped region is slightly larger than 128x128, as long as it's not smaller, because that would introduce a black padding.
