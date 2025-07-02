@@ -15,7 +15,7 @@ Here are a few examples from the dataset:
 
 ![nist_sd19_examples](/img/ai/one_ai_plugin/demos/handwritten-digits/nist_sd19_examples.jpg)
 
-The goal of this demo is to create an AI model that is able to recognize handwritten digits. At the end of this demo, you will be able to test the model with live data from your webcam with your own handwritten numbers. We also provide a [reference model]((https://github.com/one-ware/OneAI_demo_datasets/blob/main/models/nist_sd19_sorted/onnx/nist_sd19_sorted.onnx)) that you can use if you don't want to train your own model.
+The goal of this demo is to create an AI model that is able to recognize handwritten digits. At the end of this demo, you will be able to test the model with live data from your webcam with your own handwritten numbers. We also provide a [reference model](https://github.com/one-ware/OneAI_demo_datasets/blob/main/models/nist_sd19_sorted/onnx/nist_sd19_sorted.onnx) that you can use if you don't want to train your own model.
 
 During this demo, we will pretend that we want to train a model for an Altera™ Max® 10 16K FPGA to show the workflow and abilities of ONE AI, although the webcam demonstration will run on the CPU of your computer.
 
