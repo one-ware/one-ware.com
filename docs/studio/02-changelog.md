@@ -8,7 +8,7 @@ sidebar_label:  Changelog
 
 - Fix VCD Viewer Bit parsing (thx to timonix)
 - Prevent windows from being larger than the screen
-- Cloud related changes
+- Cloud related changes, OneWare Studio no longer requires Git to use OneWare Cloud
   
 ## 0.21.5.0
 
