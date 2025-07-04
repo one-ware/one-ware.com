@@ -4,6 +4,12 @@ title: ONE WARE Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.21.6.0
+
+- Fix VCD Viewer Bit parsing (thx to timonix)
+- Prevent windows from being larger than the screen
+- Cloud related changes
+  
 ## 0.21.5.0
 
 - Fix window scaling issues
