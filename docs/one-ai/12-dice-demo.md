@@ -6,7 +6,7 @@ sidebar_label: Demo - Dice
 # Dice Detection Demo
 
 ## About this Demo
-This demo showcases the usage of OneWare Studio and the OneAI Extension for a demo case. If you are unfamiliar with the OneAI Extension, we recommend to first take a look at our guide [Getting Started with One AI](/docs/one-ai/01-get-started.md). We also recommend to read the [Potato Chip Classification Demo](/docs/one-ai/02-potato-chip-demo.md), since it goes into more detail than this demo.
+This demo showcases the usage of OneWare Studio and the OneAI Extension for a demo case. If you are unfamiliar with the OneAI Extension, we recommend to first take a look at our guide [Getting Started with One AI](/docs/one-ai/01-get-started.md). We also recommend to read the [Potato Chip Classification Demo](/docs/one-ai/10-potato-chip-demo.md), since it goes into more detail than this demo.
 
 ## Dataset Overview
 The 6 Sided Dice Dataset was published by [Roboflow](https://public.roboflow.com/object-detection/dice) and contains 359 images of six-sided dice. The data set contains multiple dice of differing colors and size. 160 images contain a Catan board underneath or near the dice - the other images feature a white table as the background. Most of the images contain only one or two dice, but there are also 13 images containing a mass grouping of dice.
@@ -21,7 +21,7 @@ Here are a few examples from the dataset:
 
 We created a modified version of this dataset with annotation files that are compatible with the current version of the OneAI Extension. You can download the dataset [here](https://github.com/one-ware/OneAI_demo_datasets/blob/main/datasets/roboflow_dice.zip).
 ## Setting up the Project
-The setup process is similar to the [Potato Chip Demo](/docs/one-ai/02-potato-chip-demo.md#setting-up-the-project-and-loading-the-data). First, we create a new project and a new AI Generator. Then we open the project folder in a file manager to copy the training data. Since this demo deals with an object detection task we leave the **Mode** at **Annotation** and do not change it to **Classification** like before. In the **Validation** tab, we set up an auto-generated validation split that we set to **30%** due to the small size of the dataset. We don't have a separate test set for this dataset, so we go to the **Test** tab and ensure that the **Validation Image Percentage** is set to **100%**.
+The setup process is similar to the [Potato Chip Demo](/docs/one-ai/10-potato-chip-demo.md#setting-up-the-project-and-loading-the-data). First, we create a new project and a new AI Generator. Then we open the project folder in a file manager to copy the training data. Since this demo deals with an object detection task we leave the **Mode** at **Annotation** and do not change it to **Classification** like before. In the **Validation** tab, we set up an auto-generated validation split that we set to **30%** due to the small size of the dataset. We don't have a separate test set for this dataset, so we go to the **Test** tab and ensure that the **Validation Image Percentage** is set to **100%**.
 
 We can verify that everything was set up correctly by checking the annotations of our train images. It is expected that the labels are named *"Undefined Label"*, since we never specified a name. We can do so in the **Labels** tab or when viewing a annotation but that isn't necessary.
 
