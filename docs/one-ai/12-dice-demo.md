@@ -9,7 +9,7 @@ sidebar_label: Demo - Dice
 This demo showcases the usage of OneWare Studio and the OneAI Extension for a demo case. If you are unfamiliar with the OneAI Extension, we recommend to first take a look at our guide [Getting Started with One AI](/docs/one-ai/01-get-started.md). We also recommend to read the [Potato Chip Classification Demo](/docs/one-ai/10-potato-chip-demo.md), since it goes into more detail than this demo.
 
 ## Dataset Overview
-The 6 Sided Dice Dataset was published by [Roboflow](https://public.roboflow.com/object-detection/dice) and contains 359 images of six-sided dice. The data set contains multiple dice of differing colors and size. 160 images contain a Catan board underneath or near the dice - the other images feature a white table as the background. Most of the images contain only one or two dice, but there are also 13 images containing a mass grouping of dice.
+The 6 Sided Dice Dataset was published by [Roboflow](https://public.roboflow.com/object-detection/dice) and contains 359 images of six-sided dice. The data set contains multiple dice of differing colors and size. 160 images contain a CATAN board underneath or near the dice - the other images feature a white table as the background. Most of the images contain only one or two dice, but there are also 13 images containing a mass grouping of dice.
 
 Here are a few examples from the dataset:
 
@@ -40,11 +40,11 @@ In addition, we use the following augmentations:
 ## Model Settings
 Our next step is to configure the model settings. Our goal is to detect bounding boxes around the dice, so we select the **Prediction Type** to **Size, Position and Class of Objects**. We prefer to have an accurate prediction but don't require it to be perfect, so we leave the **X/Y Precision** and the **Size Precision** at **75%**. We don't want to prioritize precision nor recall, so we select the balanced approach and leave the **Prioritize Precision** slider at **50%**. Next, we can specify the performance requirements of the model. We set the **Minimum FPS** to **20** and the **Maximum Memory Usage** to **90%**. Since the model isn't exported to an FPGA, the settings for the **Maximum Multiplier Usage** and the **FPGA Clock Speed** aren't used.
 
-Afterwards, we provide some additional information on the characteristics of the data. We estimate that the required surrounding area for small objects is **(10, 8)** and **(25, 19)** for large objects. Since the sides of the images aren't of equal length, these settings result in areas that are roughly square.
+Afterwards, we provide some additional information on the characteristics of the data. We estimate that the required surrounding area for small objects is **(10, 8)** and **(20, 16)** for large objects. Since the sides of the images aren't of equal length, these settings result in areas that are roughly square.
 
 Next we need to estimate the difference within the same class. For our example, this translates to "How different are two images of a dice that show the same number?". At the first glance those images look quite similar, but if we look more closely we notice that there are some differences. The dice have different sizes and colors - some are even slightly translucent. Furthermore, the dices are photographed from different angles. Some images show only the top face while others also show one or two side faces. The images of the mass groupings even contain dice that show numbers instead of dots. To capture this complexity we set the **Same Class Difference** to **60%**.
 
-Afterwards, we need to give an estimate for the background variance. While the images that have a white table as the background vary little, the images showing the Catan board feature a lot of variance. To reflect this we set the **Background Difference** to **50%**. Finally, we set the **Detect Simplicity** to **50%**, which correlates with a moderately difficult task.
+Afterwards, we need to give an estimate for the background variance. While the images that have a white table as the background vary little, the images showing the CATAN board feature a lot of variance. To reflect this we set the **Background Difference** to **50%**. Finally, we set the **Detect Simplicity** to **50%**, which correlates with a moderately difficult task.
 
 ## Training the Model
 Finally, we set up the parameters for the model training. In the **Hardware Settings** tab we set the **Used Hardware** to **Default CPU**.
