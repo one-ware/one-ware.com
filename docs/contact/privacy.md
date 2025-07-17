@@ -15,7 +15,7 @@ To use the ONE AI Extension software, a personal user account is required. When 
 
 - Full name
 - Email address
-- Encrypted password (hashed and salted)
+- Encrypted password
 - IP address at registration and during use
 - Timestamp of registration, login, and relevant usage actions
 
