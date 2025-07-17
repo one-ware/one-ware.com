@@ -9,6 +9,68 @@ Please note that data transmission over the Internet (for example, when communic
 
 The use of contact information published by third parties for the purpose of sending unsolicited advertising and information materials is hereby expressly excluded. The operators of the pages expressly reserve the right to take legal action in the event of the unsolicited sending of advertising information, such as spam e-mails.
 
+## User Account and Software Use
+
+To use the ONE AI Extension software, a personal user account is required. When registering, we collect and store the following personal data:
+
+- Full name
+- Email address
+- Encrypted password (hashed and salted)
+- IP address at registration and during use
+- Timestamp of registration, login, and relevant usage actions
+
+These data are processed exclusively for the following purposes:
+
+- Secure and authenticated access to the ONE AI Extension platform
+- Provision of contractual software features (model training, data upload, result analysis)
+- Ensuring proper functionality, availability, and integrity of the software
+- Monitoring for unauthorized access attempts, misuse, or security threats
+- Fulfilling legal obligations and enforcing our terms of use
+
+We do not share your personal data with third parties unless legally required or explicitly permitted under the GDPR. Access to your data is restricted to authorized personnel who require such access to fulfill their duties and are bound by confidentiality obligations.
+
+### Legal basis:
+The processing of personal data for account registration and usage is based on:
+
+- **Art. 6 para. 1 lit. b GDPR** – performance of a contract
+- **Art. 6 para. 1 lit. f GDPR** – our legitimate interest in ensuring the security, availability, and proper operation of our software platform
+
+We ensure appropriate technical and organizational measures to protect your data from unauthorized access, loss, or manipulation.
+
+---
+
+## Server Storage of Training Data
+
+When using the ONE AI Extension, you may upload and process data via our servers located in Osnabrück, Germany. These data may include:
+
+- Training datasets for AI model creation
+- Trained model parameters and architecture
+- Inference results and logs of processing activities
+
+Uploaded content is stored securely and is accessible only by you and authorized system administrators acting on our behalf for maintenance and security purposes.
+
+### Responsibility for Uploaded Content:
+
+You are solely responsible for the legality, accuracy, and integrity of any data you upload. In particular, **you must ensure** that:
+
+- You hold all necessary rights, consents, and legal grounds to process the data,
+- No sensitive personal data as defined by **Art. 9 GDPR** (e.g. biometric, health-related, or political opinions) is uploaded unless you are explicitly authorized and appropriate safeguards are in place,
+- No data violating applicable laws, third-party rights, or ethical AI use standards is submitted.
+
+We reserve the right to suspend or delete accounts that violate these obligations or upload unlawful content.
+
+### Data Retention and Deletion:
+
+We retain user and training data only as long as necessary to fulfill the purposes for which it was collected, unless a longer retention period is required by law.
+
+Specifically:
+
+- You may request access, correction, or deletion of your data at any time by contacting us via the contact details provided in this policy.
+- Upon deletion of your user account, all associated data — including personal information, training data, and models — will be **irreversibly deleted**, unless retention is legally required (e.g. for compliance, accounting, or contractual documentation).
+- We may retain certain metadata (e.g. audit logs, anonymized usage statistics) for operational and compliance purposes in a pseudonymized or anonymized form.
+
+All deletions are performed securely in accordance with best industry practices.
+
 ## Your Rights
 You can exercise the following rights at any time under the contact details of our [data protection officer](#questions-to-the-data-protection-officer):
 
