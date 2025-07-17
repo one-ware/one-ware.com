@@ -9,6 +9,64 @@ Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Komm
 
 Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.
 
+## Benutzerkonto und Software-Nutzung
+
+Zur Nutzung der Softwarelösung ONE AI Extension ist ein persönliches Benutzerkonto erforderlich. Im Rahmen der Registrierung erheben und speichern wir folgende personenbezogene Daten:
+
+- Vor- und Nachname
+- E-Mail-Adresse
+- Verschlüsseltes Passwort (gehasht und gesalzen)
+- IP-Adresse bei Registrierung und Nutzung
+- Zeitstempel zu Registrierung, Login und wesentlichen Nutzungsvorgängen
+
+Diese Daten werden ausschließlich zu folgenden Zwecken verarbeitet:
+
+- Bereitstellung eines sicheren und personalisierten Zugangs zur Softwareplattform
+- Vertragliche Leistungserbringung im Rahmen des Softwarelizenzvertrags
+- Verwaltung und Zugriff auf Trainingsdaten, Modelle und Analysefunktionen
+- IT-Sicherheit, z. B. Erkennung und Verhinderung unbefugter Zugriffe oder missbräuchlicher Nutzung
+- Erfüllung gesetzlicher Verpflichtungen
+
+Eine Weitergabe Ihrer Daten an Dritte erfolgt nicht, es sei denn, dies ist gesetzlich erlaubt oder Sie haben ausdrücklich eingewilligt. Der Zugriff auf Ihre Daten ist nur autorisierten Personen gestattet, die zur Vertraulichkeit verpflichtet sind.
+
+### Rechtsgrundlage:
+Die Verarbeitung Ihrer personenbezogenen Daten erfolgt auf Grundlage von:
+
+- **Art. 6 Abs. 1 lit. b DSGVO** – zur Erfüllung eines Vertragsverhältnisses,
+- **Art. 6 Abs. 1 lit. f DSGVO** – auf Basis unseres berechtigten Interesses an einem sicheren, stabilen und funktionsfähigen Softwarebetrieb.
+
+Wir setzen technische und organisatorische Sicherheitsmaßnahmen ein, um Ihre Daten angemessen vor Verlust, Manipulation oder unbefugtem Zugriff zu schützen.
+
+---
+
+## Serverseitige Speicherung von Trainingsdaten
+
+Im Rahmen der Nutzung der ONE AI Extension können Sie eigene Daten auf unseren Servern am Standort Osnabrück (Deutschland) hochladen und verarbeiten lassen. Dabei handelt es sich insbesondere um:
+
+- Trainingsdaten zur Erstellung von KI-Modellen
+- Trainierte Modelle, Auswertungen und Ergebnisse
+
+Die Speicherung erfolgt ausschließlich auf deutschen Servern unter Anwendung aktueller Sicherheitsstandards.
+
+### Verantwortung für hochgeladene Inhalte:
+
+Sie sind allein verantwortlich für die Inhalte, die Sie hochladen. Insbesondere verpflichten Sie sich, dass:
+
+- Sie über alle erforderlichen Rechte zur Nutzung, Verarbeitung und Speicherung der Daten verfügen,
+- keine Daten hochgeladen werden, die gegen gesetzliche Bestimmungen, Rechte Dritter oder unsere Nutzungsbedingungen verstoßen,
+- keine besonderen Kategorien personenbezogener Daten gem. **Art. 9 DSGVO** (z. B. Gesundheitsdaten, biometrische Daten, politische Meinungen) ohne ausdrückliche rechtliche Grundlage hochgeladen werden.
+
+Wir behalten uns vor, bei Verstößen oder begründetem Verdacht auf rechtswidrige Inhalte den Zugriff einzuschränken oder Inhalte zu löschen.
+
+### Speicherfristen und Datenlöschung:
+
+- Sie können jederzeit eine Löschung Ihrer Daten oder Ihres Benutzerkontos beantragen. Die Löschung erfolgt umgehend, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
+- Mit Löschung des Benutzerkontos werden sämtliche damit verbundenen Daten (personenbezogene Angaben, Trainingsdaten, Modelle) vollständig und sicher gelöscht.
+- Gesetzlich vorgeschriebene Aufbewahrungen (z. B. handels- oder steuerrechtlicher Natur) bleiben hiervon unberührt.
+- Bestimmte technische Protokolle oder anonymisierte Nutzungsdaten (z. B. für Fehleranalyse oder Sicherheitsprotokolle) können in pseudonymisierter oder aggregierter Form über das Nutzungsende hinaus gespeichert werden, sofern keine Rückführbarkeit auf einzelne Personen möglich ist.
+
+Alle Löschvorgänge erfolgen entsprechend dem Stand der Technik und unter Berücksichtigung der Datensicherheit.
+
 ## Ihre Betroffenenrechte
 Unter den angegebenen Kontaktdaten unseres [Datenschutzbeauftragten](#fragen-an-den-datenschutzbeauftragten) können Sie jederzeit folgende Rechte ausüben:
 
