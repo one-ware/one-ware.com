@@ -167,9 +167,14 @@ You can use the following ranges for orientation, when you choose the value for 
 ## Training
 
 **Max Training Time**  
-This setting allows you to specify the amount of time you want to train your model. The required time depends on the complexity of the task, the size of the model and the task itself - object detection tasks usually need more training time than similar classification tasks. The training time can range from a couple of minutes to multiple hours. You can look at the plots of your model's training loss to see whether the training converged or needs additional time.
+This setting allows you to specify the amount of time you want to train your model. The required time depends on the complexity of the task, the size of your images, the size of the model, the amount of training data and the task itself - object detection tasks usually need more training time than similar classification tasks. The training time can range from a couple of minutes to multiple hours. 
 
 ![training_time](/img/ai/one_ai_plugin/choosing_parameters/training_time.png)
+
+You can look at the plots of your model's training loss to see whether the training converged or needs additional time. For example, in the first graph below, you can see that the loss curve is still decreasing at the end of the training after 17 epochs. This indicates that the model is still improving and that further training will produce better results. This is confirmed in the next graph that shows the training loss for the same model but with a longer training time. The loss decreased from 0.14 at epoch 17 to under 0.05 at the end of the training. We can also observe that the loss curve is almost flat at the end, which means that further training won't yield any meaningful improvements.
+
+![training_progress_1](/img/ai/one_ai_plugin/choosing_parameters/training_progress_1.png)  
+![training_progress_2](/img/ai/one_ai_plugin/choosing_parameters/training_progress_2.png)
 
 **Patience for Early Stopping**  
 You can set a patience value to stop your training early if the model doesn't improve any further. The value of this setting specifies the amount of minutes over which the model shows no improvement until the training is terminated.
