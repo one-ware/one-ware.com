@@ -24,29 +24,13 @@ export const JOBS_DATA: JobCategory[] = [
     ],
   },
   {
-    category: "AI Engineer",
+    category: "Sales",
     positions: [
       {
-        id: "ai-engineer.1",
-        title: "AI Developer",
-        description: "Help us improve the OneAI System",
-        url: "OneWare_AI_Developer.pdf",
-        type: "Full Time",
-        location: "Osnabrück - Remote",
-      },
-      {
-        id: "ai-engineer.2",
-        title: "AI Developer (FPGA)",
-        description: "Help us to integrate ONE AI onto FPGAs",
-        url: "OneWare_AI_Developer_FPGA.pdf",
-        type: "Full Time",
-        location: "Osnabrück - Remote",
-      },
-      {
-        id: "ai-engineer.3",
-        title: "AI Developer Microcontrollers / TF Lite",
-        description: "Help us integrate ONE AI onto Microcontrollers / TF Lite",
-        url: "OneWare_AI_Developer_MicrocontrollerITF_Lite.pdf",
+        id: "sales-engineer.1",
+        title: "Technical Sales Engineer",
+        description: "Help us take sales to the next technological level",
+        url: "OneWare_Sales_TechnicalSalesEngineer.pdf",
         type: "Full Time",
         location: "Osnabrück - Remote",
       }
