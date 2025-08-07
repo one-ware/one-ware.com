@@ -4,6 +4,14 @@ title: ONE WARE Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.21.7.0
+
+- Fix Slider Setting Validation
+- Fix making space for hidden settings
+- Update Splashscreen
+- Add Commandline options helper
+- Add new styles
+
 ## 0.21.6.0
 
 - Fix VCD Viewer Bit parsing (thx to timonix)
