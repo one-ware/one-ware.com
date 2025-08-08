@@ -29,4 +29,7 @@ jobs:
           password: ${{ secrets.ONEWARE_SFTP_PW }}
           uploads: |
            build/ => one-ware.com/
+          ignore: |
+            .htaccess
+          delete: true
 
