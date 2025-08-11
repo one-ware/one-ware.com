@@ -245,7 +245,7 @@ function DownloadSection() {
             <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm">
               <SiApple size={50} />
               <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                MacOS 12.0
+                MacOS 12.0+
               </h5>
               <a href="/docs/studio/setup?current-os=macos">
                 <button className="mt-2 button button--primary">
