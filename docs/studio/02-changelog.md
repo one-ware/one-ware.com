@@ -4,6 +4,10 @@ title: ONE WARE Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.21.8.0
+- Update Packages
+- Fix Window Closing Events
+
 ## 0.21.7.0
 
 - Fix Slider Setting Validation
