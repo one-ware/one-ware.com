@@ -211,13 +211,34 @@ const config: Config = {
           ],
         },
         {
-          title: "More",
+          title: "Legal",
           items: [
             {
               type: "doc",
               label: "Contact",
               to: "/docs/contact",
             },
+            {
+              type: "doc",
+              label: "Privacy Policy",
+              to: "/docs/contact/privacy",
+            },
+            {
+              type: "doc",
+              label: "Terms of Service",
+              to: "/docs/contact/terms",
+            }
+            ,
+            {
+              type: "doc",
+              label: "Refund Policy",
+              to: "/docs/contact/refund",
+            }
+          ],
+        },
+        {
+          title: "More",
+          items: [
             {
               to: "/careers",
               label: "Careers",
@@ -230,12 +251,7 @@ const config: Config = {
             {
               label: "Blog",
               to: "blog",
-            },
-            {
-              type: "doc",
-              label: "Privacy Policy",
-              to: "/docs/contact/privacy",
-            },
+            }
           ],
         },
       ],
