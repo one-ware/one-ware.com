@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import styles from "./studio.module.css";
+import styles from "./one-ai.module.css";
 import "aos/dist/aos.css";
 import classnames from "classnames";
 import Slider from "react-slick";
@@ -87,36 +87,28 @@ function HomepageHeader() {
     <header id="hero" className={`w-full ${styles.heroBackground} h-96`}>
       <div className="absolute flex flex-col items-center justify-center w-full h-full">
         <div className="flex">
-          <div className="flex-col max-w-3xl m-5 mt-10">
+          <div className="flex-col max-w-5xl m-2 mt-10">
             <div className="text-center mt-10">
-              <h1 className="font-medium text-2xl md:text-4xl">
-                <Translate id="oneai.hero.start">The</Translate>{" "}
-                <span className="primary-text font-bold">
-                  <Translate id="oneai.hero.highlight1">Next Generation</Translate>
-                </span>{" "}
-                <Translate id="oneai.hero.middle">of AI Development:</Translate>
-                <br />
-                <Translate id="oneai.hero.subtext">Any Hardware. Any Application.</Translate>{" "}
-                <span className="primary-text font-bold">
-                  <Translate id="oneai.hero.name">ONE AI</Translate>
-                </span>
-                .
+              <h1 className="font-medium text-3xl md:text-4xl mb-7">
+                ONE AI creates custom neural networks in seconds that fit your exact hardware, performance and use case requirements.
               </h1>
 
               <div className="flex flex-col md:flex-row justify-center items-center space-y-3 md:space-y-0 md:space-x-5 mb-10">
                 <Link
-                  className="button button--primary button--lg text-sm md:text-lg"
-                  href="https://forms.office.com/e/J3HDid9fzw"
+                  className="button button--primary button--outline button--lg text-sm md:text-lg"
+                  href="one-ai#comparison"
                 >
-                  <Translate id="oneai.hero.cta.join">Join Waitlist</Translate>
+                  <Translate id="oneai.hero.cta.contact">Get Started</Translate>
+                </Link>
+                
+                <Link
+                  className="button button--primary button--lg text-sm md:text-lg"
+                  href="https://cloud.one-ware.com/Account/Register"
+                >
+                  <Translate id="oneai.hero.cta.join">Sign Up</Translate>
                 </Link>
                   
-                <Link
-                  className="button button--primary button--outline button--lg text-sm md:text-lg"
-                  href="#contact"
-                >
-                  <Translate id="oneai.hero.cta.contact">Contact Us</Translate>
-                </Link>
+                
               </div>
             </div>
           </div>
@@ -129,14 +121,9 @@ function HomepageHeader() {
 
 function ComparisonSection() {
   return (
-    <div className="py-24 md:py-40 overflow-x-hidden">
+    <div id="comparison" className="py-12 md:pt-15 overflow-x-hidden">
       <div className="text-center container m-auto flex space-x-5 justify-center">
         <div className="flex-col flex text-center">
-          <h1 className="text-2xl md:text-4xl">
-            <Translate id="oneai.compare.heading">
-              Don't Upgrade Your Hardware — Upgrade Your AI!
-            </Translate>
-          </h1>
 
           <p className="text-xl md:text-2xl my-8 font-bold primary-text">
             <Translate id="oneai.compare.subheading">
@@ -144,10 +131,12 @@ function ComparisonSection() {
             </Translate>
           </p>
 
-          <p className="text-md md:text-xl font-normal">
-            <Translate id="oneai.compare.whitepaper">
-              Read the Whitepaper from our Partner Altera
-            </Translate>
+          <p className="text-md md:text-xl font-normal" >
+            Read the{" "}
+            <a href="https://go.altera.com/l/1090322/2025-04-18/2vvzbn" target="_blank" className="underline hover:no-underline">
+              Whitepaper
+            </a>
+            {" "}from our Partner Altera
             <br />
             <Translate id="oneai.compare.benchmark">
               and see how Altera's MAX® 10 can now outperform Nvidia's Jetson Orin Nano with:
@@ -175,16 +164,48 @@ function ComparisonSection() {
             ))}
           </div>
 
-          <div className="flex justify-center gap-4 mt-8 flex-col md:flex-row">
-            <a href="https://go.altera.com/l/1090322/2025-04-18/2vvzbn" target="_blank">
-              <button className="button button--primary text-xl">
-                <Translate id="oneai.compare.cta.whitepaper">Read the Whitepaper</Translate>
-              </button>
-            </a>
+        </div>
+      </div>
+    </div>
+  );
+}
 
-            <a href="https://forms.office.com/e/J3HDid9fzw" target="_blank">
-              <button className="button button--secondary text-xl">
-                <Translate id="oneai.compare.cta.waitlist">Join ONE AI Waitlist</Translate>
+function GetStarted() {
+  return (
+    <div id="getStarted" className="mb-20 overflow-x-hidden">
+      <div className="text-center container m-auto flex space-x-5 justify-center">
+        <div className="flex-col flex text-center">
+          <h1 className="text-2xl md:text-4xl">
+            <Translate id="oneai.getstarted.heading">
+              Get Started in 3 Simple Steps:
+            </Translate>
+          </h1>
+
+          <p className="text-xl md:text-2xl font-bold mt-8">
+            <div className="mb-4">
+            1.{" "}
+              <a href="https://cloud.one-ware.com/Account/Register" target="_blank" className="underline hover:no-underline">
+              Sign up
+            </a>
+               , verify your account, and receive 500 € in credits
+            </div>
+            <div className="mb-4">
+              2. {" "}
+              <a href="/docs/studio/setup?current-os=macos#install-one-ware-studio" target="_blank" className="underline hover:no-underline">
+              Download
+            </a>{" "} ONE WARE Studio
+            </div>
+            <div className="mb-4">
+            <Translate id="oneai.getstarted_3">
+              3. Add the ONE AI Extension
+            </Translate>
+           </div>
+          </p>
+
+          <div className="flex justify-center gap-4 mt-2 flex-col md:flex-row">
+            <a href="docs/one-ai/get-started" target="_blank">
+              <button className="button button--primary text-xl">
+                <Translate id="oneai.compare.cta.whitepaper">Complete Tutorial</Translate>
               </button>
             </a>
           </div>
@@ -234,13 +255,22 @@ export default function OneAi() {
       <HomepageHeader />
 
       <main>
-        <div className="dropshadowbottom">
-          <div className="default-background diagclipbottom pt-16">
-            <ShowcaseSection />
+        <div className="bottomsplit">
+          <ComparisonSection />
+        </div>
 
-            <div className="container overflow-x-hidden">
+        
+
+  
+            <div className="text-center mt-16 container overflow-x-hidden">
+              <h1 className="text-2xl md:text-4xl">
+            <Translate id="oneai.compare.heading">
+              The Entire AI Development Process Automated in One Tool
+            </Translate>
+          </h1>
+
               {sliders && sliders.length && (
-                <div className="pb-20">
+                <div className=" pt-5">
                   <Slider
                     ref={slickRef}
                     dots={true}
@@ -298,23 +328,23 @@ export default function OneAi() {
                 </div>
               )}
             </div>
-          </div>
-        </div>
 
-        <div className="relative">
-          <div className="absolute fancybackground" />
-          <ComparisonSection />
-        </div>
+<div className=" dropshadowbottom pt-20 pb-5" style={{ 
+  boxShadow: 'rgb(0 0 0 / 50%) 0px -10px 13px -7px inset',
+  backgroundImage: 'linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,1.0) 100%), url(\'/img/background.webp\')',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat'
+}}>
+    <GetStarted />
+</div>
 
-        <div className="dropshadowtop">
-          <div className="default-background diagcliptop pt-6">
+
             <div className="container pb-20 mt-20">
               <div id="contact" className="mb-10">
                 <ContactUs />
               </div>
             </div>
-          </div>
-        </div>
       </main>
     </Layout>
   );

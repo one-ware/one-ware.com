@@ -11,14 +11,26 @@
   "typewriter.industry": {
     "message": "Branche."
   },
+  "homepage.title.hw": {
+    "message": "Deine Hardware."
+  },
+  "homepage.title.tool": {
+    "message": "Unser Tool."
+  },
+  "homepage.title.ai": {
+    "message": "ONE AI."
+  },
   "homepage.subtitle": {
-    "message": "Die einzige KI-Plattform, die Experten in Sekunden übertrifft –"
+    "message": "Spare Monate an Entwicklungsarbeit und lass ONE AI deine KI entwickeln."
   },
   "homepage.subtitle.ai": {
-    "message": "Maßgeschneidert und für jeden Zugänglich"
+    "message": "Genau so schnell, effizient und präzise, wie du es benötigst."
   },
-  "homepage.subtitle.ai.buttonGenerate": {
-    "message": "Erstelle deine eigene KI"
+  "homepage.subtitle.ai.signup": {
+    "message": "Registrieren"
+  },
+  "homepage.subtitle.ai.getstarted": {
+    "message": "Jetzt mit ONE AI durchstarten"
   },
   "partners.title": {
     "message": "Vertraut von Branchenführern und Experten"

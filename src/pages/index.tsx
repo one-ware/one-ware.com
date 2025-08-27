@@ -20,64 +20,46 @@ function HomepageHeader() {
     <header id="hero" className={styles.heroBackground}>
       <div className={styles.heroBanner}>
         
-        <div className="text-center pointer-events-none">
-          <div className="text-3xl md:text-5xl lg:text-6xl font-bold drop-shadow-4xl text-gray-200 whitespace-nowrap inlinetypewriter">
-            {translate({ id: "homepage.every", message: "Every " })}
-            <span className="primary-text">
-              <Typewriter
-                options={{
-                  strings: [
-                    translate({ id: "typewriter.task", message: "Task." }),
-                    translate({
-                      id: "typewriter.hardware",
-                      message: "Hardware.",
-                    }),
-                    translate({
-                      id: "typewriter.industry",
-                      message: "Industry.",
-                    }),
-                  ],
-                  autoStart: true,
-                  loop: true,
-                }}
-              />
-            </span>
-          </div>
+        <div className="text-center pointer-events-none mt-8">
+          
 
-          <div className="text-3xl md:text-5xl lg:text-6xl font-bold drop-shadow-4xl text-gray-200 mt-2 md:mt-2">
-            <span>ONE Software.</span>{" "}
-            <span>ONE AI.</span>
+          <div className="text-4xl md:text-6xl lg:text-6xl font-bold drop-shadow-4xl text-gray-200 mt-2 md:mt-2">
+            <span><Translate id="homepage.title.hw">Your Hardware.</Translate></span>
+          </div>
+          <div className="text-4xl md:text-6xl lg:text-6xl font-bold drop-shadow-4xl text-gray-200 mt-2 md:mt-2">
+            <span><Translate id="homepage.title.tool">Our Tool.</Translate></span>{" "}
+            <span className="primary-text"><Translate id="homepage.title.ai">ONE AI.</Translate></span>
           </div>
         </div>
 
-        <div className="flex flex-col justify-center items-center text-2xl md:text-3xl font-bold drop-shadow-4xl text-gray-300 mt-6 text-center pointer-events-none">
+        <div className="flex flex-col justify-center items-center text-l md:text-xl font-bold drop-shadow-4xl text-gray-300 mt-6 text-center pointer-events-none">
           <span className="block mb-2">
-            <Translate id="homepage.subtitle">The Only AI Platform to Outperform Experts in Seconds —</Translate>
-          </span>
-          <span className="primary-text block">
             <Translate id="homepage.subtitle.ai">
-              Enabling Anyone to Build Tailored AI
+              You do not need new hardware to implement AI.
             </Translate>
+            <br />
+            <Translate id="homepage.subtitle">Turn months of R&D into a single click with ONE AI.</Translate>
+            
           </span>
         </div>
-        <div className="flex justify-center gap-4 mt-8 flex-col md:flex-row">
-          <a href="one-ai">
+        <div className="flex justify-center gap-4 mt-4 flex-col md:flex-row">
+          <Link href="docs/one-ai/get-started">
             <button className="button button button--primary button--outline button--lg">
-              <Translate id="homepage.subtitle.ai.buttonGenerate">
-                Sign Up
+              <Translate id="homepage.subtitle.ai.signup">
+                Get Started
               </Translate>
             </button>
-          </a>
-          <a href="one-ai">
-            <button className="button button button--primary button--outline button--lg">
-              <Translate id="homepage.subtitle.ai.buttonGenerate">
-                Get Started with ONE AI
+          </Link>
+          <Link href="one-ai">
+            <button className="button button button--primary button--lg">
+              <Translate id="homepage.subtitle.ai.getstarted">
+                ONE AI
               </Translate>
             </button>
-          </a>
+          </Link>
         </div>
 
-        <div className="my-4 flex justify-center grow items-center overflow-hidden">
+        <div className="mb-4 mt-6 flex justify-center grow items-center overflow-hidden">
           <img
             src={require("@site/static/img/ai/Laptop.png").default}
             alt="Laptop"
