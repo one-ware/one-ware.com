@@ -90,7 +90,9 @@ function HomepageHeader() {
           <div className="flex-col max-w-5xl m-2 mt-10">
             <div className="text-center mt-10">
               <h1 className="font-medium text-3xl md:text-4xl mb-7">
+                <Translate id="oneai.top">
                 ONE AI creates custom neural networks in seconds that fit your exact hardware, performance and use case requirements.
+                </Translate>
               </h1>
 
               <div className="flex flex-col md:flex-row justify-center items-center space-y-3 md:space-y-0 md:space-x-5 mb-10">
@@ -98,14 +100,14 @@ function HomepageHeader() {
                   className="button button--primary button--outline button--lg text-sm md:text-lg"
                   href="one-ai#comparison"
                 >
-                  <Translate id="oneai.hero.cta.contact">Get Started</Translate>
+                  <Translate id="homepage.subtitle.ai.getstarted">Get Started</Translate>
                 </Link>
                 
                 <Link
                   className="button button--primary button--lg text-sm md:text-lg"
                   href="https://cloud.one-ware.com/Account/Register"
                 >
-                  <Translate id="oneai.hero.cta.join">Sign Up</Translate>
+                  <Translate id="oneai.signup">Sign Up</Translate>
                 </Link>
                   
                 
@@ -132,11 +134,16 @@ function ComparisonSection() {
           </p>
 
           <p className="text-md md:text-xl font-normal" >
-            Read the{" "}
+            <Translate id="oneai.compare.whitepaper.readthe">
+              Read the
+            </Translate>{" "}
             <a href="https://go.altera.com/l/1090322/2025-04-18/2vvzbn" target="_blank" className="underline hover:no-underline">
               Whitepaper
             </a>
-            {" "}from our Partner Altera
+            {" "}
+            <Translate id="oneai.compare.whitepaper.fromaltera">
+              from our Partner Altera
+            </Translate>
             <br />
             <Translate id="oneai.compare.benchmark">
               and see how Altera's MAX® 10 can now outperform Nvidia's Jetson Orin Nano with:
@@ -185,27 +192,36 @@ function GetStarted() {
             <div className="mb-4">
             1.{" "}
               <a href="https://cloud.one-ware.com/Account/Register" target="_blank" className="underline hover:no-underline">
-              Sign up
-            </a>
-               , verify your account, and receive 500 € in credits
+                <Translate id="oneai.getstarted.step1.signup">
+                  Sign up
+                </Translate>
+              </a>
+              <Translate id="oneai.getstarted.step1.text">
+                , verify your account, and receive 500 € in credits
+              </Translate>
             </div>
             <div className="mb-4">
-              2. {" "}
+              2.{" "}
               <a href="/docs/studio/setup?current-os=macos#install-one-ware-studio" target="_blank" className="underline hover:no-underline">
-              Download
-            </a>{" "} ONE WARE Studio
+                <Translate id="oneai.getstarted.step2.download">
+                  Download
+                </Translate>
+              </a>{" "}
+              <Translate id="oneai.getstarted.step2.text">
+                ONE WARE Studio
+              </Translate>
             </div>
             <div className="mb-4">
-            <Translate id="oneai.getstarted_3">
-              3. Add the ONE AI Extension
-            </Translate>
+              <Translate id="oneai.getstarted.step3">
+                3. Add the ONE AI Extension
+              </Translate>
            </div>
           </p>
 
           <div className="flex justify-center gap-4 mt-2 flex-col md:flex-row">
             <a href="docs/one-ai/get-started" target="_blank">
               <button className="button button--primary text-xl">
-                <Translate id="oneai.compare.cta.whitepaper">Complete Tutorial</Translate>
+                <Translate id="oneai.getstarted.cta.tutorial">Complete Tutorial</Translate>
               </button>
             </a>
           </div>

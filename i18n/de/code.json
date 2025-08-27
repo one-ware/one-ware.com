@@ -21,17 +21,15 @@
     "message": "ONE AI."
   },
   "homepage.subtitle": {
-    "message": "Spare Monate an Entwicklungsarbeit und lass ONE AI deine KI entwickeln."
+    "message": "Monate an Forschung und Entwicklung lassen sich mit ONE AI auf einen Klick reduzieren."
   },
   "homepage.subtitle.ai": {
-    "message": "Genau so schnell, effizient und präzise, wie du es benötigst."
-  },
-  "homepage.subtitle.ai.signup": {
-    "message": "Registrieren"
+    "message": "Für die Implementierung von KI ist keine neue Hardware erforderlich."
   },
   "homepage.subtitle.ai.getstarted": {
-    "message": "Jetzt mit ONE AI durchstarten"
+    "message": "Jetzt Loslegen"
   },
+
   "partners.title": {
     "message": "Vertraut von Branchenführern und Experten"
   },
@@ -58,6 +56,12 @@
   },
   "homepage.meta.description": {
     "message": "Jede Aufgabe. Jede Hardware. Jede Branche. ONE Software."
+  },
+  "oneai.top": {
+    "message": "ONE AI erstellt in Sekunden maßgeschneiderte neuronale Netze, die genau zur vorhandenen Hardware, den Leistungsanforderungen und dem Anwendungsfall passen."
+  },
+  "oneai.signup": {
+    "message": "Registrieren"
   },
   "oneai.slider.capture": {
     "message": "Erfassen und Beschriften"
@@ -113,6 +117,12 @@
   "oneai.compare.whitepaper": {
     "message": "Lese im Whitepaper von Altera,"
   },
+  "oneai.compare.whitepaper.readthe": {
+    "message": "Lies das"
+  },
+  "oneai.compare.whitepaper.fromaltera": {
+    "message": "von unserem Partner Altera"
+  },
   "oneai.compare.benchmark": {
     "message": "wie der MAX® 10 moderne KI-Beschleuniger den Jetson Orin Nano von Nvidia schlägt."
   },
@@ -121,6 +131,27 @@
   },
   "oneai.compare.cta.waitlist": {
     "message": "Zur ONE AI Warteliste"
+  },
+  "oneai.getstarted.heading": {
+    "message": "Loslegen in 3 einfachen Schritten:"
+  },
+  "oneai.getstarted.step1.signup": {
+    "message": "Registriere dich"
+  },
+  "oneai.getstarted.step1.text": {
+    "message": ", verifiziere dein Konto und erhalte 500 € Guthaben"
+  },
+  "oneai.getstarted.step2.download": {
+    "message": "Lade"
+  },
+  "oneai.getstarted.step2.text": {
+    "message": "ONE WARE Studio herunter"
+  },
+  "oneai.getstarted.step3": {
+    "message": "3. Füge die ONE AI Erweiterung hinzu"
+  },
+  "oneai.getstarted.cta.tutorial": {
+    "message": "Vollständiges Tutorial"
   },
   "oneai.showcase.title.1": {
     "message": "Komplexe Herausforderungen"
