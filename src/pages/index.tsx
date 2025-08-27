@@ -64,7 +64,14 @@ function HomepageHeader() {
           <a href="one-ai">
             <button className="button button button--primary button--outline button--lg">
               <Translate id="homepage.subtitle.ai.buttonGenerate">
-                Generate Your Custom AI
+                Sign Up
+              </Translate>
+            </button>
+          </a>
+          <a href="one-ai">
+            <button className="button button button--primary button--outline button--lg">
+              <Translate id="homepage.subtitle.ai.buttonGenerate">
+                Get Started with ONE AI
               </Translate>
             </button>
           </a>
