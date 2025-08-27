@@ -145,6 +145,11 @@ const config: Config = {
           position: 'right',
         },
         {
+          href: "https://cloud.one-ware.com",
+          label: "Cloud",
+          position: "right",
+        },
+        {
           to: "/blog",
           label: "Blog",
           position: "right",
