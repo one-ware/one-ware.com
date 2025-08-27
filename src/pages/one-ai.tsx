@@ -98,7 +98,7 @@ function HomepageHeader() {
               <div className="flex flex-col md:flex-row justify-center items-center space-y-3 md:space-y-0 md:space-x-5 mb-10">
                 <Link
                   className="button button--primary button--outline button--lg text-sm md:text-lg"
-                  href="docs/one-ai/get-started"
+                  href="one-ai#getStarted"
                 >
                   <Translate id="homepage.subtitle.ai.getstarted">Get Started</Translate>
                 </Link>
@@ -179,7 +179,7 @@ function ComparisonSection() {
 
 function GetStarted() {
   return (
-    <div id="getStarted" className="mb-20 overflow-x-hidden">
+    <div className="mb-20 overflow-x-hidden">
       <div className="text-center container m-auto flex space-x-5 justify-center">
         <div className="flex-col flex text-center">
           <h1 className="text-2xl md:text-4xl">
@@ -345,7 +345,7 @@ export default function OneAi() {
               )}
             </div>
 
-<div className=" dropshadowbottom pt-20 pb-5" style={{ 
+<div id="getStarted" className=" dropshadowbottom pt-20 pb-5" style={{ 
   boxShadow: 'rgb(0 0 0 / 50%) 0px -10px 13px -7px inset',
   backgroundImage: 'linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,1.0) 100%), url(\'/img/background.webp\')',
   backgroundSize: 'cover',
