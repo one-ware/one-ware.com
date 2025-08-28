@@ -16,13 +16,15 @@ import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import initWebsiteEffects from "../components/startEffects";
 
 function HomepageHeader() {
+  const { i18n } = useDocusaurusContext();
+  const currentLocale = i18n.currentLocale;
+
   return (
     <header id="hero" className={styles.heroBackground}>
       <div className={styles.heroBanner}>
         
-        <div className="text-center pointer-events-none mt-8">
-          
-
+        {/* Text in der Mitte */}
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-center pointer-events-none pb-60">
           <div className="text-4xl md:text-6xl lg:text-6xl font-bold drop-shadow-4xl text-gray-200 mt-2 md:mt-2">
             <span><Translate id="homepage.title.hw">Your Hardware.</Translate></span>
           </div>
@@ -30,38 +32,44 @@ function HomepageHeader() {
             <span><Translate id="homepage.title.tool">Our Tool.</Translate></span>{" "}
             <span className="primary-text"><Translate id="homepage.title.ai">ONE AI.</Translate></span>
           </div>
-        </div>
 
-        <div className="flex flex-col justify-center items-center text-l md:text-xl font-bold drop-shadow-4xl text-gray-300 mt-6 text-center pointer-events-none">
-          <span className="block mb-2">
-            <Translate id="homepage.subtitle.ai">
-              You do not need new hardware to implement AI.
-            </Translate>
-            <br />
-            <Translate id="homepage.subtitle">Turn months of R&D into a single click with ONE AI.</Translate>
-            
-          </span>
-        </div>
-        <div className="flex justify-center gap-4 mt-4 flex-col md:flex-row">
-          <Link href="one-ai#getStarted">
-            <button className="button button button--primary button--outline button--lg">
-              <Translate id="homepage.subtitle.ai.getstarted">
-                Get Started
+          <div className="text-l md:text-xl font-bold drop-shadow-4xl text-gray-300 mt-6">
+            <span className="block mb-2">
+              <Translate id="homepage.subtitle.ai">
+                You do not need new hardware to implement AI.
               </Translate>
-            </button>
-          </Link>
-          <Link href="one-ai">
-            <button className="button button button--primary button--lg">
-                ONE AI
-            </button>
-          </Link>
+              <br />
+              <Translate id="homepage.subtitle">Turn months of R&D into a single click with ONE AI.</Translate>
+            </span>
+          </div>
+
+          <div className="flex justify-center gap-4 mt-4 flex-row pointer-events-auto">
+            <Link href="one-ai#getStarted">
+              <button className="button button button--primary button--outline button--lg">
+                <Translate id="homepage.subtitle.ai.getstarted">
+                  Get Started
+                </Translate>
+              </button>
+            </Link>
+            <Link href="one-ai">
+              <button className="button button button--primary button--lg">
+                  ONE AI
+              </button>
+            </Link>
+          </div>
         </div>
 
-        <div className="mb-4 mt-6 flex justify-center grow items-center overflow-hidden">
+        {/* Bild unten am Header mit Padding - sprachabhängig */}
+        <div className="absolute bottom-0 left-0 right-0 pt-8 pb-24">
           <img
-            src={require("@site/static/img/ai/Laptop.png").default}
-            alt="Laptop"
-            className="max-w-full max-h-full object-contain"
+            src={require(`@site/static/img/examples_2${currentLocale === 'de' ? '' : '_en'}.webp`).default}
+            alt="Examples"
+            className="w-full object-contain block md:hidden"
+          />
+          <img
+            src={require(`@site/static/img/examples${currentLocale === 'de' ? '' : '_en'}.webp`).default}
+            alt="Examples Desktop"
+            className="w-full object-contain hidden md:block"
           />
         </div>
       </div>
@@ -72,7 +80,7 @@ function HomepageHeader() {
 function PreviewSection() {
   return (
     <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
-      <div className="mt-16">
+      <div className="mt-8">
         <h3 className="text-2xl md:text-3xl font-bold text-center text-gray-200 mb-8">
           <Translate id="partners.title">
             Trusted by Industry Leaders and Experts

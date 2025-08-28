@@ -9,7 +9,7 @@
 
 .heroBackground{
   box-shadow: rgb(0 0 0 / 50%) 0px -10px 13px -7px inset; 
-  background-image: url('/img/background.webp');
+  background-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1.0) 100%), url('/img/background.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -24,10 +24,10 @@
   padding: 10px;
 }
 
-/* Laptop/Desktop */
-@media (min-width: 1024px) {
+/* Tablet/Laptop */
+@media (min-width: 768px) {
   .heroBackground {
-    height: 90vh;
+    height: 110vh;
   }
 }
 
