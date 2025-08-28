@@ -461,7 +461,8 @@ export default function Studio() {
 
         <div className=" relative pt-16 pb-16" style={{ 
   boxShadow: 'rgb(0 0 0 / 50%) 0px -10px 13px -7px inset',
-  backgroundImage: 'linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,1.0) 100%), url(\'/img/background.webp\')',
+  
+              backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,1.0) 100%), url('${require('@site/static/img/background.webp').default}')`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat'
