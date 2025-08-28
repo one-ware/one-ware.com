@@ -14,12 +14,16 @@ This helps us aswell, because we then know what tutorials we can do next.
 ## 1. Setup
 We have a cloud service and software that runs on your PC locally. This ensures maximum performance. In the setup, we guide you through the installation process.
 
-### 1.1. Sign Up
-
+### 1.1. [Sign Up](https://cloud.one-ware.com/Account/Register)
+To get access to our cloud infrastructure and AI model prediction, you need to create an account [here](https://cloud.one-ware.com/Account/Register) for the ONE AI cloud. This is free and your data is stored savely on our own servers in germany.
+If you work with sensitive data, you can contact us via mail: sales@one-ware.com, so we can provide a local training service for your servers that ensures the data doesn't leave your company. In the ONE AI software, until you actually train the AI model, all data is stored locally on your PC. So you can still first create an account and test all settings until we can provide your local training service.
 
 ### 1.2. Verify Address to Get Free Credits
+After you have access to the ONE AI cloud, you can get free credits worth 500 € after you verify your address [here](https://cloud.one-ware.com/Account/Manage/ChangeAddress) by just saving your billing address. You won't be changed with any fees. The address is only needed to check for trade restrictions and general company verification. It will take a bit for the verification (up to one business day), but you can continue with the next steps until you have your free credits for training.
 
-### 1.3. Download ONE WARE Studio 
+### 1.3. [Download ONE WARE Studio](/docs/studio/setup)
+Next you need our software locally on your PC, so you can experiment with your data safely and without a need for data upload. You can download it [here](/docs/studio/setup) for windows, linux and macOS.
+
 
 ### 1.4. Install ONE AI Extension
 
@@ -243,7 +247,7 @@ Add random noise to images to help the model become robust against real-world im
 ## 7. Model Settings
 
 ### Tune Model Complexity
-Optimize your model according to your specific requirements
+Optimize your model according to your specific requirements. For a more detailed explanation, you can follow [this guide](/docs/one-ai/choosing-parameters-guide) on how to set the right parameters.
 
 In Classification Mode:
 - **Classification Type** - Select if all class types should be detected separately or if the image always has one class

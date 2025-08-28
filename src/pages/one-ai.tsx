@@ -202,7 +202,7 @@ function GetStarted() {
             </div>
             <div className="mb-4">
               2.{" "}
-              <a href="docs/studio/setup?current-os=macos#install-one-ware-studio" target="_blank" className="underline hover:no-underline">
+              <a href="docs/studio/setup" target="_blank" className="underline hover:no-underline">
                 <Translate id="oneai.getstarted.step2.download">
                   Download
                 </Translate>
@@ -275,10 +275,7 @@ export default function OneAi() {
           <ComparisonSection />
         </div>
 
-        
-
-  
-            <div className="text-center mt-16 container overflow-x-hidden">
+            <div className="text-center mt-16 md:pb-2 pb-16 container overflow-x-hidden">
               <h1 className="text-2xl md:text-4xl">
             <Translate id="oneai.compare.heading">
               The Entire AI Development Process Automated in One Tool
