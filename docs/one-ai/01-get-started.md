@@ -22,7 +22,7 @@ You can find more infomation about that [here](/docs/studio/tutorials/create-pro
 
 ## 2. Initialize the AI Project
 Make sure that the correct project is selected before you create a new AI project. <br/>
-Navigate to the **AI** tab and choose **“Open AI Generator”**.
+Navigate to the **AI** tab and choose **Open AI Generator**.
 
 ![AI Generator Modal](/img/ai/one_ai_plugin/ai_generator_modal.png)
 
@@ -34,15 +34,16 @@ Enter your **AI Project Name** and choose the **AI Type**.
 
 ## 3. Dataset Preparation - Build Your AI Foundation
 
-Before training your model, you need to load and organize your image data. A clean and well-labeled dataset is the foundation for accurate AI performance.
+Before you start training your model, you need to load and organize your image data. A clean and well-labeled dataset is the foundation for accurate AI performance.
 
 ### 3.1 Load Your Images
 Access the **Dataset** tab in your ONE AI workspace to prepare your visual training data.
 
 ![Training Data View](/img/ai/one_ai_plugin/training_data_view.png)
 
-- Use **“Select Images”** to load files directly from your device.  
-- Select **“Camera Tool”** to capture and load images directly within ONE AI for real-time data collection.  
+- Use **Select Images** to load unlabeled image data directly from your device.  
+- The **Import Dataset** feature can be used to load a labeled dataset.
+- You can use the **Camera Tool** in the **AI** tab to capture images directly within ONE AI for real-time data collection.  
 - Additional Settings - Use **Preview Size** to adjust how images display in your workspace for efficient labeling.
 
 ### 3.2 Choose Labeling Mode
