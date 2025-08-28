@@ -64,19 +64,32 @@ Access the **Dataset** tab in your ONE AI workspace to prepare your visual train
 
 ![Training Data View](/img/ai/one_ai_plugin/training_data_view.png)
 
-- Use **Select Images** to load unlabeled image data directly from your device.  
+- You can simply drag and drop your image files to import them.
+- You can **Import Files** or **Import Folders** to load unlabeled image data directly from your device.  
 - The **Import Dataset** feature can be used to load a labeled dataset.
 - You can use the **Camera Tool** in the **AI** tab to capture images directly within ONE AI for real-time data collection.  
-- Additional Settings - Use **Preview Size** to adjust how images display in your workspace for efficient labeling.
+- You can use the **Spectrogram Generator** to convert audio or time series data to images.
+
+#### Dataset Import
+When you press the **Import Dataset** button, the following window opens:
+
+![Dataset Import](/img/ai/one_ai_plugin/dataset_import.png)
+
+You need to select the directory to import as well as the format of your annotations. Currently, we support the formats YOLO, COCO and Pascal Voc as well as Classification datasets that contain one directory for each class.
+
+#### Spectrogram Generator
+![Spectrogram Generator](/img/ai/one_ai_plugin/spectrogram_generator.png)
+
+The spectrogram generator supports converting audio or CSV files to spectrogram images. You can decide, whether the generated spectrograms are added to the train, test or validation dataset. Furthermore, you need to provide the sampling rate of your data.
 
 ### 4.2 Choose Labeling Mode
 ![Label Mode](/img/ai/one_ai_plugin/label_mode.png)
-- **Classification:** Assigning one or more classes to each image.  
-- **Annotation:** Mark objects in the image by drawing boxes around objects/defects. Needed for object detection.
+- **Classes:** Each image is assigned to one or more classes.  
+- **Objects:** Individual objects are selected in the images by drawing boxes around them.  
 
-### 4.3 Dataset Organization for AI Training
+### 4.3 Divide your Dataset
 
-Proper dataset organization is crucial for building reliable AI models. Follow these steps to split your data effectively.
+Dividing your data into separate subsets is crucial for building reliable AI models. Follow these steps to split your data effectively.
 
 #### Training Set
 The training set teaches your AI what to recognize - it's your model's foundation.  
@@ -94,29 +107,27 @@ This evaluates performance without direct training involvement. Labels are requi
 - 10% for large datasets  
 
 #### Test Set
-The test set provides a final performance evaluation after training.  
-Keep this set completely separate from training and validation data. Labels are optional but recommended. Make sure it represents real deployment conditions for an objective accuracy measurement.
+The test set provides a final performance evaluation after training. It is important to keep this set completely separate from training and validation data to get an objective evaluation. Providing labels is optional but highly recommended. Otherwise, you need to manually look through the predictions instead of getting a quantitative result.  
+To get an accurate evaluation on how the model will perform for your application, it is important to ensure that the test data represents the real-world deployment conditions. This organized approach ensures your AI model will be robust, accurate, and ready for real-world deployment with ONE AI.
 
-> This organized approach ensures your AI model will be robust, accurate, and ready for real-world deployment with ONE AI.
+If you don't have a separate test dataset, you can use the images from the train or validation dataset to test your AI.
+Because ONE AI only uses the validation dataset to stop the training when there is no more improvement and not for hyperparameter settings, the results should not be too far off, if you use the validation dataset for the final evaluation.
 
 ![Test Setting](/img/ai/one_ai_plugin/test_setting.png)
 
-If you don't have a separate test dataset, you can use the images from the train or validation dataset to test the AI.
-Because ONE AI only uses the validation dataset to stop the training when there is no more improvement and not for hyperparameter settings, the results should not be too far off, if you use the validation dataset for the final evaluation.
-
 ### 4.4 Add Your Labels
-Open the **Labels** tab and create labels for each class you want to detect, like "defect" or "strawberry". Assign unique colors to make annotation faster and easier.
+Open the **Labels** tab and create labels for each class you want to detect, e.g. "defect" or "strawberry". You can assign unique colors to make the annotation process faster and easier.
 
-#### Two Label Types
-- **Classification** - Categorize entire images with one label per image.  
+#### The two Label Types
+- **Classification** - Assign classes to entire images.  
   *Example:* "defect" or "no defect" for quality control  
 
     <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
         <img src="/img/ai/one_ai_plugin/labeled_img_1.png" alt="Labeled Image 1" style={{ width: '48%' }} />
         <img src="/img/ai/one_ai_plugin/labeled_img_2.png" alt="Labeled Image 2" style={{ width: '48%' }} />
     </div>
-- **Object Detection** - Mark specific objects by drawing bounding boxes. Multiple objects and labels possible per image.  
-  *Example:* Box individual "strawberry" or "foreign" objects
+- **Object Detection** - Mark specific objects by drawing bounding boxes. It is possible to annotate multiple objects and labels per image.  
+  *Example:* individual boxes for "strawberry" or "foreign object"
 
     <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
         <img src="/img/ai/one_ai_plugin/yolo_img_1.png" alt="yolo Image 1" style={{ width: '48%' }} />
@@ -126,7 +137,7 @@ Open the **Labels** tab and create labels for each class you want to detect, lik
 ---
 
 ## 5. Prefilters - Optimize Your Dataset
-Apply prefilters before or after augmentation to optimize your dataset and boost model performance.
+You can add prefilters before or after applying augmentations to process your dataset and boost model performance.
 
 ![Prefilter View](/img/ai/one_ai_plugin/prefilter_view.png)
 
