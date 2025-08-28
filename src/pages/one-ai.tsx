@@ -202,7 +202,7 @@ function GetStarted() {
             </div>
             <div className="mb-4">
               2.{" "}
-              <a href="docs/studio/setup?current-os=macos#install-one-ware-studio" target="_blank" className="underline hover:no-underline">
+              <a href="docs/studio/setup" target="_blank" className="underline hover:no-underline">
                 <Translate id="oneai.getstarted.step2.download">
                   Download
                 </Translate>
