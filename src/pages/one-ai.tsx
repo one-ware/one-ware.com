@@ -275,10 +275,7 @@ export default function OneAi() {
           <ComparisonSection />
         </div>
 
-        
-
-  
-            <div className="text-center mt-16 container overflow-x-hidden">
+            <div className="text-center mt-16 md:pb-2 pb-16 container overflow-x-hidden">
               <h1 className="text-2xl md:text-4xl">
             <Translate id="oneai.compare.heading">
               The Entire AI Development Process Automated in One Tool

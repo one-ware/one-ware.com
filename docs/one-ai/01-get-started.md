@@ -236,7 +236,7 @@ Add random noise to images to help the model become robust against real-world im
 ## 7. Model Settings
 
 ### Tune Model Complexity
-Optimize your model according to your specific requirements
+Optimize your model according to your specific requirements. For a more detailed explanation, you can follow [this guide](/docs/one-ai/choosing-parameters-guide) on how to set the right parameters.
 
 In Classification Mode:
 - **Classification Type** - Select if all class types should be detected separately or if the image always has one class
