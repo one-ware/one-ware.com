@@ -345,15 +345,15 @@ export default function OneAi() {
               )}
             </div>
 
-<div id="getStarted" className=" dropshadowbottom pt-20 pb-5" style={{ 
-  boxShadow: 'rgb(0 0 0 / 50%) 0px -10px 13px -7px inset',
-  backgroundImage: 'linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,1.0) 100%), url(\'/img/background.webp\')',
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-  backgroundRepeat: 'no-repeat'
-}}>
-    <GetStarted />
-</div>
+            <div id="getStarted" className=" dropshadowbottom pt-20 pb-5" style={{ 
+              boxShadow: 'rgb(0 0 0 / 50%) 0px -10px 13px -7px inset',
+              backgroundImage: 'linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,1.0) 100%), url(\'/img/background.webp\')',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat'
+            }}>
+                <GetStarted />
+            </div>
 
 
             <div className="container pb-20 mt-20">
