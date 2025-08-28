@@ -6,7 +6,26 @@ sidebar_label: Getting Started
 
 # Getting Started with One AI
 
-## 1. Create a New Project
+This guide first explains how to set up ONE AI and then explains all Features and how to get the best out of your AI. But ONE AI is intelligent enought, so you don't need to understand each setting to get verry good results that usually exceed all universal AI models. If you then also follow all information on this site, you can get even better results that often exceed the work of human experts. On the left, you can find more Tutorials with datatset examples and more detailed explanaition on how to set Parameters. 
+
+If you have any questions: Don't hesitate to ask our team for help via mail: support@one-ware.com or you can ask in our [Discord for ONE WARE Studio and ONE AI](https://discord.com/invite/NCN9VAh).
+This helps us aswell, because we then know what tutorials we can do next. 
+
+## 1. Setup
+We have a cloud service and software that runs on your PC locally. This ensures maximum performance. In the setup, we guide you through the installation process.
+
+### 1.1. Sign Up
+
+
+### 1.2. Verify Address to Get Free Credits
+
+### 1.3. Download ONE WARE Studio 
+
+### 1.4. Install ONE AI Extension
+
+### 1.5. Connect to ONE AI Cloud
+
+## 2. Create a New Project
 Open the Project Creator by clicking on `File -> New -> Project`
 
 <img src="/img/ai/one_ai_plugin/newProject.png" alt="New Project" style={{ width: '40%' }} />
@@ -20,7 +39,7 @@ You can find more infomation about that [here](/docs/studio/tutorials/create-pro
 
 ---
 
-## 2. Initialize the AI Project
+## 3. Initialize the AI Project
 Make sure that the correct project is selected before you create a new AI project. <br/>
 Navigate to the **AI** tab and choose **“Open AI Generator”**.
 
@@ -32,11 +51,11 @@ Enter your **AI Project Name** and choose the **AI Type**.
 
 ---
 
-## 3. Dataset Preparation - Build Your AI Foundation
+## 4. Dataset Preparation - Build Your AI Foundation
 
 Before training your model, you need to load and organize your image data. A clean and well-labeled dataset is the foundation for accurate AI performance.
 
-### 3.1 Load Your Images
+### 4.1 Load Your Images
 Access the **Dataset** tab in your ONE AI workspace to prepare your visual training data.
 
 ![Training Data View](/img/ai/one_ai_plugin/training_data_view.png)
@@ -45,12 +64,12 @@ Access the **Dataset** tab in your ONE AI workspace to prepare your visual train
 - Select **“Camera Tool”** to capture and load images directly within ONE AI for real-time data collection.  
 - Additional Settings - Use **Preview Size** to adjust how images display in your workspace for efficient labeling.
 
-### 3.2 Choose Labeling Mode
+### 4.2 Choose Labeling Mode
 ![Label Mode](/img/ai/one_ai_plugin/label_mode.png)
 - **Classification:** Assigning one or more classes to each image.  
 - **Annotation:** Mark objects in the image by drawing boxes around objects/defects. Needed for object detection.
 
-### 3.3 Dataset Organization for AI Training
+### 4.3 Dataset Organization for AI Training
 
 Proper dataset organization is crucial for building reliable AI models. Follow these steps to split your data effectively.
 
@@ -80,7 +99,7 @@ Keep this set completely separate from training and validation data. Labels are 
 If you don't have a separate test dataset, you can use the images from the train or validation dataset to test the AI.
 Because ONE AI only uses the validation dataset to stop the training when there is no more improvement and not for hyperparameter settings, the results should not be too far off, if you use the validation dataset for the final evaluation.
 
-### 3.4 Add Your Labels
+### 4.4 Add Your Labels
 Open the **Labels** tab and create labels for each class you want to detect, like "defect" or "strawberry". Assign unique colors to make annotation faster and easier.
 
 #### Two Label Types
@@ -101,7 +120,7 @@ Open the **Labels** tab and create labels for each class you want to detect, lik
 
 ---
 
-## 4. Prefilters - Optimize Your Dataset
+## 5. Prefilters - Optimize Your Dataset
 Apply prefilters before or after augmentation to optimize your dataset and boost model performance.
 
 ![Prefilter View](/img/ai/one_ai_plugin/prefilter_view.png)
@@ -167,7 +186,7 @@ Simplify images while preserving critical details.
 
 ---
 
-## 5. Augmentations
+## 6. Augmentations
 
 Augmentations are applied during training with random values within specified ranges. Their purpose is to increase the diversity of the training data, helping the AI to generalize better. By varying the training data it is possible to increase the size of the dataset without the need to record or annotate additional data. Furthermore, it is possible to make the AI model more robust against certain variations in the data by intentionally reproducing these variations with augmentations.
 
@@ -209,7 +228,7 @@ Add random noise to images to help the model become robust against real-world im
 
 ---
 
-## 6. Model Settings
+## 7. Model Settings
 
 ### Tune Model Complexity
 Optimize your model according to your specific requirements
@@ -255,7 +274,7 @@ In Classification Mode:
 - **Average Number of Features for Classification** - The average number of features used for classification
 ---
 
-## 7. Hardware Settings
+## 8. Hardware Settings
 
 Select or define hardware resources to create a model that is optimized for your hardware.
 
@@ -274,7 +293,7 @@ Choose the hardware that is used to run the AI model.
 
 ---
 
-## 8. Training
+## 9. Training
 
 > For these steps you need to be connected to the ONE AI Cloud
 
