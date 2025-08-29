@@ -71,7 +71,7 @@ Access the **Dataset** tab in your ONE AI workspace to prepare your visual train
 - You can use the **Spectrogram Generator** to convert audio or time series data to images.
 
 #### Dataset Import
-When you press the **Import Dataset** button, the following window opens:
+When you press the **Import Existing Dataset** button, the following window opens:
 
 ![Dataset Import](/img/ai/one_ai_plugin/dataset_import.png)
 
@@ -141,64 +141,107 @@ You can add prefilters before or after applying augmentations to process your da
 
 ![Prefilter View](/img/ai/one_ai_plugin/prefilter_view.png)
 
-### When to Use Prefilters
-- **Before Augmentation:** Optimize your dataset for higher generalization and easier detection
-- **After Augmentation:** Some prefilters only represent real world performance if they are applied after augmentation
+On the right, you can see the settings for the selected prefilter as well as a preview on how it will affect the image. The image on the bottom left shows a preview of your complete prefilter pipeline.
 
-### Resize Filter
+### The Steps in the Data Processing Pipeline
+- **Begin:** The filters **Initial Resize** and **Resolution Filter** are used to bring all images to the same size and optionally scale them down.
+- **Before Augmentation:** You can choose from a varied selection of filters that are applied before augmentation is applied to the images. Typical examples are the **Color Filter** for applying color correction or the **Crop Filter** for cropping the images to the relevant area.
+- **Static Augmentations:** The augmentations are divided into two groups. The static augmentations are applied first and have a fixed order.
+- **Dynamic Augmentations:** The order of the dynamic augmentations can be changed and you can even apply the same augmentation multiple times. 
+- **After Augmentation:** You have the option to add additional filters that are applied after the images are augmented. For example, you could use a **Frequency Filter** to reduce noise or apply a **Threshold Filter** to convert your images to a binary representation.
+- **End:** In the last step, you have the option to remove individual color channels with the **Channel Filter**.
 
-    <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-        <img src="/img/ai/one_ai_plugin/resolution_pre.png" alt="Object resolution view " style={{ width: '18%' }} />
-        <img src="/img/ai/one_ai_plugin/resolution_post.png" alt="Object resolution view" style={{ width: '18%' }} />
-    </div>
+### Image Resolution
 
-Adjust image resolution based on your smallest target objects.  
+#### Initial Resize
+![Initial Resize](/img/ai/one_ai_plugin/initial_resize.png)
 
-Keep resolution high enough to preserve key details but avoid excessive size, as this increases prediction time and may reduce accuracy when the AI struggles with too much detail.
+The **Initial Resize** filter resizes all images to the same size. You can decide between stretching images that have a different size or applying a black padding. You can set the size manually or use the button on the right of **Begin** to automatically select the size of the largest image.
+
+
+#### Resolution Filter
+<div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+    <img src="/img/ai/one_ai_plugin/resolution_filter_50.png" alt="Resolution Filter" style={{ width: '30%' }} />
+    <img src="/img/ai/one_ai_plugin/resolution_filter_10.png" alt="Resolution Filter" style={{ width: '30%' }} />
+</div>
+
+The **Resolution Filter** allows you to reduce the resolution of your images. This will reduce the prediction time and may even improve the accuracy if the AI struggles with unnecessary details. You need to keep the resolution large enough to preserve key details.
 
 ### Basic Prefilters
 
-#### Color Enhancement
+#### Crop Filter
 
-    <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-        <img src="/img/ai/one_ai_plugin/color_filter_1.png" alt="Object resolution view " style={{ width: '18%' }} />
-        <img src="/img/ai/one_ai_plugin/color_filter_2.png" alt="Object resolution view" style={{ width: '18%' }} />
-    </div>
+![Crop Filter](/img/ai/one_ai_plugin/crop_filter.png)
 
-Make objects stand out when they blend into similar backgrounds. Boost saturation, contrast, brightness, and hue to create clear visual separation. Add threshold filtering for sharp background removal while preserving critical object features.
+You can use the **Crop Filter** to crop your images to the area of interest. For example, if your images show objects on a conveyor belt, you can use the crop filter to remove any surrounding areas that are also captured by the camera.
 
-#### Cropping
+#### Frequency Filter
+<div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+    <img src="/img/ai/one_ai_plugin/low_pass_filter.png" alt="Low-pass Filter" style={{ width: '30%' }} />
+    <img src="/img/ai/one_ai_plugin/high_pass_filter.png" alt="High-pass Filter" style={{ width: '30%' }} />
+</div>
 
-![Cropping](/img/ai/one_ai_plugin/smart_crop.png)
+You can use the **Frequency Filter** to apply low-pass and high-pass filters.
+- Low-pass filters allow low frequencies to pass while reducing high frequencies. This removes sharp edges and results in a blurred image.
+- High-pass filters do the opposite. They remove areas of uniform color and can be used to highlight edges in images.
 
-Eliminate visual clutter and zero in on your target areas. Focus on regions where objects consistently appear to cut background noise, sharpen detection accuracy, and accelerate training performance.
+#### Sharpen Filter
+<div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+    <img src="/img/ai/one_ai_plugin/sharpen_filter_1.png" alt="Sharpen Filter before" style={{ width: '30%' }} />
+    <img src="/img/ai/one_ai_plugin/sharpen_filter_2.png" alt="Sharpen Filter after" style={{ width: '30%' }} />
+</div>
 
-#### Frequency Filtering
-Simplify images while preserving critical details.  
-- **Highpass** - Removes background and just focuses on changes in the image  
-- **Lowpass** - Smoothes textures and removes visual noise that confuses models  
+You can use the **Sharpen Filter** to increase the sharpness of the image and emphasize object edges for an easier detection.
 
+#### Color Filter
+<div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+    <img src="/img/ai/one_ai_plugin/color_filter_1.png" alt="Color Filter" style={{ width: '30%', transform: 'scaleX(-1)' }} />
+    <img src="/img/ai/one_ai_plugin/color_filter_2.png" alt="Color Filter" style={{ width: '30%' }} />
+</div>
 
-    <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-        <img src="/img/ai/one_ai_plugin/lowpass_img_1.png" alt="LowPass filter 1 " style={{ width: '18%' }} />
-        <img src="/img/ai/one_ai_plugin/lowpass_img_2.png" alt="LowPass filter 2" style={{ width: '18%' }} />
-    </div>
-
-    
+The **Color Filter** allows you to alter the brightness, contrast, saturation, hue and gamma of your images. You can use it for color correction or for creating a clearer visual separation between objects and background.
 
 ### Advanced Prefilter Options
-- **Color Space Conversion** - Switch between HSV and RGB for optimal color processing  
-- **Edge Sharpening** - Emphasizes object boundaries for clearer detection  
-- **Threshold Processing** - Creates high-contrast black and white images for specific applications  
-- **Dataset Normalization** - Rescales the image's brightness so that the darkest pixels become black and the brightest pixels become white
-- **Channel Filtering** 
-  
-    <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-        <img src="/img/ai/one_ai_plugin/channel_filter_1.png" alt="Channel Filter 1 " style={{ width: '18%' }} />
-        <img src="/img/ai/one_ai_plugin/channel_filter_2.png" alt="Channel Filter 2" style={{ width: '18%' }} />
-    </div>
+#### Normalize Filter
+This filter rescales the image's brightness so that the darkest pixels become black and the brightest pixels become white
 
-    Remove or isolate specific color channels (red, green, blue) when one introduces unwanted visual noise
+#### Inverse Filter
+This filter can be used to compute the inverse of images. For example, you can use it to convert black text on a white background to white text on a black background. This might be useful to you, since neural networks tend to be slightly better at detecting light objects on a dark background than the other way around.
+
+#### RGB to HSV Filter
+The **RGB to HSV Filter** converts the images from an RGB to an HSV representation. This can be used to apply further filters to the HSV representation before converting the image back to RGB. For example, you can use a **Threshold Filter** that is applied based on the hue value. This makes it possible to extract objects of a certain color from an image.
+
+#### HSV ot RGB Filter
+This is the counterpart to the **RGB to HSV Filter** and can be used to convert HSV images back to RGB.
+
+#### Threshold Filter
+<div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+    <img src="/img/ai/one_ai_plugin/threshold_filter_1.png" alt="Threshold Filter" style={{ width: '30%' }} />
+    <img src="/img/ai/one_ai_plugin/threshold_filter_2.png" alt="Threshold Filter" style={{ width: '30%' }} />
+</div>
+
+The **Threshold Filter** removes image areas based on a threshold. You can use this to remove background areas if they can be clearly separated from the objects.  
+You have the option to apply the following operations:
+- **Binary**: Pixels below the threshold are set to black and pixels above the threshold to white.
+- **To Zero**: Pixels below the threshold are set to black.
+- **To One**: Pixels below the threshold are set to white.
+- **To Zero Inverted**: Pixels above the threshold are set to black.
+- **To One Inverted**: Pixels above the threshold are set to white.
+
+You can select the option to use two thresholds. This changes the operations in the following way:
+- **Binary**: Pixels between the thresholds are set to white. Pixels below the first threshold or above the second threshold are set to black.
+- **To Zero** and **To One**: The operation is applied to pixels below the first threshold or above the second threshold.
+- **To Zero Inverted** and **To One Inverted**: The operation is applied to pixels between the thresholds.
+
+It is possible to check whether the average of all channels is below the threshold or to only use a single channel for the decision. If you use a single channel, you can decide whether the operation is only applied to that channel or all channels. This combines nicely with the **RGB to HSV Filter**. You can convert your images to HSV and then only keep areas where the hue lies within a set value range.
+
+#### Channel Filter
+<div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+    <img src="/img/ai/one_ai_plugin/channel_filter_1.png" alt="Channel Filter 1 " style={{ width: '30%' }} />
+    <img src="/img/ai/one_ai_plugin/channel_filter_2.png" alt="Channel Filter 2" style={{ width: '30%' }} />
+</div>
+
+The **Channel Filter** can be used to remove or isolate specific color channels. This can be used when one of the channels doesn't contain any useful information or contains too much noise.
 
 ---
 
