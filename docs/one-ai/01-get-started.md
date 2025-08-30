@@ -111,6 +111,22 @@ When you press the **Import Existing Dataset** button, the following window open
 
 You need to select the directory to import as well as the format of your annotations. Currently, we support the formats YOLO, COCO and Pascal Voc as well as Classification datasets that contain one directory for each class.
 
+#### Camera Tool
+You can use OneWare Studio's integrated **Camera Tool** to record images for your dataset. The camera tool allows you to configure camera settings and record images from multiple cameras simultaneously.
+
+![Camera Tool Selection](/img/ai/one_ai_plugin/camera_tool_selection.png)
+
+When you start the camera tool, you first need to add the cameras to your workspace. Select the camera that you want to use in the dropdown menu and click on the plus icon. You can use the play icon on the bottom of the camera window to start and stop the live preview. By clicking on the gear icon, you can enter the camera configuration menu.
+
+![Camera Tool Configuration](/img/ai/one_ai_plugin/camera_tool_configuration.png)
+
+The camera configuration menu allows you to customize your camera settings. You can create different presets that can be exported and imported. You are also able to crop the image. You can draw the area you are interested in onto the preview or set its coordinates at the bottom of the settings list.  
+For our example, we increased the the camera's brightness and contrast. This brightens the white background and makes it easier for the AI model to recognize the numbers. We also added a crop to select a square region from the rectangular camera image.
+
+![Camera Tool Capture](/img/ai/one_ai_plugin/camera_tool_capture.png)
+
+To record images, we need to go to the **Capture** tab. You can record images by clicking on the camera icon, which updates the preview. This records an image from all cameras simultaneously. You need to select the directory where you want to add them and click on the save icon to save them. The images are automatically named with the timestamp they were captured at, so you don't need to enter names manually.
+
 #### Spectrogram Generator
 ![Spectrogram Generator](/img/ai/one_ai_plugin/spectrogram_generator.png)
 
