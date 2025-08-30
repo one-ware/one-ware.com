@@ -15,19 +15,48 @@ This helps us aswell, because we then know what tutorials we can do next.
 We have a cloud service and software that runs on your PC locally. This ensures maximum performance. In the setup, we guide you through the installation process.
 
 ### 1.1. [Sign Up](https://cloud.one-ware.com/Account/Register)
+[![Sign Up](/img/ai/one_ai_plugin/signup.webp)](https://cloud.one-ware.com/Account/Register)
+
 To get access to our cloud infrastructure and AI model prediction, you need to create an account [here](https://cloud.one-ware.com/Account/Register) for the ONE AI cloud. This is free and your data is stored savely on our own servers in germany.
 If you work with sensitive data, you can contact us via mail: sales@one-ware.com, so we can provide a local training service for your servers that ensures the data doesn't leave your company. In the ONE AI software, until you actually train the AI model, all data is stored locally on your PC. So you can still first create an account and test all settings until we can provide your local training service.
 
 ### 1.2. Verify Address to Get Free Credits
-After you have access to the ONE AI cloud, you can get free credits worth 500 € after you verify your address [here](https://cloud.one-ware.com/Account/Manage/ChangeAddress) by just saving your billing address. You won't be changed with any fees. The address is only needed to check for trade restrictions and general company verification. It will take a bit for the verification (up to one business day), but you can continue with the next steps until you have your free credits for training.
+![Verify](/img/ai/one_ai_plugin/verify.webp)
+
+After you have access to the ONE AI cloud, you can get 25.000 credits for free worth 500 €. You only need to go to your account settings and save your address. You won't be changed with any fees. The address is only needed to check for trade restrictions and general company verification. It will take a bit for the verification (up to one business day), but you can continue with the next steps until you have your free credits for training.
+
+![Verify 2](/img/ai/one_ai_plugin/verify2.webp)
 
 ### 1.3. [Download ONE WARE Studio](/docs/studio/setup)
 Next you need our software locally on your PC, so you can experiment with your data safely and without a need for data upload. You can download it [here](/docs/studio/setup) for windows, linux and macOS.
 
+[![Install](/img/ai/one_ai_plugin/install.webp)](/docs/studio/setup)
+
+Just follow the installer and start ONE WARE Studio after you finished the installation process.
 
 ### 1.4. Install ONE AI Extension
+ONE WARE Studio is open source and multiple extensions exist to use it as development platform for any kind of AI, software, firmware or FPGA development.
+Click on `Extras > Extensions` to get to the extension manager that lets you personalize ONE WARE Studio for your development needs.
+
+![Studio](/img/ai/one_ai_plugin/studio.webp)
+
+In the extension manager, install the ONE AI extension. This includes everything you need to develop AI models for any kinds of hardware without the need to be an AI expert.
+
+![AI Extension](/img/ai/one_ai_plugin/ai.webp)
 
 ### 1.5. Connect to ONE AI Cloud
+
+The last thing you need for the setup is to connect ONE WARE Studio with the ONE AI Cloud. Click on the `Account` button on the top right and then on `Login`.
+
+![Connect](/img/ai/one_ai_plugin/connect.webp)
+
+Then you can just use the same email and password you used to login to the ONE AI Cloud earlier.
+
+![Login](/img/ai/one_ai_plugin/login.webp)
+
+After you click on `Log In`, you should see that you account is now connected in ONE WARE Studio, so you can use the ONE AI services.
+
+![Login](/img/ai/one_ai_plugin/login_success.webp)
 
 ## 2. Create a New Project
 Open the Project Creator by clicking on `File -> New -> Project`
@@ -44,12 +73,17 @@ You can find more infomation about that [here](/docs/studio/tutorials/create-pro
 ---
 
 ## 3. Initialize the AI Project
-Make sure that the correct project is selected before you create a new AI project. <br/>
+Make sure that the correct project is selected before you create a new AI project.
+
+![Right Project](/img/ai/one_ai_plugin/right_project.webp)
+
 Navigate to the **AI** tab and choose **Open AI Generator**.
 
-![AI Generator Modal](/img/ai/one_ai_plugin/ai_generator_modal.png)
+![New AI](/img/ai/one_ai_plugin/new_ai.webp)
 
 Enter your **AI Project Name** and choose the **AI Type**. 
+
+![AI Generator Modal](/img/ai/one_ai_plugin/ai_generator_modal.png)
 
 **Note:** Currently, only “Image Detection” is available as the AI type.
 
@@ -353,7 +387,10 @@ If you are training a classification model, you need to provide some additional 
 ## 8. Hardware Settings
 The **Hardware Settings** tab allows you to specify the target hardware that your model will be deployed on. You have the option to select a predefined hardware or to define custom hardware resources. ONE AI will create a model that is optimized for your hardware and will run within the constraints that were specified in the **Model Settings**.
 
-<img src="/img/ai/one_ai_plugin/hardware_settings.png" alt="Hardware Settings" style={{ width: '100%' }} />
+![Hardware](/img/ai/one_ai_plugin/hardware.webp)
+
+The important settings are just the `Hardware Type`, the `Compute Capability` how fast your hardware can do calculations and the `Memory Limit` how much RAM is available for the calculations.
+`Quantized Calculations` are important aswell when you want to export to a microcontroller, TPU or FPGA. 
 
 ### Used Hardware
 You have the option to select select a preconfigured hardware. If you want to use a different hardware, you can select **Custom** and enter the hardware specifications in the advanced settings.
@@ -380,20 +417,45 @@ You have the option to select select a preconfigured hardware. If you want to us
 
 Ensure that your training data is uploaded, labeled, and properly prepared. This includes applying any necessary prefilters and selecting the most effective augmentations. Once your data is ready, double-check your model and hardware settings before starting the training process
 
-### Create  
+### Start Training  
 
-You can train different AI models for the same project, so you can test out different configurations.
+You can create new AI model instances, so you can save old trained models and try out new ones.
 
-<img src="/img/ai/one_ai_plugin/train.png" alt="Train" style={{ width: '100%' }} /> 
+![Train](/img/ai/one_ai_plugin/train_1.webp)
 
-### Test  
+Select the model you want to train with the new data and settings. Then click on the `Train` button.
 
-You can test the AI with your test data.
+![Train 2](/img/ai/one_ai_plugin/train_2.webp)
 
-<img src="/img/ai/one_ai_plugin/test.png" alt="Test" style={{ width: '100%' }} /> 
+You have the option to specify how long you want to train. A detailed guide what training time works best can be found [here](/docs/one-ai/choosing-parameters-guide#training).
+And you can select if you want to override the existing model or continue training, if you select a model that was already trained before.
+For microcontrollers, TPU or FPGA you can also select if you want to train with or without quantization.
 
-### Export  
+![Train 3](/img/ai/one_ai_plugin/train_3.webp)
 
-#### Create Tool
-Choose the tool format based on target hardware and application needs.
-<img src="/img/ai/one_ai_plugin/export_tool.png" alt="Model Settings" style={{ width: '40%' }} /> 
+After you press on `Train`, you see how much Credits the training will cost. If you use early stopping, the costs can be less than that, if the algorithm thinks it doesn't make sense to continue training. 
+The total time is always a bit higher than the training time, since the data need to be uploaded and preprocessed, but you only pay for the time the AI is actually trained on the server.
+
+![Train 4](/img/ai/Train.png)
+
+While training you can see the process of training in the plot. You can also stop the training manually if you see no better results after a longer time of training.
+
+### Export AI Model
+
+To test your AI model, you can export it as AI model or complete project. Just click on the `Export` button.
+
+![Export 1](/img/ai/one_ai_plugin/export_1.webp)
+
+For testing your AI model in the ONE AI extension, you can select `ONNX` as `Model Type`. For microcontrollers, FPGAs with processor and other efficient AI implementation on processors you can use `Tensorflow Lite`. And to integrate the AI as bare metal FPGA implementation, you can select `VHDL`.
+
+![Export 2](/img/ai/one_ai_plugin/export_2.webp)
+
+Then you can export the AI model and download it in the `Exports` tab.
+The ONNX model can then also be used for labelling or tasks like quality control together with the camera tool.
+
+## Examples
+
+Check out our examples like:
+1. [A quality control of potato chips](/docs/one-ai/potato-chip-demo)
+2. [A detection of handwritten digits](/docs/one-ai/handwritten-digits-demo)
+3. [An object detection of dice](/docs/one-ai/dice-demo)
