@@ -142,7 +142,7 @@ The spectrogram generator supports converting audio or CSV files to spectrogram 
 - **Classes:** Each image is assigned to one or more classes.  
 - **Objects:** Individual objects are selected in the images by drawing boxes around them.  
 
-### 4.3 Divide your Dataset
+### 4.3 Divide Your Dataset
 
 Dividing your data into separate subsets is crucial for building reliable AI models. Follow these steps to split your data effectively.
 
@@ -444,26 +444,27 @@ You can create new AI model instances, so you can save old trained models and tr
 
 ![Train](/img/ai/one_ai_plugin/train_1.webp)
 
-Select the model you want to train with the new data and settings. Then click on the `Train` button.
+Select the model you want to train with the current data and settings. Then click on the `Train` button.
 
 ![Train 2](/img/ai/one_ai_plugin/train_2.webp)
 
-You have the option to specify how long you want to train. A detailed guide what training time works best can be found [here](/docs/one-ai/choosing-parameters-guide#training).
-And you can select if you want to override the existing model or continue training, if you select a model that was already trained before.
-For microcontrollers, TPU or FPGA you can also select if you want to train with or without quantization.
+First, you need to specify for how long you want to train your model. A detailed guide what training time works best can be found [here](/docs/one-ai/choosing-parameters-guide#training). You can also use early stopping to end the training early if the model doesn't improve any more. To do so you need to set the **Patience for Early Stopping**. For example, if you set the training time to an hour and the patience to 10%, the training is stopped early if the model doesn't improve for six minutes.  
+If you want to export a quantized model, you should **Enable Quantization Optimization**. Quantization reduces the amount of bits that are used to represent the model weights. This reduces the size of the model and increases its speed while only slightly decreasing its accuracy. This is a huge advantage if you intend to run your model on an FPGA or a microcontroller.  
+If you enable quantization, you can use the **Percentage Quantization Optimization** setting to control the percentage of training time that is dedicated to fine-tuning quantized calculations. While quantization aware training improves the performance of quantized models, it also slows down training, so it is a good idea to start the training normally and switch to quantization aware training later on. A good tradeoff between training time and model performance is at 30%, but if you want the best performing model, you should set the percentage to 100%.  
+The next setting allows you to choose whether you only want to train your model on images that contain objects. This allows the model to learn faster how objects look and how to detect them, but the model also spends less time learning how to correctly identify the background.  
+Finally, if you selected a model that was already trained before, you can decide whether you want to continue its training or override the existing model. If you are training the model for the first time, this setting is ignored.
 
 ![Train 3](/img/ai/one_ai_plugin/train_3.webp)
 
-After you press on `Train`, you see how much Credits the training will cost. If you use early stopping, the costs can be less than that, if the algorithm thinks it doesn't make sense to continue training. 
-The total time is always a bit higher than the training time, since the data need to be uploaded and preprocessed, but you only pay for the time the AI is actually trained on the server.
+After you press on `Train`, you see how many Credits the training will cost. If you use early stopping, the costs can be less than that, because the training might end early if there are no further improvements. The total time is always a bit higher than the training time, since the data needs to be uploaded and preprocessed, but you only pay for the time the AI is actually trained on the server.
 
 ![Train 4](/img/ai/Train.png)
 
-While training you can see the process of training in the plot. You can also stop the training manually if you see no better results after a longer time of training.
+During the training you can see the current training progress in the **Statistics** tab. You can stop the training manually if you see no further improvements after a longer time of training.
 
 ### Export AI Model
 
-To test your AI model, you can export it as AI model or complete project. Just click on the `Export` button.
+To test your AI model, you can export it as an AI model or as a complete project by clicking on the `Export` button.
 
 ![Export 1](/img/ai/one_ai_plugin/export_1.webp)
 
@@ -473,6 +474,12 @@ For testing your AI model in the ONE AI extension, you can select `ONNX` as `Mod
 
 Then you can export the AI model and download it in the `Exports` tab.
 The ONNX model can then also be used for labelling or tasks like quality control together with the camera tool.
+
+### Evaluating the Model on Live Data
+You can use the **Camera Tool** to evaluate the performance of your model on live data. To do so, you need to export the trained model as an ONNX model. After downloading it, the model becomes available in OneWare Studio automatically. Now, you need to open the **Camera Tool** by clicking on **AI** in the menu bar and selecting **Camera Tool**.  
+In the **Live Preview** tab, you can select the model that you want to use as well as the camera. You also need to select whether you are using a **Classification** or an **Object Detection** model in the **Preview Mode**. After you click on the play button, the model will start running on your local machine. If you have an object detection task, the predicted bounding boxes will be drawn directly onto the preview. For classification tasks, the predicted class is displayed in the bottom right corner.
+
+![Camera Tool Live Preview](/img/ai/one_ai_plugin/camera_tool_live_preview.png)
 
 ## Examples
 
