@@ -9,16 +9,26 @@
 
 .heroBackground{
   box-shadow: rgb(0 0 0 / 50%) 0px -10px 13px -7px inset; 
-  background-image: linear-gradient(45deg,#1c4048,#111111,#1f1f1f);
+  background-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1.0) 100%), url('/img/background.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
   top: 0;
   left: 0;
   right: 0;
-  height: 80vh;
+  height: 80vh; /* Mobile: kleinere Höhe */
   min-height: 300px;
   margin-top: 0;
   margin-top: calc(var(--ifm-navbar-height)*-1);
   padding: 10px;
+}
+
+/* Tablet/Laptop */
+@media (min-width: 768px) {
+  .heroBackground {
+    height: 110vh;
+  }
 }
 
 .heroBanner {

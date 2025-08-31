@@ -396,7 +396,6 @@ export default function Studio() {
       <HomepageHeader />
 
       <main>
-        <div className="dropshadowbottom">
           <div className="default-background diagclipbottom pt-16">
             <div className="container overflow-x-hidden">
               {sliders && sliders.length && (
@@ -459,22 +458,25 @@ export default function Studio() {
               )}
             </div>
           </div>
-        </div>
 
-        <div className="relative">
-          <div className="absolute fancybackground" />
+        <div className=" relative pt-16 pb-16" style={{ 
+            boxShadow: 'rgb(0 0 0 / 50%) 0px -10px 13px -7px inset',
+            
+                        backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,1.0) 100%), url('${require('@site/static/img/background.webp').default}')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}>
           <DownloadSection />
         </div>
 
-        <div className="dropshadowtop">
-          <div className="default-background diagcliptop pt-32 md:pt-48">
+          <div className="default-background diagcliptop pt-32 md:pt-24">
             <div className="bottomsplit pb-24 mb-24 container">
               <Extension />
             </div>
 
             <VendorSection />
           </div>
-        </div>
 
         <div className="default-background mt-20">
           <div className="dropshadowtop">
