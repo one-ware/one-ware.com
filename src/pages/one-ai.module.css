@@ -22,13 +22,12 @@
 :global(body) {
   overflow-x: clip;
   max-width: 100vw;
-  box-sizing: border-box;
 }
 
-/* Prevent horizontal overflow on main containers only */
-:global(.container), :global(main), :global(section), :global(div[class*="col"]) {
+/* Prevent horizontal overflow without affecting container padding */
+:global(main), :global(section) {
   max-width: 100%;
-  box-sizing: border-box;
+  overflow-x: clip;
 }
 
 .slickSlider {
