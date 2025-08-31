@@ -89,7 +89,7 @@ function HomepageHeader() {
         <div className="flex">
           <div className="flex-col max-w-5xl m-2 mt-10">
             <div className="text-center mt-10">
-              <h1 className="font-medium text-3xl md:text-4xl mb-7">
+              <h1 className="font-medium text-3xl md:text-4xl mb-7 md:mx-16">
                 <Translate id="oneai.top">
                 ONE AI creates custom neural networks in seconds that fit your exact hardware, performance and use case requirements.
                 </Translate>

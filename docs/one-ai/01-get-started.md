@@ -111,6 +111,11 @@ When you press the **Import Existing Dataset** button, the following window open
 
 You need to select the directory to import as well as the format of your annotations. Currently, we support the formats YOLO, COCO and Pascal Voc as well as Classification datasets that contain one directory for each class.
 
+Check out our examples like if you don't have a dataset and want to try ONE AI:
+1. [A quality control of potato chips](/docs/one-ai/potato-chip-demo)
+2. [A detection of handwritten digits](/docs/one-ai/handwritten-digits-demo)
+3. [An object detection of dice](/docs/one-ai/dice-demo)
+
 #### Camera Tool
 You can use OneWare Studio's integrated **Camera Tool** to record images for your dataset. The camera tool allows you to configure camera settings and record images from multiple cameras simultaneously.
 
