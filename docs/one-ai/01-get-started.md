@@ -137,7 +137,7 @@ The spectrogram generator supports converting audio or CSV files to spectrogram 
 - **Classes:** Each image is assigned to one or more classes.  
 - **Objects:** Individual objects are selected in the images by drawing boxes around them.  
 
-### 4.3 Divide your Dataset
+### 4.3 Divide Your Dataset
 
 Dividing your data into separate subsets is crucial for building reliable AI models. Follow these steps to split your data effectively.
 
@@ -468,6 +468,12 @@ For testing your AI model in the ONE AI extension, you can select `ONNX` as `Mod
 
 Then you can export the AI model and download it in the `Exports` tab.
 The ONNX model can then also be used for labelling or tasks like quality control together with the camera tool.
+
+### Evaluating the Model on Live Data
+You can use the **Camera Tool** to evaluate the performance of your model on live data. To do so, you need to export the trained model as an ONNX model. After downloading it, the model becomes available in OneWare Studio automatically. Now, you need to open the **Camera Tool** by clicking on **AI** in the menu bar and selecting **Camera Tool**.  
+In the **Live Preview** tab, you can select the model that you want to use as well as the camera. You also need to select whether you are using a **Classification** or an **Object Detection** model in the **Preview Mode**. After you click on the play button, the model will start running on your local machine. If you have an object detection task, the predicted bounding boxes will be drawn directly onto the preview. For classification tasks, the predicted class is displayed in the bottom right corner.
+
+![Camera Tool Live Preview](/img/ai/one_ai_plugin/camera_tool_live_preview.png)
 
 ## Examples
 
