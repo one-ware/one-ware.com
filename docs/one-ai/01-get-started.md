@@ -6,33 +6,33 @@ sidebar_label: Getting Started
 
 # Getting Started with One AI
 
-This guide first explains how to set up ONE AI and then explains all Features and how to get the best out of your AI. But ONE AI is intelligent enought, so you don't need to understand each setting to get verry good results that usually exceed all universal AI models. If you then also follow all information on this site, you can get even better results that often exceed the work of human experts. On the left, you can find more Tutorials with datatset examples and more detailed explanaition on how to set Parameters. 
+This guide first explains how to set up ONE AI and then explains all features and how to get the best out of your AI. But ONE AI is intelligent enough, so you don't need to understand each setting to get very good results that usually exceed all universal AI models. If you then also follow all information on this site, you can get even better results that often exceed the work of human experts. On the left, you can find more tutorials with datatset examples and more detailed explanation on how to set parameters. 
 
 If you have any questions: Don't hesitate to ask our team for help via mail: support@one-ware.com or you can ask in our [Discord for ONE WARE Studio and ONE AI](https://discord.com/invite/NCN9VAh).
-This helps us aswell, because we then know what tutorials we can do next. 
+This helps us as well, because we then know what tutorials we can do next. 
 
 ## 1. Setup
-We have a cloud service and software that runs on your PC locally. This ensures maximum performance. In the setup, we guide you through the installation process.
+We have a cloud service and a software that runs on your PC locally. This ensures maximum performance. In this setup, we guide you through the installation process.
 
 ### 1.1. [Sign Up](https://cloud.one-ware.com/Account/Register)
 [![Sign Up](/img/ai/one_ai_plugin/signup.webp)](https://cloud.one-ware.com/Account/Register)
 
-To get access to our cloud infrastructure and AI model prediction, you need to create an account [here](https://cloud.one-ware.com/Account/Register) for the ONE AI cloud. This is free and your data is stored savely on our own servers in germany.
+To get access to our cloud infrastructure and AI model prediction, you need to create an account for the ONE AI cloud [here](https://cloud.one-ware.com/Account/Register). This is free and your data is stored securely on our own servers in germany.
 If you work with sensitive data, you can contact us via mail: sales@one-ware.com, so we can provide a local training service for your servers that ensures the data doesn't leave your company. In the ONE AI software, until you actually train the AI model, all data is stored locally on your PC. So you can still first create an account and test all settings until we can provide your local training service.
 
 ### 1.2. Verify Address to Get Free Credits
 ![Verify](/img/ai/one_ai_plugin/verify.webp)
 
-After you have access to the ONE AI cloud, you can get 25.000 credits for free worth 500 €. You only need to go to your account settings and save your address. You won't be changed with any fees. The address is only needed to check for trade restrictions and general company verification. It will take a bit for the verification (up to one business day), but you can continue with the next steps until you have your free credits for training.
+After you have access to the ONE AI cloud, you can get 25.000 credits worth 500 € for free. You only need to go to your account settings and save your address. You won't be changed with any fees. The address is only needed to check for trade restrictions and general company verification. It will take a bit for the verification (up to one business day), but you can continue with the next steps until you have your free credits for training.
 
 ![Verify 2](/img/ai/one_ai_plugin/verify2.webp)
 
 ### 1.3. [Download ONE WARE Studio](/docs/studio/setup)
-Next you need our software locally on your PC, so you can experiment with your data safely and without a need for data upload. You can download it [here](/docs/studio/setup) for windows, linux and macOS.
+Next you need to install our software locally on your PC, so you can experiment with your data safely and without the need for data upload. You can download it [here](/docs/studio/setup) for windows, linux and macOS.
 
 [![Install](/img/ai/one_ai_plugin/install.webp)](/docs/studio/setup)
 
-Just follow the installer and start ONE WARE Studio after you finished the installation process.
+You simply need to follow the installer and start ONE WARE Studio after you finished the installation process.
 
 ### 1.4. Install ONE AI Extension
 ONE WARE Studio is open source and multiple extensions exist to use it as development platform for any kind of AI, software, firmware or FPGA development.
@@ -46,15 +46,15 @@ In the extension manager, install the ONE AI extension. This includes everything
 
 ### 1.5. Connect to ONE AI Cloud
 
-The last thing you need for the setup is to connect ONE WARE Studio with the ONE AI Cloud. Click on the `Account` button on the top right and then on `Login`.
+The last step of the setup process is to connect ONE WARE Studio with the ONE AI Cloud. Click on the `Account` button on the top right and then on `Login`.
 
 ![Connect](/img/ai/one_ai_plugin/connect.webp)
 
-Then you can just use the same email and password you used to login to the ONE AI Cloud earlier.
+Here, you need to enter the email and password you used to login to the ONE AI Cloud earlier.
 
 ![Login](/img/ai/one_ai_plugin/login.webp)
 
-After you click on `Log In`, you should see that you account is now connected in ONE WARE Studio, so you can use the ONE AI services.
+After you click on `Log In`, you should see that your account is now connected in ONE WARE Studio, so you can use the ONE AI services.
 
 ![Login](/img/ai/one_ai_plugin/login_success.webp)
 
@@ -68,7 +68,7 @@ Open the Project Creator by clicking on `File -> New -> Project`
 
 You need to specify the name.
 The other settings are only important if you want to program an FPGA.<br/>
-You can find more infomation about that [here](/docs/studio/tutorials/create-project/).
+You can find more information about that [here](/docs/studio/tutorials/create-project/).
 
 ---
 
@@ -411,7 +411,7 @@ The **Hardware Settings** tab allows you to specify the target hardware that you
 ![Hardware](/img/ai/one_ai_plugin/hardware.webp)
 
 The important settings are just the `Hardware Type`, the `Compute Capability` how fast your hardware can do calculations and the `Memory Limit` how much RAM is available for the calculations.
-`Quantized Calculations` are important aswell when you want to export to a microcontroller, TPU or FPGA. 
+`Quantized Calculations` are important as well when you want to export to a microcontroller, TPU or FPGA. 
 
 ### Used Hardware
 You have the option to select select a preconfigured hardware. If you want to use a different hardware, you can select **Custom** and enter the hardware specifications in the advanced settings.
