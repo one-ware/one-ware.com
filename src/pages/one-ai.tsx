@@ -202,7 +202,7 @@ function GetStarted() {
             </div>
             <div className="mb-4">
               2.{" "}
-              <a href="docs/studio/setup" target="_blank" className="underline hover:no-underline">
+              <a href="/docs/studio/setup" target="_blank" className="underline hover:no-underline">
                 <Translate id="oneai.getstarted.step2.download">
                   Download
                 </Translate>
@@ -219,7 +219,7 @@ function GetStarted() {
           </p>
 
           <div className="flex justify-center gap-4 mt-2 flex-col md:flex-row">
-            <a href="docs/one-ai/get-started" target="_blank">
+            <a href="/docs/one-ai/get-started" target="_blank">
               <button className="button button--primary text-xl">
                 <Translate id="oneai.getstarted.cta.tutorial">Complete Tutorial</Translate>
               </button>
