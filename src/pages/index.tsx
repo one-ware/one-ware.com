@@ -24,7 +24,7 @@ function HomepageHeader() {
       <div className={styles.heroBanner}>
         
         {/* Text in der Mitte */}
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-center pointer-events-none pb-60">
+        <div className="m-auto inset-0 flex flex-col justify-center items-center text-center pointer-events-none min-h-[300px] md:h-[75vh] max-md:h-[60vh]">
           <div className="text-4xl md:text-6xl lg:text-6xl font-bold drop-shadow-4xl text-gray-200 mt-2 md:mt-2">
             <span><Translate id="homepage.title.hw">Your Hardware.</Translate></span>
           </div>
@@ -60,7 +60,7 @@ function HomepageHeader() {
         </div>
 
         {/* Bild unten am Header mit Padding - sprachabhängig */}
-        <div className="absolute bottom-0 left-0 right-0 pt-8 pb-24">
+        <div className="bottom-0 left-0 right-0 max-md:pt-6 md:mt-8 md:mb-8 max-md:mt-2 max-md:mb-2">
           <img
             src={require(`@site/static/img/examples_2${currentLocale === 'de' ? '' : '_en'}.webp`).default}
             alt="Examples"
