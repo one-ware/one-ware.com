@@ -65,6 +65,8 @@
 
 body {
   font-family: 'Montserrat', 'Sans Serrif';
+  overflow-x: hidden !important;
+  max-width: 100%;
 }
 
 .primary-text {
