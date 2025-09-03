@@ -7,12 +7,13 @@ export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={`${styles.features} container my-20`}>
       <div className="grid md:grid-cols-2  md:my-10 bottomsplit pb-20">
-        <div className="md:px-10">
+        <div data-aos="fade-left" className="md:px-10">
           <img src={require('@site/static/img/ai/Capture.png').default} />
         </div>
 
         <div
           className="md:p-5 flex-col flex gap-1 justify-center relative"
+          data-aos="fade-right"
         >
           <span className="text-2xl md:text-3xl text-center md:text-left">
             <h2 className="primary-text text-4xl">ONE AI</h2>
@@ -36,12 +37,13 @@ export default function HomepageFeatures(): JSX.Element {
       </div>
 
       <div className="grid md:grid-cols-2 md:my-10 md:pt-10">
-        <div className="p-5 md:order-2">
+        <div className="p-5 md:order-2" data-aos="fade-right">
           <img src={require('@site/static/img/studio/slides2/simulator.png').default} />
         </div>
 
         <div
           className="md:p-5 flex-col flex gap-1 justify-center relative"
+          data-aos="fade-left"
         >
           <span className="text-2xl md:text-3xl text-center md:text-left">
             <h2 className="primary-text text-4xl">ONE WARE Studio</h2>
