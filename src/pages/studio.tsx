@@ -342,7 +342,6 @@ function Extension() {
         <div className="col flex">
           <p
             className="text-xl md:text-2xl font-normal md:text-left p-0 m-0"
-            data-aos="slide-right"
           >
             <Translate id="studio.extension.description.1">
               ONE WARE Studio extensions let you
@@ -378,7 +377,6 @@ function Extension() {
         <div className="col items-center mt-10 md:mt-0">
           <img
             src={require("@site/static/img/start/Elec_Studio.png").default}
-            data-aos="slide-left"
             alt="Hardware"
           />
         </div>
