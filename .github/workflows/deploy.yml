@@ -21,16 +21,15 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Deploy
-        uses: milanmk/actions-file-deployer@master
+      - name: Deploy files via SFTP
+        uses: Dylan700/sftp-upload-action@latest
         with:
-          remote-protocol: sftp
-          remote-host: 5017617850.ssh.w2.strato.hosting
-          remote-user:  ${{ secrets.ONEWARE_SFTP_SSH_USER }}
-          remote-password: ${{ secrets.ONEWARE_SFTP_SSH_PW}}
-          remote-path: one-ware.com/
-          local-path: build/
-          sync-delta-excludes: |
-            .well-known/**
+          server: 5017617850.ssh.w2.strato.hosting
+          username: ${{ secrets.ONEWARE_SFTP_USER }}
+          password: ${{ secrets.ONEWARE_SFTP_PW }}
+          uploads: |
+           build/ => one-ware.com/
+          ignore: |
             .htaccess
+          delete: true
 
