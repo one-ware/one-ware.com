@@ -16,11 +16,11 @@
 
 /* Better overflow prevention - prevents horizontal scrolling without blocking animations */
 :global(html) {
-  overflow-x: clip;
+  overflow-x: clip !important;
 }
 
 :global(body) {
-  overflow-x: clip;
+  overflow-x: clip !important;
   max-width: 100vw;
 }
 

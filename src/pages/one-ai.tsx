@@ -98,7 +98,7 @@ function HomepageHeader() {
               <div className="flex flex-col md:flex-row justify-center items-center space-y-3 md:space-y-0 md:space-x-5 mb-10">
                 <Link
                   className="button button--primary button--outline button--lg text-sm md:text-lg"
-                  href="one-ai#getStarted"
+                  href="/one-ai#getStarted"
                 >
                   <Translate id="homepage.subtitle.ai.getstarted">Get Started</Translate>
                 </Link>
@@ -202,7 +202,7 @@ function GetStarted() {
             </div>
             <div className="mb-4">
               2.{" "}
-              <a href="docs/studio/setup" target="_blank" className="underline hover:no-underline">
+              <a href="/docs/studio/setup" target="_blank" className="underline hover:no-underline">
                 <Translate id="oneai.getstarted.step2.download">
                   Download
                 </Translate>
@@ -219,7 +219,7 @@ function GetStarted() {
           </p>
 
           <div className="flex justify-center gap-4 mt-2 flex-col md:flex-row">
-            <a href="docs/one-ai/get-started" target="_blank">
+            <a href="/docs/one-ai/get-started" target="_blank">
               <button className="button button--primary text-xl">
                 <Translate id="oneai.getstarted.cta.tutorial">Complete Tutorial</Translate>
               </button>
