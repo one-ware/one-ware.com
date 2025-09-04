@@ -91,4 +91,4 @@ If the prediction of the live preview always shows *Undefined Label*, you probab
 </div>
 
 ## My webcam looks differently since using OneWare Studio
-If you set up a camera preset in OneWare Studio it can happen that the camera settings persist after leaving OneWare Studio. You can reset them to the system default by opening the Windows **Settings** > **Bluetooth & devices** > **Cameras** > **\[your camera\]** and clicking on **Reset settings**.
+If you set up a camera preset in OneWare Studio it can happen that the camera settings persist after leaving OneWare Studio. You can reset them to the system default in the Windows **Settings** > **Bluetooth & devices** > **Cameras** > **\[your camera\]**. Move all sliders by a small amount, then click on **Reset settings**. Windows won't realize that a setting was changed by another application and thus not reset it unless you move the corresponding slider.
