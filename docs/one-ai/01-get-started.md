@@ -173,16 +173,16 @@ Because ONE AI only uses the validation dataset to stop the training when there 
 ### 4.4 Add Your Labels
 Open the **Labels** tab and create labels for each class you want to detect, e.g. "defect" or "strawberry". You can assign unique colors to make the annotation process faster and easier.
 
-#### The two Label Types
-- **Classification** - Assign classes to entire images.  
-  *Example:* "defect" or "no defect" for quality control  
+#### The two Label Modes
+- **Classes**: Assign classes to entire images.  
+  *Example:* "defective" or "non-defective" for quality control  
 
     <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
         <img src="/img/ai/one_ai_plugin/getting_started/labeled_img_1.png" alt="Labeled Image 1" style={{ width: '48%' }} />
         <img src="/img/ai/one_ai_plugin/getting_started/labeled_img_2.png" alt="Labeled Image 2" style={{ width: '48%' }} />
     </div>
-- **Object Detection** - Mark specific objects by drawing bounding boxes. It is possible to annotate multiple objects and labels per image.  
-  *Example:* individual boxes for "strawberry" or "foreign object"
+- **Objects**: Mark specific objects by drawing bounding boxes. It is possible to annotate multiple objects and labels per image.  
+  *Example:* individual boxes for "Strawberry" or "Foreign Object"
 
     <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
         <img src="/img/ai/one_ai_plugin/getting_started/yolo_img_1.png" alt="yolo Image 1" style={{ width: '48%' }} />
@@ -250,7 +250,7 @@ You can use the **Sharpen Filter** to increase the sharpness of the image and em
 
 #### Color Filter
 <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-    <img src="/img/ai/one_ai_plugin/getting_started/color_filter_1.png" alt="Color Filter" style={{ width: '30%', transform: 'scaleX(-1)' }} />
+    <img src="/img/ai/one_ai_plugin/getting_started/color_filter_1.png" alt="Color Filter" style={{ width: '30%' }} />
     <img src="/img/ai/one_ai_plugin/getting_started/color_filter_2.png" alt="Color Filter" style={{ width: '30%' }} />
 </div>
 
