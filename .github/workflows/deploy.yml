@@ -23,12 +23,13 @@ jobs:
         run: npm run build
       - name: Upload
         uses: Black-HOST/deployer@v1
-        working-directory: ./build
         with:
           protocol: sftp
           server: 5017617850.ssh.w2.strato.hosting
           username: ${{ secrets.ONEWARE_SFTP_SSH_USER }}
           password: ${{ secrets.ONEWARE_SFTP_SSH_PW }}
+          remote_dir: "/"
+          local_dir: "build/."
           exclude: ".htaccess,.well-known/**"
           delete: true
           only_newer: true
