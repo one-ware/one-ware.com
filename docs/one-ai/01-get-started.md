@@ -438,7 +438,7 @@ You have the option to select select a preconfigured hardware. If you want to us
 
 Ensure that your training data is uploaded, labeled, and properly prepared. This includes applying any necessary prefilters and selecting the most effective augmentations. Once your data is ready, double-check your model and hardware settings before starting the training process
 
-### Start Training  
+### Training a new AI Model
 
 You can create new AI model instances, so you can save old trained models and try out new ones.
 
@@ -462,19 +462,31 @@ After you press on `Start Training`, you see how many Credits the training will 
 
 During the training you can see the current training progress in the **Statistics** tab. You can stop the training manually if you see no further improvements after a longer time of training.
 
-### Export AI Model
+### Exporting a trained Model
 
 To test your AI model, you can export it as an AI model or as a complete project by clicking on the `Export` button.
 
-![Export 1](/img/ai/one_ai_plugin/getting_started/export_1.webp)
+![Export 1](/img/ai/one_ai_plugin/getting_started/export_1.png)
 
-For testing your AI model in the ONE AI extension, you can select `ONNX` as `Model Type`. For microcontrollers, FPGAs with processor and other efficient AI implementation on processors you can use `Tensorflow Lite`. And to integrate the AI as bare metal FPGA implementation, you can select `VHDL`.
+This opens the export window, which allows you to configure different settings for the export:
+- ``Export type``: You can choose whether you want to export just the model as a file (``model``) or to export it along with execution routines in various languages either compiled as an executable binary (``executable``) or as source code (``project``).
+- ``Model type``: There are different model types that can be generated:
+    - ``TensorFlow``: The standard TensorFlow model format.
+    - ``TensorFlow Lite``: The TensorFlow Lite format is optimized for mobile and embedded devices. You can use this for microcontrollers, FPGAs with processors and other efficient AI implementation on processors.
+    - ``ONNX``: The [Open Neural Network Exchange](https://onnx.ai/) format ensures compatibility across different frameworks. It is also used by OneWare Studio for running a live preview of the model and for auto-labeling data. Currently, the ONNX export doesn't support quantized models. If you export an ONNX model, the progress of the quantization aware training will be ignored.
+    - ``VHDL``: A hardware description language output that is used for bare metal FPGA implementations.
+- ``Export with pre- and postprocessing``: If you select this option, the pre- and postprocessing layers are included in the exported model. This simplifies integrating the model in your existing processes and ensures consistency between training and inference.
+- ``Export floating point instead of quantized model``: You have the option to always export a floating point model, even if you used quantization aware training. This means that any progress of the quantization aware training is ignored.
+- ``Check last vs best model``: During the training, ONE AI saves two models: the latest and the one with the best validation metrics (excluding Non-Maximum Suppression). If you enable this option, ONE AI checks which of the two models performs best when all post-processing steps are applied. Furthermore, you are able to specify which metric you want to use for this comparison.
+- ``Best model metric``: The metric that is used when comparing the best and the last model.
 
-![Export 2](/img/ai/one_ai_plugin/getting_started/export_2.webp)
+![Export 2](/img/ai/one_ai_plugin/getting_started/export_2.png)
 
-Then you can export the AI model and download it in the `Exports` tab.
-The ONNX model can then also be used for labelling or tasks like quality control together with the camera tool.
+After the export is finished, the model can be download in the `Exports` tab by clicking on the green arrow.
 
+![Export 3](/img/ai/one_ai_plugin/getting_started/export_3.png)
+
+## 10. Using your Model in OneWare Studio
 ### Evaluating the Model on Live Data
 You can use the **Camera Tool** to evaluate the performance of your model on live data. To do so, you need to export the trained model as an ONNX model. After downloading it, the model becomes available in OneWare Studio automatically. Now, you need to open the **Camera Tool** by clicking on **AI** in the menu bar and selecting **Camera Tool**.  
 In the **Live Preview** tab, you can select the model that you want to use as well as the camera. You also need to select whether you are using a **Classification** or an **Object Detection** model in the **Preview Mode**. After you click on the play button, the model will start running on your local machine. If you have an object detection task, the predicted bounding boxes will be drawn directly onto the preview. For classification tasks, the predicted class is displayed in the bottom right corner.
