@@ -145,6 +145,11 @@ const config: Config = {
           position: 'right',
         },
         {
+          to: "/blog",
+          label: "Blog",
+          position: "right",
+        },
+        {
           to: "/docs/one-ai/get-started",
           label: "Tutorials",
           position: "right",

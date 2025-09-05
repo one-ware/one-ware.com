@@ -24,8 +24,10 @@ Integrated into **OneWare Studio**, it runs as a **cross-platform desktop app** 
 
 Every model is automatically **optimized** to run on the **smallest chips** with the **lowest power consumption**, so you can bring powerful intelligence to edge devices in no time.  
 
-## Get started now and claim free credits
+## Get Started Now and Claim Free Credits
 
-You can start training your own models right away. Check out our [pricing details](/docs/one-ai/pricing) to learn more about included free credits and available plans.  
+Start training your own models right away!  
+Simply [sign up](https://cloud.one-ware.com/Acccount/Register), confirm your email address, and begin building with **€500 in free credits**.
 
-[Download](/docs/studio/setup) OneWare Studio and install our new OneAI Extension.  
+For more details, check out our [Getting Started Guide](/docs/one-ai/get-started).
+
