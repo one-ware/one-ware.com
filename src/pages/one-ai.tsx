@@ -91,7 +91,7 @@ function HomepageHeader() {
             <div className="text-center mt-10">
               <h1 className="font-medium text-3xl md:text-4xl mb-7">
                 <Translate id="oneai.top">
-                ONE AI creates custom neural networks in seconds that fit your exact hardware, performance and use case requirements.
+                  ONE AI creates custom neural networks in seconds that fit your exact hardware, performance and use case requirements.
                 </Translate>
               </h1>
 
@@ -102,15 +102,15 @@ function HomepageHeader() {
                 >
                   <Translate id="homepage.subtitle.ai.getstarted">Get Started</Translate>
                 </Link>
-                
+
                 <Link
                   className="button button--primary button--lg text-sm md:text-lg"
                   href="https://cloud.one-ware.com/Account/Register"
                 >
                   <Translate id="oneai.signup">Sign Up</Translate>
                 </Link>
-                  
-                
+
+
               </div>
             </div>
           </div>
@@ -190,7 +190,7 @@ function GetStarted() {
 
           <p className="text-xl md:text-2xl font-bold mt-8">
             <div className="mb-4">
-            1.{" "}
+              1.{" "}
               <a href="https://cloud.one-ware.com/Account/Register" target="_blank" className="underline hover:no-underline">
                 <Translate id="oneai.getstarted.step1.signup">
                   Sign up
@@ -215,7 +215,7 @@ function GetStarted() {
               <Translate id="oneai.getstarted.step3">
                 3. Add the ONE AI Extension
               </Translate>
-           </div>
+            </div>
           </p>
 
           <div className="flex justify-center gap-4 mt-2 flex-col md:flex-row">
@@ -275,89 +275,90 @@ export default function OneAi() {
           <ComparisonSection />
         </div>
 
-            <div className="text-center mt-16 md:pb-2 pb-16 container overflow-x-hidden">
-              <h1 className="text-2xl md:text-4xl">
+        <div className="text-center mt-16 md:pb-2 pb-16 container overflow-x-hidden">
+          <h1 className="text-2xl md:text-4xl">
             <Translate id="oneai.compare.heading">
               The Entire AI Development Process Automated in One Tool
             </Translate>
           </h1>
 
-              {sliders && sliders.length && (
-                <div className=" pt-5">
-                  <Slider
-                    ref={slickRef}
-                    dots={true}
-                    arrows={false}
-                    autoplaySpeed={20000}
-                    infinite={true}
-                    autoplay={true}
-                    className={styles.slickSlider}
-                    speed={500}
-                    slidesToShow={1}
-                    slidesToScroll={1}
-                    beforeChange={(_c, n) => {
-                      var slideCount = sliders.length;
-                      for (var i = 0; i < slideCount; i++) {
-                        var slide = document.getElementById("slide" + i);
-                        if (slide) {
-                          if (i == n)
-                            slide.classList.add(styles.activeslide ?? "");
-                          else slide.classList.remove(styles.activeslide ?? "");
-                        }
-                      }
-                    }}
-                  >
-                    {sliders.map(({ imageSrc, title, description }, idx) => (
-                      <div key={idx}>
-                        {imageSrc}
-                        <div
-                          className={classnames(
-                            "md:hidden mt-5",
-                            styles.slidecaption
-                          )}
-                        >
-                          <h3>{title}</h3>
-                          {description}
-                        </div>
-                      </div>
-                    ))}
-                  </Slider>
-                  <div className="columns-4 my-10 hidden md:block">
-                    {sliders.map(({ title, description }, idx) => (
-                      <div
-                        key={idx}
-                        onClick={() => slickRef.current?.slickGoTo(idx)}
-                        className={classnames(
-                          "block padding-vert--lg p-2 overflow-x-hidden",
-                          styles.slidebutton
-                        )}
-                        id={"slide" + idx}
-                      >
-                        <h3>{title}</h3>
-                        <span>{description}</span>
-                      </div>
-                    ))}
+          {sliders && sliders.length && (
+            <div className=" pt-5">
+              <Slider
+                ref={slickRef}
+                dots={true}
+                arrows={false}
+                autoplaySpeed={20000}
+                infinite={true}
+                autoplay={true}
+                className={styles.slickSlider}
+                speed={500}
+                slidesToShow={1}
+                slidesToScroll={1}
+                beforeChange={(_c, n) => {
+                  var slideCount = sliders.length;
+                  for (var i = 0; i < slideCount; i++) {
+                    var slide = document.getElementById("slide" + i);
+                    if (slide) {
+                      if (i == n)
+                        slide.classList.add(styles.activeslide ?? "");
+                      else slide.classList.remove(styles.activeslide ?? "");
+                    }
+                  }
+                }}
+              >
+                {sliders.map(({ imageSrc, title, description }, idx) => (
+                  <div key={idx}>
+                    {imageSrc}
+                    <div
+                      className={classnames(
+                        "md:hidden mt-5",
+                        styles.slidecaption
+                      )}
+                    >
+                      <h3>{title}</h3>
+                      {description}
+                    </div>
                   </div>
-                </div>
-              )}
-            </div>
-
-            <div id="getStarted" className=" dropshadowbottom pt-20 pb-5" style={{ 
-              boxShadow: 'rgb(0 0 0 / 50%) 0px -10px 13px -7px inset',
-              backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,1.0) 100%), url('${require('@site/static/img/background.webp').default}')`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat'
-            }}>
-              <GetStarted />
-            </div>
-
-
-            <div className="container pb-20 mt-20">
-              <div id="contact" className="mb-10">
-                <ContactUs />
+                ))}
+              </Slider>
+              <div className="columns-4 my-10 hidden md:block">
+                {sliders.map(({ title, description }, idx) => (
+                  <div
+                    key={idx}
+                    onClick={() => slickRef.current?.slickGoTo(idx)}
+                    className={classnames(
+                      "block padding-vert--lg p-2 overflow-x-hidden",
+                      styles.slidebutton
+                    )}
+                    id={"slide" + idx}
+                  >
+                    <h3>{title}</h3>
+                    <span>{description}</span>
+                  </div>
+                ))}
               </div>
             </div>
+          )}
+        </div>
+
+        <div className="dropshadowbottom">
+          <div id="getStarted" className="dropshadowtop-inset pt-20 pb-5" style={{
+            backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,1.0) 100%), url('${require('@site/static/img/background.webp').default}')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}>
+            <GetStarted />
+          </div>
+        </div>
+
+
+        <div className="container pb-20 mt-20">
+          <div id="contact" className="mb-10">
+            <ContactUs />
+          </div>
+        </div>
       </main>
     </Layout>
   );

@@ -14,6 +14,7 @@ import Translate, { translate } from "@docusaurus/Translate";
 import styles from "./index.module.css";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import initWebsiteEffects from "../components/startEffects";
+import ContactUs from "../components/ContactUs";
 
 function HomepageHeader() {
   const { i18n } = useDocusaurusContext();
@@ -22,7 +23,7 @@ function HomepageHeader() {
   return (
     <header id="hero" className={styles.heroBackground}>
       <div className={styles.heroBanner}>
-        
+
         {/* Text in der Mitte */}
         <div className="m-auto inset-0 flex flex-col justify-center items-center text-center pointer-events-none min-h-[300px] md:h-[75vh] max-md:h-[60vh]">
           <div className="text-4xl md:text-6xl lg:text-6xl font-bold drop-shadow-4xl text-gray-200 mt-2 md:mt-2">
@@ -53,7 +54,7 @@ function HomepageHeader() {
             </Link>
             <Link href="/one-ai">
               <button className="button button button--primary button--lg">
-                  ONE AI
+                ONE AI
               </button>
             </Link>
           </div>
@@ -275,10 +276,16 @@ export default function Home() {
         <div className="">
           <HomepageFeatures />
         </div>
-        <div className="dropshadowtop">
-          <div className="default-background diagcliptop pt-20 pb-20">
-            <TestimonialsSection />
+        <div className="dropshadowbottom">
+          <div className="dropshadowtop diagclipbottom">
+            <div className="default-background diagcliptop pt-20 pb-32">
+              <TestimonialsSection />
+            </div>
           </div>
+        </div>
+
+        <div className="pt-20 pb-20 ">
+          <ContactUs />
         </div>
       </main>
     </Layout>

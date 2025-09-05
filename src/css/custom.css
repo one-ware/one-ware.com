@@ -181,6 +181,14 @@ body {
   filter: drop-shadow(0px -10px 5px rgba(0, 0, 0, 0.5));
 }
 
+.dropshadowbottom-inset {
+  box-shadow: inset 0px -10px 5px rgba(0, 0, 0, 0.5);
+}
+
+.dropshadowtop-inset {
+  box-shadow: inset 0px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
 .inlinetypewriter .Typewriter{
   display: inline;
 }

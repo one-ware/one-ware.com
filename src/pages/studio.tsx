@@ -397,87 +397,87 @@ export default function Studio() {
       <HomepageHeader />
 
       <main>
-          <div className="default-background diagclipbottom pt-16">
-            <div className="container overflow-x-hidden">
-              {sliders && sliders.length && (
-                <div className="pb-20">
-                  <Slider
-                    ref={slickRef}
-                    dots={true}
-                    arrows={false}
-                    autoplaySpeed={20000}
-                    infinite={true}
-                    autoplay={true}
-                    className={styles.slickSlider}
-                    speed={500}
-                    slidesToShow={1}
-                    slidesToScroll={1}
-                    beforeChange={(_c, n) => {
-                      var slideCount = sliders.length;
-                      for (var i = 0; i < slideCount; i++) {
-                        var slide = document.getElementById("slide" + i);
-                        if (slide) {
-                          if (i == n)
-                            slide.classList.add(styles.activeslide ?? "");
-                          else slide.classList.remove(styles.activeslide ?? "");
-                        }
+        <div className="default-background diagclipbottom pt-16">
+          <div className="container overflow-x-hidden">
+            {sliders && sliders.length && (
+              <div className="pb-20">
+                <Slider
+                  ref={slickRef}
+                  dots={true}
+                  arrows={false}
+                  autoplaySpeed={20000}
+                  infinite={true}
+                  autoplay={true}
+                  className={styles.slickSlider}
+                  speed={500}
+                  slidesToShow={1}
+                  slidesToScroll={1}
+                  beforeChange={(_c, n) => {
+                    var slideCount = sliders.length;
+                    for (var i = 0; i < slideCount; i++) {
+                      var slide = document.getElementById("slide" + i);
+                      if (slide) {
+                        if (i == n)
+                          slide.classList.add(styles.activeslide ?? "");
+                        else slide.classList.remove(styles.activeslide ?? "");
                       }
-                    }}
-                  >
-                    {sliders.map(({ imageSrc, title, description }, idx) => (
-                      <div key={idx}>
-                        {imageSrc}
-                        <div
-                          className={classnames(
-                            "md:hidden mt-5",
-                            styles.slidecaption
-                          )}
-                        >
-                          <h3>{title}</h3>
-                          {description}
-                        </div>
-                      </div>
-                    ))}
-                  </Slider>
-                  <div className="columns-4 my-10 hidden md:block">
-                    {sliders.map(({ title, description }, idx) => (
+                    }
+                  }}
+                >
+                  {sliders.map(({ imageSrc, title, description }, idx) => (
+                    <div key={idx}>
+                      {imageSrc}
                       <div
-                        key={idx}
-                        onClick={() => slickRef.current?.slickGoTo(idx)}
                         className={classnames(
-                          "block padding-vert--lg p-2 overflow-x-hidden",
-                          styles.slidebutton
+                          "md:hidden mt-5",
+                          styles.slidecaption
                         )}
-                        id={"slide" + idx}
                       >
                         <h3>{title}</h3>
-                        <span>{description}</span>
+                        {description}
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
+                </Slider>
+                <div className="columns-4 my-10 hidden md:block">
+                  {sliders.map(({ title, description }, idx) => (
+                    <div
+                      key={idx}
+                      onClick={() => slickRef.current?.slickGoTo(idx)}
+                      className={classnames(
+                        "block padding-vert--lg p-2 overflow-x-hidden",
+                        styles.slidebutton
+                      )}
+                      id={"slide" + idx}
+                    >
+                      <h3>{title}</h3>
+                      <span>{description}</span>
+                    </div>
+                  ))}
                 </div>
-              )}
-            </div>
+              </div>
+            )}
           </div>
+        </div>
 
-        <div className=" relative pt-16 pb-16" style={{ 
-            boxShadow: 'rgb(0 0 0 / 50%) 0px -10px 13px -7px inset',
-            
-                        backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,1.0) 100%), url('${require('@site/static/img/background.webp').default}')`,
+        <div className="dropshadowbottom">
+          <div className="diagclipbottom dropshadowtop-inset relative pt-16 pb-16" style={{
+            backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,1.0) 100%), url('${require('@site/static/img/background.webp').default}')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
           }}>
-          <DownloadSection />
+            <DownloadSection />
+          </div>
         </div>
 
-          <div className="default-background diagcliptop pt-32 md:pt-24">
-            <div className="bottomsplit pb-24 mb-24 container">
-              <Extension />
-            </div>
-
-            <VendorSection />
+        <div className="default-background diagcliptop pt-32 md:pt-24">
+          <div className="bottomsplit pb-24 mb-24 container">
+            <Extension />
           </div>
+
+          <VendorSection />
+        </div>
 
         <div className="default-background mt-20">
           <div className="dropshadowtop">
