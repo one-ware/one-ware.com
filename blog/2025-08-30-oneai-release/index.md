@@ -27,7 +27,7 @@ Every model is automatically **optimized** to run on the **smallest chips** with
 ## Get Started Now and Claim Free Credits
 
 Start training your own models right away!  
-Simply [sign up](https://cloud.one-ware.com/Acccount/Register), confirm your email address, and begin building with **€500 in free credits**.
+Simply [sign up](https://cloud.one-ware.com/Account/Register), confirm your email address, and begin building with **€500 in free credits**.
 
 For more details, check out our [Getting Started Guide](/docs/one-ai/get-started).
 
