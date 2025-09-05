@@ -21,16 +21,16 @@ To get access to our cloud infrastructure and AI model prediction, you need to c
 If you work with sensitive data, you can contact us via mail: sales@one-ware.com, so we can provide a local training service for your servers that ensures the data doesn't leave your company. In the ONE AI software, until you actually train the AI model, all data is stored locally on your PC. So you can still first create an account and test all settings until we can provide your local training service.
 
 ### 1.2. Verify Address to Get Free Credits
-![Verify](/img/ai/one_ai_plugin/getting_started/verify.webp)
+![Address Verification 1](/img/ai/one_ai_plugin/getting_started/address_verification_1.webp)
 
 After you have access to the ONE AI cloud, you can get 25.000 credits worth 500 € for free. You only need to go to your account settings and save your address. You won't be changed with any fees. The address is only needed to check for trade restrictions and general company verification. It will take a bit for the verification (up to one business day), but you can continue with the next steps until you have your free credits for training.
 
-![Verify 2](/img/ai/one_ai_plugin/getting_started/verify2.webp)
+![Address Verification 2](/img/ai/one_ai_plugin/getting_started/address_verification_2.webp)
 
 ### 1.3. [Download ONE WARE Studio](/docs/studio/setup)
 Next you need to install our software locally on your PC, so you can experiment with your data safely and without the need for data upload. You can download it [here](/docs/studio/setup) for windows, linux and macOS.
 
-[![Install](/img/ai/one_ai_plugin/getting_started/install.webp)](/docs/studio/setup)
+[![Install](/img/ai/one_ai_plugin/getting_started/installation_wizard.webp)](/docs/studio/setup)
 
 You simply need to follow the installer and start ONE WARE Studio after you finished the installation process.
 
@@ -38,17 +38,17 @@ You simply need to follow the installer and start ONE WARE Studio after you fini
 ONE WARE Studio is open source and multiple extensions exist to use it as development platform for any kind of AI, software, firmware or FPGA development.
 Click on `Extras > Extensions` to get to the extension manager that lets you personalize ONE WARE Studio for your development needs.
 
-![Studio](/img/ai/one_ai_plugin/getting_started/studio.webp)
+![Extension Installation](/img/ai/one_ai_plugin/getting_started/extension_installation.webp)
 
 In the extension manager, install the ONE AI extension. This includes everything you need to develop AI models for any kinds of hardware without the need to be an AI expert.
 
-![AI Extension](/img/ai/one_ai_plugin/getting_started/ai.webp)
+![AI Extension](/img/ai/one_ai_plugin/getting_started/ai_extension.webp)
 
 ### 1.5. Connect to ONE AI Cloud
 
 The last step of the setup process is to connect ONE WARE Studio with the ONE AI Cloud. Click on the `Account` button on the top right and then on `Login`.
 
-![Connect](/img/ai/one_ai_plugin/getting_started/connect.webp)
+![Connect](/img/ai/one_ai_plugin/getting_started/connect_to_cloud.webp)
 
 Here, you need to enter the email and password you used to login to the ONE AI Cloud earlier.
 
@@ -61,10 +61,10 @@ After you click on `Log In`, you should see that your account is now connected i
 ## 2. Create a New Project
 Open the Project Creator by clicking on `File -> New -> Project`
 
-<img src="/img/ai/one_ai_plugin/getting_started/newProject.png" alt="New Project" style={{ width: '40%' }} />
+<img src="/img/ai/one_ai_plugin/getting_started/new_project.png" alt="New Project" style={{ width: '40%' }} />
 
 ### Set Project options
-![New Project Options](/img/ai/one_ai_plugin/getting_started/setProjectOptions.png)
+![New Project Options](/img/ai/one_ai_plugin/getting_started/project_options.png)
 
 You need to specify the name.
 The other settings are only important if you want to program an FPGA.<br/>
@@ -75,7 +75,7 @@ You can find more information about that [here](/docs/studio/tutorials/create-pr
 ## 3. Initialize the AI Project
 Make sure that the correct project is selected before you create a new AI project.
 
-![Right Project](/img/ai/one_ai_plugin/getting_started/right_project.webp)
+![Project Selection](/img/ai/one_ai_plugin/getting_started/project_selection.webp)
 
 Navigate to the **AI** tab and choose **Open AI Generator**.
 
@@ -83,7 +83,7 @@ Navigate to the **AI** tab and choose **Open AI Generator**.
 
 Enter your **AI Project Name** and choose the **AI Type**. 
 
-![AI Generator Modal](/img/ai/one_ai_plugin/getting_started/ai_generator_modal.png)
+![AI Generator](/img/ai/one_ai_plugin/getting_started/ai_generator.png)
 
 **Note:** Currently, only “Image Detection” is available as the AI type.
 
@@ -154,7 +154,7 @@ Use about **70%** of your total dataset with properly labeled images. Ideally it
 The validation set monitors your model's performance on unseen data during training.  
 This evaluates performance without direct training involvement. Labels are required for the validation set as well to monitor the AI performance on unseen data while training.
 
-![Validation Setting](/img/ai/one_ai_plugin/getting_started/val_setting.png)
+![Validation Set Settings](/img/ai/one_ai_plugin/getting_started/validation_set_settings.png)
 
 **Using Validation Split:** If you don't have separate validation images, you can enable **"Use Validation Split"** to auto-divide your training set:
 - 20% for standard datasets  
@@ -168,7 +168,7 @@ To get an accurate evaluation on how the model will perform for your application
 If you don't have a separate test dataset, you can use the images from the train or validation dataset to test your AI.
 Because ONE AI only uses the validation dataset to stop the training when there is no more improvement and not for hyperparameter settings, the results should not be too far off, if you use the validation dataset for the final evaluation.
 
-![Test Setting](/img/ai/one_ai_plugin/getting_started/test_setting.png)
+![Test Set Settings](/img/ai/one_ai_plugin/getting_started/test_set_settings.png)
 
 ### 4.4 Add Your Labels
 Open the **Labels** tab and create labels for each class you want to detect, e.g. "defect" or "strawberry". You can assign unique colors to make the annotation process faster and easier.
@@ -178,15 +178,15 @@ Open the **Labels** tab and create labels for each class you want to detect, e.g
   *Example:* "defective" or "non-defective" for quality control  
 
     <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-        <img src="/img/ai/one_ai_plugin/getting_started/labeled_img_1.png" alt="Labeled Image 1" style={{ width: '48%' }} />
-        <img src="/img/ai/one_ai_plugin/getting_started/labeled_img_2.png" alt="Labeled Image 2" style={{ width: '48%' }} />
+        <img src="/img/ai/one_ai_plugin/getting_started/annotation_tool_classes_1.png" alt="Annotation Tool Classes 1" style={{ width: '48%' }} />
+        <img src="/img/ai/one_ai_plugin/getting_started/annotation_tool_classes_2.png" alt="Annotation Tool Classes 2" style={{ width: '48%' }} />
     </div>
 - **Objects**: Mark specific objects by drawing bounding boxes. It is possible to annotate multiple objects and labels per image.  
   *Example:* individual boxes for "Strawberry" or "Foreign Object"
 
     <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-        <img src="/img/ai/one_ai_plugin/getting_started/yolo_img_1.png" alt="yolo Image 1" style={{ width: '48%' }} />
-        <img src="/img/ai/one_ai_plugin/getting_started/yolo_img_2.png" alt="yolo Image 2" style={{ width: '48%' }} />
+        <img src="/img/ai/one_ai_plugin/getting_started/annotation_tool_objects_1.png" alt="Annotation Tool Objects 1" style={{ width: '48%' }} />
+        <img src="/img/ai/one_ai_plugin/getting_started/annotation_tool_objects_2.png" alt="Annotation Tool Objects 2" style={{ width: '48%' }} />
     </div>
 
 ---
@@ -194,7 +194,7 @@ Open the **Labels** tab and create labels for each class you want to detect, e.g
 ## 5. Prefilters - Optimize Your Dataset
 You can add prefilters before or after applying augmentations to process your dataset and boost model performance.
 
-![Prefilter View](/img/ai/one_ai_plugin/getting_started/prefilter_view.png)
+![Prefilter View](/img/ai/one_ai_plugin/getting_started/filter_view.png)
 
 On the right, you can see the settings for the selected prefilter as well as a preview on how it will affect the image. The image on the bottom left shows a preview of your complete prefilter pipeline.
 
@@ -209,15 +209,15 @@ On the right, you can see the settings for the selected prefilter as well as a p
 ### Image Resolution
 
 #### Initial Resize
-![Initial Resize](/img/ai/one_ai_plugin/getting_started/initial_resize.png)
+![Initial Resize](/img/ai/one_ai_plugin/getting_started/filter_initial_resize.png)
 
 The **Initial Resize** filter resizes all images to the same size. You can decide between stretching images that have a different size or applying a black padding. You can set the size manually or use the button on the right of **Begin** to automatically select the size of the largest image.
 
 
 #### Resolution Filter
 <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-    <img src="/img/ai/one_ai_plugin/getting_started/resolution_filter_50.png" alt="Resolution Filter" style={{ width: '30%' }} />
-    <img src="/img/ai/one_ai_plugin/getting_started/resolution_filter_10.png" alt="Resolution Filter" style={{ width: '30%' }} />
+    <img src="/img/ai/one_ai_plugin/getting_started/filter_resolution_50.png" alt="Resolution Filter" style={{ width: '30%' }} />
+    <img src="/img/ai/one_ai_plugin/getting_started/filter_resolution_10.png" alt="Resolution Filter" style={{ width: '30%' }} />
 </div>
 
 The **Resolution Filter** allows you to reduce the resolution of your images. This will reduce the prediction time and may even improve the accuracy if the AI struggles with unnecessary details. You need to keep the resolution large enough to preserve key details.
@@ -226,14 +226,14 @@ The **Resolution Filter** allows you to reduce the resolution of your images. Th
 
 #### Crop Filter
 
-![Crop Filter](/img/ai/one_ai_plugin/getting_started/crop_filter.png)
+![Crop Filter](/img/ai/one_ai_plugin/getting_started/filter_crop.png)
 
 You can use the **Crop Filter** to crop your images to the area of interest. For example, if your images show objects on a conveyor belt, you can use the crop filter to remove any surrounding areas that are also captured by the camera.
 
 #### Frequency Filter
 <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-    <img src="/img/ai/one_ai_plugin/getting_started/low_pass_filter.png" alt="Low-pass Filter" style={{ width: '30%' }} />
-    <img src="/img/ai/one_ai_plugin/getting_started/high_pass_filter.png" alt="High-pass Filter" style={{ width: '30%' }} />
+    <img src="/img/ai/one_ai_plugin/getting_started/filter_low_pass.png" alt="Low-pass Filter" style={{ width: '30%' }} />
+    <img src="/img/ai/one_ai_plugin/getting_started/filter_high_pass.png" alt="High-pass Filter" style={{ width: '30%' }} />
 </div>
 
 You can use the **Frequency Filter** to apply low-pass and high-pass filters.
@@ -242,16 +242,16 @@ You can use the **Frequency Filter** to apply low-pass and high-pass filters.
 
 #### Sharpen Filter
 <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-    <img src="/img/ai/one_ai_plugin/getting_started/sharpen_filter_1.png" alt="Sharpen Filter before" style={{ width: '30%' }} />
-    <img src="/img/ai/one_ai_plugin/getting_started/sharpen_filter_2.png" alt="Sharpen Filter after" style={{ width: '30%' }} />
+    <img src="/img/ai/one_ai_plugin/getting_started/filter_sharpen_1.png" alt="Sharpen Filter before" style={{ width: '30%' }} />
+    <img src="/img/ai/one_ai_plugin/getting_started/filter_sharpen_2.png" alt="Sharpen Filter after" style={{ width: '30%' }} />
 </div>
 
 You can use the **Sharpen Filter** to increase the sharpness of the image and emphasize object edges for an easier detection.
 
 #### Color Filter
 <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-    <img src="/img/ai/one_ai_plugin/getting_started/color_filter_1.png" alt="Color Filter" style={{ width: '30%' }} />
-    <img src="/img/ai/one_ai_plugin/getting_started/color_filter_2.png" alt="Color Filter" style={{ width: '30%' }} />
+    <img src="/img/ai/one_ai_plugin/getting_started/filter_color_1.png" alt="Color Filter" style={{ width: '30%' }} />
+    <img src="/img/ai/one_ai_plugin/getting_started/filter_color_2.png" alt="Color Filter" style={{ width: '30%' }} />
 </div>
 
 The **Color Filter** allows you to alter the brightness, contrast, saturation, hue and gamma of your images. You can use it for color correction or for creating a clearer visual separation between objects and background.
@@ -271,8 +271,8 @@ This is the counterpart to the **RGB to HSV Filter** and can be used to convert 
 
 #### Threshold Filter
 <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-    <img src="/img/ai/one_ai_plugin/getting_started/threshold_filter_1.png" alt="Threshold Filter" style={{ width: '30%' }} />
-    <img src="/img/ai/one_ai_plugin/getting_started/threshold_filter_2.png" alt="Threshold Filter" style={{ width: '30%' }} />
+    <img src="/img/ai/one_ai_plugin/getting_started/filter_threshold_1.png" alt="Threshold Filter" style={{ width: '30%' }} />
+    <img src="/img/ai/one_ai_plugin/getting_started/filter_threshold_2.png" alt="Threshold Filter" style={{ width: '30%' }} />
 </div>
 
 The **Threshold Filter** removes image areas based on a threshold. You can use this to remove background areas if they can be clearly separated from the objects.  
@@ -292,8 +292,8 @@ It is possible to check whether the average of all channels is below the thresho
 
 #### Channel Filter
 <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-    <img src="/img/ai/one_ai_plugin/getting_started/channel_filter_1.png" alt="Channel Filter 1 " style={{ width: '30%' }} />
-    <img src="/img/ai/one_ai_plugin/getting_started/channel_filter_2.png" alt="Channel Filter 2" style={{ width: '30%' }} />
+    <img src="/img/ai/one_ai_plugin/getting_started/filter_channel_1.png" alt="Channel Filter 1 " style={{ width: '30%' }} />
+    <img src="/img/ai/one_ai_plugin/getting_started/filter_channel_2.png" alt="Channel Filter 2" style={{ width: '30%' }} />
 </div>
 
 The **Channel Filter** can be used to remove or isolate specific color channels. This can be used when one of the channels doesn't contain any useful information or contains too much noise.
@@ -310,7 +310,7 @@ Augmentations are applied during the training with random values within specifie
 The **Move Augmentation** shifts the image along the X and Y axes within a specified range. This makes the model more robust against positional variability.
 
 ### Rotate Augmentation
-<img src="/img/ai/one_ai_plugin/getting_started/augmentation_rotation.png" alt="Rotation Augmentation" style={{ width: '40%' }} />
+<img src="/img/ai/one_ai_plugin/getting_started/augmentation_rotate.png" alt="Rotate Augmentation" style={{ width: '40%' }} />
 
 The **Rotate Augmentation** randomly rotates your images. This helps the model to also recognize objects when they are rotated.
 
@@ -408,7 +408,7 @@ If you are training a classification model, you need to provide some additional 
 ## 8. Hardware Settings
 The **Hardware Settings** tab allows you to specify the target hardware that your model will be deployed on. You have the option to select a predefined hardware or to define custom hardware resources. ONE AI will create a model that is optimized for your hardware and will run within the constraints that were specified in the **Model Settings**.
 
-![Hardware](/img/ai/one_ai_plugin/getting_started/hardware.webp)
+![Hardware](/img/ai/one_ai_plugin/getting_started/hardware_settings.webp)
 
 The important settings are just the `Hardware Type`, the `Compute Capability` how fast your hardware can do calculations and the `Memory Limit` how much RAM is available for the calculations.
 `Quantized Calculations` are important as well when you want to export to a microcontroller, TPU or FPGA. 
