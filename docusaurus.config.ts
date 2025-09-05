@@ -145,15 +145,19 @@ const config: Config = {
           position: 'right',
         },
         {
+          to: "/blog",
+          label: "Blog",
+          position: "right",
+        },
+        {
           to: "/docs/one-ai/get-started",
           label: "Tutorials",
           position: "right",
         },
         {
-          href: "https://cloud.one-ware.com/Account/Register",
+          href: "https://cloud.one-ware.com/Account/Login",
           position: "right",
-          className: "sign-up",
-          label: "Sign Up",
+          label: "Sign In",
         },
       ],
     },
