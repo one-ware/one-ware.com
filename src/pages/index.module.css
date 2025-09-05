@@ -9,63 +9,73 @@
 
 .heroBackground{
   box-shadow: rgb(0 0 0 / 50%) 0px -10px 13px -7px inset; 
-  background-image: linear-gradient(45deg,#1c4048,#111111,#1f1f1f);
+  background-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1.0) 100%), url('/img/background.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
   top: 0;
   left: 0;
-  right: 0;
-  height: 80vh;
+  right: 0; 
+    /* height: 80vh;  Mobile: kleinere Höhe */
   min-height: 300px;
   margin-top: 0;
   margin-top: calc(var(--ifm-navbar-height)*-1);
   padding: 10px;
 }
 
-.heroBanner {
-  margin-top: var(--ifm-navbar-height);
-  padding-bottom: var(--ifm-navbar-height);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.startArrow{
-  display: block;
-  position: absolute;
-  bottom: 50px;
-  width: 50px;
-  height: 50px;
-  margin: auto;
-  left: 0;
-  right: 0;
-  animation-name: float;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  background: transparent url("/img/start/down.png") center;
-  background-size: contain;
-  opacity: 80%;
-  transition: 1s;
-}
-
-.drone{
-  animation-name: drone;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-}
-
-.animatedWord {
-  display: inline-block;
-  min-width: 10px;
-  color: #00FFD1; /* or any highlight color you prefer */
+/* Tablet/Laptop */
+@media (min-width: 768px) {
+  .heroBackground {
+      /* height: 110vh;*/
+     }
+   }
+   
+   .heroBanner {
+     margin-top: var(--ifm-navbar-height);
+     /*padding-bottom: var(--ifm-navbar-height);*/
+     text-align: center;
+     position: relative;
+     overflow: hidden;
+     display: flex;
+     flex-direction: column;
+     height: 100%;
+   }
+   
+   .buttons {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+   }
+   
+   .startArrow{
+     display: block;
+     position: absolute;
+     bottom: 50px;
+     width: 50px;
+     height: 50px;
+     margin: auto;
+     left: 0;
+     right: 0;
+     animation-name: float;
+     animation-duration: 2s;
+     animation-iteration-count: infinite;
+     background: transparent url("/img/start/down.png") center;
+     background-size: contain;
+     opacity: 80%;
+     transition: 1s;
+   }
+   
+   .drone{
+     animation-name: drone;
+     animation-duration: 5s;
+     animation-iteration-count: infinite;
+   }
+   
+   .animatedWord {
+     display: inline-block;
+     min-width: 10px;
+     color: #00FFD1; /* or any highlight color you prefer */
 }
 
 @keyframes float {

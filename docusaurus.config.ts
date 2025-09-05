@@ -145,36 +145,14 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: "https://cloud.one-ware.com",
-          label: "Cloud",
+          to: "/docs/one-ai/get-started",
+          label: "Tutorials",
           position: "right",
         },
         {
-          to: "/blog",
-          label: "Blog",
+          href: "https://cloud.one-ware.com/Account/Login",
           position: "right",
-        },
-        {
-          to: "/about-us",
-          label: "About Us",
-          position: "right",
-        },
-        {
-          to: "/careers",
-          label: "Careers",
-          position: "right",
-        },
-        {
-          type: "doc",
-          docId: "contact/contact",
-          label: "Contact",
-          position: "right",
-        },
-        {
-          href: "https://github.com/one-ware",
-          position: "right",
-          className: "header-github-link",
-          "aria-label": "GitHub repository",
+          label: "Sign In",
         },
       ],
     },
@@ -261,14 +239,6 @@ const config: Config = {
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} ONE WARE GmbH`,
-    },
-    announcementBar: {
-      id: "closed_beta_one_ai", // Eine eindeutige ID
-      content:
-        '🚀 <strong>Be one of the first to test ONE AI!</strong> Automatically generate tailored AI models with ONE AI. <strong><a href="https://forms.office.com/e/J3HDid9fzw" target="_blank">Sign up for the waitlist here to get free access!</a></strong>',
-      backgroundColor: "#f4f4f4", // Hintergrundfarbe des Banners
-      textColor: "#333333", // Textfarbe des Banners
-      isCloseable: true, // Ermöglicht das Schließen des Banners
     },
     prism: {
       theme: prismThemes.vsLight,

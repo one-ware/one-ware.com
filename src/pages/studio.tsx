@@ -198,7 +198,7 @@ function HomepageHeader() {
 
 function DownloadSection() {
   return (
-    <div className="py-24 md:py-40 overflow-x-hidden">
+    <div className="py-2 md:py-40 overflow-x-hidden">
       <div className="text-center container m-auto flex space-x-5 justify-center">
         <div className="flex-col flex text-center">
           <h1 className="text-3xl md:text-5xl">
@@ -227,71 +227,72 @@ function DownloadSection() {
               installation methods.
             </Translate>
           </p>
-          <div className="flex gap-5 flex-wrap">
-            <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm">
-              <FaWindows size={50} />
-              <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                <Translate id="studio.download.windows.label">
-                  Windows 10+
-                </Translate>
-              </h5>
-              <a href="/docs/studio/setup?current-os=windows">
-                <button className="mt-2 button button--primary">
-                  <Translate id="studio.download.button">Download</Translate>
-                </button>
-              </a>
-            </div>
+          <div className="grid grid-cols-2 md:flex gap-5 md:flex-wrap justify-center">
+            <a href="/docs/studio/setup?current-os=windows" className="md:contents">
+              <div className="flex-col w-full md:w-48 h-32 md:h-auto p-4 md:p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm cursor-pointer md:cursor-default hover:opacity-100 transition-opacity flex justify-center items-center">
+                <div className="flex flex-col items-center justify-center h-full">
+                  <FaWindows size={40} className="md:w-[50px] md:h-[50px]" />
+                  <h5 className="mb-1 mt-1 md:mb-2 md:mt-2 text-sm md:text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                    <Translate id="studio.download.windows.label">
+                      Windows 10+
+                    </Translate>
+                  </h5>
+                </div>
+                <a href="/docs/studio/setup?current-os=windows" className="hidden md:inline-block">
+                  <button className="mt-2 button button--primary">
+                    <Translate id="studio.download.button">Download</Translate>
+                  </button>
+                </a>
+              </div>
+            </a>
 
-            <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm">
-              <SiApple size={50} />
-              <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                MacOS 12.0+
-              </h5>
-              <a href="/docs/studio/setup?current-os=macos">
-                <button className="mt-2 button button--primary">
-                  Download
-                </button>
-              </a>
-            </div>
+            <a href="/docs/studio/setup?current-os=macos" className="md:contents">
+              <div className="flex-col w-full md:w-48 h-32 md:h-auto p-4 md:p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm cursor-pointer md:cursor-default hover:opacity-100 transition-opacity flex justify-center items-center">
+                <div className="flex flex-col items-center justify-center h-full">
+                  <SiApple size={40} className="md:w-[50px] md:h-[50px]" />
+                  <h5 className="mb-1 mt-1 md:mb-2 md:mt-2 text-sm md:text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                    MacOS 12.0+
+                  </h5>
+                </div>
+                <a href="/docs/studio/setup?current-os=macos" className="hidden md:inline-block">
+                  <button className="mt-2 button button--primary">
+                    Download
+                  </button>
+                </a>
+              </div>
+            </a>
 
-            <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm">
-              <SiFlathub size={50} />
-              <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                Flathub
-              </h5>
-              <a
-                href="https://flathub.org/apps/com.one_ware.OneWare"
-                target="_blank"
-              >
-                <button className="mt-2 button button--primary">
-                  Download
-                </button>
-              </a>
-            </div>
+            <a href="https://flathub.org/apps/com.one_ware.OneWare" target="_blank" className="md:contents">
+              <div className="flex-col w-full md:w-48 h-32 md:h-auto p-4 md:p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm cursor-pointer md:cursor-default hover:opacity-100 transition-opacity flex justify-center items-center">
+                <div className="flex flex-col items-center justify-center h-full">
+                  <SiFlathub size={40} className="md:w-[50px] md:h-[50px]" />
+                  <h5 className="mb-1 mt-1 md:mb-2 md:mt-2 text-sm md:text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                    Flathub
+                  </h5>
+                </div>
+                <a href="https://flathub.org/apps/com.one_ware.OneWare" target="_blank" className="hidden md:inline-block">
+                  <button className="mt-2 button button--primary">
+                    Download
+                  </button>
+                </a>
+              </div>
+            </a>
 
-            <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm">
-              <SiSnapcraft size={50} />
-              <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                Snapstore
-              </h5>
-              <a href="https://snapcraft.io/oneware" target="_blank">
-                <button className="mt-2 button button--primary">
-                  Download
-                </button>
-              </a>
-            </div>
-
-            <div className="flex-col w-full md:w-48 p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm">
-              <SiLinux size={50} />
-              <h5 className="mb-2 mt-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                <Translate id="download.linux.label">Other Linux</Translate>
-              </h5>
-              <a href="https://cdn.one-ware.com/onewarestudio/" target="_blank">
-                <button className="mt-2 button button--primary">
-                  Download
-                </button>
-              </a>
-            </div>
+            <a href="https://snapcraft.io/oneware" target="_blank" className="md:contents">
+              <div className="flex-col w-full md:w-48 h-32 md:h-auto p-4 md:p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm cursor-pointer md:cursor-default hover:opacity-100 transition-opacity flex justify-center items-center">
+                <div className="flex flex-col items-center justify-center h-full">
+                  <SiSnapcraft size={40} className="md:w-[50px] md:h-[50px]" />
+                  <h5 className="mb-1 mt-1 md:mb-2 md:mt-2 text-sm md:text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                    Snapstore
+                  </h5>
+                </div>
+                <a href="https://snapcraft.io/oneware" target="_blank" className="hidden md:inline-block">
+                  <button className="mt-2 button button--primary">
+                    Download
+                  </button>
+                </a>
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -396,7 +397,6 @@ export default function Studio() {
       <HomepageHeader />
 
       <main>
-        <div className="dropshadowbottom">
           <div className="default-background diagclipbottom pt-16">
             <div className="container overflow-x-hidden">
               {sliders && sliders.length && (
@@ -459,22 +459,25 @@ export default function Studio() {
               )}
             </div>
           </div>
-        </div>
 
-        <div className="relative">
-          <div className="absolute fancybackground" />
+        <div className=" relative pt-16 pb-16" style={{ 
+            boxShadow: 'rgb(0 0 0 / 50%) 0px -10px 13px -7px inset',
+            
+                        backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,1.0) 100%), url('${require('@site/static/img/background.webp').default}')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}>
           <DownloadSection />
         </div>
 
-        <div className="dropshadowtop">
-          <div className="default-background diagcliptop pt-32 md:pt-48">
+          <div className="default-background diagcliptop pt-32 md:pt-24">
             <div className="bottomsplit pb-24 mb-24 container">
               <Extension />
             </div>
 
             <VendorSection />
           </div>
-        </div>
 
         <div className="default-background mt-20">
           <div className="dropshadowtop">
