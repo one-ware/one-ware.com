@@ -141,8 +141,9 @@ const config: Config = {
           ],
         },
         {
-          type: 'localeDropdown',
-          position: 'right',
+          to: "/docs/one-ai/partners",
+          label: "Partners",
+          position: "right",
         },
         {
           to: "/blog",
@@ -157,7 +158,11 @@ const config: Config = {
         {
           href: "https://cloud.one-ware.com/Account/Login",
           position: "right",
-          label: "Sign In",
+          label: "Login/Register",
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right',
         },
       ],
     },

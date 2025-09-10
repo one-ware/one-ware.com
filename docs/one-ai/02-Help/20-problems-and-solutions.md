@@ -49,7 +49,7 @@ The most probable reason for the bad performance is that your dataset doesn't re
   <figure style={{ margin: 0, width: '49%', textAlign: 'center' }}>
     <img src="/img/ai/one_ai_plugin/problems_and_solutions/nist_7_train.png" alt="nist_7_train" style={{ width: '50%', display: 'block', margin: '0 auto' }} />
     <figcaption style={{ marginTop: '0.5em', fontSize: '0.9rem' }}>
-      An example from the training set of our [Handwritten Digit Classification Demo](/docs/one-ai/11-handwritten-digits-demo.md).
+      An example from the training set of our [Handwritten Digit Classification Demo](/docs/one-ai/Tutorials/handwritten-digits-demo).
     </figcaption>
   </figure>
   <figure style={{ margin: 0, width: '49%', textAlign: 'center' }}>

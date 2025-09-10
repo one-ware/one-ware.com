@@ -1,12 +1,12 @@
 ---
 id: handwritten-digits-demo
 title: Handwritten Digit Classification Demo
-sidebar_label: Demo - Handwritten Digits
+sidebar_label: Simple Image Classification (Digits)
 ---
 # Handwritten Digit Classification Demo
 
 ## About this Demo
-This demo showcases the usage of OneWare Studio and the OneAI Extension for a demo case. If you are unfamiliar with the OneAI Extension, we recommend to first take a look at our guide [Getting Started with One AI](/docs/one-ai/01-get-started.md). We also recommend to read the [Potato Chip Classification Demo](/docs/one-ai/10-potato-chip-demo.md), since it goes into more detail than this demo.
+This demo showcases the usage of OneWare Studio and the OneAI Extension for a demo case. If you are unfamiliar with the OneAI Extension, we recommend to first take a look at our guide [Getting Started with One AI](/docs/one-ai/01-get-started.md). 
 
 ## Dataset Overview
 The dataset for this demo can be downloaded [here](https://github.com/one-ware/OneAI_demo_datasets/blob/main/datasets/nist_sd19_subset_sorted.zip). It is a subset of the [NIST Special Database 19](https://www.nist.gov/srd/nist-special-database-19) and contains images of handwritten digits. The training set contains 3000 images, 300 for each digit, while the test set contains 500 images.
@@ -20,7 +20,7 @@ The goal of this demo is to create an AI model that is able to recognize handwri
 During this demo, we will pretend that we want to train a model for an Altera™ Max® 10 16K FPGA to show the workflow and abilities of ONE AI, although the webcam demonstration will run on the CPU of your computer.
 
 ## Setting up the Project
-The setup process is similar to the [Potato Chip Demo](/docs/one-ai/10-potato-chip-demo.md#setting-up-the-project-and-loading-the-data). First, we create a new project and a new AI Generator. Then we use the dataset import to load dataset. Since we are working on a classification problem, we set the format for the import to **Classification** and the annotation **Mode** to **Classes**. Like before, we use an auto-generated validation split, which is enabled by default. Because our dataset contains a separate test set, we set both **Train Image Percentage** and **Validation Image Percentage** to **0%**.
+The setup process is similar to the [Potato Chip Demo](/docs/one-ai/Tutorials/potato-chip-demo#setting-up-the-project-and-loading-the-data). First, we create a new project and a new AI Generator. Then we use the dataset import to load dataset. Since we are working on a classification problem, we set the format for the import to **Classification** and the annotation **Mode** to **Classes**. Like before, we use an auto-generated validation split, which is enabled by default. Because our dataset contains a separate test set, we set both **Train Image Percentage** and **Validation Image Percentage** to **0%**.
 
 We can verify that everything was loaded correctly by checking the annotations of our train and test images.
 
