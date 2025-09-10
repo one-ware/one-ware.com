@@ -20,7 +20,7 @@ The goal of this demo is to create an AI model that is able to recognize handwri
 During this demo, we will pretend that we want to train a model for an Altera™ Max® 10 16K FPGA to show the workflow and abilities of ONE AI, although the webcam demonstration will run on the CPU of your computer.
 
 ## Setting up the Project
-The setup process is similar to the [Potato Chip Demo](/docs/one-ai/Tutorials/potato-chip-demo#setting-up-the-project-and-loading-the-data). First, we create a new project and a new AI Generator. Then we use the dataset import to load dataset. Since we are working on a classification problem, we set the format for the import to **Classification** and the annotation **Mode** to **Classes**. Like before, we use an auto-generated validation split, which is enabled by default. Because our dataset contains a separate test set, we set both **Train Image Percentage** and **Validation Image Percentage** to **0%**.
+The setup process is similar to the [Potato Chip Demo](/docs/one-ai/tutorials/potato-chip-demo#setting-up-the-project-and-loading-the-data). First, we create a new project and a new AI Generator. Then we use the dataset import to load dataset. Since we are working on a classification problem, we set the format for the import to **Classification** and the annotation **Mode** to **Classes**. Like before, we use an auto-generated validation split, which is enabled by default. Because our dataset contains a separate test set, we set both **Train Image Percentage** and **Validation Image Percentage** to **0%**.
 
 We can verify that everything was loaded correctly by checking the annotations of our train and test images.
 
