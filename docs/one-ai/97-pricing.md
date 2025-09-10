@@ -1,14 +1,10 @@
-# Pricing – ONE AI
-
-Transparent, usage-based billing through **credits**. Pay only for what you actually use.
-
----
+# Pricing
 
 ## Credit Price
 
 * **1,000 credits = €20.00** (minimum purchase) → **1 credit = €0.02**
 * Credits are account-based and non-transferable.
-* Prepaid usage; optional **postpaid option** via SEPA with a configurable monthly limit.
+* Prepaid usage or optional **postpaid option** via SEPA with a configurable monthly limit.
 
 ## Usage per Credit
 
@@ -20,11 +16,9 @@ Transparent, usage-based billing through **credits**. Pay only for what you actu
 
 ## Welcome Credit
 
-* **25,000 credits** granted once upon first registration per user.
+* **25,000 credits** granted once upon first registration and verification per user.
 
----
-
-## Example Costs (non-binding)
+## Example Costs
 
 * **10 min of training:** 10 min × 50 credits = 500 credits → **€10.00**
 
@@ -34,29 +28,8 @@ Transparent, usage-based billing through **credits**. Pay only for what you actu
 
 ## Licenses for Production Use
 
-After testing, a **commercial usage license** for the trained model can be purchased:
-
-* **License per execution unit** (e.g. machine, product, software instance)
-* **Annual license fee** according to the individual license agreement (Annex 4)
-* Models can continue to be updated/improved within the development environment
-* Deployment in new application domains requires an additional license agreement
-
-
----
-
-## Administration & Billing
-
-* **Central user management**: Credits are managed via an admin account; consolidated billing for all users under the customer account.
-* **Optional SEPA postpayment**: Monthly consolidated billing for additionally consumed credits; configurable monthly limit.
-
-
----
-
-## Discounts & Price Adjustments
-
-* **Time/volume discounts** may be granted at our discretion (e.g. off-peak times); no entitlement applies.
-* **Price adjustments** possible no earlier than **after 2 years**, with a maximum of **+10%** compared to the previous year; announced **3 months in advance**.
-
+After testing, a **commercial usage license** for the trained model can be purchased.
+Please contact sales at **[sales@one-ware.com](mailto:sales@one-ware.com)** to get a license that meets your demands.
 
 ---
 
@@ -64,7 +37,7 @@ After testing, a **commercial usage license** for the trained model can be purch
 
 * All prices are **net, plus VAT**.
 * The offer is directed **exclusively to business customers (§ 14 BGB)**.
-* For details, hierarchy and full service description, see the **Terms & Conditions including annexes** (especially **Annex 1 – Specification**, **Annex 3 – Pricing Annex**).
+* For details, hierarchy and full service description, see the **[Terms & Conditions](/docs/contact/terms)**.
 
 
 ---
