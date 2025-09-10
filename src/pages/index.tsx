@@ -45,7 +45,7 @@ function HomepageHeader() {
           </div>
 
           <div className="flex justify-center gap-4 mt-4 flex-row pointer-events-auto">
-            <Link href="/one-ai#getStarted">
+            <Link href="/one-ai">
               <button className="button button button--primary button--outline button--lg">
                 <Translate id="homepage.subtitle.ai.getstarted">
                   Get Started
