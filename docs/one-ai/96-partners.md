@@ -6,7 +6,7 @@ sidebar_label:  Partners and Supported Vendors
 
 :::important
  **ONE AI works with all chip vendors. We generate standard outputs (e.g., HDL, ONNX) that can be used in almost any toolchain.**
- If your chip vendor is not listed as supported vendor and you want to onboard quickly, please [contact us here](https://forms.office.com/e/iQFfpNLaPb). We can usually enable support quickly.
+ If your chip vendor is not listed as supported vendor and you want to onboard quickly, please contact us at **[info@one-ware.com](mailto:info@one-ware.com)**. We can usually enable support quickly.
  :::
 
 ## Supported Chip- and Hardware Vendors
@@ -102,7 +102,7 @@ sidebar_label:  Partners and Supported Vendors
 
 ## Partners
 
-> **If you want to become a Partner of ONE WARE, please [contact us here](/one-ai#contact).**
+> **If you want to become a Partner of ONE WARE, please Contact us at [info@one-ware.com](mailto:info@one-ware.com).**
 
 :::tip Our Technology Partners
 
@@ -119,7 +119,7 @@ Support of selected devkits and reference designs for edge-AI on FPGA.
 ## Contact
 
 Want to be listed here or accelerate enablement for your vendor/toolchain?  
-👉 **[Get in touch](/one-ai#contact)**
+👉 Contact us at **[info@one-ware.com](mailto:info@one-ware.com)**
 
 ---
 
