@@ -11,7 +11,7 @@ When you are starting out using the One AI extension you might wonder how to cor
 
 ### Classification
 **Potato Chips**  
-This is the [dataset](https://www.kaggle.com/datasets/concaption/pepsico-lab-potato-quality-control) we used in our [Potato Chip Classification Demo](/docs/one-ai/10-potato-chip-demo.md). It contains images of good and burned potato chips that need to be classified for doing quality control. The burn marks can have different sizes and it's possible that the same chip has multiple burn marks.
+This is the [dataset](https://www.kaggle.com/datasets/concaption/pepsico-lab-potato-quality-control) we used in our [Potato Chip Classification Demo](/docs/one-ai/tutorials/potato-chip-demo). It contains images of good and burned potato chips that need to be classified for doing quality control. The burn marks can have different sizes and it's possible that the same chip has multiple burn marks.
 
 <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
     <img src="/img/ai/one_ai_plugin/choosing_parameters/chips_subtle.jpg" alt="chips_example_01" style={{ width: '25%' }} />
@@ -20,7 +20,7 @@ This is the [dataset](https://www.kaggle.com/datasets/concaption/pepsico-lab-pot
 </div><br/>
 
 **Handwritten Digits**  
-The [NIST Special Database 19](https://www.nist.gov/srd/nist-special-database-19), which we used in our [Handwritten Digit Classification Demo](/docs/one-ai/11-handwritten-digits-demo.md), contains images of handwritten numbers. The goal of this demo is to classify the number that is visible in the image.
+The [NIST Special Database 19](https://www.nist.gov/srd/nist-special-database-19), which we used in our [Handwritten Digit Classification Demo](/docs/one-ai/tutorials/handwritten-digits-demo), contains images of handwritten numbers. The goal of this demo is to classify the number that is visible in the image.
 
 <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
     <img src="/img/ai/one_ai_plugin/choosing_parameters/nist_small.png" alt="nist_example_01" style={{ width: '25%' }} />
@@ -40,7 +40,7 @@ The authors Yildiz and Wörgötter presented an approach for detecting screws in
 
 ### Object Detection
 **Dice**  
-This is the [dataset](https://public.roboflow.com/object-detection/dice) that was used in our [Dice Detection Demo](/docs/one-ai/12-dice-demo.md). It contains images of 6-sided dice that were positioned either on a white table or on a CATAN game board. The goal is to detect the position of the dice and predict the number that they are showing. There are also images containing a collection of varying dice.
+This is the [dataset](https://public.roboflow.com/object-detection/dice) that was used in our [Dice Detection Demo](/docs/one-ai/tutorials/dice-demo). It contains images of 6-sided dice that were positioned either on a white table or on a CATAN game board. The goal is to detect the position of the dice and predict the number that they are showing. There are also images containing a collection of varying dice.
 
 <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
     <img src="/img/ai/one_ai_plugin/demos/dice/dice_example_single.jpg" alt="dice_example_single" style={{ width: '25%' }} />

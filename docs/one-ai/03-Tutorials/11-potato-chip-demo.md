@@ -1,7 +1,7 @@
 ---
 id: potato-chip-demo
 title: Potato Chip Classification Demo
-sidebar_label: Demo - Potato Chips
+sidebar_label: Simple Quality Control (Potato Chips)
 ---
 # Potato Chip Classification Demo
 
