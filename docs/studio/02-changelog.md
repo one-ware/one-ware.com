@@ -4,6 +4,19 @@ title: ONE WARE Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.21.11.0
+
+- Fix critical error that would disable editor features
+
+## 0.21.10.0
+
+- Add Setting to increase character limit before disabling features for performance reasons
+
+## 0.21.9.0
+- fixed that 'CurrentDocument' is sometimes null after init
+- Added a flyout next to the settings to display account information
+- Add OssCadSuite Release 27.08.2025 by
+
 ## 0.21.8.0
 - Update Packages
 - Fix Window Closing Events
