@@ -35,5 +35,26 @@ export const JOBS_DATA: JobCategory[] = [
         location: "Osnabrück - Remote",
       }
     ],
+  },
+  {
+    category: "Students & Interns",
+    positions: [
+      {
+        id: "students-interns.1",
+        title: "Work Student / Media Designer",
+        description: "Help us design marketing materials and our website",
+        url: "OneWare_Werkstudent_Media_Design.pdf",
+        type: "Part Time",
+        location: "Osnabrück",
+      },
+      {
+        id: "students-interns.2",
+        title: "Work Student / AI Tutorials",
+        description: "Help us create AI tutorials and documentation",
+        url: "OneWare_Werkstudent_Technik_KI-Tutorials.pdf",
+        type: "Part Time",
+        location: "Osnabrück",
+      }
+    ],
   }
 ];

@@ -778,6 +778,9 @@
   "category.Sales": {
     "message": "Vertrieb"
   },
+  "category.Students & Interns": {
+    "message": "Werkstudenten & Praktikanten"
+  },
   "positions.hiring": {
     "message": "Wir suchen"
   },
@@ -880,7 +883,7 @@
   "job.location.ai-engineer.3":{
     "message":"Osnabrück - Remote"
   },
-   "job.title.sales-engineer.1":{
+  "job.title.sales-engineer.1":{
     "message":"Technischer Vertriebsingenieur – KI & Embedded Systems"
   },
   "job.description.sales-engineer.1":{
@@ -894,6 +897,36 @@
   },
   "job.location.sales-engineer.1":{
     "message":"Osnabrück - Remote"
+  },
+  "job.title.students-interns.1":{
+    "message":"Werkstudent / Mediengestalter"
+  },
+  "job.description.students-interns.1":{
+    "message":"Hilf uns, Marketingmaterialien und unsere Website zu gestalten"
+  },
+  "job.url.students-interns.1":{
+    "message":"/career/OneWare_Werkstudent_Media_Design.pdf"
+  },
+  "job.type.students-interns.1":{
+    "message":"Teilzeit"
+  },
+  "job.location.students-interns.1":{
+    "message":"Osnabrück"
+  },
+   "job.title.students-interns.2":{
+    "message":"Werkstudent / KI-Tutorials"
+  },
+  "job.description.students-interns.2":{
+    "message":"Hilf uns, KI-Tutorials und Dokumentationen zu erstellen"
+  },
+  "job.url.students-interns.2":{
+    "message":"/career/OneWare_Werkstudent_Technik_KI-Tutorials.pdf"
+  },
+  "job.type.students-interns.2":{
+    "message":"Teilzeit"
+  },
+  "job.location.students-interns.2":{
+    "message":"Osnabrück"
   },
   "aboutUs.1.text":{
     "message":"Die Gründer"
