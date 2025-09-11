@@ -5,8 +5,8 @@ sidebar_label:  Partners and Supported Vendors
 # Partners and Supported Vendors
 
 :::important
- **ONE AI works with all chip vendors. We generate standard outputs (e.g., HDL, ONNX) that can be used in almost any toolchain.**
- If your chip vendor is not listed as supported vendor and you want to onboard quickly, please contact us at **[info@one-ware.com](mailto:info@one-ware.com)**. We can usually enable support quickly.
+ **ONE AI works with all chip vendors.Next to tailored AI model generation for dedicated hardware, we are also providing standard outputs (e.g., HDL, code, ONNX) that can be used in almost any toolchain.**
+ If your chip vendor is not listed as supported vendor and you want to onboard quickly, please contact us at **[info@one-ware.com](mailto:info@one-ware.com)**.
  :::
 
 ## Supported Chip- and Hardware Vendors
@@ -32,6 +32,7 @@ sidebar_label:  Partners and Supported Vendors
 | **STMicroelectronics** | Export **ONNX** and import via **STM32Cube.AI**. |
 | **Texas Instruments** | Export **TF-Lite** and integrate via **TIDL**. |
 | **Renesas** | Export **ONNX** and integrate via **DRP-AI Translator** / **e² Studio (e-AI)**. |
+| **Other vendors** | Integrate via vendor-specific tools that support TF-Lite or ONNX or contact us at **[info@one-ware.com](mailto:info@one-ware.com)** so we can add support for your chip. |
 
 ### Embedded SoCs (Linux-based Application Processors)
 
