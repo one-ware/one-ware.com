@@ -26,8 +26,8 @@ function HomepageHeader() {
 
         {/* Text in der Mitte */}
         <div className="m-auto inset-0 flex flex-col justify-center items-center text-center pointer-events-none min-h-[300px] md:h-[75vh] max-md:h-[60vh]">
-          <div className="text-4xl md:text-7xl lg:text-7xl font-bold drop-shadow-4xl text-gray-200 mt-2 md:mt-2">
-            <span><Translate id="homepage.title.tool">All in ONE AI</Translate></span>
+          <div className="text-4xl md:text-7xl lg:text-7xl font-bold drop-shadow-4xl text-white mt-2 md:mt-2">
+            <span>All in <img src={require("@site/static/img/OneAI_free.png").default} alt="ONE AI" className="inline h-[1.4em] align-baseline" /> AI</span>
           </div>
 
           <div className="text-l md:text-2xl drop-shadow-4xl text-gray-300 mt-6">
