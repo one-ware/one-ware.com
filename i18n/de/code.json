@@ -37,13 +37,13 @@
     "message": "Was andere über uns sagen"
   },
   "testimonials.1.text": {
-    "message": "„Die Zusammenarbeit mit ONE WARE zeigt das unglaubliche Potenzial, das entsteht, wenn intelligente KI-Entwicklung auf hocheffiziente FPGA-Technologie trifft. ONE WARE hebt unsere MAX® 10-Plattform auf ein neues Niveau – wir liefern nicht nur technologisch führende Lösungen, sondern bauen gemeinsam Lösungen, die deutlich präziser, effizienter und in der industriellen Praxis wirksamer sind. Diese Partnerschaft steht für eine neue Generation industrieller KI: skalierbar, ressourcenschonend und universell einsetzbar.“"
+    "message": "„Die Zusammenarbeit mit ONE WARE zeigt das unglaubliche Potenzial, das entsteht, wenn intelligente KI-Entwicklung auf hocheffiziente FPGA-Technologie trifft. ONE WARE hebt unsere MAX® 10-Plattform auf ein neues Niveau - wir liefern nicht nur technologisch führende Lösungen, sondern bauen gemeinsam Lösungen, die deutlich präziser, effizienter und in der industriellen Praxis wirksamer sind. Diese Partnerschaft steht für eine neue Generation industrieller KI: skalierbar, ressourcenschonend und universell einsetzbar.“"
   },
   "testimonials.1.authorTitle": {
     "message": "Direktor für Boards, Entwicklungskits und Partner bei Altera"
   },
   "testimonials.2.text": {
-    "message": "„Die Zusammenarbeit mit ONE WARE war vom ersten Tag an äußerst pragmatisch und zielgerichtet. Dank des gezielten Einsatzes von KI-gestützter Bildverarbeitung konnten wir in nur wenigen Wochen eine robuste Fehlererkennung auf hochglänzenden Oberflächen etablieren – ein Meilenstein, für den klassische Messtechniklösungen bis zu eineinhalb Jahre benötigen würden. Wir nutzen die Software-Lösung von ONE WARE gern, denn ihr technologisches Potenzial im Bereich Künstliche Intelligenz ist beeindruckend und ein echter Hebel zur Stärkung unserer eigenen Wettbewerbsfähigkeit.“"
+    "message": "„Die Zusammenarbeit mit ONE WARE war vom ersten Tag an äußerst pragmatisch und zielgerichtet. Dank des gezielten Einsatzes von KI-gestützter Bildverarbeitung konnten wir in nur wenigen Wochen eine robuste Fehlererkennung auf hochglänzenden Oberflächen etablieren - ein Meilenstein, für den klassische Messtechniklösungen bis zu eineinhalb Jahre benötigen würden. Wir nutzen die Software-Lösung von ONE WARE gern, denn ihr technologisches Potenzial im Bereich Künstliche Intelligenz ist beeindruckend und ein echter Hebel zur Stärkung unserer eigenen Wettbewerbsfähigkeit.“"
   },
   "testimonials.2.authorTitle": {
     "message": "COO & Geschäftsführer bei HDO"
@@ -67,25 +67,25 @@
     "message": "Erfassen und Beschriften"
   },
   "oneai.slider.capture.description": {
-    "message": "Einfach ein paar Bilder aufnehmen und labeln – ONE AI übernimmt den Rest. Schon ein kleiner Datensatz genügt, um ein voll funktionsfähiges KIModell zu erstellen. Die adaptive Architektur passt sich automatisch den Daten an."
+    "message": "Einfach ein paar Bilder aufnehmen und labeln - ONE AI übernimmt den Rest. Schon ein kleiner Datensatz genügt, um ein voll funktionsfähiges KIModell zu erstellen. Die adaptive Architektur passt sich automatisch den Daten an."
   },
   "oneai.slider.guide": {
     "message": "Vorgeben und Auswählen"
   },
   "oneai.slider.guide.description": {
-    "message": "Nutze unseren intuitiven und visuellen Prozess, um der KI zu zeigen, was wichtig ist – welche Merkmale relevant sind, wo generalisiert werden soll und was vorhergesagt werden muss. Anhand definierter Hardware- und Leistungsanforderungen erstellt ONE AI automatisch ein passgenaues Modell."
+    "message": "Nutze unseren intuitiven und visuellen Prozess, um der KI zu zeigen, was wichtig ist - welche Merkmale relevant sind, wo generalisiert werden soll und was vorhergesagt werden muss. Anhand definierter Hardware- und Leistungsanforderungen erstellt ONE AI automatisch ein passgenaues Modell."
   },
   "oneai.slider.train": {
     "message": "Vorhersagen und Trainieren"
   },
   "oneai.slider.train.description": {
-    "message": "Nach dem Start des Trainings generiert ONE AI automatisch ein neuronales Netzwerk – individuell zugeschnitten auf Hardware und Anwendung.  Das Modell trainiert gezielt mit den bereitgestellten Daten und konzentriert sich dabei ausschließlich auf das Wesentliche."
+    "message": "Nach dem Start des Trainings generiert ONE AI automatisch ein neuronales Netzwerk - individuell zugeschnitten auf Hardware und Anwendung.  Das Modell trainiert gezielt mit den bereitgestellten Daten und konzentriert sich dabei ausschließlich auf das Wesentliche."
   },
   "oneai.slider.deploy": {
     "message": "Testen und Implementieren"
   },
   "oneai.slider.deploy.description": {
-    "message": "Während des Trainings und Testens verhält sich die KI bereits wie auf der Zielhardware. Egal ob FPGA, Mikrocontroller, GPU, CPU oder TPU – wenn die Ergebnisse überzeugen, lässt sich die KI als plattformübergreifende Anwendung, HDLCode, C++-Projekt oder ONNX-/TF-/TF-Lite-Modell implementieren."
+    "message": "Während des Trainings und Testens verhält sich die KI bereits wie auf der Zielhardware. Egal ob FPGA, Mikrocontroller, GPU, CPU oder TPU - wenn die Ergebnisse überzeugen, lässt sich die KI als plattformübergreifende Anwendung, HDLCode, C++-Projekt oder ONNX-/TF-/TF-Lite-Modell implementieren."
   },
   "oneai.hero.start": {
     "message": "Die"
@@ -109,10 +109,10 @@
     "message": "Kontakt aufnehmen"
   },
   "oneai.compare.heading": {
-    "message": "Warum neue Hardware kaufen? Rüste die KI auf – nicht die Chips. "
+    "message": "Der gesamte KI-Entwicklungsprozess automatisiert in einem einzigen Tool"
   },
   "oneai.compare.subheading": {
-    "message": "ONE AI liefert High-End-Leistung – selbst auf Hardware von gestern. "
+    "message": "ONE AI liefert High-End-Leistung - selbst auf Hardware von gestern. "
   },
   "oneai.compare.whitepaper": {
     "message": "Lese im Whitepaper von Altera,"
@@ -325,7 +325,7 @@
     "message": "Senden"
   },
   "homepage.features.oneai": {
-    "message": "Entdecke ONE AI – neuronale Netzwerke, die in Sekunden erstellt und exakt auf die Anforderungen an Hardware, Performance und Anwendung zugeschnitten sind"
+    "message": "Entdecke ONE AI - neuronale Netzwerke, die in Sekunden erstellt und exakt auf die Anforderungen an Hardware, Performance und Anwendung zugeschnitten sind"
   },
   "homepage.features.onewarestudio": {
     "message": "Entdecke, wie ONE WARE Studio die KI-Integration in Embedded Systems vereinfacht und die Entwicklung beschleunigt"
@@ -884,7 +884,7 @@
     "message":"Osnabrück - Remote"
   },
   "job.title.sales-engineer.1":{
-    "message":"Technischer Vertriebsingenieur – KI & Embedded Systems"
+    "message":"Technischer Vertriebsingenieur - KI & Embedded Systems"
   },
   "job.description.sales-engineer.1":{
     "message":"Hilf uns, den Vertrieb auf das nächste technologische Level zu heben"
