@@ -26,21 +26,17 @@ function HomepageHeader() {
 
         {/* Text in der Mitte */}
         <div className="m-auto inset-0 flex flex-col justify-center items-center text-center pointer-events-none min-h-[300px] md:h-[75vh] max-md:h-[60vh]">
-          <div className="text-4xl md:text-6xl lg:text-6xl font-bold drop-shadow-4xl text-gray-200 mt-2 md:mt-2">
-            <span><Translate id="homepage.title.hw">Your Hardware.</Translate></span>
-          </div>
-          <div className="text-4xl md:text-6xl lg:text-6xl font-bold drop-shadow-4xl text-gray-200 mt-2 md:mt-2">
-            <span><Translate id="homepage.title.tool">Our Tool.</Translate></span>{" "}
-            <span className="primary-text"><Translate id="homepage.title.ai">ONE AI.</Translate></span>
+          <div className="text-4xl md:text-7xl lg:text-7xl font-bold drop-shadow-4xl text-gray-200 mt-2 md:mt-2">
+            <span><Translate id="homepage.title.tool">All in ONE AI</Translate></span>
           </div>
 
-          <div className="text-l md:text-xl font-bold drop-shadow-4xl text-gray-300 mt-6">
+          <div className="text-l md:text-2xl drop-shadow-4xl text-gray-300 mt-6">
             <span className="block mb-2">
               <Translate id="homepage.subtitle.ai">
-                You do not need new hardware to implement AI.
+                AI Tailored to Your Needs. 
               </Translate>
               <br />
-              <Translate id="homepage.subtitle">Turn months of R&D into a single click with ONE AI.</Translate>
+              <Translate id="homepage.subtitle">Automatically Deployed on Any Hardware.</Translate>
             </span>
           </div>
 
