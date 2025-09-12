@@ -25,22 +25,14 @@ function HomepageHeader() {
       <div className={styles.heroBanner}>
 
         {/* Text in der Mitte */}
-        <div className="m-auto inset-0 flex flex-col justify-center items-center text-center pointer-events-none min-h-[300px] md:h-[75vh] max-md:h-[60vh]">
-          <div className="text-4xl md:text-7xl lg:text-7xl font-bold drop-shadow-4xl text-white mt-2 md:mt-2">
-            <span>All in <img src={require("@site/static/img/OneAI_free.png").default} alt="ONE AI" className="inline h-[1.4em] align-baseline" /> AI</span>
+        <div className="m-auto inset-0 flex flex-col justify-center items-center text-center pointer-events-none min-h-[300px] md:h-[52vh] max-md:h-[40vh]">
+          <div className="text-3xl md:text-4xl lg:text-4xl font-bold drop-shadow-4xl text-white mt-2 md:mt-2">
+            <span>AI Tailored to Your Needs. <br/> Automatically Deployed on Any Hardware.</span>
           </div>
 
-          <div className="text-l md:text-2xl drop-shadow-4xl text-gray-300 mt-6">
-            <span className="block mb-2">
-              <Translate id="homepage.subtitle.ai">
-                AI Tailored to Your Needs. 
-              </Translate>
-              <br />
-              <Translate id="homepage.subtitle">Automatically Deployed on Any Hardware.</Translate>
-            </span>
-          </div>
+          
 
-          <div className="flex justify-center gap-4 mt-4 flex-row pointer-events-auto">
+          <div className="flex justify-center gap-4 mt-8 flex-row pointer-events-auto">
             <Link href="/one-ai">
               <button className="button button button--primary button--outline button--lg">
                 <Translate id="homepage.subtitle.ai.getstarted">
@@ -53,6 +45,31 @@ function HomepageHeader() {
                 ONE AI
               </button>
             </Link>
+          </div>
+
+          <div className="text-xl md:text-xl drop-shadow-4xl text-gray-300 mt-6">
+            <span className="block mb-2">
+              <Translate id="homepage.subtitle.ai">
+                Trusted By:
+              </Translate>
+              <div className="flex justify-center gap-4 mt-2 items-center px-4 py-2">
+                <img
+                  src={require("@site/static/img/Partner/hdo_w.png").default}
+                  alt="HDO logo"
+                  className="h-[1.5em] w-[3em] object-contain opacity-80"
+                />
+                <img
+                  src={require("@site/static/img/Partner/cusp_w.png").default}
+                  alt="Cusp Capital logo"
+                  className="h-[1.5em] w-[3em] object-contain opacity-80"
+                />
+                <img
+                  src={require("@site/static/img/Partner/altera_w.png").default}
+                  alt="Altera logo"
+                  className="h-[1.5em] w-[3em] object-contain opacity-80"
+                />
+              </div>
+            </span>
           </div>
         </div>
 
@@ -69,68 +86,82 @@ function HomepageHeader() {
             className="w-full object-contain hidden md:block"
           />
         </div>
+
+        {/* Featured In section */}
+        <div className="md:mt-2 mt-8">
+          {/* White box with featured logos */}
+          <div className="bg-white bg-opacity-20 py-4 rounded-lg">
+          <h3 className="text-xl md:text-2xl font-bold text-center text-gray-200 mb-6">
+            <Translate id="partners.title">
+              Featured In:
+            </Translate>
+          </h3>
+
+            <div className="flex justify-center items-center flex-wrap gap-4 md:gap-8">
+              <img
+                src={require("@site/static/img/Featured/f1.png").default}
+                alt="Featured 1"
+                className="h-12 w-20 md:h-14 object-contain"
+              />
+              <img
+                src={require("@site/static/img/Featured/f2.png").default}
+                alt="Featured 2"
+                className="h-12 w-24 md:h-14 object-contain"
+              />
+              <img
+                src={require("@site/static/img/Featured/f3.png").default}
+                alt="Featured 3"
+                className="h-12 w-64 md:h-14 object-contain"
+              />
+              <img
+                src={require("@site/static/img/Featured/f4.png").default}
+                alt="Featured 4"
+                className="h-12 w-42 md:h-14 object-contain"
+              />
+              <img
+                src={require("@site/static/img/Featured/f5.png").default}
+                alt="Featured 5"
+                className="h-14 w-28 md:h-16 object-contain"
+              />
+              <img
+                src={require("@site/static/img/Featured/f6.png").default}
+                alt="Featured 6"
+                className="h-12 w-28 md:h-14 object-contain"
+              />
+              <img
+                src={require("@site/static/img/Featured/f7.png").default}
+                alt="Featured 7"
+                className="h-12 w-32 md:h-14 object-contain"
+              />
+              <img
+                src={require("@site/static/img/Featured/f8.png").default}
+                alt="Featured 8"
+                className="h-12 w-28 md:h-14 object-contain"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </header>
   );
 }
 
-function PreviewSection() {
+function OneAISection() {
   return (
     <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
       <div className="mt-8">
-        <h3 className="text-2xl md:text-3xl font-bold text-center text-gray-200 mb-8">
-          <Translate id="partners.title">
-            Trusted by Industry Leaders and Experts
-          </Translate>
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Partner 1 - Altera */}
-          <div className="bg-gray-300 hover:bg-gray-400 bg-opacity-95 p-6 rounded-lg shadow-xl flex items-center justify-center transition-colors duration-300 h-28">
-            <a
-              href="https://go.altera.com/l/1090322/2025-04-18/2vvzbn"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block no-underline hover:no-underline"
-            >
-              <img
-                src={require("@site/static/img/Partner/altera.png").default}
-                alt="Altera logo"
-                className="h-16 object-contain"
-              />
-            </a>
-          </div>
-
-          {/* Partner 2 - HDO */}
-          <div className="bg-gray-300 hover:bg-gray-400 bg-opacity-95 p-6 rounded-lg shadow-xl flex items-center justify-center transition-colors duration-300 h-28">
-            <a
-              href="https://hdo-gmbh.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block no-underline hover:no-underline"
-            >
-              <img
-                src={require("@site/static/img/Partner/hdo.png").default}
-                alt="HDO logo"
-                className="h-16 object-contain"
-              />
-            </a>
-          </div>
-
-          {/* Partner 3 - Cusp Capital */}
-          <div className="bg-gray-300 hover:bg-gray-400 bg-opacity-95 p-6 rounded-lg shadow-xl flex items-center justify-center transition-colors duration-300 h-28">
-            <a
-              href="https://www.cuspcapital.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block no-underline hover:no-underline"
-            >
-              <img
-                src={require("@site/static/img/Partner/cusp.png").default}
-                alt="Cusp Capital logo"
-                className="h-16 object-contain"
-              />
-            </a>
-          </div>
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-200 mb-8">
+          ONE AI
+        </h2>
+        <p className="text-lg md:text-xl text-gray-300 mb-8">
+          Discover our powerful AI solutions tailored to your specific needs.
+        </p>
+        <div className="flex justify-center">
+          <Link href="/one-ai">
+            <button className="button button--primary button--lg">
+              Learn More About ONE AI
+            </button>
+          </Link>
         </div>
       </div>
     </div>
@@ -264,11 +295,6 @@ export default function Home() {
     >
       <HomepageHeader />
       <main className="overflow-x-hidden alternative-background ">
-        <div className="dropshadowbottom">
-          <div className="diagclipbottom default-background pb-24">
-            <PreviewSection />
-          </div>
-        </div>{" "}
         <div className="">
           <HomepageFeatures />
         </div>
