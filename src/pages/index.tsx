@@ -25,7 +25,7 @@ function HomepageHeader() {
       <div className={styles.heroBanner}>
 
         {/* Text in der Mitte */}
-        <div className="m-auto inset-0 flex flex-col justify-center items-center text-center pointer-events-none min-h-[300px] md:h-[52vh] max-md:h-[40vh]">
+        <div className="m-auto inset-0 flex flex-col justify-center items-center text-center pointer-events-none min-h-[300px] md:h-[35vh] max-md:h-[40vh]">
           <div className="text-3xl md:text-4xl lg:text-4xl font-bold drop-shadow-4xl text-white mt-2 md:mt-2">
             <span>AI Tailored to Your Needs. <br/> Automatically Deployed on Any Hardware.</span>
           </div>
@@ -73,8 +73,122 @@ function HomepageHeader() {
           </div>
         </div>
 
-        {/* Bild unten am Header mit Padding - sprachabhängig */}
-        <div className="bottom-0 left-0 right-0 max-md:pt-6 md:mt-8 md:mb-8 max-md:mt-2 max-md:mb-2">
+        {/* Video unten am Header mit Padding */}
+        <div className="bottom-0 left-0 right-0 max-md:pt-6 md:mt-8 md:mb-8 max-md:mt-2 max-md:mb-2 flex justify-center">
+          <video
+            src={require("@site/static/img/animation.mp4").default}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-10/12 md:w-2/5 md:min-w-[700px] object-contain rounded-lg shadow-2xl"
+            style={{
+              filter: 'drop-shadow(0 0 20px rgba(255, 255, 255, 0.3)) drop-shadow(0 0 40px rgba(255, 255, 255, 0.2))'
+            }}
+          />
+        </div>
+
+        {/* Featured In section */}
+        <div className="md:mt-4 mt-8">
+          {/* White box with featured logos */}
+          <div className="bg-white bg-opacity-20 py-4 rounded-lg">
+          <h3 className="text-xl md:text-2xl font-bold text-center text-gray-200 mb-6">
+            <Translate id="partners.title">
+              Featured In:
+            </Translate>
+          </h3>
+
+            <div className="flex justify-center items-center flex-wrap gap-4 md:gap-8">
+              <a
+                href="https://tech.eu/2025/06/18/one-ware-raises-eur25m-to-automate-ai-model-configuration-across-industries/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block no-underline hover:no-underline"
+              >
+                <img
+                  src={require("@site/static/img/Featured/f1.png").default}
+                  alt="Featured 1"
+                  className="h-12 w-20 md:h-14 object-contain hover:opacity-80 transition-opacity"
+                />
+              </a>
+              <a
+                href="https://www.starting-up.de/news/news-investments/one-ware-ki-start-up-aus-brakel-sichert-sich-25-mio-euro.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block no-underline hover:no-underline"
+              >
+                <img
+                  src={require("@site/static/img/Featured/f6.png").default}
+                  alt="Featured 6"
+                  className="h-12 w-28 md:h-14 object-contain hover:opacity-80 transition-opacity"
+                />
+              </a>
+              <a
+                href="https://www.elektronikpraxis.de/one-ai-automatisierte-ki-konfiguration-fuer-entwickler-a-09fee486cec031ed0a2edd5dbeeaed0a/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block no-underline hover:no-underline"
+              >
+                <img
+                  src={require("@site/static/img/Featured/f4.png").default}
+                  alt="Featured 4"
+                  className="h-12 w-42 md:h-14 object-contain hover:opacity-80 transition-opacity"
+                />
+              </a>
+              <a
+                href="https://www.handelsblatt.com/technik/ki/ki-start-ups-jenseits-des-hypes-one-ware-entwickelt-ki-fuer-jede-produktion-01/100149060.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block no-underline hover:no-underline"
+              >
+                <img
+                  src={require("@site/static/img/Featured/f3.png").default}
+                  alt="Featured 3"
+                  className="h-12 w-64 md:h-14 object-contain hover:opacity-80 transition-opacity"
+                />
+              </a>
+              <a
+                href="https://www.maschinenmarkt.vogel.de/one-ai-ki-extension-one-ware-maschinenbau-a-545f6e3fc5ac13f8fa3f55fa5998332f/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block no-underline hover:no-underline"
+              >
+                <img
+                  src={require("@site/static/img/Featured/f5.png").default}
+                  alt="Featured 5"
+                  className="h-14 w-28 md:h-16 object-contain hover:opacity-80 transition-opacity"
+                />
+              </a>
+              <a
+                href="https://it-production.com/industrie-4-0-i40/neuronales-netzwerk-in-unter-einer-sekunde/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block no-underline hover:no-underline"
+              >
+                <img
+                  src={require("@site/static/img/Featured/f7.png").default}
+                  alt="Featured 7"
+                  className="h-12 w-32 md:h-14 object-contain hover:opacity-80 transition-opacity"
+                />
+              </a>
+              <a
+                href="https://www.startbase.de/news/one-ware-sichert-sich-25-mio-euro/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block no-underline hover:no-underline"
+              >
+                <img
+                  src={require("@site/static/img/Featured/f8.png").default}
+                  alt="Featured 8"
+                  className="h-12 w-28 md:h-14 object-contain hover:opacity-80 transition-opacity"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Examples images moved below Featured In */}
+        <div className="max-md:pt-6 md:mt-8 md:mb-8 max-md:mt-2 max-md:mb-2">
           <img
             src={require(`@site/static/img/examples_2${currentLocale === 'de' ? '' : '_en'}.webp`).default}
             alt="Examples"
@@ -85,61 +199,6 @@ function HomepageHeader() {
             alt="Examples Desktop"
             className="w-full object-contain hidden md:block"
           />
-        </div>
-
-        {/* Featured In section */}
-        <div className="md:mt-2 mt-8">
-          {/* White box with featured logos */}
-          <div className="bg-white bg-opacity-20 py-4 rounded-lg">
-          <h3 className="text-xl md:text-2xl font-bold text-center text-gray-200 mb-6">
-            <Translate id="partners.title">
-              Featured In:
-            </Translate>
-          </h3>
-
-            <div className="flex justify-center items-center flex-wrap gap-4 md:gap-8">
-              <img
-                src={require("@site/static/img/Featured/f1.png").default}
-                alt="Featured 1"
-                className="h-12 w-20 md:h-14 object-contain"
-              />
-              <img
-                src={require("@site/static/img/Featured/f2.png").default}
-                alt="Featured 2"
-                className="h-12 w-24 md:h-14 object-contain"
-              />
-              <img
-                src={require("@site/static/img/Featured/f3.png").default}
-                alt="Featured 3"
-                className="h-12 w-64 md:h-14 object-contain"
-              />
-              <img
-                src={require("@site/static/img/Featured/f4.png").default}
-                alt="Featured 4"
-                className="h-12 w-42 md:h-14 object-contain"
-              />
-              <img
-                src={require("@site/static/img/Featured/f5.png").default}
-                alt="Featured 5"
-                className="h-14 w-28 md:h-16 object-contain"
-              />
-              <img
-                src={require("@site/static/img/Featured/f6.png").default}
-                alt="Featured 6"
-                className="h-12 w-28 md:h-14 object-contain"
-              />
-              <img
-                src={require("@site/static/img/Featured/f7.png").default}
-                alt="Featured 7"
-                className="h-12 w-32 md:h-14 object-contain"
-              />
-              <img
-                src={require("@site/static/img/Featured/f8.png").default}
-                alt="Featured 8"
-                className="h-12 w-28 md:h-14 object-contain"
-              />
-            </div>
-          </div>
         </div>
       </div>
     </header>
