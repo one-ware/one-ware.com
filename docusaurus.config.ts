@@ -151,19 +151,23 @@ const config: Config = {
           position: "right",
         },
         {
-          to: "/one-ai#getStarted",
-          label: "Get Started",
-          position: "right",
+          type: 'localeDropdown',
+          position: 'right',
         },
         {
           href: "https://cloud.one-ware.com/Account/Login",
           position: "right",
           label: "Login",
+          className: "button button--primary button--outline button--md font-bold",
+          style: { marginRight: '4px' },
         },
         {
-          type: 'localeDropdown',
-          position: 'right',
+          to: "/one-ai#getStarted",
+          label: "Get Started",
+          position: "right",
+          className: "button button--primary button--md text-gray-900 font-bold",
         },
+        
       ],
     },
     footer: {
