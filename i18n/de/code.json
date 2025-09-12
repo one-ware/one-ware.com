@@ -20,18 +20,24 @@
   "homepage.title.ai": {
     "message": "ONE AI."
   },
+  "homepage.title.main": {
+    "message": "KI maßgeschneidert für Ihre Bedürfnisse."
+  },
+  "homepage.title.subtitle": {
+    "message": "Automatisch auf jeder Hardware implementiert."
+  },
   "homepage.subtitle": {
     "message": "Monate an Forschung und Entwicklung lassen sich mit ONE AI auf einen Klick reduzieren."
   },
   "homepage.subtitle.ai": {
-    "message": "Für die Implementierung von KI ist keine neue Hardware erforderlich."
+    "message": "Vertraut von:"
   },
   "homepage.subtitle.ai.getstarted": {
     "message": "Jetzt Loslegen"
   },
 
   "partners.title": {
-    "message": "Vertraut von Branchenführern und Experten"
+    "message": "Vertreten in:"
   },
   "testimonials.title": {
     "message": "Was andere über uns sagen"

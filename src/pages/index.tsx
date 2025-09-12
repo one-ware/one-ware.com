@@ -27,13 +27,21 @@ function HomepageHeader() {
         {/* Text in der Mitte */}
         <div className="m-auto inset-0 flex flex-col justify-center items-center text-center pointer-events-none min-h-[300px] md:h-[35vh] max-md:h-[40vh]">
           <div className="text-3xl md:text-4xl lg:text-4xl font-bold drop-shadow-4xl text-white mt-2 md:mt-2">
-            <span>AI Tailored to Your Needs. <br/> Automatically Deployed on Any Hardware.</span>
+            <span>
+              <Translate id="homepage.title.main">
+                AI Tailored to Your Needs.
+              </Translate>
+              <br/>
+              <Translate id="homepage.title.subtitle">
+                Automatically Deployed on Any Hardware.
+              </Translate>
+            </span>
           </div>
 
           
 
           <div className="flex justify-center gap-4 mt-8 flex-row pointer-events-auto">
-            <Link href="/one-ai">
+            <Link href="/one-ai#getStarted">
               <button className="button button button--primary button--outline button--lg">
                 <Translate id="homepage.subtitle.ai.getstarted">
                   Get Started

@@ -151,14 +151,14 @@ const config: Config = {
           position: "right",
         },
         {
-          to: "/docs/one-ai/get-started",
-          label: "Tutorials",
+          to: "/one-ai#getStarted",
+          label: "Get Started",
           position: "right",
         },
         {
           href: "https://cloud.one-ware.com/Account/Login",
           position: "right",
-          label: "Login/Register",
+          label: "Login",
         },
         {
           type: 'localeDropdown',
