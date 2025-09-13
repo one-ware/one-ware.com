@@ -99,7 +99,7 @@ function HomepageHeader() {
         {/* Featured In section */}
         <div className="md:mt-4 mt-8">
           {/* White box with featured logos */}
-          <div className="bg-white bg-opacity-20 py-4 rounded-lg">
+          <div className="bg-white bg-opacity-15 py-4 rounded-lg">
           <h3 className="text-xl md:text-2xl font-bold text-center text-gray-200 mb-6">
             <Translate id="partners.title">
               Featured In:
@@ -156,6 +156,18 @@ function HomepageHeader() {
                 />
               </a>
               <a
+                href="https://www.vdi-nachrichten.com/technik/automation/ki-im-maschinenbau-auf-bestehender-hardware-nutzen/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block no-underline hover:no-underline"
+              >
+                <img
+                  src={require("@site/static/img/Featured/f9.png").default}
+                  alt="Featured 9"
+                  className="h-12 w-64 md:h-14 object-contain hover:opacity-80 transition-opacity"
+                />
+              </a>
+              <a
                 href="https://www.maschinenmarkt.vogel.de/one-ai-ki-extension-one-ware-maschinenbau-a-545f6e3fc5ac13f8fa3f55fa5998332f/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -194,43 +206,27 @@ function HomepageHeader() {
             </div>
           </div>
         </div>
-
-        {/* Examples images moved below Featured In */}
-        <div className="max-md:pt-6 md:mt-8 md:mb-8 max-md:mt-2 max-md:mb-2">
-          <img
-            src={require(`@site/static/img/examples_2${currentLocale === 'de' ? '' : '_en'}.webp`).default}
-            alt="Examples"
-            className="w-full object-contain block md:hidden"
-          />
-          <img
-            src={require(`@site/static/img/examples${currentLocale === 'de' ? '' : '_en'}.webp`).default}
-            alt="Examples Desktop"
-            className="w-full object-contain hidden md:block"
-          />
-        </div>
       </div>
     </header>
   );
 }
 
-function OneAISection() {
+function IndustryExamplesSection() {
+ const { i18n } = useDocusaurusContext();
+  const currentLocale = i18n.currentLocale;
+
   return (
-    <div className="text-center container m-auto max-w-6xl overflow-x-hidden">
-      <div className="mt-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-200 mb-8">
-          ONE AI
-        </h2>
-        <p className="text-lg md:text-xl text-gray-300 mb-8">
-          Discover our powerful AI solutions tailored to your specific needs.
-        </p>
-        <div className="flex justify-center">
-          <Link href="/one-ai">
-            <button className="button button--primary button--lg">
-              Learn More About ONE AI
-            </button>
-          </Link>
-        </div>
-      </div>
+    <div className="max-md:pt-6 md:mt-8 md:mb-8 max-md:mt-2 max-md:mb-2">
+      <img
+        src={require(`@site/static/img/examples_2${currentLocale === 'de' ? '' : '_en'}.webp`).default}
+        alt="Examples"
+        className="w-full object-contain block md:hidden"
+      />
+      <img
+        src={require(`@site/static/img/examples${currentLocale === 'de' ? '' : '_en'}.webp`).default}
+        alt="Examples Desktop"
+        className="w-full object-contain hidden md:block"
+      />
     </div>
   );
 }
@@ -361,7 +357,12 @@ export default function Home() {
       })}
     >
       <HomepageHeader />
+      <div className="bg-black dropshadowbottom">
+          <IndustryExamplesSection />
+        </div>
       <main className="overflow-x-hidden alternative-background ">
+        
+
         <div className="">
           <HomepageFeatures />
         </div>
