@@ -132,7 +132,7 @@ function ComparisonSection() {
     {
       title: "High Speed and Efficient Quality Control",
       subtitle: "ONE AI makes decade-old chips outperform todays leading edge AI hardware",
-      image: "/img/ai/one_ai_plugin/use_cases/chip/good.png",
+      image: "/img/ai/one_ai_plugin/use_cases/chip/defect_1.png",
       description: "You don't need to upgrade your hardware. Just upgrade your AI. Together with our partner Altera we show how Altera's MAX® 10 with ONE AI and our HDL generator can now outperform Nvidia's Jetson Orin Nano with:",
       metrics: [
         { value: "488×", label: "Lower Latency" },
@@ -158,14 +158,14 @@ function ComparisonSection() {
     {
       title: "All-in-ONE AI Deployment",
       subtitle: "From Concept to Live System in One Click",
-      image: "/img/ai/one_ai_plugin/getting_started/camera_tool_capture.png",
+      image: "/img/ai/one_ai_plugin/use_cases/capture/full.png",
       description: "Eliminate months of development time. Integrate AI with our pre-build UI that supports monitoring, remote control and continuous improvement. Ready for your quality control or automation task.",
       metrics: [
         { value: "1-Click", label: "Deployment" },
         { value: "< 1 Day", label: "Development Time" },
       ],
       whitepaper: "/docs/one-ai/use-cases/camera-tool",
-      linkText: "Experience the Future"
+      linkText: "More Details"
     }
   ];
 
