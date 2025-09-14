@@ -10,6 +10,11 @@ import type { Container, ISourceOptions } from "@tsparticles/engine";
 import "aos/dist/aos.css";
 import Typewriter from "typewriter-effect";
 import Translate, { translate } from "@docusaurus/Translate";
+import { Navigation } from 'swiper/modules';
+import type { Swiper as SwiperCore } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 import styles from "./index.module.css";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
@@ -342,6 +347,199 @@ function TestimonialsSection() {
   );
 }
 
+function ComparisonSection() {
+  // DEINE BUTTON-LOGIK WIEDERHERGESTELLT (Teil 1)
+  // Der Ref für die Swiper-Instanz ist wieder da.
+  const swiperRef = useRef<SwiperCore | null>(null);
+
+  const scrollPrev = () => {
+    swiperRef.current?.slidePrev();
+  };
+
+  const scrollNext = () => {
+    swiperRef.current?.slideNext();
+  };
+
+  const useCases = [
+    {
+      title: "All-in-ONE AI Deployment",
+      subtitle: "From idea to realization in one click with one software",
+      image: "/img/ai/one_ai_plugin/use_cases/capture/preview.png",
+      description: "Eliminate months of development time. Integrate AI with our pre-build UI that supports monitoring, remote control and continuous improvement. Already in production with leading production companies and ready for your quality control or automation task.",
+      metrics: [
+        { value: "1-Click", label: "Deployment" },
+        { value: "< 1 Day", label: "Development Time" },
+      ],
+      whitepaper: "/docs/one-ai/use-cases/camera-tool",
+      linkText: "More Details"
+    },
+    {
+      title: "High Speed and Efficient Quality Control",
+      subtitle: "ONE AI makes decade-old chips outperform todays leading edge AI hardware",
+      image: "/img/ai/one_ai_plugin/use_cases/chip/defect_1.png",
+      description: "You don't need to upgrade your hardware. Just upgrade your AI. Together with our partner Altera we show how Altera's MAX® 10 with ONE AI and our HDL generator can now outperform Nvidia's Jetson Orin Nano with:",
+      metrics: [
+        { value: "488×", label: "Lower Latency" },
+        { value: "24×", label: "Reduced Errors" },
+        { value: "20×", label: "Lower Power" },
+        { value: "6×", label: "Lower Cost" },
+      ],
+      whitepaper: "/docs/one-ai/use-cases/chip",
+      linkText: "More Details"
+    },
+    {
+      title: "High Precision Quality Control",
+      subtitle: "ONE AI outperforms scientists in under one second",
+      image: "/img/ai/one_ai_plugin/use_cases/pcb/pcb_1.png",
+      description: "Researchers created a custom AI model for a PCB quality control. ONE AI beat not only standard image processing and universal AI models by speed and accuracy, but also the AI model from the scientists. For predicting the right AI model architecture, ONE AI needed 0.7 seconds.",
+      metrics: [
+        { value: "98.4", label: "F1 Score" },
+        { value: "750 %", label: "Speed Increase" },
+      ],
+      whitepaper: "/docs/one-ai/use-cases/pcb",
+      linkText: "More Details"
+    }
+  ];
+  
+  return (
+    <div id="comparison" className="py-12 md:py-20 overflow-hidden">
+      <div className="container mx-auto px-4 text-center">
+        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-12 font-bold px-4">
+          Leading AI Innovation for a Smarter World
+        </p>
+      </div>
+
+      <div className="relative">
+        <Swiper
+          // DEINE BUTTON-LOGIK WIEDERHERGESTELLT (Teil 2)
+          // onSwiper-Callback, um den Ref zu setzen.
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+          }}
+          modules={[Navigation]}
+          rewind={true}
+          centeredSlides={true}
+          grabCursor={true}
+          slidesPerView={1.2}
+          spaceBetween={20}
+          slidesPerGroup={1}
+          watchSlidesProgress={true}
+          // modules={[Navigation]}  // kannst du entfernen, da wir eigene Buttons haben
+          breakpoints={{
+            768:  { slidesPerView: 1.5,  spaceBetween: 40 },
+            1280: { slidesPerView: 1.75, spaceBetween: 50 },
+          }}
+        >
+          {useCases.map((useCase, idx) => (
+            // DER ZWEITE WICHTIGE FIX BLEIBT:
+            <SwiperSlide key={idx}>
+              {({ isActive }) => (
+                <div
+                  className={`relative w-full rounded-2xl transition-all duration-500 ease-in-out transform ${isActive ? 'scale-100' : 'scale-90 opacity-60'}`}
+                  style={{
+                    backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%), url(${useCase.image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                  }}
+                >
+                  {/* ... der innere Content der Slide bleibt unverändert ... */}
+                   <div className="relative z-10 p-6 sm:p-8 lg:p-12 min-h-[550px] md:min-h-[500px] flex flex-col justify-between bg-gray-900/20 rounded-2xl backdrop-blur-sm border border-white/10">
+                    
+                    {/* Content Wrapper für Desktop Layout */}
+                    <div className="flex flex-col lg:flex-row lg:gap-8 h-full">
+                      
+                      {/* Text Section - links auf Desktop */}
+                      <div className="text-left lg:flex-1 lg:max-w-[60%]">
+                        <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold primary-text mb-2">
+                          {useCase.title}
+                        </h3>
+                        <h4 className="text-lg sm:text-xl lg:text-2xl text-gray-300 font-medium mb-4">
+                          {useCase.subtitle}
+                        </h4>
+                        <p className="text-base sm:text-lg text-gray-200 leading-relaxed mb-6">
+                          {useCase.description}
+                        </p>
+                      </div>
+
+                      {/* Metrics & Button Section - rechts auf Desktop */}
+                      <div className="lg:flex-shrink-0 lg:w-[40%] flex flex-col justify-end">
+                        {/* Bottom Section (Metrics & Button) */}
+                        <div className="flex flex-col sm:flex-row lg:flex-col items-center justify-between gap-6">
+                          <div className="grid grid-cols-2 gap-2 w-full sm:w-auto lg:w-full">
+                            {useCase.metrics.map((metric, metricIdx) => (
+                              <div key={metricIdx} className="p-3 bg-black/40 border border-white/10 rounded-lg text-center">
+                                <h5 className="text-xl sm:text-2xl font-bold primary-text">
+                                  {metric.value}
+                                </h5>
+                                <p className="text-sm sm:text-base text-gray-300">
+                                  {metric.label}
+                                </p>
+                              </div>
+                            ))}
+                          </div>
+                          <a
+                            href={useCase.whitepaper}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center px-6 py-3 bg-[#00FFD1] text-black font-bold rounded-lg hover:bg-[#00e4ba] transition-all duration-300 transform hover:scale-105 text-sm lg:text-base w-full sm:w-auto lg:w-full justify-center shrink-0"
+                          >
+                            {useCase.linkText}
+                            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        {/* DEINE BUTTON-LOGIK WIEDERHERGESTELLT (Teil 3) */}
+        {/* Die onClick-Handler sind wieder auf den Buttons. */}
+        <button
+          onClick={scrollPrev}
+          aria-label="Previous use case"
+          className="absolute left-4 sm:left-6 lg:left-8 top-1/2 -translate-y-1/2 z-20 p-2 lg:p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-md shadow-lg transition-transform hover:scale-105"
+        >
+          <svg
+            className="w-5 h-5 lg:w-6 lg:h-6 text-[#00FFD1]"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2.5}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        <button
+          onClick={scrollNext}
+          aria-label="Next use case"
+          className="absolute right-4 sm:right-6 lg:right-8 top-1/2 -translate-y-1/2 z-20 p-2 lg:p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-md shadow-lg transition-transform hover:scale-105"
+        >
+          <svg
+            className="w-5 h-5 lg:w-6 lg:h-6 text-[#00FFD1]"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2.5}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
 
@@ -362,6 +560,13 @@ export default function Home() {
         </div>
       <main className="overflow-x-hidden alternative-background ">
         
+        <div className="dropshadowbottom">
+          <div className="dropshadowtop diagclipbottom">
+            <div className="default-background pb-12">
+          <ComparisonSection />
+        </div>
+          </div>
+        </div>
 
         <div className="">
           <HomepageFeatures />
