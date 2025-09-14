@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import styles from "./one-ai.module.css";
 import "aos/dist/aos.css";
 import classnames from "classnames";
@@ -10,6 +10,10 @@ import ContactUs from "../components/ContactUs";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
 import Translate, { translate } from "@docusaurus/Translate";
+
+import useEmblaCarousel from "embla-carousel-react";
+import type { EmblaCarouselType } from "embla-carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const sliders = [
   {
@@ -82,6 +86,52 @@ const sliders = [
   },
 ];
 
+// --- Data ------------------------------------------------------------------
+const useCases = [
+  {
+    title: "High Speed and Efficient Quality Control",
+    subtitle:
+      "ONE AI makes decade-old chips outperform todays leading edge AI hardware",
+    image: "/img/ai/one_ai_plugin/use_cases/chip/defect_1.png",
+    description:
+      "You don't need to upgrade your hardware. Just upgrade your AI. Together with our partner Altera we show how Altera's MAX® 10 with ONE AI and our HDL generator can now outperform Nvidia's Jetson Orin Nano with:",
+    metrics: [
+      { value: "488×", label: "Lower Latency" },
+      { value: "24×", label: "Reduced Errors" },
+      { value: "20×", label: "Lower Power" },
+      { value: "6×", label: "Lower Cost" },
+    ],
+    whitepaper: "/docs/one-ai/use-cases/chip",
+    linkText: "More Details",
+  },
+  {
+    title: "High Precision Quality Control",
+    subtitle: "ONE AI outperforms scientists in under one second",
+    image: "/img/ai/one_ai_plugin/use_cases/pcb/pcb_1.png",
+    description:
+      "Researchers created a custom AI model for a PCB quality control. ONE AI beat not only standard image processing and universal AI models by speed and accuracy, but also the AI model from the scientists. For predicting the right AI model architecture, ONE AI needed 0.7 seconds.",
+    metrics: [
+      { value: "98.4", label: "F1 Score" },
+      { value: "750 %", label: "Speed Increase" },
+    ],
+    whitepaper: "/docs/one-ai/use-cases/pcb",
+    linkText: "More Details",
+  },
+  {
+    title: "All-in-ONE AI Deployment",
+    subtitle: "From Concept to Live System in One Click",
+    image: "/img/ai/one_ai_plugin/use_cases/capture/full.png",
+    description:
+      "Eliminate months of development time. Integrate AI with our pre-build UI that supports monitoring, remote control and continuous improvement. Ready for your quality control or automation task.",
+    metrics: [
+      { value: "1-Click", label: "Deployment" },
+      { value: "< 1 Day", label: "Development Time" },
+    ],
+    whitepaper: "/docs/one-ai/use-cases/camera-tool",
+    linkText: "More Details",
+  },
+];
+
 function HomepageHeader() {
   return (
     <header id="hero" className={`w-full ${styles.heroBackground} h-96`}>
@@ -124,184 +174,208 @@ function HomepageHeader() {
   );
 }
 
+// --- Component --------------------------------------------------------------
 function ComparisonSection() {
-  const [currentUseCase, setCurrentUseCase] = useState(0);
-  const comparisonSlickRef = useRef<Slider>(null);
-  
-  const useCases = [
-    {
-      title: "High Speed and Efficient Quality Control",
-      subtitle: "ONE AI makes decade-old chips outperform todays leading edge AI hardware",
-      image: "/img/ai/one_ai_plugin/use_cases/chip/defect_1.png",
-      description: "You don't need to upgrade your hardware. Just upgrade your AI. Together with our partner Altera we show how Altera's MAX® 10 with ONE AI and our HDL generator can now outperform Nvidia's Jetson Orin Nano with:",
-      metrics: [
-        { value: "488×", label: "Lower Latency" },
-        { value: "24×", label: "Reduced Errors" },
-        { value: "20×", label: "Lower Power" },
-        { value: "6×", label: "Lower Cost" },
-      ],
-      whitepaper: "/docs/one-ai/use-cases/chip",
-      linkText: "More Details"
-    },
-    {
-      title: "High Precision Quality Control",
-      subtitle: "ONE AI outperforms scientists in under one second",
-      image: "/img/ai/one_ai_plugin/use_cases/pcb/pcb_1.png",
-      description: "Researchers created a custom AI model for a PCB quality control. ONE AI beat not only standard image processing and universal AI models by speed and accuracy, but also the AI model from the scientists. For predicting the right AI model architecture, ONE AI needed 0.7 seconds.",
-      metrics: [
-        { value: "98.4", label: "F1 Score" },
-        { value: "750 %", label: "Speed Increase" },
-      ],
-      whitepaper: "/docs/one-ai/use-cases/pcb",
-      linkText: "More Details"
-    },
-    {
-      title: "All-in-ONE AI Deployment",
-      subtitle: "From Concept to Live System in One Click",
-      image: "/img/ai/one_ai_plugin/use_cases/capture/full.png",
-      description: "Eliminate months of development time. Integrate AI with our pre-build UI that supports monitoring, remote control and continuous improvement. Ready for your quality control or automation task.",
-      metrics: [
-        { value: "1-Click", label: "Deployment" },
-        { value: "< 1 Day", label: "Development Time" },
-      ],
-      whitepaper: "/docs/one-ai/use-cases/camera-tool",
-      linkText: "More Details"
-    }
-  ];
+  const autoplay = useRef(
+    Autoplay({
+      delay: 7000,
+      stopOnInteraction: false,
+      stopOnMouseEnter: true,
+    })
+  );
 
-  const nextUseCase = () => {
-    comparisonSlickRef.current?.slickNext();
-  };
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: true,
+      align: "center",
+      slidesToScroll: 1,
+      containScroll: "trimSnaps", // prevents awkward end-gaps on small screens
+      dragFree: false,
+      // speed: 10, // uncomment to fine-tune motion
+    },
+    [autoplay.current]
+  );
 
-  const prevUseCase = () => {
-    comparisonSlickRef.current?.slickPrev();
-  };
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const onSelect = useCallback((api: EmblaCarouselType) => {
+    setSelectedIndex(api.selectedScrollSnap());
+  }, []);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect(emblaApi);
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
+  }, [emblaApi, onSelect]);
+
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+
+  // Background image like your GetStarted section
+  const bgUrl = require("@site/static/img/background.webp").default as string;
 
   return (
-    <div id="comparison" className="py-12 md:pt-15 overflow-x-hidden">
-      <div className="text-center container m-auto px-4">
-        <div className="flex-col flex text-center">
-
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl my-8 font-bold px-4">
+    <section
+      id="comparison"
+      className="relative overflow-x-clip"
+      style={{
+        backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.9) 100%), url('${bgUrl}')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="py-12 md:py-16">
+        <div className="container m-auto px-4">
+          <p className="text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-8">
             Leading AI Innovation for a Smarter World
           </p>
+        </div>
 
-          {/* Slider with Navigation */}
-          <div className="relative max-w-6xl mx-auto">
-            {/* Left Arrow - Now visible on mobile too */}
-            <button 
-              onClick={prevUseCase}
-              className="absolute -left-4 sm:-left-6 lg:-left-12 top-1/2 transform -translate-y-1/2 z-20 p-2 lg:p-3 bg-black/40 hover:bg-black/60 rounded-lg hover:scale-110 transition-all duration-300 shadow-lg"
-              aria-label="Previous use case"
+        {/* Carousel wrapper - Full width */}
+        <div className="relative w-full">
+          {/* Prev / Next */}
+          <button
+            onClick={scrollPrev}
+            aria-label="Previous use case"
+            className="absolute left-4 sm:left-6 lg:left-8 top-1/2 -translate-y-1/2 z-20 p-2 lg:p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-md shadow-lg transition-transform hover:scale-105"
+          >
+            <svg
+              className="w-5 h-5 lg:w-6 lg:h-6 text-[#00FFD1]"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2.5}
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
-              <svg className="w-5 h-5 lg:w-6 lg:h-6 text-[#00FFD1] hover:text-[#00e4ba] transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
+              <path d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
 
-            {/* Right Arrow - Now visible on mobile too */}
-            <button 
-              onClick={nextUseCase}
-              className="absolute -right-4 sm:-right-6 lg:-right-12 top-1/2 transform -translate-y-1/2 z-20 p-2 lg:p-3 bg-black/40 hover:bg-black/60 rounded-lg hover:scale-110 transition-all duration-300 shadow-lg"
-              aria-label="Next use case"
+          <button
+            onClick={scrollNext}
+            aria-label="Next use case"
+            className="absolute right-4 sm:right-6 lg:right-8 top-1/2 -translate-y-1/2 z-20 p-2 lg:p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-md shadow-lg transition-transform hover:scale-105"
+          >
+            <svg
+              className="w-5 h-5 lg:w-6 lg:h-6 text-[#00FFD1]"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2.5}
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
-              <svg className="w-5 h-5 lg:w-6 lg:h-6 text-[#00FFD1] hover:text-[#00e4ba] transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
+              <path d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
 
-            {/* Slider Content */}
-            <div className="px-4 sm:px-6 lg:px-8">
-              <Slider
-                ref={comparisonSlickRef}
-                dots={true}
-                arrows={false}
-                infinite={true}
-                speed={500}
-                slidesToShow={1}
-                slidesToScroll={1}
-                swipe={true}
-                touchMove={true}
-                className={styles.slickSlider}
-                beforeChange={(_c, n) => {
-                  setCurrentUseCase(n);
-                }}
-              >
-                {useCases.map((useCase, idx) => (
-                  <div key={idx}>
-                    {/* Graue Box um den Content */}
-                    <div className="p-4 sm:p-6 lg:p-8 bg-gray-800/30 border border-gray-600/50 rounded-xl backdrop-blur-sm">
-                      <div className="flex flex-col lg:flex-row items-start gap-6 lg:gap-12">
-                        {/* Image + Button Section - Left */}
-                        <div className="w-full lg:w-1/3 flex flex-col items-center lg:items-start">
-                          <img 
-                            src={useCase.image} 
-                            alt={useCase.title}
-                            className="max-h-48 lg:max-h-80 w-auto object-contain rounded-xl shadow-2xl mb-4 lg:mb-6"
-                          />
-                          
-                          {/* Button unter dem Bild */}
-                          <div className="w-full flex justify-center lg:justify-start">
-                            <a 
-                              href={useCase.whitepaper} 
-                              target="_blank" 
-                              className="inline-flex items-center px-4 lg:px-6 py-2 lg:py-3 bg-[#00FFD1] text-black font-bold rounded-lg hover:bg-[#00e4ba] transition-all duration-300 transform hover:scale-105 text-sm lg:text-base"
+          {/* Embla viewport - Full width */}
+          <div className="embla__viewport overflow-hidden" ref={emblaRef}>
+            <div className="embla__container flex gap-3 sm:gap-4 lg:gap-6 px-4 sm:px-6 lg:px-8">
+              {useCases.map((useCase, idx) => (
+                <div
+                  key={idx}
+                  className={
+                    // Peek neighbors on all screens with variable slide widths
+                    "embla__slide shrink-0 basis-[88%] sm:basis-[75%] md:basis-[65%] lg:basis-[60%] xl:basis-[52%]"
+                  }
+                >
+                  {/* Card */}
+                  <div className="p-4 sm:p-6 lg:p-8 rounded-2xl border border-white/10 bg-neutral-900/20 backdrop-blur-xl shadow-2xl">
+                    <div className="flex flex-col lg:flex-row items-start gap-6 lg:gap-10">
+                      {/* Image */}
+                      <div className="w-full lg:w-1/3">
+                        <img
+                          src={useCase.image}
+                          alt={useCase.title}
+                          className="w-full max-h-72 object-contain rounded-xl shadow-xl"
+                          loading="lazy"
+                        />
+
+                        <div className="mt-4 w-full">
+                          <a
+                            href={useCase.whitepaper}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center px-4 lg:px-6 py-2 lg:py-3 bg-[#00FFD1] text-black font-bold rounded-lg hover:bg-[#00e4ba] transition-transform hover:scale-105 text-sm lg:text-base"
+                          >
+                            {useCase.linkText}
+                            <svg
+                              className="w-4 h-4 lg:w-5 lg:h-5 ml-2"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth={2}
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
                             >
-                              {useCase.linkText}
-                              <svg className="w-4 h-4 lg:w-5 lg:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                              </svg>
-                            </a>
-                          </div>
+                              <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4" />
+                              <path d="M14 4h6v6" />
+                              <path d="M20 4L10 14" />
+                            </svg>
+                          </a>
                         </div>
-                        
-                        {/* Content + Metrics Section - Right */}
-                        <div className="w-full lg:w-2/3 text-center lg:text-left">
-                          {/* Title & Subtitle */}
-                          <div className="mb-4 lg:mb-6">
-                            <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold primary-text mb-2 lg:mb-3">
-                              {useCase.title}
-                            </h3>
-                            <h4 className="text-base sm:text-lg lg:text-xl xl:text-2xl text-gray-300 font-medium mb-3 lg:mb-4">
-                              {useCase.subtitle}
-                            </h4>
-                          </div>
-                          
-                          {/* Description */}
-                          <p className="text-sm sm:text-base lg:text-lg xl:text-xl font-normal mb-4 lg:mb-6 text-gray-200 leading-relaxed hyphens-auto break-words">
-                            {useCase.description}
-                          </p>
+                      </div>
 
-                          {/* Metrics Grid */}
-                          <div className="grid grid-cols-2 gap-1 sm:gap-2 max-w-sm mx-auto lg:max-w-none lg:mx-0">
-                            {useCase.metrics.map((metric, metricIdx) => (
-                              <div
-                                key={metricIdx}
-                                className="p-1.5 sm:p-2 lg:p-3 border rounded-lg bg-black bg-opacity-40 backdrop-blur-sm border-gray-600 text-center"
-                              >
-                                <h5 className="text-base sm:text-lg lg:text-xl xl:text-2xl font-bold primary-text mb-0.5 lg:mb-1">
-                                  {metric.value}
-                                </h5>
-                                <p className="text-xs lg:text-sm text-gray-300">
-                                  {metric.label}
-                                </p>
+                      {/* Text */}
+                      <div className="w-full lg:w-2/3 text-center lg:text-left">
+                        <div className="mb-3 lg:mb-5">
+                          <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold primary-text mb-2">
+                            {useCase.title}
+                          </h3>
+                          <h4 className="text-base sm:text-lg lg:text-xl xl:text-2xl text-gray-300 font-medium">
+                            {useCase.subtitle}
+                          </h4>
+                        </div>
+
+                        <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-gray-200 leading-relaxed mb-4 lg:mb-6">
+                          {useCase.description}
+                        </p>
+
+                        <div className="grid grid-cols-2 gap-2 max-w-sm mx-auto lg:mx-0">
+                          {useCase.metrics.map((m, i) => (
+                            <div
+                              key={i}
+                              className="p-2 lg:p-3 text-center rounded-lg border border-white/10 bg-black/40 backdrop-blur-md"
+                            >
+                              <div className="text-base sm:text-lg lg:text-xl xl:text-2xl font-bold primary-text">
+                                {m.value}
                               </div>
-                            ))}
-                          </div>
+                              <div className="text-xs lg:text-sm text-gray-300">{m.label}</div>
+                            </div>
+                          ))}
                         </div>
                       </div>
                     </div>
                   </div>
-                ))}
-              </Slider>
+                </div>
+              ))}
             </div>
           </div>
 
+          {/* Dots */}
+          <div className="mt-5 flex justify-center gap-2">
+            {useCases.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => emblaApi?.scrollTo(i)}
+                aria-label={`Go to slide ${i + 1}`}
+                className={`h-2.5 w-2.5 rounded-full transition-all ${
+                  selectedIndex === i
+                    ? "bg-[#00FFD1] scale-110"
+                    : "bg-white/30 hover:bg-white/50"
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
+
 
 function GetStarted() {
   return (
@@ -397,6 +471,12 @@ export default function OneAi() {
       <HomepageHeader />
 
       <main>
+        <div className="container pb-20 mt-20">
+          <div id="contact" className="mb-10">
+            <ContactUs />
+          </div>
+        </div>
+
         <div className="bottomsplit">
           <ComparisonSection />
         </div>
