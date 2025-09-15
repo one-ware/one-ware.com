@@ -144,10 +144,11 @@ function ComparisonSection() {
 
   const useCases = [
     {
-      title: "All-in-ONE AI Deployment",
-      subtitle: "From idea to realization in one click with one software",
-      image: "/img/ai/one_ai_plugin/use_cases/capture/preview.png",
-      description: "Eliminate months of development time. Integrate AI with our pre-build UI that supports monitoring, remote control and continuous improvement. Already in production with leading production companies and ready for your quality control or automation task.",
+      title: "Prebuild UI",
+      subtitle: "Integration on any system with operating system and graphical interface",
+      backgroundImage: "/img/ai/one_ai_plugin/use_cases/capture/preview.png",
+      displayImage: "/img/ai/one_ai_plugin/use_cases/capture/integration.png",
+      description: "Eliminate months of development time. Integrate AI with our pre-build UI that supports monitoring, remote control and continuous improvement. Already in production with leading production companies and ready for your quality control or automation task with:",
       metrics: [
         { value: "1-Click", label: "Deployment" },
         { value: "< 1 Day", label: "Development Time" },
@@ -156,10 +157,11 @@ function ComparisonSection() {
       linkText: "More Details"
     },
     {
-      title: "High Speed and Efficient Quality Control",
-      subtitle: "ONE AI makes decade-old chips outperform todays leading edge AI hardware",
-      image: "/img/ai/one_ai_plugin/use_cases/chip/defect_1.png",
-      description: "You don't need to upgrade your hardware. Just upgrade your AI. Together with our partner Altera we show how Altera's MAX® 10 with ONE AI and our HDL generator can now outperform Nvidia's Jetson Orin Nano with:",
+      title: "High Speed HDL",
+      subtitle: "ONE AI implements efficient AI on any FPGA with our open source AI to HDL libraries",
+      backgroundImage: "/img/ai/one_ai_plugin/use_cases/chip/defect_1.png",
+      displayImage: "/img/ai/one_ai_plugin/use_cases/chip/integration.png",
+      description: "Next to the vendor tools for AI integration we offer a version for parallel AI integration on FPGAs that allows integration just like parallel image processing that doesn't need an additional processor and adds no overhead to the system. Together with our partner Altera we show how Altera's MAX® 10 with ONE AI and our HDL generator can now outperform Nvidia's Jetson Orin Nano with:",
       metrics: [
         { value: "488×", label: "Lower Latency" },
         { value: "24×", label: "Reduced Errors" },
@@ -170,10 +172,11 @@ function ComparisonSection() {
       linkText: "More Details"
     },
     {
-      title: "High Precision Quality Control",
-      subtitle: "ONE AI outperforms scientists in under one second",
-      image: "/img/ai/one_ai_plugin/use_cases/pcb/pcb_1.png",
-      description: "Researchers created a custom AI model for a PCB quality control. ONE AI beat not only standard image processing and universal AI models by speed and accuracy, but also the AI model from the scientists. For predicting the right AI model architecture, ONE AI needed 0.7 seconds.",
+      title: "C Project or Executable",
+      subtitle: "Deploy AI with any CPU, TPU, GPU or MCU",
+      backgroundImage: "/img/ai/one_ai_plugin/use_cases/pcb/pcb_1.png",
+      displayImage: "/img/ai/one_ai_plugin/use_cases/pcb/integration.png",
+      description: "ONE AI can create Tensorflow Lite based C projects or precompiled executables with API that run efficient with any kind of processor or AI accelerator. One example is a PCB quality control where the AI by ONE AI beat not only standard image processing and universal AI models by speed and accuracy, but also the AI model from the scientists with:",
       metrics: [
         { value: "98.4", label: "F1 Score" },
         { value: "750 %", label: "Speed Increase" },
@@ -187,7 +190,7 @@ function ComparisonSection() {
     <div id="comparison" className="py-12 md:py-20 overflow-hidden">
       <div className="container mx-auto px-4 text-center">
         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-12 font-bold px-4">
-          Leading AI Innovation for a Smarter World
+          Deploy AI in ONE Click, with ONE WARE.
         </p>
       </div>
 
@@ -219,7 +222,7 @@ function ComparisonSection() {
                 <div
                   className={`relative w-full rounded-2xl transition-all duration-500 ease-in-out transform ${isActive ? 'scale-100' : 'scale-90 opacity-60'}`}
                   style={{
-                    backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%), url(${useCase.image})`,
+                    backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%), url(${useCase.backgroundImage})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                   }}
@@ -230,24 +233,35 @@ function ComparisonSection() {
                     {/* Content Wrapper für Desktop Layout */}
                     <div className="flex flex-col lg:flex-row lg:gap-8 h-full">
                       
-                      {/* Text Section - links auf Desktop */}
-                      <div className="text-left lg:flex-1 lg:max-w-[60%]">
-                        <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold primary-text mb-2">
-                          {useCase.title}
-                        </h3>
-                        <h4 className="text-lg sm:text-xl lg:text-2xl text-gray-300 font-medium mb-4">
-                          {useCase.subtitle}
-                        </h4>
-                        <p className="text-base sm:text-lg text-gray-200 leading-relaxed mb-6">
-                          {useCase.description}
-                        </p>
+                      {/* Image Section - links auf Desktop */}
+                      <div className="w-3/4 mx-auto lg:w-1/3 lg:mx-0 lg:flex-shrink-0 mb-4 lg:mb-0">
+                        <div 
+                          className="w-full aspect-square lg:aspect-[6/7] rounded-lg bg-cover bg-center"
+                          style={{
+                            backgroundImage: `url(${useCase.displayImage})`,
+                          }}
+                        />
                       </div>
 
-                      {/* Metrics & Button Section - rechts auf Desktop */}
-                      <div className="lg:flex-shrink-0 lg:w-[40%] flex flex-col justify-end">
-                        {/* Bottom Section (Metrics & Button) */}
-                        <div className="flex flex-col sm:flex-row lg:flex-col items-center justify-between gap-6">
-                          <div className="grid grid-cols-2 gap-2 w-full sm:w-auto lg:w-full">
+                      {/* Text & Content Section - rechts auf Desktop */}
+                      <div className="text-left lg:flex-1 flex flex-col justify-between">
+                        {/* Text oben */}
+                        <div>
+                          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold primary-text mb-2">
+                            {useCase.title}
+                          </h3>
+                          <h4 className="text-lg sm:text-xl lg:text-2xl text-gray-300 font-medium mb-4">
+                            {useCase.subtitle}
+                          </h4>
+                          <p className="text-base sm:text-lg text-gray-200 leading-relaxed mb-6">
+                            {useCase.description}
+                          </p>
+                        </div>
+
+                        {/* Metrics & Button unten */}
+                        <div className="flex flex-col gap-4">
+                          {/* Metrics Grid - bei 4 Metrics in einer Reihe, sonst 2x2 */}
+                          <div className={`grid gap-2 w-full ${useCase.metrics.length === 4 ? 'grid-cols-4' : 'grid-cols-2'}`}>
                             {useCase.metrics.map((metric, metricIdx) => (
                               <div key={metricIdx} className="p-3 bg-black/40 border border-white/10 rounded-lg text-center">
                                 <h5 className="text-xl sm:text-2xl font-bold primary-text">
@@ -259,11 +273,13 @@ function ComparisonSection() {
                               </div>
                             ))}
                           </div>
+                          
+                          {/* Button darunter */}
                           <a
                             href={useCase.whitepaper}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center px-6 py-3 bg-[#00FFD1] text-black font-bold rounded-lg hover:bg-[#00e4ba] transition-all duration-300 transform hover:scale-105 text-sm lg:text-base w-full sm:w-auto lg:w-full justify-center shrink-0"
+                            className="inline-flex items-center px-6 py-3 bg-[#00FFD1] text-black font-bold rounded-lg hover:bg-[#00e4ba] transition-all duration-300 transform hover:scale-105 text-sm lg:text-base w-full sm:w-auto justify-center shrink-0"
                           >
                             {useCase.linkText}
                             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -322,86 +338,82 @@ function ComparisonSection() {
   );
 }
 
-// --- New Section: Adaptive Architecture (place anywhere above ComparisonSection) ---
+// ===================== Adaptive Architecture (Text left, models right) =====================
 function AdaptiveArchitectureSection() {
-  const [speed, setSpeed] = useState(50);       // 0..100
-  const [ram, setRam] = useState(50);           // 0..100
-  const [complexity, setComplexity] = useState(50); // 0..100
+  // 0=Low, 1=Medium, 2=High
+  const [ram, setRam] = useState<0 | 1 | 2>(1);
+  const [speed, setSpeed] = useState<0 | 1 | 2>(1);
+  const [complexity, setComplexity] = useState<0 | 1 | 2>(0); // default: high
 
-  // Derived values (0..1)
-  const c = complexity / 100; // sets MAX
-  const r = ram / 100;
-  const s = speed / 100;
+  const sum = ram + speed; // 0..4
+  const spec = getArchSpec(sum, complexity);
 
-  // max scale by complexity only
-  const maxScale = c;
+  // 3 kleine Varianten desselben Specs (andere Seeds)
+  const seed = (sum + 1) * 137 + complexity * 29;
 
-  // actual = RAM + Speed + Complexity (normalized as mean), capped by max
-  const actualScale = Math.min(maxScale, (r + s + c) / 3);
   return (
     <section
       id="adaptive-architecture"
-      className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-b from-black via-gray-900/70 to-black"
+      className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-b from-black via-gray-900/60 to-black"
     >
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-4xl mx-auto mb-10">
-          <h2 className="text-2xl md:text-4xl font-bold">
-            No-Code AI with Custom-Grade Precision
-          </h2>
-          <p className="text-lg md:text-xl text-gray-300 mt-4">
-            Build production AI without writing code—enjoy the precision and tailoring of custom AI
-            development <span className="font-semibold">without the development time</span>. You’re
-            <span className="font-semibold"> not limited to preset models</span>: ONE&nbsp;AI designs an
-            architecture that matches your data, your hardware and your performance targets.
-          </p>
-        </div>
+        <div className="grid lg:grid-cols-2 gap-10 items-start">
+          {/* LEFT: Text */}
+          <div className="max-w-xl">
+            <h2 className="text-3xl md:text-4xl font-bold mb-2">
+              Leading AI Innovation for a Smarter World
+            </h2>
 
-        <div className="grid lg:grid-cols-2 gap-8 items-stretch">
-          {/* Live architecture preview */}
-          <div className="relative rounded-2xl border border-white/10 bg-black/80 overflow-hidden">
-            <ArchitecturePreview maxScale={maxScale} actualScale={actualScale} />
+            <p className="text-lg md:text-xl font-bold text-gray-300 mb-4">
+              ONE AI Invents AI Models just for your specific Application and Hardware Requirements
+            </p>
+
+            <p className="text-lg text-gray-300 mb-6">
+              With our patend pending approach of Neural Architecture Prediction, ONE AI automatically invents a custom neural network architecture that is perfectly suited for your application and hardware. Everything without the need for foundation models and fine-tuning. The whole architecture is created from zero in under one second.
+
+            </p>
+
+            <ul className="space-y-2 text-gray-300 list-disc list-inside">
+              <li><span className="font-semibold">Leading AI Innovation.</span> Neural Architecture Prediction designs a custom network for your application and device, that ensures best accuracy and performance.</li>
+              <li><span className="font-semibold">Turning Ideas into AI Solutions.</span> Data → model → export & UI in one tool. One-click deployment.</li>
+              <li><span className="font-semibold">No expertise required.</span> No model or parameter selection. No hardware tuning.</li>
+              <li><span className="font-semibold">The Smartest Way for AI Deployment.</span> With pay-by-success, minimal upfront costs and the fastest development cycles.</li>
+            </ul>
           </div>
 
-          {/* Controls + bullets */}
-          <div className="rounded-2xl p-6 sm:p-8 bg-white/5 border border-white/10">
-            <div className="space-y-6">
-              <FeatureBullet
-                title="Always the best model"
-                text="The architecture adapts to your constraints—speed, memory and application complexity—so you always get the best possible AI for your task."
-              />
-              <FeatureBullet
-                title="No code, no templates"
-                text="Not bound to fixed model families. ONE AI synthesizes a fit-for-purpose network instead of forcing your use case into a generic backbone."
-              />
 
-              {/* Sliders */}
-              <div className="mt-4 space-y-5">
-                <Knob
-                  label="Speed"
-                  hint="Throughput / latency target"
-                  value={speed}
-                  onChange={setSpeed}
-                  left="Power-save"
-                  right="High-FPS"
-                />
-                <Knob
-                  label="Memory (RAM)"
-                  hint="Available runtime memory"
-                  value={ram}
-                  onChange={setRam}
-                  left="Tiny"
-                  right="Plenty"
-                />
-                <Knob
-                  label="Application Complexity"
-                  hint="Task difficulty & variability"
-                  value={complexity}
-                  onChange={setComplexity}
-                  left="Simple"
-                  right="Challenging"
-                />
-              </div>
+          {/* RIGHT: three small random models + sliders underneath */}
+          <div>
+            <div className="rounded-2xl border border-white/10 bg-black/70 p-4">
+              <OrganicMiniModel spec={spec} seed={seed} height={280} />
+            </div>
 
+            {/* Sliders (3-stufig) */}
+            <div className="mt-5 flex flex-col gap-5">
+              <StepSlider
+                label="Speed"
+                value={speed}
+                onChange={setSpeed}
+                leftLabel="Efficient"
+                midLabel="Balanced"
+                rightLabel="High Performance"
+              />
+              <StepSlider
+                label="RAM"
+                value={ram}
+                onChange={setRam}
+                leftLabel="Small Embedded Device"
+                midLabel="Edge box"
+                rightLabel="Full PC"
+              />
+              <StepSlider
+                label="Complexity"
+                value={complexity}
+                onChange={setComplexity}
+                leftLabel="Small Automation"
+                midLabel="Industrial inspection"
+                rightLabel="Complex Analysis"
+              />
             </div>
           </div>
         </div>
@@ -410,48 +422,316 @@ function AdaptiveArchitectureSection() {
   );
 }
 
-// Small helper subcomponents
-function FeatureBullet({ title, text }: { title: string; text: string }) {
-  return (
-    <div className="flex items-start gap-3">
-      <span className="mt-1 inline-flex h-5 w-5 shrink-0 rounded-full bg-[#00FFD1]"></span>
-      <div>
-        <p className="text-white font-semibold">{title}</p>
-        <p className="text-gray-300 text-sm">{text}</p>
-      </div>
-    </div>
-  );
-}
-
-function Knob({
-  label, hint, value, onChange, left, right,
+/* ---------- 3-level segmented control ---------- */
+function StepSlider({
+  label,
+  value,
+  onChange,
+  leftLabel,
+  midLabel,
+  rightLabel,
 }: {
-  label: string; hint?: string; value: number; onChange: (v: number) => void; left?: string; right?: string;
+  label: string;
+  value: 0 | 1 | 2;
+  onChange: (v: 0 | 1 | 2) => void;
+  leftLabel: string;
+  midLabel: string;
+  rightLabel: string;
 }) {
+  const id = `slider-${label.toLowerCase().replace(/\s+/g, "-")}`;
+  const current = [leftLabel, midLabel, rightLabel][value];
+
   return (
-    <div>
-      <div className="flex items-baseline justify-between">
-        <p className="text-sm text-gray-300">{label}</p>
-        {hint && <span className="text-xs text-gray-400">{hint}</span>}
-      </div>
-      <input
-        type="range"
-        min={0}
-        max={100}
-        value={value}
-        onChange={(e) => onChange(Number(e.target.value))}
-        className="w-full accent-[#00FFD1]"
-        aria-label={label}
-      />
-      <div className="flex text-xs text-gray-400 justify-between">
-        <span>{left}</span>
-        <span className="text-white font-semibold">{value}</span>
-        <span>{right}</span>
+    <div className="w-full">
+      <div className="mb-2 text-sm text-gray-300">{label}</div>
+
+      <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-4">
+        <input
+          id={id}
+          type="range"
+          min={0}
+          max={2}
+          step={1}
+          value={value}
+          onChange={(e) => onChange(Number(e.target.value) as 0 | 1 | 2)}
+          className="w-full accent-[#00FFD1] cursor-pointer"
+          aria-label={label}
+        />
+
+        {/* Beschriftung unten: links/rechts + aktuelles Label in der Mitte */}
+        <div className="mt-2 flex items-center justify-between text-xs text-gray-400">
+          <span className="text-left">{leftLabel}</span>
+          <span className="text-right">{rightLabel}</span>
+        </div>
       </div>
     </div>
   );
 }
 
+
+/* ---------- Spec mapping (sum=RAM+Speed, c=complexity) ---------- */
+type ArchSpec = { input: number; hidden: number[]; output: number };
+function getArchSpec(sum: number, c: number): ArchSpec {
+  const table: Record<string, ArchSpec> = {
+    // c = 0
+    "00": { input: 2, hidden: [2],       output: 2 },
+    "10": { input: 2, hidden: [3],       output: 2 },
+    "20": { input: 2, hidden: [4],       output: 2 },
+    "30": { input: 2, hidden: [4, 2],    output: 2 },
+    "40": { input: 2, hidden: [4, 2],    output: 2 },
+    // c = 1
+    "01": { input: 4, hidden: [2],       output: 6 },
+    "11": { input: 4, hidden: [4],       output: 6 },
+    "21": { input: 4, hidden: [4, 3],    output: 6 },
+    "31": { input: 4, hidden: [5, 4],    output: 6 },
+    "41": { input: 4, hidden: [5, 5],    output: 6 },
+    // c = 2
+    "02": { input: 6, hidden: [],        output: 8 }, // no explicit hidden
+    "12": { input: 6, hidden: [4],       output: 8 },
+    "22": { input: 6, hidden: [5, 4],    output: 8 },
+    "32": { input: 6, hidden: [6, 4, 5], output: 8 },
+    "42": { input: 6, hidden: [5, 6, 6], output: 8 },
+  };
+  const key = `${sum}${c}`;
+  return table[key] ?? table["00"];
+}
+
+/* ---------- One mini random graph (organic, *not* grid-layered) ---------- */
+/* ---------- One mini random graph (organic, connected; always with hidden) ---------- */
+function OrganicMiniModel({
+  spec,
+  seed,
+  width = 520,
+  height = 160,
+}: {
+  spec: ArchSpec;
+  seed: number;
+  width?: number;
+  height?: number;
+}) {
+  const padX = 18, padY = 12;
+  const rand = mulberry32(seed || 1);
+
+  type Node = { x: number; y: number; id: string; kind: "in" | "hid" | "out" };
+  const nodes: Node[] = [];
+  const inIdx: number[] = [], outIdx: number[] = [], hidIdx: number[] = [];
+
+  const push = (n: Node) => {
+    nodes.push(n);
+    return nodes.length - 1;
+  };
+
+  // --- Inputs (links) ---
+  for (let i = 0; i < spec.input; i++) {
+    const idx = push({
+      id: `in-${i}`,
+      kind: "in",
+      x: padX + rand() * 18,
+      y:
+        padY +
+        ((i + 0.5) * (height - padY * 2)) / Math.max(1, spec.input) +
+        (rand() - 0.5) * 10,
+    });
+    inIdx.push(idx);
+  }
+
+  // --- Outputs (rechts) ---
+  for (let i = 0; i < spec.output; i++) {
+    const idx = push({
+      id: `out-${i}`,
+      kind: "out",
+      x: width - padX - rand() * 18,
+      y:
+        padY +
+        ((i + 0.5) * (height - padY * 2)) / Math.max(1, spec.output) +
+        (rand() - 0.5) * 10,
+    });
+    outIdx.push(idx);
+  }
+
+  // --- Hidden (mittig, organisch gestreut) ---
+  // Summe aus Tabelle; wenn keine Hidden vorgegeben -> schlankes Gerüst als Visualisierung
+  const declaredHidden = (spec.hidden ?? []).reduce((a, b) => a + b, 0);
+  const hiddenTarget = Math.max(
+    3,
+    declaredHidden || Math.round((spec.input + spec.output) * 0.6)
+  );
+
+  const minDist = clamp(22 - Math.log(hiddenTarget + 1) * 4, 10, 22);
+  let guard = 0;
+  while (hidIdx.length < hiddenTarget && guard < hiddenTarget * 300) {
+    guard++;
+    const x = padX + 60 + rand() * (width - (padX + 60) * 2);
+    const y = padY + rand() * (height - padY * 2);
+    let ok = true;
+    for (const id of hidIdx) {
+      const p = nodes[id];
+      if (Math.hypot(p.x - x, p.y - y) < minDist + rand() * 6) {
+        ok = false;
+        break;
+      }
+    }
+    if (ok) hidIdx.push(push({ id: `h-${hidIdx.length}`, kind: "hid", x, y }));
+  }
+
+  // --- Kanten: dicht & organisch ---
+  const edges: Array<[number, number]> = [];
+  const deg = new Array(nodes.length).fill(0);
+  const set = new Set<string>();
+  const addEdge = (a: number, b: number) => {
+    if (a === b) return;
+    const key = a < b ? `${a}-${b}` : `${b}-${a}`;
+    if (set.has(key)) return;
+    set.add(key);
+    edges.push([a, b]);
+    deg[a]++; deg[b]++;
+  };
+  const dist = (i: number, j: number) =>
+    Math.hypot(nodes[i].x - nodes[j].x, nodes[i].y - nodes[j].y);
+
+  const connectK = (fromIdx: number[], toIdx: number[], k: number, maxD: number) => {
+    if (!fromIdx.length || !toIdx.length) return;
+    for (const i of fromIdx) {
+      const arr = toIdx
+        .map((j) => ({ j, d: dist(i, j) }))
+        .filter((o) => o.d > 1 && o.d < maxD)
+        .sort((a, b) => a.d - b.d)
+        .slice(0, Math.min(k, toIdx.length));
+      for (const o of arr) addEdge(i, o.j);
+    }
+  };
+
+  // Tunable Nachbarschaften
+  // nachher (leichter/sparscher):
+  const kIn  = clamp(Math.round(hidIdx.length / 4) + 1, 1, Math.min(4, hidIdx.length));
+  const kHH  = clamp(Math.round(Math.log2(hidIdx.length + 3)), 1, Math.min(4, Math.max(1, hidIdx.length - 1)));
+  const kOut = clamp(Math.round(hidIdx.length / 5) + 1, 1, Math.min(4, outIdx.length));
+  const kIO  = clamp(Math.round(outIdx.length / 5) + 1, 1, 2);
+
+  // Reichweiten (kürzer -> weniger lange Kreuzer)
+  connectK(inIdx,  hidIdx, kIn,  width * 0.65);
+  connectK(hidIdx, hidIdx, kHH,  width * 0.45);
+  connectK(hidIdx, outIdx, kOut, width * 0.75);
+  connectK(inIdx.slice(0, Math.ceil(inIdx.length * 0.6)), outIdx, kIO, width * 0.5);
+
+  // --- Jede Node hat mind. 1 Kante ---
+  for (let i = 0; i < nodes.length; i++) {
+    if (deg[i] === 0) {
+      const pref =
+        nodes[i].kind === "hid"
+          ? [...inIdx, ...outIdx]
+          : hidIdx.length
+          ? hidIdx
+          : nodes[i].kind === "in"
+          ? outIdx
+          : inIdx;
+      const near = pref
+        .filter((j) => j !== i)
+        .map((j) => ({ j, d: dist(i, j) }))
+        .sort((a, b) => a.d - b.d)[0];
+      if (near) addEdge(i, near.j);
+    }
+  }
+
+  // --- Graph-Zusammenhang sicherstellen (Union-Find + kürzeste Brücken) ---
+  class DSU {
+    p: number[]; r: number[];
+    constructor(n: number) { this.p = Array.from({ length: n }, (_, i) => i); this.r = Array(n).fill(0); }
+    find(a: number): number { return this.p[a] === a ? a : (this.p[a] = this.find(this.p[a])); }
+    union(a: number, b: number) {
+      a = this.find(a); b = this.find(b);
+      if (a === b) return false;
+      if (this.r[a] < this.r[b]) [a, b] = [b, a];
+      this.p[b] = a; if (this.r[a] === this.r[b]) this.r[a]++;
+      return true;
+    }
+  }
+  const dsu = new DSU(nodes.length);
+  for (const [a, b] of edges) dsu.union(a, b);
+
+  const comps = () => {
+    const s = new Map<number, number[]>();
+    nodes.forEach((_, i) => {
+      const f = dsu.find(i);
+      if (!s.has(f)) s.set(f, []);
+      s.get(f)!.push(i);
+    });
+    return Array.from(s.values());
+  };
+
+  let groups = comps();
+  while (groups.length > 1) {
+    let bestA = -1, bestB = -1, bestD = Infinity;
+    for (let g = 0; g < groups.length; g++) {
+      for (let h = g + 1; h < groups.length; h++) {
+        for (const a of groups[g]) {
+          for (const b of groups[h]) {
+            // kleine Penalty für gleiche "Art", damit eher über Hidden/quer verbunden wird
+            const penalty = nodes[a].kind === nodes[b].kind ? 1.08 : 1.0;
+            const d = dist(a, b) * penalty;
+            if (d < bestD) { bestD = d; bestA = a; bestB = b; }
+          }
+        }
+      }
+    }
+    if (bestA >= 0) {
+      addEdge(bestA, bestB);
+      dsu.union(bestA, bestB);
+      groups = comps();
+    } else break;
+  }
+
+  const NODE_R = 12;
+  const EDGE_W = 4; // vorher 5.5
+
+  return (
+    <svg
+      viewBox={`0 0 ${width} ${height}`}
+      className="block w-full"
+      style={{ height: `${height}px` }} // ⬅️ macht die Box sichtbar höher
+    >
+      <defs>
+        <linearGradient id={`bg-${seed}`} x1="0" y1="1" x2="0" y2="0">
+          <stop offset="0%" stopColor="#000" />
+          <stop offset="100%" stopColor="#0a0f12" />
+        </linearGradient>
+        <filter id={`glow-${seed}`}>
+          <feDropShadow dx="0" dy="0" stdDeviation="1.2" floodColor="#00FFD1" floodOpacity="0.25" />
+        </filter>
+      </defs>
+
+      <rect x="0" y="0" width={width} height={height} fill={`url(#bg-${seed})`} />
+
+      {/* edges */}
+      <g stroke="#ffffff" strokeWidth={EDGE_W} strokeLinecap="round" strokeLinejoin="round" opacity="0.92">
+        {edges.map(([a, b], i) => (
+          <line key={i} x1={nodes[a].x} y1={nodes[a].y} x2={nodes[b].x} y2={nodes[b].y} />
+        ))}
+      </g>
+
+      {/* nodes */}
+      <g filter={`url(#glow-${seed})`}>
+        {nodes.map((n) => (
+          <circle key={n.id} cx={n.x} cy={n.y} r={NODE_R} fill={n.kind === "hid" ? "#ffffff" : "#00FFD1"} />
+        ))}
+      </g>
+    </svg>
+  );
+}
+
+
+/* ---------- small helpers ---------- */
+function mulberry32(a: number) {
+  return function () {
+    let t = (a += 0x6D2B79F5);
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+function clamp(v: number, mn: number, mx: number) {
+  return Math.max(mn, Math.min(mx, v));
+}
 function WhitepaperStat({ value, label, href }: { value: string; label: string; href: string }) {
   return (
     <a
@@ -464,132 +744,6 @@ function WhitepaperStat({ value, label, href }: { value: string; label: string; 
       <div className="text-xs text-gray-300">{label}</div>
     </a>
   );
-}
-
-// ---- Drop-in replacement for ArchitecturePreview (more random/organic) ----
-function ArchitecturePreview({
-  maxScale,       // 0..1  (from complexity)
-  actualScale,    // 0..1  (<= maxScale)
-}: {
-  maxScale: number;
-  actualScale: number;
-}) {
-  const width = 760;
-  const height = 420;
-  const pad = 24;
-
-  // global ranges
-  const MIN_NODES = 6;
-  const NODE_RANGE = 160; // how big "max" can get
-  const K_BASE = 2, K_RANGE = 6; // neighbors per node
-
-  // compute node caps from max, then actual within that cap
-  const nodesMax = MIN_NODES + Math.round(maxScale * NODE_RANGE);
-  const nodesActualRaw = MIN_NODES + Math.round(actualScale * NODE_RANGE);
-  const nodeCount = Math.max(MIN_NODES, Math.min(nodesActualRaw, nodesMax));
-
-  // density / connectivity grows with actual
-  const k = clamp(Math.round(K_BASE + actualScale * K_RANGE), 2, 8);
-  const maxDist = clamp(100 + 160 * maxScale, 80, 280); // avoid very long edges
-
-  // deterministic PRNG so sliders -> stable jitter
-  const seed = (Math.round(maxScale * 997) << 16) ^ Math.round(actualScale * 65535);
-  const rand = mulberry32(seed || 1);
-
-  // Poisson-ish sampling (keine Haufenbildung)
-  const minDist = clamp(26 - Math.log(Math.max(8, nodeCount)) * 5, 10, 26);
-  const nodes: { x: number; y: number; id: number }[] = [];
-  let guard = 0;
-  while (nodes.length < nodeCount && guard < nodeCount * 350) {
-    guard++;
-    const x = pad + rand() * (width - pad * 2);
-    const y = pad + rand() * (height - pad * 2);
-    let ok = true;
-    for (let i = 0; i < nodes.length; i++) {
-      const dx = nodes[i].x - x, dy = nodes[i].y - y;
-      const d = Math.hypot(dx, dy);
-      if (d < minDist + rand() * 6) { ok = false; break; }
-    }
-    if (ok) nodes.push({ x, y, id: nodes.length });
-  }
-
-  // k-nearest neighbors unter Distanzschwelle
-  const edges: { x1: number; y1: number; x2: number; y2: number }[] = [];
-  const edgeSet = new Set<string>();
-  for (let i = 0; i < nodes.length; i++) {
-    const n = nodes[i];
-    const nearest = nodes
-      .map((m, j) => ({ j, d2: (m.x - n.x) ** 2 + (m.y - n.y) ** 2 }))
-      .filter((v) => v.j !== i)
-      .sort((a, b) => a.d2 - b.d2);
-
-    let added = 0;
-    for (let t = 0; t < nearest.length && added < k; t++) {
-      const j = nearest[t].j;
-      const d = Math.sqrt(nearest[t].d2);
-      if (d < maxDist) {
-        const key = i < j ? `${i}-${j}` : `${j}-${i}`;
-        if (!edgeSet.has(key)) {
-          edgeSet.add(key);
-          edges.push({ x1: n.x, y1: n.y, x2: nodes[j].x, y2: nodes[j].y });
-          added++;
-        }
-      }
-    }
-  }
-
-  const NODE_R = 8;
-  const EDGE_W = 6;
-
-  return (
-    <svg viewBox={`0 0 ${width} ${height}`} className="block w-full h-[420px]">
-      <defs>
-        <linearGradient id="aaBg" x1="0" y1="1" x2="0" y2="0">
-          <stop offset="0%" stopColor="#000" />
-          <stop offset="100%" stopColor="#0a0f12" />
-        </linearGradient>
-        <filter id="aaGlow">
-          <feDropShadow dx="0" dy="0" stdDeviation="1.2" floodColor="#00FFD1" floodOpacity="0.28" />
-        </filter>
-      </defs>
-
-      <rect x="0" y="0" width={width} height={height} fill="url(#aaBg)" />
-
-      {/* edges */}
-      <g stroke="#ffffff" strokeWidth={EDGE_W} strokeLinecap="round" strokeLinejoin="round" opacity="0.98">
-        {edges.map((e, i) => (
-          <line key={i} x1={e.x1} y1={e.y1} x2={e.x2} y2={e.y2} />
-        ))}
-      </g>
-
-      {/* nodes */}
-      <g filter="url(#aaGlow)">
-        {nodes.map((p) => (
-          <circle key={p.id} cx={p.x} cy={p.y} r={NODE_R} fill="#00FFD1" />
-        ))}
-      </g>
-
-      {/* tiny legend */}
-      <g>
-        <rect x={12} y={12} width={215} height={48} rx={10} fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.12)"/>
-        <text x={24} y={34} fill="#e5e7eb" fontSize="12">Max (by Complexity): {nodesMax}</text>
-        <text x={24} y={52} fill="#ffffff" fontSize="12">Actual (RAM+Speed+Complexity): {nodeCount}</text>
-      </g>
-    </svg>
-  );
-}
-
-// helpers
-function mulberry32(a: number) {
-  return function () {
-    let t = (a += 0x6D2B79F5);
-    t = Math.imul(t ^ (t >>> 15), t | 1);
-    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
-function clamp(v: number, mn: number, mx: number) {
-  return Math.max(mn, Math.min(mx, v));
 }
 
 
