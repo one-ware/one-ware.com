@@ -391,8 +391,8 @@ function ComparisonSection() {
       ],
       relatedUseCases: [
         { title: "Industry Automation" },
-        { title: "Drones" },
-        { title: "Electronics" }
+        { title: "Drones and Aerospace" },
+        { title: "Consumer Electronics" }
       ],
       whitepaper: "/docs/one-ai/use-cases/chip",
       linkText: "More Details"
@@ -408,8 +408,8 @@ function ComparisonSection() {
       ],
       relatedUseCases: [
         { title: "Quality Control" },
-        { title: "Security" },
-        { title: "Aerospace" }
+        { title: "Diagnostic Imaging" },
+        { title: "Autonomous Driving" }
       ],
       whitepaper: "/docs/one-ai/use-cases/pcb",
       linkText: "More Details"

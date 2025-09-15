@@ -172,11 +172,11 @@ function ComparisonSection() {
       linkText: "More Details"
     },
     {
-      title: "C Project or Executable",
+      title: "C++ Project or Executable",
       subtitle: "Deploy AI with any CPU, TPU, GPU or MCU",
       backgroundImage: "/img/ai/one_ai_plugin/use_cases/pcb/pcb_1.png",
       displayImage: "/img/ai/one_ai_plugin/use_cases/pcb/integration.png",
-      description: "ONE AI can create Tensorflow Lite based C projects or precompiled executables with API that run efficient with any kind of processor or AI accelerator. One example is a PCB quality control where the AI by ONE AI beat not only standard image processing and universal AI models by speed and accuracy, but also the AI model from the scientists with:",
+      description: "ONE AI can create Tensorflow Lite based C++ projects or precompiled executables with API that run efficient with any kind of processor or AI accelerator. One example is a PCB quality control where the AI by ONE AI beat not only standard image processing and universal AI models by speed and accuracy, but also the AI model from the scientists with:",
       metrics: [
         { value: "98.4", label: "F1 Score" },
         { value: "750 %", label: "Speed Increase" },
@@ -340,21 +340,28 @@ function ComparisonSection() {
 
 // ===================== Adaptive Architecture (Text left, models right) =====================
 function AdaptiveArchitectureSection() {
-  // 0=Low, 1=Medium, 2=High
-  const [ram, setRam] = useState<0 | 1 | 2>(1);
-  const [speed, setSpeed] = useState<0 | 1 | 2>(1);
-  const [complexity, setComplexity] = useState<0 | 1 | 2>(0); // default: high
+  // 0-7 steps with 8 levels
+  const [ram, setRam] = useState<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>(3);
+  const [speed, setSpeed] = useState<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>(3);
+  const [complexity, setComplexity] = useState<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>(0);
+  const [regenerationKey, setRegenerationKey] = useState(0);
+  const [isExpanded, setIsExpanded] = useState(false);
 
-  const sum = ram + speed; // 0..4
-  const spec = getArchSpec(sum, complexity);
+  const sum = ram + speed; // 0..14
+  const spec = getArchSpec(sum, complexity, regenerationKey * 1000 + sum + complexity);
 
-  // 3 kleine Varianten desselben Specs (andere Seeds)
-  const seed = (sum + 1) * 137 + complexity * 29;
+  // Enhanced seed with regeneration key for more dramatic changes
+  const seed = (sum + 1) * 137 + complexity * 29 + ram * 43 + speed * 67 + regenerationKey * 1000;
+
+  // Trigger regeneration when sliders change
+  useEffect(() => {
+    setRegenerationKey(prev => prev + 1);
+  }, [ram, speed, complexity]);
 
   return (
     <section
       id="adaptive-architecture"
-      className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-b from-black via-gray-900/60 to-black"
+      className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-b from-black to-gray-900"
     >
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-10 items-start">
@@ -373,7 +380,24 @@ function AdaptiveArchitectureSection() {
 
             </p>
 
-            <ul className="space-y-2 text-gray-300 list-disc list-inside">
+            {/* Mobile toggle button */}
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="lg:hidden flex items-center justify-between w-full p-3 mb-4 bg-white/5 border border-white/10 rounded-lg text-gray-300 hover:bg-white/10 transition-colors"
+            >
+              <span className="font-medium">Key Features</span>
+              <svg
+                className={`w-5 h-5 transform transition-transform ${isExpanded ? 'rotate-180' : ''}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            {/* Bullet points - always visible on desktop, collapsible on mobile */}
+            <ul className={`space-y-2 text-gray-300 list-disc list-inside transition-all duration-300 lg:block ${isExpanded ? 'block' : 'hidden'}`}>
               <li><span className="font-semibold">Leading AI Innovation.</span> Neural Architecture Prediction designs a custom network for your application and device, that ensures best accuracy and performance.</li>
               <li><span className="font-semibold">Turning Ideas into AI Solutions.</span> Data → model → export & UI in one tool. One-click deployment.</li>
               <li><span className="font-semibold">No expertise required.</span> No model or parameter selection. No hardware tuning.</li>
@@ -388,22 +412,20 @@ function AdaptiveArchitectureSection() {
               <OrganicMiniModel spec={spec} seed={seed} height={280} />
             </div>
 
-            {/* Sliders (3-stufig) */}
+            {/* Sliders (8-stufig) */}
             <div className="mt-5 flex flex-col gap-5">
               <StepSlider
                 label="Speed"
                 value={speed}
                 onChange={setSpeed}
-                leftLabel="Efficient"
-                midLabel="Balanced"
-                rightLabel="High Performance"
+                leftLabel="High Perfromance"
+                rightLabel="High Precision"
               />
               <StepSlider
                 label="RAM"
                 value={ram}
                 onChange={setRam}
                 leftLabel="Small Embedded Device"
-                midLabel="Edge box"
                 rightLabel="Full PC"
               />
               <StepSlider
@@ -411,7 +433,6 @@ function AdaptiveArchitectureSection() {
                 value={complexity}
                 onChange={setComplexity}
                 leftLabel="Small Automation"
-                midLabel="Industrial inspection"
                 rightLabel="Complex Analysis"
               />
             </div>
@@ -422,24 +443,21 @@ function AdaptiveArchitectureSection() {
   );
 }
 
-/* ---------- 3-level segmented control ---------- */
+/* ---------- 8-level segmented control ---------- */
 function StepSlider({
   label,
   value,
   onChange,
   leftLabel,
-  midLabel,
   rightLabel,
 }: {
   label: string;
-  value: 0 | 1 | 2;
-  onChange: (v: 0 | 1 | 2) => void;
+  value: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7;
+  onChange: (v: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7) => void;
   leftLabel: string;
-  midLabel: string;
   rightLabel: string;
 }) {
   const id = `slider-${label.toLowerCase().replace(/\s+/g, "-")}`;
-  const current = [leftLabel, midLabel, rightLabel][value];
 
   return (
     <div className="w-full">
@@ -450,15 +468,15 @@ function StepSlider({
           id={id}
           type="range"
           min={0}
-          max={2}
+          max={7}
           step={1}
           value={value}
-          onChange={(e) => onChange(Number(e.target.value) as 0 | 1 | 2)}
+          onChange={(e) => onChange(Number(e.target.value) as 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7)}
           className="w-full accent-[#00FFD1] cursor-pointer"
           aria-label={label}
         />
 
-        {/* Beschriftung unten: links/rechts + aktuelles Label in der Mitte */}
+        {/* Beschriftung unten: links/rechts */}
         <div className="mt-2 flex items-center justify-between text-xs text-gray-400">
           <span className="text-left">{leftLabel}</span>
           <span className="text-right">{rightLabel}</span>
@@ -471,29 +489,52 @@ function StepSlider({
 
 /* ---------- Spec mapping (sum=RAM+Speed, c=complexity) ---------- */
 type ArchSpec = { input: number; hidden: number[]; output: number };
-function getArchSpec(sum: number, c: number): ArchSpec {
-  const table: Record<string, ArchSpec> = {
-    // c = 0
-    "00": { input: 2, hidden: [2],       output: 2 },
-    "10": { input: 2, hidden: [3],       output: 2 },
-    "20": { input: 2, hidden: [4],       output: 2 },
-    "30": { input: 2, hidden: [4, 2],    output: 2 },
-    "40": { input: 2, hidden: [4, 2],    output: 2 },
-    // c = 1
-    "01": { input: 4, hidden: [2],       output: 6 },
-    "11": { input: 4, hidden: [4],       output: 6 },
-    "21": { input: 4, hidden: [4, 3],    output: 6 },
-    "31": { input: 4, hidden: [5, 4],    output: 6 },
-    "41": { input: 4, hidden: [5, 5],    output: 6 },
-    // c = 2
-    "02": { input: 6, hidden: [],        output: 8 }, // no explicit hidden
-    "12": { input: 6, hidden: [4],       output: 8 },
-    "22": { input: 6, hidden: [5, 4],    output: 8 },
-    "32": { input: 6, hidden: [6, 4, 5], output: 8 },
-    "42": { input: 6, hidden: [5, 6, 6], output: 8 },
+function getArchSpec(sum: number, c: number, seed: number = 1): ArchSpec {
+  // Create seeded random function for consistent but varied results
+  const rand = mulberry32(seed);
+  
+  // Input/Output: maximum 6 neurons, moderate scaling
+  const baseInput = Math.max(2, Math.min(6, 2 + Math.floor(c * 0.4))); // Max 6 inputs
+  const baseOutput = Math.max(2, Math.min(6, 2 + Math.floor(c * 0.5))); // Max 6 outputs
+  
+  // Hidden layers - resources (speed+RAM) heavily influence size
+  const hidden: number[] = [];
+  
+  // Resources constraint: low speed/RAM should limit layers even with high complexity
+  const resourceConstraint = sum / 14; // 0 to 1 ratio
+  const complexityFactor = c / 7; // 0 to 1 ratio
+  
+  // Layer count influenced more by resources than complexity
+  const maxLayers = Math.min(3, Math.max(1, Math.floor(resourceConstraint * 2 + complexityFactor * 1)));
+  
+  for (let layer = 0; layer < maxLayers; layer++) {
+    // Base size heavily influenced by available resources
+    let baseSize = 2 + Math.floor(resourceConstraint * 4); // 2-6 based on resources
+    
+    // Complexity adds neurons only if resources allow
+    let complexityBonus = 0;
+    if (resourceConstraint > 0.3) { // Only add complexity if resources are decent
+      complexityBonus = Math.floor(complexityFactor * resourceConstraint * 2);
+    }
+    
+    let layerSize = baseSize + complexityBonus + Math.floor(rand() * 2);
+    
+    // Reduced variation between layers
+    if (layer > 0) {
+      const prevSize = hidden[layer - 1];
+      // Smaller variation
+      const variation = Math.floor(rand() * 4) - 2; // -2 to +1
+      layerSize = Math.max(2, Math.min(layerSize + variation, prevSize + 2));
+    }
+    
+    hidden.push(Math.max(2, Math.min(8, layerSize))); // Cap at 8 neurons per layer
+  }
+  
+  return {
+    input: baseInput,
+    hidden: hidden,
+    output: baseOutput
   };
-  const key = `${sum}${c}`;
-  return table[key] ?? table["00"];
 }
 
 /* ---------- One mini random graph (organic, *not* grid-layered) ---------- */
@@ -695,12 +736,7 @@ function OrganicMiniModel({
           <stop offset="0%" stopColor="#000" />
           <stop offset="100%" stopColor="#0a0f12" />
         </linearGradient>
-        <filter id={`glow-${seed}`}>
-          <feDropShadow dx="0" dy="0" stdDeviation="1.2" floodColor="#00FFD1" floodOpacity="0.25" />
-        </filter>
       </defs>
-
-      <rect x="0" y="0" width={width} height={height} fill={`url(#bg-${seed})`} />
 
       {/* edges */}
       <g stroke="#ffffff" strokeWidth={EDGE_W} strokeLinecap="round" strokeLinejoin="round" opacity="0.92">
@@ -710,7 +746,7 @@ function OrganicMiniModel({
       </g>
 
       {/* nodes */}
-      <g filter={`url(#glow-${seed})`}>
+      <g>
         {nodes.map((n) => (
           <circle key={n.id} cx={n.x} cy={n.y} r={NODE_R} fill={n.kind === "hid" ? "#ffffff" : "#00FFD1"} />
         ))}
