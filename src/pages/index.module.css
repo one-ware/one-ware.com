@@ -9,37 +9,34 @@
 
 .heroBackground{
   box-shadow: rgb(0 0 0 / 50%) 0px -10px 13px -7px inset; 
-  background-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%), url('/img/background.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   position: relative;
   top: 0;
   left: 0;
   right: 0; 
-    /* height: 80vh;  Mobile: kleinere Höhe */
-  min-height: 300px;
-  margin-top: 0;
-  margin-top: calc(var(--ifm-navbar-height)*-1);
-  padding: 10px;
+  height: 75vh; /* Größer gemacht */
+  min-height: 600px; /* Größere Mindesthöhe */
+  margin-top: calc(var(--ifm-navbar-height)*-1); /* Kompensiert die Navbar */
+  padding: 0; /* Padding entfernt */
+  overflow: hidden;
 }
 
 /* Tablet/Laptop */
 @media (min-width: 768px) {
   .heroBackground {
-      /* height: 110vh;*/
-     }
-   }
+    height: 80vh; /* Noch größer auf Desktop */
+    min-height: 700px;
+  }
+}
    
-   .heroBanner {
-     margin-top: var(--ifm-navbar-height);
-     /*padding-bottom: var(--ifm-navbar-height);*/
+.heroBanner {
+     margin-top: 0; /* Margin entfernt */
      text-align: center;
      position: relative;
      overflow: hidden;
      display: flex;
      flex-direction: column;
      height: 100%;
+     padding-top: var(--ifm-navbar-height); /* Padding statt Margin für den Inhalt */
    }
    
    .buttons {
@@ -111,4 +108,87 @@
 
 [data-scroll='0'] .startArrow{
   opacity: 80%;
+}
+
+/* === Industry Examples (Marquee) === */
+.examplesWrap {
+  margin: 1rem 0;
+}
+
+.examplesMarquee {
+  --banner-h: 300px;  /* gewünschte Höhe */
+  --col-w: 340px;     /* Breite einer Spalte (2 Karten übereinander) */
+  --gap-x: 16px;      /* Abstand zwischen Spalten */
+  --gap-y: 12px;      /* Abstand zwischen Karten in einer Spalte */
+  --caption-h: 26px;  /* Höhe des Caption-Textbereichs */
+
+  height: var(--banner-h);
+  display: flex;
+  align-items: stretch;
+}
+
+.examplesColumn {
+  width: var(--col-w);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-y);
+  margin-right: var(--gap-x);
+}
+
+.card,
+.cardPlaceholder {
+  height: calc(var(--banner-h) / 2 - var(--gap-y) / 2);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.card {
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.18);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+}
+
+.card img {
+  width: 100%;
+  height: calc(100% - var(--caption-h));
+  object-fit: cover;
+  display: block;
+}
+
+.caption {
+  height: var(--caption-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;          /* weißer Text */
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1;
+  padding-top: 4px;     /* minimaler Abstand */
+}
+
+.cardPlaceholder {
+  visibility: hidden;   /* blockt Platz, wenn ungerade Anzahl */
+}
+
+@media (max-width: 768px) {
+  .examplesMarquee {
+    --banner-h: 240px;
+    --col-w: 280px;
+    --gap-x: 12px;
+    --gap-y: 10px;
+    --caption-h: 24px;
+  }
+  .caption {
+    font-size: 0.9rem;
+  }
 }
