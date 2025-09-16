@@ -49,7 +49,7 @@ function HomepageHeader() {
 
       <div className={styles.heroBanner}>
         {/* Text oben links mit Hintergrund-Box */}
-        <div className="relative z-10 flex items-start justify-start pt-8 pl-8 md:pt-12 md:pl-12 lg:pt-16 lg:pl-16 h-full">
+        <div className="relative z-10 flex items-start justify-start pt-8 px-8 md:pt-12 md:pl-12 lg:pt-16 lg:pl-16 h-full">
           <div className="max-w-2xl backdrop-blur-md bg-gray-600/20 rounded-2xl p-6 md:p-8 border border-white/10">
             <div className="text-left">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
@@ -81,15 +81,19 @@ function HomepageHeader() {
         </div>
 
         {/* Featured In Section unten im Header */}
-        <div className="relative z-10 flex items-end justify-center pb-8 px-8">
-          <div className="w-full max-w-7xl backdrop-blur-sm bg-gray-300/15 rounded-2xl p-6 border border-white/10">
-            <h3 className="text-lg md:text-xl font-bold text-center text-white mb-6">
-              <Translate id="partners.title">
-                Featured In:
-              </Translate>
-            </h3>
+        <div className="relative z-10 flex items-end justify-center pb-12 px-8">
+          <div className="w-full max-w-7xl backdrop-blur-md bg-gray-600/20 rounded-2xl p-4 border border-white/10">
             
+            <div className="text-center -mb-2">
+              <p className="text-lg md:text-xl text-gray-300">
+                <Translate id="partners.title">
+                  Featured in:
+                </Translate>
+              </p>
+            </div>
+
             <div className="flex justify-center items-center flex-wrap gap-3 md:gap-6">
+
               <a
                 href="https://tech.eu/2025/06/18/one-ware-raises-eur25m-to-automate-ai-model-configuration-across-industries/"
                 target="_blank"
@@ -97,9 +101,9 @@ function HomepageHeader() {
                 className="block no-underline hover:no-underline"
               >
                 <img
-                  src={require("@site/static/img/Featured/f1.png").default}
+                  src={require("@site/static/img/Featured/f1_g.png").default}
                   alt="Featured 1"
-                  className="h-10 w-16 md:h-12 md:w-20 object-contain hover:opacity-80 transition-opacity opacity-90"
+                  className="h-8 w-16 md:h-12 md:w-20 object-contain hover:opacity-80 transition-opacity opacity-90"
                 />
               </a>
               <a
@@ -109,9 +113,9 @@ function HomepageHeader() {
                 className="block no-underline hover:no-underline"
               >
                 <img
-                  src={require("@site/static/img/Featured/f4.png").default}
+                  src={require("@site/static/img/Featured/f4_g.png").default}
                   alt="Featured 4"
-                  className="h-10 w-36 md:h-12 md:w-42 object-contain hover:opacity-80 transition-opacity opacity-90"
+                  className="h-8 w-36 md:h-12 md:w-42 object-contain hover:opacity-80 transition-opacity opacity-90"
                 />
               </a>
               <a
@@ -121,9 +125,9 @@ function HomepageHeader() {
                 className="block no-underline hover:no-underline"
               >
                 <img
-                  src={require("@site/static/img/Featured/f3.png").default}
+                  src={require("@site/static/img/Featured/f3_g.png").default}
                   alt="Featured 3"
-                  className="h-10 w-52 md:h-12 md:w-64 object-contain hover:opacity-80 transition-opacity opacity-90"
+                  className="h-8 w-52 md:h-12 md:w-64 object-contain hover:opacity-80 transition-opacity opacity-90"
                 />
               </a>
               <a
@@ -133,9 +137,9 @@ function HomepageHeader() {
                 className="block no-underline hover:no-underline"
               >
                 <img
-                  src={require("@site/static/img/Featured/f9.png").default}
+                  src={require("@site/static/img/Featured/f9_g.png").default}
                   alt="Featured 9"
-                  className="h-10 w-52 md:h-12 md:w-64 object-contain hover:opacity-80 transition-opacity opacity-90"
+                  className="h-8 w-52 md:h-12 md:w-64 object-contain hover:opacity-80 transition-opacity opacity-90"
                 />
               </a>
               <a
@@ -145,9 +149,9 @@ function HomepageHeader() {
                 className="block no-underline hover:no-underline"
               >
                 <img
-                  src={require("@site/static/img/Featured/f5.png").default}
+                  src={require("@site/static/img/Featured/f5_g.png").default}
                   alt="Featured 5"
-                  className="h-12 w-24 md:h-14 md:w-28 object-contain hover:opacity-80 transition-opacity opacity-90"
+                  className="h-8 w-24 md:h-14 md:w-28 object-contain hover:opacity-80 transition-opacity opacity-90"
                 />
               </a>
               <a
@@ -157,12 +161,31 @@ function HomepageHeader() {
                 className="block no-underline hover:no-underline"
               >
                 <img
-                  src={require("@site/static/img/Featured/f7.png").default}
+                  src={require("@site/static/img/Featured/f7_g.png").default}
                   alt="Featured 7"
-                  className="h-10 w-28 md:h-12 md:w-32 object-contain hover:opacity-80 transition-opacity opacity-90"
+                  className="h-8 w-28 md:h-12 md:w-32 object-contain hover:opacity-80 transition-opacity opacity-90"
                 />
               </a>
             </div>
+          </div>
+        </div>
+
+        {/* Animierter Scroll-Pfeil */}
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-10">
+          <div className="flex flex-col items-center animate-bounce">
+            <svg 
+              className="w-10 h-10 text-white opacity-70" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2} 
+                d="M19 9l-7 7-7-7" 
+              />
+            </svg>
           </div>
         </div>
 
@@ -209,10 +232,10 @@ function IndustryExamplesSection() {
   return (
     <div className={styles.examplesWrap}>
       {/* Überschrift über den Beispielen */}
-      <div className="text-center mb-8">
-        <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-12 font-bold px-4">
+      <div className="text-left mb-8 pl-24">
+        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl px-4">
           For Every Industry:
-        </h2>
+        </p>
       </div>
       
       <Marquee
@@ -423,7 +446,7 @@ function ComparisonSection() {
   ];
   
   return (
-    <div id="comparison" className="py-12 md:py-12 overflow-hidden">
+    <div id="comparison" className="pt-12 md:pt-12 pb-4 md:pb-4 overflow-hidden">
       <div className="container mx-auto px-4 text-center">
         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-12 font-bold px-4">
           Example Use-Cases

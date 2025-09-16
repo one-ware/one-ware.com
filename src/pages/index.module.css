@@ -13,7 +13,7 @@
   top: 0;
   left: 0;
   right: 0; 
-  height: 75vh; /* Größer gemacht */
+  height: 100vh; /* Größer gemacht */
   min-height: 600px; /* Größere Mindesthöhe */
   margin-top: calc(var(--ifm-navbar-height)*-1); /* Kompensiert die Navbar */
   padding: 0; /* Padding entfernt */
