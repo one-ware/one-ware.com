@@ -23,7 +23,7 @@
 /* Tablet/Laptop */
 @media (min-width: 768px) {
   .heroBackground {
-    height: 80vh; /* Noch größer auf Desktop */
+    height: 100vh; /* Noch größer auf Desktop */
     min-height: 700px;
   }
 }

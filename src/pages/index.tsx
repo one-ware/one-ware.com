@@ -50,21 +50,15 @@ function HomepageHeader() {
       <div className={styles.heroBanner}>
         {/* Text oben links mit Hintergrund-Box */}
         <div className="relative z-10 flex items-start justify-start pt-8 pl-8 md:pt-12 md:pl-12 lg:pt-16 lg:pl-16 h-full">
-          <div className="max-w-2xl backdrop-blur-md bg-gray-900/70 rounded-2xl p-6 md:p-8 border border-white/10">
+          <div className="max-w-2xl backdrop-blur-md bg-gray-600/20 rounded-2xl p-6 md:p-8 border border-white/10">
             <div className="text-left">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                 <Translate id="homepage.title.main">
                   AI Tailored to Your Needs.
                 </Translate>
               </h1>
-              
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-light text-gray-200 mb-6">
-                <Translate id="homepage.title.subtitle">
-                  Automatically Deployed on Any Hardware.
-                </Translate>
-              </h2>
 
-              <p className="text-base md:text-lg text-gray-300 leading-relaxed mb-8">
+              <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-8">
                 Universal AI models were not made for your application. ONE WARE offers the first platform that invents completely new AI models exactly for your use case and automatically deploys them on any hardware.
               </p>
 
@@ -86,121 +80,94 @@ function HomepageHeader() {
           </div>
         </div>
 
+        {/* Featured In Section unten im Header */}
+        <div className="relative z-10 flex items-end justify-center pb-8 px-8">
+          <div className="w-full max-w-7xl backdrop-blur-sm bg-gray-300/15 rounded-2xl p-6 border border-white/10">
+            <h3 className="text-lg md:text-xl font-bold text-center text-white mb-6">
+              <Translate id="partners.title">
+                Featured In:
+              </Translate>
+            </h3>
+            
+            <div className="flex justify-center items-center flex-wrap gap-3 md:gap-6">
+              <a
+                href="https://tech.eu/2025/06/18/one-ware-raises-eur25m-to-automate-ai-model-configuration-across-industries/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block no-underline hover:no-underline"
+              >
+                <img
+                  src={require("@site/static/img/Featured/f1.png").default}
+                  alt="Featured 1"
+                  className="h-10 w-16 md:h-12 md:w-20 object-contain hover:opacity-80 transition-opacity opacity-90"
+                />
+              </a>
+              <a
+                href="https://www.elektronikpraxis.de/one-ai-automatisierte-ki-konfiguration-fuer-entwickler-a-09fee486cec031ed0a2edd5dbeeaed0a/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block no-underline hover:no-underline"
+              >
+                <img
+                  src={require("@site/static/img/Featured/f4.png").default}
+                  alt="Featured 4"
+                  className="h-10 w-36 md:h-12 md:w-42 object-contain hover:opacity-80 transition-opacity opacity-90"
+                />
+              </a>
+              <a
+                href="https://www.handelsblatt.com/technik/ki/ki-start-ups-jenseits-des-hypes-one-ware-entwickelt-ki-fuer-jede-produktion-01/100149060.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block no-underline hover:no-underline"
+              >
+                <img
+                  src={require("@site/static/img/Featured/f3.png").default}
+                  alt="Featured 3"
+                  className="h-10 w-52 md:h-12 md:w-64 object-contain hover:opacity-80 transition-opacity opacity-90"
+                />
+              </a>
+              <a
+                href="https://www.vdi-nachrichten.com/technik/automation/ki-im-maschinenbau-auf-bestehender-hardware-nutzen/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block no-underline hover:no-underline"
+              >
+                <img
+                  src={require("@site/static/img/Featured/f9.png").default}
+                  alt="Featured 9"
+                  className="h-10 w-52 md:h-12 md:w-64 object-contain hover:opacity-80 transition-opacity opacity-90"
+                />
+              </a>
+              <a
+                href="https://www.maschinenmarkt.vogel.de/one-ai-ki-extension-one-ware-maschinenbau-a-545f6e3fc5ac13f8fa3f55fa5998332f/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block no-underline hover:no-underline"
+              >
+                <img
+                  src={require("@site/static/img/Featured/f5.png").default}
+                  alt="Featured 5"
+                  className="h-12 w-24 md:h-14 md:w-28 object-contain hover:opacity-80 transition-opacity opacity-90"
+                />
+              </a>
+              <a
+                href="https://it-production.com/industrie-4-0-i40/neuronales-netzwerk-in-unter-einer-sekunde/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block no-underline hover:no-underline"
+              >
+                <img
+                  src={require("@site/static/img/Featured/f7.png").default}
+                  alt="Featured 7"
+                  className="h-10 w-28 md:h-12 md:w-32 object-contain hover:opacity-80 transition-opacity opacity-90"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </header>
-  );
-}
-
-function FeaturedInSection() {
-  return (
-    <div className="bg-white py-8">
-      <div className="max-w-7xl mx-auto px-4">
-        <h3 className="text-xl md:text-2xl font-bold text-center text-gray-200 mb-8">
-          <Translate id="partners.title">
-            Featured In:
-          </Translate>
-        </h3>
-        
-        <div className="flex justify-center items-center flex-wrap gap-4 md:gap-8">
-          <a
-            href="https://tech.eu/2025/06/18/one-ware-raises-eur25m-to-automate-ai-model-configuration-across-industries/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block no-underline hover:no-underline"
-          >
-            <img
-              src={require("@site/static/img/Featured/f1.png").default}
-              alt="Featured 1"
-              className="h-12 w-20 md:h-14 object-contain hover:opacity-80 transition-opacity"
-            />
-          </a>
-          <a
-            href="https://www.starting-up.de/news/news-investments/one-ware-ki-start-up-aus-brakel-sichert-sich-25-mio-euro.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block no-underline hover:no-underline"
-          >
-            <img
-              src={require("@site/static/img/Featured/f6.png").default}
-              alt="Featured 6"
-              className="h-12 w-28 md:h-14 object-contain hover:opacity-80 transition-opacity"
-            />
-          </a>
-          <a
-            href="https://www.elektronikpraxis.de/one-ai-automatisierte-ki-konfiguration-fuer-entwickler-a-09fee486cec031ed0a2edd5dbeeaed0a/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block no-underline hover:no-underline"
-          >
-            <img
-              src={require("@site/static/img/Featured/f4.png").default}
-              alt="Featured 4"
-              className="h-12 w-42 md:h-14 object-contain hover:opacity-80 transition-opacity"
-            />
-          </a>
-          <a
-            href="https://www.handelsblatt.com/technik/ki/ki-start-ups-jenseits-des-hypes-one-ware-entwickelt-ki-fuer-jede-produktion-01/100149060.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block no-underline hover:no-underline"
-          >
-            <img
-              src={require("@site/static/img/Featured/f3.png").default}
-              alt="Featured 3"
-              className="h-12 w-64 md:h-14 object-contain hover:opacity-80 transition-opacity"
-            />
-          </a>
-          <a
-            href="https://www.vdi-nachrichten.com/technik/automation/ki-im-maschinenbau-auf-bestehender-hardware-nutzen/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block no-underline hover:no-underline"
-          >
-            <img
-              src={require("@site/static/img/Featured/f9.png").default}
-              alt="Featured 9"
-              className="h-12 w-64 md:h-14 object-contain hover:opacity-80 transition-opacity"
-            />
-          </a>
-          <a
-            href="https://www.maschinenmarkt.vogel.de/one-ai-ki-extension-one-ware-maschinenbau-a-545f6e3fc5ac13f8fa3f55fa5998332f/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block no-underline hover:no-underline"
-          >
-            <img
-              src={require("@site/static/img/Featured/f5.png").default}
-              alt="Featured 5"
-              className="h-14 w-28 md:h-16 object-contain hover:opacity-80 transition-opacity"
-            />
-          </a>
-          <a
-            href="https://it-production.com/industrie-4-0-i40/neuronales-netzwerk-in-unter-einer-sekunde/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block no-underline hover:no-underline"
-          >
-            <img
-              src={require("@site/static/img/Featured/f7.png").default}
-              alt="Featured 7"
-              className="h-12 w-32 md:h-14 object-contain hover:opacity-80 transition-opacity"
-            />
-          </a>
-          <a
-            href="https://www.startbase.de/news/one-ware-sichert-sich-25-mio-euro/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block no-underline hover:no-underline"
-          >
-            <img
-              src={require("@site/static/img/Featured/f8.png").default}
-              alt="Featured 8"
-              className="h-12 w-28 md:h-14 object-contain hover:opacity-80 transition-opacity"
-            />
-          </a>
-        </div>
-      </div>
-    </div>
   );
 }
 
@@ -243,7 +210,7 @@ function IndustryExamplesSection() {
     <div className={styles.examplesWrap}>
       {/* Überschrift über den Beispielen */}
       <div className="text-center mb-8">
-        <h2 className="text-2xl md:text-3xl font-bold text-white">
+        <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-12 font-bold px-4">
           For Every Industry:
         </h2>
       </div>
@@ -456,10 +423,10 @@ function ComparisonSection() {
   ];
   
   return (
-    <div id="comparison" className="py-12 md:py-20 overflow-hidden">
+    <div id="comparison" className="py-12 md:py-12 overflow-hidden">
       <div className="container mx-auto px-4 text-center">
         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-12 font-bold px-4">
-          Leading AI Innovation for a Smarter World
+          Example Use-Cases
         </p>
       </div>
 
@@ -625,17 +592,13 @@ export default function Home() {
       })}
     >
       <HomepageHeader />
-      <div className="bg-black dropshadowbottom">
-          <IndustryExamplesSection />
-        </div>
       <main className="overflow-x-hidden alternative-background ">
-        
         <div className="dropshadowbottom">
           <div className="dropshadowtop diagclipbottom">
             <div className="default-background pb-12">
-              <FeaturedInSection />
-          <ComparisonSection />
-        </div>
+              <ComparisonSection />
+              <IndustryExamplesSection />
+            </div>
           </div>
         </div>
 
