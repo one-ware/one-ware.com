@@ -110,37 +110,50 @@
   opacity: 80%;
 }
 
-/* === Industry Examples (Marquee) === */
+/* === Industry Examples (Static Grid) === */
 .examplesWrap {
   margin: 1rem 0;
 }
 
-.examplesMarquee {
-  --banner-h: 300px;  /* gewünschte Höhe */
-  --col-w: 340px;     /* Breite einer Spalte (2 Karten übereinander) */
-  --gap-x: 16px;      /* Abstand zwischen Spalten */
-  --gap-y: 12px;      /* Abstand zwischen Karten in einer Spalte */
-  --caption-h: 26px;  /* Höhe des Caption-Textbereichs */
-
-  height: var(--banner-h);
-  display: flex;
-  align-items: stretch;
+.examplesGrid {
+  display: grid;
+  gap: 16px;
+  padding: 0 16px;
+  max-width: 1400px;
+  margin: 0 auto;
+  
+  /* Mobile: 2x2 Grid */
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 200px);
 }
 
-.examplesColumn {
-  width: var(--col-w);
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap-y);
-  margin-right: var(--gap-x);
+/* Tablet: 4x1 Grid (alle in einer Reihe) */
+@media (min-width: 768px) {
+  .examplesGrid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 240px;
+    gap: 20px;
+    padding: 0 24px;
+  }
 }
 
-.card,
-.cardPlaceholder {
-  height: calc(var(--banner-h) / 2 - var(--gap-y) / 2);
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
+/* Desktop: 2x2 Grid mit größeren Karten */
+@media (min-width: 1024px) {
+  .examplesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 280px);
+    gap: 24px;
+    padding: 0 32px;
+  }
+}
+
+/* Large Desktop: 4x1 Grid */
+@media (min-width: 1280px) {
+  .examplesGrid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 320px;
+    gap: 32px;
+  }
 }
 
 .card {
@@ -149,6 +162,9 @@
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.08);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
 }
 
 .card:hover {
@@ -159,36 +175,27 @@
 
 .card img {
   width: 100%;
-  height: calc(100% - var(--caption-h));
+  flex: 1;
   object-fit: cover;
   display: block;
 }
 
 .caption {
-  height: var(--caption-h);
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;          /* weißer Text */
+  color: #fff;
   font-weight: 700;
   font-size: 0.95rem;
   line-height: 1;
-  padding-top: 4px;     /* minimaler Abstand */
+  padding: 8px;
+  background: rgba(0,0,0,0.3);
 }
 
+/* Entferne nicht mehr benötigte Klassen */
+.examplesMarquee,
+.examplesColumn,
 .cardPlaceholder {
-  visibility: hidden;   /* blockt Platz, wenn ungerade Anzahl */
-}
-
-@media (max-width: 768px) {
-  .examplesMarquee {
-    --banner-h: 240px;
-    --col-w: 280px;
-    --gap-x: 12px;
-    --gap-y: 10px;
-    --caption-h: 24px;
-  }
-  .caption {
-    font-size: 0.9rem;
-  }
+  display: none;
 }

@@ -30,14 +30,26 @@ function HomepageHeader() {
     <header id="hero" className={styles.heroBackground}>
       {/* Animation als Hintergrund - direkt im header */}
       <div className="absolute inset-0 z-0">
+        {/* Mobile: Statisches Hintergrundbild */}
+        <div 
+          className="w-full h-full object-cover md:hidden"
+          style={{
+            backgroundImage: `url(${require("@site/static/img/background.webp").default})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        />
+        
+        {/* Desktop: Video Animation */}
         <video
-          src={require("@site/static/img/animation.mp4").default}
+          src={require("@site/static/img/animation.webm").default}
           autoPlay
           muted
           loop
           playsInline
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover hidden md:block"
         />
+        
         {/* Gradient Overlay wie im ursprünglichen CSS */}
         <div 
           className="absolute inset-0"
@@ -231,35 +243,22 @@ function IndustryExamplesSection() {
 
   return (
     <div className={styles.examplesWrap}>
-      {/* Überschrift über den Beispielen */}
-      <div className="text-left mb-8 pl-24">
-        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl px-4">
+      {/* Überschrift mit gleichem Padding wie restlicher Content */}
+      <div className="container mx-auto px-4 md:px-8 lg:px-12 mb-8">
+        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-left">
           For Every Industry:
         </p>
       </div>
       
-      <Marquee
-        className={styles.examplesMarquee}
-        speed={90}                 // << schneller (z.B. 70–120 testen)
-        pauseOnHover
-        gradient
-        gradientWidth={60}
-        gradientColor="rgb(0, 0, 0)" // dunkler Hintergrund
-        autoFill                  // füllt rechts automatisch mit Duplikaten auf
-      >
-        {columns.map((col, idx) => (
-          <div className={styles.examplesColumn} key={`col-${idx}`}>
-            {col.map((item) => (
-              <a className={styles.card} key={item.key} href={item.href}>
-                <img src={item.src} alt={item.label} />
-                <div className={styles.caption}>{item.label}</div>
-              </a>
-            ))}
-            {/* Falls ungerade Anzahl → Platzhalter für konstante Höhe */}
-            {col.length === 1 && <div className={styles.cardPlaceholder} />}
-          </div>
+      {/* Statisches Grid über volle Breite */}
+      <div className={styles.examplesGrid}>
+        {items.map((item) => (
+          <a className={styles.card} key={item.key} href={item.href}>
+            <img src={item.src} alt={item.label} />
+            <div className={styles.caption}>{item.label}</div>
+          </a>
         ))}
-      </Marquee>
+      </div>
     </div>
   );
 }
@@ -620,7 +619,7 @@ export default function Home() {
           <div className="dropshadowtop diagclipbottom">
             <div className="default-background pb-12">
               <ComparisonSection />
-              <IndustryExamplesSection />
+              {/* <IndustryExamplesSection /> */}
             </div>
           </div>
         </div>
