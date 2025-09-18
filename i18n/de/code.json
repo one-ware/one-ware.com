@@ -20,18 +20,129 @@
   "homepage.title.ai": {
     "message": "ONE AI."
   },
+  "homepage.title.main": {
+    "message": "KI maßgeschneidert für Ihre Bedürfnisse."
+  },
+  "homepage.title.subtitle": {
+    "message": "Automatisch auf jeder Hardware implementiert."
+  },
   "homepage.subtitle": {
     "message": "Monate an Forschung und Entwicklung lassen sich mit ONE AI auf einen Klick reduzieren."
   },
   "homepage.subtitle.ai": {
-    "message": "Für die Implementierung von KI ist keine neue Hardware erforderlich."
+    "message": "Vertraut von:"
   },
   "homepage.subtitle.ai.getstarted": {
     "message": "Jetzt Loslegen"
   },
+  "homepage.subtitle.description": {
+    "message": "Universelle KI-Modelle wurden nicht für Ihre Anwendung entwickelt. ONE WARE ist die erste Plattform, die völlig neue Modelle generiert, die auf Ihren Anwendungsfall zugeschnitten sind, und diese automatisch auf jeder Hardware einsetzt. Der schnellste Weg zu höherer Genauigkeit, Effizienz und Leistung."
+  },
+  "homepage.button.discover": {
+    "message": "ONE AI Entdecken"
+  },
+  "homepage.industries.title": {
+    "message": "Für jede Branche:"
+  },
+  "homepage.usecase.title": {
+    "message": "Beispiel-Anwendungsfälle"
+  },
+  "homepage.usecase.quality.title": {
+    "message": "All-in-ONE Qualitätskontrolle"
+  },
+  "homepage.usecase.quality.subtitle": {
+    "message": "Von der Idee zur Realisierung mit einem Klick und einer Software"
+  },
+  "homepage.usecase.quality.description": {
+    "message": "Sparen Sie Monate an Entwicklungszeit. Integrieren Sie KI mit unserer vorgefertigten Benutzeroberfläche, die Überwachung, Fernsteuerung und kontinuierliche Verbesserung unterstützt. Bereits im Produktiveinsatz bei führenden Produktionsunternehmen und bereit für Ihre Qualitätskontroll- oder Automatisierungsaufgabe mit:"
+  },
+  "homepage.usecase.automation.title": {
+    "message": "Hochgeschwindigkeits- und effiziente Automatisierung"
+  },
+  "homepage.usecase.automation.subtitle": {
+    "message": "ONE AI lässt jahrzehntealte und effiziente Chips die heutige führende KI-Hardware übertreffen"
+  },
+  "homepage.usecase.automation.description": {
+    "message": "Mit ONE AI erhalten Sie die genauesten und effizientesten KI-Modelle auf jeder Hardware. Dies umfasst auch mobile Systeme wie Drohnen und Ihre bestehende Hardware. Als Beispiel zeigen wir zusammen mit unserem Partner Altera, wie Alteras stromsparendster Chip mit ONE AI jetzt Nvidias Jetson Orin Nano übertreffen kann mit:"
+  },
+  "homepage.usecase.detection.title": {
+    "message": "Hochpräzise Objekterkennung"
+  },
+  "homepage.usecase.detection.subtitle": {
+    "message": "ONE AI übertrifft Wissenschaftler in unter einer Sekunde durch Genauigkeit und Geschwindigkeit"
+  },
+  "homepage.usecase.detection.description": {
+    "message": "KI-Modelle, die von ONE AI in 0,7 Sekunden generiert werden, sind nicht nur schneller, sondern auch genauer. Als Beispiel erstellten Forscher ein maßgeschneidertes KI-Modell für eine Leiterplatten-Qualitätskontrolle. ONE AI übertraf nicht nur die Standard-Bildverarbeitung und universelle KI-Modelle durch Geschwindigkeit und Genauigkeit mit:"
+  },
+  "homepage.usecase.link": {
+    "message": "Mehr Details"
+  },
+  "homepage.industry.agriculture": {
+    "message": "Landwirtschaft"
+  },
+  "homepage.industry.food": {
+    "message": "Lebensmittel"
+  },
+  "homepage.industry.industry": {
+    "message": "Industrie"
+  },
+  "homepage.industry.infrastructure": {
+    "message": "Infrastruktur"
+  },
+  "homepage.related.title": {
+    "message": "Verwandte Anwendungsfälle:"
+  },
+  "homepage.related.qualitycontrol": {
+    "message": "Qualitätskontrolle"
+  },
+  "homepage.related.automation": {
+    "message": "Industrielle Automatisierung"
+  },
+  "homepage.related.measuring": {
+    "message": "Messgeräte"
+  },
+  "homepage.related.industryautomation": {
+    "message": "Industrie-Automatisierung"
+  },
+  "homepage.related.drones": {
+    "message": "Drohnen und Luftfahrt"
+  },
+  "homepage.related.electronics": {
+    "message": "Verbraucherelektronik"
+  },
+  "homepage.related.diagnostic": {
+    "message": "Medizinische Bildgebung"
+  },
+  "homepage.related.autonomous": {
+    "message": "Autonomes Fahren"
+  },
+  "homepage.metric.deployment": {
+    "message": "Bereitstellung"
+  },
+  "homepage.metric.devtime": {
+    "message": "Entwicklungszeit"
+  },
+  "homepage.metric.latency": {
+    "message": "Geringere Latenz"
+  },
+  "homepage.metric.errors": {
+    "message": "Weniger Fehler"
+  },
+  "homepage.metric.power": {
+    "message": "Geringerer Stromverbrauch"
+  },
+  "homepage.metric.cost": {
+    "message": "Geringere Kosten"
+  },
+  "homepage.metric.f1score": {
+    "message": "F1-Score"
+  },
+  "homepage.metric.speed": {
+    "message": "Geschwindigkeitssteigerung"
+  },
 
   "partners.title": {
-    "message": "Vertraut von Branchenführern und Experten"
+    "message": "Bekannt von:"
   },
   "testimonials.title": {
     "message": "Was andere über uns sagen"
@@ -170,6 +281,105 @@
   },
   "oneai.showcase.desc.3": {
     "message": "das genau auf Hardware-, Performance- und Anwendungsanforderungen zugeschnitten ist."
+  },
+  "oneai.usecase.ui.title": {
+    "message": "Vorgefertigte Benutzeroberfläche"
+  },
+  "oneai.usecase.ui.subtitle": {
+    "message": "Integration auf jedem System mit Betriebssystem und grafischer Benutzeroberfläche"
+  },
+  "oneai.usecase.ui.description": {
+    "message": "Sparen Sie Monate an Entwicklungszeit. Integrieren Sie KI mit unserer vorgefertigten Benutzeroberfläche, die Überwachung, Fernsteuerung und kontinuierliche Verbesserung unterstützt. Bereits im Produktiveinsatz bei führenden Produktionsunternehmen und bereit für Ihre Qualitätskontroll- oder Automatisierungsaufgabe mit:"
+  },
+  "oneai.usecase.hdl.title": {
+    "message": "Hochgeschwindigkeits-HDL"
+  },
+  "oneai.usecase.hdl.subtitle": {
+    "message": "ONE AI implementiert effiziente KI auf jedem FPGA mit unseren Open-Source-KI-zu-HDL-Bibliotheken"
+  },
+  "oneai.usecase.hdl.description": {
+    "message": "Neben den Herstellertools für KI-Integration bieten wir eine Version für parallele KI-Integration auf FPGAs, die eine Integration wie parallele Bildverarbeitung ermöglicht, die keinen zusätzlichen Prozessor benötigt und dem System keinen Overhead hinzufügt. Zusammen mit unserem Partner Altera zeigen wir, wie Alteras MAX® 10 mit ONE AI und unserem HDL-Generator jetzt Nvidias Jetson Orin Nano übertreffen kann mit:"
+  },
+  "oneai.usecase.cpp.title": {
+    "message": "C++ Projekt oder ausführbare Datei"
+  },
+  "oneai.usecase.cpp.subtitle": {
+    "message": "Setze KI mit jeder CPU, TPU, GPU oder MCU ein"
+  },
+  "oneai.usecase.cpp.description": {
+    "message": "ONE AI kann Tensorflow Lite-basierte C++-Projekte oder vorkompilierte ausführbare Dateien mit API erstellen, die effizient mit jeder Art von Prozessor oder KI-Beschleuniger laufen. Ein Beispiel ist eine Leiterplatten-Qualitätskontrolle, bei der die KI von ONE AI nicht nur die Standard-Bildverarbeitung und universelle KI-Modelle durch Geschwindigkeit und Genauigkeit übertraf, sondern auch das KI-Modell der Wissenschaftler mit:"
+  },
+  "oneai.usecase.link": {
+    "message": "Mehr Details"
+  },
+  "oneai.metric.deployment": {
+    "message": "Bereitstellung"
+  },
+  "oneai.metric.devtime": {
+    "message": "Entwicklungszeit"
+  },
+  "oneai.metric.latency": {
+    "message": "Geringere Latenz"
+  },
+  "oneai.metric.errors": {
+    "message": "Weniger Fehler"
+  },
+  "oneai.metric.power": {
+    "message": "Geringerer Stromverbrauch"
+  },
+  "oneai.metric.cost": {
+    "message": "Geringere Kosten"
+  },
+  "oneai.metric.f1score": {
+    "message": "F1-Score"
+  },
+  "oneai.metric.speed": {
+    "message": "Geschwindigkeitssteigerung"
+  },
+  "oneai.comparison.title": {
+    "message": "KI in EINEM Klick bereitstellen, mit ONE WARE."
+  },
+  "oneai.hero.nextgen.title": {
+    "message": "Die nächste Generation der KI-Entwicklung"
+  },
+  "oneai.hero.nextgen.subtitle1": {
+    "message": "KI-Modelle in Sekunden für Ihre Bedürfnisse erfunden."
+  },
+  "oneai.hero.nextgen.subtitle2": {
+    "message": "Die All-in-ONE-Lösung, optimiert für Edge AI, Vision AI und Embedded Intelligence."
+  },
+  "oneai.innovation.title": {
+    "message": "Führende KI-Innovation für eine intelligentere Welt"
+  },
+  "oneai.innovation.subtitle": {
+    "message": "ONE AI erfindet KI-Modelle genau für Ihre spezifischen Anwendungs- und Hardware-Anforderungen"
+  },
+  "oneai.innovation.description": {
+    "message": "Mit unserem patentangemeldeten Ansatz der Neural Architecture Prediction erfindet ONE AI automatisch eine maßgeschneiderte neuronale Netzwerkarchitektur, die perfekt für Ihre Anwendung und Hardware geeignet ist. Alles ohne die Notwendigkeit von Foundation-Modellen und Fine-Tuning. Die gesamte Architektur wird in unter einer Sekunde von Grund auf neu erstellt."
+  },
+  "oneai.innovation.bullet1.title": {
+    "message": "Führende KI-Innovation."
+  },
+  "oneai.innovation.bullet1.text": {
+    "message": "Neural Architecture Prediction entwirft ein maßgeschneidertes Netzwerk für Ihre Anwendung und Ihr Gerät, das beste Genauigkeit und Leistung gewährleistet."
+  },
+  "oneai.innovation.bullet2.title": {
+    "message": "Ideen in KI-Lösungen verwandeln."
+  },
+  "oneai.innovation.bullet2.text": {
+    "message": "Daten → Modell → Export & UI in einem Tool. Ein-Klick-Bereitstellung."
+  },
+  "oneai.innovation.bullet3.title": {
+    "message": "Keine Expertise erforderlich."
+  },
+  "oneai.innovation.bullet3.text": {
+    "message": "Keine Modell- oder Parameterauswahl. Keine Hardware-Anpassung."
+  },
+  "oneai.innovation.bullet4.title": {
+    "message": "Der intelligenteste Weg für KI-Bereitstellung."
+  },
+  "oneai.innovation.bullet4.text": {
+    "message": "Mit Pay-by-Success, minimalen Vorabkosten und den schnellsten Entwicklungszyklen."
   },
   "studio.slider.codeAssistant.title": {
     "message": "Code-Assistent"
