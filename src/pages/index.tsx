@@ -98,8 +98,8 @@ function HomepageHeader() {
         </div>
 
         {/* Featured In Section unten im Header */}
-        <div className="relative z-10 flex items-end justify-center pb-12 px-8">
-          <div className="backdrop-blur-md bg-gray-600/20 rounded-2xl p-4 border border-white/10 max-w-7xl">
+        <div className="relative z-10 flex items-end justify-center pb-16 px-8 mt-12">
+          <div className="backdrop-blur-md bg-gray-600/20 rounded-2xl p-6 md:p-8 border border-white/10 max-w-7xl">
             
             <div className="text-center -mb-2">
               <p className="text-lg md:text-xl text-gray-300">

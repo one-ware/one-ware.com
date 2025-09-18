@@ -13,8 +13,7 @@
   top: 0;
   left: 0;
   right: 0; 
-  height: 100vh; /* Größer gemacht */
-  min-height: 600px; /* Größere Mindesthöhe */
+  min-height: 100vh; /* Mindesthöhe von 100vh, kann wachsen */
   margin-top: calc(var(--ifm-navbar-height)*-1); /* Kompensiert die Navbar */
   padding: 0; /* Padding entfernt */
   overflow: hidden;
@@ -23,8 +22,7 @@
 /* Tablet/Laptop */
 @media (min-width: 768px) {
   .heroBackground {
-    height: 100vh; /* Noch größer auf Desktop */
-    min-height: 700px;
+    min-height: 100vh; /* Mindesthöhe, kann bei Bedarf größer werden */
   }
 }
    
