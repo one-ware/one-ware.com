@@ -42,7 +42,7 @@ function HomepageHeader() {
         
         {/* Desktop: Video Animation */}
         <video
-          src={require("@site/static/img/animation.webm").default}
+          src={require("@site/static/img/animation.mp4").default}
           autoPlay
           muted
           loop
