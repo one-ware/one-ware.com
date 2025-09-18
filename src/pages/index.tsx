@@ -605,7 +605,7 @@ function ComparisonSection() {
                       </h6>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         {useCase.relatedUseCases.map((related, relatedIdx) => (
-                          <div key={relatedIdx} className="p-4 bg-[#00FFD1]/10 border border-[#00FFD1]/30 rounded-lg hover:bg-[#00FFD1]/20 transition-colors cursor-pointer text-center">
+                          <div key={relatedIdx} className="p-4 bg-[#00FFD1]/10 border border-[#00FFD1]/30 rounded-lg hover:bg-[#00FFD1]/20 transition-colors cursor-pointer text-center flex justify-center align-center">
                             <div className="font-semibold text-[#00FFD1] text-sm lg:text-base">
                               <Translate id={related.titleId}>
                                 {related.title}
