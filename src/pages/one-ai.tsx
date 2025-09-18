@@ -288,8 +288,8 @@ function ComparisonSection() {
 
                         {/* Metrics & Button unten */}
                         <div className="flex flex-col gap-4">
-                          {/* Metrics Grid - bei 4 Metrics in einer Reihe, sonst 2x2 */}
-                          <div className={`grid gap-2 w-full ${useCase.metrics.length === 4 ? 'grid-cols-4' : 'grid-cols-2'}`}>
+                          {/* Metrics Grid - 2x2 auf Mobile, sonst in einer Reihe */}
+                          <div className={`grid gap-2 w-full ${useCase.metrics.length === 4 ? 'grid-cols-2 lg:grid-cols-4' : 'grid-cols-2'}`}>
                             {useCase.metrics.map((metric, metricIdx) => (
                               <div key={metricIdx} className="p-3 bg-black/40 border border-white/10 rounded-lg text-center">
                                 <h5 className="text-xl sm:text-2xl font-bold primary-text">
