@@ -73,7 +73,7 @@ function HomepageHeader() {
 
               <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-8">
                 <Translate id="homepage.subtitle.description">
-                  Universal AI models weren't built for your application. ONE WARE is the first platform that invents entirely new models tailored to your use case and deploys them automatically on any hardware. The fastest path to higher accuracy, efficiency, and performance.
+                  Universal AI models weren't built for your application. ONE WARE is the first platform that invents entirely new AI models tailored to your use case and deploys them automatically on any hardware. The fastest path to higher accuracy, efficiency, and performance.
                 </Translate>
               </p>
 
