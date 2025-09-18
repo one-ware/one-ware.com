@@ -229,6 +229,7 @@ function ComparisonSection() {
           spaceBetween={20}
           slidesPerGroup={1}
           watchSlidesProgress={true}
+          initialSlide={1} // Start auf dem 2. Element (Index 1)
           // modules={[Navigation]}  // kannst du entfernen, da wir eigene Buttons haben
           breakpoints={{
             768:  { slidesPerView: 1.5,  spaceBetween: 40 },
@@ -473,7 +474,7 @@ function AdaptiveArchitectureSection() {
                 label="Speed"
                 value={speed}
                 onChange={setSpeed}
-                leftLabel="High Perfromance"
+                leftLabel="High Performance"
                 rightLabel="High Precision"
               />
               <StepSlider
@@ -958,6 +959,7 @@ export default function OneAi() {
                 speed={500}
                 slidesToShow={1}
                 slidesToScroll={1}
+                initialSlide={1} // Start auf dem 2. Element (Index 1)
                 beforeChange={(_c, n) => {
                   var slideCount = sliders.length;
                   for (var i = 0; i < slideCount; i++) {

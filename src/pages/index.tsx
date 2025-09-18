@@ -514,6 +514,7 @@ function ComparisonSection() {
           slidesPerView={1.2}
           spaceBetween={20}
           slidesPerGroup={1}
+          initialSlide={1}
           watchSlidesProgress={true}
           // modules={[Navigation]}  // kannst du entfernen, da wir eigene Buttons haben
           breakpoints={{
