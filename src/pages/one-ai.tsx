@@ -15,6 +15,7 @@ import { Navigation } from 'swiper/modules';
 import type { Swiper as SwiperCore } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 const sliders = [
   {
@@ -243,7 +244,7 @@ function ComparisonSection() {
                 <div
                   className={`relative w-full rounded-2xl transition-all duration-500 ease-in-out transform ${isActive ? 'scale-100' : 'scale-90 opacity-60'}`}
                   style={{
-                    backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%), url(${useCase.backgroundImage})`,
+                    backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%), url(${useBaseUrl(useCase.backgroundImage)})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                   }}
@@ -259,7 +260,7 @@ function ComparisonSection() {
                         <div 
                           className="w-full aspect-square lg:aspect-[6/7] rounded-lg bg-cover bg-center"
                           style={{
-                            backgroundImage: `url(${useCase.displayImage})`,
+                            backgroundImage: `url(${useBaseUrl(useCase.displayImage)})`,
                           }}
                         />
                       </div>
