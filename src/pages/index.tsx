@@ -71,7 +71,9 @@ function HomepageHeader() {
               </h1>
 
               <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-8">
-                Universal AI models were not made for your application. ONE WARE offers the first platform that invents completely new AI models exactly for your use case and automatically deploys them on any hardware.
+                <Translate id="homepage.subtitle.description">
+                  Universal AI models weren't built for your application. ONE WARE is the first platform that generates entirely new models tailored to your use case and deploys them automatically on any hardware. The fastest path to higher accuracy, efficiency, and performance.
+                </Translate>
               </p>
 
               <div className="flex gap-4 flex-col sm:flex-row">
@@ -84,7 +86,9 @@ function HomepageHeader() {
                 </Link>
                 <Link href="/one-ai">
                   <button className="button button--primary button--lg w-full sm:w-auto">
-                    Discover ONE AI
+                    <Translate id="homepage.button.discover">
+                      Discover ONE AI
+                    </Translate>
                   </button>
                 </Link>
               </div>
@@ -94,18 +98,20 @@ function HomepageHeader() {
 
         {/* Featured In Section unten im Header */}
         <div className="relative z-10 flex items-end justify-center pb-12 px-8">
-          <div className="w-full max-w-7xl backdrop-blur-md bg-gray-600/20 rounded-2xl p-4 border border-white/10">
+          <div className="backdrop-blur-md bg-gray-600/20 rounded-2xl p-4 border border-white/10 max-w-7xl">
             
             <div className="text-center -mb-2">
               <p className="text-lg md:text-xl text-gray-300">
                 <Translate id="partners.title">
+                  {/*
                   Featured in:
+                  */}
+                  Known from:
                 </Translate>
               </p>
             </div>
 
             <div className="flex justify-center items-center flex-wrap gap-3 md:gap-6">
-
               <a
                 href="https://tech.eu/2025/06/18/one-ware-raises-eur25m-to-automate-ai-model-configuration-across-industries/"
                 target="_blank"
@@ -130,6 +136,7 @@ function HomepageHeader() {
                   className="h-8 w-36 md:h-12 md:w-42 object-contain hover:opacity-80 transition-opacity opacity-90"
                 />
               </a>
+              {/*
               <a
                 href="https://www.handelsblatt.com/technik/ki/ki-start-ups-jenseits-des-hypes-one-ware-entwickelt-ki-fuer-jede-produktion-01/100149060.html"
                 target="_blank"
@@ -142,6 +149,8 @@ function HomepageHeader() {
                   className="h-8 w-52 md:h-12 md:w-64 object-contain hover:opacity-80 transition-opacity opacity-90"
                 />
               </a>
+              */}
+              {/*
               <a
                 href="https://www.vdi-nachrichten.com/technik/automation/ki-im-maschinenbau-auf-bestehender-hardware-nutzen/"
                 target="_blank"
@@ -154,6 +163,7 @@ function HomepageHeader() {
                   className="h-8 w-52 md:h-12 md:w-64 object-contain hover:opacity-80 transition-opacity opacity-90"
                 />
               </a>
+              */}
               <a
                 href="https://www.maschinenmarkt.vogel.de/one-ai-ki-extension-one-ware-maschinenbau-a-545f6e3fc5ac13f8fa3f55fa5998332f/"
                 target="_blank"
@@ -166,6 +176,7 @@ function HomepageHeader() {
                   className="h-8 w-24 md:h-14 md:w-28 object-contain hover:opacity-80 transition-opacity opacity-90"
                 />
               </a>
+              {/*
               <a
                 href="https://it-production.com/industrie-4-0-i40/neuronales-netzwerk-in-unter-einer-sekunde/"
                 target="_blank"
@@ -176,6 +187,19 @@ function HomepageHeader() {
                   src={require("@site/static/img/Featured/f7_g.png").default}
                   alt="Featured 7"
                   className="h-8 w-28 md:h-12 md:w-32 object-contain hover:opacity-80 transition-opacity opacity-90"
+                />
+              </a>
+              */}
+              <a
+                href="https://go.altera.com/l/1090322/2025-04-18/2vvzbn"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block no-underline hover:no-underline"
+              >
+                <img
+                  src={require("@site/static/img/Partner/altera_w.png").default}
+                  alt="Featured 5"
+                  className="h-8 w-24 md:h-14 md:w-28 object-contain hover:opacity-80 transition-opacity opacity-90"
                 />
               </a>
             </div>
@@ -212,24 +236,28 @@ function IndustryExamplesSection() {
       key: "agriculture",
       src: require("@site/static/img/agriculture.webp").default,
       label: "Agriculture",
+      labelId: "homepage.industry.agriculture",
       href: "/docs/one-ai/industries/agriculture",
     },
     {
       key: "food",
       src: require("@site/static/img/food.webp").default,
       label: "Food",
+      labelId: "homepage.industry.food",
       href: "/docs/one-ai/industries/food",
     },
     {
       key: "industry",
       src: require("@site/static/img/industry.webp").default,
       label: "Industry",
+      labelId: "homepage.industry.industry",
       href: "/docs/one-ai/industries/industry",
     },
     {
       key: "infrastructure",
       src: require("@site/static/img/infrastructure.webp").default,
       label: "Infrastructure",
+      labelId: "homepage.industry.infrastructure",
       href: "/docs/one-ai/industries/infrastructure",
     },
     // künftig einfach weitere Einträge anhängen
@@ -246,7 +274,9 @@ function IndustryExamplesSection() {
       {/* Überschrift mit gleichem Padding wie restlicher Content */}
       <div className="container mx-auto px-4 md:px-8 lg:px-12 mb-8">
         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-left">
-          For Every Industry:
+          <Translate id="homepage.industries.title">
+            For Every Industry:
+          </Translate>
         </p>
       </div>
       
@@ -255,7 +285,11 @@ function IndustryExamplesSection() {
         {items.map((item) => (
           <a className={styles.card} key={item.key} href={item.href}>
             <img src={item.src} alt={item.label} />
-            <div className={styles.caption}>{item.label}</div>
+            <div className={styles.caption}>
+              <Translate id={item.labelId}>
+                {item.label}
+              </Translate>
+            </div>
           </a>
         ))}
       </div>
@@ -391,56 +425,68 @@ function ComparisonSection() {
   const useCases = [
     {
       title: "All-in-ONE Quality Control",
+      titleId: "homepage.usecase.quality.title",
       subtitle: "From idea to realization in one click with one software",
+      subtitleId: "homepage.usecase.quality.subtitle",
       image: "/img/ai/one_ai_plugin/use_cases/capture/preview.png",
       description: "Eliminate months of development time. Integrate AI with our pre-build UI that supports monitoring, remote control and continuous improvement. Already in production with leading production companies and ready for your quality control or automation task with:",
+      descriptionId: "homepage.usecase.quality.description",
       metrics: [
-        { value: "1-Click", label: "Deployment" },
-        { value: "< 1 Day", label: "Development Time" },
+        { value: "1-Click", label: "Deployment", labelId: "homepage.metric.deployment" },
+        { value: "< 1 Day", label: "Development Time", labelId: "homepage.metric.devtime" },
       ],
       relatedUseCases: [
-        { title: "Quality Control" },
-        { title: "Industrial Automation" },
-        { title: "Measuring Instruments" }
+        { title: "Quality Control", titleId: "homepage.related.qualitycontrol" },
+        { title: "Industrial Automation", titleId: "homepage.related.automation" },
+        { title: "Measuring Instruments", titleId: "homepage.related.measuring" }
       ],
       whitepaper: "/docs/one-ai/use-cases/camera-tool",
-      linkText: "More Details"
+      linkText: "More Details",
+      linkTextId: "homepage.usecase.link"
     },
     {
       title: "High Speed and Efficient Automation",
+      titleId: "homepage.usecase.automation.title",
       subtitle: "ONE AI makes decade-old and efficient chips outperform todays leading edge AI hardware",
+      subtitleId: "homepage.usecase.automation.subtitle",
       image: "/img/ai/one_ai_plugin/use_cases/chip/defect_1.png",
       description: "With ONE AI you get the most accurate and efficient AI models on any hardware. This includes also mobile systems like drones and your existing hardware. As example, together with our partner Altera we show how Altera's most low-power Chip with ONE AI can now outperform Nvidia's Jetson Orin Nano with:",
+      descriptionId: "homepage.usecase.automation.description",
       metrics: [
-        { value: "488×", label: "Lower Latency" },
-        { value: "24×", label: "Reduced Errors" },
-        { value: "20×", label: "Lower Power" },
-        { value: "6×", label: "Lower Cost" },
+        { value: "488×", label: "Lower Latency", labelId: "homepage.metric.latency" },
+        { value: "24×", label: "Reduced Errors", labelId: "homepage.metric.errors" },
+        { value: "20×", label: "Lower Power", labelId: "homepage.metric.power" },
+        { value: "6×", label: "Lower Cost", labelId: "homepage.metric.cost" },
       ],
       relatedUseCases: [
-        { title: "Industry Automation" },
-        { title: "Drones and Aerospace" },
-        { title: "Consumer Electronics" }
+        { title: "Industry Automation", titleId: "homepage.related.industryautomation" },
+        { title: "Drones and Aerospace", titleId: "homepage.related.drones" },
+        { title: "Consumer Electronics", titleId: "homepage.related.electronics" }
       ],
       whitepaper: "/docs/one-ai/use-cases/chip",
-      linkText: "More Details"
+      linkText: "More Details",
+      linkTextId: "homepage.usecase.link"
     },
     {
       title: "High Precision Object Detection",
+      titleId: "homepage.usecase.detection.title",
       subtitle: "ONE AI outperforms scientists in under one second by accuracy and speed",
+      subtitleId: "homepage.usecase.detection.subtitle",
       image: "/img/ai/one_ai_plugin/use_cases/pcb/pcb_1.png",
       description: "AI models, generated by ONE AI in 0.7 seconds, are not only faster but also more accurate. As example researchers created a custom AI model for a PCB quality control. ONE AI beat not only standard image processing and universal AI models by speed and accuracy with:",
+      descriptionId: "homepage.usecase.detection.description",
       metrics: [
-        { value: "98.4", label: "F1 Score" },
-        { value: "750 %", label: "Speed Increase" },
+        { value: "98.4", label: "F1 Score", labelId: "homepage.metric.f1score" },
+        { value: "750 %", label: "Speed Increase", labelId: "homepage.metric.speed" },
       ],
       relatedUseCases: [
-        { title: "Quality Control" },
-        { title: "Diagnostic Imaging" },
-        { title: "Autonomous Driving" }
+        { title: "Quality Control", titleId: "homepage.related.qualitycontrol" },
+        { title: "Diagnostic Imaging", titleId: "homepage.related.diagnostic" },
+        { title: "Autonomous Driving", titleId: "homepage.related.autonomous" }
       ],
       whitepaper: "/docs/one-ai/use-cases/pcb",
-      linkText: "More Details"
+      linkText: "More Details",
+      linkTextId: "homepage.usecase.link"
     }
   ];
   
@@ -448,7 +494,9 @@ function ComparisonSection() {
     <div id="comparison" className="pt-12 md:pt-12 pb-4 md:pb-4 overflow-hidden">
       <div className="container mx-auto px-4 text-center">
         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-12 font-bold px-4">
-          Example Use-Cases
+          <Translate id="homepage.usecase.title">
+            Example Use-Cases
+          </Translate>
         </p>
       </div>
 
@@ -494,13 +542,19 @@ function ComparisonSection() {
                       {/* Text Section - links auf Desktop */}
                       <div className="text-left lg:flex-1 lg:max-w-[60%] mb-6 lg:mb-0">
                         <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold primary-text mb-2">
-                          {useCase.title}
+                          <Translate id={useCase.titleId}>
+                            {useCase.title}
+                          </Translate>
                         </h3>
                         <h4 className="text-lg sm:text-xl lg:text-2xl text-gray-300 font-medium mb-4">
-                          {useCase.subtitle}
+                          <Translate id={useCase.subtitleId}>
+                            {useCase.subtitle}
+                          </Translate>
                         </h4>
                         <p className="text-base sm:text-lg text-gray-200 leading-relaxed mb-6">
-                          {useCase.description}
+                          <Translate id={useCase.descriptionId}>
+                            {useCase.description}
+                          </Translate>
                         </p>
                       </div>
 
@@ -515,7 +569,9 @@ function ComparisonSection() {
                                   {metric.value}
                                 </h5>
                                 <p className="text-sm sm:text-base text-gray-300">
-                                  {metric.label}
+                                  <Translate id={metric.labelId}>
+                                    {metric.label}
+                                  </Translate>
                                 </p>
                               </div>
                             ))}
@@ -528,7 +584,9 @@ function ComparisonSection() {
                             rel="noopener noreferrer"
                             className="inline-flex items-center px-6 py-3 bg-[#00FFD1] text-black font-bold rounded-lg hover:bg-[#00e4ba] transition-all duration-300 transform hover:scale-105 text-sm lg:text-base w-full justify-center shrink-0"
                           >
-                            {useCase.linkText}
+                            <Translate id={useCase.linkTextId}>
+                              {useCase.linkText}
+                            </Translate>
                             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                             </svg>
@@ -539,12 +597,18 @@ function ComparisonSection() {
                     
                     {/* Related Use Cases - Unten über die gesamte Breite */}
                     <div className="mt-6 pt-6 border-t border-white/10">
-                      <h6 className="text-xl font-semibold text-gray-300 mb-4 text-center lg:text-left">Related Use Cases:</h6>
+                      <h6 className="text-xl font-semibold text-gray-300 mb-4 text-center lg:text-left">
+                        <Translate id="homepage.related.title">
+                          Related Use Cases:
+                        </Translate>
+                      </h6>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         {useCase.relatedUseCases.map((related, relatedIdx) => (
                           <div key={relatedIdx} className="p-4 bg-[#00FFD1]/10 border border-[#00FFD1]/30 rounded-lg hover:bg-[#00FFD1]/20 transition-colors cursor-pointer text-center">
                             <div className="font-semibold text-[#00FFD1] text-sm lg:text-base">
-                              {related.title}
+                              <Translate id={related.titleId}>
+                                {related.title}
+                              </Translate>
                             </div>
                           </div>
                         ))}

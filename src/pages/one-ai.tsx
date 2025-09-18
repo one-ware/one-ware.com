@@ -95,12 +95,18 @@ function HomepageHeader() {
           <div className="flex-col max-w-5xl m-2 mt-10">
             <div className="text-center mt-10">
               <h1 className="font-bold text-3xl md:text-4xl mb-4">
-                The Next Generation of AI Development 
+                <Translate id="oneai.hero.nextgen.title">
+                  The Next Generation of AI Development
+                </Translate>
               </h1>
               <h2 className=" text-xl md:text-2xl mb-7 font-normal">
-                AI Models Invented in Seconds for Your Needs. 
+                <Translate id="oneai.hero.nextgen.subtitle1">
+                  AI Models Invented in Seconds for Your Needs.
+                </Translate>
                 <br/>
-                The All-in-ONE Solution, optimized for Edge AI, Vision AI and Embedded Intelligence. 
+                <Translate id="oneai.hero.nextgen.subtitle2">
+                  The All-in-ONE Solution, optimized for Edge AI, Vision AI and Embedded Intelligence.
+                </Translate>
               </h2>
 
               <div className="flex flex-col md:flex-row justify-center items-center space-y-3 md:space-y-0 md:space-x-5 mb-10">
@@ -145,44 +151,56 @@ function ComparisonSection() {
   const useCases = [
     {
       title: "Prebuild UI",
+      titleId: "oneai.usecase.ui.title",
       subtitle: "Integration on any system with operating system and graphical interface",
+      subtitleId: "oneai.usecase.ui.subtitle",
       backgroundImage: "/img/ai/one_ai_plugin/use_cases/capture/preview.png",
       displayImage: "/img/ai/one_ai_plugin/use_cases/capture/integration.png",
       description: "Eliminate months of development time. Integrate AI with our pre-build UI that supports monitoring, remote control and continuous improvement. Already in production with leading production companies and ready for your quality control or automation task with:",
+      descriptionId: "oneai.usecase.ui.description",
       metrics: [
-        { value: "1-Click", label: "Deployment" },
-        { value: "< 1 Day", label: "Development Time" },
+        { value: "1-Click", label: "Deployment", labelId: "oneai.metric.deployment" },
+        { value: "< 1 Day", label: "Development Time", labelId: "oneai.metric.devtime" },
       ],
       whitepaper: "/docs/one-ai/use-cases/camera-tool",
-      linkText: "More Details"
+      linkText: "More Details",
+      linkTextId: "oneai.usecase.link"
     },
     {
       title: "High Speed HDL",
+      titleId: "oneai.usecase.hdl.title",
       subtitle: "ONE AI implements efficient AI on any FPGA with our open source AI to HDL libraries",
+      subtitleId: "oneai.usecase.hdl.subtitle",
       backgroundImage: "/img/ai/one_ai_plugin/use_cases/chip/defect_1.png",
       displayImage: "/img/ai/one_ai_plugin/use_cases/chip/integration.png",
       description: "Next to the vendor tools for AI integration we offer a version for parallel AI integration on FPGAs that allows integration just like parallel image processing that doesn't need an additional processor and adds no overhead to the system. Together with our partner Altera we show how Altera's MAX® 10 with ONE AI and our HDL generator can now outperform Nvidia's Jetson Orin Nano with:",
+      descriptionId: "oneai.usecase.hdl.description",
       metrics: [
-        { value: "488×", label: "Lower Latency" },
-        { value: "24×", label: "Reduced Errors" },
-        { value: "20×", label: "Lower Power" },
-        { value: "6×", label: "Lower Cost" },
+        { value: "488×", label: "Lower Latency", labelId: "oneai.metric.latency" },
+        { value: "24×", label: "Reduced Errors", labelId: "oneai.metric.errors" },
+        { value: "20×", label: "Lower Power", labelId: "oneai.metric.power" },
+        { value: "6×", label: "Lower Cost", labelId: "oneai.metric.cost" },
       ],
       whitepaper: "/docs/one-ai/use-cases/chip",
-      linkText: "More Details"
+      linkText: "More Details",
+      linkTextId: "oneai.usecase.link"
     },
     {
       title: "C++ Project or Executable",
+      titleId: "oneai.usecase.cpp.title",
       subtitle: "Deploy AI with any CPU, TPU, GPU or MCU",
+      subtitleId: "oneai.usecase.cpp.subtitle",
       backgroundImage: "/img/ai/one_ai_plugin/use_cases/pcb/pcb_1.png",
       displayImage: "/img/ai/one_ai_plugin/use_cases/pcb/integration.png",
       description: "ONE AI can create Tensorflow Lite based C++ projects or precompiled executables with API that run efficient with any kind of processor or AI accelerator. One example is a PCB quality control where the AI by ONE AI beat not only standard image processing and universal AI models by speed and accuracy, but also the AI model from the scientists with:",
+      descriptionId: "oneai.usecase.cpp.description",
       metrics: [
-        { value: "98.4", label: "F1 Score" },
-        { value: "750 %", label: "Speed Increase" },
+        { value: "98.4", label: "F1 Score", labelId: "oneai.metric.f1score" },
+        { value: "750 %", label: "Speed Increase", labelId: "oneai.metric.speed" },
       ],
       whitepaper: "/docs/one-ai/use-cases/pcb",
-      linkText: "More Details"
+      linkText: "More Details",
+      linkTextId: "oneai.usecase.link"
     }
   ];
 
@@ -190,7 +208,9 @@ function ComparisonSection() {
     <div id="comparison" className="py-12 md:py-20 overflow-hidden">
       <div className="container mx-auto px-4 text-center">
         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-12 font-bold px-4">
-          Deploy AI in ONE Click, with ONE WARE.
+          <Translate id="oneai.comparison.title">
+            Deploy AI in ONE Click, with ONE WARE.
+          </Translate>
         </p>
       </div>
 
@@ -248,13 +268,19 @@ function ComparisonSection() {
                         {/* Text oben */}
                         <div>
                           <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold primary-text mb-2">
-                            {useCase.title}
+                            <Translate id={useCase.titleId}>
+                              {useCase.title}
+                            </Translate>
                           </h3>
                           <h4 className="text-lg sm:text-xl lg:text-2xl text-gray-300 font-medium mb-4">
-                            {useCase.subtitle}
+                            <Translate id={useCase.subtitleId}>
+                              {useCase.subtitle}
+                            </Translate>
                           </h4>
                           <p className="text-base sm:text-lg text-gray-200 leading-relaxed mb-6">
-                            {useCase.description}
+                            <Translate id={useCase.descriptionId}>
+                              {useCase.description}
+                            </Translate>
                           </p>
                         </div>
 
@@ -268,7 +294,9 @@ function ComparisonSection() {
                                   {metric.value}
                                 </h5>
                                 <p className="text-sm sm:text-base text-gray-300">
-                                  {metric.label}
+                                  <Translate id={metric.labelId}>
+                                    {metric.label}
+                                  </Translate>
                                 </p>
                               </div>
                             ))}
@@ -281,7 +309,9 @@ function ComparisonSection() {
                             rel="noopener noreferrer"
                             className="inline-flex items-center px-6 py-3 bg-[#00FFD1] text-black font-bold rounded-lg hover:bg-[#00e4ba] transition-all duration-300 transform hover:scale-105 text-sm lg:text-base w-full sm:w-auto justify-center shrink-0"
                           >
-                            {useCase.linkText}
+                            <Translate id={useCase.linkTextId}>
+                              {useCase.linkText}
+                            </Translate>
                             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                             </svg>
@@ -368,16 +398,21 @@ function AdaptiveArchitectureSection() {
           {/* LEFT: Text */}
           <div className="max-w-xl">
             <h2 className="text-3xl md:text-4xl font-bold mb-2">
-              Leading AI Innovation for a Smarter World
+              <Translate id="oneai.innovation.title">
+                Leading AI Innovation for a Smarter World
+              </Translate>
             </h2>
 
             <p className="text-lg md:text-xl font-bold text-gray-300 mb-4">
-              ONE AI Invents AI Models just for your specific Application and Hardware Requirements
+              <Translate id="oneai.innovation.subtitle">
+                ONE AI Invents AI Models just for your specific Application and Hardware Requirements
+              </Translate>
             </p>
 
             <p className="text-lg text-gray-300 mb-6">
-              With our patend pending approach of Neural Architecture Prediction, ONE AI automatically invents a custom neural network architecture that is perfectly suited for your application and hardware. Everything without the need for foundation models and fine-tuning. The whole architecture is created from zero in under one second.
-
+              <Translate id="oneai.innovation.description">
+                With our patend pending approach of Neural Architecture Prediction, ONE AI automatically invents a custom neural network architecture that is perfectly suited for your application and hardware. Everything without the need for foundation models and fine-tuning. The whole architecture is created from zero in under one second.
+              </Translate>
             </p>
 
             {/* Mobile toggle button */}
@@ -398,10 +433,30 @@ function AdaptiveArchitectureSection() {
 
             {/* Bullet points - always visible on desktop, collapsible on mobile */}
             <ul className={`space-y-2 text-gray-300 list-disc list-inside transition-all duration-300 lg:block ${isExpanded ? 'block' : 'hidden'}`}>
-              <li><span className="font-semibold">Leading AI Innovation.</span> Neural Architecture Prediction designs a custom network for your application and device, that ensures best accuracy and performance.</li>
-              <li><span className="font-semibold">Turning Ideas into AI Solutions.</span> Data → model → export & UI in one tool. One-click deployment.</li>
-              <li><span className="font-semibold">No expertise required.</span> No model or parameter selection. No hardware tuning.</li>
-              <li><span className="font-semibold">The Smartest Way for AI Deployment.</span> With pay-by-success, minimal upfront costs and the fastest development cycles.</li>
+              <li>
+                <span className="font-semibold">
+                  <Translate id="oneai.innovation.bullet1.title">Leading AI Innovation.</Translate>
+                </span>{" "}
+                <Translate id="oneai.innovation.bullet1.text">Neural Architecture Prediction designs a custom network for your application and device, that ensures best accuracy and performance.</Translate>
+              </li>
+              <li>
+                <span className="font-semibold">
+                  <Translate id="oneai.innovation.bullet2.title">Turning Ideas into AI Solutions.</Translate>
+                </span>{" "}
+                <Translate id="oneai.innovation.bullet2.text">Data → model → export & UI in one tool. One-click deployment.</Translate>
+              </li>
+              <li>
+                <span className="font-semibold">
+                  <Translate id="oneai.innovation.bullet3.title">No expertise required.</Translate>
+                </span>{" "}
+                <Translate id="oneai.innovation.bullet3.text">No model or parameter selection. No hardware tuning.</Translate>
+              </li>
+              <li>
+                <span className="font-semibold">
+                  <Translate id="oneai.innovation.bullet4.title">The Smartest Way for AI Deployment.</Translate>
+                </span>{" "}
+                <Translate id="oneai.innovation.bullet4.text">With pay-by-success, minimal upfront costs and the fastest development cycles.</Translate>
+              </li>
             </ul>
           </div>
 
