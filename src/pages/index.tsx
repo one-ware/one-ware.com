@@ -3,10 +3,7 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
-import { useEffect, useState, useRef, memo, useMemo } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadFull } from "tsparticles";
-import type { Container, ISourceOptions } from "@tsparticles/engine";
+import { useRef } from "react";
 import "aos/dist/aos.css";
 import Typewriter from "typewriter-effect";
 import Translate, { translate } from "@docusaurus/Translate";
@@ -537,7 +534,7 @@ function ComparisonSection() {
         <button
           onClick={scrollPrev}
           aria-label="Previous use case"
-          className="absolute left-4 sm:left-6 lg:left-8 top-1/2 -translate-y-1/2 z-20 p-2 lg:p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-md shadow-lg transition-transform hover:scale-105"
+          className="absolute left-4 sm:left-6 lg:left-8 top-1/2 -translate-y-1/2 z-20 p-2 lg:p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 shadow-lg transition-transform hover:scale-105"
         >
           <svg
             className="w-5 h-5 lg:w-6 lg:h-6 text-[#00FFD1]"
@@ -555,7 +552,7 @@ function ComparisonSection() {
         <button
           onClick={scrollNext}
           aria-label="Next use case"
-          className="absolute right-4 sm:right-6 lg:right-8 top-1/2 -translate-y-1/2 z-20 p-2 lg:p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-md shadow-lg transition-transform hover:scale-105"
+          className="absolute right-4 sm:right-6 lg:right-8 top-1/2 -translate-y-1/2 z-20 p-2 lg:p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 shadow-lg transition-transform hover:scale-105"
         >
           <svg
             className="w-5 h-5 lg:w-6 lg:h-6 text-[#00FFD1]"
