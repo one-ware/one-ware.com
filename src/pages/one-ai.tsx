@@ -210,7 +210,7 @@ function ComparisonSection() {
       <div className="container mx-auto px-4 text-center">
         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-12 font-bold px-4">
           <Translate id="oneai.comparison.title">
-            Deploy AI in ONE Click, with ONE WARE.
+            Deployed with ONE Click
           </Translate>
         </p>
       </div>
@@ -401,12 +401,12 @@ function AdaptiveArchitectureSection() {
           <div className="max-w-xl">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               <Translate id="oneai.innovation.title">
-                The Invention
+                Reinventing AI Development
               </Translate>
             </h2>
 
             <div className="text-lg text-gray-300 mb-6">
-              <p>There were two options to develop AI:</p>
+              <p>Traditional AI development is outdated. The two existing paths both come with significant trade-offs:</p>
               <ol className="list-decimal list-inside mb-4 space-y-2">
                 <li>Invent a new AI model from scratch and spend months on research, development and multiple iterations.</li>
                 <li>Take an existing foundation model and adapt it for your application.</li>
@@ -415,7 +415,7 @@ function AdaptiveArchitectureSection() {
                 But foundation models are usually bloated with huge amounts of data, leading to slow and inaccurate predictions while requiring a lot of resources.
               </p>
               <p className="font-bold text-white text-xl mb-4">
-                We invented the third option for AI development: 
+                We invented the next generation of AI development: 
               </p>
               <p>
                 ONE AI automatically invents completely new AI models in 0.7 seconds with the knowledge of your data, application and hardware.

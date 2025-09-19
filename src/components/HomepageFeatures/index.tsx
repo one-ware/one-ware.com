@@ -19,7 +19,7 @@ export default function HomepageFeatures(): JSX.Element {
             <h2 className="primary-text text-4xl">ONE AI</h2>
             <p className="mb-5">
               <Translate id="homepage.features.oneai">
-                See how ONE AI creates custom neural networks in seconds that fit your exact Hardware, performance and use case requirements.
+                See how ONE AI revolutionizes AI development for edge AI, vision AI and embedded intelligence.
               </Translate>
             </p>
 
@@ -50,7 +50,7 @@ export default function HomepageFeatures(): JSX.Element {
             <p className="mb-5">
               <Translate id="homepage.features.onewarestudio">
                 See how to integrate AI in your embedded systems and speed up the
-                development with ONE WARE Studio
+                development with our open-source software ONE WARE Studio
               </Translate>
             </p>
           </span>

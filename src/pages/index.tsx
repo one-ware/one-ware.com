@@ -67,15 +67,16 @@ function HomepageHeader() {
           <div className="max-w-5xl backdrop-blur-md bg-gray-600/20 rounded-2xl p-6 md:p-8 border border-white/10">
             <div className="text-center">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-                <Translate id="homepage.title.main">The Next Generation of AI Development.</Translate>
+                <Translate id="oneai.hero.nextgen.title">The Next Generation of AI Development.</Translate>
               </h1>
 
               <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-8">
                 <Translate id="homepage.subtitle.description">
                   The world relies on foundation AI models bloated with unnecessary data.
                   ONE AI provides intelligence tailored exactly to your application.
-                  What takes experts months to build is automatically generated in 0.7 seconds.
-                  Deployed with maximum performance, even on the smallest hardware.
+                  What takes experts months to build is automatically generated in 0.7 seconds. 
+                  Deployed with maximum performance and our open-source software, 
+                  even on the smallest hardware.
                 </Translate>
               </p>
 

@@ -1,0 +1,121 @@
+---
+id: arrow-agilex3
+title: Worldwide Agilex 3 AI Workshop
+sidebar_label: Worldwide Agilex 3 AI Workshop
+---
+
+## What to Expect:
+With the worldwide hands-on workshop by **Arrow**, the world’s largest technology distributor, you have the opportunity to:
+
+1. **Learn about FPGA development for FREE**  
+2. **Build your own ultra-efficient and high-speed AI with ONE AI**  
+3. **Win an AXC3000 Board at each event**  
+
+<img src="/img/ai/one_ai_plugin/seminars/axe3000.webp" alt="axe3000" style={{ width: '50%' }} />
+
+## The Webinar:
+This global workshop series brings together the latest **Agilex™ 3 FPGA technology** from Altera, the expertise of **Arrow Electronics**, and the innovative AI platform of **ONE WARE**.  
+Whether you are just starting with FPGA development or already experienced in AI acceleration, these sessions are designed to provide you with practical skills and real-world applications.  
+
+### Workshop Topics & Hands-On Labs
+- **Agilex™ 3 FPGA Foundations**  
+  - Your first Agilex™ 3 design  
+  - Power estimation and debugging with Signal Tap  
+  - Introduction to Nios® V  
+  - Timing closure best practices  
+- **Video Processing**  
+  - MIPI CSI-to-DSI video pipeline lab  
+- **Artificial Intelligence with ONE AI**  
+  - From dataset preparation to training, testing, and deployment  
+  - Model visualization and implementation on FPGA hardware  
+  - Seamless integration with ONE AI for cloud-to-edge workflows  
+- **Optimization & Deployment**  
+  - FPGA AI Suite for pre-trained models  
+  - Hardware-aware optimization for maximum performance and efficiency  
+
+### Why ONE WARE?
+
+![ONE AI](/img/ai/Pre.png)
+
+ONE WARE provides the missing link between **cloud-based AI development** and **high-performance FPGA deployment**.  
+- **Seamless integration**: End-to-end workflow from dataset to deployment  
+- **Industrial focus**: Optimized for speed, energy efficiency, and reliability  
+- **Powerful ecosystem**: Together with **Arrow** and **Altera**, ONE WARE enables a complete AI solution — hardware, software, and AI tools combined  
+
+---
+
+## Dates & Locations
+
+### Europe (Form Link: [Register here](https://forms.office.com/r/veR7MBE4xC))
+| Date       | City / Country  | Venue |
+|------------|-----------------|-------|
+| 08.10.2025 | Oslo, Norway    | Arrow Office, Innspurten 1a |
+| 09.10.2025 | Trondheim, Norway | Scandic Solsiden, Beddingen 1 |
+| 14.10.2025 | Tallinn, Estonia | Arrow Office, Sõpruse pst 145 |
+| 21.10.2025 | Kista, Sweden   | Arrow Office, Kronborgsgränd 7 |
+| 29.10.2025 | Aarhus/Viby, Denmark | Arrow Office, Jens Juuls Vej 42 |
+| 30.10.2025 | Ballerup, Denmark | Arrow Office, Lautruphøj 2, 6 |
+| 04.11.2025 | Oulu, Finland   | Technopolis Pikisaari, Elektroniikkatie 10 |
+| 05.11.2025 | Tampere, Finland | Technopolis Asemakeskus, Peltokatu 26 |
+
+---
+
+### France (Form Link: [Register here](https://forms.office.com/r/kDc99uBrzM))
+| Date       | City / Country  | Venue |
+|------------|-----------------|-------|
+| 06.11.2025 | Lyon, France    | Mercure Hotel at Villefontaine (38) |
+| 13.11.2025 | Rennes, France  | Arrow Office, Cesson-Sevigne (35) |
+| 19.11.2025 | Paris, France   | Arrow Office, Courbevoie (92) |
+
+---
+
+### DACH + Benelux (Form Link: [Register here](https://forms.office.com/pages/responsepage.aspx?id=NQzrC7uc60-Z5VieQVx5RPFotgxDwR5Hu9zeXz3eW5pUQjQxOVlRWlJYS05QMTNSNEJNTUk3QU9OMy4u&route=shorturl))
+| Date       | City / Country  | Venue |
+|------------|-----------------|-------|
+| 16.10.2025 | Vienna, Austria | Wienerbergstraße 11, 1100 Wien |
+| 29.10.2025 | Munich, Germany | Elsenheimer Strasse 1, 80687 München |
+| 30.10.2025 | Nuremberg, Germany | Lina-Ammon-Strasse 30, 90471 Nürnberg |
+| 04.11.2025 | Houten, Netherlands | Kromme Schaft 5, 3991 AR Houten |
+| 06.11.2025 | Diegem, Belgium | Culliganlaan 1a, 1831 Diegem |
+| 11.11.2025 | Braunschweig, Germany | Volkmaroder Str. 7, 38104 Braunschweig |
+| 12.11.2025 | Zurich, Switzerland | Richtistrasse 11, 8304 Walliselen |
+| 13.11.2025 | Dortmund, Germany | Hildebrandstrasse 11, 44319 Dortmund |
+| 25.11.2025 | Stuttgart, Germany | Höpfigheimer Strasse 5, 74321 Bietigheim-Bissingen |
+| 27.11.2025 | Frankfurt, Germany | Frankfurter Str. 211, 63263 Neu-Isenburg |
+| 02.12.2025 | Freiburg, Germany | Am Gansacker 10, 79224 Freiburg |
+| 09.12.2025 | Berlin, Germany | Regus Center Signature P1, Potsdamer Platz 1, 10785 Berlin |
+| TBD        | Leipzig, Germany | Hauptstrasse 103, 4416 Leipzig |
+
+---
+
+### North America (Form Link: [Register here](https://forms.office.com/Pages/ResponsePage.aspx?id=NQzrC7uc60-Z5VieQVx5RBsfuMwg329Jl7xD0Mbi2fdUOUZTNFBBRlZHN09CSktOTDRXVDRBQ0xLTy4u))
+| Date       | City / Country  | Venue |
+|------------|-----------------|-------|
+| 30.09.2025 | Portland, USA   | Office Evolution, 9620 NE Tanasbourne St Suite 300, Hillsboro, OR |
+| 07.10.2025 | Denver, USA     | Arrow Office, 9151 E. Panorama Circle, Centennial, CO |
+| 08.10.2025 | Minneapolis, USA | Arrow Office, 10900 Hampshire Ave. S, Suite 180, Bloomington, MN |
+| 15.10.2025 | Atlanta/Raleigh, USA | Forum Assembly Room, 1125 Sanctuary Pkwy #120, Alpharetta, GA |
+| 16.10.2025 | Orlando, USA    | Trailblazer Meeting & Event Space, 3801 Avalon Park East Blvd, FL |
+| 21.10.2025 | Dallas, USA     | Hexa Co-Working, 2100 North Greenville Ave, Richardson, TX |
+| 22.10.2025 | San Diego, USA  | Venture X, 10089 Willow Creek Road, Suite 200, San Diego, CA |
+| 23.10.2025 | Seattle, USA    | Venture Mechanics Co, Airbus room, 14110 NE 21st St, Bellevue, WA |
+| 28.10.2025 | Philadelphia, USA | Sentient Liquid Space, 1000 Northbrook Dr, Trevose, PA |
+| 29.10.2025 | Baltimore, USA  | Sheraton Rockville, 920 King Farm Blvd., Rockville, MD |
+| 30.10.2025 | St. Louis/KC, USA | Remote / Virtual Only |
+| 04.11.2025 | Montreal, Canada | Novatel Montreal Airport, 2599 Alfred Noble, QC |
+| 05.11.2025 | San Jose, USA   | Arrow Office, 181 Metro Drive, Suite 180, CA |
+| 06.11.2025 | Chicago, USA    | Arrow Office, 2001 Butterfield Dr., Suite 1800, Downers Grove, IL |
+| 11.11.2025 | Rochester, USA  | Spot Cowork, 600 Fishers Station Drive, Victor, NY |
+| 12.11.2025 | Los Angeles, USA | Arrow Office, 21700 W Oxnard St, Suite 750, Woodland Hills, CA |
+| 13.11.2025 | Toronto, Canada | Location TBD |
+| 18.11.2025 | Calgary, Canada | Smart Executive Center, 1925-18th Ave. NE, Suite 115, AB |
+| 19.11.2025 | Boston, USA     | Office Evolution, 2 Burlington Woods Dr, Suite 100, Burlington, MA |
+| 20.11.2025 | Phoenix, USA    | Arrow Office, 1955 E. Sky Harbor Circle North, AZ |
+
+---
+
+### Practical Information
+- **Requirements**: Own laptop with Quartus Prime Pro 25.1.1 installed  
+- **Audience**: FPGA, software, and AI developers of all levels  
+- **Fee**: Free of charge  
+

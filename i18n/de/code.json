@@ -36,7 +36,7 @@
     "message": "Jetzt Loslegen"
   },
   "homepage.subtitle.description": {
-    "message": "Universelle KI-Modelle wurden nicht für Ihre Anwendung entwickelt. ONE WARE ist die erste Plattform, die völlig neue KI Modelle erfindet, die auf Ihren Anwendungsfall zugeschnitten sind, und diese automatisch auf jeder Hardware implementiert. Der schnellste Weg zu höherer Genauigkeit, Effizienz und Leistung."
+    "message": "Die Welt vertraut auf Foundation-KI-Modelle, die mit unnötigen Daten aufgebläht sind. ONE AI bietet Intelligenz, die exakt auf Ihre Anwendung zugeschnitten ist. Was Experten Monate kostet, wird automatisch in 0,7 Sekunden generiert. Bereitgestellt mit maximaler Leistung und unserer Open-Source-Software, selbst auf kleinster Hardware."
   },
   "homepage.button.discover": {
     "message": "ONE AI Entdecken"
@@ -123,7 +123,7 @@
     "message": "Entwicklungszeit"
   },
   "homepage.metric.latency": {
-    "message": "Geringere Latenz"
+    "message": "Schnellere Vorhersagen"
   },
   "homepage.metric.errors": {
     "message": "Weniger Fehler"
@@ -349,37 +349,37 @@
     "message": "Die All-in-ONE-Lösung, optimiert für Edge AI, Vision AI und Embedded Intelligence."
   },
   "oneai.innovation.title": {
-    "message": "Führende KI-Innovation für eine intelligentere Welt"
+    "message": "KI-Entwicklung neu erfinden"
   },
   "oneai.innovation.subtitle": {
-    "message": "ONE AI erfindet KI-Modelle genau für Ihre spezifischen Anwendungs- und Hardware-Anforderungen"
+    "message": "ONE AI erfindet KI-Modelle nicht auf Basis von Foundation-Modellen, sondern erfindet immer eine völlig neue KI für Ihre Anwendung."
   },
   "oneai.innovation.description": {
-    "message": "Mit unserem patentangemeldeten Ansatz der Neural Architecture Prediction erfindet ONE AI automatisch eine maßgeschneiderte neuronale Netzwerkarchitektur, die perfekt für Ihre Anwendung und Hardware geeignet ist. Alles ohne die Notwendigkeit von Foundation-Modellen und Fine-Tuning. Die gesamte Architektur wird in unter einer Sekunde von Grund auf neu erstellt."
+    "message": "Die traditionelle KI-Entwicklung ist veraltet. Die beiden bestehenden Wege bringen beide erhebliche Nachteile mit sich:"
   },
   "oneai.innovation.bullet1.title": {
-    "message": "Führende KI-Innovation."
+    "message": "Höhere Genauigkeit:"
   },
   "oneai.innovation.bullet1.text": {
-    "message": "Neural Architecture Prediction entwirft ein maßgeschneidertes Netzwerk für Ihre Anwendung und Ihr Gerät, das beste Genauigkeit und Leistung gewährleistet."
+    "message": "Die KI-Modelle lernen nur, was wichtig ist, um weniger Fehler zu machen."
   },
   "oneai.innovation.bullet2.title": {
-    "message": "Ideen in KI-Lösungen verwandeln."
+    "message": "Höhere Geschwindigkeit und Effizienz:"
   },
   "oneai.innovation.bullet2.text": {
-    "message": "Daten → Modell → Export & UI in einem Tool. Ein-Klick-Bereitstellung."
+    "message": "Fokussiert auf eine Anwendung benötigen die KI-Modelle weniger Ressourcen für schnellere Ergebnisse."
   },
   "oneai.innovation.bullet3.title": {
-    "message": "Keine Expertise erforderlich."
+    "message": "Schnellere Entwicklung:"
   },
   "oneai.innovation.bullet3.text": {
-    "message": "Keine Modell- oder Parameterauswahl. Keine Hardware-Anpassung."
+    "message": "Die KI-Modelle sind bereits optimiert, um die gewünschten Leistungs- und Hardware-Anforderungen zu erfüllen."
   },
   "oneai.innovation.bullet4.title": {
-    "message": "Der intelligenteste Weg für KI-Bereitstellung."
+    "message": "Schnellere Bereitstellung:"
   },
   "oneai.innovation.bullet4.text": {
-    "message": "Mit Pay-by-Success, minimalen Vorabkosten und den schnellsten Entwicklungszyklen."
+    "message": "KI-Modelle können als Modell, vorgefertigtes Programm oder mit UI in ONE WARE Studio bereitgestellt werden."
   },
   "studio.slider.codeAssistant.title": {
     "message": "Code-Assistent"
@@ -1143,5 +1143,35 @@
   },
   "aboutUs.2.text":{
     "message":"Das sind wir"
+  },
+  "announcement.arrow.title": {
+    "message": "GRATIS Workshop zu ONE AI für FPGAs"
+  },
+  "announcement.arrow.subtitle": {
+    "message": "FPGA-Entwicklung • Hoch-Effiziente KI Entwicklung • Entwicklungsboard Verlosung"
+  },
+  "announcement.arrow.cta": {
+    "message": "Jetzt registrieren"
+  },
+  "oneai.innovation.traditional": {
+    "message": "Die traditionelle KI-Entwicklung ist veraltet. Die beiden bestehenden Wege bringen beide erhebliche Nachteile mit sich:"
+  },
+  "oneai.innovation.option1": {
+    "message": "Eine neue KI-Architektur von Grund auf erfinden und Monate für Forschung, Entwicklung und mehrere Iterationen aufwenden."
+  },
+  "oneai.innovation.option2": {
+    "message": "Ein bestehendes Foundation-Modell nehmen und es für Ihre Anwendung anpassen."
+  },
+  "oneai.innovation.problem": {
+    "message": "Aber Foundation-Modelle sind meist aufgebläht mit riesigen Datenmengen und führen zu langsamen und ungenauen Vorhersagen, während sie viele Ressourcen benötigen."
+  },
+  "oneai.innovation.solution.bold": {
+    "message": "Wir haben die nächste Generation der KI-Entwicklung erfunden:"
+  },
+  "oneai.innovation.solution.text": {
+    "message": "ONE AI erfindet automatisch völlig neue KI-Modelle in 0,7 Sekunden mit dem Wissen über Ihre Daten, Anwendung und Hardware."
+  },
+  "oneai.innovation.results": {
+    "message": "Die Ergebnisse:"
   }
 }
