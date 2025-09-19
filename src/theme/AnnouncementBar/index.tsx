@@ -71,7 +71,7 @@ export default function AnnouncementBar() {
             }}
           >
             <Translate id="announcement.arrow.cta">
-              Register Now →
+              Register Now
             </Translate>
           </a>
         </div>
