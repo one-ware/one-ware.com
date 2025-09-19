@@ -69,10 +69,10 @@
     "message": "Hochpräzise Objekterkennung"
   },
   "homepage.usecase.detection.subtitle": {
-    "message": "ONE AI übertrifft Wissenschaftler in unter einer Sekunde durch Genauigkeit und Geschwindigkeit"
+    "message": "ONE AI übertrifft Experten in unter einer Sekunde mit genauerer und schnellerer KI"
   },
   "homepage.usecase.detection.description": {
-    "message": "KI-Modelle, die von ONE AI in 0,7 Sekunden generiert werden, sind nicht nur schneller, sondern auch genauer. Als Beispiel erstellten Forscher ein maßgeschneidertes KI-Modell für eine Leiterplatten-Qualitätskontrolle. ONE AI übertraf nicht nur die Standard-Bildverarbeitung und universelle KI-Modelle durch Geschwindigkeit und Genauigkeit mit:"
+    "message": "KI-Modelle, die von ONE AI in 0,7 Sekunden generiert werden, sind nicht nur schneller, sondern auch genauer. Als Beispiel erstellten Forscher ein maßgeschneidertes KI-Modell für eine Leiterplatten-Qualitätskontrolle. ONE AI erzielte nicht nur im vergleich zu Standard-Bildverarbeitung und universellen KI-Modellen, sondern auch im Vergleich zu Experten bessere Ergebnisse mit:"
   },
   "homepage.usecase.link": {
     "message": "Mehr Details"
@@ -337,19 +337,19 @@
     "message": "Geschwindigkeitssteigerung"
   },
   "oneai.comparison.title": {
-    "message": "KI in EINEM Klick bereitstellen, mit ONE WARE."
+    "message": "KI Integrieren mit einem Klick"
   },
   "oneai.hero.nextgen.title": {
     "message": "Die nächste Generation der KI-Entwicklung"
   },
   "oneai.hero.nextgen.subtitle1": {
-    "message": "KI-Modelle in Sekunden für Ihre Bedürfnisse erfunden."
+    "message": "KI-Modelle, die in Sekunden für Ihre Bedürfnisse erfunden werden."
   },
   "oneai.hero.nextgen.subtitle2": {
     "message": "Die All-in-ONE-Lösung, optimiert für Edge AI, Vision AI und Embedded Intelligence."
   },
   "oneai.innovation.title": {
-    "message": "KI-Entwicklung neu erfinden"
+    "message": "KI-Entwicklung neu erfunden"
   },
   "oneai.innovation.subtitle": {
     "message": "ONE AI erfindet KI-Modelle nicht auf Basis von Foundation-Modellen, sondern erfindet immer eine völlig neue KI für Ihre Anwendung."

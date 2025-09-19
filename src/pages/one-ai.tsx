@@ -406,19 +406,37 @@ function AdaptiveArchitectureSection() {
             </h2>
 
             <div className="text-lg text-gray-300 mb-6">
-              <p>Traditional AI development is outdated. The two existing paths both come with significant trade-offs:</p>
+              <p>
+                <Translate id="oneai.innovation.traditional">
+                  Traditional AI development is outdated. The two existing paths both come with significant trade-offs:
+                </Translate>
+              </p>
               <ol className="list-decimal list-inside mb-4 space-y-2">
-                <li>Invent a new AI model from scratch and spend months on research, development and multiple iterations.</li>
-                <li>Take an existing foundation model and adapt it for your application.</li>
+                <li>
+                  <Translate id="oneai.innovation.option1">
+                    Invent a new AI model from scratch and spend months on research, development and multiple iterations.
+                  </Translate>
+                </li>
+                <li>
+                  <Translate id="oneai.innovation.option2">
+                    Take an existing foundation model and adapt it for your application.
+                  </Translate>
+                </li>
               </ol>
               <p className="mb-4">
-                But foundation models are usually bloated with huge amounts of data, leading to slow and inaccurate predictions while requiring a lot of resources.
+                <Translate id="oneai.innovation.problem">
+                  But foundation models are usually bloated with huge amounts of data, leading to slow and inaccurate predictions while requiring a lot of resources.
+                </Translate>
               </p>
               <p className="font-bold text-white text-xl mb-4">
-                We invented the next generation of AI development: 
+                <Translate id="oneai.innovation.solution.bold">
+                  We invented the next generation of AI development:
+                </Translate>
               </p>
               <p>
-                ONE AI automatically invents completely new AI models in 0.7 seconds with the knowledge of your data, application and hardware.
+                <Translate id="oneai.innovation.solution.text">
+                  ONE AI automatically invents completely new AI models in 0.7 seconds with the knowledge of your data, application and hardware.
+                </Translate>
               </p>
             </div>
 
@@ -427,7 +445,11 @@ function AdaptiveArchitectureSection() {
               onClick={() => setIsExpanded(!isExpanded)}
               className="lg:hidden flex items-center justify-between w-full p-3 mb-4 bg-white/5 border border-white/10 rounded-lg text-gray-300 hover:bg-white/10 transition-colors"
             >
-              <span className="font-medium">The Results:</span>
+              <span className="font-medium">
+                <Translate id="oneai.innovation.results">
+                  The Results:
+                </Translate>
+              </span>
               <svg
                 className={`w-5 h-5 transform transition-transform ${isExpanded ? 'rotate-180' : ''}`}
                 fill="none"
