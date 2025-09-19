@@ -399,30 +399,35 @@ function AdaptiveArchitectureSection() {
         <div className="grid lg:grid-cols-2 gap-10 items-start">
           {/* LEFT: Text */}
           <div className="max-w-xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-2">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
               <Translate id="oneai.innovation.title">
-                Leading AI Innovation for a Smarter World
+                The Invention
               </Translate>
             </h2>
 
-            <p className="text-lg md:text-xl font-bold text-gray-300 mb-4">
-              <Translate id="oneai.innovation.subtitle">
-                ONE AI Invents AI Models just for your specific Application and Hardware Requirements
-              </Translate>
-            </p>
-
-            <p className="text-lg text-gray-300 mb-6">
-              <Translate id="oneai.innovation.description">
-                With our patend pending approach of Neural Architecture Prediction, ONE AI automatically invents a custom neural network architecture that is perfectly suited for your application and hardware. Everything without the need for foundation models and fine-tuning. The whole architecture is created from zero in under one second.
-              </Translate>
-            </p>
+            <div className="text-lg text-gray-300 mb-6">
+              <p>There are two options to develop AI:</p>
+              <ol className="list-decimal list-inside mb-4 space-y-2">
+                <li>Invent a new AI model from scratch and spend months on research, development and multiple iterations.</li>
+                <li>Take an existing foundation model and adapt it for your application.</li>
+              </ol>
+              <p className="mb-4">
+                But foundation models are usually bloated with huge amounts of data, leading to slow and inaccurate predictions while requiring a lot of resources.
+              </p>
+              <p className="font-bold text-white text-xl mb-4">
+                We invented the third option for AI development: 
+              </p>
+              <p>
+                ONE AI automatically invents completely new AI models in under one second with the knowledge of your data, application and hardware.
+              </p>
+            </div>
 
             {/* Mobile toggle button */}
             <button
               onClick={() => setIsExpanded(!isExpanded)}
               className="lg:hidden flex items-center justify-between w-full p-3 mb-4 bg-white/5 border border-white/10 rounded-lg text-gray-300 hover:bg-white/10 transition-colors"
             >
-              <span className="font-medium">Key Features</span>
+              <span className="font-medium">The Results:</span>
               <svg
                 className={`w-5 h-5 transform transition-transform ${isExpanded ? 'rotate-180' : ''}`}
                 fill="none"
