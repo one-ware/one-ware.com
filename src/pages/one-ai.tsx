@@ -406,7 +406,7 @@ function AdaptiveArchitectureSection() {
             </h2>
 
             <div className="text-lg text-gray-300 mb-6">
-              <p>There are two options to develop AI:</p>
+              <p>There were two options to develop AI:</p>
               <ol className="list-decimal list-inside mb-4 space-y-2">
                 <li>Invent a new AI model from scratch and spend months on research, development and multiple iterations.</li>
                 <li>Take an existing foundation model and adapt it for your application.</li>
@@ -418,7 +418,7 @@ function AdaptiveArchitectureSection() {
                 We invented the third option for AI development: 
               </p>
               <p>
-                ONE AI automatically invents completely new AI models in under one second with the knowledge of your data, application and hardware.
+                ONE AI automatically invents completely new AI models in 0.7 seconds with the knowledge of your data, application and hardware.
               </p>
             </div>
 
@@ -442,27 +442,27 @@ function AdaptiveArchitectureSection() {
             <ul className={`space-y-2 text-gray-300 list-disc list-inside transition-all duration-300 lg:block ${isExpanded ? 'block' : 'hidden'}`}>
               <li>
                 <span className="font-semibold">
-                  <Translate id="oneai.innovation.bullet1.title">Leading AI Innovation.</Translate>
+                  <Translate id="oneai.innovation.bullet1.title">Higher Accuracy:</Translate>
                 </span>{" "}
-                <Translate id="oneai.innovation.bullet1.text">Neural Architecture Prediction designs a custom network for your application and device, that ensures best accuracy and performance.</Translate>
+                <Translate id="oneai.innovation.bullet1.text">The AI models only learn what is important to make less mistakes.</Translate>
               </li>
               <li>
                 <span className="font-semibold">
-                  <Translate id="oneai.innovation.bullet2.title">Turning Ideas into AI Solutions.</Translate>
+                  <Translate id="oneai.innovation.bullet2.title">Higher Speed and Efficiency:</Translate>
                 </span>{" "}
-                <Translate id="oneai.innovation.bullet2.text">Data → model → export & UI in one tool. One-click deployment.</Translate>
+                <Translate id="oneai.innovation.bullet2.text">Focused on one application, the AI models need less resources for faster results.</Translate>
               </li>
               <li>
                 <span className="font-semibold">
-                  <Translate id="oneai.innovation.bullet3.title">No expertise required.</Translate>
+                  <Translate id="oneai.innovation.bullet3.title">Faster Development:</Translate>
                 </span>{" "}
-                <Translate id="oneai.innovation.bullet3.text">No model or parameter selection. No hardware tuning.</Translate>
+                <Translate id="oneai.innovation.bullet3.text">The AI models are already optimized to meet the desired performance and hardware requirements.</Translate>
               </li>
               <li>
                 <span className="font-semibold">
-                  <Translate id="oneai.innovation.bullet4.title">The Smartest Way for AI Deployment.</Translate>
+                  <Translate id="oneai.innovation.bullet4.title">Faster Deployment:</Translate>
                 </span>{" "}
-                <Translate id="oneai.innovation.bullet4.text">With pay-by-success, minimal upfront costs and the fastest development cycles.</Translate>
+                <Translate id="oneai.innovation.bullet4.text">AI models can be deployed as model, prebuild program or with UI in ONE WARE Studio.</Translate>
               </li>
             </ul>
           </div>

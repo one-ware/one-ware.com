@@ -72,7 +72,10 @@ function HomepageHeader() {
 
               <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-8">
                 <Translate id="homepage.subtitle.description">
-                  The world runs on universal AI models that are overloaded with unnecessary information. With ONE AI you get exactly the AI you need. Automatically generated in under one second, what would take the best AI experts months to recreate. Deployed with highest performance on even the smallest hardware.
+                  The world relies on foundation AI models bloated with unnecessary data.
+                  ONE AI provides intelligence tailored exactly to your application.
+                  What takes experts months to build is automatically generated in 0.7 seconds.
+                  Deployed with maximum performance, even on the smallest hardware.
                 </Translate>
               </p>
 
