@@ -22,7 +22,7 @@ export default function UseCaseCard(props) {
                 <div className="flex flex-col lg:flex-row lg:gap-8">
 
                     {/* Text Section - links auf Desktop */}
-                    <div className="text-left lg:flex-1 lg:max-w-[60%] mb-6 lg:mb-0">
+                    <div className="text-left lg:flex-1 lg:max-w-[60%]">
                         <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold primary-text mb-2">
                             <Translate id={useCase.titleId}>
                                 {useCase.title}
@@ -77,8 +77,8 @@ export default function UseCaseCard(props) {
                     </div>
                 </div>
 
-                {/* Related Use Cases - Unten über die gesamte Breite */}
-                <div className="mt-6 pt-6 border-t border-white/10">
+                {/* Related Use Cases - Unten über die gesamte Breite, ausgeblendet auf Mobile */}
+                <div className="mt-6 pt-6 border-t border-white/10 hidden md:block">
                     <h6 className="text-xl font-semibold text-gray-300 mb-4 text-center lg:text-left">
                         <Translate id="homepage.related.title">
                             Related Use Cases:

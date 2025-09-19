@@ -177,10 +177,10 @@ function ComparisonSection() {
       description: "Next to the vendor tools for AI integration we offer a version for parallel AI integration on FPGAs that allows integration just like parallel image processing that doesn't need an additional processor and adds no overhead to the system. Together with our partner Altera we show how Altera's MAX® 10 with ONE AI and our HDL generator can now outperform Nvidia's Jetson Orin Nano with:",
       descriptionId: "oneai.usecase.hdl.description",
       metrics: [
-        { value: "488×", label: "Lower Latency", labelId: "oneai.metric.latency" },
-        { value: "24×", label: "Reduced Errors", labelId: "oneai.metric.errors" },
-        { value: "20×", label: "Lower Power", labelId: "oneai.metric.power" },
-        { value: "6×", label: "Lower Cost", labelId: "oneai.metric.cost" },
+        { value: "72×", label: "Faster Detection", labelId: "homepage.metric.latency" },
+        { value: "24×", label: "Less Errors", labelId: "homepage.metric.errors" },
+        { value: "20×", label: "Lower Power", labelId: "homepage.metric.power" },
+        { value: "6×", label: "Lower Cost", labelId: "homepage.metric.cost" },
       ],
       whitepaper: "/docs/one-ai/use-cases/chip",
       linkText: "More Details",
@@ -256,7 +256,7 @@ function ComparisonSection() {
                     <div className="flex flex-col lg:flex-row lg:gap-8 h-full">
                       
                       {/* Image Section - links auf Desktop */}
-                      <div className="w-3/4 mx-auto lg:w-1/3 lg:mx-0 lg:flex-shrink-0 mb-4 lg:mb-0">
+                      <div className="w-3/4 mx-auto lg:w-1/3 lg:mx-0 lg:flex-shrink-0 mb-4 lg:mb-0 hidden md:block">
                         <div 
                           className="w-full aspect-square lg:aspect-[6/7] rounded-lg bg-cover bg-center"
                           style={{
