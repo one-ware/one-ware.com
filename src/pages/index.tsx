@@ -22,6 +22,7 @@ import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import initWebsiteEffects from "../components/startEffects";
 import ContactUs from "../components/ContactUs";
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import UseCaseCard from "@site/src/components/UseCaseComponent/UseCaseCard";
 
 function HomepageHeader() {
   const { i18n } = useDocusaurusContext();
@@ -62,7 +63,7 @@ function HomepageHeader() {
 
       <div className={styles.heroBanner}>
         {/* Text oben links mit Hintergrund-Box */}
-        <div className="relative z-10 flex items-start justify-start pt-8 px-8 md:pt-12 md:pl-12 lg:pt-16 lg:pl-16 h-full">
+        <div className="z-10 flex items-start justify-start pt-8 px-8 md:pt-12 md:pl-12 lg:pt-16 lg:pl-16 h-full">
           <div className="max-w-2xl backdrop-blur-md bg-gray-600/20 rounded-2xl p-6 md:p-8 border border-white/10">
             <div className="text-left">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
@@ -97,135 +98,134 @@ function HomepageHeader() {
           </div>
         </div>
 
-        {/* Featured In Section unten im Header */}
-        <div className="relative z-10 flex items-end justify-center pb-16 px-8 mt-12">
-          <div className="backdrop-blur-md bg-gray-600/20 rounded-2xl p-6 md:p-8 border border-white/10 max-w-7xl">
-            
-            <div className="text-center -mb-2">
-              <p className="text-lg md:text-xl text-gray-300">
-                <Translate id="partners.title">
-                  {/*
-                  Featured in:
-                  */}
-                  Known from:
-                </Translate>
-              </p>
-            </div>
+        <div className="flex flex-col items-center">
+          {/* Featured In Section unten im Header */}
+          <div className="z-10 flex items-end justify-center py-8 px-8 mt-12">
+            <div className="backdrop-blur-md bg-gray-600/20 rounded-2xl p-6 md:p-8 border border-white/10 max-w-7xl">
+              
+              <div className="text-center -mb-2">
+                <p className="text-lg md:text-xl text-gray-300">
+                  <Translate id="partners.title">
+                    {/*
+                    Featured in:
+                    */}
+                    Known from:
+                  </Translate>
+                </p>
+              </div>
 
-            <div className="flex justify-center items-center flex-wrap gap-3 md:gap-6">
-              <a
-                href="https://tech.eu/2025/06/18/one-ware-raises-eur25m-to-automate-ai-model-configuration-across-industries/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block no-underline hover:no-underline"
+              <div className="flex justify-center items-center flex-wrap gap-3 md:gap-6">
+                <a
+                  href="https://tech.eu/2025/06/18/one-ware-raises-eur25m-to-automate-ai-model-configuration-across-industries/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block no-underline hover:no-underline"
+                >
+                  <img
+                    src={require("@site/static/img/Featured/f1_g.png").default}
+                    alt="Featured 1"
+                    className="h-8 w-16 md:h-12 md:w-20 object-contain hover:opacity-80 transition-opacity opacity-90"
+                  />
+                </a>
+                <a
+                  href="https://www.elektronikpraxis.de/one-ai-automatisierte-ki-konfiguration-fuer-entwickler-a-09fee486cec031ed0a2edd5dbeeaed0a/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block no-underline hover:no-underline"
+                >
+                  <img
+                    src={require("@site/static/img/Featured/f4_g.png").default}
+                    alt="Featured 4"
+                    className="h-8 w-36 md:h-12 md:w-42 object-contain hover:opacity-80 transition-opacity opacity-90"
+                  />
+                </a>
+                {/*
+                <a
+                  href="https://www.handelsblatt.com/technik/ki/ki-start-ups-jenseits-des-hypes-one-ware-entwickelt-ki-fuer-jede-produktion-01/100149060.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block no-underline hover:no-underline"
+                >
+                  <img
+                    src={require("@site/static/img/Featured/f3_g.png").default}
+                    alt="Featured 3"
+                    className="h-8 w-52 md:h-12 md:w-64 object-contain hover:opacity-80 transition-opacity opacity-90"
+                  />
+                </a>
+                */}
+                {/*
+                <a
+                  href="https://www.vdi-nachrichten.com/technik/automation/ki-im-maschinenbau-auf-bestehender-hardware-nutzen/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block no-underline hover:no-underline"
+                >
+                  <img
+                    src={require("@site/static/img/Featured/f9_g.png").default}
+                    alt="Featured 9"
+                    className="h-8 w-52 md:h-12 md:w-64 object-contain hover:opacity-80 transition-opacity opacity-90"
+                  />
+                </a>
+                */}
+                <a
+                  href="https://www.maschinenmarkt.vogel.de/one-ai-ki-extension-one-ware-maschinenbau-a-545f6e3fc5ac13f8fa3f55fa5998332f/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block no-underline hover:no-underline"
+                >
+                  <img
+                    src={require("@site/static/img/Featured/f5_g.png").default}
+                    alt="Featured 5"
+                    className="h-8 w-24 md:h-14 md:w-28 object-contain hover:opacity-80 transition-opacity opacity-90"
+                  />
+                </a>
+                <a
+                  href="https://it-production.com/industrie-4-0-i40/neuronales-netzwerk-in-unter-einer-sekunde/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block no-underline hover:no-underline"
+                >
+                  <img
+                    src={require("@site/static/img/Featured/f7_g.png").default}
+                    alt="Featured 7"
+                    className="h-8 w-28 md:h-12 md:w-32 object-contain hover:opacity-80 transition-opacity opacity-90"
+                  />
+                </a>
+                <a
+                  href="https://go.altera.com/l/1090322/2025-04-18/2vvzbn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block no-underline hover:no-underline"
+                >
+                  <img
+                    src={require("@site/static/img/Partner/altera_w.png").default}
+                    alt="Featured 5"
+                    className="h-8 w-24 md:h-14 md:w-28 object-contain hover:opacity-80 transition-opacity opacity-90"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Animierter Scroll-Pfeil */}
+          <div className="bottom-0 left-1/2 transform -translate-x-1/2 z-10 pb-8">
+            <div className="flex flex-col items-center animate-bounce">
+              <svg 
+                className="w-10 h-10 text-white opacity-70" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
               >
-                <img
-                  src={require("@site/static/img/Featured/f1_g.png").default}
-                  alt="Featured 1"
-                  className="h-8 w-16 md:h-12 md:w-20 object-contain hover:opacity-80 transition-opacity opacity-90"
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M19 9l-7 7-7-7" 
                 />
-              </a>
-              <a
-                href="https://www.elektronikpraxis.de/one-ai-automatisierte-ki-konfiguration-fuer-entwickler-a-09fee486cec031ed0a2edd5dbeeaed0a/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block no-underline hover:no-underline"
-              >
-                <img
-                  src={require("@site/static/img/Featured/f4_g.png").default}
-                  alt="Featured 4"
-                  className="h-8 w-36 md:h-12 md:w-42 object-contain hover:opacity-80 transition-opacity opacity-90"
-                />
-              </a>
-              {/*
-              <a
-                href="https://www.handelsblatt.com/technik/ki/ki-start-ups-jenseits-des-hypes-one-ware-entwickelt-ki-fuer-jede-produktion-01/100149060.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block no-underline hover:no-underline"
-              >
-                <img
-                  src={require("@site/static/img/Featured/f3_g.png").default}
-                  alt="Featured 3"
-                  className="h-8 w-52 md:h-12 md:w-64 object-contain hover:opacity-80 transition-opacity opacity-90"
-                />
-              </a>
-              */}
-              {/*
-              <a
-                href="https://www.vdi-nachrichten.com/technik/automation/ki-im-maschinenbau-auf-bestehender-hardware-nutzen/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block no-underline hover:no-underline"
-              >
-                <img
-                  src={require("@site/static/img/Featured/f9_g.png").default}
-                  alt="Featured 9"
-                  className="h-8 w-52 md:h-12 md:w-64 object-contain hover:opacity-80 transition-opacity opacity-90"
-                />
-              </a>
-              */}
-              <a
-                href="https://www.maschinenmarkt.vogel.de/one-ai-ki-extension-one-ware-maschinenbau-a-545f6e3fc5ac13f8fa3f55fa5998332f/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block no-underline hover:no-underline"
-              >
-                <img
-                  src={require("@site/static/img/Featured/f5_g.png").default}
-                  alt="Featured 5"
-                  className="h-8 w-24 md:h-14 md:w-28 object-contain hover:opacity-80 transition-opacity opacity-90"
-                />
-              </a>
-              {/*
-              <a
-                href="https://it-production.com/industrie-4-0-i40/neuronales-netzwerk-in-unter-einer-sekunde/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block no-underline hover:no-underline"
-              >
-                <img
-                  src={require("@site/static/img/Featured/f7_g.png").default}
-                  alt="Featured 7"
-                  className="h-8 w-28 md:h-12 md:w-32 object-contain hover:opacity-80 transition-opacity opacity-90"
-                />
-              </a>
-              */}
-              <a
-                href="https://go.altera.com/l/1090322/2025-04-18/2vvzbn"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block no-underline hover:no-underline"
-              >
-                <img
-                  src={require("@site/static/img/Partner/altera_w.png").default}
-                  alt="Featured 5"
-                  className="h-8 w-24 md:h-14 md:w-28 object-contain hover:opacity-80 transition-opacity opacity-90"
-                />
-              </a>
+              </svg>
             </div>
           </div>
         </div>
-
-        {/* Animierter Scroll-Pfeil */}
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-10">
-          <div className="flex flex-col items-center animate-bounce">
-            <svg 
-              className="w-10 h-10 text-white opacity-70" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M19 9l-7 7-7-7" 
-              />
-            </svg>
-          </div>
-        </div>
-
       </div>
     </header>
   );
@@ -502,12 +502,10 @@ function ComparisonSection() {
       </div>
 
       <div className="relative">
-        <Swiper
-          // DEINE BUTTON-LOGIK WIEDERHERGESTELLT (Teil 2)
-          // onSwiper-Callback, um den Ref zu setzen.
-          onSwiper={(swiper) => {
-            swiperRef.current = swiper;
-          }}
+        <Swiper 
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+            }}
           modules={[Navigation]}
           rewind={true}
           centeredSlides={true}
@@ -517,7 +515,6 @@ function ComparisonSection() {
           slidesPerGroup={1}
           initialSlide={1}
           watchSlidesProgress={true}
-          // modules={[Navigation]}  // kannst du entfernen, da wir eigene Buttons haben
           breakpoints={{
             768:  { slidesPerView: 1.5,  spaceBetween: 40 },
             1280: { slidesPerView: 1.75, spaceBetween: 50 },
@@ -527,97 +524,7 @@ function ComparisonSection() {
             // DER ZWEITE WICHTIGE FIX BLEIBT:
             <SwiperSlide key={idx}>
               {({ isActive }) => (
-                <div
-                  className={`relative w-full rounded-2xl transition-all duration-500 ease-in-out transform ${isActive ? 'scale-100' : 'scale-90 opacity-60'}`}
-                  style={{
-                    backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%), url(${useBaseUrl(useCase.image)})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                  }}
-                >
-                  {/* ... der innere Content der Slide bleibt unverändert ... */}
-                   <div className="relative z-10 p-6 sm:p-8 lg:p-12 min-h-[550px] md:min-h-[500px] flex flex-col justify-between bg-gray-900/20 rounded-2xl backdrop-blur-sm border border-white/10">
-                    
-                    {/* Content Wrapper für Desktop Layout */}
-                    <div className="flex flex-col lg:flex-row lg:gap-8">
-                      
-                      {/* Text Section - links auf Desktop */}
-                      <div className="text-left lg:flex-1 lg:max-w-[60%] mb-6 lg:mb-0">
-                        <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold primary-text mb-2">
-                          <Translate id={useCase.titleId}>
-                            {useCase.title}
-                          </Translate>
-                        </h3>
-                        <h4 className="text-lg sm:text-xl lg:text-2xl text-gray-300 font-medium mb-4">
-                          <Translate id={useCase.subtitleId}>
-                            {useCase.subtitle}
-                          </Translate>
-                        </h4>
-                        <p className="text-base sm:text-lg text-gray-200 leading-relaxed mb-6">
-                          <Translate id={useCase.descriptionId}>
-                            {useCase.description}
-                          </Translate>
-                        </p>
-                      </div>
-
-                      {/* Metrics & Button Section - rechts auf Desktop */}
-                      <div className="lg:flex-shrink-0 lg:w-[40%] flex flex-col justify-end">
-                        <div className="flex flex-col gap-4">
-                          {/* Metrics Grid */}
-                          <div className="grid grid-cols-2 gap-2 w-full">
-                            {useCase.metrics.map((metric, metricIdx) => (
-                              <div key={metricIdx} className="p-3 bg-black/40 border border-white/10 rounded-lg text-center">
-                                <h5 className="text-xl sm:text-2xl font-bold primary-text">
-                                  {metric.value}
-                                </h5>
-                                <p className="text-sm sm:text-base text-gray-300">
-                                  <Translate id={metric.labelId}>
-                                    {metric.label}
-                                  </Translate>
-                                </p>
-                              </div>
-                            ))}
-                          </div>
-                          
-                          {/* Button */}
-                          <a
-                            href={useCase.whitepaper}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center px-6 py-3 bg-[#00FFD1] text-black font-bold rounded-lg hover:bg-[#00e4ba] transition-all duration-300 transform hover:scale-105 text-sm lg:text-base w-full justify-center shrink-0"
-                          >
-                            <Translate id={useCase.linkTextId}>
-                              {useCase.linkText}
-                            </Translate>
-                            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    {/* Related Use Cases - Unten über die gesamte Breite */}
-                    <div className="mt-6 pt-6 border-t border-white/10">
-                      <h6 className="text-xl font-semibold text-gray-300 mb-4 text-center lg:text-left">
-                        <Translate id="homepage.related.title">
-                          Related Use Cases:
-                        </Translate>
-                      </h6>
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                        {useCase.relatedUseCases.map((related, relatedIdx) => (
-                          <div key={relatedIdx} className="p-4 bg-[#00FFD1]/10 border border-[#00FFD1]/30 rounded-lg hover:bg-[#00FFD1]/20 transition-colors cursor-pointer text-center">
-                            <div className="font-semibold text-[#00FFD1] text-sm lg:text-base">
-                              <Translate id={related.titleId}>
-                                {related.title}
-                              </Translate>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <UseCaseCard data={useCase} isActive={isActive}/>
               )}
             </SwiperSlide>
           ))}
