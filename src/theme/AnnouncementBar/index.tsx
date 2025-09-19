@@ -27,13 +27,24 @@ export default function AnnouncementBar() {
       style={{
         backgroundColor: '#00FFD1',
         color: '#000000',
-        padding: '8px 16px',
+        padding: '12px 16px',
         textAlign: 'center',
         position: 'relative',
         zIndex: 1000,
+        width: '100%',
+        margin: '0',
       }}
     >
-      <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px' }}>
+      <div style={{ 
+        maxWidth: 'calc(100vw - 32px)', 
+        margin: '0 auto', 
+        display: 'flex', 
+        alignItems: 'center', 
+        justifyContent: 'space-between', 
+        flexWrap: 'wrap', 
+        gap: '12px',
+        padding: '0 16px'
+      }}>
         <div style={{ flex: 1, minWidth: '300px' }}>
           <strong>
             <Translate id="announcement.arrow.title">
@@ -50,11 +61,13 @@ export default function AnnouncementBar() {
             style={{ 
               backgroundColor: '#000000',
               color: '#00FFD1',
-              padding: '4px 12px',
-              borderRadius: '4px',
+              padding: '6px 16px',
+              borderRadius: '6px',
               textDecoration: 'none',
               fontWeight: 'bold',
-              marginLeft: '8px'
+              marginLeft: '12px',
+              display: 'inline-block',
+              transition: 'all 0.3s ease'
             }}
           >
             <Translate id="announcement.arrow.cta">
@@ -67,12 +80,16 @@ export default function AnnouncementBar() {
           style={{
             background: 'none',
             border: 'none',
-            fontSize: '20px',
+            fontSize: '24px',
             cursor: 'pointer',
             color: '#000000',
-            padding: '4px',
+            padding: '6px',
             lineHeight: 1,
+            transition: 'opacity 0.3s ease',
+            opacity: 0.8
           }}
+          onMouseEnter={(e) => e.currentTarget.style.opacity = '1'}
+          onMouseLeave={(e) => e.currentTarget.style.opacity = '0.8'}
           aria-label="Close banner"
         >
           ×
