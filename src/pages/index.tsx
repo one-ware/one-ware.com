@@ -62,23 +62,21 @@ function HomepageHeader() {
       </div>
 
       <div className={styles.heroBanner}>
-        {/* Text oben links mit Hintergrund-Box */}
-        <div className="z-10 flex items-start justify-start pt-8 px-8 md:pt-12 md:pl-12 lg:pt-16 lg:pl-16 h-full">
-          <div className="max-w-2xl backdrop-blur-md bg-gray-600/20 rounded-2xl p-6 md:p-8 border border-white/10">
-            <div className="text-left">
+        {/* Text zentriert mit Hintergrund-Box */}
+        <div className="z-10 flex items-center justify-center pt-8 px-8 md:pt-12 md:px-12 lg:pt-16 lg:px-16 h-full">
+          <div className="max-w-5xl backdrop-blur-md bg-gray-600/20 rounded-2xl p-6 md:p-8 border border-white/10">
+            <div className="text-center">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-                <Translate id="homepage.title.main">
-                  AI Tailored to Your Needs.
-                </Translate>
+                <Translate id="homepage.title.main">The Next Generation of AI Development.</Translate>
               </h1>
 
               <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-8">
                 <Translate id="homepage.subtitle.description">
-                  Universal AI models weren't built for your application. ONE WARE is the first platform that invents entirely new AI models tailored to your use case and deploys them automatically on any hardware. The fastest path to higher accuracy, efficiency, and performance.
+                  The world runs on universal AI models that are overloaded with unnecessary information. With ONE AI you get exactly the AI you need. Automatically generated in under one second, what would take the best AI experts months to recreate. Deployed with highest performance on even the smallest hardware.
                 </Translate>
               </p>
 
-              <div className="flex gap-4 flex-col sm:flex-row">
+              <div className="flex gap-4 flex-col sm:flex-row justify-center">
                 <Link href="/one-ai#getStarted">
                   <button className="button button--primary button--outline button--lg w-full sm:w-auto">
                     <Translate id="homepage.subtitle.ai.getstarted">
