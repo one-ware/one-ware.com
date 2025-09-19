@@ -29,16 +29,6 @@ function HomepageHeader() {
     <header id="hero" className={styles.heroBackground}>
       {/* Animation als Hintergrund - direkt im header */}
       <div className="absolute inset-0 z-0">
-        {/* Mobile: Statisches Hintergrundbild */}
-        <div 
-          className="w-full h-full object-cover md:hidden"
-          style={{
-            backgroundImage: `url(${require("@site/static/img/background.webp").default})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
-        />
-        
         {/* Desktop: Video Animation */}
         <video
           src={require("@site/static/img/animation.mp4").default}
@@ -46,15 +36,7 @@ function HomepageHeader() {
           muted
           loop
           playsInline
-          className="w-full h-full object-cover hidden md:block"
-        />
-        
-        {/* Gradient Overlay wie im ursprünglichen CSS */}
-        <div 
-          className="absolute inset-0"
-          style={{
-            background: 'linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%)'
-          }}
+          className="w-full h-full object-cover"
         />
       </div>
 
@@ -207,7 +189,7 @@ function HomepageHeader() {
           </div>
 
           {/* Animierter Scroll-Pfeil */}
-          <div className="bottom-0 left-1/2 transform -translate-x-1/2 z-10 pb-8">
+          <div className="w-full flex justify-center z-10">
             <div className="flex flex-col items-center animate-bounce">
               <svg 
                 className="w-10 h-10 text-white opacity-70" 

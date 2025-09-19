@@ -91,9 +91,9 @@ const sliders = [
 function HomepageHeader() {
   return (
     <header id="hero" className={`w-full ${styles.heroBackground} h-96`}>
-      <div className="absolute flex flex-col items-center justify-center w-full h-full">
-        <div className="flex">
-          <div className="flex-col max-w-5xl m-2 mt-10">
+      <div className="absolute flex flex-col items-center justify-center w-full h-full px-4">
+        <div className="flex justify-center w-full">
+          <div className="flex-col max-w-5xl mx-auto mt-10">
             <div className="text-center mt-10">
               <h1 className="font-bold text-3xl md:text-4xl mb-4">
                 <Translate id="oneai.hero.nextgen.title">
