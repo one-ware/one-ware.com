@@ -5,7 +5,7 @@ sidebar_label: Worldwide Agilex 3 AI Workshop
 ---
 
 ## What to Expect:
-With the worldwide hands-on workshop by **Arrow**, the world’s largest technology distributor, you have the opportunity to:
+With the worldwide hands-on workshop by **Arrow** you have the opportunity to:
 
 1. **Learn about FPGA development for FREE**  
 2. **Build your own ultra-efficient and high-speed AI with ONE AI**  
