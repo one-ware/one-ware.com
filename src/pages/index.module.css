@@ -20,9 +20,9 @@
 }
 
 /* Tablet/Laptop */
-@media (min-height: 768px) {
+@media (min-height: 768px) and (min-width: 640px) {
   .heroBackground {
-    min-height: 100vh; /* Nur Mindesthöhe, kann bei Bedarf größer werden */
+    height: 100vh; /* Mindesthöhe, kann bei Bedarf größer werden */
   }
 }
    
@@ -33,9 +33,8 @@
      overflow: hidden;
      display: flex;
      flex-direction: column;
-     min-height: 100%;
+     height: 100%;
      padding-top: var(--ifm-navbar-height); /* Padding statt Margin für den Inhalt */
-     padding-bottom: 2rem; /* Extra Padding unten für bessere Darstellung */
    }
    
    .buttons {

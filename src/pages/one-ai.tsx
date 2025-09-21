@@ -102,7 +102,7 @@ function HomepageHeader() {
               </h1>
               <h2 className=" text-xl md:text-2xl mb-7 font-normal">
                 <Translate id="oneai.hero.nextgen.subtitle1">
-                  AI Models Invented in Seconds for Your Needs.
+                  AI Models Invented in Seconds for Your Needs, by our AI-powered AI Developer.
                 </Translate>
                 <br/>
                 <Translate id="oneai.hero.nextgen.subtitle2">
@@ -370,501 +370,7 @@ function ComparisonSection() {
   );
 }
 
-// ===================== Adaptive Architecture (Text left, models right) =====================
-function AdaptiveArchitectureSection() {
-  // 0-7 steps with 8 levels
-  const [ram, setRam] = useState<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>(3);
-  const [speed, setSpeed] = useState<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>(3);
-  const [complexity, setComplexity] = useState<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>(0);
-  const [regenerationKey, setRegenerationKey] = useState(0);
-  const [isExpanded, setIsExpanded] = useState(false);
 
-  const sum = ram + speed; // 0..14
-  const spec = getArchSpec(sum, complexity, regenerationKey * 1000 + sum + complexity);
-
-  // Enhanced seed with regeneration key for more dramatic changes
-  const seed = (sum + 1) * 137 + complexity * 29 + ram * 43 + speed * 67 + regenerationKey * 1000;
-
-  // Trigger regeneration when sliders change
-  useEffect(() => {
-    setRegenerationKey(prev => prev + 1);
-  }, [ram, speed, complexity]);
-
-  return (
-    <section
-      id="adaptive-architecture"
-      className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-b from-black to-gray-900"
-    >
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-10 items-start">
-          {/* LEFT: Text */}
-          <div className="max-w-xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <Translate id="oneai.innovation.title">
-                Reinventing AI Development
-              </Translate>
-            </h2>
-
-            <div className="text-lg text-gray-300 mb-6">
-              <p>
-                <Translate id="oneai.innovation.traditional">
-                  Traditional AI development is outdated. The two existing paths both come with significant trade-offs:
-                </Translate>
-              </p>
-              <ol className="list-decimal list-inside mb-4 space-y-2">
-                <li>
-                  <Translate id="oneai.innovation.option1">
-                    Invent a new AI model from scratch and spend months on research, development and multiple iterations.
-                  </Translate>
-                </li>
-                <li>
-                  <Translate id="oneai.innovation.option2">
-                    Take an existing foundation model and adapt it for your application.
-                  </Translate>
-                </li>
-              </ol>
-              <p className="mb-4">
-                <Translate id="oneai.innovation.problem">
-                  But foundation models are usually bloated with huge amounts of data, leading to slow and inaccurate predictions while requiring a lot of resources.
-                </Translate>
-              </p>
-              <p className="font-bold text-white text-xl mb-4">
-                <Translate id="oneai.innovation.solution.bold">
-                  We invented the next generation of AI development:
-                </Translate>
-              </p>
-              <p>
-                <Translate id="oneai.innovation.solution.text">
-                  ONE AI automatically invents completely new AI models in 0.7 seconds with the knowledge of your data, application and hardware.
-                </Translate>
-              </p>
-            </div>
-
-            {/* Mobile toggle button */}
-            <button
-              onClick={() => setIsExpanded(!isExpanded)}
-              className="lg:hidden flex items-center justify-between w-full p-3 mb-4 bg-white/5 border border-white/10 rounded-lg text-gray-300 hover:bg-white/10 transition-colors"
-            >
-              <span className="font-medium">
-                <Translate id="oneai.innovation.results">
-                  The Results:
-                </Translate>
-              </span>
-              <svg
-                className={`w-5 h-5 transform transition-transform ${isExpanded ? 'rotate-180' : ''}`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-
-            {/* Bullet points - always visible on desktop, collapsible on mobile */}
-            <ul className={`space-y-2 text-gray-300 list-disc list-inside transition-all duration-300 lg:block ${isExpanded ? 'block' : 'hidden'}`}>
-              <li>
-                <span className="font-semibold">
-                  <Translate id="oneai.innovation.bullet1.title">Higher Accuracy:</Translate>
-                </span>{" "}
-                <Translate id="oneai.innovation.bullet1.text">The AI models only learn what is important to make less mistakes.</Translate>
-              </li>
-              <li>
-                <span className="font-semibold">
-                  <Translate id="oneai.innovation.bullet2.title">Higher Speed and Efficiency:</Translate>
-                </span>{" "}
-                <Translate id="oneai.innovation.bullet2.text">Focused on one application, the AI models need less resources for faster results.</Translate>
-              </li>
-              <li>
-                <span className="font-semibold">
-                  <Translate id="oneai.innovation.bullet3.title">Faster Development:</Translate>
-                </span>{" "}
-                <Translate id="oneai.innovation.bullet3.text">The AI models are already optimized to meet the desired performance and hardware requirements.</Translate>
-              </li>
-              <li>
-                <span className="font-semibold">
-                  <Translate id="oneai.innovation.bullet4.title">Faster Deployment:</Translate>
-                </span>{" "}
-                <Translate id="oneai.innovation.bullet4.text">AI models can be deployed as model, prebuild program or with UI in ONE WARE Studio.</Translate>
-              </li>
-            </ul>
-          </div>
-
-
-          {/* RIGHT: three small random models + sliders underneath */}
-          <div>
-            <div className="rounded-2xl border border-white/10 bg-black/70 p-4">
-              <OrganicMiniModel spec={spec} seed={seed} height={280} />
-            </div>
-
-            {/* Sliders (8-stufig) */}
-            <div className="mt-5 flex flex-col gap-5">
-              <StepSlider
-                label="Speed"
-                value={speed}
-                onChange={setSpeed}
-                leftLabel="High Performance"
-                rightLabel="High Precision"
-              />
-              <StepSlider
-                label="RAM"
-                value={ram}
-                onChange={setRam}
-                leftLabel="Small Embedded Device"
-                rightLabel="Full PC"
-              />
-              <StepSlider
-                label="Complexity"
-                value={complexity}
-                onChange={setComplexity}
-                leftLabel="Small Automation"
-                rightLabel="Complex Analysis"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ---------- 8-level segmented control ---------- */
-function StepSlider({
-  label,
-  value,
-  onChange,
-  leftLabel,
-  rightLabel,
-}: {
-  label: string;
-  value: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7;
-  onChange: (v: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7) => void;
-  leftLabel: string;
-  rightLabel: string;
-}) {
-  const id = `slider-${label.toLowerCase().replace(/\s+/g, "-")}`;
-
-  return (
-    <div className="w-full">
-      <div className="mb-2 text-sm text-gray-300">{label}</div>
-
-      <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-4">
-        <input
-          id={id}
-          type="range"
-          min={0}
-          max={7}
-          step={1}
-          value={value}
-          onChange={(e) => onChange(Number(e.target.value) as 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7)}
-          className="w-full accent-[#00FFD1] cursor-pointer"
-          aria-label={label}
-        />
-
-        {/* Beschriftung unten: links/rechts */}
-        <div className="mt-2 flex items-center justify-between text-xs text-gray-400">
-          <span className="text-left">{leftLabel}</span>
-          <span className="text-right">{rightLabel}</span>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-
-/* ---------- Spec mapping (sum=RAM+Speed, c=complexity) ---------- */
-type ArchSpec = { input: number; hidden: number[]; output: number };
-function getArchSpec(sum: number, c: number, seed: number = 1): ArchSpec {
-  // Create seeded random function for consistent but varied results
-  const rand = mulberry32(seed);
-  
-  // Input/Output: maximum 6 neurons, moderate scaling
-  const baseInput = Math.max(2, Math.min(6, 2 + Math.floor(c * 0.4))); // Max 6 inputs
-  const baseOutput = Math.max(2, Math.min(6, 2 + Math.floor(c * 0.5))); // Max 6 outputs
-  
-  // Hidden layers - resources (speed+RAM) heavily influence size
-  const hidden: number[] = [];
-  
-  // Resources constraint: low speed/RAM should limit layers even with high complexity
-  const resourceConstraint = sum / 14; // 0 to 1 ratio
-  const complexityFactor = c / 7; // 0 to 1 ratio
-  
-  // Layer count influenced more by resources than complexity
-  const maxLayers = Math.min(3, Math.max(1, Math.floor(resourceConstraint * 2 + complexityFactor * 1)));
-  
-  for (let layer = 0; layer < maxLayers; layer++) {
-    // Base size heavily influenced by available resources
-    let baseSize = 2 + Math.floor(resourceConstraint * 4); // 2-6 based on resources
-    
-    // Complexity adds neurons only if resources allow
-    let complexityBonus = 0;
-    if (resourceConstraint > 0.3) { // Only add complexity if resources are decent
-      complexityBonus = Math.floor(complexityFactor * resourceConstraint * 2);
-    }
-    
-    let layerSize = baseSize + complexityBonus + Math.floor(rand() * 2);
-    
-    // Reduced variation between layers
-    if (layer > 0) {
-      const prevSize = hidden[layer - 1];
-      // Smaller variation
-      const variation = Math.floor(rand() * 4) - 2; // -2 to +1
-      layerSize = Math.max(2, Math.min(layerSize + variation, prevSize + 2));
-    }
-    
-    hidden.push(Math.max(2, Math.min(8, layerSize))); // Cap at 8 neurons per layer
-  }
-  
-  return {
-    input: baseInput,
-    hidden: hidden,
-    output: baseOutput
-  };
-}
-
-/* ---------- One mini random graph (organic, *not* grid-layered) ---------- */
-/* ---------- One mini random graph (organic, connected; always with hidden) ---------- */
-function OrganicMiniModel({
-  spec,
-  seed,
-  width = 520,
-  height = 160,
-}: {
-  spec: ArchSpec;
-  seed: number;
-  width?: number;
-  height?: number;
-}) {
-  const padX = 18, padY = 12;
-  const rand = mulberry32(seed || 1);
-
-  type Node = { x: number; y: number; id: string; kind: "in" | "hid" | "out" };
-  const nodes: Node[] = [];
-  const inIdx: number[] = [], outIdx: number[] = [], hidIdx: number[] = [];
-
-  const push = (n: Node) => {
-    nodes.push(n);
-    return nodes.length - 1;
-  };
-
-  // --- Inputs (links) ---
-  for (let i = 0; i < spec.input; i++) {
-    const idx = push({
-      id: `in-${i}`,
-      kind: "in",
-      x: padX + rand() * 18,
-      y:
-        padY +
-        ((i + 0.5) * (height - padY * 2)) / Math.max(1, spec.input) +
-        (rand() - 0.5) * 10,
-    });
-    inIdx.push(idx);
-  }
-
-  // --- Outputs (rechts) ---
-  for (let i = 0; i < spec.output; i++) {
-    const idx = push({
-      id: `out-${i}`,
-      kind: "out",
-      x: width - padX - rand() * 18,
-      y:
-        padY +
-        ((i + 0.5) * (height - padY * 2)) / Math.max(1, spec.output) +
-        (rand() - 0.5) * 10,
-    });
-    outIdx.push(idx);
-  }
-
-  // --- Hidden (mittig, organisch gestreut) ---
-  // Summe aus Tabelle; wenn keine Hidden vorgegeben -> schlankes Gerüst als Visualisierung
-  const declaredHidden = (spec.hidden ?? []).reduce((a, b) => a + b, 0);
-  const hiddenTarget = Math.max(
-    3,
-    declaredHidden || Math.round((spec.input + spec.output) * 0.6)
-  );
-
-  const minDist = clamp(22 - Math.log(hiddenTarget + 1) * 4, 10, 22);
-  let guard = 0;
-  while (hidIdx.length < hiddenTarget && guard < hiddenTarget * 300) {
-    guard++;
-    const x = padX + 60 + rand() * (width - (padX + 60) * 2);
-    const y = padY + rand() * (height - padY * 2);
-    let ok = true;
-    for (const id of hidIdx) {
-      const p = nodes[id];
-      if (Math.hypot(p.x - x, p.y - y) < minDist + rand() * 6) {
-        ok = false;
-        break;
-      }
-    }
-    if (ok) hidIdx.push(push({ id: `h-${hidIdx.length}`, kind: "hid", x, y }));
-  }
-
-  // --- Kanten: dicht & organisch ---
-  const edges: Array<[number, number]> = [];
-  const deg = new Array(nodes.length).fill(0);
-  const set = new Set<string>();
-  const addEdge = (a: number, b: number) => {
-    if (a === b) return;
-    const key = a < b ? `${a}-${b}` : `${b}-${a}`;
-    if (set.has(key)) return;
-    set.add(key);
-    edges.push([a, b]);
-    deg[a]++; deg[b]++;
-  };
-  const dist = (i: number, j: number) =>
-    Math.hypot(nodes[i].x - nodes[j].x, nodes[i].y - nodes[j].y);
-
-  const connectK = (fromIdx: number[], toIdx: number[], k: number, maxD: number) => {
-    if (!fromIdx.length || !toIdx.length) return;
-    for (const i of fromIdx) {
-      const arr = toIdx
-        .map((j) => ({ j, d: dist(i, j) }))
-        .filter((o) => o.d > 1 && o.d < maxD)
-        .sort((a, b) => a.d - b.d)
-        .slice(0, Math.min(k, toIdx.length));
-      for (const o of arr) addEdge(i, o.j);
-    }
-  };
-
-  // Tunable Nachbarschaften
-  // nachher (leichter/sparscher):
-  const kIn  = clamp(Math.round(hidIdx.length / 4) + 1, 1, Math.min(4, hidIdx.length));
-  const kHH  = clamp(Math.round(Math.log2(hidIdx.length + 3)), 1, Math.min(4, Math.max(1, hidIdx.length - 1)));
-  const kOut = clamp(Math.round(hidIdx.length / 5) + 1, 1, Math.min(4, outIdx.length));
-  const kIO  = clamp(Math.round(outIdx.length / 5) + 1, 1, 2);
-
-  // Reichweiten (kürzer -> weniger lange Kreuzer)
-  connectK(inIdx,  hidIdx, kIn,  width * 0.65);
-  connectK(hidIdx, hidIdx, kHH,  width * 0.45);
-  connectK(hidIdx, outIdx, kOut, width * 0.75);
-  connectK(inIdx.slice(0, Math.ceil(inIdx.length * 0.6)), outIdx, kIO, width * 0.5);
-
-  // --- Jede Node hat mind. 1 Kante ---
-  for (let i = 0; i < nodes.length; i++) {
-    if (deg[i] === 0) {
-      const pref =
-        nodes[i].kind === "hid"
-          ? [...inIdx, ...outIdx]
-          : hidIdx.length
-          ? hidIdx
-          : nodes[i].kind === "in"
-          ? outIdx
-          : inIdx;
-      const near = pref
-        .filter((j) => j !== i)
-        .map((j) => ({ j, d: dist(i, j) }))
-        .sort((a, b) => a.d - b.d)[0];
-      if (near) addEdge(i, near.j);
-    }
-  }
-
-  // --- Graph-Zusammenhang sicherstellen (Union-Find + kürzeste Brücken) ---
-  class DSU {
-    p: number[]; r: number[];
-    constructor(n: number) { this.p = Array.from({ length: n }, (_, i) => i); this.r = Array(n).fill(0); }
-    find(a: number): number { return this.p[a] === a ? a : (this.p[a] = this.find(this.p[a])); }
-    union(a: number, b: number) {
-      a = this.find(a); b = this.find(b);
-      if (a === b) return false;
-      if (this.r[a] < this.r[b]) [a, b] = [b, a];
-      this.p[b] = a; if (this.r[a] === this.r[b]) this.r[a]++;
-      return true;
-    }
-  }
-  const dsu = new DSU(nodes.length);
-  for (const [a, b] of edges) dsu.union(a, b);
-
-  const comps = () => {
-    const s = new Map<number, number[]>();
-    nodes.forEach((_, i) => {
-      const f = dsu.find(i);
-      if (!s.has(f)) s.set(f, []);
-      s.get(f)!.push(i);
-    });
-    return Array.from(s.values());
-  };
-
-  let groups = comps();
-  while (groups.length > 1) {
-    let bestA = -1, bestB = -1, bestD = Infinity;
-    for (let g = 0; g < groups.length; g++) {
-      for (let h = g + 1; h < groups.length; h++) {
-        for (const a of groups[g]) {
-          for (const b of groups[h]) {
-            // kleine Penalty für gleiche "Art", damit eher über Hidden/quer verbunden wird
-            const penalty = nodes[a].kind === nodes[b].kind ? 1.08 : 1.0;
-            const d = dist(a, b) * penalty;
-            if (d < bestD) { bestD = d; bestA = a; bestB = b; }
-          }
-        }
-      }
-    }
-    if (bestA >= 0) {
-      addEdge(bestA, bestB);
-      dsu.union(bestA, bestB);
-      groups = comps();
-    } else break;
-  }
-
-  const NODE_R = 12;
-  const EDGE_W = 4; // vorher 5.5
-
-  return (
-    <svg
-      viewBox={`0 0 ${width} ${height}`}
-      className="block w-full"
-      style={{ height: `${height}px` }} // ⬅️ macht die Box sichtbar höher
-    >
-      <defs>
-        <linearGradient id={`bg-${seed}`} x1="0" y1="1" x2="0" y2="0">
-          <stop offset="0%" stopColor="#000" />
-          <stop offset="100%" stopColor="#0a0f12" />
-        </linearGradient>
-      </defs>
-
-      {/* edges */}
-      <g stroke="#ffffff" strokeWidth={EDGE_W} strokeLinecap="round" strokeLinejoin="round" opacity="0.92">
-        {edges.map(([a, b], i) => (
-          <line key={i} x1={nodes[a].x} y1={nodes[a].y} x2={nodes[b].x} y2={nodes[b].y} />
-        ))}
-      </g>
-
-      {/* nodes */}
-      <g>
-        {nodes.map((n) => (
-          <circle key={n.id} cx={n.x} cy={n.y} r={NODE_R} fill={n.kind === "hid" ? "#ffffff" : "#00FFD1"} />
-        ))}
-      </g>
-    </svg>
-  );
-}
-
-
-/* ---------- small helpers ---------- */
-function mulberry32(a: number) {
-  return function () {
-    let t = (a += 0x6D2B79F5);
-    t = Math.imul(t ^ (t >>> 15), t | 1);
-    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
-function clamp(v: number, mn: number, mx: number) {
-  return Math.max(mn, Math.min(mx, v));
-}
-function WhitepaperStat({ value, label, href }: { value: string; label: string; href: string }) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-      className="block text-center rounded-lg border border-white/10 bg-black/40 p-3 hover:bg-black/60 transition"
-    >
-      <div className="text-xl font-bold text-[#00FFD1]">{value}</div>
-      <div className="text-xs text-gray-300">{label}</div>
-    </a>
-  );
-}
 
 
 function GetStarted() {
@@ -947,6 +453,98 @@ function ShowcaseSection() {
   );
 }
 
+function InventionSection() {
+  const inventions = [
+    {
+      title: "1. Analyze Application",
+      titleId: "oneai.invention.training.title", 
+      image: "/img/ai/Input.webp",
+      description: "ONE AI gets the best results if the dataset focusses on a specific task. First it analyzes the data, labels, hardware constraints, needed performance and application context. For example, it analyzes the object sizes in images.",
+      descriptionId: "oneai.invention.training.description"
+    },
+    {
+      title: "2. Predict AI Features",
+      titleId: "oneai.invention.architecture.title",
+      image: "/img/ai/Prediction.webp",
+      description: "ONE AI then uses its knowledge about existing AI research and previously optimized AI models to predict the needed features for the AI model architecture. For example, bigger objects need larger receptive fields.",
+      descriptionId: "oneai.invention.architecture.description"
+    },
+    {
+      title: "3. Build & Train AI Model",
+      titleId: "oneai.invention.generation.title",
+      image: "/img/ai/Architecture.webp", 
+      description: "ONE AI takes the predictions and then builds a custom neural network architecture that fits all predicted features. Then the AI is trained on the dataset and only learns the relevant information.",
+      descriptionId: "oneai.invention.generation.description"
+    },
+    {
+      title: "4. Deploy Anywhere",
+      titleId: "oneai.invention.deployment.title",
+      image: "/img/ai/Export.webp",
+      description: "Finally the AI can be deployed across FPGAs, microcontrollers, GPUs, and CPUs without modification. ONE AI handles all the complexity of hardware optimization and implementation automatically.",
+      descriptionId: "oneai.invention.deployment.description"
+    }
+  ];
+
+  return (
+    <section className="py-16 md:py-24 bg-gradient-to-b from-gray-900 to-black">
+      <div className="container mx-auto px-4">
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <Translate id="oneai.invention.section.title">
+              Reinventing AI Development
+            </Translate>
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <Translate id="oneai.invention.section.subtitle">
+              Our AI-powered AI-developer invents entirely new AI-models for your needs.
+            </Translate>
+          </p>
+        </div>
+
+        {/* Responsive Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+          {inventions.map((invention, index) => (
+            <div key={index} className="bg-gray-800/50 rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300 hover:transform hover:scale-105">
+              {/* Title */}
+              <h3 className="text-xl font-bold mb-3 text-white">
+                <Translate id={invention.titleId}>
+                  {invention.title}
+                </Translate>
+              </h3>
+              
+              {/* Image */}
+              <div className="w-full h-64 mb-6 rounded-lg overflow-hidden bg-gray-700/50 flex items-center justify-center">
+                <img 
+                  src={useBaseUrl(invention.image)}
+                  alt=""
+                  className="w-full h-full object-contain"
+                  onError={(e) => {
+                    // Fallback to placeholder if image doesn't exist
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.parentElement!.innerHTML = `
+                      <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#00FFD1]/20 to-[#00FFD1]/5">
+                        <div class="text-4xl text-[#00FFD1] opacity-50">🚀</div>
+                      </div>
+                    `;
+                  }}
+                />
+              </div>
+              
+              {/* Description */}
+              <p className="text-gray-300 leading-relaxed">
+                <Translate id={invention.descriptionId}>
+                  {invention.description}
+                </Translate>
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function OneAi() {
   const slickRef = useRef<Slider>(null);
 
@@ -961,7 +559,7 @@ export default function OneAi() {
       <HomepageHeader />
 
       <main>
-        <AdaptiveArchitectureSection />
+        <InventionSection />
 
         <div className="bottomsplit">
           <ComparisonSection />

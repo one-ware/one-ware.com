@@ -53,7 +53,7 @@ function HomepageHeader() {
                 <Translate id="homepage.subtitle.description">
                   The world relies on foundation AI models bloated with unnecessary data.
                   ONE AI provides intelligence tailored exactly to your application.
-                  What takes experts months to build is automatically generated in 0.7 seconds. 
+                  What takes experts months to build is automatically generated in 0.7 seconds by our AI-powered AI Developer.
                   Deployed with maximum performance and our open-source software, 
                   even on the smallest hardware.
                 </Translate>
