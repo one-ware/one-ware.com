@@ -208,11 +208,11 @@ function ComparisonSection() {
   return (
     <div id="comparison" className="py-12 md:py-20 overflow-hidden">
       <div className="container mx-auto px-4 text-center">
-        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-12 font-bold px-4">
+        <h1 className="text-2xl md:text-4xl mb-12 font-bold px-4">
           <Translate id="oneai.comparison.title">
             Deployed with ONE Click
           </Translate>
-        </p>
+        </h1>
       </div>
 
       <div className="relative">
@@ -561,11 +561,8 @@ export default function OneAi() {
       <main>
         <InventionSection />
 
-        <div className="bottomsplit">
-          <ComparisonSection />
-        </div>
 
-        <div className="text-center mt-16 md:pb-2 pb-16 container overflow-x-hidden">
+        <div className="text-center mt-12 md:pb-2 pb-12 container overflow-x-hidden bottomsplit">
           <h1 className="text-2xl md:text-4xl">
             <Translate id="oneai.compare.heading">
               The Entire AI Development Process Automated in One Tool
@@ -632,6 +629,9 @@ export default function OneAi() {
             </div>
           )}
         </div>
+
+        
+          <ComparisonSection />
 
         <div className="dropshadowbottom">
           <div id="getStarted" className="dropshadowtop-inset pt-20 pb-5" style={{
