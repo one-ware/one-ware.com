@@ -36,7 +36,7 @@
     "message": "Jetzt Loslegen"
   },
   "homepage.subtitle.description": {
-    "message": "Die Welt vertraut auf Foundation-KI-Modelle, die mit unnötigen Daten aufgebläht sind. ONE AI bietet Intelligenz, die exakt auf Ihre Anwendung zugeschnitten ist. Was Experten Monate kostet, wird automatisch in 0,7 Sekunden generiert. Bereitgestellt mit maximaler Leistung und unserer Open-Source-Software, selbst auf kleinster Hardware."
+    "message": "Die Welt vertraut auf Foundation-KI-Modelle, die mit unnötigen Daten aufgebläht sind. ONE AI bietet Intelligenz, die exakt auf Ihre Anwendung zugeschnitten ist. Was Experten Monate kostet, wird automatisch von unserer KI in 0,7 Sekunden generiert. Bereitgestellt mit maximaler Leistung und unserer Open-Source-Software, selbst auf kleinster Hardware."
   },
   "homepage.button.discover": {
     "message": "ONE AI Entdecken"
@@ -343,7 +343,7 @@
     "message": "Die nächste Generation der KI-Entwicklung"
   },
   "oneai.hero.nextgen.subtitle1": {
-    "message": "KI-Modelle, die in Sekunden für Ihre Bedürfnisse erfunden werden."
+    "message": "KI-Modelle, die in Sekunden von unserem KI-gestützten KI-Entwickler für Ihre Bedürfnisse erfunden werden."
   },
   "oneai.hero.nextgen.subtitle2": {
     "message": "Die All-in-ONE-Lösung, optimiert für Edge AI, Vision AI und Embedded Intelligence."
@@ -380,6 +380,36 @@
   },
   "oneai.innovation.bullet4.text": {
     "message": "KI-Modelle können als Modell, vorgefertigtes Programm oder mit UI in ONE WARE Studio bereitgestellt werden."
+  },
+    "oneai.invention.section.title": {
+    "message": "KI-Entwicklung neu erfunden"
+  },
+  "oneai.invention.section.subtitle": {
+    "message": "Unser KI-gestützter KI-Entwickler erfindet völlig neue KI-Modelle für Ihre Bedürfnisse."
+  },
+  "oneai.invention.training.title": {
+    "message": "1. Anwendung Analysieren"
+  },
+  "oneai.invention.training.description": {
+    "message": "ONE AI erzielt die besten Ergebnisse, wenn der Datensatz auf eine spezifische Aufgabe fokussiert ist. Zuerst analysiert es die Daten, Labels, Hardware-Beschränkungen, benötigte Leistung und den Anwendungskontext. Zum Beispiel analysiert es die Objektgrößen in Bildern."
+  },
+  "oneai.invention.architecture.title": {
+    "message": "2. KI-Features Vorhersagen"
+  },
+  "oneai.invention.architecture.description": {
+    "message": "ONE AI nutzt dann sein Wissen über bestehende KI-Forschung und zuvor optimierte KI-Modelle, um die benötigten Features für die KI-Modell-Architektur vorherzusagen. Zum Beispiel benötigen größere Objekte größere rezeptive Felder."
+  },
+  "oneai.invention.generation.title": {
+    "message": "3. KI-Modell Erstellen & Trainieren"
+  },
+  "oneai.invention.generation.description": {
+    "message": "ONE AI nimmt die Vorhersagen und erstellt dann eine maßgeschneiderte neuronale Netzwerk-Architektur, die alle vorhergesagten Features erfüllt. Dann wird die KI auf dem Datensatz trainiert und lernt nur die relevanten Informationen."
+  },
+  "oneai.invention.deployment.title": {
+    "message": "4. Überall Implementieren"
+  },
+  "oneai.invention.deployment.description": {
+    "message": "Schließlich kann die KI ohne Änderungen auf FPGAs, Mikrocontrollern, GPUs und CPUs bereitgestellt werden. ONE AI übernimmt automatisch die gesamte Komplexität der Hardware-Optimierung und -Implementierung."
   },
   "studio.slider.codeAssistant.title": {
     "message": "Code-Assistent"

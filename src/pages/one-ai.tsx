@@ -102,7 +102,7 @@ function HomepageHeader() {
               </h1>
               <h2 className=" text-xl md:text-2xl mb-7 font-normal">
                 <Translate id="oneai.hero.nextgen.subtitle1">
-                  AI Models Invented in Seconds for Your Needs, by our AI-powered AI Developer.
+                  AI Models Invented in Seconds for Your Needs by our AI-powered AI Developer.
                 </Translate>
                 <br/>
                 <Translate id="oneai.hero.nextgen.subtitle2">
