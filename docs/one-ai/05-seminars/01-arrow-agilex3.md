@@ -114,6 +114,47 @@ ONE WARE provides the missing link between **cloud-based AI development** and **
 
 ---
 
+### Asia Pacific (Form Link: [Contact Arrow Electronics for registration details](https://www.arrow.com/en/company/contact-arrow))
+
+#### China (PRC)
+| Date       | City / Country  | Speakers |
+|------------|-----------------|----------|
+| 14.10.2025 | Beijing, China  | Fred Zhao/Aaron Liu |
+| 28.10.2025 | Wuhan, China    | Zoe Zhang/Cherry Ma |
+| 05.11.2025 | Shenzhen, China | Hongxia Qiu/Cherry Ma |
+| 12.11.2025 | Hangzhou, China | Shirui Hou/David Xue |
+| 19.11.2025 | Nanjing, China  | Harman Hu/David Xue |
+| 26.11.2025 | Suzhou, China   | Leon Chen/David Xue |
+| 03.12.2025 | Shanghai, China | Leon Chen/David Xue |
+| 10.12.2025 | Shenzhen, China | Hongxia Qiu/Cherry Ma |
+| 16.12.2025 | Chengdu, China  | Jason Wang/David Xue |
+| 23.12.2025 | Beijing, China  | Fred Zhao/Aaron Liu |
+
+#### Taiwan
+| Date       | City / Country  | Speakers |
+|------------|-----------------|----------|
+| 15.10.2025 | Taipei, Taiwan  | Jay Wang |
+| 14.11.2025 | HsinChu, Taiwan | Aaron Hsu |
+| 11.12.2025 | Taipei, Taiwan  | Jay Wang |
+
+#### Southeast Asia
+| Date       | City / Country  | Speakers |
+|------------|-----------------|----------|
+| 31.10.2025 | Singapore       | Kevin Choo |
+| 14.11.2025 | Malaysia        | Kevin Choo |
+| 21.11.2025 | Hanoi, Vietnam  | Duc Long LE |
+
+#### India
+| Date       | City / Country  | Speakers |
+|------------|-----------------|----------|
+| 16.10.2025 | Hyderabad, India | Mahesh/Chandra/Amol |
+| 29.10.2025 | Bangalore, India | Mahesh/Chandra/Amol |
+| 06.11.2025 | Delhi, India     | Mahesh/Chandra/Mayank |
+| 27.11.2025 | Pune, India      | Mahesh/Chandra/Mayank |
+| 02.12.2025 | Chennai, India   | Mahesh/Chandra |
+
+---
+
 ### Practical Information
 - **Requirements**: Own laptop with Quartus Prime Pro 25.1.1 installed  
 - **Audience**: FPGA, software, and AI developers of all levels  
