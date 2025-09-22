@@ -6,7 +6,7 @@ sidebar_label: Get Free Credits
 
 # Open Source Program
 
-## Empowering Non-Commercial Innovation
+## Empowering Open-Source Innovation
 
 At ONE WARE, we believe that the future of AI belongs to everyone. The **Open Source Program** supports **non-commercial open source, academic, and research initiatives** that explore and prototype with ONE AI.
 
