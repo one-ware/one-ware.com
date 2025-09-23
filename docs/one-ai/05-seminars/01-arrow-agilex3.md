@@ -114,7 +114,7 @@ ONE WARE provides the missing link between **cloud-based AI development** and **
 
 ---
 
-### Asia Pacific (Form Link: [Contact Arrow Electronics for registration details](https://www.arrow.com/en/company/contact-arrow))
+### Asia Pacific (Contact Arrow locally for registration to the workshop)
 
 #### China (PRC)
 | Date       | City / Country  | Speakers |
