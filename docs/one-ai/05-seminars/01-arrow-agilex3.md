@@ -9,7 +9,8 @@ With the worldwide hands-on workshop by **Arrow** you have the opportunity to:
 
 1. **Learn about FPGA development for FREE**  
 2. **Build your own ultra-efficient and high-speed AI with ONE AI**  
-3. **Win an AXC3000 Board at each event**  
+3. **Get a coupon for 500 € worth in credits for AI training on top of the welcome credits**
+4. **Win an AXC3000 Board at each event**  
 
 <img src="/img/ai/one_ai_plugin/seminars/axe3000.webp" alt="axe3000" style={{ width: '50%' }} />
 
