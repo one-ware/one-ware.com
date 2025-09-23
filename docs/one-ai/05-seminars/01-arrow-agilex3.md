@@ -38,10 +38,9 @@ Whether you are just starting with FPGA development or already experienced in AI
 
 ![ONE AI](/img/ai/Pre.png)
 
-ONE WARE provides the missing link between **cloud-based AI development** and **high-performance FPGA deployment**.  
-- **Seamless integration**: End-to-end workflow from dataset to deployment  
-- **Industrial focus**: Optimized for speed, energy efficiency, and reliability  
-- **Powerful ecosystem**: Together with **Arrow** and **Altera**, ONE WARE enables a complete AI solution — hardware, software, and AI tools combined  
+With the highly efficient AI models, created by ONE AI, high-performance AI deployment on FPGAs become possible. 
+The AI models are always generated from scratch for each application and only learn the necessary information. This makes the AI models more efficient, faster and also more accurate.
+Together with ONE WARE Studio you benefit from an end-to-end workflow from dataset to deployment. This includes automated labelling and export for any hardware.
 
 ---
 
