@@ -46,20 +46,6 @@ ONE WARE provides the missing link between **cloud-based AI development** and **
 
 ## Dates & Locations
 
-### Europe (Form Link: [Register here](https://forms.office.com/r/veR7MBE4xC))
-| Date       | City / Country  | Venue |
-|------------|-----------------|-------|
-| 08.10.2025 | Oslo, Norway    | Arrow Office, Innspurten 1a |
-| 09.10.2025 | Trondheim, Norway | Scandic Solsiden, Beddingen 1 |
-| 14.10.2025 | Tallinn, Estonia | Arrow Office, Sõpruse pst 145 |
-| 21.10.2025 | Kista, Sweden   | Arrow Office, Kronborgsgränd 7 |
-| 29.10.2025 | Aarhus/Viby, Denmark | Arrow Office, Jens Juuls Vej 42 |
-| 30.10.2025 | Ballerup, Denmark | Arrow Office, Lautruphøj 2, 6 |
-| 04.11.2025 | Oulu, Finland   | Technopolis Pikisaari, Elektroniikkatie 10 |
-| 05.11.2025 | Tampere, Finland | Technopolis Asemakeskus, Peltokatu 26 |
-
----
-
 ### France (Form Link: [Register here](https://forms.office.com/r/kDc99uBrzM))
 | Date       | City / Country  | Venue |
 |------------|-----------------|-------|
@@ -85,6 +71,20 @@ ONE WARE provides the missing link between **cloud-based AI development** and **
 | 02.12.2025 | Freiburg, Germany | Am Gansacker 10, 79224 Freiburg |
 | 09.12.2025 | Berlin, Germany | Regus Center Signature P1, Potsdamer Platz 1, 10785 Berlin |
 | TBD        | Leipzig, Germany | Hauptstrasse 103, 4416 Leipzig |
+
+---
+
+### Europe (Form Link: [Register here](https://forms.office.com/r/veR7MBE4xC))
+| Date       | City / Country  | Venue |
+|------------|-----------------|-------|
+| 08.10.2025 | Oslo, Norway    | Arrow Office, Innspurten 1a |
+| 09.10.2025 | Trondheim, Norway | Scandic Solsiden, Beddingen 1 |
+| 14.10.2025 | Tallinn, Estonia | Arrow Office, Sõpruse pst 145 |
+| 21.10.2025 | Kista, Sweden   | Arrow Office, Kronborgsgränd 7 |
+| 29.10.2025 | Aarhus/Viby, Denmark | Arrow Office, Jens Juuls Vej 42 |
+| 30.10.2025 | Ballerup, Denmark | Arrow Office, Lautruphøj 2, 6 |
+| 04.11.2025 | Oulu, Finland   | Technopolis Pikisaari, Elektroniikkatie 10 |
+| 05.11.2025 | Tampere, Finland | Technopolis Asemakeskus, Peltokatu 26 |
 
 ---
 
