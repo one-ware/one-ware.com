@@ -55,6 +55,14 @@ Together with ONE WARE Studio you benefit from an end-to-end workflow from datas
 
 ---
 
+### Italy (Form Link: [Register here](https://forms.office.com/pages/responsepage.aspx?id=NQzrC7uc60-Z5VieQVx5RANIh9iy37VAuT0ulq6AW4lUOVI2STlYWjlLMVVMV0cxMk4zWkU5TUw1RyQlQCNjPTEu&utm_source=linkedin_company&utm_medium=social&utm_campaign=arrow+social+post&route=shorturl))
+| Date       | City / Country  | Venue |
+|------------|-----------------|-------|
+| 23.10.2025 | Florence, Italy | Arrow Office, Via Sandro Pertini 95, Sesto Fiorentino (FI) |
+| 13.11.2025 | Bologna, Italy  | Arrow Office, Via Marabini 3, 40013 Castel Maggiore (BO) |
+
+---
+
 ### DACH + Benelux (Form Link: [Register here](https://forms.office.com/pages/responsepage.aspx?id=NQzrC7uc60-Z5VieQVx5RPFotgxDwR5Hu9zeXz3eW5pUQjQxOVlRWlJYS05QMTNSNEJNTUk3QU9OMy4u&route=shorturl))
 | Date       | City / Country  | Venue |
 |------------|-----------------|-------|
