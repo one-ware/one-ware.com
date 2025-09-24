@@ -63,6 +63,14 @@ Together with ONE WARE Studio you benefit from an end-to-end workflow from datas
 
 ---
 
+### United Kingdom (Form Link: [Register here](https://forms.office.com/Pages/ResponsePage.aspx?id=NQzrC7uc60-Z5VieQVx5RKOpGkQgmrRKhIwrW2H-yo9UQjlLTDQ2MDc2SDdYNjhYUkNMTjQzVkpYTS4u))
+| Date       | City / Country  | Venue |
+|------------|-----------------|-------|
+| 18.11.2025 | Marlow, UK      | Altera Marlow, Eclipse Parkway, Marlow, SL7 1YL |
+| 19.11.2025 | Cambridge, UK   | Airborne Assault Ltd, Duxford Airfield, Duxford CB22 4QR |
+
+---
+
 ### DACH + Benelux (Form Link: [Register here](https://forms.office.com/pages/responsepage.aspx?id=NQzrC7uc60-Z5VieQVx5RPFotgxDwR5Hu9zeXz3eW5pUQjQxOVlRWlJYS05QMTNSNEJNTUk3QU9OMy4u&route=shorturl))
 | Date       | City / Country  | Venue |
 |------------|-----------------|-------|
