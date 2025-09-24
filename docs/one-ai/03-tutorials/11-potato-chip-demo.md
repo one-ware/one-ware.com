@@ -6,7 +6,7 @@ sidebar_label: Simple Quality Control (Potato Chips)
 # Potato Chip Classification Demo
 
 ## About this Demo
-This demo showcases the usage of OneWare Studio and the OneAI Extension for a demo case. If you are unfamiliar with the OneAI Extension, we recommend to first take a look at our guide [Getting Started with One AI](/docs/one-ai/01-get-started.md).
+This demo showcases the usage of OneWare Studio and the OneAI Extension for a demo case. If you are unfamiliar with the OneAI Extension, we recommend to first take a look at our guide [Getting Started with One AI](/docs/one-ai/01-getting-started/01-getting-started.md).
 
 ## Dataset Overview
 The dataset *PepsiCo Lab Potato Chips Quality Control* was published by the user Usama Navid on the platform [kaggle](https://www.kaggle.com/datasets/concaption/pepsico-lab-potato-quality-control). It contains quality control images from a food processing plant that produces potato chips. During the production process, the chips can get burned making them unsuitable for consumption. Our goal for this demo is to create an AI that can classify an image of a potato chip as defective or non-defective. Such an AI could be used for quality control to sort out defective chips.
