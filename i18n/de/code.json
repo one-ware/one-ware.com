@@ -339,11 +339,20 @@
   "oneai.comparison.title": {
     "message": "KI Integrieren mit einem Klick"
   },
-  "oneai.hero.nextgen.title": {
-    "message": "Die nächste Generation der KI-Entwicklung"
+  "oneai.hero.nextgen.title.start": {
+    "message": "Sehen Sie die Macht "
+  },
+  "oneai.hero.nextgen.title.dataset": {
+    "message": "Ihres Datensatzes"
+  },
+  "oneai.hero.nextgen.title.middle": {
+    "message": " mit der "
+  },
+  "oneai.hero.nextgen.title.ai": {
+    "message": "richtigen KI"
   },
   "oneai.hero.nextgen.subtitle1": {
-    "message": "KI-Modelle, die in Sekunden von unserem KI-gestützten KI-Entwickler für Ihre Bedürfnisse erfunden werden."
+    "message": "KI-Modelle, die in Sekunden von unserer KI für Ihre Bedürfnisse erfunden werden."
   },
   "oneai.hero.nextgen.subtitle2": {
     "message": "Die All-in-ONE-Lösung, optimiert für Edge AI, Vision AI und Embedded Intelligence."
@@ -385,7 +394,7 @@
     "message": "KI-Entwicklung neu erfunden"
   },
   "oneai.invention.section.subtitle": {
-    "message": "Unser KI-gestützter KI-Entwickler erfindet völlig neue KI-Modelle für Ihre Bedürfnisse."
+    "message": "Verschwenden Sie Ihren individuellen Datensatz nicht an ein generisches KI-Modell. Unsere KI entwirft automatisch KI Modelle, die auf Ihre Daten zugeschnitten sind und Foundation-Modelle sowie NAS in nur 0,7 Sekunden übertreffen."
   },
   "oneai.invention.training.title": {
     "message": "1. Anwendung Analysieren"

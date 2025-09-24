@@ -31,7 +31,7 @@ function HomepageHeader() {
       <div className="absolute inset-0 z-0">
         {/* Desktop: Video Animation */}
         <video
-          src={require("@site/static/img/animation.mp4").default}
+          src={require("@site/static/img/animation.webm").default}
           autoPlay
           muted
           loop

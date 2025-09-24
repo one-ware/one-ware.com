@@ -96,13 +96,18 @@ function HomepageHeader() {
           <div className="flex-col max-w-5xl mx-auto mt-10">
             <div className="text-center mt-10">
               <h1 className="font-bold text-3xl md:text-4xl mb-4">
-                <Translate id="oneai.hero.nextgen.title">
-                  The Next Generation of AI Development
-                </Translate>
+                <Translate id="oneai.hero.nextgen.title.start">See the Power of </Translate>
+                <span className="primary-text">
+                  <Translate id="oneai.hero.nextgen.title.dataset">Your Dataset</Translate>
+                </span>
+                <Translate id="oneai.hero.nextgen.title.middle"> With the </Translate>
+                <span className="primary-text">
+                  <Translate id="oneai.hero.nextgen.title.ai">Right AI</Translate>
+                </span>
               </h1>
               <h2 className=" text-xl md:text-2xl mb-7 font-normal">
                 <Translate id="oneai.hero.nextgen.subtitle1">
-                  AI Models Invented in Seconds for Your Needs by our AI-powered AI Developer.
+                  AI Models Invented in Seconds for Your Needs by our AI.
                 </Translate>
                 <br/>
                 <Translate id="oneai.hero.nextgen.subtitle2">
@@ -456,14 +461,14 @@ function ShowcaseSection() {
 function InventionSection() {
   const inventions = [
     {
-      title: "1. Analyze Application",
+      title: "1. Automated Analysis",
       titleId: "oneai.invention.training.title", 
       image: "/img/ai/Input.webp",
       description: "ONE AI gets the best results if the dataset focusses on a specific task. First it analyzes the data, labels, hardware constraints, needed performance and application context. For example, it analyzes the object sizes in images.",
       descriptionId: "oneai.invention.training.description"
     },
     {
-      title: "2. Predict AI Features",
+      title: "2. AI Feature Prediction",
       titleId: "oneai.invention.architecture.title",
       image: "/img/ai/Prediction.webp",
       description: "ONE AI then uses its knowledge about existing AI research and previously optimized AI models to predict the needed features for the AI model architecture. For example, bigger objects need larger receptive fields.",
@@ -495,9 +500,9 @@ function InventionSection() {
               Reinventing AI Development
             </Translate>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-4xl mx-auto">
             <Translate id="oneai.invention.section.subtitle">
-              Our AI-powered AI-developer invents entirely new AI-models for your needs.
+              Don't waste your custom dataset on a generic AI model. Our AI automatically designs models tailored to your data, outperforming foundation models and NAS in just 0.7 seconds.
             </Translate>
           </p>
         </div>
