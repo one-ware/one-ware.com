@@ -113,7 +113,7 @@ Together with ONE WARE Studio you benefit from an end-to-end workflow from datas
 
 ---
 
-### Europe (Form Link: [Register here](https://forms.office.com/r/veR7MBE4xC))
+### Nordic (Form Link: [Register here](https://forms.office.com/r/veR7MBE4xC))
 | Date       | City / Country  | Venue |
 |------------|-----------------|-------|
 | 08.10.2025 | Oslo, Norway    | Arrow Office, Innspurten 1a |
