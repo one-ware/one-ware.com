@@ -1,15 +1,55 @@
 ---
 id: getting-started
-title: Getting Started with One AI
+title: Getting Started with ONE AI
 sidebar_label: Getting Started
 ---
 
-# Getting Started with One AI
+## What is ONE AI and why should I use it?
+ONE AI is a tool that allows you to create a custom AI model that is tailored to your individual needs. With ONE AI you can configure your AI in minutes without the need to be an expert in AI development. This allows everyone to benefit from the potential of AI.
 
-This guide first explains how to set up ONE AI and then explains all features and how to get the best out of your AI. But ONE AI is intelligent enough, so you don't need to understand each setting to get very good results that usually exceed all universal AI models. If you then also follow all information on this site, you can get even better results that often exceed the work of human experts. On the left, you can find more tutorials with datatset examples and more detailed explanation on how to set parameters. 
+You don't need any powerful hardware to use ONE AI. You configure your AI model in our open source software and run the hardware intensive training on our servers. Our neural architecture prediction algorithm is designed to take your deployment hardware into account when generating the model. This means that the generated models will be a lot faster than generic models and run even on the smallest hardware.
 
-If you have any questions: Don't hesitate to ask our team for help via mail: support@one-ware.com or you can ask in our [Discord for ONE WARE Studio and ONE AI](https://discord.com/invite/NCN9VAh).
-This helps us as well, because we then know what tutorials we can do next. 
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+  <img src="/img/ai/quality_dev.png" alt="Quality Control" style={{ width: '40%' }} />
+</div>
+
+### How does ONE AI work?
+
+<div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+  <div style={{ flex: 1 }}>
+    <p>
+      ONE AI starts by analyzing the requirements of your task. It takes into account your configurations, the data and its labels, the hardware constraints and the required performance. For example, it analyzes the size of the different objects in the images.
+    </p>
+  </div>
+  <img src="/img/ai/Input.webp" alt="input" style={{ width: '200px', flexShrink: 0 }} />
+</div>
+
+<div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+  <img src="/img/ai/Prediction.webp" alt="prediction" style={{ width: '200px', flexShrink: 0 }} />
+  <div style={{ flex: 1 }}>
+    <p>
+      ONE AI then uses its knowledge about existing AI research and previously optimized AI models to predict the needed features for the AI model architecture. For example, if you have large objects, your AI model needs to look at a larger area in the images.
+    </p>
+  </div>
+</div>
+
+<div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+  <div style={{ flex: 1 }}>
+    <p>
+      ONE AI takes the predicted features and uses them to build a custom neural network architecture that fits your needs. Then the AI is trained on the dataset. Since the model is customized to your data, it only learns the relevant information and is a lot less prone to overfitting than generic models.
+    </p>
+  </div>
+  <img src="/img/ai/Architecture.webp" alt="architecture" style={{ width: '200px', flexShrink: 0 }} />
+</div>
+
+<div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+  <img src="/img/ai/Export.webp" alt="export" style={{ width: '200px', flexShrink: 0 }} />
+  <div style={{ flex: 1 }}>
+    <p>
+      Finally the AI can be deployed across FPGAs, microcontrollers, GPUs, and CPUs without modification. ONE AI handles all the complexity of hardware optimization and implementation automatically.
+    </p>
+  </div>
+</div>
 
 ## 1. Setup
 To use ONE AI you need to create an account for the OneWare Cloud and install OneWare Studio and the OneAI Extension. We have a dedicated [guide](/docs/one-ai/getting-started/installation) that walks you through the setup step by step. New users receive a welcome bonus of 25.000 credits worth 500 € for free. All you need to do is to create an account and enter your address to complete the registration process. You won't be charged with any fees.
@@ -464,3 +504,6 @@ Check out our examples like:
 1. [A quality control of potato chips](/docs/one-ai/tutorials/potato-chip-demo)
 2. [A detection of handwritten digits](/docs/one-ai/tutorials/handwritten-digits-demo)
 3. [An object detection of dice](/docs/one-ai/tutorials/dice-demo)
+
+If you have any questions: Don't hesitate to ask our team for help via mail: support@one-ware.com or you can ask in our [Discord for ONE WARE Studio and ONE AI](https://discord.com/invite/NCN9VAh).
+This helps us as well, because we then know what tutorials we can do next. 
