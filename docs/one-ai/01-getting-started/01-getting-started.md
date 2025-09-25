@@ -76,7 +76,9 @@ You can find more in depth information about handling your dataset in [this guid
 ### Load Your Images
 To load your images into OneWare Studio, you need to go to the **Dataset** tab in your ONE AI workspace. There you have a button at the top-right that allows you to import your data.
 
-![Training Data View](/img/ai/one_ai_plugin/getting_started/training_data_view.png)
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+  <img src="/img/ai/one_ai_plugin/getting_started/training_data_view.png" alt="Training Data View" style={{ width: '70%' }} />
+</div>
 
 You have the option to import datasets with existing annotations or just load the images. You can also use the ``Camera Tool`` to record images or the ``Spectrogram Generator`` to convert audio or time series data to images.
 
@@ -88,10 +90,6 @@ The next step is to choose what kind of predictions you want your model to make,
 Here are some examples for the two types of predictions:
 - **Classes**: predicting whether a product is defective or not, predicting which number is visible in an image
 - **Objects**: marking individual defects, detecting objects on a conveyor belt
-
-
-### Split Your Dataset
-An important step in the dataset setup is to divide the dataset into distinct subsets for training, validation and testing. This makes it possible to detect overfitting and do an unbiased evaluation on how the model performs on new data. If you already have existing subsets, you need to import the subsets individually instead of importing the whole dataset at once. Otherwise, you can let ONE AI split the dataset for you.
 
 ### Label Your Data
 If your data isn't annotated yet, you can use OneWare Studio's ``Annotation Tool`` to create annotations. First you need to go to the ``Labels`` tab to create the different labels that you want to annotate. Then you need to click on an image to open the ``Annotation Tool``. Here, you can assign classes to the image or draw boxes around the objects depending on the annotation mode.
