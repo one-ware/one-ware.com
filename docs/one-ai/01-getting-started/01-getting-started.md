@@ -461,6 +461,6 @@ One common approach for speeding up the annotation process is to only annotate a
 ## 11. Examples
 
 Check out our examples like:
-1. [A quality control of potato chips](tutorials/potato-chip-demo)
-2. [A detection of handwritten digits](tutorials/handwritten-digits-demo)
-3. [An object detection of dice](tutorials/dice-demo)
+1. [A quality control of potato chips](/docs/one-ai/tutorials/potato-chip-demo)
+2. [A detection of handwritten digits](/docs/one-ai/tutorials/handwritten-digits-demo)
+3. [An object detection of dice](/docs/one-ai/tutorials/dice-demo)
