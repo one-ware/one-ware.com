@@ -392,29 +392,29 @@ function GetStarted() {
           <p className="text-xl md:text-2xl font-bold mt-8">
             <div className="mb-4">
               1.{" "}
-              <a href="https://cloud.one-ware.com/Account/Register" target="_blank" className="underline hover:no-underline">
-                <Translate id="oneai.getstarted.step1.signup">
-                  Sign up
-                </Translate>
-              </a>
-              <Translate id="oneai.getstarted.step1.text">
-                , verify your account, and receive 500 € in credits
-              </Translate>
-            </div>
-            <div className="mb-4">
-              2.{" "}
               <a href="/docs/studio/setup" target="_blank" className="underline hover:no-underline">
                 <Translate id="oneai.getstarted.step2.download">
                   Download
                 </Translate>
               </a>{" "}
               <Translate id="oneai.getstarted.step2.text">
-                ONE WARE Studio
+                ONE WARE Studio with the ONE AI Extension.
+              </Translate>
+            </div>
+            <div className="mb-4">
+              2.{" "}
+              <a href="https://cloud.one-ware.com/Account/Register" target="_blank" className="underline hover:no-underline">
+                <Translate id="oneai.getstarted.step1.signup">
+                  Sign up
+                </Translate>
+              </a>
+              <Translate id="oneai.getstarted.step1.text">
+                , and verify your account.
               </Translate>
             </div>
             <div className="mb-4">
               <Translate id="oneai.getstarted.step3">
-                3. Add the ONE AI Extension
+                3. Build your first AI models for free.
               </Translate>
             </div>
           </p>

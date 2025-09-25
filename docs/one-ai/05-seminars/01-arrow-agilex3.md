@@ -71,6 +71,29 @@ Together with ONE WARE Studio you benefit from an end-to-end workflow from datas
 
 ---
 
+### Eastern Europe & Middle East (Form Link: [Register here](https://forms.office.com/r/CbD01JB2KW))
+| Date       | City / Country  | Venue |
+|------------|-----------------|-------|
+| 15.10.2025 | Ankara, Turkey  | Location TBD |
+| 22.10.2025 | Prague, Czechia | Location TBD |
+| 29.10.2025 | Warsaw, Poland  | Location TBD |
+
+---
+
+### Spain (Form Link: [Contact Arrow Electronics for registration details](https://www.arrow.com/en/company/contact-arrow))
+| Date       | City / Country  | Venue |
+|------------|-----------------|-------|
+| TBD        | Barcelona, Spain | Location TBD |
+
+---
+
+### South Africa
+| Date       | City / Country  | Venue |
+|------------|-----------------|-------|
+| 12.11.2025 | Johannesburg, South Africa | Location TBD |
+
+---
+
 ### DACH + Benelux (Form Link: [Register here](https://forms.office.com/pages/responsepage.aspx?id=NQzrC7uc60-Z5VieQVx5RPFotgxDwR5Hu9zeXz3eW5pUQjQxOVlRWlJYS05QMTNSNEJNTUk3QU9OMy4u&route=shorturl))
 | Date       | City / Country  | Venue |
 |------------|-----------------|-------|
@@ -90,7 +113,7 @@ Together with ONE WARE Studio you benefit from an end-to-end workflow from datas
 
 ---
 
-### Europe (Form Link: [Register here](https://forms.office.com/r/veR7MBE4xC))
+### Nordic (Form Link: [Register here](https://forms.office.com/r/veR7MBE4xC))
 | Date       | City / Country  | Venue |
 |------------|-----------------|-------|
 | 08.10.2025 | Oslo, Norway    | Arrow Office, Innspurten 1a |
