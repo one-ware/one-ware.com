@@ -4,13 +4,13 @@ title: Getting Started with ONE AI
 sidebar_label: Getting Started
 ---
 
-## What is ONE AI and why should I use it?
+## 1. What is ONE AI and why should I use it?
 ONE AI is a tool that allows you to create a custom AI model that is tailored to your individual needs. With ONE AI you can configure your AI in minutes without the need to be an expert in AI development. This allows everyone to benefit from the potential of AI.
 
 You don't need any powerful hardware to use ONE AI. You configure your AI model in our open source software and run the hardware intensive training on our servers. Our neural architecture prediction algorithm is designed to take your deployment hardware into account when generating the model. This means that the generated models will be a lot faster than generic models and run even on the smallest hardware.
 
 <div style={{ display: 'flex', justifyContent: 'center' }}>
-  <img src="/img/ai/quality_dev.png" alt="Quality Control" style={{ width: '40%' }} />
+  <img src="/img/ai/one_ai_plugin/use_cases/capture/preview.png" alt="Use Case" style={{ width: '50%' }} />
 </div>
 
 ### How does ONE AI work?
@@ -51,33 +51,15 @@ You don't need any powerful hardware to use ONE AI. You configure your AI model 
   </div>
 </div>
 
-## 1. Setup
+## 2. Setup
 To use ONE AI you need to create an account for the OneWare Cloud and install OneWare Studio and the OneAI Extension. We have a dedicated [guide](/docs/one-ai/getting-started/installation) that walks you through the setup step by step. New users receive a welcome bonus of 25.000 credits worth 500 € for free. All you need to do is to create an account and enter your address to complete the registration process. You won't be charged with any fees.
 
-## 2. Create a New Project
-Open the Project Creator by clicking on `File -> New -> Project`
-
-<img src="/img/ai/one_ai_plugin/getting_started/new_project.png" alt="New Project" style={{ width: '40%' }} />
-
-### Set Project Options
-![New Project Options](/img/ai/one_ai_plugin/getting_started/project_options.png)
-
-You need to specify the name.
-The other settings are only important if you want to program an FPGA.<br/>
-You can find more information about that [here](/docs/studio/tutorials/create-project/).
-
----
-
-## 3. Initialize the AI Project
-Make sure that the correct project is selected before you create a new AI project.
-
-![Project Selection](/img/ai/one_ai_plugin/getting_started/project_selection.webp)
-
-Navigate to the ``AI`` tab and choose ``Open AI Generator``.
+## 3. Create a new AI project
+The first step to creating your own AI model is to create a new project in OneWare Studio. To do so you need to click on ``AI`` in the menu bar and select ``Open AI Generator``.
 
 ![New AI](/img/ai/one_ai_plugin/getting_started/new_ai.webp)
 
-Enter your ``AI Project Name`` and choose the ``AI Type``. 
+Enter your ``Project Name`` and choose the ``AI Type``. 
 
 ![AI Generator](/img/ai/one_ai_plugin/getting_started/ai_generator.png)
 
