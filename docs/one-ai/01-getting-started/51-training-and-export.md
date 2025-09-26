@@ -34,23 +34,27 @@ During the training you can see the current training progress in the ``Statistic
 
 ## Exporting a trained Model
 
-To test your AI model, you can export it as an AI model or as a complete project by clicking on the `Export` button.
+To test your AI model, you can export it as an AI model or as a complete project by clicking on the `Export` button. If you are missing an export option that you need for your AI project, feel free to [contact](docs/contact) us and we will see what we can do.
 
 ![Export 1](/img/ai/one_ai_plugin/getting_started/export_1.png)
 
-This opens the export window, which allows you to configure different settings for the export:
+Clicking the `Export` button opens the export window, which allows you to configure different settings for the export:
 - ``Export type``: You can choose whether you want to export just the model as a file (``model``) or to export it along with execution routines in various languages either compiled as an executable binary (``executable``) or as source code (``project``).
 - ``Model type``: There are different model types that can be generated:
     - ``TensorFlow``: The standard TensorFlow model format.
     - ``TensorFlow Lite``: The TensorFlow Lite format is optimized for mobile and embedded devices. You can use this for microcontrollers, FPGAs with processors and other efficient AI implementation on processors.
     - ``ONNX``: The [Open Neural Network Exchange](https://onnx.ai/) format ensures compatibility across different frameworks. It is also used by OneWare Studio for running a live preview of the model and for auto-labeling data. Currently, the ONNX export doesn't support quantized models. If you export an ONNX model, the progress of the quantization aware training will be ignored.
     - ``VHDL``: A hardware description language output that is used for bare metal FPGA implementations.
+- ``Platform``: Specify the target platform which should run the model. Currently only Linux and FPGA are supported, others are in development. Other platforms can be used via direct model export. This dropdown only appears if ``Export type`` is ``executable`` or ``project``.
+- ``Language``: Specify the programming language for the project or executable. Currently only C++ is supported, others are in development. This dropdown only appears if ``Platform`` is ``Linux``.
+- ``Hardware Processing Unit``: Specify the target Processing Unit. Currently only ``CPU`` is supported, others are in development. This dropdown only appears if ``Platform`` is ``Linux``.
 - ``Export with pre- and postprocessing``: If you select this option, the pre- and postprocessing layers are included in the exported model. This simplifies integrating the model in your existing processes and ensures consistency between training and inference.
 - ``Export floating point instead of quantized model``: You have the option to always export a floating point model, even if you used quantization aware training. This means that any progress of the quantization aware training is ignored.
 - ``Check last vs best model``: During the training, ONE AI saves two models: the latest and the one with the best validation metrics (excluding Non-Maximum Suppression). If you enable this option, ONE AI checks which of the two models performs best when all post-processing steps are applied. Furthermore, you are able to specify which metric you want to use for this comparison.
 - ``Best model metric``: The metric that is used when comparing the best and the last model.
 
 ![Export 2](/img/ai/one_ai_plugin/getting_started/export_2.png)
+![Export 2-1](/img/ai/one_ai_plugin/getting_started/export_2-1.png)
 
 After the export is finished, the model can be download in the `Exports` tab by clicking on the green arrow.
 
