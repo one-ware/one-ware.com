@@ -68,13 +68,13 @@ Enter your ``Project Name`` and choose the ``AI Type``.
 **Note:** Currently, only “Image Detection” is available as the AI type.
 
 
-## 4. Dataset Preparation
+## 4. Dataset preparation
 
 Next, you need to prepare the data that your model is trained on. For the training, you need a set of images as well as annotations that tell ONE AI what the expected output for those images looks like. If you don't have any annotations for your dataset yet, you can label your data directly in OneWare Studio.
 
 You can find more in depth information about handling your dataset in [this guide](/docs/one-ai/getting-started/dataset).
 
-### Load Your Images
+### Load your images
 To load your images into OneWare Studio, you need to go to the **Dataset** tab in your ONE AI workspace. There you have a button at the top-right that allows you to import your data.
 
 <div style={{ display: 'flex', justifyContent: 'center' }}>
@@ -83,7 +83,7 @@ To load your images into OneWare Studio, you need to go to the **Dataset** tab i
 
 You have the option to import datasets with existing annotations or just load the images. You can also use the ``Camera Tool`` to record images or the ``Spectrogram Generator`` to convert audio or time series data to images.
 
-### Choose the Annotation Mode
+### Choose the annotation mode
 The next step is to choose what kind of predictions you want your model to make, because this decision also determines how you need to annotate your data. Your model can either predict classes that apply to the whole image or detect individual objects. You can change the annotation mode in the top-right corner, next to the ``Import`` button.
 
 ![Label Mode](/img/ai/one_ai_plugin/getting_started/label_mode.png)
@@ -92,7 +92,7 @@ Here are some examples for the two types of predictions:
 - **Classes**: predicting whether a product is defective or not, predicting which number is visible in an image
 - **Objects**: marking individual defects, detecting objects on a conveyor belt
 
-### Label Your Data
+### Label your data
 If your data isn't annotated yet, you can use OneWare Studio's ``Annotation Tool`` to create annotations. First you need to go to the ``Labels`` tab to create the different labels that you want to annotate. Then you need to click on an image to open the ``Annotation Tool``. Here, you can assign classes to the image or draw boxes around the objects depending on the annotation mode.
 
 ![Annotation Tool](/img/ai/one_ai_plugin/getting_started/annotation_tool_objects_1.png)
@@ -140,14 +140,14 @@ Below, you'll find some examples for augmentations that are supported by ONE AI.
 You can learn more about augmentations in uur [guide on filters and augmentations](/docs/one-ai/getting-started/filters-and-augmentations#augmentations).
 
 
-## 7. Model Settings
+## 7. Model settings
 The ``Model Settings`` tab allows you to tune the model generation to your specific needs. You can specify the parameters you want to predict, which parameters you want to prioritize and how many resources your model may use. For achieving the best results, you also need to make some estimates about your task, like estimating the expected size of objects or the overall complexity of the task.  
 For a more detailed explanation, you can check out our [guide on model settings](/docs/one-ai/getting-started/model-settings) or you can take a look at [this guide](/docs/one-ai/help/choosing-parameters-guide) on how to set the right parameters.
 
 <img src="/img/ai/one_ai_plugin/getting_started/model_settings_input_1.png" alt="Model Settings" style={{ width: '100%' }} />
 
 
-## 8. Hardware Settings
+## 8. Hardware settings
 In the ``Hardware Settings`` tab, you can specify the target hardware that your model will be deployed on. You have the option to select a predefined hardware or to define custom hardware resources. ONE AI will create a model that is optimized for your hardware and will run within the constraints that were specified in the ``Model Settings``.  
 You can find more details about the hardware settings in [this guide](/docs/one-ai/getting-started/hardware-settings).
 
@@ -177,7 +177,7 @@ After the export is finished, the model can be download in the `Exports` tab by 
 If you need more information about the export options, you can look into this [guide](/docs/one-ai/getting-started/training-and-export#exporting-a-trained-model).
 
 
-## 11. Using Your Model in OneWare Studio
+## 11. Using your model in OneWare Studio
 You can use your trained model directly in OneWare Studio by exporting it as an ONNX model.
 
 The ``Camera Tool`` allows you to run your model on live data from a connected camera. This allows you to easily test how the model will perform in your production environment.
@@ -191,11 +191,12 @@ You can also use a trained model in the ``Annotation Tool`` to assist you with l
 You can find more information about running an ONNX model in OneWare Studio [here](/docs/one-ai/getting-started/using-models).
 
 
-## 12. Examples
-Check out our examples like:
+## 12. Where to go next
+We have a growing list of guides and tutorials on our website to help you become an expert in ONE AI. If you are interested in a specific topic, you can check out the other articles in the getting started section. You might also be interested in typical [use cases](/docs/one-ai/use-cases/) for ONE AI, but you can also use ONE AI for many tasks beyond what is listed there.
+
+We also have a list of demos, that teach you how to use ONE AI to solve a specific task:
 1. [A quality control of potato chips](/docs/one-ai/tutorials/potato-chip-demo)
 2. [A detection of handwritten digits](/docs/one-ai/tutorials/handwritten-digits-demo)
 3. [An object detection of dice](/docs/one-ai/tutorials/dice-demo)
 
-If you have any questions: Don't hesitate to ask our team for help via mail: support@one-ware.com or you can ask in our [Discord for ONE WARE Studio and ONE AI](https://discord.com/invite/NCN9VAh).
-This helps us as well, because we then know what tutorials we can do next. 
+Don't hesitate to ask our team for help if you have any questions. You can reach us via mail at support@one-ware.com or you can join our [Discord Server for ONE WARE Studio and ONE AI](https://discord.com/invite/NCN9VAh). Your feedback is appreciated and helps us to decide which features and tutorials we should work on next.
