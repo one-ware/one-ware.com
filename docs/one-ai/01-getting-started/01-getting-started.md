@@ -109,47 +109,37 @@ On the right, you can see the settings for the selected prefilter as well as a p
 
 ## 6. Augmentations
 
-Augmentations are applied during the training with random values within specified ranges. Their purpose is to increase the diversity of the training data, helping the AI to generalize better. By varying the training data, it is possible to increase the size of the dataset without the need to record or annotate additional data. Furthermore, it is possible to make the AI model more robust against certain variations in the data by intentionally reproducing these variations with augmentations.
+Augmentations are applied during the training with random values within a specified range. Their purpose is to increase the diversity of the training data, helping the AI to generalize better. By varying the training data, it is possible to increase the size of the dataset without the need to record or annotate additional data. Furthermore, it is possible to make the AI model more robust against certain variations in the data by intentionally reproducing these variations with augmentations.  
+Below, you'll find some examples for augmentations that are supported by ONE AI.
 
-### Move Augmentation
-<img src="/img/ai/one_ai_plugin/getting_started/augmentation_move.png" alt="Move Augmentation" style={{ width: '40%' }} />
+<div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+  <figure style={{ margin: 0, width: '49%', textAlign: 'center' }}>
+    <img src="/img/ai/one_ai_plugin/getting_started/augmentation_rotate.png" alt="Rotate Augmentation" style={{ width: '90%', display: 'block', margin: '0 auto' }} />
+    <figcaption style={{ marginTop: '0.5em', fontSize: '0.9rem' }}>
+      The ``Rotate Augmentation`` randomly rotates your images.
+    </figcaption>
+  </figure>
+  <figure style={{ margin: 0, width: '49%', textAlign: 'center' }}>
+    <img src="/img/ai/one_ai_plugin/getting_started/augmentation_resize.png" alt="Resize Augmentation" style={{ width: '90%', display: 'block', margin: '0 auto' }} />
+    <figcaption style={{ marginTop: '0.5em', fontSize: '0.9rem' }}>
+      The ``Resize Augmentation`` scales the image up or down.
+    </figcaption>
+  </figure>
+  <figure style={{ margin: 0, width: '49%', textAlign: 'center' }}>
+    <img src="/img/ai/one_ai_plugin/getting_started/augmentation_color.png" alt="Color Augmentation" style={{ width: '90%', display: 'block', margin: '0 auto' }} />
+    <figcaption style={{ marginTop: '0.5em', fontSize: '0.9rem' }}>
+      The ``Color Augmentation`` varies the image's brightness, contrast, saturation, hue and gamma values. It can be used to mimic varying lighting conditions.
+    </figcaption>
+  </figure>
+  <figure style={{ margin: 0, width: '49%', textAlign: 'center', }}>
+    <img src="/img/ai/one_ai_plugin/getting_started/augmentation_noise_padded.png" alt="Noise Augmentation" style={{ width: '90%', display: 'block', margin: '0 auto' }} />
+    <figcaption style={{ marginTop: '0.5em', fontSize: '0.9rem' }}>
+      The ``Noise Augmentation`` adds a random noise to the images to help the model become robust against real-world image imperfections.
+    </figcaption>
+  </figure>
+</div>
 
-The ``Move Augmentation`` shifts the image along the X and Y axes within a specified range. This makes the model more robust against positional variability.
-
-### Rotate Augmentation
-<img src="/img/ai/one_ai_plugin/getting_started/augmentation_rotate.png" alt="Rotate Augmentation" style={{ width: '40%' }} />
-
-The ``Rotate Augmentation`` randomly rotates your images. This helps the model to also recognize objects when they are rotated.
-
-### Flip Augmentation
-<img src="/img/ai/one_ai_plugin/getting_started/augmentation_flip.png" alt="Flip Augmentation" style={{ width: '40%' }} />
-
-This augmentation can be used to randomly flips the images horizontally and vertically.
-
-### Resize Augmentation
-<img src="/img/ai/one_ai_plugin/getting_started/augmentation_resize.png" alt="Resize Augmentation" style={{ width: '40%' }} />
-
-The ``Resize Augmentation`` scales the image up or down. This makes the model more robust against changes in the object size.
-
-### Color Augmentation
-<img src="/img/ai/one_ai_plugin/getting_started/augmentation_color.png" alt="Color Augmentation" style={{ width: '40%' }} />
-
-This augmentation varies the image's brightness, contrast, saturation, hue and gamma values. It can be used to mimic varying lighting conditions.
-
-### Frequency Augmentation
-<img src="/img/ai/one_ai_plugin/getting_started/augmentation_frequency.png" alt="Frequency Augmentation" style={{ width: '40%' }} />
-
-The ``Frequency Augmentation`` uses a low-pass filter to blur the images by a random amount. By using it, the model is trained to also make correct predictions when the image is slightly out of focus.
-
-### Sharpen Augmentation
-<img src="/img/ai/one_ai_plugin/getting_started/augmentation_sharpen.png" alt="Sharpen Augmentation" style={{ width: '40%' }} />
-
-The ``Sharpen Augmentation`` randomly sharpens the images and has a similar effect as the ``Frequency Augmentation``.
-
-### Noise Augmentation
-<img src="/img/ai/one_ai_plugin/getting_started/augmentation_noise.png" alt="Noise Augmentation" style={{ width: '40%' }} />
-
-This augmentation adds a random noise to the images to help the model become robust against real-world image imperfections.
+You can learn more about augmentations in uur [guide on filters and augmentations](/docs/one-ai/getting-started/filters-and-augmentations#augmentations).
 
 ---
 
