@@ -2,16 +2,13 @@
 id: training-and-export
 title: Training and Exporting your AI Model
 sidebar_label: Training and Export
-draft: true
 ---
 
-## Training
-
-> For these steps you need to be connected to the ONE AI Cloud
+> For the following steps you need to be connected to the ONE AI Cloud
 
 Ensure that your training data is uploaded, labeled, and properly prepared. This includes applying any necessary prefilters and selecting the most effective augmentations. Once your data is ready, double-check your model and hardware settings before starting the training process
 
-### Training a new AI Model
+## Training a new AI Model
 
 You can create new AI model instances, so you can save old trained models and try out new ones.
 
@@ -35,7 +32,7 @@ After you press on `Start Training`, you see how many Credits the training will 
 
 During the training you can see the current training progress in the ``Statistics`` tab. You can stop the training manually if you see no further improvements after a longer time of training.
 
-### Exporting a trained Model
+## Exporting a trained Model
 
 To test your AI model, you can export it as an AI model or as a complete project by clicking on the `Export` button.
 

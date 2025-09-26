@@ -51,8 +51,10 @@ You don't need any powerful hardware to use ONE AI. You configure your AI model 
   </div>
 </div>
 
+
 ## 2. Setup
-To use ONE AI you need to create an account for the OneWare Cloud and install OneWare Studio and the OneAI Extension. We have a dedicated [guide](/docs/one-ai/getting-started/installation) that walks you through the setup step by step. New users receive a welcome bonus of 25.000 credits worth 500 € for free. All you need to do is to create an account and enter your address to complete the registration process. You won't be charged with any fees.
+To use ONE AI you need to install OneWare Studio with the OneAI Extension and create an account for the OneWare Cloud. We have a dedicated [guide](/docs/one-ai/getting-started/installation) that walks you through the setup step by step. New users receive a welcome bonus of 25.000 credits worth 500 € for free. All you need to do is to create an account and enter your address to complete the registration process. You won't be charged with any fees.
+
 
 ## 3. Create a new AI project
 The first step to creating your own AI model is to create a new project in OneWare Studio. To do so you need to click on ``AI`` in the menu bar and select ``Open AI Generator``.
@@ -65,7 +67,6 @@ Enter your ``Project Name`` and choose the ``AI Type``.
 
 **Note:** Currently, only “Image Detection” is available as the AI type.
 
----
 
 ## 4. Dataset Preparation
 
@@ -96,7 +97,6 @@ If your data isn't annotated yet, you can use OneWare Studio's ``Annotation Tool
 
 ![Annotation Tool](/img/ai/one_ai_plugin/getting_started/annotation_tool_objects_1.png)
 
----
 
 ## 5. Prefilters
 Prefilters are used to process your images and can introduce a wide variety of changes. For example you can crop your images, do color correction or apply a blur. You can add prefilters before or after applying augmentations to tune the data processing pipeline to your individual needs.
@@ -105,10 +105,8 @@ Prefilters are used to process your images and can introduce a wide variety of c
 
 On the right, you can see the settings for the selected prefilter as well as a preview on how it will affect the image. The image on the bottom left shows a preview of your complete prefilter pipeline. If you want to learn more about prefilters, you can check out our [guide on filters and augmentations](/docs/one-ai/getting-started/filters-and-augmentations#prefilters).
 
----
 
 ## 6. Augmentations
-
 Augmentations are applied during the training with random values within a specified range. Their purpose is to increase the diversity of the training data, helping the AI to generalize better. By varying the training data, it is possible to increase the size of the dataset without the need to record or annotate additional data. Furthermore, it is possible to make the AI model more robust against certain variations in the data by intentionally reproducing these variations with augmentations.  
 Below, you'll find some examples for augmentations that are supported by ONE AI.
 
@@ -141,7 +139,6 @@ Below, you'll find some examples for augmentations that are supported by ONE AI.
 
 You can learn more about augmentations in uur [guide on filters and augmentations](/docs/one-ai/getting-started/filters-and-augmentations#augmentations).
 
----
 
 ## 7. Model Settings
 The ``Model Settings`` tab allows you to tune the model generation to your specific needs. You can specify the parameters you want to predict, which parameters you want to prioritize and how many resources your model may use. For achieving the best results, you also need to make some estimates about your task, like estimating the expected size of objects or the overall complexity of the task.  
@@ -149,69 +146,38 @@ For a more detailed explanation, you can check out our [guide on model settings]
 
 <img src="/img/ai/one_ai_plugin/getting_started/model_settings_input_1.png" alt="Model Settings" style={{ width: '100%' }} />
 
----
 
 ## 8. Hardware Settings
 In the ``Hardware Settings`` tab, you can specify the target hardware that your model will be deployed on. You have the option to select a predefined hardware or to define custom hardware resources. ONE AI will create a model that is optimized for your hardware and will run within the constraints that were specified in the ``Model Settings``.  
 You can find more details about the hardware settings in [this guide](/docs/one-ai/getting-started/hardware-settings).
 
----
 
-## 9. Training
-
-> For these steps you need to be connected to the ONE AI Cloud
-
-Ensure that your training data is uploaded, labeled, and properly prepared. This includes applying any necessary prefilters and selecting the most effective augmentations. Once your data is ready, double-check your model and hardware settings before starting the training process
-
-### Training a new AI Model
-
-You can create new AI model instances, so you can save old trained models and try out new ones.
+## 9. Training a model
+You can create multiple model instances in the ``Training Tab``. This allows you to train new models with different settings while still keeping the old version. Be careful, as old models are automatically removed after seven days.  
+To add a new instance click on ``Create Model`` and enter a name.
 
 ![Train](/img/ai/one_ai_plugin/getting_started/train_1.webp)
 
-Select the model you want to train with the current data and settings. Then click on the `Train` button.
-
-![Train 2](/img/ai/one_ai_plugin/getting_started/train_2.webp)
-
-First, you need to specify for how long you want to train your model. A detailed guide what training time works best can be found [here](/docs/one-ai/help/choosing-parameters-guide#training). You can also use early stopping to end the training early if the model doesn't improve any more. To do so you need to set the ``Patience for Early Stopping``. For example, if you set the training time to an hour and the patience to 10%, the training is stopped early if the model doesn't improve for six minutes.  
-If you want to export a quantized model, you should ``Enable Quantization Optimization``. Quantization reduces the amount of bits that are used to represent the model weights. This reduces the size of the model and increases its speed while only slightly decreasing its accuracy. This is a huge advantage if you intend to run your model on an FPGA or a microcontroller.  
-If you enable quantization, you can use the ``Percentage Quantization Optimization`` setting to control the percentage of training time that is dedicated to fine-tuning quantized calculations. While quantization aware training improves the performance of quantized models, it also slows down training, so it is a good idea to start the training normally and switch to quantization aware training later on. A good tradeoff between training time and model performance is at 30%, but if you want the best performing model, you should set the percentage to 100%.  
-The next setting allows you to choose whether you only want to train your model on images that contain objects. This allows the model to learn faster how objects look and how to detect them, but the model also spends less time learning how to correctly identify the background.  
-Finally, if you selected a model that was already trained before, you can decide whether you want to continue its training or override the existing model. If you are training the model for the first time, this setting is ignored.
-
-![Train 3](/img/ai/one_ai_plugin/getting_started/train_3.webp)
-
-After you press on `Start Training`, you see how many Credits the training will cost. If you use early stopping, the costs can be less than that, because the training might end early if there are no further improvements. The total time is always a bit higher than the training time, since the data needs to be uploaded and preprocessed, but you only pay for the time the AI is actually trained on the server.
+After you've clicked on the ``Train`` button and entered your training settings, you can watch the training process live in the ``Statistics`` tab. This allows you to stop the training manually if you aren't happy with the progress and want to change the parameters. The same preview is available in the ``Projects`` tab in the OneWare Cloud.
 
 ![Train 4](/img/ai/Train.png)
 
-During the training you can see the current training progress in the ``Statistics`` tab. You can stop the training manually if you see no further improvements after a longer time of training.
+If you want to know more about the different training options, you can look into our [guide on training and exporting AI models](/docs/one-ai/getting-started/training-and-export#training-a-new-ai-model).
 
-### Exporting a trained Model
 
-To test your AI model, you can export it as an AI model or as a complete project by clicking on the `Export` button.
+## 10. Model export
+To test your AI model, you can export it by clicking on the ``Export`` button and download it afterwards. ONE AI supports a variety of different export formats to ensure the best possible compatibility with your hardware. For example, you can download your model as a standard TensorFlow model or in the widely used [ONNX](https://onnx.ai/) format. Alternatively you can download a TensorFlow Lite model or VHDL code if you are working with a microcontroller or an FPGA. You even have the option to convert your model to an executable binary or to source code.
 
 ![Export 1](/img/ai/one_ai_plugin/getting_started/export_1.png)
-
-This opens the export window, which allows you to configure different settings for the export:
-- ``Export type``: You can choose whether you want to export just the model as a file (``model``) or to export it along with execution routines in various languages either compiled as an executable binary (``executable``) or as source code (``project``).
-- ``Model type``: There are different model types that can be generated:
-    - ``TensorFlow``: The standard TensorFlow model format.
-    - ``TensorFlow Lite``: The TensorFlow Lite format is optimized for mobile and embedded devices. You can use this for microcontrollers, FPGAs with processors and other efficient AI implementation on processors.
-    - ``ONNX``: The [Open Neural Network Exchange](https://onnx.ai/) format ensures compatibility across different frameworks. It is also used by OneWare Studio for running a live preview of the model and for auto-labeling data. Currently, the ONNX export doesn't support quantized models. If you export an ONNX model, the progress of the quantization aware training will be ignored.
-    - ``VHDL``: A hardware description language output that is used for bare metal FPGA implementations.
-- ``Export with pre- and postprocessing``: If you select this option, the pre- and postprocessing layers are included in the exported model. This simplifies integrating the model in your existing processes and ensures consistency between training and inference.
-- ``Export floating point instead of quantized model``: You have the option to always export a floating point model, even if you used quantization aware training. This means that any progress of the quantization aware training is ignored.
-- ``Check last vs best model``: During the training, ONE AI saves two models: the latest and the one with the best validation metrics (excluding Non-Maximum Suppression). If you enable this option, ONE AI checks which of the two models performs best when all post-processing steps are applied. Furthermore, you are able to specify which metric you want to use for this comparison.
-- ``Best model metric``: The metric that is used when comparing the best and the last model.
-
-![Export 2](/img/ai/one_ai_plugin/getting_started/export_2.png)
 
 After the export is finished, the model can be download in the `Exports` tab by clicking on the green arrow.
 
 ![Export 3](/img/ai/one_ai_plugin/getting_started/export_3.png)
 
-## 10. Using Your Model in OneWare Studio
+If you need more information about the export options, you can look into this [guide](/docs/one-ai/getting-started/training-and-export#exporting-a-trained-model).
+
+
+## 11. Using Your Model in OneWare Studio
 ### Evaluating the Model on Live Data
 You can use the ``Camera Tool`` to evaluate the performance of your model on live data. To do so, you need to export the trained model as an ONNX model. After downloading it, the model becomes available in OneWare Studio automatically. Now, you need to open the ``Camera Tool`` by clicking on ``AI`` in the menu bar and selecting ``Camera Tool``.  
 In the ``Live Preview`` tab, you can select the model that you want to use as well as the camera. You also need to select whether you are using a ``Classification`` or an ``Object Detection`` model in the ``Preview Mode``. After you click on the play button, the model will start running on your local machine. If you have an object detection task, the predicted bounding boxes will be drawn directly onto the preview. For classification tasks, the predicted class is displayed in the bottom right corner.
@@ -227,8 +193,8 @@ To predict the annotation for the current image, you need to click on the ``AI``
 
 One common approach for speeding up the annotation process is to only annotate a part of the dataset manually. This data is used to train a model, which in turn is used to aid in the annotation of the remaining data. Depending on the size of your dataset you might even repeat these steps multiple times to improve the predicted annotations as the model is trained with more and more data.
 
-## 11. Examples
 
+## 12. Examples
 Check out our examples like:
 1. [A quality control of potato chips](/docs/one-ai/tutorials/potato-chip-demo)
 2. [A detection of handwritten digits](/docs/one-ai/tutorials/handwritten-digits-demo)
