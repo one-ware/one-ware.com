@@ -117,7 +117,7 @@ const config: Config = {
             },
             {
               type: "doc",
-              docId: "one-ai/get-started",
+              docId: "one-ai/getting-started/getting-started",
               label: "Getting Started",
             },
           ],
