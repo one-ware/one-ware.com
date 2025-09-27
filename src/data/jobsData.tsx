@@ -41,7 +41,7 @@ export const JOBS_DATA: JobCategory[] = [
     positions: [
       {
         id: "students-interns.2",
-        title: "Work Student / Technical Tutorials",
+        title: "Working Student in Electrical Engineering/Computer Science/Mechatronics",
         description: "Help us create technical tutorials and documentation",
         url: "OneWare_Werkstudent_Technik_KI-Tutorials.pdf",
         type: "Part Time",
