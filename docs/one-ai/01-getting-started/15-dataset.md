@@ -24,7 +24,7 @@ When you press the ``Import Existing Dataset`` button, the following window open
 
 You need to select the directory to import as well as the format of your annotations. Currently, we support the formats YOLO, COCO and Pascal Voc as well as Classification datasets that contain one directory for each class.
 
-Check out our examples like if you don't have a dataset and want to try ONE AI:
+If you want to try ONE AI but don't have a dataset, you can check out our examples:
 1. [A quality control of potato chips](/docs/one-ai/tutorials/potato-chip-demo)
 2. [A detection of handwritten digits](/docs/one-ai/tutorials/handwritten-digits-demo)
 3. [An object detection of dice](/docs/one-ai/tutorials/dice-demo)
