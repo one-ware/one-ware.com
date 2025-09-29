@@ -26,7 +26,7 @@ Finally, if you selected a model that was already trained before, you can decide
 
 ![Train 3](/img/ai/one_ai_plugin/getting_started/train_3.webp)
 
-After you press on `Start Training`, you see how many Credits the training will cost. If you use early stopping, the costs can be less than that, because the training might end early if there are no further improvements. The total time is always a bit higher than the training time, since the data needs to be uploaded and preprocessed, but you only pay for the time the AI is actually trained on the server.
+After you press on `Start Training`, you see how many Credits the training will cost. If you use early stopping, the actual costs can be less than the anticipated cost, because the training might end early if there are no further improvements. The total time is always a bit higher than the training time, since the data needs to be uploaded and preprocessed, but you only pay for the time the AI is actually trained on the server.
 
 ![Train 4](/img/ai/Train.png)
 
@@ -34,28 +34,83 @@ During the training you can see the current training progress in the ``Statistic
 
 ## Exporting a trained Model
 
-To test your AI model, you can export it as an AI model or as a complete project by clicking on the `Export` button. If you are missing an export option that you need for your AI project, feel free to [contact](docs/contact) us and we will see what we can do.
+In order to test your AI model or to use it in your application you can initiate a download by clicking on the `Export` button. You have the option to export it as a model file or readily embedded in a software project. If you are missing an export option that you need for your AI project, feel free to [contact](/docs/contact) us and we will see what we can do.
 
 ![Export 1](/img/ai/one_ai_plugin/getting_started/export_1.png)
 
-Clicking the `Export` button opens the export window, which allows you to configure different settings for the export:
+Clicking the `Export` button opens the export window.
+
+![Export 2](/img/ai/one_ai_plugin/getting_started/export_2.png)
+![Export 2-1](/img/ai/one_ai_plugin/getting_started/export_2-1.png)
+
+This allows you to configure different settings for the export:
 - ``Export type``: You can choose whether you want to export just the model as a file (``model``) or to export it along with execution routines in various languages either compiled as an executable binary (``executable``) or as source code (``project``).
 - ``Model type``: There are different model types that can be generated:
     - ``TensorFlow``: The standard TensorFlow model format.
     - ``TensorFlow Lite``: The TensorFlow Lite format is optimized for mobile and embedded devices. You can use this for microcontrollers, FPGAs with processors and other efficient AI implementation on processors.
     - ``ONNX``: The [Open Neural Network Exchange](https://onnx.ai/) format ensures compatibility across different frameworks. It is also used by OneWare Studio for running a live preview of the model and for auto-labeling data. Currently, the ONNX export doesn't support quantized models. If you export an ONNX model, the progress of the quantization aware training will be ignored.
     - ``VHDL``: A hardware description language output that is used for bare metal FPGA implementations.
-- ``Platform``: Specify the target platform which should run the model. Currently only Linux and FPGA are supported, others are in development. Other platforms can be used via direct model export. This dropdown only appears if ``Export type`` is ``executable`` or ``project``.
-- ``Language``: Specify the programming language for the project or executable. Currently only C++ is supported, others are in development. This dropdown only appears if ``Platform`` is ``Linux``.
-- ``Hardware Processing Unit``: Specify the target Processing Unit. Currently only ``CPU`` is supported, others are in development. This dropdown only appears if ``Platform`` is ``Linux``.
+- ``Platform``: Specify the target platform which should run the model. Currently only Linux and FPGA are supported, others are in development. For unsupported platforms please use the direct model export or contact us. This dropdown only appears if ``export type`` is ``executable`` or ``project``.
+- ``Language``: Specify the programming language for the project or executable. Currently only C++ is supported, others are in development. This dropdown only appears if ``platform`` is ``Linux``.
+- ``Hardware Processing Unit``: Specify the target Processing Unit. Currently only ``CPU`` is supported, others are in development. This dropdown only appears if ``platform`` is ``Linux``.
 - ``Export with pre- and postprocessing``: If you select this option, the pre- and postprocessing layers are included in the exported model. This simplifies integrating the model in your existing processes and ensures consistency between training and inference.
 - ``Export floating point instead of quantized model``: You have the option to always export a floating point model, even if you used quantization aware training. This means that any progress of the quantization aware training is ignored.
 - ``Check last vs best model``: During the training, ONE AI saves two models: the latest and the one with the best validation metrics (excluding Non-Maximum Suppression). If you enable this option, ONE AI checks which of the two models performs best when all post-processing steps are applied. Furthermore, you are able to specify which metric you want to use for this comparison.
 - ``Best model metric``: The metric that is used when comparing the best and the last model.
 
-![Export 2](/img/ai/one_ai_plugin/getting_started/export_2.png)
-![Export 2-1](/img/ai/one_ai_plugin/getting_started/export_2-1.png)
-
 After the export is finished, the model can be download in the `Exports` tab by clicking on the green arrow.
 
 ![Export 3](/img/ai/one_ai_plugin/getting_started/export_3.png)
+
+### Export Flavors
+
+Below is a table with all currently available export options. Each line corresponds to one export configuration. If you are missing an export option that you need for your AI project, feel free to [contact](/docs/contact) us.
+
+<table>
+  <tr>
+    <th>Export type</th>
+    <th>Platform</th>
+    <th>Model type</th>
+    <th>Language</th>
+    <th>Hardware Processing Unit</th>
+  </tr>
+  <tr>
+       <td rowspan="3">Model</td>
+       <td>-</td>
+       <td>TensorFlow</td>
+       <td>-</td>
+       <td>-</td>
+     </tr>
+  <tr>
+       <td>-</td>
+       <td>TensorFlow Lite</td>
+       <td>-</td>
+       <td>-</td>
+     </tr>
+  <tr>
+       <td>-</td>
+       <td>ONNX</td>
+       <td>-</td>
+       <td>-</td>
+     </tr>
+  <tr>
+       <td rowspan="2">Project</td>
+       <td>FPGA</td>
+       <td>VHDL</td>
+       <td>-</td>
+       <td>-</td>
+     </tr>
+  <tr>
+       <td>Linux</td>
+       <td>TensorFlow Lite</td>
+       <td>C++</td>
+       <td>CPU</td>
+     </tr>
+  <tr>
+       <td rowspan="1">Executable</td>
+       <td>Linux</td>
+       <td>TensorFlow Lite</td>
+       <td>C++</td>
+       <td>CPU</td>
+     </tr>
+</table>

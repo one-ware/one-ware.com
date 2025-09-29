@@ -166,7 +166,7 @@ If you want to know more about the different training options, you can look into
 
 
 ## 10. Model export
-To test your AI model, you can export it by clicking on the ``Export`` button and download it afterwards. ONE AI supports a variety of different export formats to ensure the best possible compatibility with your hardware. For example, you can download your model as a standard TensorFlow model or in the widely used [ONNX](https://onnx.ai/) format. Alternatively you can download a TensorFlow Lite model or VHDL code if you are working with a microcontroller or an FPGA. You even have the option to convert your model to an executable binary or to source code.
+To test your AI model, you can export it by clicking on the ``Export`` button and download it afterwards. ONE AI supports a variety of different export formats to ensure the best possible compatibility with your hardware. For example, you can download your model as a standard TensorFlow model or in the widely used [ONNX](https://onnx.ai/) format. Alternatively you can download a TensorFlow Lite model for your microcontroller or VHDL code if you are working with an FPGA. You even have the option to convert your model to an executable binary or to source code.
 
 ![Export 1](/img/ai/one_ai_plugin/getting_started/export_1.png)
 
