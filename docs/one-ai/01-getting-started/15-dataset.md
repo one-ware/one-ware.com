@@ -32,7 +32,7 @@ If you want to try ONE AI but don't have a dataset, you can check out our exampl
 ### 1.2 Camera tool
 You can use OneWare Studio's integrated ``Camera Tool`` to record images for your dataset. The camera tool allows you to configure camera settings and record images from multiple cameras simultaneously. After adding and configuring your cameras in the ``Configuration`` tab, you need to switch to the ``Capture`` tab. Here, you can record images with the camera button and save them by clicking on the save icon below. The images are automatically named with the timestamp they were captured at, so you don't need to enter names manually.
 
-![Camera Tool Capture](/img/ai/one_ai_plugin/getting_started/camera_tool/camera_tool_capture.png)
+![Camera Tool Capture](/img/ai/one_ai_plugin/getting_started/camera_tool/capture.png)
 
 If you want to learn more about the ``Camera Tool``, you can check out [this guide](/docs/one-ai/getting-started/camera-tool).
 

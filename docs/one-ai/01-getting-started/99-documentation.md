@@ -35,16 +35,16 @@ Check out our examples like if you don't have a dataset and want to try ONE AI:
 #### Camera Tool
 You can use OneWare Studio's integrated ``Camera Tool`` to record images for your dataset. The camera tool allows you to configure camera settings and record images from multiple cameras simultaneously.
 
-![Camera Tool Selection](/img/ai/one_ai_plugin/getting_started/camera_tool/camera_tool_selection.png)
+![Camera Tool Selection](/img/ai/one_ai_plugin/getting_started/camera_tool/selection.png)
 
 When you start the camera tool, you first need to add the cameras to your workspace. Select the camera that you want to use in the dropdown menu and click on the plus icon. You can use the play icon on the bottom of the camera window to start and stop the live preview. By clicking on the gear icon, you can enter the camera configuration menu.
 
-![Camera Tool Configuration](/img/ai/one_ai_plugin/getting_started/camera_tool/camera_tool_configuration.png)
+![Camera Tool Configuration](/img/ai/one_ai_plugin/getting_started/camera_tool/configuration.png)
 
 The camera configuration menu allows you to customize your camera settings. You can create different presets that can be exported and imported. You are also able to crop the image. You can draw the area you are interested in onto the preview or set its coordinates at the bottom of the settings list.  
 For our example, we increased the the camera's brightness and contrast. This brightens the white background and makes it easier for the AI model to recognize the numbers. We also added a crop to select a square region from the rectangular camera image.
 
-![Camera Tool Capture](/img/ai/one_ai_plugin/getting_started/camera_tool/camera_tool_capture.png)
+![Camera Tool Capture](/img/ai/one_ai_plugin/getting_started/camera_tool/capture.png)
 
 To record images, we need to go to the ``Capture`` tab. You can record images by clicking on the camera icon, which updates the preview. This records an image from all cameras simultaneously. You need to select the directory where you want to add them and click on the save icon to save them. The images are automatically named with the timestamp they were captured at, so you don't need to enter names manually.
 
@@ -407,7 +407,7 @@ After the export is finished, the model can be download in the `Exports` tab by 
 You can use the ``Camera Tool`` to evaluate the performance of your model on live data. To do so, you need to export the trained model as an ONNX model. After downloading it, the model becomes available in OneWare Studio automatically. Now, you need to open the ``Camera Tool`` by clicking on ``AI`` in the menu bar and selecting ``Camera Tool``.  
 In the ``Live Preview`` tab, you can select the model that you want to use as well as the camera. You also need to select whether you are using a ``Classification`` or an ``Object Detection`` model in the ``Preview Mode``. After you click on the play button, the model will start running on your local machine. If you have an object detection task, the predicted bounding boxes will be drawn directly onto the preview. For classification tasks, the predicted class is displayed in the bottom right corner.
 
-![Camera Tool Live Preview](/img/ai/one_ai_plugin/getting_started/camera_tool/camera_tool_live_preview.png)
+![Camera Tool Live Preview](/img/ai/one_ai_plugin/getting_started/camera_tool/live_preview.png)
 
 ### Using the Model to Annotate New Data
 You can use a trained model to predict the annotations for new images, which greatly speeds up the annotation process. To use this feature, you need to export your export and download your trained model as an ONNX model. Next, you go to the ``Dataset`` tab and click on an image to open the annotation tool. There, you click on the arrow in the top-right corner, select your model and click on the plus icon. Here, you can also configure a ``Minimum Confidence`` that is required for the predictions to be applied. Only classes and objects whose predicted confidence exceed this setting are added to the annotations.
