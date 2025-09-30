@@ -2,7 +2,6 @@
 id: camera-tool
 title: Using OneWare Studio's Camera Tool
 sidebar_label: Camera Tool
-draft: true
 ---
 OneWare Studio has a ``Camera Tool`` that makes it possible to record images directly in OneWare Studio. It also has a ``Live Preview``, where you can test a trained model on live images from a connected camera. You can even use the ``Camera Tool`` as a quality control station.
 
@@ -23,14 +22,12 @@ To record images, you need to go to the ``Capture`` tab. You can record images b
 
 ![Capture](/img/ai/one_ai_plugin/getting_started/camera_tool_capture.png)
 
-By pressing on the button between the save and close buttons on the individual images, you can open the ``Annotation Tool`` to add a label to the image before saving it. You can put the ``Capture Tool`` into fullscreen mode by clicking the button on the top right.
-
 ### Using an AI model to generate labels
-You can use an existing AI model to label the captured images as you record them. To do so, you need to export the trained model as an ONNX model. After downloading it, the model becomes available in OneWare Studio automatically. Next, you need to check ``Enable AI Check`` in the top-right corner and select the model you want to use. After adding the model with the plus icon, you can select the ``Minimum Confidence`` that a prediction needs to have to be used.
+You can use an existing AI model to label the captured images as you record them. To do so, you need to export the trained model as an ONNX model. After downloading it, the model becomes available in OneWare Studio automatically. Next, you need to activate ``Enable AI Check`` in the top-right corner and select the model you want to use. After adding the model with the plus icon, you can select the ``Minimum Confidence`` that the model needs to have in a prediction for it to be used.
 
 ![capture select AI](/img/ai/one_ai_plugin/getting_started/camera_tool/capture_select_ai.png)
 
-The predictions won't be visible in the preview, but you can view them in the ``Annotation Tool`` by clicking on the button between the save and the close icon.
+The predictions aren't visible in the preview, but you can view them in the ``Annotation Tool`` by clicking on the button between the save and the close icon.
 
 ![capture AI check](/img/ai/one_ai_plugin/getting_started/camera_tool/capture_ai_check.png)
 
@@ -39,15 +36,17 @@ Here, you can also correct any mistakes that were made by your model.
 ![capture AI prediction](/img/ai/one_ai_plugin/getting_started/camera_tool/capture_ai_prediction.png)
 
 ### Using the camera tool as a quality control station
-The ``Camera Tool`` can be used as a simple quality control station. To do so, you need to select an AI model like in the previous section. You can add rules that specify when an image passes the quality control in the list of labels. For each object, you can specify ranges for the allowed number of objects and the allowed total size. For example, you can specify that a product passes inspection if there is a single, small nick but fails if there are multiple nicks or any other defects. In addition, you can compute a weighted sum of the object counts and sizes and add rules for them as well. By using the dropdown menu on the top right, you can select whether you want to use the ruleset for all cameras or just one individual camera.
+The ``Camera Tool`` can be used as a simple quality control station. To do so, you need to select an AI model like in the previous section. You can add rules that specify when an image passes the quality control in the label list. For each object, you can specify ranges for the allowed number of objects and the allowed total size. For example, you can specify that a product passes inspection if there is a single, small nick but fails if there are multiple nicks or any other defects. In addition, you can compute weighted sums of the object counts and sizes and add rules for them as well. With the dropdown menu on the top right, you can select whether you want to use the ruleset for all cameras or just one individual camera.
 
 ![capture AI check rules](/img/ai/one_ai_plugin/getting_started/camera_tool/capture_ai_check_rules.png)
 
-In the above image, we added the rule that an image fails the AI check if at least one foreign object is visible. Since there are two foreign objects, we get a red warning.
+In the above image, we added the rule that an image fails the AI check if at least one foreign object is visible. Since there are two foreign objects, we get a red warning. You might wonder why the image has a green border. This is because we only configured a ruleset for *All Cameras* and not the individual camera. Since the check for the individual camera is passing, its border is green instead of red.
 
-If you want to use the AI check in a production line, you might prefer the fullscreen mode. You can access it by clicking on the icon in the top-right corner that was marked in the previous image.
+If you want to use the AI check in a production line, you might prefer the fullscreen mode. You can access it by clicking on the icon in the top-right corner that was marked in the previous image. Here, you have hotkeys for the different actions and can view the predictions directly in the preview.
 
 ![capture fullscreen](/img/ai/one_ai_plugin/getting_started/camera_tool/capture_fullscreen.png)
+
+You might have noticed that additional subdirectory options appeared in the ``Capture`` tab after you enabled the AI check. The field ``Subdirectory Fail`` allows you to specify a subdirectory that is used when the AI check fails. The field ``Subdirectory False Detection`` is used in the fullscreen mode where your operators can save images with false detections in a separate subdirectory for further evaluation.
 
 
 ## Testing models with the live preview

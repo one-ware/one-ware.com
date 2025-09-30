@@ -180,7 +180,7 @@ If you need more information about the export options, you can look into this [g
 ## 11. Using your model in OneWare Studio
 You can use your trained model directly in OneWare Studio by exporting it as an ONNX model.
 
-The ``Camera Tool`` allows you to run your model on live data from a connected camera. This allows you to easily test how the model will perform in your production environment.
+The ``Camera Tool`` allows you to run your model on live data from a connected camera. This allows you to easily test how the model will perform in your production environment. Furthermore, the model can be used to generate labels for newly recorded data or as a quality control station. Check out our [guide](/docs/one-ai/getting-started/camera-tool) on the ``Camera Tool`` to learn more.
 
 ![Camera Tool Live Preview](/img/ai/one_ai_plugin/getting_started/camera_tool_live_preview.png)
 
