@@ -18,7 +18,7 @@ This section presents several real-world use cases where ONE AI demonstrates its
       <img src="/img/ai/one_ai_plugin/use_cases/capture/full.png" alt="Camera Tool" style={{width: '100%', height: '180px', objectFit: 'cover'}} />
       <div style={{padding: '16px'}}>
         <h3 style={{margin: '0 0 8px 0'}}>Quality Control in One Click</h3>
-        <p style={{margin: 0, color: '#666'}}>Transform AI models into a production-ready QC station instantly using the Camera Tool.</p>
+        <p style={{margin: 0, color: '#b3b3b3ff'}}>Transform AI models into a production-ready QC station instantly using the Camera Tool.</p>
       </div>
     </div>
   </a>
@@ -28,7 +28,7 @@ This section presents several real-world use cases where ONE AI demonstrates its
       <img src="/img/ai/one_ai_plugin/use_cases/chip/good.png" alt="Potato Chip Inspection" style={{width: '100%', height: '180px', objectFit: 'cover'}} />
       <div style={{padding: '16px'}}>
         <h3 style={{margin: '0 0 8px 0'}}>Quality Control on Altera MAX® 10</h3>
-        <p style={{margin: 0, color: '#666'}}>Real-time potato chip inspection with optimized models outperforming generic models on modern GPUs.</p>
+        <p style={{margin: 0, color: '#b3b3b3ff'}}>Real-time potato chip inspection with optimized models outperforming generic models on modern GPUs.</p>
       </div>
     </div>
   </a>
@@ -38,7 +38,7 @@ This section presents several real-world use cases where ONE AI demonstrates its
       <img src="/img/ai/one_ai_plugin/use_cases/pcb/pcb.png" alt="PCB Quality Control" style={{width: '100%', height: '180px', objectFit: 'cover'}} />
       <div style={{padding: '16px'}}>
         <h3 style={{margin: '0 0 8px 0'}}>PCB Quality Control</h3>
-        <p style={{margin: 0, color: '#666'}}>ONE AI's model for PCB inspection surpassing hand-crafted models in both accuracy and speed.</p>
+        <p style={{margin: 0, color: '#b3b3b3ff'}}>ONE AI's model for PCB inspection surpassing hand-crafted models in both accuracy and speed.</p>
       </div>
     </div>
   </a>
