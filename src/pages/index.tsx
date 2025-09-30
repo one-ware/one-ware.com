@@ -216,34 +216,89 @@ function HomepageHeader() {
 function IndustryExamplesSection() {
   const items = [
     {
-      key: "agriculture",
-      src: require("@site/static/img/agriculture.webp").default,
-      label: "Agriculture",
-      labelId: "homepage.industry.agriculture",
-      href: "/docs/one-ai/industries/agriculture",
+      key: "aerospace",
+      src: require("@site/static/img/industries/Aerospace.jpg").default,
+      label: "Aerospace",
+      labelId: "homepage.industry.aerospace",
+      href: "/docs/one-ai/use-cases/chip",
     },
     {
-      key: "food",
-      src: require("@site/static/img/food.webp").default,
-      label: "Food",
-      labelId: "homepage.industry.food",
-      href: "/docs/one-ai/industries/food",
+      key: "agriculture",
+      src: require("@site/static/img/industries/Agriculture.jpg").default,
+      label: "Agriculture",
+      labelId: "homepage.industry.agriculture",
+      href: "/docs/one-ai/use-cases/chip",
+    },
+    {
+      key: "automotive",
+      src: require("@site/static/img/industries/Automotive.jpg").default,
+      label: "Automotive",
+      labelId: "homepage.industry.automotive",
+      href: "/docs/one-ai/use-cases/pcb",
+    },
+    {
+      key: "consumer",
+      src: require("@site/static/img/industries/Consumer.jpg").default,
+      label: "Consumer Electronics",
+      labelId: "homepage.industry.consumer",
+      href: "/docs/one-ai/use-cases/pcb",
+    },
+    {
+      key: "drones",
+      src: require("@site/static/img/industries/Drones.jpg").default,
+      label: "Drones",
+      labelId: "homepage.industry.drones",
+      href: "/docs/one-ai/use-cases/chip",
+    },
+    {
+      key: "energy",
+      src: require("@site/static/img/industries/Energy.png").default,
+      label: "Energy",
+      labelId: "homepage.industry.energy",
+      href: "/docs/one-ai/use-cases/chip",
+    },
+    {
+      key: "foodbeverage",
+      src: require("@site/static/img/industries/Food_and_Beverage.jpg").default,
+      label: "Food & Beverage",
+      labelId: "homepage.industry.foodbeverage",
+      href: "/docs/one-ai/use-cases/camera-tool",
+    },
+    {
+      key: "healthcare",
+      src: require("@site/static/img/industries/Healthcare.jpg").default,
+      label: "Healthcare",
+      labelId: "homepage.industry.healthcare",
+      href: "/docs/one-ai/use-cases/pcb",
     },
     {
       key: "industry",
-      src: require("@site/static/img/industry.webp").default,
-      label: "Industry",
+      src: require("@site/static/img/industries/Industrie.jpg").default,
+      label: "Industrial Manufacturing",
       labelId: "homepage.industry.industry",
-      href: "/docs/one-ai/industries/industry",
+      href: "/docs/one-ai/use-cases/camera-tool",
     },
     {
-      key: "infrastructure",
-      src: require("@site/static/img/infrastructure.webp").default,
-      label: "Infrastructure",
-      labelId: "homepage.industry.infrastructure",
-      href: "/docs/one-ai/industries/infrastructure",
+      key: "retail",
+      src: require("@site/static/img/industries/Retail.jpg").default,
+      label: "Retail",
+      labelId: "homepage.industry.retail",
+      href: "/docs/one-ai/use-cases/pcb",
     },
-    // künftig einfach weitere Einträge anhängen
+    {
+      key: "security",
+      src: require("@site/static/img/industries/Security.jpg").default,
+      label: "Security",
+      labelId: "homepage.industry.security",
+      href: "/docs/one-ai/use-cases/pcb",
+    },
+    {
+      key: "transport",
+      src: require("@site/static/img/industries/Transport.jpg").default,
+      label: "Transport & Logistics",
+      labelId: "homepage.industry.transport",
+      href: "/docs/one-ai/use-cases/pcb",
+    },
   ];
 
   // immer 2 Bilder pro „Spalte“
@@ -253,25 +308,36 @@ function IndustryExamplesSection() {
   }
 
   return (
-    <div className={styles.examplesWrap}>
-      {/* Überschrift mit gleichem Padding wie restlicher Content */}
-      <div className="container mx-auto px-4 md:px-8 lg:px-12 mb-8">
-        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-left">
+    <div className="py-12 md:py-16">
+      {/* Überschrift mit normalem Container-Padding */}
+      <div className="container mx-auto px-4 mb-8">
+        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-left font-bold">
           <Translate id="homepage.industries.title">
             For Every Industry:
           </Translate>
         </p>
       </div>
       
-      {/* Statisches Grid über volle Breite */}
-      <div className={styles.examplesGrid}>
+      {/* Grid über volle Breite ohne Container-Padding */}
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-0">
         {items.map((item) => (
-          <a className={styles.card} key={item.key} href={item.href}>
-            <img src={item.src} alt={item.label} />
-            <div className={styles.caption}>
-              <Translate id={item.labelId}>
-                {item.label}
-              </Translate>
+          <a 
+            key={item.key} 
+            href={item.href}
+            className="relative group aspect-video overflow-hidden bg-gray-900 hover:bg-gray-800 transition-all duration-300"
+          >
+            <img 
+              src={item.src} 
+              alt={item.label}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-300" />
+            <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+              <p className="text-sm md:text-base font-semibold text-center">
+                <Translate id={item.labelId}>
+                  {item.label}
+                </Translate>
+              </p>
             </div>
           </a>
         ))}
@@ -588,7 +654,7 @@ export default function Home() {
           <div className="dropshadowtop diagclipbottom">
             <div className="default-background pb-12">
               <ComparisonSection />
-              {/* <IndustryExamplesSection /> */}
+              <IndustryExamplesSection />
             </div>
           </div>
         </div>

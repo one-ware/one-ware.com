@@ -1,10 +1,10 @@
 ---
 id: chip
-title: AI Quality Control on Altera MAX® 10
+title: High Speed and Efficient Edge AI
 sidebar_label: Quality Control on Altera MAX® 10
 ---
 
-# ONE AI X Altera MAX® 10
+# High Speed and Efficient Edge AI
 
 ### Optimized AI architectures that make hardware secondary
 

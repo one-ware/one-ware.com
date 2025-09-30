@@ -77,14 +77,41 @@
   "homepage.usecase.link": {
     "message": "Mehr Details"
   },
+  "homepage.industry.aerospace": {
+    "message": "Luft- und Raumfahrt"
+  },
   "homepage.industry.agriculture": {
     "message": "Landwirtschaft"
   },
-  "homepage.industry.food": {
-    "message": "Lebensmittel"
+  "homepage.industry.automotive": {
+    "message": "Automobilindustrie"
+  },
+  "homepage.industry.consumer": {
+    "message": "Konsumgüter"
+  },
+  "homepage.industry.drones": {
+    "message": "Drohnen"
+  },
+  "homepage.industry.energy": {
+    "message": "Energie"
+  },
+  "homepage.industry.foodbeverage": {
+    "message": "Lebensmittel & Getränke"
+  },
+  "homepage.industry.healthcare": {
+    "message": "Gesundheitswesen"
   },
   "homepage.industry.industry": {
     "message": "Industrie"
+  },
+  "homepage.industry.retail": {
+    "message": "Einzelhandel"
+  },
+  "homepage.industry.security": {
+    "message": "Sicherheit"
+  },
+  "homepage.industry.transport": {
+    "message": "Transport"
   },
   "homepage.industry.infrastructure": {
     "message": "Infrastruktur"

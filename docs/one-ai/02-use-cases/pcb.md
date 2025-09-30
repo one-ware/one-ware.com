@@ -1,6 +1,6 @@
 ---
 id: pcb
-title: PCB Quality Control - ONE AI vs Human Scientists
+title: High Precision Computer Vision
 sidebar_label: PCB Quality Control
 ---
 
