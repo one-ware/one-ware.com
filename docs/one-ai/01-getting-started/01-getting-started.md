@@ -184,11 +184,9 @@ The ``Camera Tool`` allows you to run your model on live data from a connected c
 
 ![Camera Tool Live Preview](/img/ai/one_ai_plugin/getting_started/camera_tool_live_preview.png)
 
-You can also use a trained model in the ``Annotation Tool`` to assist you with labeling new data. It is a common approach to label only a part of the dataset, train a first model on this data and use the model to label the rest of the dataset. The predictions of this model won't be perfect, but they can speed up the annotation process significantly. After the next portion of the dataset is labeled, you can train a new model with better performance.
+You can also use a trained model in the ``Annotation Tool`` to assist you with labeling new data. It is a common approach to label only a part of the dataset, train a first model on this data and use the model to label the rest of the dataset. The predictions of this model won't be perfect, but they can speed up the annotation process significantly. After the next portion of the dataset is labeled, you can train a new model with better performance. You can learn more about using your model to annotate your data [here](/docs/one-ai/getting-started/dataset#5-using-a-trained-model-to-annotate-new-data).
 
 ![Generating New Annotations](/img/ai/one_ai_plugin/getting_started/auto_labeling.png)
-
-You can find more information about running an ONNX model in OneWare Studio [here](/docs/one-ai/getting-started/using-models).
 
 
 ## 12. Where to go next
