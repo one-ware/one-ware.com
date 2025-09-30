@@ -182,7 +182,7 @@ You can use your trained model directly in OneWare Studio by exporting it as an 
 
 The ``Camera Tool`` allows you to run your model on live data from a connected camera. This allows you to easily test how the model will perform in your production environment. Furthermore, the model can be used to generate labels for newly recorded data or as a quality control station. Check out our [guide](/docs/one-ai/getting-started/camera-tool) on the ``Camera Tool`` to learn more.
 
-![Camera Tool Live Preview](/img/ai/one_ai_plugin/getting_started/camera_tool_live_preview.png)
+![Camera Tool Live Preview](/img/ai/one_ai_plugin/getting_started/camera_tool/camera_tool_live_preview.png)
 
 You can also use a trained model in the ``Annotation Tool`` to assist you with labeling new data. It is a common approach to label only a part of the dataset, train a first model on this data and use the model to label the rest of the dataset. The predictions of this model won't be perfect, but they can speed up the annotation process significantly. After the next portion of the dataset is labeled, you can train a new model with better performance. You can learn more about using your model to annotate your data [here](/docs/one-ai/getting-started/dataset#5-using-a-trained-model-to-annotate-new-data).
 

@@ -8,11 +8,11 @@ OneWare Studio has a ``Camera Tool`` that makes it possible to record images dir
 ## Adding and configuring cameras
 You can access the ``Camera Tool`` by clicking on ``AI`` in the menu bar and selecting ``Camera Tool``. After you started the ``Camera Tool``, you need to add the cameras to your workspace. Select the camera that you want to use in the dropdown menu and click on the plus icon. You can add more than one camera to record multiple images simultaneously. By clicking on the play icon on the bottom of the camera window you can start and stop the live preview of that camera. To enter the camera configuration menu, you need to click on the gear icon.
 
-![Camera Tool Selection](/img/ai/one_ai_plugin/getting_started/camera_tool_selection.png)
+![Camera Tool Selection](/img/ai/one_ai_plugin/getting_started/camera_tool/camera_tool_selection.png)
 
 The camera configuration menu allows you to customize your camera settings. In the example in the image below, we increased the the camera's brightness and contrast. This brightens the white background and makes it easier for the AI model to recognize the numbers. You are also able to crop the image. You can draw the area you are interested in onto the preview or set its coordinates at the bottom of the settings list.
 
-![Camera Tool Configuration](/img/ai/one_ai_plugin/getting_started/camera_tool_configuration.png)
+![Camera Tool Configuration](/img/ai/one_ai_plugin/getting_started/camera_tool/camera_tool_configuration.png)
 
 You can create presets with different settings that can be exported and imported. This makes it easy to test out and share different settings. If the camera settings contain multiple presets, the ``Capture`` tool will record one image for each preset. You can use this to create multiple crops for the same image and record all of them with a single click.
 
@@ -20,7 +20,7 @@ You can create presets with different settings that can be exported and imported
 ## Capturing data
 To record images, you need to go to the ``Capture`` tab. You can record images by clicking on the camera icon. This records an image from all cameras simultaneously and updates the preview. You need to select whether you want to add the image to the train, test or validation directory and click on the save icon to save them. The images are automatically named with the timestamp they were captured at, so you don't need to enter names manually. You have the option to add the images to a subdirectory and to add a suffix to the filename.
 
-![Capture](/img/ai/one_ai_plugin/getting_started/camera_tool_capture.png)
+![Capture](/img/ai/one_ai_plugin/getting_started/camera_tool/camera_tool_capture.png)
 
 ### Using an AI model to generate labels
 You can use an existing AI model to label the captured images as you record them. To do so, you need to export the trained model as an ONNX model. After downloading it, the model becomes available in OneWare Studio automatically. Next, you need to activate ``Enable AI Check`` in the top-right corner and select the model you want to use. After adding the model with the plus icon, you can select the ``Minimum Confidence`` that the model needs to have in a prediction for it to be used.
@@ -52,4 +52,4 @@ You might have noticed that additional subdirectory options appeared in the ``Ca
 ## Testing models with the live preview
 You can also use the ``Camera Tool`` to evaluate the performance of your model on live data. Like in the previous section, you need to export and download your model in the ONNX format. In the ``Live Preview`` tab, you can select the model that you want to use as well as the camera. You also need to select whether you are using a ``Classification`` or an ``Object Detection`` model in the ``Preview Mode``. After you click on the play button, the model will start running on your local machine. If you have an object detection task, the predicted bounding boxes will be drawn directly onto the preview. For classification tasks, the predicted class is displayed in the bottom right corner.
 
-![Camera Tool Live Preview](/img/ai/one_ai_plugin/getting_started/camera_tool_live_preview.png)
+![Camera Tool Live Preview](/img/ai/one_ai_plugin/getting_started/camera_tool/camera_tool_live_preview.png)

@@ -25,7 +25,7 @@ The Camera Tool already provides a clean, full-screen operator interface with cl
 A standard NUC PC and an industrial camera are enough. The AI model runs locally, while the Camera Tool handles capture, decision-making, and operator interaction. For production, it connects seamlessly to a PLC to control sorting or rejection systems.
 
 <div style={{display:'flex', justifyContent:'center', margin:'20px 0'}}>
-  <img src="/img/ai/one_ai_plugin/getting_started/camera_tool_capture.png" alt="Camera Tool capturing images for QC" style={{maxHeight:'320px', borderRadius:'8px'}} />
+  <img src="/img/ai/one_ai_plugin/getting_started/camera_tool/camera_tool_capture.png" alt="Camera Tool capturing images for QC" style={{maxHeight:'320px', borderRadius:'8px'}} />
 </div>
 
 **Continuous improvement built in**  
