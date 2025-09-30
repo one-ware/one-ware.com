@@ -20,6 +20,7 @@ import initWebsiteEffects from "../components/startEffects";
 import ContactUs from "../components/ContactUs";
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import UseCaseCard from "@site/src/components/UseCaseComponent/UseCaseCard";
+import Head from '@docusaurus/Head';
 
 function HomepageHeader() {
   const { i18n } = useDocusaurusContext();
@@ -46,16 +47,16 @@ function HomepageHeader() {
           <div className="max-w-5xl backdrop-blur-md bg-gray-600/20 rounded-2xl p-6 md:p-8 border border-white/10">
             <div className="text-center">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-                <Translate id="oneai.hero.nextgen.title">The Next Generation of AI Development.</Translate>
+                <Translate id="oneai.hero.nextgen.title">
+                  The Next Generation of AI Development
+                </Translate>
               </h1>
 
               <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-8">
                 <Translate id="homepage.subtitle.description">
-                  The world relies on foundation AI models bloated with unnecessary data.
-                  ONE AI provides intelligence tailored exactly to your application.
-                  What takes experts months to build is automatically generated in 0.7 seconds by our AI-powered AI Developer.
-                  Deployed with maximum performance and our open-source software, 
-                  even on the smallest hardware.
+                  The world relies on AI models bloated with unnecessary data.
+                  ONE AI generates AI tailored to your needs, so you can finish projects faster with better results.
+                  Deployed with maximum performance even on the smallest hardware.
                 </Translate>
               </p>
 
@@ -561,12 +562,26 @@ export default function Home() {
   }
 
   return (
-    <Layout
-      description={translate({
-        id: "homepage.meta.description",
-        message: "Every Task. Every Hardware. Every Industry. ONE Software.",
-      })}
-    >
+    <>
+      <Head>
+        <title>{translate({id: 'homepage.seo.title', message: 'ONE WARE - The Next Generation of Computer Vision and Edge AI Development'})}</title>
+        <meta name="description" content={translate({id: 'homepage.seo.description', message: 'Get better results in less time with ONE AI. ONE WARE offers with ONE AI the first software that automatically generates tailored AI models for your needs. Optimized and exported for PCs, microcontrollers, FPGAs, GPUs, NPUs and more.'})} />
+        
+        {/* Open Graph für Social Media */}
+        <meta property="og:title" content={translate({id: 'homepage.seo.og.title', message: 'ONE WARE - The Next Generation of Computer Vision and Edge AI Development'})} />
+        <meta property="og:description" content={translate({id: 'homepage.seo.og.description', message: 'Get better results in less time with ONE AI. AI models, automatically tailored for your needs.'})} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://one-ware.com/" />
+        <meta property="og:image" content="https://one-ware.com/img/social-card.jpg" />
+        
+        {/* International SEO */}
+        <link rel="alternate" hrefLang="en" href="https://one-ware.com/" />
+        <link rel="alternate" hrefLang="de" href="https://one-ware.com/de/" />
+        <link rel="alternate" hrefLang="x-default" href="https://one-ware.com/" />
+      </Head>
+      
+      <Layout
+      >
       <HomepageHeader />
       <main className="overflow-x-hidden alternative-background ">
         <div className="dropshadowbottom">
@@ -594,5 +609,6 @@ export default function Home() {
         </div>
       </main>
     </Layout>
+    </>
   );
 }
