@@ -1,7 +1,7 @@
 ---
 id: chip
 title: High Speed and Efficient Edge AI
-sidebar_label: Quality Control on Altera MAX® 10
+sidebar_label: High Speed and Efficient Edge AI
 ---
 
 # High Speed and Efficient Edge AI

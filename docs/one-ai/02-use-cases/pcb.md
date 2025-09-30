@@ -1,7 +1,7 @@
 ---
 id: pcb
 title: High Precision Computer Vision
-sidebar_label: PCB Quality Control
+sidebar_label: High Precision Computer Vision
 ---
 
 ### Outperforming hand-crafted architectures with optimized AI models
