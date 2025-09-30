@@ -4,6 +4,12 @@ title: ONE WARE Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.21.12.0
+
+- Improve Project Explorer Performance
+- Fix Library Manager
+- Add Feedback Dialog
+
 ## 0.21.11.0
 
 - Fix critical error that would disable editor features
