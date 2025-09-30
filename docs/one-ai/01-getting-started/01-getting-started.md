@@ -166,7 +166,7 @@ If you want to know more about the different training options, you can look into
 
 
 ## 10. Model export
-To test your AI model, you can export it by clicking on the ``Export`` button and download it afterwards. ONE AI supports a variety of different export formats to ensure the best possible compatibility with your hardware. For example, you can download your model as a standard TensorFlow model or in the widely used [ONNX](https://onnx.ai/) format. Alternatively you can download a TensorFlow Lite model or VHDL code if you are working with a microcontroller or an FPGA. You even have the option to convert your model to an executable binary or to source code.
+To test your AI model, you can export it by clicking on the ``Export`` button and download it afterwards. ONE AI supports a variety of different export formats to ensure the best possible compatibility with your hardware. For example, you can download your model as a standard TensorFlow model or in the widely used [ONNX](https://onnx.ai/) format. Alternatively you can download a TensorFlow Lite model for your microcontroller or VHDL code if you are working with an FPGA. You even have the option to convert your model to an executable binary or to source code.
 
 ![Export 1](/img/ai/one_ai_plugin/getting_started/export_1.png)
 
@@ -180,15 +180,13 @@ If you need more information about the export options, you can look into this [g
 ## 11. Using your model in OneWare Studio
 You can use your trained model directly in OneWare Studio by exporting it as an ONNX model.
 
-The ``Camera Tool`` allows you to run your model on live data from a connected camera. This allows you to easily test how the model will perform in your production environment.
+The ``Camera Tool`` allows you to run your model on live data from a connected camera. This allows you to easily test how the model will perform in your production environment. Furthermore, the model can be used to generate labels for newly recorded data or as a quality control station. Check out our [guide](/docs/one-ai/getting-started/camera-tool) on the ``Camera Tool`` to learn more.
 
-![Camera Tool Live Preview](/img/ai/one_ai_plugin/getting_started/camera_tool_live_preview.png)
+![Camera Tool Live Preview](/img/ai/one_ai_plugin/getting_started/camera_tool/live_preview.png)
 
-You can also use a trained model in the ``Annotation Tool`` to assist you with labeling new data. It is a common approach to label only a part of the dataset, train a first model on this data and use the model to label the rest of the dataset. The predictions of this model won't be perfect, but they can speed up the annotation process significantly. After the next portion of the dataset is labeled, you can train a new model with better performance.
+You can also use a trained model in the ``Annotation Tool`` to assist you with labeling new data. It is a common approach to label only a part of the dataset, train a first model on this data and use the model to label the rest of the dataset. The predictions of this model won't be perfect, but they can speed up the annotation process significantly. After the next portion of the dataset is labeled, you can train a new model with better performance. You can learn more about using your model to annotate your data [here](/docs/one-ai/getting-started/dataset#5-using-a-trained-model-to-annotate-new-data).
 
 ![Generating New Annotations](/img/ai/one_ai_plugin/getting_started/auto_labeling.png)
-
-You can find more information about running an ONNX model in OneWare Studio [here](/docs/one-ai/getting-started/using-models).
 
 
 ## 12. Where to go next

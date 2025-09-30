@@ -79,7 +79,7 @@ This filter can be used to compute the inverse of images. For example, you can u
 #### RGB to HSV Filter
 The ``RGB to HSV Filter`` converts the images from an RGB to an HSV representation. This can be used to apply further filters to the HSV representation before converting the image back to RGB. For example, you can use a ``Threshold Filter`` that is applied based on the hue value. This makes it possible to extract objects of a certain color from an image.
 
-#### HSV ot RGB Filter
+#### HSV to RGB Filter
 This is the counterpart to the ``RGB to HSV Filter`` and can be used to convert HSV images back to RGB.
 
 #### Threshold Filter
