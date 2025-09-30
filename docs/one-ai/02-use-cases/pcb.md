@@ -4,8 +4,6 @@ title: PCB Quality Control - ONE AI vs Human Scientists
 sidebar_label: PCB Quality Control
 ---
 
-# ONE AI vs. Human Scientists in PCB Quality Control
-
 ### Outperforming hand-crafted architectures with optimized AI models
 
 Printed Circuit Board (PCB) quality inspection is a critical step in electronics manufacturing. Defective boards not only increase costs but can also compromise product safety and reliability. Traditionally, researchers have designed specialized deep learning architectures for this task, as documented in the [scientific paper on PCB defect detection](https://arxiv.org/pdf/1902.06197).  

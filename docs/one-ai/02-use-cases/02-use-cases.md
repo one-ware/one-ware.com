@@ -45,19 +45,23 @@ This section presents several real-world use cases where ONE AI demonstrates its
 
 </div>
 
-## [Quality Control in One Click](/docs/one-ai/use-cases/camera-tool)
+## Overview
+
+### Industry
+
+#### [Quality Control in One Click](/docs/one-ai/use-cases/camera-tool)
 
 Turn optimized AI models into a **production-ready quality control station** instantly using the Camera Tool.  
 No custom UI, no hardware lock-in — just accurate AI decisions, seamless integration with cameras and PLCs, and continuous model improvement.
 
 
-## [Quality Control on Altera MAX® 10](/docs/one-ai/use-cases/chip)
+#### [Quality Control on Altera MAX® 10](/docs/one-ai/use-cases/chip)
 
 Use AI to detect defects in real time with extreme efficiency.  
 Optimized models deployed on the Altera MAX® 10 FPGA achieve **99.5% accuracy, ultra-low latency, and minimal power consumption**, even outperforming modern GPUs.
 
 
-## [PCB Quality Control](/docs/one-ai/use-cases/pcb)
+#### [PCB Quality Control](/docs/one-ai/use-cases/pcb)
 
 ONE AI's neural architecture search beats **hand-crafted neural networks** and traditional methods in PCB defect detection.  
 With **98.4% accuracy** and over **7× faster inference**, ONE AI proves that smarter AI design delivers superior quality control at industrial scale.

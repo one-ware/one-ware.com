@@ -1,6 +1,6 @@
 ---
 id: chip
-title: Quality Control on Altera MAX® 10
+title: AI Quality Control on Altera MAX® 10
 sidebar_label: Quality Control on Altera MAX® 10
 ---
 

@@ -1,6 +1,6 @@
 ---
 id: camera-tool
-title: Quality Control in One Click
+title: AI Quality Control in One Click
 sidebar_label: Quality Control in One Click
 ---
 
