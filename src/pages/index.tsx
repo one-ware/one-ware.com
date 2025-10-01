@@ -20,6 +20,7 @@ import initWebsiteEffects from "../components/startEffects";
 import ContactUs from "../components/ContactUs";
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import UseCaseCard from "@site/src/components/UseCaseComponent/UseCaseCard";
+import Head from '@docusaurus/Head';
 
 function HomepageHeader() {
   const { i18n } = useDocusaurusContext();
@@ -46,16 +47,16 @@ function HomepageHeader() {
           <div className="max-w-5xl backdrop-blur-md bg-gray-600/20 rounded-2xl p-6 md:p-8 border border-white/10">
             <div className="text-center">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-                <Translate id="oneai.hero.nextgen.title">The Next Generation of AI Development.</Translate>
+                <Translate id="oneai.hero.nextgen.title">
+                  The Next Generation of AI Development
+                </Translate>
               </h1>
 
               <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-8">
                 <Translate id="homepage.subtitle.description">
-                  The world relies on foundation AI models bloated with unnecessary data.
-                  ONE AI provides intelligence tailored exactly to your application.
-                  What takes experts months to build is automatically generated in 0.7 seconds by our AI-powered AI Developer.
-                  Deployed with maximum performance and our open-source software, 
-                  even on the smallest hardware.
+                  The world relies on AI models bloated with unnecessary data.
+                  ONE AI generates AI tailored to your needs, so you can finish projects faster with better results.
+                  Deployed with maximum performance even on the smallest hardware.
                 </Translate>
               </p>
 
@@ -215,34 +216,89 @@ function HomepageHeader() {
 function IndustryExamplesSection() {
   const items = [
     {
-      key: "agriculture",
-      src: require("@site/static/img/agriculture.webp").default,
-      label: "Agriculture",
-      labelId: "homepage.industry.agriculture",
-      href: "/docs/one-ai/industries/agriculture",
+      key: "aerospace",
+      src: require("@site/static/img/industries/Aerospace.jpg").default,
+      label: "Aerospace",
+      labelId: "homepage.industry.aerospace",
+      href: "/docs/one-ai/use-cases/chip",
     },
     {
-      key: "food",
-      src: require("@site/static/img/food.webp").default,
-      label: "Food",
-      labelId: "homepage.industry.food",
-      href: "/docs/one-ai/industries/food",
+      key: "agriculture",
+      src: require("@site/static/img/industries/Agriculture.jpg").default,
+      label: "Agriculture",
+      labelId: "homepage.industry.agriculture",
+      href: "/docs/one-ai/use-cases/chip",
+    },
+    {
+      key: "automotive",
+      src: require("@site/static/img/industries/Automotive.jpg").default,
+      label: "Automotive",
+      labelId: "homepage.industry.automotive",
+      href: "/docs/one-ai/use-cases/pcb",
+    },
+    {
+      key: "consumer",
+      src: require("@site/static/img/industries/Consumer.jpg").default,
+      label: "Consumer Electronics",
+      labelId: "homepage.industry.consumer",
+      href: "/docs/one-ai/use-cases/pcb",
+    },
+    {
+      key: "drones",
+      src: require("@site/static/img/industries/Drones.jpg").default,
+      label: "Drones",
+      labelId: "homepage.industry.drones",
+      href: "/docs/one-ai/use-cases/chip",
+    },
+    {
+      key: "energy",
+      src: require("@site/static/img/industries/Energy.png").default,
+      label: "Energy",
+      labelId: "homepage.industry.energy",
+      href: "/docs/one-ai/use-cases/chip",
+    },
+    {
+      key: "foodbeverage",
+      src: require("@site/static/img/industries/Food_and_Beverage.jpg").default,
+      label: "Food & Beverage",
+      labelId: "homepage.industry.foodbeverage",
+      href: "/docs/one-ai/use-cases/camera-tool",
+    },
+    {
+      key: "healthcare",
+      src: require("@site/static/img/industries/Healthcare.jpg").default,
+      label: "Healthcare",
+      labelId: "homepage.industry.healthcare",
+      href: "/docs/one-ai/use-cases/pcb",
     },
     {
       key: "industry",
-      src: require("@site/static/img/industry.webp").default,
-      label: "Industry",
+      src: require("@site/static/img/industries/Industrie.jpg").default,
+      label: "Industrial Manufacturing",
       labelId: "homepage.industry.industry",
-      href: "/docs/one-ai/industries/industry",
+      href: "/docs/one-ai/use-cases/camera-tool",
     },
     {
-      key: "infrastructure",
-      src: require("@site/static/img/infrastructure.webp").default,
-      label: "Infrastructure",
-      labelId: "homepage.industry.infrastructure",
-      href: "/docs/one-ai/industries/infrastructure",
+      key: "retail",
+      src: require("@site/static/img/industries/Retail.jpg").default,
+      label: "Retail",
+      labelId: "homepage.industry.retail",
+      href: "/docs/one-ai/use-cases/pcb",
     },
-    // künftig einfach weitere Einträge anhängen
+    {
+      key: "security",
+      src: require("@site/static/img/industries/Security.jpg").default,
+      label: "Security",
+      labelId: "homepage.industry.security",
+      href: "/docs/one-ai/use-cases/pcb",
+    },
+    {
+      key: "transport",
+      src: require("@site/static/img/industries/Transport.jpg").default,
+      label: "Transport & Logistics",
+      labelId: "homepage.industry.transport",
+      href: "/docs/one-ai/use-cases/pcb",
+    },
   ];
 
   // immer 2 Bilder pro „Spalte“
@@ -252,25 +308,36 @@ function IndustryExamplesSection() {
   }
 
   return (
-    <div className={styles.examplesWrap}>
-      {/* Überschrift mit gleichem Padding wie restlicher Content */}
-      <div className="container mx-auto px-4 md:px-8 lg:px-12 mb-8">
-        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-left">
+    <div className="py-12 md:py-16">
+      {/* Überschrift mit normalem Container-Padding */}
+      <div className="container mx-auto px-4 mb-8">
+        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-left font-bold">
           <Translate id="homepage.industries.title">
             For Every Industry:
           </Translate>
         </p>
       </div>
       
-      {/* Statisches Grid über volle Breite */}
-      <div className={styles.examplesGrid}>
+      {/* Grid über volle Breite ohne Container-Padding */}
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-0">
         {items.map((item) => (
-          <a className={styles.card} key={item.key} href={item.href}>
-            <img src={item.src} alt={item.label} />
-            <div className={styles.caption}>
-              <Translate id={item.labelId}>
-                {item.label}
-              </Translate>
+          <a 
+            key={item.key} 
+            href={item.href}
+            className="relative group aspect-video overflow-hidden bg-gray-900 hover:bg-gray-800 transition-all duration-300"
+          >
+            <img 
+              src={item.src} 
+              alt={item.label}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-300" />
+            <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+              <p className="text-sm md:text-base font-semibold text-center">
+                <Translate id={item.labelId}>
+                  {item.label}
+                </Translate>
+              </p>
             </div>
           </a>
         ))}
@@ -561,19 +628,33 @@ export default function Home() {
   }
 
   return (
-    <Layout
-      description={translate({
-        id: "homepage.meta.description",
-        message: "Every Task. Every Hardware. Every Industry. ONE Software.",
-      })}
-    >
+    <>
+      <Head>
+        <title>{translate({id: 'homepage.seo.title', message: 'ONE WARE - The Next Generation of Computer Vision and Edge AI Development'})}</title>
+        <meta name="description" content={translate({id: 'homepage.seo.description', message: 'Get better results in less time with ONE AI. ONE WARE offers with ONE AI the first software that automatically generates tailored AI models for your needs. Optimized and exported for PCs, microcontrollers, FPGAs, GPUs, NPUs and more.'})} />
+        
+        {/* Open Graph für Social Media */}
+        <meta property="og:title" content={translate({id: 'homepage.seo.og.title', message: 'ONE WARE - The Next Generation of Computer Vision and Edge AI Development'})} />
+        <meta property="og:description" content={translate({id: 'homepage.seo.og.description', message: 'Get better results in less time with ONE AI. AI models, automatically tailored for your needs.'})} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://one-ware.com/" />
+        <meta property="og:image" content="https://one-ware.com/img/social-card.jpg" />
+        
+        {/* International SEO */}
+        <link rel="alternate" hrefLang="en" href="https://one-ware.com/" />
+        <link rel="alternate" hrefLang="de" href="https://one-ware.com/de/" />
+        <link rel="alternate" hrefLang="x-default" href="https://one-ware.com/" />
+      </Head>
+      
+      <Layout
+      >
       <HomepageHeader />
       <main className="overflow-x-hidden alternative-background ">
         <div className="dropshadowbottom">
           <div className="dropshadowtop diagclipbottom">
             <div className="default-background pb-12">
               <ComparisonSection />
-              {/* <IndustryExamplesSection /> */}
+              <IndustryExamplesSection />
             </div>
           </div>
         </div>
@@ -594,5 +675,6 @@ export default function Home() {
         </div>
       </main>
     </Layout>
+    </>
   );
 }

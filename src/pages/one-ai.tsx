@@ -16,6 +16,7 @@ import type { Swiper as SwiperCore } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Head from '@docusaurus/Head';
 
 const sliders = [
   {
@@ -96,22 +97,17 @@ function HomepageHeader() {
           <div className="flex-col max-w-5xl mx-auto mt-10">
             <div className="text-center mt-10">
               <h1 className="font-bold text-3xl md:text-4xl mb-4">
-                <Translate id="oneai.hero.nextgen.title.start">See the Power of </Translate>
-                <span className="primary-text">
-                  <Translate id="oneai.hero.nextgen.title.dataset">Your Dataset</Translate>
-                </span>
-                <Translate id="oneai.hero.nextgen.title.middle"> With the </Translate>
-                <span className="primary-text">
-                  <Translate id="oneai.hero.nextgen.title.ai">Right AI</Translate>
-                </span>
+                <Translate id="oneai.hero.main.title">
+                  Let ONE AI Finish Your Vision and Edge AI Projects
+                </Translate>
               </h1>
               <h2 className=" text-xl md:text-2xl mb-7 font-normal">
-                <Translate id="oneai.hero.nextgen.subtitle1">
-                  AI Models Invented in Seconds for Your Needs by our AI.
+                <Translate id="oneai.hero.main.subtitle">
+                  See the Power of your dataset with the Right AI.
                 </Translate>
-                <br/>
-                <Translate id="oneai.hero.nextgen.subtitle2">
-                  The All-in-ONE Solution, optimized for Edge AI, Vision AI and Embedded Intelligence.
+                <br />
+                <Translate id="oneai.hero.main.subtitle2">
+                  Automatically tailored to your needs and exported for any hardware.
                 </Translate>
               </h2>
 
@@ -556,7 +552,26 @@ export default function OneAi() {
   initWebsiteEffects();
 
   return (
-    <Layout title="ONE AI" description="ONE AI for Any Hardware and Any Application">
+    <>
+      <Head>
+        <title>{translate({id: 'oneai.seo.title', message: 'ONE AI | Let ONE AI Finish Your Computer Vision or Edge AI Project'})}</title>
+        <meta name="description" content={translate({id: 'oneai.seo.description', message: 'Get better results in less time with ONE AI. The first software that automatically generates tailored AI models for your needs. Optimized and exported for PCs, microcontrollers, FPGAs, GPUs, NPUs and more.'})} />
+        
+        {/* Open Graph für Social Media */}
+        <meta property="og:title" content={translate({id: 'oneai.seo.og.title', message: 'Let ONE AI Finish Your Computer Vision or Edge AI Project'})} />
+        <meta property="og:description" content={translate({id: 'oneai.seo.og.description', message: 'Get better results in less time with ONE AI. AI models, automatically tailored for your needs.'})} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://one-ware.com/one-ai" />
+        <meta property="og:image" content="https://one-ware.com/img/social-card.jpg" />
+        
+        {/* International SEO */}
+        <link rel="alternate" hrefLang="en" href="https://one-ware.com/one-ai" />
+        <link rel="alternate" hrefLang="de" href="https://one-ware.com/de/one-ai" />
+        <link rel="alternate" hrefLang="x-default" href="https://one-ware.com/one-ai" />
+      </Head>
+      
+      <Layout >
+        
       <div className={`absolute w-full -z-10 ${styles.particleBackground}`}>
         <div className="h-96 absolute w-full"></div>
       </div>
@@ -657,5 +672,6 @@ export default function OneAi() {
         </div>
       </main>
     </Layout>
+    </>
   );
 }

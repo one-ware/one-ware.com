@@ -4,6 +4,12 @@ title: ONE WARE Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.21.12.0
+
+- Improve Project Explorer Performance
+- Fix Library Manager
+- Add Feedback Dialog
+
 ## 0.21.11.0
 
 - Fix critical error that would disable editor features
@@ -15,7 +21,7 @@ sidebar_label:  Changelog
 ## 0.21.9.0
 - fixed that 'CurrentDocument' is sometimes null after init
 - Added a flyout next to the settings to display account information
-- Add OssCadSuite Release 27.08.2025 by
+- Add OssCadSuite Release 27.08.2025
 
 ## 0.21.8.0
 - Update Packages

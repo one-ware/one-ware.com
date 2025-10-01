@@ -36,7 +36,7 @@
     "message": "Jetzt Loslegen"
   },
   "homepage.subtitle.description": {
-    "message": "Die Welt vertraut auf Foundation-KI-Modelle, die mit unnötigen Daten aufgebläht sind. ONE AI bietet Intelligenz, die exakt auf Ihre Anwendung zugeschnitten ist. Was Experten Monate kostet, wird automatisch von unserer KI in 0,7 Sekunden generiert. Bereitgestellt mit maximaler Leistung und unserer Open-Source-Software, selbst auf kleinster Hardware."
+    "message": "Die Welt vertraut auf KI-Modelle, die mit unnötigen Daten aufgebläht sind. ONE AI generiert KI, die auf Ihre Bedürfnisse zugeschnitten ist, damit Sie Projekte schneller und mit besseren Ergebnissen abschließen können. Bereitgestellt mit maximaler Leistung selbst auf kleinster Hardware."
   },
   "homepage.button.discover": {
     "message": "ONE AI Entdecken"
@@ -77,14 +77,41 @@
   "homepage.usecase.link": {
     "message": "Mehr Details"
   },
+  "homepage.industry.aerospace": {
+    "message": "Luft- und Raumfahrt"
+  },
   "homepage.industry.agriculture": {
     "message": "Landwirtschaft"
   },
-  "homepage.industry.food": {
-    "message": "Lebensmittel"
+  "homepage.industry.automotive": {
+    "message": "Automobilindustrie"
+  },
+  "homepage.industry.consumer": {
+    "message": "Konsumgüter"
+  },
+  "homepage.industry.drones": {
+    "message": "Drohnen"
+  },
+  "homepage.industry.energy": {
+    "message": "Energie"
+  },
+  "homepage.industry.foodbeverage": {
+    "message": "Lebensmittel & Getränke"
+  },
+  "homepage.industry.healthcare": {
+    "message": "Gesundheitswesen"
   },
   "homepage.industry.industry": {
     "message": "Industrie"
+  },
+  "homepage.industry.retail": {
+    "message": "Einzelhandel"
+  },
+  "homepage.industry.security": {
+    "message": "Sicherheit"
+  },
+  "homepage.industry.transport": {
+    "message": "Transport"
   },
   "homepage.industry.infrastructure": {
     "message": "Infrastruktur"
@@ -350,6 +377,42 @@
   },
   "oneai.hero.nextgen.title.ai": {
     "message": "richtigen KI"
+  },
+  "oneai.hero.nextgen.title": {
+    "message": "Die nächste Generation der KI-Entwicklung"
+  },
+  "oneai.hero.main.title": {
+    "message": "Lass ONE AI Deine Vision- und Edge-AI-Projekte fertigstellen"
+  },
+  "oneai.hero.main.subtitle": {
+    "message": "Sieh die Kraft Deines Datensatzes mit der richtigen KI."
+  },
+  "oneai.hero.main.subtitle2": {
+    "message": "Automatisch maßgeschneidert für Deine Bedürfnisse und exportiert für jede Hardware."
+  },
+  "homepage.seo.title": {
+    "message": "ONE WARE - Die nächste Generation der Computer Vision und Edge AI Entwicklung"
+  },
+  "homepage.seo.description": {
+    "message": "Bessere Ergebnisse in kürzerer Zeit mit ONE AI. ONE WARE bietet mit ONE AI die erste Software, die automatisch maßgeschneiderte KI-Modelle für Ihre Bedürfnisse generiert. Optimiert und exportiert für PCs, Mikrocontroller, FPGAs, GPUs, NPUs und mehr."
+  },
+  "homepage.seo.og.title": {
+    "message": "ONE WARE - Die nächste Generation der Computer Vision und Edge AI Entwicklung"
+  },
+  "homepage.seo.og.description": {
+    "message": "Bessere Ergebnisse in kürzerer Zeit mit ONE AI. KI-Modelle, automatisch maßgeschneidert für Ihre Bedürfnisse."
+  },
+  "oneai.seo.title": {
+    "message": "ONE AI | Lass ONE AI Deine Computer Vision oder Edge AI Projekte beenden"
+  },
+  "oneai.seo.description": {
+    "message": "Bessere Ergebnisse in kürzerer Zeit mit ONE AI. Die erste Software, die automatisch maßgeschneiderte KI-Modelle für Ihre Bedürfnisse generiert. Optimiert und exportiert für PCs, Mikrocontroller, FPGAs, GPUs, NPUs und mehr."
+  },
+  "oneai.seo.og.title": {
+    "message": "Lass ONE AI Deine Computer Vision oder Edge AI Projekte beenden"
+  },
+  "oneai.seo.og.description": {
+    "message": "Bessere Ergebnisse in kürzerer Zeit mit ONE AI. KI-Modelle, automatisch maßgeschneidert für Ihre Bedürfnisse."
   },
   "oneai.hero.nextgen.subtitle1": {
     "message": "KI-Modelle, die in Sekunden von unserer KI für Ihre Bedürfnisse erfunden werden."

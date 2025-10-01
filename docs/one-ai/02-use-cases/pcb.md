@@ -1,10 +1,8 @@
 ---
 id: pcb
-title: PCB Quality Control - ONE AI vs Human Scientists
-sidebar_label: PCB Quality Control
+title: High Precision Computer Vision
+sidebar_label: High Precision Computer Vision
 ---
-
-# ONE AI vs. Human Scientists in PCB Quality Control
 
 ### Outperforming hand-crafted architectures with optimized AI models
 
