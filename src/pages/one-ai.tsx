@@ -7,8 +7,6 @@ import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import initWebsiteEffects from "../components/startEffects";
 import ContactUs from "../components/ContactUs";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadFull } from "tsparticles";
 import Translate, { translate } from "@docusaurus/Translate";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
@@ -487,7 +485,7 @@ function InventionSection() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-gray-900 to-black">
+    <section className="py-16 md:py-24 to-black">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-12">
@@ -506,7 +504,7 @@ function InventionSection() {
         {/* Responsive Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           {inventions.map((invention, index) => (
-            <div key={index} className="bg-gray-800/50 rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300 hover:transform hover:scale-105">
+            <div key={index} className="bg-black bg-opacity-50 rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300 hover:transform hover:scale-105">
               {/* Title */}
               <h3 className="text-xl font-bold mb-3 text-white">
                 <Translate id={invention.titleId}>
@@ -515,7 +513,7 @@ function InventionSection() {
               </h3>
               
               {/* Image */}
-              <div className="w-full h-64 mb-6 rounded-lg overflow-hidden bg-gray-700/50 flex items-center justify-center">
+              <div className="w-full h-64 mb-6 rounded-lg overflow-hidden flex items-center justify-center">
                 <img 
                   src={useBaseUrl(invention.image)}
                   alt=""
@@ -524,7 +522,7 @@ function InventionSection() {
                     // Fallback to placeholder if image doesn't exist
                     e.currentTarget.style.display = 'none';
                     e.currentTarget.parentElement!.innerHTML = `
-                      <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#00FFD1]/20 to-[#00FFD1]/5">
+                      <div class="w-full h-full flex items-center justify-center">
                         <div class="text-4xl text-[#00FFD1] opacity-50">🚀</div>
                       </div>
                     `;
@@ -552,11 +550,9 @@ export default function OneAi() {
   initWebsiteEffects();
 
   return (
-    <>
+    <Layout title={translate({id: 'oneai.seo.title', message: 'ONE AI | Let ONE AI Finish Your Computer Vision or Edge AI Project'})}
+      description={translate({id: 'oneai.seo.description', message: 'Get better results in less time with ONE AI. The first software that automatically generates tailored AI models for your needs. Optimized and exported for PCs, microcontrollers, FPGAs, GPUs, NPUs and more.'})}>
       <Head>
-        <title>{translate({id: 'oneai.seo.title', message: 'ONE AI | Let ONE AI Finish Your Computer Vision or Edge AI Project'})}</title>
-        <meta name="description" content={translate({id: 'oneai.seo.description', message: 'Get better results in less time with ONE AI. The first software that automatically generates tailored AI models for your needs. Optimized and exported for PCs, microcontrollers, FPGAs, GPUs, NPUs and more.'})} />
-        
         {/* Open Graph für Social Media */}
         <meta property="og:title" content={translate({id: 'oneai.seo.og.title', message: 'Let ONE AI Finish Your Computer Vision or Edge AI Project'})} />
         <meta property="og:description" content={translate({id: 'oneai.seo.og.description', message: 'Get better results in less time with ONE AI. AI models, automatically tailored for your needs.'})} />
@@ -569,8 +565,6 @@ export default function OneAi() {
         <link rel="alternate" hrefLang="de" href="https://one-ware.com/de/one-ai" />
         <link rel="alternate" hrefLang="x-default" href="https://one-ware.com/one-ai" />
       </Head>
-      
-      <Layout >
         
       <div className={`absolute w-full -z-10 ${styles.particleBackground}`}>
         <div className="h-96 absolute w-full"></div>
@@ -672,6 +666,5 @@ export default function OneAi() {
         </div>
       </main>
     </Layout>
-    </>
   );
 }

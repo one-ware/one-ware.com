@@ -628,11 +628,9 @@ export default function Home() {
   }
 
   return (
-    <>
+    <Layout title={translate({id: 'homepage.seo.title', message: 'ONE WARE - The Next Generation of Computer Vision and Edge AI Development'})}
+            description={translate({id: 'homepage.seo.description', message: 'Get better results in less time with ONE AI. ONE WARE offers with ONE AI the first software that automatically generates tailored AI models for your needs. Optimized and exported for PCs, microcontrollers, FPGAs, GPUs, NPUs and more.'})}>
       <Head>
-        <title>{translate({id: 'homepage.seo.title', message: 'ONE WARE - The Next Generation of Computer Vision and Edge AI Development'})}</title>
-        <meta name="description" content={translate({id: 'homepage.seo.description', message: 'Get better results in less time with ONE AI. ONE WARE offers with ONE AI the first software that automatically generates tailored AI models for your needs. Optimized and exported for PCs, microcontrollers, FPGAs, GPUs, NPUs and more.'})} />
-        
         {/* Open Graph für Social Media */}
         <meta property="og:title" content={translate({id: 'homepage.seo.og.title', message: 'ONE WARE - The Next Generation of Computer Vision and Edge AI Development'})} />
         <meta property="og:description" content={translate({id: 'homepage.seo.og.description', message: 'Get better results in less time with ONE AI. AI models, automatically tailored for your needs.'})} />
@@ -646,8 +644,6 @@ export default function Home() {
         <link rel="alternate" hrefLang="x-default" href="https://one-ware.com/" />
       </Head>
       
-      <Layout
-      >
       <HomepageHeader />
       <main className="overflow-x-hidden alternative-background ">
         <div className="dropshadowbottom">
@@ -675,6 +671,5 @@ export default function Home() {
         </div>
       </main>
     </Layout>
-    </>
   );
 }
