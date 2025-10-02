@@ -158,14 +158,14 @@ const config: Config = {
           href: "https://cloud.one-ware.com/Account/Login",
           position: "right",
           label: "Login",
-          className: "button button--primary button--outline button--md font-bold loginbutton",
+          className: "button button--primary button--outline button--md font-bold navbarbutton",
           style: { "margin-left": "2px", "margin-right": "2px"}
         },
         {
           to: "/one-ai#getStarted",
           label: "Get Started",
           position: "right",
-          className: "button button--primary button--md text-gray-900 font-bold",
+          className: "button button--primary button--md text-gray-900 font-bold navbarbutton",
           style: { "margin-left": "2px"}
         },
         
