@@ -74,6 +74,10 @@ Next, you need to prepare the data that your model is trained on. For the traini
 
 You can find more in depth information about handling your dataset in [this guide](/docs/one-ai/getting-started/dataset).
 
+:::tip Training with synthetic image data
+If you do not have a viable training dataset, you can generate quality synthetic image data through our partner [Rendered.ai](https://rendered.ai/). The Rendered.ai team can quickly provide a physically accurate, fully labeled dataset customized to your use case for any computer vision sensor modality on a [project basis](https://rendered.ai/synthetic-data-as-a-service/), or you can create synthetic data yourself at scale with Rendered.ai’s [tools and workflows](https://rendered.ai/platform/). All synthetic data generated via these means is fully annotated at creation and immediately accessible to merge with existing datasets and import into your ONE AI workspace.
+:::
+
 ### Load your images
 To load your images into OneWare Studio, you need to go to the **Dataset** tab in your ONE AI workspace. There you have a button at the top-right that allows you to import your data.
 

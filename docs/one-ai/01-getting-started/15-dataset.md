@@ -36,6 +36,10 @@ You can use OneWare Studio's integrated ``Camera Tool`` to record images for you
 
 If you want to learn more about the ``Camera Tool``, you can check out [this guide](/docs/one-ai/getting-started/camera-tool).
 
+:::tip Training with synthetic image data
+For computer vision use cases where viable training data is not available at the scale required because of edge cases, rare objects, or sensitive information / consumer privacy concerns, customized synthetic data generation can be a much faster, less expensive, and more diverse alternative to manual real data collection. If this is a current challenge for your team, explore our partner [Rendered.ai](https://rendered.ai/) for rapid synthetic image data generation to quickly access a clean, well-labeled dataset customized to your use case to train your model with ONE AI.
+:::
+
 ### 1.3 Spectrogram generator
 ![Spectrogram Generator](/img/ai/one_ai_plugin/getting_started/spectrogram_generator.png)
 
