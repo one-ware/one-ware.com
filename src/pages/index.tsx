@@ -48,7 +48,7 @@ function HomepageHeader() {
             <div className="text-center">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                 <Translate id="oneai.hero.nextgen.title">
-                  The Next Generation of AI Development
+                  The Next Generation Vision and Edge AI Software
                 </Translate>
               </h1>
 
@@ -628,11 +628,11 @@ export default function Home() {
   }
 
   return (
-    <Layout title={translate({id: 'homepage.seo.title', message: 'ONE WARE - The Next Generation of Computer Vision and Edge AI Development'})}
-            description={translate({id: 'homepage.seo.description', message: 'Get better results in less time with ONE AI. ONE WARE offers with ONE AI the first software that automatically generates tailored AI models for your needs. Optimized and exported for PCs, microcontrollers, FPGAs, GPUs, NPUs and more.'})}>
+    <Layout title={translate({id: 'homepage.seo.title', message: 'ONE WARE - The Next Generation Vision and Edge AI Software'})}
+            description={translate({id: 'homepage.seo.description', message: 'Get better results in less time. ONE WARE offers with ONE AI the first software that automatically generates tailored AI models for your needs. Optimized and exported for PCs, microcontrollers, FPGAs, GPUs, NPUs and more.'})}>
       <Head>
         {/* Open Graph für Social Media */}
-        <meta property="og:title" content={translate({id: 'homepage.seo.og.title', message: 'ONE WARE - The Next Generation of Computer Vision and Edge AI Development'})} />
+        <meta property="og:title" content={translate({id: 'homepage.seo.og.title', message: 'ONE WARE - The Next Generation Vision and Edge AI Software'})} />
         <meta property="og:description" content={translate({id: 'homepage.seo.og.description', message: 'Get better results in less time with ONE AI. AI models, automatically tailored for your needs.'})} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://one-ware.com/" />
