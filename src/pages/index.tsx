@@ -48,7 +48,7 @@ function HomepageHeader() {
             <div className="text-center">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                 <Translate id="oneai.hero.nextgen.title">
-                  The Next Generation Vision and Edge AI Software
+                  The Next Generation of AI Development
                 </Translate>
               </h1>
 
