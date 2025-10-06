@@ -1,5 +1,12 @@
 # Pricing
 
+## Licenses for Production Use
+
+After testing, a **commercial usage license** for the trained model can be purchased.
+Please contact sales at **[sales@one-ware.com](mailto:sales@one-ware.com)** to get a license that meets your demands.
+
+---
+
 ## Credit Price
 
 * **1,000 credits = €20.00** (minimum purchase) → **1 credit = €0.02**
@@ -23,13 +30,6 @@
 * **10 min of training:** 10 min × 50 credits = 500 credits → **€10.00**
 
 > Calculated with 1 credit = €0.02.
-
----
-
-## Licenses for Production Use
-
-After testing, a **commercial usage license** for the trained model can be purchased.
-Please contact sales at **[sales@one-ware.com](mailto:sales@one-ware.com)** to get a license that meets your demands.
 
 ---
 
