@@ -636,6 +636,18 @@
   "contactus.buttonsend": {
     "message": "Senden"
   },
+  "contactus.leo.role": {
+    "message": "Ihr Ansprechpartner im Vertrieb"
+  },
+  "contactus.leo.description": {
+    "message": "Leo ist unser Sales-Experte, der sich um Projekte aller Art kümmert. Ob Sie Evaluierungen für Ideen, individuelle Angebote, Partnerschaftsmöglichkeiten oder strategische Beratung benötigen - Leo ist Ihr Ansprechpartner für alle geschäftlichen Anfragen."
+  },
+  "contactus.leo.cta": {
+    "message": "E-Mail Senden"
+  },
+  "contactus.form.title": {
+    "message": "Senden Sie uns direkt eine Nachricht"
+  },
   "homepage.features.oneai": {
     "message": "Entdecke ONE AI - neuronale Netzwerke, die in Sekunden erstellt und exakt auf die Anforderungen an Hardware, Performance und Anwendung zugeschnitten sind"
   },
