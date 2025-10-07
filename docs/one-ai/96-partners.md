@@ -113,6 +113,9 @@ Technology collaboration around edge-AI on FPGAs, enablement for Quartus/NIOS V 
 ### **Trenz Electronic**
 Support of selected devkits and reference designs for edge-AI on FPGA.
 
+### **Rendered.ai**
+[Rendered.ai](https://rendered.ai/) specializes in quality synthetic image data generation and can quickly provide a physically accurate, fully labeled dataset customized to your use case.
+
 :::
 
 ---

@@ -41,13 +41,12 @@ Beyond direct support, we offer a range of **other services** to help you unlock
 
 ## Hardware Support
 
-The ONE AI extension is built to fit into your environment – no matter which hardware you use.  
-You can export trained AI models as:
-
-- Cross-platform executables  
-- Universal HDL code  
-- C++ projects  
+The ONE AI extension is built to fit into your environment – no matter which hardware you use.  It is cross-platform and can run any model generated and trained with our software. Simply export as ONNX and you are ready to go.
+Alternatively you can export a trained AI models as:
+  
 - ONNX, TensorFlow or TF-Lite models  
+- Universal HDL code  
+- C++ projects or binaries
 
 Check out [our hardware partner overview](/docs/one-ai/96-partners.md) to see the full list of supported platforms.
 
