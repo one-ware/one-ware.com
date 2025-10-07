@@ -5,6 +5,10 @@ sidebar_label: Problems & Solutions
 ---
 # Common Problems and their Solutions
 
+import SupportBanner from '@site/src/components/SupportBanner';
+
+<SupportBanner subject="ONE AI Model Settings Support" />
+
 ## No viable configuration found for current hardware constraints
 You might have seen the following error message:  
 ![error_message_resources](/img/ai/one_ai_plugin/problems_and_solutions/error_resources.png)

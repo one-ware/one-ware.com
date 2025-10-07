@@ -114,3 +114,7 @@ Below is a table with all currently available export options. Each line correspo
        <td>CPU</td>
      </tr>
 </table>
+
+import SupportBanner from '@site/src/components/SupportBanner';
+
+<SupportBanner subject="ONE AI Training and Export Support" />

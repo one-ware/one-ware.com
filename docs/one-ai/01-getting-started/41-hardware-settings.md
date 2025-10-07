@@ -27,3 +27,7 @@ You have the option to select select a preconfigured hardware. If you want to us
 - ``Optimize for Parallel Execution``: Select this option if you plan to implement the AI as a parallel architecture on FPGAs or ASICs.  
 - ``Quantized Calculations``: Enable quantization to boost performance. This can slightly reduce accuracy but significantly increases speed. For most applications, especially on microcontrollers, TPUs, FPGAs, or ASICs, quantization is highly recommended.
 - ``Bits per Value``: Set the precision level for neural network calculations.  
+
+import SupportBanner from '@site/src/components/SupportBanner';
+
+<SupportBanner subject="ONE AI Model Settings Support" />

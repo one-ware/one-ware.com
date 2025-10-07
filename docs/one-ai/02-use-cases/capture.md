@@ -63,3 +63,7 @@ The Camera Tool completes the workflow:
 **ONE AI develops the superior models—and with a single click they become a production-ready QC station.**
 
 From lab experiments to real production lines, you get **accurate AI decisions, seamless hardware integration, and continuous model improvement**—without extra engineering effort. It’s the fastest path from **better models** to **better manufacturing outcomes**.
+
+import SupportBanner from '@site/src/components/SupportBanner';
+
+<SupportBanner subject="ONE AI Open Source Program Support" />
