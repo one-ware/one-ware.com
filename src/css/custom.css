@@ -205,3 +205,9 @@ body {
 .navbarbutton:hover{
   color: black;
 }
+
+/* Wide dropdown for Products navigation */
+.navbar__dropdown--wide .dropdown__menu {
+  min-width: 280px !important;
+  width: 280px !important;
+}
