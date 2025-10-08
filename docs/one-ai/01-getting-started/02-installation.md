@@ -13,47 +13,47 @@ The data that you upload to the OneWare Cloud is stored securely on our own serv
 ### 1. Download and Install OneWare Studio
 First, you need to install OneWare Studio on your PC. You can download it [here](/docs/studio/setup) for Windows, Linux and macOS. Simply follow the installer and start OneWare Studio after you've finished the installation process.
 
-[![Install](/img/ai/one_ai_plugin/getting_started/installation_wizard.webp)](/docs/studio/setup)
+[![Install](/img/ai/one_ai_plugin/getting_started/installation/installation_wizard.webp)](/docs/studio/setup)
 
 ### 2. Install ONE AI Extension
 OneWare Studio is open source and has multiple extensions that allow you to use it as development platform for any kind of AI, software, firmware or FPGA development.
 Click on ``Extras`` > ``Extensions`` to get to the extension manager that lets you personalize OneWare Studio for your development needs.
 
-![Extension Installation](/img/ai/one_ai_plugin/getting_started/extension_installation.webp)
+![Extension Installation](/img/ai/one_ai_plugin/getting_started/installation/extension_installation.webp)
 
 In the extension manager, install the OneAI extension. This includes everything you need to develop AI models for any kinds of hardware without the need to be an AI expert.
 
-![AI Extension](/img/ai/one_ai_plugin/getting_started/ai_extension.webp)
+![AI Extension](/img/ai/one_ai_plugin/getting_started/installation/ai_extension.webp)
 
 ### 3. Sign Up to ONE AI
 Next, you need to create an account [here](https://cloud.one-ware.com/Account/Register). The registration is free and gives you access to our cloud infrastructure and AI model training.
 
-[![Sign Up](/img/ai/one_ai_plugin/getting_started/signup.webp)](https://cloud.one-ware.com/Account/Register)
+[![Sign Up](/img/ai/one_ai_plugin/getting_started/installation/signup.webp)](https://cloud.one-ware.com/Account/Register)
 
 ### 4. Enter your Address to Get Free Credits
 After you have access to the OneWare Cloud, you need to to enter your address. This will give you a sign up bonus of 25.000 credits worth 500 € for free. You won't be charged with any fees. The address is needed to check for trade restrictions and general company verification. It is also required if you want to purchase more credits later on. The verification will take up to one business day, but you can already continue with the next steps. You don't need any credits until you start a model training.
 
 You can get to the address form by clicking on the link on your home page.
 
-![Address Verification 1](/img/ai/one_ai_plugin/getting_started/address_verification_1.webp)
+![Address Verification 1](/img/ai/one_ai_plugin/getting_started/installation/address_verification_1.webp)
 
 Alternatively, you can go to your account settings and navigate to ``Change Address``.
 
-![Address Verification 2](/img/ai/one_ai_plugin/getting_started/address_verification_2.webp)
+![Address Verification 2](/img/ai/one_ai_plugin/getting_started/installation/address_verification_2.webp)
 
 ### 5. Connect to ONE AI Cloud
 
 The last step of the setup process is to connect OneWare Studio with the OneWare Cloud. Click on the `Account` button on the top right and then on `Login`.
 
-![Connect](/img/ai/one_ai_plugin/getting_started/connect_to_cloud.webp)
+![Connect](/img/ai/one_ai_plugin/getting_started/installation/connect_to_cloud.webp)
 
 Here, you need to enter the email and password you used to register for the OneWare Cloud earlier.
 
-![Login](/img/ai/one_ai_plugin/getting_started/login.webp)
+![Login](/img/ai/one_ai_plugin/getting_started/installation/login.webp)
 
 After you click on `Log In`, you should see that your account is now connected in OneWare Studio, so you will be able to use the ONE AI services.
 
-![Login](/img/ai/one_ai_plugin/getting_started/login_success.webp)
+![Login](/img/ai/one_ai_plugin/getting_started/installation/login_success.webp)
 
 import SupportBanner from '@site/src/components/SupportBanner';
 
