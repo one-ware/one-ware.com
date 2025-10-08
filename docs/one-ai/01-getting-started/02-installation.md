@@ -54,3 +54,7 @@ Here, you need to enter the email and password you used to register for the OneW
 After you click on `Log In`, you should see that your account is now connected in OneWare Studio, so you will be able to use the ONE AI services.
 
 ![Login](/img/ai/one_ai_plugin/getting_started/login_success.webp)
+
+import SupportBanner from '@site/src/components/SupportBanner';
+
+<SupportBanner subject="ONE AI Getting Started Support" />

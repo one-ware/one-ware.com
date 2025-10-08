@@ -46,3 +46,7 @@ Please contact sales at **[sales@one-ware.com](mailto:sales@one-ware.com)** to g
 
 Contact us at **[info@one-ware.com](mailto:info@one-ware.com)** – we are happy to calculate your scenario or provide a tailored licensing offer for your application.
 
+import SupportBanner from '@site/src/components/SupportBanner';
+
+<SupportBanner subject="ONE AI Pricing Support" />
+

@@ -24,7 +24,11 @@ We know that every project is different. That’s why we offer support on severa
   If your AI doesn’t perform as expected, or you encounter issues using the IDE and ONE AI, our experts will step in.  
   We also help during the integration of generated export files and can implement individual feature requests tailored to your project. Just send an inquiry at [support@one-ware.com](mailto:support@one-ware.com).
 
-Whether you’re solving a small technical hurdle or planning a large-scale AI deployment, we make sure you don’t get stuck along the way.
+Whether you need training, integration support, or a fully customized solution – we're here to help.
+
+import SupportBanner from '@site/src/components/SupportBanner';
+
+<SupportBanner subject="ONE AI Services Support" />
 
 ## Consulting and Custom Solutions
 

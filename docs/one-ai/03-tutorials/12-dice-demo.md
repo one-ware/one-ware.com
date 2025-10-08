@@ -54,3 +54,7 @@ Finally, we set up the parameters for the model training. In the **Hardware Sett
 In the **Training** tab we need to click on **Sync** to synchronize our data and existing model trainings with the ONE WARE servers. After that, we create a new training configuration. Object detection tasks tend to need a lot more training than classification tasks so we set the **training time** to **60 minutes**. The patience is set to **25%** to terminate the training early if there are no further improvements. Since we don't plan to export the model to an FPGA, we don't need to **enable quantization**.
 
 Finally, we click on the **Train** button in the top-right corner to start the training. You can monitor the training progress in the **Logs** and **Statistics** tabs.
+
+import SupportBanner from '@site/src/components/SupportBanner';
+
+<SupportBanner subject="ONE AI Tutorial Support" />

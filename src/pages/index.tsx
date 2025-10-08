@@ -628,11 +628,11 @@ export default function Home() {
   }
 
   return (
-    <Layout title={translate({id: 'homepage.seo.title', message: 'ONE WARE - The Next Generation Vision and Edge AI Software'})}
-            description={translate({id: 'homepage.seo.description', message: 'Get better results in less time. ONE WARE offers with ONE AI the first software that automatically generates tailored AI models for your needs. Optimized and exported for PCs, microcontrollers, FPGAs, GPUs, NPUs and more.'})}>
+    <Layout title={translate({id: 'homepage.seo.title', message: 'The Next Generation Vision and Edge AI Software'})}
+            description={translate({id: 'homepage.seo.description', message: 'Get better results in less time. AI automatically tailored for your needs. Optimized and exported for PCs, microcontrollers, FPGAs, GPUs, NPUs and more.'})}>
       <Head>
         {/* Open Graph für Social Media */}
-        <meta property="og:title" content={translate({id: 'homepage.seo.og.title', message: 'ONE WARE - The Next Generation Vision and Edge AI Software'})} />
+        <meta property="og:title" content={translate({id: 'homepage.seo.og.title', message: 'The Next Generation Vision and Edge AI Software'})} />
         <meta property="og:description" content={translate({id: 'homepage.seo.og.description', message: 'Get better results in less time with ONE AI. AI models, automatically tailored for your needs.'})} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://one-ware.com/" />

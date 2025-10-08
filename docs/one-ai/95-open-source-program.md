@@ -90,3 +90,7 @@ Our team will review your request quickly and provide you with the credits you n
 
 The **ONE AI platform** and all **paid credit packages** are offered **exclusively to business customers** under our [General Terms and Conditions](/docs/contact/terms).  
 Nothing in this page modifies or extends those terms. The Open Source Program is a voluntary initiative that provides non-commercial projects with free, discretionary support.
+
+import SupportBanner from '@site/src/components/SupportBanner';
+
+<SupportBanner subject="ONE AI Open Source Program Support" />

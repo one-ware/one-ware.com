@@ -53,3 +53,7 @@ You might have noticed that additional subdirectory options appeared in the ``Ca
 You can also use the ``Camera Tool`` to evaluate the performance of your model on live data. Like in the previous section, you need to export and download your model in the ONNX format. In the ``Live Preview`` tab, you can select the model that you want to use as well as the camera. You also need to select whether you are using a ``Classification`` or an ``Object Detection`` model in the ``Preview Mode``. After you click on the play button, the model will start running on your local machine. If you have an object detection task, the predicted bounding boxes will be drawn directly onto the preview. For classification tasks, the predicted class is displayed in the bottom right corner.
 
 ![Camera Tool Live Preview](/img/ai/one_ai_plugin/getting_started/camera_tool/live_preview.png)
+
+import SupportBanner from '@site/src/components/SupportBanner';
+
+<SupportBanner subject="ONE AI Camera Tool Support" />

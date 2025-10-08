@@ -49,6 +49,20 @@ const config: Config = {
         },
       };
     },
+
+    ['@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            from: '/one-ai/getting-started',
+            to: '/docs/one-ai/getting-started',
+          },
+          {
+            from: '/one-ai/choosing-parameters',
+            to: '/docs/one-ai/help/choosing-parameters-guide',
+          },
+        ],
+      }],
   ],
 
   i18n: {
@@ -107,48 +121,153 @@ const config: Config = {
         {
           type: "dropdown",
           position: "left",
-          label: "ONE AI",
+          label: "Products",
           to: "/one-ai",
           activeBaseRegex: "(^.*/one-ai$)|(^.*/docs/one-ai/.*$)",
+          className: "navbar__dropdown--wide",
           items: [
             {
-              to: "/one-ai",
-              label: "Overview",
+              type: "html",
+              value: '<a href="/one-ai" style="font-weight: bold; color: #00FFD1; text-decoration: none; display: block; padding: 8px 12px;">ONE AI</a>',
             },
             {
-              type: "doc",
-              docId: "one-ai/getting-started/getting-started",
-              label: "Getting Started",
+              to: "/docs/one-ai/getting-started",
+              label: "Get Started",
+            },
+            {
+              to: "/docs/one-ai/tutorials",
+              label: "Demo Projects",
+            },
+            {
+              type: "html",
+              value: '<div style="padding-top: 8px; padding-left: 7px; color: #00caa5ff; font-size: 0.8rem; font-weight: 700;">Features</div>',
+            },
+            {
+              type: "html",
+              value: '<a href="/docs/one-ai/getting-started/camera-tool" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Capture Tool</a>',
+            },
+            {
+              type: "html",
+              value: '<a href="/docs/one-ai/getting-started/filters-and-augmentations" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Filters & Augmentation</a>',
+            },
+            {
+              type: "html",
+              value: '<a href="/docs/one-ai/getting-started/training-and-export" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Export</a>',
+            },
+            {
+              type: "html",
+              value: '<hr style="margin: 0.5rem 0; border: none; border-top: 1px solid var(--ifm-color-primary);">',
+            },
+            {
+              type: "html",
+              value: '<a href="/studio" style="font-weight: bold; color: #00FFD1; text-decoration: none; display: block; padding: 8px 12px;">ONE WARE Studio</a>',
+            },
+            {
+              to: "/docs/studio/setup",
+              label: "Get Started",
+            },
+            {
+              to: "/docs/studio/plugins/overview/",
+              label: "Contribute",
+            }
+          ],
+        },
+        {
+          type: "dropdown",
+          position: "left",
+          label: "Solutions",
+          items: [
+            {
+              to: "/docs/one-ai/use-cases/",
+              label: "Applications",
+            },
+            {
+              to: "/docs/one-ai/use-cases/camera-tool",
+              label: "Quality Control",
+            },
+            {
+              to: "/docs/one-ai/use-cases/chip",
+              label: "Edge AI",
+            },
+            {
+              to: "/docs/one-ai/use-cases/pcb",
+              label: "Vision AI",
             },
           ],
         },
         {
           type: "dropdown",
           position: "left",
-          label: "ONE WARE Studio",
-          to: "/studio",
-          activeBaseRegex: "(^.*/studio$)|(^.*/docs/studio/.*$)",
+          label: "Developers",
           items: [
             {
-              to: "/studio",
-              label: "Studio",
+              to: "/docs/one-ai/getting-started",
+              label: "Documentation",
             },
             {
-              type: "doc",
-              docId: "studio/setup",
-              label: "Setup",
+              to: "/docs/one-ai/tutorials",
+              label: "Example Projects",
+            },
+            {
+              to: "/docs/one-ai/partners",
+              label: "Supported Hardware",
+            },
+            {
+              to: "/docs/one-ai/open-source-program",
+              label: "Open Source Program",
+            },
+            {
+              href: "https://discord.com/invite/NCN9VAh",
+              label: "Forum (Discord)",
+            },
+            {
+              href: "https://github.com/one-ware",
+              label: "GitHub",
             },
           ],
         },
         {
-          to: "/docs/one-ai/partners",
-          label: "Partners",
-          position: "right",
+          type: "dropdown",
+          position: "left",
+          label: "Pricing",
+          items: [
+            {
+              to: "docs/one-ai/pricing",
+              label: "Pricing",
+            },
+            {
+              to: "docs/one-ai/services",
+              label: "Services",
+            },
+            {
+              to: "docs/one-ai/open-source-program",
+              label: "Open Source Program",
+            },
+          ],
         },
         {
-          to: "/blog",
-          label: "Blog",
+          type: "dropdown",
           position: "right",
+          label: "Company",
+          items: [
+            {
+              to: "/blog",
+              label: "Blog",
+            },
+            {
+              to: "/about-us",
+              label: "About",
+            },
+            {
+              to: "/careers",
+              label: "Careers",
+            },
+            {
+              type: "doc",
+              docId: "contact/contact",
+              label: "Contact",
+            },
+          ],
         },
         {
           type: 'localeDropdown',
@@ -159,16 +278,16 @@ const config: Config = {
           position: "right",
           label: "Login",
           className: "button button--primary button--outline button--md font-bold navbarbutton",
-          style: { "margin-left": "2px", "margin-right": "2px"}
+          style: { "margin-left": "2px", "margin-right": "2px" }
         },
         {
           to: "/one-ai#getStarted",
           label: "Get Started",
           position: "right",
           className: "button button--primary button--md text-gray-900 font-bold navbarbutton",
-          style: { "margin-left": "2px"}
+          style: { "margin-left": "2px" }
         },
-        
+
       ],
     },
     footer: {

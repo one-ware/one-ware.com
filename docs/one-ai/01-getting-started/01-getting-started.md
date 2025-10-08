@@ -4,6 +4,10 @@ title: Getting Started with ONE AI
 sidebar_label: Getting Started
 ---
 
+import SupportBanner from '@site/src/components/SupportBanner';
+
+<SupportBanner subject="ONE AI Getting Started Support" />
+
 ## 1. What is ONE AI and why should I use it?
 ONE AI is a tool that allows you to create a custom AI model that is tailored to your individual needs. With ONE AI you can configure your AI in minutes without the need to be an expert in AI development. This allows everyone to benefit from the potential of AI.
 

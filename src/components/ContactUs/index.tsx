@@ -37,65 +37,123 @@ export default function ContactUs() {
   };
 
   return (
-    <div className="text-center max-w-4xl m-auto">
-      <h2 className="text-3xl md:text-5xl font-bold"> <Translate id="contactus.headline">Interested? Contact us!</Translate></h2>
-
-      <div className="grid grid-flow-col auto-cols-max mx-auto justify-center gap-5 text-7xl">
-        <div>
-          <a className="text-stone-50" href="https://www.linkedin.com/company/one-ware/" target="_blank">
-            <CiLinkedin />
-          </a>
-        </div>
-        <div>
-          <a className="text-stone-50" href="/docs/contact">
-            <CiMail />
-          </a>
-        </div>
-
+    <div className="text-center w-full">
+      <div className="max-w-4xl mx-auto mb-8">
+        <h2 className="text-3xl md:text-5xl font-bold"> <Translate id="contactus.headline">Interested? Contact us!</Translate></h2>
       </div>
 
-      <div className="max-w-xl mx-auto mt-10 p-3 rounded-lg text-left">
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label htmlFor="name" className="block text-sm font-bold mb-1">Name</label>
-            <input
-              type="text"
-              className="w-full px-3 py-2 border rounded-lg focus:outline-none"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
+      {/* Leo Sales Section & Contact Form - Side by Side on Desktop */}
+      <div className="mt-12 mb-4 w-full px-6 lg:px-12">
+        <div className="flex flex-col lg:flex-row gap-8 items-start max-w-7xl mx-auto">
+          
+          {/* Leo Sales Section */}
+          <div className="w-full lg:w-1/2">
+            <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-gray-700 h-full">
+              <div className="text-center">
+                <div className="mb-6">
+                  <img
+                    src={require('@site/static/img/AboutUs/Leo.png').default}
+                    alt="Leo Wiegand - Sales Representative"
+                    className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-[#00FFD1]/20 mx-auto"
+                  />
+                </div>
+                
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                    Leo Wiegand
+                  </h3>
+                  <p className="text-[#00FFD1] font-semibold mb-4 text-lg">
+                    <Translate id="contactus.leo.role">
+                      Your Sales Contact
+                    </Translate>
+                  </p>
+                  <p className="text-gray-300 mb-8 leading-relaxed text-base md:text-lg max-w-md mx-auto">
+                    <Translate id="contactus.leo.description">
+                      Leo is our sales expert who takes care of projects of all kinds. Whether you need evaluations for ideas, custom quotes, partnership opportunities, or strategic consulting - Leo is your go-to contact for business inquiries.
+                    </Translate>
+                  </p>
+                  
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a 
+                      href="mailto:sales@one-ware.com?subject=Business Inquiry"
+                      className="inline-flex items-center justify-center px-6 py-3 bg-[#00FFD1] text-black font-semibold rounded-lg hover:bg-[#00FFD1]/90 transition-colors duration-300"
+                    >
+                      <CiMail className="w-5 h-5 mr-2" />
+                      <Translate id="contactus.leo.cta">
+                        Send E-Mail
+                      </Translate>
+                    </a>
+                    
+                    <a 
+                      href="https://www.linkedin.com/in/leo-wiegand-b27aa0272/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center px-6 py-3 border border-[#00FFD1] text-[#00FFD1] font-semibold rounded-lg hover:bg-[#00FFD1]/10 transition-colors duration-300"
+                    >
+                      <CiLinkedin className="w-5 h-5 mr-2" />
+                      LinkedIn
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-sm font-bold mb-1">E-Mail</label>
-            <input
-              type="email"
-              className="w-full px-3 py-2 border rounded-lg focus:outline-none"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
+
+          {/* Contact Form */}
+          <div className="w-full lg:w-1/2">
+            <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-gray-700 h-full">
+              <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-200">
+                <Translate id="contactus.form.title">
+                  Send us a message directly
+                </Translate>
+              </h3>
+              <form onSubmit={handleSubmit}>
+                <div className="mb-6">
+                  <label htmlFor="name" className="block text-sm font-bold mb-2 text-gray-300">Name</label>
+                  <input
+                    type="text"
+                    className="w-full px-4 py-3 border border-gray-600 bg-gray-700 text-white rounded-lg focus:outline-none focus:border-[#00FFD1] transition-colors"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="mb-6">
+                  <label htmlFor="email" className="block text-sm font-bold mb-2 text-gray-300">E-Mail</label>
+                  <input
+                    type="email"
+                    className="w-full px-4 py-3 border border-gray-600 bg-gray-700 text-white rounded-lg focus:outline-none focus:border-[#00FFD1] transition-colors"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="mb-8">
+                  <label htmlFor="message" className="block text-sm font-bold mb-2 text-gray-300">
+                    <Translate id="contactus.form.1">Message</Translate>
+                  </label>
+                  <textarea
+                    className="w-full px-4 py-3 border border-gray-600 bg-gray-700 text-white rounded-lg focus:outline-none focus:border-[#00FFD1] transition-colors resize-none"
+                    id="message"
+                    name="message"
+                    rows={6}
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                  ></textarea>
+                </div>
+                <button type="submit" className="text-black w-full font-bold py-4 px-6 button button--primary button--md transition-all hover:scale-[1.02]">
+                   <Translate id="contactus.buttonsend">Send</Translate>
+                </button>
+              </form>
+            </div>
           </div>
-          <div className="mb-6">
-            <label htmlFor="message" className="block text-sm font-bold mb-1"> <Translate id="contactus.form.1">Message</Translate></label>
-            <textarea
-              className="w-full px-3 py-2 border rounded-lg focus:outline-none"
-              id="message"
-              name="message"
-              rows={6}
-              value={formData.message}
-              onChange={handleChange}
-              required
-            ></textarea>
-          </div>
-          <button type="submit" className="text-black w-full font-bold py-3 px-4 button button--primary button--md">
-             <Translate id="contactus.buttonsend">Send</Translate>
-          </button>
-        </form>
+          
+        </div>
       </div>
 
     </div>

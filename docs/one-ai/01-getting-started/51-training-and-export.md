@@ -126,3 +126,6 @@ The following flow chart depicts a possible tool chain. The colorized parts are 
 When exporting a model file you can integrate our AI into your existing software solution or create your own.
 When exporting a project or binary we provide the necessary runtime along with the model. A project obtained this way can easily be adapted to your needs.
 
+import SupportBanner from '@site/src/components/SupportBanner';
+
+<SupportBanner subject="ONE AI Training and Export Support" />
