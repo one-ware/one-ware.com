@@ -203,7 +203,13 @@ body {
 }
 
 .navbarbutton:hover{
-  color: black;
+  color: red;
+}
+
+@media (max-width: 768px) {
+  .getstartedbutton{
+    color: black;
+  }
 }
 
 /* Wide dropdown for Products navigation */

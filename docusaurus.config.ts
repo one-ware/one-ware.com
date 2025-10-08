@@ -284,7 +284,7 @@ const config: Config = {
           to: "/one-ai#getStarted",
           label: "Get Started",
           position: "right",
-          className: "button button--primary button--md text-gray-900 font-bold navbarbutton",
+          className: "button button--primary button--md text-gray-900 font-bold navbarbutton getstartedbutton",
           style: { "margin-left": "2px" }
         },
 
