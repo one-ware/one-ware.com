@@ -10,27 +10,34 @@ ONE AI consists of a cloud service and an extension for our open source software
 
 The data that you upload to the OneWare Cloud is stored securely on our own servers in germany. If you work with sensitive data, you can contact us via mail: sales@one-ware.com, so we can provide a local training service that runs on your own hardware and ensures that the data doesn't leave your company. While you use OneWare Studio, your data is stored locally on your PC until you press the ``Sync`` button in the ``Training`` tab. This means that you can already start with creating an account and configuring your settings until we can provide your local training service.
 
-### 1. Download and Install OneWare Studio
+## 1. Download and install OneWare Studio
 First, you need to install OneWare Studio on your PC. You can download it [here](/docs/studio/setup) for Windows, Linux and macOS. Simply follow the installer and start OneWare Studio after you've finished the installation process.
 
 [![Install](/img/ai/one_ai_plugin/getting_started/installation/installation_wizard.webp)](/docs/studio/setup)
 
-### 2. Install ONE AI Extension
-OneWare Studio is open source and has multiple extensions that allow you to use it as development platform for any kind of AI, software, firmware or FPGA development.
-Click on ``Extras`` > ``Extensions`` to get to the extension manager that lets you personalize OneWare Studio for your development needs.
+## 2. Install the ONE AI Extension
+When you open OneWare Studio, you are greeted with a welcome screen, where you can install the ONE AI Extension by clicking on ``Install now``.
+
+![OneWare Studio greeting](/img/ai/one_ai_plugin/getting_started/installation/OneWare_Studio_greeting.png)
+
+### Adding additional extensions
+OneWare Studio is open source and has multiple extensions that allow you to use it as development platform for any kind of AI, software, firmware or FPGA development. Click on ``Extras`` > ``Extensions`` to open the ``Extension Manager`` that lets you personalize OneWare Studio for your development needs.
 
 ![Extension Installation](/img/ai/one_ai_plugin/getting_started/installation/extension_installation.webp)
 
-In the extension manager, install the OneAI extension. This includes everything you need to develop AI models for any kinds of hardware without the need to be an AI expert.
+### Adding hardware support
+If you want to create an AI model for a specific hardware, ONE AI needs to know the technical details of that hardware to optimize the model for the available resources. You can [define the hardware resources yourself](/docs/one-ai/getting-started/hardware-settings), but we also offer existing configurations for a growing list of hardware. You can install additional configuration files in the ``Extension Manager`` under ``Hardware`` > ``OneAI Support``.
 
-![AI Extension](/img/ai/one_ai_plugin/getting_started/installation/ai_extension.webp)
+![hardware extensions](/img/ai/one_ai_plugin/getting_started/installation/hardware_extensions.png)
 
-### 3. Sign Up to ONE AI
+If there isn't an extension for your hardware, you can contact us at info@one-ware.com, so we know which hardware to add next.
+
+## 3. Sign up to ONE AI
 Next, you need to create an account [here](https://cloud.one-ware.com/Account/Register). The registration is free and gives you access to our cloud infrastructure and AI model training.
 
 [![Sign Up](/img/ai/one_ai_plugin/getting_started/installation/signup.webp)](https://cloud.one-ware.com/Account/Register)
 
-### 4. Enter your Address to Get Free Credits
+## 4. Enter your address to get free credits
 After you have access to the OneWare Cloud, you need to to enter your address. This will give you a sign up bonus of 25.000 credits worth 500 € for free. You won't be charged with any fees. The address is needed to check for trade restrictions and general company verification. It is also required if you want to purchase more credits later on. The verification will take up to one business day, but you can already continue with the next steps. You don't need any credits until you start a model training.
 
 You can get to the address form by clicking on the link on your home page.
@@ -41,7 +48,7 @@ Alternatively, you can go to your account settings and navigate to ``Change Addr
 
 ![Address Verification 2](/img/ai/one_ai_plugin/getting_started/installation/address_verification_2.webp)
 
-### 5. Connect to ONE AI Cloud
+## 5. Connect to OneWare Cloud
 
 The last step of the setup process is to connect OneWare Studio with the OneWare Cloud. Click on the `Account` button on the top right and then on `Login`.
 
