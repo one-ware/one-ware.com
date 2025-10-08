@@ -125,6 +125,10 @@ const config: Config = {
               label: "Demo Projects",
             },
             {
+              to: "/docs/one-ai/partners",
+              label: "Supported Hardware",
+            },
+            {
               type: "html",
               value: '<div style="padding-top: 8px; padding-left: 7px; color: #00caa5ff; font-size: 0.8rem; font-weight: 700;">Features</div>',
             },
@@ -168,16 +172,16 @@ const config: Config = {
               label: "Applications",
             },
             {
-              to: "/docs/one-ai/use-cases/camera-tool",
-              label: "Quality Control",
+              type: "html",
+              value: '<a href="/docs/one-ai/use-cases/camera-tool" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Quality Control</a>',
             },
             {
-              to: "/docs/one-ai/use-cases/chip",
-              label: "Edge AI",
+              type: "html",
+              value: '<a href="/docs/one-ai/use-cases/chip" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Edge AI</a>',
             },
             {
-              to: "/docs/one-ai/use-cases/pcb",
-              label: "Vision AI",
+              type: "html",
+              value: '<a href="/docs/one-ai/use-cases/pcb" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Vision AI</a>',
             },
           ],
         },
@@ -232,17 +236,22 @@ const config: Config = {
           ],
         },
         {
+          to: "/blog",
+          label: "Blog",
+          position: "right",
+        },
+        {
           type: "dropdown",
           position: "right",
           label: "Company",
           items: [
             {
-              to: "/blog",
-              label: "Blog",
+              to: "/docs/one-ai/partners",
+              label: "Partners",
             },
             {
               to: "/about-us",
-              label: "About",
+              label: "About Us",
             },
             {
               to: "/careers",
