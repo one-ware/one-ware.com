@@ -212,8 +212,12 @@ body {
   }
 }
 
-/* Wide dropdown for Products navigation */
-.navbar__dropdown--wide .dropdown__menu {
-  min-width: 280px !important;
-  width: 280px !important;
+.dropdown__menu{
+  width: 200px;
+}
+
+/* Hover effects for HTML navigation items */
+.dropdown__menu a:hover {
+  background-color: var(--ifm-menu-color-background-hover) !important;
+  color: var(--ifm-menu-color-active) !important;
 }
