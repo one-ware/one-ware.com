@@ -54,8 +54,12 @@ const config: Config = {
       {
         redirects: [
           {
-            from: '/doc/hardcode-test',
+            from: '/one-ai/getting-started',
             to: '/docs/one-ai/getting-started',
+          },
+          {
+            from: '/one-ai/choosing-parameters',
+            to: '/docs/one-ai/help/choosing-parameters-guide',
           },
         ],
       }],
