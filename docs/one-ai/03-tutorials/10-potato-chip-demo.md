@@ -85,6 +85,8 @@ Lastly, we go to the **Training** tab and click on **Sync** to synchronize our d
 
 Finally, we click on the **Start Training** button. You can monitor the training progress in the **Logs** and **Statistics** tabs.
 
+![training settings](/img/ai/one_ai_plugin/demos/potato_chip/chips_training_settings.png)
+
 import SupportBanner from '@site/src/components/SupportBanner';
 
 <SupportBanner subject="ONE AI Tutorial Support" />
