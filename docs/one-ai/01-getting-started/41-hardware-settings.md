@@ -4,22 +4,33 @@ title: Hardware Settings
 sidebar_label: Hardware Settings
 ---
 
-The ``Hardware Settings`` tab allows you to specify the target hardware that your model will be deployed on. You have the option to select a predefined hardware or to define custom hardware resources. ONE AI will create a model that is optimized for your hardware and will run within the constraints that were specified in the ``Model Settings``.
+In the ``Hardware Settings``, you need to specify the target hardware that your model will be deployed on. You have the option to select a predefined hardware or to define a custom hardware. ONE AI will create a model that is optimized for your hardware and runs within the constraints that were specified in the ``Model Settings``.
 
-![Hardware](/img/ai/one_ai_plugin/getting_started/hardware_settings.webp)
+## Installing hardware extensions
+By default, the OneAI Extension allows you to select the hardware types ``CPU``, ``GPU`` and ``TPU``, but you have the option to install extensions for a growing list of hardware. To do so, you need to open  the ``Extension Manager`` by clicking on ``Extras`` > ``Extensions``.
 
-The important settings are just the `Hardware Type`, the `Compute Capability` how fast your hardware can do calculations and the `Memory Limit` how much RAM is available for the calculations.
-`Quantized Calculations` are important as well when you want to export to a microcontroller, TPU or FPGA. 
+![Extension Installation](/img/ai/one_ai_plugin/getting_started/installation/extension_installation.webp)
 
-### Used Hardware
-You have the option to select select a preconfigured hardware. If you want to use a different hardware, you can select ``Custom`` and enter the hardware specifications in the advanced settings.
+Here you need to go to the section ``Hardware`` > ``OneAI Support``, where you can install extensions for different pieces of hardware. If there is no extension for the hardware that you are using, you can contact us at info@one-ware.com, so we know which hardware to add next.
 
-### Advanced Settings
-- ``Hardware Type``: Select the hardware type:
+![hardware extensions](/img/ai/one_ai_plugin/getting_started/installation/hardware_extensions.png)
+
+## Selecting a preconfigured hardware
+To select a preconfigured hardware, you need to click on the button ``Open configuration dialog`` and choose the hardware configuration that you want to use. Some pieces of hardware are available with different configurations, which can be selected with the second dropdown menu. For example, there are different versions of the Altera™ Max® 10 with differing amounts of DSP blocks and memory.
+
+![hardware extensions](/img/ai/one_ai_plugin/getting_started/hardware_settings/hardware_configuration.png)
+
+## Specifying custom hardware
+If there is no configuration available for you hardware, you can use the ``Advanced`` settings to define a custom hardware.
+
+![advanced settings](/img/ai/one_ai_plugin/getting_started/hardware_settings/advanced_settings.png)
+
+Here you need to specify the following characteristics of your hardware:
+- ``Hardware Type``: Select the type of hardware that you are using, e.g. CPU, GPU or FPGA.
 - ``Prioritize Speed Optimization``: Enable this if your hardware, such as a microcontroller, has limited computational capabilities and benefits from a prioritization of speed over memory usage.
 - ``Compute Capability``: Specify the computational power of your hardware.
 - ``Compute Capability Unit``: The unit you used to specify the ``Compute Capability``.
-- ``8 Bit Multipliers (DSP Blocks)``: Define the amount of 8 bit multipliers of your FPGA.
+- ``8 Bit Multipliers (DSP Blocks)``: Enter the amount of 8 bit multipliers of your FPGA.
 - ``8 Bit Multipliers with Sum per DSP Block``: The amount of multipliers with sum that is available on your FPGA.
 - ``Prioritize Memory Optimization``: Enable this if your hardware, such as an FPGA with limited internal RAM, requires efficient memory usage for higher accuracy with fewer model parameters.
 - ``Memory Limit``: Define the amount of available memory. The type of memory depends on your hardware. For example, a GPU would use its VRAM while a CPU would use the system RAM. You can look at the tooltip for more information.
