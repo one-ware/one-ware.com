@@ -116,7 +116,7 @@ Below is a table with all currently available export options. Each line correspo
 </table>
 
 
-### Integration in your Setup
+### Integration into your Setup
 
 In order to run the AI within your setup everything needed is an inference engine within the software corresponding to the model type (e.g. Tensorflow or ONNX-runtime).
 The following flow chart depicts a possible tool chain. The colorized parts are provided by One Ware.
