@@ -7,13 +7,21 @@ Please contact sales at **[sales@one-ware.com](mailto:sales@one-ware.com)** to g
 
 ---
 
-## Credit Price
+## Credits for Training
+
+Credits are needed to train on our servers. You will get a number of credits to get you started as a welcome gift. Additional credits can be obtained to the conditions below.
+
+### Welcome Credits
+
+* **25,000 credits** granted once upon first registration and verification per user.
+
+### Credit Price
 
 * **1,000 credits = €20.00** (minimum purchase) → **1 credit = €0.02**
 * Credits are account-based and non-transferable.
 * Prepaid usage or optional **postpaid option** via SEPA with a configurable monthly limit.
 
-## Usage per Credit
+### Usage per Credit
 
 | Service                                  | Price                             |
 | ---------------------------------------- | --------------------------------- |
@@ -21,11 +29,7 @@ Please contact sales at **[sales@one-ware.com](mailto:sales@one-ware.com)** to g
 
 **Included temporary storage:** After each training run, **10 GB per project for up to 7 days** is provided at no additional cost (for training data & models). Data is deleted afterwards unless a new training run is started.
 
-## Welcome Credit
-
-* **25,000 credits** granted once upon first registration and verification per user.
-
-## Example Costs
+### Example Costs
 
 * **10 min of training:** 10 min × 50 credits = 500 credits → **€10.00**
 
