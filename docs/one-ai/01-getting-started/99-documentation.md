@@ -324,7 +324,7 @@ If you are training a classification model, you need to provide some additional 
 ## 8. Hardware Settings
 The ``Hardware Settings`` tab allows you to specify the target hardware that your model will be deployed on. You have the option to select a predefined hardware or to define custom hardware resources. ONE AI will create a model that is optimized for your hardware and will run within the constraints that were specified in the ``Model Settings``.
 
-![Hardware](/img/ai/one_ai_plugin/getting_started/hardware_settings.webp)
+![Hardware](/img/ai/one_ai_plugin/getting_started/hardware_settings/advanced_settings.png)
 
 The important settings are just the `Hardware Type`, the `Compute Capability` how fast your hardware can do calculations and the `Memory Limit` how much RAM is available for the calculations.
 `Quantized Calculations` are important as well when you want to export to a microcontroller, TPU or FPGA. 
