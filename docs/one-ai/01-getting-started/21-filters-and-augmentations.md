@@ -156,3 +156,7 @@ The ``Sharpen Augmentation`` randomly sharpens the images and has a similar effe
 <img src="/img/ai/one_ai_plugin/getting_started/augmentation_noise.png" alt="Noise Augmentation" style={{ width: '40%' }} />
 
 This augmentation adds a random noise to the images to help the model become robust against real-world image imperfections.
+
+import SupportBanner from '@site/src/components/SupportBanner';
+
+<SupportBanner subject="ONE AI Filters and Augmentations Support" />

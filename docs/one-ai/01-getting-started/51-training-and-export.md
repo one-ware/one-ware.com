@@ -114,3 +114,18 @@ Below is a table with all currently available export options. Each line correspo
        <td>CPU</td>
      </tr>
 </table>
+
+
+### Integration into your Setup
+
+In order to run the AI within your setup everything needed is an inference engine within the software corresponding to the model type (e.g. Tensorflow or ONNX-runtime).
+The following flow chart depicts a possible tool chain. The colorized parts are provided by One Ware.
+
+![Export 4](/img/ai/one_ai_plugin/getting_started/export_model_embedding_stacked.png)
+
+When exporting a model file you can integrate our AI into your existing software solution or create your own.
+When exporting a project or binary we provide the necessary runtime along with the model. A project obtained this way can easily be adapted to your needs.
+
+import SupportBanner from '@site/src/components/SupportBanner';
+
+<SupportBanner subject="ONE AI Training and Export Support" />

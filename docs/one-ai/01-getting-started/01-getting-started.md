@@ -4,6 +4,10 @@ title: Getting Started with ONE AI
 sidebar_label: Getting Started
 ---
 
+import SupportBanner from '@site/src/components/SupportBanner';
+
+<SupportBanner subject="ONE AI Getting Started Support" />
+
 ## 1. What is ONE AI and why should I use it?
 ONE AI is a tool that allows you to create a custom AI model that is tailored to your individual needs. With ONE AI you can configure your AI in minutes without the need to be an expert in AI development. This allows everyone to benefit from the potential of AI.
 
@@ -42,18 +46,21 @@ You don't need any powerful hardware to use ONE AI. You configure your AI model 
   <img src="/img/ai/Architecture.webp" alt="architecture" style={{ width: '200px', flexShrink: 0 }} />
 </div>
 
-<div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-  <img src="/img/ai/Export.webp" alt="export" style={{ width: '200px', flexShrink: 0 }} />
+<div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem'}}>
+  <img src="/img/ai/Export.webp" alt="export" style={{ width: '200px', flexShrink: 0}} />
   <div style={{ flex: 1 }}>
     <p>
-      Finally the AI can be deployed across FPGAs, microcontrollers, GPUs, and CPUs without modification. ONE AI handles all the complexity of hardware optimization and implementation automatically.
+      Since ONE AI handles all the complexity of hardware optimization automatically, the AI can be deployed across FPGAs, microcontrollers, GPUs, and CPUs without further modification.
     </p>
   </div>
 </div>
 
+In order to run the AI within your software everything needed is an inference engine corresponding to the model type (e.g. Tensorflow or ONNX-runtime). When exporting a project or binary we provide the necessary runtime along with the model.
+
+![Export 4](/img/ai/one_ai_plugin/getting_started/export_model_embedding_sidebyside.png)
 
 ## 2. Setup
-To use ONE AI you need to install OneWare Studio with the OneAI Extension and create an account for the OneWare Cloud. We have a dedicated [guide](/docs/one-ai/getting-started/installation) that walks you through the setup step by step. New users receive a welcome bonus of 25.000 credits worth 500 € for free. All you need to do is to create an account and enter your address to complete the registration process. You won't be charged with any fees.
+To use ONE AI you need to install OneWare Studio with the OneAI Extension and create an account for the OneWare Cloud. We have a dedicated [guide](/docs/one-ai/getting-started/installation) that walks you through the setup step by step. New users receive a welcome bonus of 25.000 credits worth 500 € for free. All you need to do is to create an account and enter your address to complete the registration process. You won't be charged any fees.
 
 
 ## 3. Create a new AI project

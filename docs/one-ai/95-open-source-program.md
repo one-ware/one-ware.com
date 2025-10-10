@@ -58,8 +58,7 @@ At ONE WARE, we believe that the future of AI belongs to everyone. The **Open So
 
 - **No Hidden Obligations**
   You are free to decide whether you release your project as open source or keep it private.  
-  If you later decide to **use your project commercially**, you can pay for the credits you used under this program to do so.  
-  This way, your earlier work can be continued without interruption.
+  If you later decide to **use your project commercially**, you can obtain a licence for the model you developed under this program. This way, your earlier work can be continued without interruption. For the licence contact **[sales@one-ware.com](mailto:sales@one-ware.com)**.
 
 - **Voluntary Support**  
   Free credits in the Open Source Program are a **goodwill grant** from ONE WARE. Participation and the amount of credits are decided by us on a case-by-case basis. There is **no entitlement** to receive or keep credits, and the program can be changed or stopped at any time.
@@ -91,3 +90,7 @@ Our team will review your request quickly and provide you with the credits you n
 
 The **ONE AI platform** and all **paid credit packages** are offered **exclusively to business customers** under our [General Terms and Conditions](/docs/contact/terms).  
 Nothing in this page modifies or extends those terms. The Open Source Program is a voluntary initiative that provides non-commercial projects with free, discretionary support.
+
+import SupportBanner from '@site/src/components/SupportBanner';
+
+<SupportBanner subject="ONE AI Open Source Program Support" />

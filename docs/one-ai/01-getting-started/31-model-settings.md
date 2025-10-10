@@ -59,3 +59,7 @@ If you are training a classification model, you need to provide some additional 
 - ``Maximum Number of Features for Classification``: This setting describes the maximum number of image features that may be relevant for a classification task.
 - ``Average Number of Features for Classification``: The average number of relevant features used for the classification.
 - ``Groups`` (also available for object detection tasks): This setting is intended for advanced users. We recommend leaving all classes in one group unless you know what you are doing. By splitting the classes into multiple groups, you can divide your task onto multiple sub-models. ONE AI will generate an individual sub-model for each group that only predicts the classes that belong to that group. The sub-models are then joined to create a single unified model. This approach is practical if you have objects with significantly different sizes, e.g. long scratches and small nicks. By dividing the task onto sub-models, one model can focus on the large defects while the other focuses on the tiny defects.
+
+import SupportBanner from '@site/src/components/SupportBanner';
+
+<SupportBanner subject="ONE AI Model Settings Support" />

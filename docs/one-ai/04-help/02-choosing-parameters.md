@@ -7,6 +7,10 @@ sidebar_label: Choosing Parameters
 
 When you are starting out using the One AI extension you might wonder how to correctly set the parameters for your application. To help you get started, we collected several examples to give you a better idea on which setting works best for which tasks.
 
+import SupportBanner from '@site/src/components/SupportBanner';
+
+<SupportBanner subject="ONE AI Model Settings Support" />
+
 ## Overview of the Examples
 
 ### Classification

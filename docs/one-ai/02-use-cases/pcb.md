@@ -59,4 +59,8 @@ ONE AI was tested on the same dataset and benchmarked against both **researcher-
 
 The study shows that **automated AI architecture optimization** can not only match but surpass the results of **human-designed neural networks** — both in reliability and by an order of magnitude in speed.  
 
-**ONE AI proves that smarter architectures deliver better quality control at industrial scale.**  
+**ONE AI proves that smarter architectures deliver better quality control at industrial scale.**
+
+import SupportBanner from '@site/src/components/SupportBanner';
+
+<SupportBanner subject="ONE AI Use Cases Support" />  

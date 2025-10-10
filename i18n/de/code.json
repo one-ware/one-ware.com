@@ -636,6 +636,18 @@
   "contactus.buttonsend": {
     "message": "Senden"
   },
+  "contactus.leo.role": {
+    "message": "Ihr Ansprechpartner im Vertrieb"
+  },
+  "contactus.leo.description": {
+    "message": "Leo ist unser Sales-Experte, der sich um Projekte aller Art kümmert. Ob Sie Evaluierungen für Ideen, individuelle Angebote, Partnerschaftsmöglichkeiten oder strategische Beratung benötigen - Leo ist Ihr Ansprechpartner für alle geschäftlichen Anfragen."
+  },
+  "contactus.leo.cta": {
+    "message": "E-Mail Senden"
+  },
+  "contactus.form.title": {
+    "message": "Senden Sie uns direkt eine Nachricht"
+  },
   "homepage.features.oneai": {
     "message": "Entdecke ONE AI - neuronale Netzwerke, die in Sekunden erstellt und exakt auf die Anforderungen an Hardware, Performance und Anwendung zugeschnitten sind"
   },
@@ -1293,5 +1305,23 @@
   },
   "oneai.innovation.results": {
     "message": "Die Ergebnisse:"
+  },
+  "oneai.support.title": {
+    "message": "Brauchen Sie Hilfe beim Einstieg?"
+  },
+  "oneai.support.subtitle": {
+    "message": "Unser Entwicklungsexperte ist da, um Ihnen zum Erfolg zu verhelfen."
+  },
+  "oneai.support.role": {
+    "message": "Entwicklungs-Support Spezialist"
+  },
+  "oneai.support.description": {
+    "message": "Ob Sie Fragen zur richtigen Bedienung haben, auf Probleme stoßen oder nicht die erwarteten Ergebnisse erzielen - Christopher ist da, um zu helfen. Erhalten Sie persönliche Unterstützung bei Ihrer ONE AI Entwicklungsreise."
+  },
+  "oneai.support.cta": {
+    "message": "Jetzt Support erhalten"
+  },
+  "oneai.support.email.label": {
+    "message": "Schreiben Sie uns direkt:"
   }
 }

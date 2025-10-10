@@ -1,12 +1,27 @@
 # Pricing
 
-## Credit Price
+## Licenses for Production Use
+
+After testing, a **commercial usage license** for the trained model can be purchased.
+Please contact sales at **[sales@one-ware.com](mailto:sales@one-ware.com)** to get a license that meets your demands.
+
+---
+
+## Credits for Training
+
+Credits are needed to train on our servers. You will get a number of credits to get you started as a welcome gift. Additional credits can be obtained to the conditions below.
+
+### Welcome Credits
+
+* **25,000 credits** granted once upon first registration and verification per user.
+
+### Credit Price
 
 * **1,000 credits = €20.00** (minimum purchase) → **1 credit = €0.02**
 * Credits are account-based and non-transferable.
 * Prepaid usage or optional **postpaid option** via SEPA with a configurable monthly limit.
 
-## Usage per Credit
+### Usage per Credit
 
 | Service                                  | Price                             |
 | ---------------------------------------- | --------------------------------- |
@@ -14,22 +29,11 @@
 
 **Included temporary storage:** After each training run, **10 GB per project for up to 7 days** is provided at no additional cost (for training data & models). Data is deleted afterwards unless a new training run is started.
 
-## Welcome Credit
-
-* **25,000 credits** granted once upon first registration and verification per user.
-
-## Example Costs
+### Example Costs
 
 * **10 min of training:** 10 min × 50 credits = 500 credits → **€10.00**
 
 > Calculated with 1 credit = €0.02.
-
----
-
-## Licenses for Production Use
-
-After testing, a **commercial usage license** for the trained model can be purchased.
-Please contact sales at **[sales@one-ware.com](mailto:sales@one-ware.com)** to get a license that meets your demands.
 
 ---
 
@@ -45,4 +49,8 @@ Please contact sales at **[sales@one-ware.com](mailto:sales@one-ware.com)** to g
 ## Questions?
 
 Contact us at **[info@one-ware.com](mailto:info@one-ware.com)** – we are happy to calculate your scenario or provide a tailored licensing offer for your application.
+
+import SupportBanner from '@site/src/components/SupportBanner';
+
+<SupportBanner subject="ONE AI Pricing Support" />
 

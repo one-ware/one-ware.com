@@ -24,7 +24,11 @@ We know that every project is different. That’s why we offer support on severa
   If your AI doesn’t perform as expected, or you encounter issues using the IDE and ONE AI, our experts will step in.  
   We also help during the integration of generated export files and can implement individual feature requests tailored to your project. Just send an inquiry at [support@one-ware.com](mailto:support@one-ware.com).
 
-Whether you’re solving a small technical hurdle or planning a large-scale AI deployment, we make sure you don’t get stuck along the way.
+Whether you need training, integration support, or a fully customized solution – we're here to help.
+
+import SupportBanner from '@site/src/components/SupportBanner';
+
+<SupportBanner subject="ONE AI Services Support" />
 
 ## Consulting and Custom Solutions
 
@@ -41,13 +45,12 @@ Beyond direct support, we offer a range of **other services** to help you unlock
 
 ## Hardware Support
 
-The ONE AI extension is built to fit into your environment – no matter which hardware you use.  
-You can export trained AI models as:
-
-- Cross-platform executables  
-- Universal HDL code  
-- C++ projects  
+The ONE AI extension is built to fit into your environment – no matter which hardware you use.  It is cross-platform and can run any model generated and trained with our software. Simply export as ONNX and you are ready to go.
+Alternatively you can export a trained AI models as:
+  
 - ONNX, TensorFlow or TF-Lite models  
+- Universal HDL code  
+- C++ projects or binaries
 
 Check out [our hardware partner overview](/docs/one-ai/96-partners.md) to see the full list of supported platforms.
 
