@@ -1093,6 +1093,9 @@
   "category.Students & Interns": {
     "message": "Werkstudenten & Praktikanten"
   },
+  "category.Technical": {
+    "message": "Technik"
+  },
   "positions.hiring": {
     "message": "Wir suchen"
   },
@@ -1239,6 +1242,21 @@
   },
   "job.location.students-interns.2":{
     "message":"Osnabrück"
+  },
+  "job.title.technical.1":{
+    "message":"Techniker/Mechatroniker/Elektroniker/(Fach-)Informatiker (m/w/d)"
+  },
+  "job.description.technical.1":{
+    "message":"Entwickle Hardware-Aufbauten, integriere KI-Funktionen und erstelle Tutorials für spannende KI-Setups"
+  },
+  "job.url.technical.1":{
+    "message":"/career/OneWare_Technik_KI-Tutorials.pdf"
+  },
+  "job.type.technical.1":{
+    "message":"Vollzeit"
+  },
+  "job.location.technical.1":{
+    "message":"Osnabrück im ICO"
   },
   "aboutUs.1.text":{
     "message":"Die Gründer"
