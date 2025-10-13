@@ -4,66 +4,68 @@ title: Upgrade Your Machines with the Next-Gen Industrial AI Software
 sidebar_label: Manufacturing
 ---
 
-### From state-of-the-art QC models to a production-ready station in one click
+### Unlock smarter manufacturing with AI that runs where production happens.
 
-From **[potato chip inspection](/docs/one-ai/use-cases/chip)** to **[PCB defect detection](/docs/one-ai/use-cases/pcb)**, ONE AI has shown that it can generate models that are not only **leaner and faster**, but also **more accurate** than both universal networks and hand-crafted expert designs. These results have been confirmed in our joint whitepaper with Altera—where even a decade-old MAX® 10 FPGA outperformed Nvidia’s Jetson Orin Nano—and in independent PCB benchmarks, where ONE AI surpassed researcher-built architectures while running more than ten times faster.
+From automated defect detection to process optimization and predictive maintenance, gain real-time insights, identify bottlenecks, and boost manufacturing yield and equipment effectiveness while reducing costs.
 
-<div style={{display:'flex', justifyContent:'center', margin:'20px 0'}}>
-  <img src="/img/ai/one_ai_plugin/use_cases/capture/full.png" alt="Camera Tool capturing images for QC" style={{maxHeight:'320px', borderRadius:'8px'}} />
-</div>
-
-But high-performance models are only the first step. With the **Camera Tool**, they can be turned into a **production-ready quality control station** instantly—without custom UI development, without hardware lock-in, and without complex integration work.
-
----
-
-## What this means for quality control
-
-**No custom UI needed**  
-The Camera Tool already provides a clean, full-screen operator interface with clear pass/fail visualization, logging, and feedback options. There is no need to design or program a separate application.
-
-**Use existing hardware**  
-A standard NUC PC and an industrial camera are enough. The AI model runs locally, while the Camera Tool handles capture, decision-making, and operator interaction. For production, it connects seamlessly to a PLC to control sorting or rejection systems.
 
 <div style={{display:'flex', justifyContent:'center', margin:'20px 0'}}>
-  <img src="/img/ai/one_ai_plugin/getting_started/camera_tool/capture.png" alt="Camera Tool capturing images for QC" style={{maxHeight:'320px', borderRadius:'8px'}} />
+  <img src="/img/ai/one_ai_plugin/industries/Industrie.jpg" alt="Camera Tool capturing images for QC" style={{maxHeight:'320px', borderRadius:'8px'}} />
 </div>
 
-**Continuous improvement built in**  
-Whenever new images are captured, they can be uploaded to the ONE AI Cloud for retraining. Each retraining not only adapts the model to new data, but also lets ONE AI automatically **redesign the architecture** for even higher efficiency and accuracy. This creates a cycle of ongoing optimization with every batch of data.
+ONE AI brings fast, precise intelligence directly to the factory floor, running on existing hardware, improving quality and enabling predictive insights without costly upgrades.
 
-**Traceability and feedback**  
-Every decision is logged with images, timestamps, thresholds, and model version. Operators can override classifications (“actually OK/Defect”), and these corrections can feed directly back into the dataset for the next training cycle.
+---
+## Why ONE AI
+
+**Accelerate AI Development**  
+ONE AI accelerates the development of industrial AI solutions, helping manufacturers produce faster and more reliably. It delivers highly accurate Vision AI, runs in real time on any existing factory hardware and can be integrated without new servers or special devices.
+
+**Built for Your Production**  
+While current AI solutions often rely on universal models that cannot adapt to specific production requirements, ONE AI builds a fully customized AI network for each use case, learning only what is truly relevant to your production. This makes predictions significantly faster and more precise.
+
+**Faster Results and Lower Costs**  
+By automating most steps of AI development, ONE AI lets you benefit from the latest AI advancements in record time with significantly reduced development costs.
+
+
 
 ---
 
-## Example: AI in running production
+## Applications
 
-The following demo shows how a **MAX® 10 FPGA** can be used to implement real-time AI-based quality control directly in production:
-
-<div style={{display:'flex', justifyContent:'center', margin:'20px 0'}}>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/ywtKTb8Z3_Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style={{borderRadius:'8px'}}></iframe>
+<div style={{display:'flex', justifyContent:'center', gap:'20px', margin:'20px 0', flexWrap:'wrap'}}>
+  <div style={{flex:'1', minWidth:'280px', textAlign:'center'}}>
+    <img src="/img/ai/one_ai_plugin/industries/QualityControlManufact.jpg" alt="Quality Control Manufacturing" style={{maxHeight:'320px', borderRadius:'8px', width:'100%'}} />
+    <h4 style={{marginTop:'10px', marginBottom:'5px'}}>Quality Control</h4>
+    <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>Automated defect detection and real-time quality assessment using existing or retrofitted cameras.</p>
+  </div>
+  <div style={{flex:'1', minWidth:'280px', textAlign:'center'}}>
+    <img src="/img/ai/one_ai_plugin/industries/Industrie.jpg" alt="Industrial Applications" style={{maxHeight:'320px', borderRadius:'8px', width:'100%'}} />
+    <h4 style={{marginTop:'10px', marginBottom:'5px'}}>Smart Manufacturing</h4>
+    <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>Automation and workflow optimization for enhanced efficiency and streamlined production processes.</p>
+  </div>
+</div>
+<br />
+<div style={{display:'flex', justifyContent:'center', gap:'20px', margin:'20px 0', flexWrap:'wrap'}}>
+  <div style={{flex:'1', minWidth:'280px', textAlign:'center'}}>
+    <img src="/img/ai/one_ai_plugin/industries/PredectiveMaintenance.jpg" alt="Quality Control Manufacturing" style={{maxHeight:'320px', borderRadius:'8px', width:'100%'}} />
+    <h4 style={{marginTop:'10px', marginBottom:'5px'}}>Predictive Maintenance</h4>
+    <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>Early detection of wear and potential failures using sensor and image data.</p>
+  </div>
+  <div style={{flex:'1', minWidth:'280px', textAlign:'center'}}>
+    <img src="/img/ai/one_ai_plugin/industries/Robotics Integration.jpg" alt="Industrial Applications" style={{maxHeight:'320px', borderRadius:'8px', width:'100%'}} />
+    <h4 style={{marginTop:'10px', marginBottom:'5px'}}>Robotics Integration</h4>
+    <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>Intelligent robotics integration for enhanced automation and precision manufacturing.</p>
+  </div>
 </div>
 
-The same principle applies with a **conveyor belt**, a **NUC PC**, and the Camera Tool: the AI evaluates each part in real time, and the PLC sorts out defective items automatically. What begins as a dataset experiment quickly becomes a **fully operational QC station** on the shop floor.
 
 ---
 
-## Why this matters
+## Contact Sales
 
-- **No custom development overhead:** ready-to-use UI for operators.  
-- **Leverages existing infrastructure:** runs on standard PCs and connects to cameras and PLCs.  
-- **Improves with use:** each new batch of images triggers a retraining cycle in the ONE AI Cloud, with optimized architectures for even better performance.  
-- **Compliance and traceability included:** all results, images, and thresholds are logged automatically.
+We would be happy to discuss how ONE AI can be integrated into your production environment.
 
----
+import SalesBanner from '@site/src/components/SalesBanner';
 
-## Conclusion
-
-The Camera Tool completes the workflow:  
-**ONE AI develops the superior models—and with a single click they become a production-ready QC station.**
-
-From lab experiments to real production lines, you get **accurate AI decisions, seamless hardware integration, and continuous model improvement**—without extra engineering effort. It’s the fastest path from **better models** to **better manufacturing outcomes**.
-
-import SupportBanner from '@site/src/components/SupportBanner';
-
-<SupportBanner subject="ONE AI Open Source Program Support" />
+<SalesBanner subject="ONE AI Manufacturing Solutions" />
