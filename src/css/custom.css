@@ -221,3 +221,7 @@ body {
   background-color: var(--ifm-menu-color-background-hover) !important;
   color: var(--ifm-menu-color-active) !important;
 }
+
+.grecaptcha-badge {
+  visibility: hidden !important;
+}
