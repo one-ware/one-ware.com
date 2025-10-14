@@ -276,7 +276,7 @@ function IndustryExamplesSection() {
       src: require("@site/static/img/industries/Industrie.jpg").default,
       label: "Industrial Manufacturing",
       labelId: "homepage.industry.industry",
-      href: "/docs/one-ai/use-cases/camera-tool",
+      href: "/docs/one-ai/industries/manufacturing",
     },
     {
       key: "retail",
@@ -308,7 +308,7 @@ function IndustryExamplesSection() {
   }
 
   return (
-    <div className="py-12 md:py-16">
+    <div id="industries" className="py-12 md:py-16">
       {/* Überschrift mit normalem Container-Padding */}
       <div className="container mx-auto px-4 mb-8">
         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-left font-bold">

@@ -706,7 +706,7 @@ function SupportSection() {
                 </h3>
                 <p className="text-[#00FFD1] font-semibold mb-6 text-lg">
                   <Translate id="oneai.support.role">
-                    Development Support Specialist
+                    Your Development Support
                   </Translate>
                 </p>
                 <p className="text-gray-300 mb-8 leading-relaxed text-lg">
