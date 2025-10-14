@@ -1,10 +1,10 @@
 ---
 id: camera-tool
-title: AI Quality Control in One Click
+title: AI Industry Automation in One Click
 sidebar_label: Quality Control in One Click
 ---
 
-### From state-of-the-art QC models to a production-ready station in one click
+### High Speed and Precise Quality Control or General Factory Automation in One Click
 
 From **[potato chip inspection](/docs/one-ai/use-cases/chip)** to **[PCB defect detection](/docs/one-ai/use-cases/pcb)**, ONE AI has shown that it can generate models that are not only **leaner and faster**, but also **more accurate** than both universal networks and hand-crafted expert designs. These results have been confirmed in our joint whitepaper with Altera—where even a decade-old MAX® 10 FPGA outperformed Nvidia’s Jetson Orin Nano—and in independent PCB benchmarks, where ONE AI surpassed researcher-built architectures while running more than ten times faster.
 
@@ -12,17 +12,17 @@ From **[potato chip inspection](/docs/one-ai/use-cases/chip)** to **[PCB defect 
   <img src="/img/ai/one_ai_plugin/use_cases/capture/full.png" alt="Camera Tool capturing images for QC" style={{maxHeight:'320px', borderRadius:'8px'}} />
 </div>
 
-But high-performance models are only the first step. With the **Camera Tool**, they can be turned into a **production-ready quality control station** instantly—without custom UI development, without hardware lock-in, and without complex integration work.
+But high-performance models are only the first step. With the **Camera Tool**, they can be used for industry automation or turned into a **production-ready quality control station** instantly - without custom UI development or complex integration work.
 
 ---
 
-## What this means for quality control
+## What this means for quality control and industry automation
 
 **No custom UI needed**  
-The Camera Tool already provides a clean, full-screen operator interface with clear pass/fail visualization, logging, and feedback options. There is no need to design or program a separate application.
+The Camera Tool already provides a clean, full-screen operator interface with clear visualization, logging, and feedback options. There is no need to design or program a separate application.
 
 **Use existing hardware**  
-A standard NUC PC and an industrial camera are enough. The AI model runs locally, while the Camera Tool handles capture, decision-making, and operator interaction. For production, it connects seamlessly to a PLC to control sorting or rejection systems.
+A standard NUC PC and a USB camera are enough. The AI model runs locally, while the Camera Tool handles capture, decision-making, and operator interaction. For production, it connects seamlessly to a PLC to control sorting or rejection systems.
 
 <div style={{display:'flex', justifyContent:'center', margin:'20px 0'}}>
   <img src="/img/ai/one_ai_plugin/getting_started/camera_tool/capture.png" alt="Camera Tool capturing images for QC" style={{maxHeight:'320px', borderRadius:'8px'}} />
@@ -32,7 +32,7 @@ A standard NUC PC and an industrial camera are enough. The AI model runs locally
 Whenever new images are captured, they can be uploaded to the ONE AI Cloud for retraining. Each retraining not only adapts the model to new data, but also lets ONE AI automatically **redesign the architecture** for even higher efficiency and accuracy. This creates a cycle of ongoing optimization with every batch of data.
 
 **Traceability and feedback**  
-Every decision is logged with images, timestamps, thresholds, and model version. Operators can override classifications (“actually OK/Defect”), and these corrections can feed directly back into the dataset for the next training cycle.
+Every decision is logged. Operators can override classifications (“actually OK/Defect”), and these corrections can feed directly back into the dataset for the next training cycle.
 
 ---
 
