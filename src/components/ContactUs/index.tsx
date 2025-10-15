@@ -29,6 +29,85 @@ export default function ContactUs() {
     recaptcha_token: "",
   });
 
+  // 🧠 Load reCAPTCHA safely for SSR + TypeScript
+  useEffect(() => {
+    if (typeof window === "undefined") return; // skip SSR entirely
+
+    const RECAPTCHA_SITE_KEY = "6Ldzg-orAAAAAIOc5GaUtR6gOpdqcW1EHZL7I9mp";
+
+    // ✅ Helper: Wait until grecaptcha is defined (poll every 200ms)
+    const waitForRecaptcha = (maxAttempts = 20) =>
+      new Promise<void>((resolve, reject) => {
+        let attempts = 0;
+        const check = () => {
+          if (typeof window !== "undefined" && window.grecaptcha) {
+            resolve();
+          } else if (attempts++ < maxAttempts) {
+            setTimeout(check, 200);
+          } else {
+            reject(new Error("reCAPTCHA not loaded after waiting"));
+          }
+        };
+        check();
+      });
+
+    const executeRecaptcha = async () => {
+      try {
+        await waitForRecaptcha(); // wait until grecaptcha is available
+        if (!window.grecaptcha) throw new Error("grecaptcha missing after load");
+
+        await new Promise<void>((resolve) => {
+          window.grecaptcha.ready(() => {
+            window.grecaptcha
+              ?.execute(RECAPTCHA_SITE_KEY, { action: "submit" })
+              .then((token) => {
+                setFormData((prev) => ({ ...prev, recaptcha_token: token }));
+                resolve();
+              })
+              .catch((err) => {
+                console.warn("reCAPTCHA execute failed:", err);
+                resolve(); // don't crash app
+              });
+          });
+        });
+      } catch (err) {
+        console.warn("reCAPTCHA init failed:", err);
+      }
+    };
+
+    // --- Safe script injection (no unhandled rejection) ---
+    if (!document.querySelector("#recaptcha-script")) {
+
+      if (process.env.NODE_ENV === "development") return;
+      
+      try {
+        const script = document.createElement("script");
+        script.id = "recaptcha-script";
+        script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`;
+        script.async = true;
+        script.defer = true;
+
+        // Never call an async fn directly here — wrap it
+        script.onload = () => {
+          executeRecaptcha().catch((err) =>
+            console.warn("reCAPTCHA onload error:", err)
+          );
+        };
+        
+        script.onerror = (err) =>
+          console.warn("reCAPTCHA script load error:", err);
+        
+        document.body.appendChild(script);
+      } catch (err) {
+        console.warn("reCAPTCHA append failed:", err);
+      }
+    } else {
+      executeRecaptcha().catch((err) =>
+        console.warn("reCAPTCHA execute error:", err)
+      );
+    }
+  }, []);
+
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
