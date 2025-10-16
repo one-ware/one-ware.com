@@ -37,6 +37,19 @@ export const JOBS_DATA: JobCategory[] = [
     ],
   },
   {
+    category: "Technical",
+    positions: [
+      {
+        id: "technical.1",
+        title: "Technician/Mechatronics Engineer/Electronics Technician/IT Specialist (m/f/d)",
+        description: "Develop hardware setups, integrate AI functions and create tutorials for exciting AI applications",
+        url: "OneWare_Technik_KI-Tutorials.pdf",
+        type: "Full Time",
+        location: "Osnabrück at ICO",
+      }
+    ],
+  },
+  {
     category: "Students & Interns",
     positions: [
       {

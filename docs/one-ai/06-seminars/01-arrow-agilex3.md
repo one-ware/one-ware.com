@@ -74,9 +74,9 @@ Together with ONE WARE Studio you benefit from an end-to-end workflow from datas
 ### Eastern Europe & Middle East (Form Link: [Register here](https://forms.office.com/r/CbD01JB2KW))
 | Date       | City / Country  | Venue |
 |------------|-----------------|-------|
-| 15.10.2025 | Ankara, Turkey  | Location TBD |
-| 22.10.2025 | Prague, Czechia | Location TBD |
-| 29.10.2025 | Warsaw, Poland  | Location TBD |
+| 21.10.2025 | Prague, Czechia | Magenta Experience Center (Arkady Pankrac) |
+| 29.10.2025 | Warsaw, Poland  | Arrow Electronics Office (ul. Krakowiakow) |
+| 10.12.2025 | Ankara, Turkey  | Alegria Business Hotel |
 
 ---
 

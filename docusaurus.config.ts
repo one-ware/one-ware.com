@@ -197,6 +197,14 @@ const config: Config = {
               type: "html",
               value: '<a href="/docs/one-ai/use-cases/pcb" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Vision AI</a>',
             },
+            {
+              to: "/#industries",
+              label: "Industries",
+            },
+            {
+              type: "html",
+              value: '<a href="/docs/one-ai/industries/manufacturing" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Manufacturing</a>',
+            },
           ],
         },
         {
@@ -287,14 +295,14 @@ const config: Config = {
           position: "right",
           label: "Login",
           className: "button button--primary button--outline button--md font-bold navbarbutton",
-          style: { "margin-left": "2px", "margin-right": "2px" }
+          style: { "marginLeft": "2px", "marginRight": "2px" }
         },
         {
           to: "/one-ai#getStarted",
           label: "Get Started",
           position: "right",
           className: "button button--primary button--md text-gray-900 font-bold navbarbutton getstartedbutton",
-          style: { "margin-left": "2px" }
+          style: { "marginLeft": "2px" }
         },
 
       ],

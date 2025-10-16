@@ -28,7 +28,6 @@ function HomepageHeader() {
 
   return (
     <header id="hero" className={styles.heroBackground}>
-      {/* Animation als Hintergrund - direkt im header */}
       <div className="absolute inset-0 z-0">
         {/* Desktop: Video Animation */}
         <video
@@ -42,7 +41,6 @@ function HomepageHeader() {
       </div>
 
       <div className={styles.heroBanner}>
-        {/* Text zentriert mit Hintergrund-Box */}
         <div className="z-10 flex items-center justify-center pt-8 px-8 md:pt-12 md:px-12 lg:pt-16 lg:px-16 h-full">
           <div className="max-w-5xl backdrop-blur-md bg-gray-600/20 rounded-2xl p-6 md:p-8 border border-white/10">
             <div className="text-center">
@@ -88,9 +86,6 @@ function HomepageHeader() {
               <div className="text-center -mb-2">
                 <p className="text-lg md:text-xl text-gray-300">
                   <Translate id="partners.title">
-                    {/*
-                    Featured in:
-                    */}
                     Known from:
                   </Translate>
                 </p>
@@ -276,7 +271,7 @@ function IndustryExamplesSection() {
       src: require("@site/static/img/industries/Industrie.jpg").default,
       label: "Industrial Manufacturing",
       labelId: "homepage.industry.industry",
-      href: "/docs/one-ai/use-cases/camera-tool",
+      href: "/docs/one-ai/industries/manufacturing",
     },
     {
       key: "retail",
@@ -308,7 +303,7 @@ function IndustryExamplesSection() {
   }
 
   return (
-    <div className="py-12 md:py-16">
+    <div id="industries" className="py-12 md:py-16">
       {/* Überschrift mit normalem Container-Padding */}
       <div className="container mx-auto px-4 mb-8">
         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-left font-bold">

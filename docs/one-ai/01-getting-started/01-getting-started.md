@@ -21,9 +21,7 @@ You don't need any powerful hardware to use ONE AI. You configure your AI model 
 
 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
   <div style={{ flex: 1 }}>
-    <p>
       ONE AI starts by analyzing the requirements of your task. It takes into account your configurations, the data and its labels, the hardware constraints and the required performance. For example, it analyzes the size of the different objects in the images.
-    </p>
   </div>
   <img src="/img/ai/Input.webp" alt="input" style={{ width: '200px', flexShrink: 0 }} />
 </div>
@@ -31,17 +29,13 @@ You don't need any powerful hardware to use ONE AI. You configure your AI model 
 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
   <img src="/img/ai/Prediction.webp" alt="prediction" style={{ width: '200px', flexShrink: 0 }} />
   <div style={{ flex: 1 }}>
-    <p>
       ONE AI then uses its knowledge about existing AI research and previously optimized AI models to predict the needed features for the AI model architecture. For example, if you have large objects, your AI model needs to look at a larger area in the images.
-    </p>
   </div>
 </div>
 
 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
   <div style={{ flex: 1 }}>
-    <p>
       ONE AI takes the predicted features and uses them to build a custom neural network architecture that fits your needs. Then the AI is trained on the dataset. Since the model is customized to your data, it only learns the relevant information and is a lot less prone to overfitting than generic models.
-    </p>
   </div>
   <img src="/img/ai/Architecture.webp" alt="architecture" style={{ width: '200px', flexShrink: 0 }} />
 </div>
@@ -49,9 +43,7 @@ You don't need any powerful hardware to use ONE AI. You configure your AI model 
 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem'}}>
   <img src="/img/ai/Export.webp" alt="export" style={{ width: '200px', flexShrink: 0}} />
   <div style={{ flex: 1 }}>
-    <p>
       Since ONE AI handles all the complexity of hardware optimization automatically, the AI can be deployed across FPGAs, microcontrollers, GPUs, and CPUs without further modification.
-    </p>
   </div>
 </div>
 
