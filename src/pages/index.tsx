@@ -130,7 +130,6 @@ function HomepageHeader() {
                   />
                 </a>
                 */}
-                {/*
                 <a
                   href="https://www.vdi-nachrichten.com/technik/automation/ki-im-maschinenbau-auf-bestehender-hardware-nutzen/"
                   target="_blank"
@@ -143,7 +142,6 @@ function HomepageHeader() {
                     className="h-8 w-52 md:h-12 md:w-64 object-contain hover:opacity-80 transition-opacity opacity-90"
                   />
                 </a>
-                */}
                 <a
                   href="https://www.maschinenmarkt.vogel.de/one-ai-ki-extension-one-ware-maschinenbau-a-545f6e3fc5ac13f8fa3f55fa5998332f/"
                   target="_blank"
