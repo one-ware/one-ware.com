@@ -185,7 +185,7 @@ After the export is finished, the model can be download in the `Exports` tab by 
 
 ![Export 3](/img/ai/one_ai_plugin/getting_started/export_3.png)
 
-If you need more information about the export options, you can look into this [guide](/docs/one-ai/getting-started/training-and-export#exporting-a-trained-model).
+If you need more information about the export options, you can look into this [guide](/docs/one-ai/getting-started/training-and-export#exporting-a-trained-model). When exporting as a C++-project, have a look at the [documentation](/docs/one-ai/getting-started/documentation-cpp-api).
 
 
 ## 11. Using your model in OneWare Studio
