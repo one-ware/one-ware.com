@@ -105,6 +105,18 @@ function HomepageHeader() {
                   />
                 </a>
                 <a
+                  href="https://www.maschinenmarkt.vogel.de/one-ai-ki-extension-one-ware-maschinenbau-a-545f6e3fc5ac13f8fa3f55fa5998332f/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block no-underline hover:no-underline"
+                >
+                  <img
+                    src={require("@site/static/img/Featured/f5_g.png").default}
+                    alt="Featured 5"
+                    className="h-8 w-24 md:h-14 md:w-28 object-contain hover:opacity-80 transition-opacity opacity-90"
+                  />
+                </a>
+                <a
                   href="https://www.elektronikpraxis.de/one-ai-automatisierte-ki-konfiguration-fuer-entwickler-a-09fee486cec031ed0a2edd5dbeeaed0a/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -113,7 +125,7 @@ function HomepageHeader() {
                   <img
                     src={require("@site/static/img/Featured/f4_g.png").default}
                     alt="Featured 4"
-                    className="h-8 w-36 md:h-12 md:w-42 object-contain hover:opacity-80 transition-opacity opacity-90"
+                    className="h-8 w-36 md:h-14 md:w-42 object-contain hover:opacity-80 transition-opacity opacity-90"
                   />
                 </a>
                 {/*
@@ -143,17 +155,18 @@ function HomepageHeader() {
                   />
                 </a>
                 <a
-                  href="https://www.maschinenmarkt.vogel.de/one-ai-ki-extension-one-ware-maschinenbau-a-545f6e3fc5ac13f8fa3f55fa5998332f/"
+                  href="https://www.elektormagazine.com/news/one-ai-vision-edge-ai-en"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block no-underline hover:no-underline"
                 >
                   <img
-                    src={require("@site/static/img/Featured/f5_g.png").default}
-                    alt="Featured 5"
-                    className="h-8 w-24 md:h-14 md:w-28 object-contain hover:opacity-80 transition-opacity opacity-90"
+                    src={require("@site/static/img/Featured/f10_g.png").default}
+                    alt="Elektor"
+                    className="h-8 w-36 md:h-14 md:w-42 object-contain hover:opacity-80 transition-opacity opacity-90"
                   />
                 </a>
+                
                 <a
                   href="https://it-production.com/industrie-4-0-i40/neuronales-netzwerk-in-unter-einer-sekunde/"
                   target="_blank"
@@ -178,6 +191,7 @@ function HomepageHeader() {
                     className="h-8 w-24 md:h-14 md:w-28 object-contain hover:opacity-80 transition-opacity opacity-90"
                   />
                 </a>
+                
               </div>
             </div>
           </div>
