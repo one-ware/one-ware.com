@@ -9,17 +9,17 @@ export const JOBS_DATA: JobCategory[] = [
         id: "software-engineer.1",
         title: ".ASP.NET / Blazor Developer",
         description: "Help us build and maintain the ONE WARE Cloud",
-        url: "OneWare_NET_WebDeveloper.pdf",
+        url: "Web.pdf",
         type: "Full Time",
-        location: "Osnabrück - Remote",
+        location: "Osnabrück - Hybrid",
       },
       {
         id: "software-engineer.2",
         title: ".NET Desktop Developer (Avalonia / WPF)",
         description: "Help us develop ONE WARE Studio",
-        url: "OneWare_NET_DesktopDeveloper.pdf",
+        url: "Desktop.pdf",
         type: "Full Time",
-        location: "Osnabrück - Remote",
+        location: "Osnabrück - Hybrid",
       }
     ],
   },
@@ -32,31 +32,31 @@ export const JOBS_DATA: JobCategory[] = [
         description: "Help us take sales to the next technological level",
         url: "OneWare_Sales_TechnicalSalesEngineer.pdf",
         type: "Full Time",
-        location: "Osnabrück - Remote",
+        location: "Osnabrück - Hybrid",
       }
     ],
   },
-  {
-    category: "Technical",
-    positions: [
-      {
-        id: "technical.1",
-        title: "Technician/Mechatronics Engineer/Electronics Technician/IT Specialist (m/f/d)",
-        description: "Develop hardware setups, integrate AI functions and create tutorials for exciting AI applications",
-        url: "OneWare_Technik_KI-Tutorials.pdf",
-        type: "Full Time",
-        location: "Osnabrück at ICO",
-      }
-    ],
-  },
+  // {
+  //   category: "Technical",
+  //   positions: [
+  //     {
+  //       id: "technical.1",
+  //       title: "Technician/Mechatronics Engineer/Electronics Technician/IT Specialist (m/f/d)",
+  //       description: "Develop hardware setups, integrate AI functions and create tutorials for exciting AI applications",
+  //       url: "OneWare_Technik_KI-Tutorials.pdf",
+  //       type: "Full Time",
+  //       location: "Osnabrück at ICO",
+  //     }
+  //   ],
+  // },
   {
     category: "Students & Interns",
     positions: [
       {
         id: "students-interns.2",
-        title: "Working Student in Electrical Engineering/Computer Science/Mechatronics",
-        description: "Help us create technical tutorials and documentation",
-        url: "OneWare_Werkstudent_Technik_KI-Tutorials.pdf",
+        title: "AI Engineering (Working Student) (m/f/d)",
+        description: "Help us create AI demos, technical tutorials and documentation",
+        url: "Student.pdf",
         type: "Part Time",
         location: "Osnabrück",
       }
