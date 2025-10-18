@@ -1148,7 +1148,7 @@
     "message":"Vollzeit"
   },
    "job.location.software-engineer.1":{
-    "message":"Osnabrück - Remote"
+    "message":"Osnabrück - Hybrid"
   },
   "job.title.software-engineer.2":{
     "message":".NET Desktop Developer (Avalonia / WPF)"
@@ -1163,7 +1163,7 @@
     "message":"Vollzeit"
   },
   "job.location.software-engineer.2":{
-    "message":"Osnabrück - Remote"
+    "message":"Osnabrück - Hybrid"
   },
   "job.title.ai-engineer.1":{
     "message":"AI Developer"
@@ -1178,7 +1178,7 @@
     "message":"Vollzeit"
   },
   "job.location.ai-engineer.1":{
-    "message":"Osnabrück - Remote"
+    "message":"Osnabrück - Hybrid"
   },
   "job.title.ai-engineer.2":{
     "message":"AI Developer (FPGA)"
@@ -1193,7 +1193,7 @@
     "message":"Vollzeit"
   },
   "job.location.ai-engineer.2":{
-    "message":"Osnabrück - Remote"
+    "message":"Osnabrück - Hybrid"
   },
   "job.title.ai-engineer.3":{
     "message":"AI Developer Microcontrollers / TF Lite"
@@ -1208,7 +1208,7 @@
     "message":"Vollzeit"
   },
   "job.location.ai-engineer.3":{
-    "message":"Osnabrück - Remote"
+    "message":"Osnabrück - Hybrid"
   },
   "job.title.sales-engineer.1":{
     "message":"Technical Sales Engineer"
@@ -1223,7 +1223,7 @@
     "message":"Vollzeit"
   },
   "job.location.sales-engineer.1":{
-    "message":"Osnabrück - Remote"
+    "message":"Osnabrück - Hybrid"
   },
   "job.title.students-interns.1":{
     "message":"Werkstudent / Mediengestalter"
@@ -1241,10 +1241,10 @@
     "message":"Osnabrück"
   },
    "job.title.students-interns.2":{
-    "message":"AI Engineering (Working Student) (m/f/d)"
+    "message":"Working Student - AI Engineering and Prototyping"
   },
   "job.description.students-interns.2":{
-    "message":"Hilf uns, KI-Tutorials und Dokumentationen zu erstellen"
+    "message":"Hilf uns, KI-Tutorials, Dokumentationen und ONE AI zu entwickeln"
   },
   "job.url.students-interns.2":{
     "message":"/career/OneWare_Werkstudent_Technik_KI-Tutorials.pdf"
