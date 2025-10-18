@@ -23,6 +23,7 @@ export const JOBS_DATA: JobCategory[] = [
       }
     ],
   },
+  {
   category: "AI Engineer",
     positions: [
       {
