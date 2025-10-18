@@ -23,19 +23,30 @@ export const JOBS_DATA: JobCategory[] = [
       }
     ],
   },
-  {
-    category: "Sales",
+  category: "AI Engineer",
     positions: [
       {
-        id: "sales-engineer.1",
-        title: "Technical Sales Engineer",
-        description: "Help us take sales to the next technological level",
-        url: "OneWare_Sales_TechnicalSalesEngineer.pdf",
+        title: "AI Engineer",
+        description: "Help us to build the next generation of AI development",
+        url: "AI.pdf",
         type: "Full Time",
         location: "Osnabrück - Hybrid",
       }
     ],
   },
+  // {
+  //  category: "Sales",
+  //  positions: [
+  //    {
+  //      id: "sales-engineer.1",
+  //      title: "Technical Sales Engineer",
+  //      description: "Help us take sales to the next technological level",
+  //      url: "OneWare_Sales_TechnicalSalesEngineer.pdf",
+  //      type: "Full Time",
+  //      location: "Osnabrück - Hybrid",
+  //    }
+  //  ],
+  //},
   // {
   //   category: "Technical",
   //   positions: [
@@ -54,7 +65,7 @@ export const JOBS_DATA: JobCategory[] = [
     positions: [
       {
         id: "students-interns.2",
-        title: "AI Engineering (Working Student) (m/f/d)",
+        title: "Working Student - AI Engineering and Prototyping ",
         description: "Help us create AI demos, technical tutorials and documentation",
         url: "Student.pdf",
         type: "Part Time",
