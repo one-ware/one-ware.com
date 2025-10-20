@@ -3,11 +3,13 @@ import React from 'react';
 interface SalesBannerProps {
   subject?: string;
   customText?: string;
+  customHeading?: string;
 }
 
 const SalesBanner: React.FC<SalesBannerProps> = ({ 
   subject = "ONE AI Sales Inquiry",
-  customText
+  customText,
+  customHeading
 }) => {
   return (
     <div style={{
@@ -36,7 +38,7 @@ const SalesBanner: React.FC<SalesBannerProps> = ({
       </div>
       <div style={{ flex: 1, minWidth: '320px' }}>
         <h3 style={{ margin: '0 0 12px 0', color: '#e0e0e0', fontSize: '24px', fontWeight: 'bold' }}>
-          Ready to Transform Your Production?
+          {customHeading || "Ready to Transform Your Production?"}
         </h3>
         <p style={{ margin: '0 0 16px 0', fontSize: '18px', lineHeight: 1.6, color: '#e0e0e0' }}>
           {customText || (
