@@ -50,7 +50,7 @@ By automating most steps of AI development, ONE AI enables clinicians to adopt a
         backgroundColor:'rgba(255,255,255,0.3)'
       }
     }}
-    onClick={() => window.location.href = '/docs/one-ai/use-cases/camera-tool'}
+    onClick={() => window.location.href = '/docs/one-ai/use-cases/pcb'}
     onMouseEnter={(e) => {
       e.currentTarget.style.transform = 'translateY(-5px)';
       e.currentTarget.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
@@ -82,7 +82,7 @@ By automating most steps of AI development, ONE AI enables clinicians to adopt a
         backgroundColor:'rgba(255,255,255,0.3)'
       }
     }}
-    onClick={() => window.location.href = '/docs/one-ai/use-cases/camera-tool'}
+    onClick={() => window.location.href = '/docs/one-ai/use-cases/pcb'}
     onMouseEnter={(e) => {
       e.currentTarget.style.transform = 'translateY(-5px)';
       e.currentTarget.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
@@ -117,7 +117,7 @@ By automating most steps of AI development, ONE AI enables clinicians to adopt a
         backgroundColor:'rgba(255,255,255,0.3)'
       }
     }}
-    onClick={() => window.location.href = '/docs/one-ai/services'}
+    onClick={() => window.location.href = '/docs/one-ai/use-cases/camera-tool'}
     onMouseEnter={(e) => {
       e.currentTarget.style.transform = 'translateY(-5px)';
       e.currentTarget.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
@@ -149,7 +149,7 @@ By automating most steps of AI development, ONE AI enables clinicians to adopt a
         backgroundColor:'rgba(255,255,255,0.3)'
       }
     }}
-    onClick={() => window.location.href = '/docs/one-ai/use-cases/chip'}
+    onClick={() => window.location.href = '/docs/one-ai/services'}
     onMouseEnter={(e) => {
       e.currentTarget.style.transform = 'translateY(-5px)';
       e.currentTarget.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';

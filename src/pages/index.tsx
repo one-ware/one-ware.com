@@ -276,7 +276,7 @@ function IndustryExamplesSection() {
       src: require("@site/static/img/industries/Healthcare.jpg").default,
       label: "Healthcare",
       labelId: "homepage.industry.healthcare",
-      href: "/docs/one-ai/use-cases/pcb",
+      href: "/docs/one-ai/industries/healthcare",
     },
     {
       key: "industry",
