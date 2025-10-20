@@ -1108,6 +1108,9 @@
   "category.Technical": {
     "message": "Technik"
   },
+  "category.AI Engineer": {
+    "message": "AI-Engineer"
+  },
   "positions.hiring": {
     "message": "Wir suchen"
   },
@@ -1166,10 +1169,10 @@
     "message":"Osnabrück - Hybrid"
   },
   "job.title.ai-engineer.1":{
-    "message":"AI Developer"
+    "message":"AI Engineer"
   },
   "job.description.ai-engineer.1":{
-    "message":"Hilf uns ONE AI zu verbessern"
+    "message":"Hilf uns, die nächste Generation der KI-Entwicklung zu bauen"
   },
   "job.url.ai-engineer.1":{
     "message":"/career/OneWare_AI_Developer_Deutsch.pdf"
