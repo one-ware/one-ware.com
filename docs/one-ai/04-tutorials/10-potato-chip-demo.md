@@ -43,6 +43,17 @@ If you followed all the steps correctly, the images will show up in the **Train*
 
 ![loaded_dataset](/img/ai/one_ai_plugin/demos/potato_chip/chips_loaded_dataset.png)
 
+## Hardware settings
+Next, we need to select the hardware for which we want to create the model. ONE AI needs the hardware specifications to build a model that is optimized for your hardware and runs within the constraints that were specified in the **Model Settings**. You can use preconfigured hardware settings or specify custom hardware parameters.
+
+For this demo we are going to use an Altera™ Max® 10 16K. Support for the Altera™ Max® 10 isn't included in the base installation of the OneAI Extension, but can be installed in the **Extension Manager**. Click on **Extras** > **Extensions** to open the **Extension Manager**, then go to the section **Hardware** > **OneAI Support**. Here, you need to install the extension **OneAI Altera MAX10 Support**.
+
+![MAX10 extension](/img/ai/one_ai_plugin/demos/potato_chip/max_10_extension.png)
+
+Afterwards the Altera™ Max® 10 16K can be selected in the **Hardware configuration dialog**.
+
+![hardware configuration dialog](/img/ai/one_ai_plugin/demos/potato_chip/hardware_settings.png)
+
 ## Filters and augmentations
 Now, we need to set up our data processing pipeline by specifying the filters and augmentations. Filters are applied once to every image and are the same every time. They are used to preprocess the images. Augmentations on the other hand contain random elements and are different for every image and epoch of the training. They are used to increase the size of the dataset without the need to record and annotate new data. Furthermore, augmentations can increase the model's robustness against variations in the data by intentionally reproducing these variations. OneWare Studio allows us to set up two sets of filters - one that is applied before the augmentations and one that is applied afterwards.
 
@@ -61,24 +72,13 @@ Feel free to test around with the filter and augmentation settings. You can add 
 ![augmentations](/img/ai/one_ai_plugin/demos/potato_chip/chips_augmentations.jpg)
 
 ## Model settings
-Now that we have set up our data processing pipeline, we configure the model settings. First, we need to specify the **Classification Type**. Since each image has either the class *Defective* or *Non-Defective*, we set it to **One Class per Image**. Next, we set the **Minimum FPS** to **20** and the **Maximum Memory Usage** as well as the **Maximum Multiplier Usage** to **90%**. In this demo, we are going to create a model for an Altera™ Max® 10 16K, so we leave the **FPGA Clock Speed** at **50 MHz**.
+Now that we have set up our data processing pipeline, we configure the model settings. First, we need to specify the **Classification Type**. Since each image has either the class *Defective* or *Non-Defective*, we set it to **One Class per Image**. Next, we set the **Minimum FPS** to **20** and the **Maximum Memory Usage** as well as the **Maximum Multiplier Usage** to **90%**. Since we are using an Altera™ Max® 10 16K, we leave the **FPGA Clock Speed** at **50 MHz**.
 
 Afterwards, we provide some additional information on the characteristics of the data. First, we estimate the area the model needs to analyze to make a decision. In our example, it is enough for the model to see the burnt part of the potato chip. There is no need to analyze the whole chip. Other applications might require the model to see the whole object or even to look at the area surrounding the objects. We set the surrounding area to **(10, 10)** for small objects and to **(30, 30)** for large objects.
 
 Next we need to estimate the difference within the same class. There is some moderate variance between the chips and their burn marks but the differences aren't huge. To reflect this, we set the **Same Class Difference** to **40%**. The next setting describes how much the background varies. Since there is very little variation in the background, we set the **Background Difference** to **5%**. Afterwards, we set the **Detect Simplicity** to **90%** since the task is rather simple (easier problems have a higher value). Next, we need to tell the model the estimated sizes for small, average and large objects. We set those to **(5, 5)**, **(15, 15)** and **(30, 30)**. Finally, we need to estimate how many image features are relevant for the classification. Most defective chips contain one or two burn marks, but there are also chips with more burned areas. We thus set **Maximum Number of Features for Classification** to **8** and **Average Number of Features for Classification** to **1.5**.
 
 The last model setting is the option to organize the classes into **Groups**. This is an advanced setting that isn't necessary for this task, so we leave it at the default. We recommend leaving all classes in the same group unless you are certain that your task benefits from splitting the model into multiple sub-models.
-
-## Hardware settings
-Next, we need to select the hardware for which we want to create the model. ONE AI needs the hardware specifications to build a model that is optimized for your hardware and runs within the constraints that were specified in the **Model Settings**. You can use preconfigured hardware settings or specify custom hardware parameters.
-
-For this demo we are going to use an Altera™ Max® 10 16K. Support for the Altera™ Max® 10 isn't included in the base installation of the OneAI Extension, but can be installed in the **Extension Manager**. Click on **Extras** > **Extensions** to open the **Extension Manager**, then go to the section **Hardware** > **OneAI Support**. Here, you need to install the extension **OneAI Altera MAX10 Support**.
-
-![MAX10 extension](/img/ai/one_ai_plugin/demos/potato_chip/max_10_extension.png)
-
-Afterwards the Altera™ Max® 10 16K can be selected in the **Hardware configuration dialog**.
-
-![hardware configuration dialog](/img/ai/one_ai_plugin/demos/potato_chip/hardware_settings.png)
 
 ## Training the model
 Lastly, we go to the **Training** tab and click on **Sync** to synchronize our data and existing model trainings with the ONE WARE servers. After that, we click on **Create Model** to create a new model. In the next step, we select our model and click on the **Train** button in the top-right corner. A **training time** of **2 minutes** is already sufficient for this task. The **Patience for Early Stopping** can be used to stop the training early if there are no further improvements. Since the training time for this example is so short, this setting doesn't really matter, so we leave it at the default of **100%**. Since we want to export the model to an FPGA, we **Enable Quantization Optimization** to increase its performance. Using quantization is required for most FPGAs and also for some microcontrollers. We set the **Percentage Quantization Optimization** to **50%** so that half our training is quantization aware. The option **Focus on Images with Objects** is only relevant for object detection tasks, so we leave the box unchecked. The option **Continue Training** can be used to continue the training of a model that has already been trained. If it is unchecked, the existing model will be overwritten. Since we don't have any prior model, this setting is ignored by ONE AI.

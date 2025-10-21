@@ -32,6 +32,17 @@ We can verify that everything was loaded correctly by checking the annotations o
 
 ![loaded_dataset](/img/ai/one_ai_plugin/demos/handwritten-digits/nist_sd19_loaded_dataset.png)
 
+## Hardware settings
+Next, we need to select the hardware for which we want to create the model. ONE AI needs the hardware specifications to build a model that is optimized for your hardware and runs within the constraints that were specified in the **Model Settings**. You can use preconfigured hardware settings or specify custom hardware parameters.
+
+For this demo we are going to use an Altera™ Max® 10 16K. Support for the Altera™ Max® 10 isn't included in the base installation of the OneAI Extension, but can be installed in the **Extension Manager**. Click on **Extras** > **Extensions** to open the **Extension Manager**, then go to the section **Hardware** > **OneAI Support**. Here, you need to install the extension **OneAI Altera MAX10 Support**.
+
+![MAX10 extension](/img/ai/one_ai_plugin/demos/potato_chip/max_10_extension.png)
+
+Afterwards the Altera™ Max® 10 16K can be selected in the **Hardware configuration dialog**.
+
+![hardware configuration dialog](/img/ai/one_ai_plugin/demos/potato_chip/hardware_settings.png)
+
 ## Filters and augmentations
 The next step is to select the filters and augmentations that we want to use. All images have the same size, so we don't need to change the settings of the **Initial Resize** and since the size of the images is only 128x128, we don't need to reduce it with the **Resolution Filter**. Instead, we apply a few other filters that will help our model with classifying the images. First, we use an **Inverse Filter** that is applied before we augment the images. This filter converts the black numbers on a white background to white numbers on a black background. Some of the augmentations, like the **Rotate Augmentation**, fill missing areas with black pixels, so by using the **Inverse Filter**, the background matches the padded areas.
 
@@ -61,17 +72,6 @@ Next, we provide some additional information on the characteristics of the input
 Then, we estimate the variance of numbers from the same class. We observe quite a few differences in writing styles like the size, the angle or the line width, so we set the **Same Class Difference** to **40%**. The next setting describes the variation of the background. As there is no variation in the white background, we set the **Background Difference** to **0%**. We set the **Detect Simplicity** to **90%**, because the task isn't that complicated. Next, we need to specify the estimated sizes for small, average and large objects. We set those to **(25, 25)**, **(40, 40)** and **(70, 70)**. Finally we need to tell ONE AI how many image features are relevant for the classification. We set **Maximum Number of Features for Classification** to **4** and **Average Number of Features for Classification** to **2**.
 
 The last model setting is the option to organize the classes into **Groups**. This is an advanced setting that isn't necessary for this task, so we leave it at the default. We recommend leaving all classes in the same group unless you are certain that your task benefits from splitting the model into multiple sub-models.
-
-## Hardware settings
-Next, we need to select the hardware for which we want to create the model. ONE AI needs the hardware specifications to build a model that is optimized for your hardware and runs within the constraints that were specified in the **Model Settings**. You can use preconfigured hardware settings or specify custom hardware parameters.
-
-For this demo we are going to use an Altera™ Max® 10 16K. Support for the Altera™ Max® 10 isn't included in the base installation of the OneAI Extension, but can be installed in the **Extension Manager**. Click on **Extras** > **Extensions** to open the **Extension Manager**, then go to the section **Hardware** > **OneAI Support**. Here, you need to install the extension **OneAI Altera MAX10 Support**.
-
-![MAX10 extension](/img/ai/one_ai_plugin/demos/potato_chip/max_10_extension.png)
-
-Afterwards the Altera™ Max® 10 16K can be selected in the **Hardware configuration dialog**.
-
-![hardware configuration dialog](/img/ai/one_ai_plugin/demos/potato_chip/hardware_settings.png)
 
 ## Training the model
 Now, it's time to set up the training configuration for the model. In the **Training** tab we need to click on **Sync** to synchronize our data and existing model trainings with the ONE WARE servers. After that, we create a new model and click on **Train**. For this demo, a **Training Time** of **20 minutes** is required for the model to fully converge. We leave the **patience** at the default value of **100%**. Since we want to export the model to an FPGA, we **Enable Quantization Optimization** to increase its performance. Using quantization is required for most FPGAs and also for some microcontrollers. We set the **Percentage** to **30%**, which achieves a good trade off between training time and model performance. If we want the best performing model, we need to set it to **100%**, but this will increase the training time. For models that will be exported as floating point models it is best to turn off quantization. This is especially true if you want to export an ONNX model, because they don't support quantization. The option **Focus on Images with Objects** is only relevant for object detection tasks, so we leave the box unchecked. The option **Continue Training** can be used to continue the training of a model that has already been trained. If it is unchecked, the existing model will be overwritten. Since we don't have any prior model, this setting is ignored by ONE AI.
