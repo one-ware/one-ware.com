@@ -101,7 +101,12 @@ If your data isn't annotated yet, you can use OneWare Studio's ``Annotation Tool
 ![Annotation Tool](/img/ai/one_ai_plugin/getting_started/annotation_tool_objects_1.png)
 
 
-## 5. Prefilters
+## 5. Hardware settings
+In the ``Hardware Settings`` tab, you can specify the target hardware that your model will be deployed on. You have the option to select a predefined hardware or to define custom hardware resources. ONE AI will create a model that is optimized for your hardware and runs within the constraints that were specified in the ``Model Settings``.  
+You can find more details about the hardware settings in [this guide](/docs/one-ai/getting-started/hardware-settings).
+
+
+## 6. Prefilters
 Prefilters are used to process your images and can introduce a wide variety of changes. For example you can crop your images, do color correction or apply a blur. You can add prefilters before or after applying augmentations to tune the data processing pipeline to your individual needs.
 
 ![Prefilter View](/img/ai/one_ai_plugin/getting_started/filter_view.png)
@@ -109,7 +114,7 @@ Prefilters are used to process your images and can introduce a wide variety of c
 On the right, you can see the settings for the selected prefilter as well as a preview on how it will affect the image. The image on the bottom left shows a preview of your complete prefilter pipeline. If you want to learn more about prefilters, you can check out our [guide on filters and augmentations](/docs/one-ai/getting-started/filters-and-augmentations#prefilters).
 
 
-## 6. Augmentations
+## 7. Augmentations
 Augmentations are applied during the training with random values within a specified range. Their purpose is to increase the diversity of the training data, helping the AI to generalize better. By varying the training data, it is possible to increase the size of the dataset without the need to record or annotate additional data. Furthermore, it is possible to make the AI model more robust against certain variations in the data by intentionally reproducing these variations with augmentations.  
 Below, you'll find some examples for augmentations that are supported by ONE AI.
 
@@ -143,16 +148,11 @@ Below, you'll find some examples for augmentations that are supported by ONE AI.
 You can learn more about augmentations in uur [guide on filters and augmentations](/docs/one-ai/getting-started/filters-and-augmentations#augmentations).
 
 
-## 7. Model settings
+## 8. Model settings
 The ``Model Settings`` tab allows you to tune the model generation to your specific needs. You can specify the parameters you want to predict, which parameters you want to prioritize and how many resources your model may use. For achieving the best results, you also need to make some estimates about your task, like estimating the expected size of objects or the overall complexity of the task.  
 For a more detailed explanation, you can check out our [guide on model settings](/docs/one-ai/getting-started/model-settings) or you can take a look at [this guide](/docs/one-ai/help/choosing-parameters-guide) on how to set the right parameters.
 
 <img src="/img/ai/one_ai_plugin/getting_started/model_settings_input_1.png" alt="Model Settings" style={{ width: '100%' }} />
-
-
-## 8. Hardware settings
-In the ``Hardware Settings`` tab, you can specify the target hardware that your model will be deployed on. You have the option to select a predefined hardware or to define custom hardware resources. ONE AI will create a model that is optimized for your hardware and will run within the constraints that were specified in the ``Model Settings``.  
-You can find more details about the hardware settings in [this guide](/docs/one-ai/getting-started/hardware-settings).
 
 
 ## 9. Training a model
