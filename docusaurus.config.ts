@@ -215,6 +215,10 @@ const config: Config = {
               type: "html",
               value: '<a href="/docs/one-ai/industries/healthcare" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Healthcare</a>',
             },
+            {
+              type: "html",
+              value: '<a href="/docs/one-ai/industries/food-beverage" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Food & Beverage</a>',
+            },
           ],
         },
         {

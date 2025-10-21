@@ -1,31 +1,31 @@
 ---
-id: healthcare
-title: Power Modern Healthcare with Vision AI and Edge Intelligence
-sidebar_label: Healthcare
+id: food-beverage 
+title: Upgrade Food and Beverage Production with Vision and Edge AI
+sidebar_label: Food and Beverage 
 ---
 
-### Unlock smarter healthcare with AI that runs where treatment happens.
+### Unlock smarter food and beverage production with AI that runs where quality matters.
 
-From medical image analysis to workflow optimization and patient monitoring, healthcare providers can deliver faster, more precise results while keeping data private and secure.
+From ingredient inspection to packaging verification and production automation, producers can ensure consistent quality, reduce waste, and boost throughput. ONE AI delivers real-time visual intelligence directly on existing equipment improving accuracy, reliability, and efficiency across every stage of production.
 
 
 <div style={{display:'flex', justifyContent:'center', margin:'20px 0'}}>
-  <img src="/img/ai/one_ai_plugin/industries/Healthcare(1).jpg" alt="Camera Tool capturing images for QC" style={{maxHeight:'320px', borderRadius:'8px'}} />
+  <img src="/img/ai/one_ai_plugin/industries/Food.jpg" alt="Camera Tool capturing images for QC" style={{maxHeight:'320px', borderRadius:'8px'}} />
 </div>
 
-ONE AI brings instant intelligence directly to the point of care, running on existing devices without relying on the cloud.
+ONE AI runs locally on factory hardware, providing fast, precise AI performance without cloud dependency or costly system upgrades.
 
 ---
 ## Why ONE AI
 
-**Accelerate AI in Healthcare**  
-ONE AI accelerates the adoption of AI in hospitals and clinics by running locally on existing medical devices and systems. It supports radiologists with AI-assisted imaging for X-rays, MRIs, and ultrasounds, providing real-time insights without the need for complex integrations.
+**Accelerate AI Adoption in Food & Beverage**  
+ONE AI makes it easy for producers to integrate Vision AI into their production lines. It detects defects, verifies packaging, and automates visual checks in real time — running locally on existing cameras and systems.
 
-**Built for Clinical Precision**  
-Unlike general AI systems, ONE AI creates fully customized Vision AI models for each medical use case. From image analysis to prescription verification, it learns exactly what matters for diagnostic accuracy delivering faster, more reliable results across departments.
+**Built for Product Consistency**  
+While generic AI models struggle with variation, ONE AI builds custom Vision AI networks for each product and packaging type. From ingredient checks to bottling inspection, it learns what defines your unique quality standards.
 
-**Faster Results and Seamless Integration**  
-By automating most steps of AI development, ONE AI enables clinicians to adopt and benefit from the latest advancements instantly. The platform integrates effortlessly into existing workflows, improving diagnostic speed, equipment efficiency, and overall care quality.
+**Faster Results and Continuous Automation**  
+By automating most steps of AI deployment, ONE AI delivers instant results and ongoing improvements. It scales easily across facilities, reducing manual inspections and maintaining consistent quality at every stage.
 
 
 
@@ -62,9 +62,9 @@ By automating most steps of AI development, ONE AI enables clinicians to adopt a
       e.currentTarget.style.backgroundColor = 'transparent';
     }}
   >
-    <img src="/img/ai/one_ai_plugin/industries/HealthCarePillen.jpg" alt="Quality Control Manufacturing" style={{maxHeight:'320px', borderRadius:'8px', width:'100%'}} />
-    <h4 style={{marginTop:'10px', marginBottom:'5px'}}>Prescription and Inventory Verification</h4>
-    <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>AI automatically validates medication labeling, stock accuracy, and prescription fulfillment to improve patient safety.</p>
+    <img src="/img/ai/one_ai_plugin/industries/Food.jpg" alt="Quality Control Manufacturing" style={{maxHeight:'320px', borderRadius:'8px', width:'100%'}} />
+    <h4 style={{marginTop:'10px', marginBottom:'5px'}}>Ingredient and Product Inspection</h4>
+    <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>Vision AI detects defects, discoloration, and contamination in food and beverage products to ensure consistent quality.</p>
   </div>
   <div 
     style={{
@@ -94,9 +94,9 @@ By automating most steps of AI development, ONE AI enables clinicians to adopt a
       e.currentTarget.style.backgroundColor = 'transparent';
     }}
   >
-    <img src="/img/ai/one_ai_plugin/industries/Healthcare(1).jpg" alt="Industrial Applications" style={{maxHeight:'320px', borderRadius:'8px', width:'100%'}} />
-    <h4 style={{marginTop:'10px', marginBottom:'5px'}}>Medical Image Analysis</h4>
-    <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>Advanced Vision AI enhances diagnostic accuracy across X-rays, MRIs, and ultrasound scans in real time.</p>
+    <img src="/img/ai/one_ai_plugin/industries/Ettiket.jpg" alt="Industrial Applications" style={{maxHeight:'320px', borderRadius:'8px', width:'100%'}} />
+    <h4 style={{marginTop:'10px', marginBottom:'5px'}}>Packaging and Label Verification</h4>
+    <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>Automated vision checks confirm label accuracy, print quality, and sealing integrity for compliance and traceability.</p>
   </div>
 </div>
 <br />
@@ -129,9 +129,9 @@ By automating most steps of AI development, ONE AI enables clinicians to adopt a
       e.currentTarget.style.backgroundColor = 'transparent';
     }}
   >
-    <img src="/img/ai/one_ai_plugin/industries/healthcareSpritze.jpg" alt="Predictive Maintenance" style={{maxHeight:'320px', borderRadius:'8px', width:'100%'}} />
-    <h4 style={{marginTop:'10px', marginBottom:'5px'}}>Automated Equipment Inspection</h4>
-    <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>Vision AI ensures the precision and reliability of medical devices, instruments, and imaging systems.</p>
+    <img src="/img/ai/one_ai_plugin/industries/AutomatisierungFoodBefüllung.jpg" alt="Predictive Maintenance" style={{maxHeight:'320px', borderRadius:'8px', width:'100%'}} />
+    <h4 style={{marginTop:'10px', marginBottom:'5px'}}>Automated Production Steps</h4>
+    <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>AI automates repetitive visual checks and quality decisions throughout the production line — reducing manual effort and increasing speed.</p>
   </div>
   <div 
     style={{
@@ -161,9 +161,9 @@ By automating most steps of AI development, ONE AI enables clinicians to adopt a
       e.currentTarget.style.backgroundColor = 'transparent';
     }}
   >
-    <img src="/img/ai/one_ai_plugin/industries/PatientScreening.jpg" alt="Robotics Integration" style={{maxHeight:'320px', borderRadius:'8px', width:'100%'}} />
-    <h4 style={{marginTop:'10px', marginBottom:'5px'}}>Continuous Patient Monitoring</h4>
-    <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>Sensor-based AI tracks vital signs in real time, detecting early changes to enable faster clinical response through automated visual checks.</p>
+    <img src="/img/ai/one_ai_plugin/industries/Füllstand.jpg" alt="Robotics Integration" style={{maxHeight:'320px', borderRadius:'8px', width:'100%'}} />
+    <h4 style={{marginTop:'10px', marginBottom:'5px'}}>Filling and Bottling Line Monitoring</h4>
+    <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>Vision AI analyzes fill levels, cap alignment, and label positioning to guarantee perfect presentation and consistency.</p>
   </div>
 </div>
 
@@ -172,16 +172,16 @@ By automating most steps of AI development, ONE AI enables clinicians to adopt a
 
 ## Contact Sales
 
-We would be happy to discuss how ONE AI can be integrated into your healthcare environment.
+We would be happy to discuss how ONE AI can be integrated into your food and beverage production.
 
 import SalesBanner from '@site/src/components/SalesBanner';
 
 <SalesBanner 
-  subject="ONE AI Healthcare Solutions" 
+  subject="ONE AI Food and Beverage Solutions" 
   customText={
     <>
       <strong>Leo Wiegand</strong> is our sales expert who takes care of projects of all kinds. Whether you need evaluations for ideas, custom quotes, or strategic consulting - Leo is your go-to contact for business inquiries.
     </>
   }
-  customHeading="Ready to Revolutionize Healthcare?"
+  customHeading="Ready to Transform Food Production?"
 />
