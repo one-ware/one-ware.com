@@ -269,7 +269,7 @@ function IndustryExamplesSection() {
       src: require("@site/static/img/industries/Food_and_Beverage.jpg").default,
       label: "Food & Beverage",
       labelId: "homepage.industry.foodbeverage",
-      href: "/docs/one-ai/use-cases/camera-tool",
+      href: "/docs/one-ai/industries/food-beverage",
     },
     {
       key: "healthcare",
