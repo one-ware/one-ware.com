@@ -62,17 +62,17 @@ export const JOBS_DATA: JobCategory[] = [
   //     }
   //   ],
   // },
-  {
-    category: "Students & Interns",
-    positions: [
-      {
-        id: "students-interns.2",
-        title: "Working Student - AI Engineering and Prototyping ",
-        description: "Help us create AI demos, technical tutorials and documentation",
-        url: "Student.pdf",
-        type: "Part Time",
-        location: "Osnabrück",
-      }
-    ],
-  }
+  // {
+  //   category: "Students & Interns",
+  //   positions: [
+  //     {
+  //       id: "students-interns.2",
+  //       title: "Working Student - AI Engineering and Prototyping ",
+  //       description: "Help us create AI demos, technical tutorials and documentation",
+  //       url: "Student.pdf",
+  //       type: "Part Time",
+  //       location: "Osnabrück",
+  //     }
+  //   ],
+  // }
 ];
