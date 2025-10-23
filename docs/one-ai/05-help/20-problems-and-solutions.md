@@ -26,6 +26,9 @@ You can reduce the amount of computations required to run the model by
 - reducing the **Same Class and Background Difference** in the **Model Settings**
 - increasing the **Detect Simplicity** in the **Model Settings**
 
+## I have an object detection dataset but want to train a classification model
+ONE AI allows you to convert object detection labels to classification labels. To do so you need to change the ``Prediction Type`` in the ``Model Settings`` tab. You can choose whether you want to predict all present objects, the object class that takes up the largest area, the object class that appears the most often or whether any objects are present at all. You can find more information [here](/docs/one-ai/getting-started/dataset#21-converting-object-detection-labels-to-classification-labels).
+
 ## My model performs good during training but bad in the evaluation
 It is expected that your model performs slightly better on the training data since this is the data the model was trained on. If there is a large difference between the training and evaluation performance, however, this can have two causes:
 
