@@ -50,6 +50,15 @@ The spectrogram generator supports converting audio or CSV files to spectrogram 
 - ``Classes``: Each image is assigned to one or more classes.  
 - ``Objects``: Individual objects are selected in the images by drawing boxes around them.  
 
+### 2.1 Converting object detection labels to classification labels
+If you already have an annotated object detection dataset but are only interested in the presence of objects, you can convert your dataset with OneWare Studio. The simplest method for this is switching the ``Label Mode`` from ``Objects`` to ``Classes``. The annotation file still contains the object boxes, but the annotation tool only shows you whether a class is present in the image or not. Once you start the AI training, the dataset will be converted on our servers. The files on your machine won't be altered by this process.
+
+For a more sophisticated approach, you can leave the ``Label Mode`` as ``Objects`` and select a different ``Prediction Type`` in the ``Model Settings`` tab. Using this approach not only gives you more options for how you want to convert your labels but also has the advantage that the conversion is done after applying augmentations. This makes the converted classes more exact, because the augmentations can change which classes are present, e.g. by moving an object out of frame. There are four ``Prediction Types`` that convert object detection labels to classification labels:
+- ``All Present Object-Classes`` selects all classes that are present in the image.
+- ``Class with Largest Combined Object Area`` only selects the object class that takes up the largest combined area in the image.
+- ``Class with Most Objects`` only selects the object class that appears the most in the image.
+- ``At Least One Object? (Y/N)`` selects whether at least one object is present in the image.
+
 ## 3. Divide your dataset
 
 Dividing your data into separate subsets is crucial for building reliable AI models. Follow these steps to split your data effectively.
