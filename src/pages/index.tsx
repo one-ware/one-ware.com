@@ -315,7 +315,7 @@ function IndustryExamplesSection() {
   }
 
   return (
-    <div id="industries" className="py-12 md:py-16">
+    <div id="industries" className="py-8 md:py-12 pb-4 md:pb-6">
       {/* Überschrift mit normalem Container-Padding */}
       <div className="container mx-auto px-4 mb-8">
         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-left font-bold">
@@ -547,7 +547,7 @@ function ComparisonSection() {
   ];
   
   return (
-    <div id="comparison" className="pt-12 md:pt-12 pb-4 md:pb-4 overflow-hidden">
+    <div id="comparison" className="pt-6 md:pt-8 pb-8 md:pb-8 overflow-hidden">
       <div className="container mx-auto px-4 text-center">
         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-12 font-bold px-4">
           <Translate id="homepage.usecase.title">
@@ -656,8 +656,9 @@ export default function Home() {
         <div className="dropshadowbottom">
           <div className="dropshadowtop diagclipbottom">
             <div className="default-background pb-12">
-              <ComparisonSection />
               <IndustryExamplesSection />
+              <ComparisonSection />
+              
             </div>
           </div>
         </div>
