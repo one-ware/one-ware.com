@@ -583,8 +583,8 @@ function BenefitsSection() {
   ];
 
   return (
-    <section className="py-8 md:py-12">
-      <div className="container mx-auto px-4 max-w-7xl">
+    <section className="pt-8 md:pt-12">
+      <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className=" mb-6">
           <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">
@@ -719,17 +719,12 @@ function InventionSection() {
     <section className="py-16 md:py-24 to-black">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="mb-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             <Translate id="oneai.invention.section.title">
-              Reinventing AI Development
+              How It Works:
             </Translate>
           </h2>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto">
-            <Translate id="oneai.invention.section.subtitle">
-              Don't waste your custom dataset on a generic AI model. Our AI automatically designs models tailored to your data, outperforming foundation models and NAS in just 0.7 seconds.
-            </Translate>
-          </p>
         </div>
 
         {/* Responsive Grid */}
