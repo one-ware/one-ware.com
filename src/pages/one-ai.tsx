@@ -112,16 +112,16 @@ function HomepageHeader() {
               <div className="flex flex-col md:flex-row justify-center items-center space-y-3 md:space-y-0 md:space-x-5 mb-10">
                 <Link
                   className="button button--primary button--outline button--lg text-sm md:text-lg"
-                  href="/one-ai#getStarted"
+                  href="/docs/one-ai/tutorials"
                 >
-                  <Translate id="homepage.subtitle.ai.getstarted">Get Started</Translate>
+                  <Translate id="oneai.hero.examples">Example Projects</Translate>
                 </Link>
 
                 <Link
                   className="button button--primary button--lg text-sm md:text-lg"
-                  href="https://cloud.one-ware.com/Account/Register"
+                  href="/one-ai#getStarted"
                 >
-                  <Translate id="oneai.signup">Sign Up</Translate>
+                  <Translate id="homepage.subtitle.ai.getstarted">Get Started</Translate>
                 </Link>
 
 
@@ -150,23 +150,6 @@ function ComparisonSection() {
 
   const useCases = [
     {
-      title: "Prebuild UI",
-      titleId: "oneai.usecase.ui.title",
-      subtitle: "Integration on any system with operating system and graphical interface",
-      subtitleId: "oneai.usecase.ui.subtitle",
-      backgroundImage: "/img/ai/one_ai_plugin/use_cases/capture/preview.png",
-      displayImage: "/img/ai/one_ai_plugin/use_cases/capture/integration.png",
-      description: "Eliminate months of development time. Integrate AI with our pre-build UI that supports monitoring, remote control and continuous improvement. Already in production with leading production companies and ready for your quality control or automation task with:",
-      descriptionId: "oneai.usecase.ui.description",
-      metrics: [
-        { value: "1-Click", label: "Deployment", labelId: "oneai.metric.deployment" },
-        { value: "< 1 Day", label: "Development Time", labelId: "oneai.metric.devtime" },
-      ],
-      whitepaper: "/docs/one-ai/use-cases/camera-tool",
-      linkText: "More Details",
-      linkTextId: "oneai.usecase.link"
-    },
-    {
       title: "High Speed HDL",
       titleId: "oneai.usecase.hdl.title",
       subtitle: "ONE AI implements efficient AI on any FPGA with our open source AI to HDL libraries",
@@ -182,6 +165,23 @@ function ComparisonSection() {
         { value: "6×", label: "Lower Cost", labelId: "homepage.metric.cost" },
       ],
       whitepaper: "/docs/one-ai/use-cases/chip",
+      linkText: "More Details",
+      linkTextId: "oneai.usecase.link"
+    },
+    {
+      title: "Prebuild UI",
+      titleId: "oneai.usecase.ui.title",
+      subtitle: "Integration on any system with operating system and graphical interface",
+      subtitleId: "oneai.usecase.ui.subtitle",
+      backgroundImage: "/img/ai/one_ai_plugin/use_cases/capture/preview.png",
+      displayImage: "/img/ai/one_ai_plugin/use_cases/capture/integration.png",
+      description: "Eliminate months of development time. Integrate AI with our pre-build UI that supports monitoring, remote control and continuous improvement. Already in production with leading production companies and ready for your quality control or automation task with:",
+      descriptionId: "oneai.usecase.ui.description",
+      metrics: [
+        { value: "1-Click", label: "Deployment", labelId: "oneai.metric.deployment" },
+        { value: "< 1 Day", label: "Development Time", labelId: "oneai.metric.devtime" },
+      ],
+      whitepaper: "/docs/one-ai/use-cases/camera-tool",
       linkText: "More Details",
       linkTextId: "oneai.usecase.link"
     },
@@ -716,7 +716,7 @@ function InventionSection() {
   ];
 
   return (
-    <section className="py-16 md:py-24 to-black">
+    <section className="py-8 md:py-12 to-black">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="mb-8">
@@ -765,6 +765,49 @@ function InventionSection() {
             </div>
           ))}
         </div>
+
+        {/* Call to Action for Example Projects */}
+        <div className="mt-16">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-6 text-center">
+              {/* Title */}
+              <div className="flex items-center">
+                <h3 className="text-2xl md:text-3xl font-bold text-white pt-3">
+                  <Translate id="oneai.examples.cta.title">
+                    Ready to Start Now?
+                  </Translate>
+                </h3>
+              </div>
+              
+              {/* Buttons */}
+              <div className="flex flex-col sm:flex-row gap-3 justify-center flex-shrink-0">
+                <Link
+                  to="/docs/one-ai/tutorials"
+                  className="inline-flex items-center px-6 py-3 bg-[#00FFD1] text-black font-bold rounded-xl hover:bg-[#00e4ba] transition-all duration-300 transform hover:scale-105 text-base"
+                >
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                  </svg>
+                  <Translate id="oneai.examples.cta.button.main">
+                    View Examples
+                  </Translate>
+                </Link>
+                
+                <Link
+                  to="/docs/one-ai/getting-started"
+                  className="inline-flex items-center px-6 py-3 bg-transparent border-2 border-[#00FFD1] text-[#00FFD1] font-bold rounded-xl hover:bg-[#00FFD1] hover:text-black transition-all duration-300 text-base"
+                >
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                  <Translate id="oneai.examples.cta.button.secondary">
+                    Get Started
+                  </Translate>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -800,10 +843,12 @@ export default function OneAi() {
 
       <main>
         <BenefitsSection />
-        <InventionSection />
+        <div className="bottomsplit">
+            <InventionSection />
+        </div>
 
 
-        <div className="text-center mt-12 md:pb-2 pb-12 container overflow-x-hidden bottomsplit">
+        <div className="text-center pt-12 md:pb-2 pb-12 container overflow-x-hidden bottomsplit">
           <h1 className="text-2xl md:text-4xl">
             <Translate id="oneai.compare.heading">
               The Entire AI Development Process Automated in One Tool

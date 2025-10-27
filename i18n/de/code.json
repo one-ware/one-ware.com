@@ -390,6 +390,9 @@
   "oneai.hero.main.subtitle2": {
     "message": "Automatisch maßgeschneidert für Deine Bedürfnisse und exportiert für jede Hardware."
   },
+  "oneai.hero.examples": {
+    "message": "Beispiel-Projekte"
+  },
   "homepage.seo.title": {
     "message": "ONE WARE - Die nächste Generation der Computer Vision und Edge AI Entwicklung"
   },
@@ -1377,5 +1380,17 @@
   },
   "oneai.benefits.results.description": {
     "message": "In der Regel sind die in 0,7 Sekunden vorhergesagten KI Modelle von ONE AI zuverlässiger und genauer als die KI Modelle, die von Entwicklern lange entwickelt wurden. So macht manuelle KI Entwicklung in den wenigsten Fällen Sinn. Gerade weil ONE AI auch sehr spezielle Anforderungen erfüllen kann, für die es bislang händische Entwicklung brauchte."
+  },
+  "oneai.examples.cta.title": {
+    "message": "Bereit jetzt zu starten?"
+  },
+  "oneai.examples.cta.description": {
+    "message": "Entdecke unsere umfassenden Beispielprojekte und sieh, wie ONE AI echte Herausforderungen in verschiedenen Branchen und Anwendungsfällen löst."
+  },
+  "oneai.examples.cta.button.main": {
+    "message": "Beispiele ansehen"
+  },
+  "oneai.examples.cta.button.secondary": {
+    "message": "Loslegen"
   }
 }
