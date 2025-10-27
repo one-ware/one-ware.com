@@ -454,7 +454,7 @@
     "message": "KI-Modelle können als Modell, vorgefertigtes Programm oder mit UI in ONE WARE Studio bereitgestellt werden."
   },
     "oneai.invention.section.title": {
-    "message": "KI-Entwicklung neu erfunden"
+    "message": "So funktioniert es:"
   },
   "oneai.invention.section.subtitle": {
     "message": "Verschwenden Sie Ihren individuellen Datensatz nicht an ein generisches KI-Modell. Unsere KI entwirft automatisch KI Modelle, die auf Ihre Daten zugeschnitten sind und Foundation-Modelle sowie NAS in nur 0,7 Sekunden übertreffen."
@@ -1326,5 +1326,56 @@
   },
   "oneai.support.email.label": {
     "message": "Schreiben Sie uns direkt:"
+  },
+  "oneai.benefits.section.title": {
+    "message": "Deine Vorteile als Entwickler:"
+  },
+  "oneai.benefits.smaller.title": {
+    "message": "Kleinere Datensätze verwenden"
+  },
+  "oneai.benefits.smaller.description": {
+    "message": "Mit ONE AI wirst du belohnt für einen kleinen Datensatz mit einer kleineren und schnelleren KI. Denn so kann die KI nichts auswendig lernen und sich mehr auf den tatsächlichen Anwendungsfall fokussieren. Selbst bei 20 Bildern können oft schon gute KI Modelle erstellt werden und die Entwicklungszeit deutlich reduziert werden."
+  },
+  "oneai.benefits.labeling.title": {
+    "message": "Weniger manuelles Labeling"
+  },
+  "oneai.benefits.labeling.description": {
+    "message": "Da ONE AI einen kleineren Datensatz braucht für gute Ergebnisse, kann so die erste KI genutzt werden um schnell ein größerer Datensatz zu erstellen. Und die KI wird für das zweite Training von ONE AI automatisch für den größeren Datensatz angepasst."
+  },
+  "oneai.benefits.tuning.title": {
+    "message": "Keine Modellauswahl oder Parameter-Tuning"
+  },
+  "oneai.benefits.tuning.description": {
+    "message": "ONE AI baut automatisch die beste KI für deine Anwendung. Also musst du nicht mehr passende Foundation Modelle raussuchen, verschiedene Parameter ausprobieren und selber KI Modelle für die Anwendung anpassen und optimieren."
+  },
+  "oneai.benefits.multiple.title": {
+    "message": "Native Unterstützung für mehrere Eingabebilder"
+  },
+  "oneai.benefits.multiple.description": {
+    "message": "Es gibt viele Anwendungen wo ein Referenzbild erforderlich ist oder wo die Erkennung deutlich einfacher wäre wenn mehrere Bilder miteinander verglichen werden könnten. Mit ONE AI ist das ganz einfach möglich indem der Kontext von mehreren Eingangsbildern angegeben werden kann und die Architektur der KI automatisch darauf angepasst wird."
+  },
+  "oneai.benefits.export.title": {
+    "message": "Automatischer Export für Zielhardware"
+  },
+  "oneai.benefits.export.description": {
+    "message": "Das ONE AI Capture Tool kann für viele Anwendungen auf allen Betriebssystemen direkt als UI für die erstellte KI genutzt werden. Genauso kann aber auch als Hardware unabhängiges KI Modell, C++ Projekt, Executable oder HDL Code für FPGAs exportiert werden. So spart man sich viel Zeit bei der KI Implementierung."
+  },
+  "oneai.benefits.performance.title": {
+    "message": "KI hält immer gewünschte FPS und Ressourcennutzung ein"
+  },
+  "oneai.benefits.performance.description": {
+    "message": "ONE AI berücksichtigt bei der KI Erstellung automatisch die verwendete Hardware, damit genau die benötigten FPS und die gewünschte Ressourcennutzung eingehalten wird. So spart man sich viel rumprobieren und optimieren."
+  },
+  "oneai.benefits.coding.title": {
+    "message": "Keine manuelle Programmierung erforderlich"
+  },
+  "oneai.benefits.coding.description": {
+    "message": "Alle Funktionen für die KI Erstellung sind in ONE AI integriert ohne selber programmieren zu müssen. Den komplizierten Teil übernimmt ONE AI. Man selber muss nur noch sein Wissen über die Anwendung reingeben und am Ende die automatisch erstellte Software und KI nutzen oder ggf. einbauen."
+  },
+  "oneai.benefits.results.title": {
+    "message": "Meist bessere Ergebnisse als manuelle KI-Entwicklung"
+  },
+  "oneai.benefits.results.description": {
+    "message": "In der Regel sind die in 0,7 Sekunden vorhergesagten KI Modelle von ONE AI zuverlässiger und genauer als die KI Modelle, die von Entwicklern lange entwickelt wurden. So macht manuelle KI Entwicklung in den wenigsten Fällen Sinn. Gerade weil ONE AI auch sehr spezielle Anforderungen erfüllen kann, für die es bislang händische Entwicklung brauchte."
   }
 }

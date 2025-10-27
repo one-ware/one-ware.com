@@ -133,8 +133,16 @@ const config: Config = {
           className: "navbar__dropdown--wide",
           items: [
             {
-              type: "html",
-              value: '<a href="/one-ai" style="font-weight: bold; color: #00FFD1; text-decoration: none; display: block; padding: 8px 12px;">ONE AI</a>',
+              to: "/one-ai",
+              label: "ONE AI",
+              className: "navbar__dropdown--custom-link",
+              style: {
+                fontWeight: "bold",
+                color: "#00FFD1",
+                textDecoration: "none",
+                display: "block",
+                padding: "8px 12px"
+              }
             },
             {
               to: "/docs/one-ai/getting-started",
@@ -169,8 +177,16 @@ const config: Config = {
               value: '<hr style="margin: 0.5rem 0; border: none; border-top: 1px solid var(--ifm-color-primary);">',
             },
             {
-              type: "html",
-              value: '<a href="/studio" style="font-weight: bold; color: #00FFD1; text-decoration: none; display: block; padding: 8px 12px;">ONE WARE Studio</a>',
+              to: "/studio",
+              label: "ONE WARE Studio",
+              className: "navbar__dropdown--custom-link",
+              style: {
+                fontWeight: "bold",
+                color: "#00FFD1",
+                textDecoration: "none",
+                display: "block",
+                padding: "8px 12px"
+              }
             },
             {
               to: "/docs/studio/setup",
