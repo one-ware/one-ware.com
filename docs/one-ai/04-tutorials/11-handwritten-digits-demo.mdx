@@ -3,10 +3,18 @@ id: handwritten-digits-demo
 title: Handwritten Digit Classification Demo
 sidebar_label: Simple Image Classification (Digits)
 ---
+import Link from '@docusaurus/Link';
+
 # Handwritten Digit Classification Demo
 
 ## About this demo
 This demo showcases the usage of OneWare Studio and the OneAI Extension for a demo case. If you are unfamiliar with the OneAI Extension, we recommend to first take a look at our guide [Getting Started with One AI](/docs/one-ai/01-getting-started/01-getting-started.md). We also recommend to read the [Potato Chip Classification Demo](/docs/one-ai/tutorials/potato-chip-demo), since it goes into more detail than this demo.
+
+<div className="text--center" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+  <Link className="button button--primary button--lg" href="https://github.com/one-ware/OneAI_demo_datasets/blob/main/projects/NIST_SD19.zip" target="_blank" rel="noopener noreferrer">
+    <p className="m-0 p-0">Download Project</p>
+  </Link>
+</div>
 
 ## Dataset overview
 The dataset for this demo can be downloaded [here](https://github.com/one-ware/OneAI_demo_datasets/blob/main/datasets/nist_sd19_subset_sorted.zip) or you can download the complete project [here](https://github.com/one-ware/OneAI_demo_datasets/blob/main/projects/NIST_SD19.zip). It is a subset of the [NIST Special Database 19](https://www.nist.gov/srd/nist-special-database-19) and contains images of handwritten digits. The training set contains 3000 images, 300 for each digit, while the test set contains 500 images.
