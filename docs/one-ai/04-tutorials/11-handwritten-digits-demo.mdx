@@ -3,10 +3,19 @@ id: handwritten-digits-demo
 title: Handwritten Digit Classification Demo
 sidebar_label: Simple Image Classification (Digits)
 ---
+import Link from '@docusaurus/Link';
+import SupportBanner from '@site/src/components/SupportBanner';
+
 # Handwritten Digit Classification Demo
 
 ## About this demo
 This demo showcases the usage of OneWare Studio and the OneAI Extension for a demo case. If you are unfamiliar with the OneAI Extension, we recommend to first take a look at our guide [Getting Started with One AI](/docs/one-ai/01-getting-started/01-getting-started.md). We also recommend to read the [Potato Chip Classification Demo](/docs/one-ai/tutorials/potato-chip-demo), since it goes into more detail than this demo.
+
+<div className="text--center" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+  <Link className="button button--primary button--lg" href="https://github.com/one-ware/OneAI_demo_datasets/blob/main/projects/NIST_SD19.zip" target="_blank" rel="noopener noreferrer">
+    <p className="m-0 p-0">Download Project</p>
+  </Link>
+</div>
 
 ## Dataset overview
 The dataset for this demo can be downloaded [here](https://github.com/one-ware/OneAI_demo_datasets/blob/main/datasets/nist_sd19_subset_sorted.zip) or you can download the complete project [here](https://github.com/one-ware/OneAI_demo_datasets/blob/main/projects/NIST_SD19.zip). It is a subset of the [NIST Special Database 19](https://www.nist.gov/srd/nist-special-database-19) and contains images of handwritten digits. The training set contains 3000 images, 300 for each digit, while the test set contains 500 images.
@@ -33,6 +42,7 @@ We can verify that everything was loaded correctly by checking the annotations o
 ![loaded_dataset](/img/ai/one_ai_plugin/demos/handwritten-digits/nist_sd19_loaded_dataset.png)
 
 ## Hardware settings
+[🔗 hardware settings guide](/docs/one-ai/getting-started/hardware-settings)  
 Next, we need to select the hardware for which we want to create the model. ONE AI needs the hardware specifications to build a model that is optimized for your hardware and runs within the constraints that were specified in the **Model Settings**. You can use preconfigured hardware settings or specify custom hardware parameters.
 
 For this demo we are going to use an Altera™ Max® 10 16K. Support for the Altera™ Max® 10 isn't included in the base installation of the OneAI Extension, but can be installed in the **Extension Manager**. Click on **Extras** > **Extensions** to open the **Extension Manager**, then go to the section **Hardware** > **OneAI Support**. Here, you need to install the extension **OneAI Altera MAX10 Support**.
@@ -44,6 +54,7 @@ Afterwards the Altera™ Max® 10 16K can be selected in the **Hardware configur
 ![hardware configuration dialog](/img/ai/one_ai_plugin/demos/potato_chip/hardware_settings.png)
 
 ## Filters and augmentations
+[🔗 filters and augmentations guide](/docs/one-ai/getting-started/filters-and-augmentations)  
 The next step is to select the filters and augmentations that we want to use. All images have the same size, so we don't need to change the settings of the **Initial Resize** and since the size of the images is only 128x128, we don't need to reduce it with the **Resolution Filter**. Instead, we apply a few other filters that will help our model with classifying the images. First, we use an **Inverse Filter** that is applied before we augment the images. This filter converts the black numbers on a white background to white numbers on a black background. Some of the augmentations, like the **Rotate Augmentation**, fill missing areas with black pixels, so by using the **Inverse Filter**, the background matches the padded areas.
 
 In the **After Augmentation** section, we add a **Normalize Filter**. This will rescale the brightness values of the image and thus increase the robustness against lighting variations. Remember to activate the check box in the filter list as well as the box in the filter itself.  
@@ -65,6 +76,7 @@ In addition to those filters, we use the following augmentations:
 You might wonder that some of our filters undo the effects of our augmentations. Specifically the **Normalize Filter** and the **Threshold Filter**, which will remove most if not all of the changes from the **Color Augmentation** as well as the **Noise Augmentation**. This behavior is intended. We use the augmentations to simulate variations in real life data that might not have been captured by our training data. We use filters to remove those variations that our model might encounter to increase its robustness. By using both augmentations as well as filters that counteract them, we ensure that our data pipeline is configured correctly and works in real life situations. Otherwise, we might realize during deployment that the threshold we set in the **Threshold Filter** removes too much or too little under different lighting conditions and ruins the model's performance.
 
 ## Model settings
+[🔗 model settings guide](/docs/one-ai/getting-started/model-settings)  
 After having set up the data processing pipeline, we configure the model settings. First, we need to specify the **Classification Type**. We want to predict one of the numbers for each image, so we set it to **One Class per Image**. For the tests with the webcam, it would be nice if we were able to detect multiple numbers in the same image, but since the training data doesn't contain any images with more than one number, our model won't be able to make these kind of predictions. We set the **Minimum FPS** to **60** and the **Maximum Memory Usage** as well as the **Maximum Multiplier Usage** to **90%**. The **FPGA Clock Speed** is left at **50 MHz**, since we are going to create a model for the Altera™ Max® 10 16K.
 
 Next, we provide some additional information on the characteristics of the input data. First, we estimate the area that the model needs to analyze to make a decision for the smallest and the largest numbers. We set the surrounding area to **(25, 25)** for small objects and to **(70, 70)** for large objects.
@@ -74,6 +86,7 @@ Then, we estimate the variance of numbers from the same class. We observe quite 
 The last model setting is the option to organize the classes into **Groups**. This is an advanced setting that isn't necessary for this task, so we leave it at the default. We recommend leaving all classes in the same group unless you are certain that your task benefits from splitting the model into multiple sub-models.
 
 ## Training the model
+[🔗 training settings guide](/docs/one-ai/getting-started/training-and-export#training-a-new-ai-model)  
 Now, it's time to set up the training configuration for the model. In the **Training** tab we need to click on **Sync** to synchronize our data and existing model trainings with the ONE WARE servers. After that, we create a new model and click on **Train**. For this demo, a **Training Time** of **20 minutes** is required for the model to fully converge. We leave the **patience** at the default value of **100%**. Since we want to export the model to an FPGA, we **Enable Quantization Optimization** to increase its performance. Using quantization is required for most FPGAs and also for some microcontrollers. We set the **Percentage** to **30%**, which achieves a good trade off between training time and model performance. If we want the best performing model, we need to set it to **100%**, but this will increase the training time. For models that will be exported as floating point models it is best to turn off quantization. This is especially true if you want to export an ONNX model, because they don't support quantization. The option **Focus on Images with Objects** is only relevant for object detection tasks, so we leave the box unchecked. The option **Continue Training** can be used to continue the training of a model that has already been trained. If it is unchecked, the existing model will be overwritten. Since we don't have any prior model, this setting is ignored by ONE AI.
 
 ![training settings](/img/ai/one_ai_plugin/demos/handwritten-digits/nist_sd19_training_settings.png)
@@ -83,6 +96,7 @@ If you don't want to train for that long, you can reduce the **Training Time** t
 Finally, we click on **Start Training**. You can monitor the training progress in the **Logs** and **Statistics** tabs.
 
 ## Model export
+[🔗 model export guide](/docs/one-ai/getting-started/training-and-export#exporting-a-trained-model)  
 After the training is completed, we need to export our model. We configured our model to run on an Altera™ Max® 10 16K, but for now we are content with testing its capabilities on a computer. To use the model inside of OneWare Studio's camera tool, we need to export it as an ONNX model. To do so, we click on the **Export** button, which opens a new window with configurations. In the **Export type** drop-down menu, we select ONNX since that is the format we need.
 
 Next we can activate different settings, that change how our model is exported. If we check the **Export with pre- and postprocessing** checkbox, ONE AI will build all of our filters directly into the model. We activate this setting, because the filter pipeline is an important part of our model. The next setting allows us to change between exporting a floating point or quantized model. At the moment, the ONNX model export supports only floating point models, so we will receive a floating point model whether we check the box or not.
@@ -96,6 +110,7 @@ After the export is finished, we can download the exported ONNX model by clickin
 ![model_download](/img/ai/one_ai_plugin/demos/handwritten-digits/nist_sd19_download.jpg)
 
 ## Testing the model
+[🔗 camera tool guide](/docs/one-ai/getting-started/camera-tool)  
 Now it's time to test our trained model. To do so, we click on **AI** in the menu bar and then **Camera Tool**. Select your camera in the drop-down menu, then click on the plus icon to add it. Next, we need to change the camera's resolution by clicking on the gear icon and setting the **Width** and **Height** to **128** to match the resolution of our images. Afterwards, you need to press the **Restart Camera** button to apply the changes. It might happen that your camera doesn't support this specific resolution. You can check this by looking at the **Supported Size** field directly above the **Restart Camera Button**. If it doesn't show **128 x 128** you need to add a crop to the camera image. You can enter the position and size of the crop at the bottom of the settings. You can tune the position by dragging the crop that is shown in the preview. You can also draw the crop directly onto the camera preview but it is a lot harder to select a crop that is exactly **128 x 128** this way.
 
 We can improve the classification accuracy by going to the camera settings and turning the **Brightness** and **Contrast** to their maximum. This results in the paper showing up in a bright white with a deep black number. For some cameras it is important to turn on **Auto Exposure** further down in the settings, because the image would be underexposed otherwise.
@@ -117,7 +132,5 @@ Even though these differences might seem trivial to us, the model is struggling 
 This observation shows the importance of collecting a dataset with many variations. If an important feature doesn't occur in the training data, the model won't know what to do with it, which typically results in low quality predictions. This is also the reason why we use augmentations. By introducing variation into the training data, the model becomes more robust against these types of variation.
 
 You might recall that the dataset we provided to you is a small subset of the full NIST Special Database 19. When we selected the training images, we took the first 300 images for each digit. Because the dataset is sorted, we only selected numbers from a small subset of people resulting in small variance in our data. We created a second dataset, which contains randomly selected samples. You can download the dataset [here](https://github.com/one-ware/OneAI_demo_datasets/blob/main/datasets/nist_sd19_subset_random.zip) as well as a trained model [here](https://github.com/one-ware/OneAI_demo_datasets/blob/main/models/nist_sd19_random/onnx/nist_sd19_random.onnx). When you look at the images, you'll see that they feature a much higher variance in writing styles. You'll also notice that the new model is better at detecting the number nine and is more robust in general.
-
-import SupportBanner from '@site/src/components/SupportBanner';
 
 <SupportBanner subject="ONE AI Tutorial Support" />
