@@ -54,6 +54,9 @@ In order to run the AI within your software everything needed is an inference en
 ## 2. Setup
 To use ONE AI you need to install OneWare Studio with the OneAI Extension and create an account for the OneWare Cloud. We have a dedicated [guide](/docs/one-ai/getting-started/installation) that walks you through the setup step by step. New users receive a welcome bonus of 25.000 credits worth 500 € for free. All you need to do is to create an account and enter your address to complete the registration process. You won't be charged any fees.
 
+**Alternative: Local AI Training**  
+For organizations that require data to remain on-premises, we offer Docker containers for local AI training. This ensures your sensitive data never leaves your company infrastructure while still benefiting from ONE AI's capabilities. To request access to our local training solution, please [contact our sales team](mailto:sales@one-ware.com?subject=Docker%20Container%20Request%20for%20Local%20AI%20Training).
+
 
 ## 3. Create a new AI project
 The first step to creating your own AI model is to create a new project in OneWare Studio. To do so you need to click on ``AI`` in the menu bar and select ``Open AI Generator``.

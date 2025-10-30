@@ -420,6 +420,13 @@ function GetStarted() {
               </button>
             </a>
           </div>
+
+          <div className="pt-4 text-center">
+            <hr className="border-gray-600 max-w-md mx-auto" />
+            <p className="text-xl md:text-2xl font-bold text-gray-300">
+              Or <a href="mailto:sales@one-ware.com?subject=Docker Container Request for Local AI Training" className="text-[#00FFD1] hover:text-[#00e4ba] underline transition-colors">Contact sales</a> to request a docker container for local AI training
+            </p>
+          </div>
         </div>
       </div>
     </div>
