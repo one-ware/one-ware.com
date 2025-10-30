@@ -234,7 +234,7 @@ function IndustryExamplesSection() {
       src: require("@site/static/img/industries/Agriculture.jpg").default,
       label: "Agriculture",
       labelId: "homepage.industry.agriculture",
-      href: "/docs/one-ai/use-cases/chip",
+      href: "/docs/one-ai/industries/agriculture",
     },
     {
       key: "automotive",
