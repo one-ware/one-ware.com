@@ -163,7 +163,7 @@ By automating most steps of AI development, ONE AI delivers instant, accurate in
   >
     <img src="/img/ai/one_ai_plugin/industries/FieldAnalytics.jpg" alt="Robotics Integration" style={{maxHeight:'320px', borderRadius:'8px', width:'100%'}} />
     <h4 style={{marginTop:'10px', marginBottom:'5px'}}>Field Analytics</h4>
-    <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>On-site Vision AI delivers actionable insights directly from tractors, drones, and field devices — even without connectivity.</p>
+    <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>On-site Vision AI delivers actionable insights directly from tractors, drones, and field devices even without connectivity.</p>
   </div>
 </div>
 
