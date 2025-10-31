@@ -62,7 +62,7 @@ function HomepageHeader() {
                 <Link href="/one-ai#getStarted">
                   <button className="button button--primary button--outline button--lg w-full sm:w-auto">
                     <Translate id="homepage.subtitle.ai.getstarted">
-                      Get Started
+                      Start Now for Free
                     </Translate>
                   </button>
                 </Link>
