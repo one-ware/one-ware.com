@@ -66,7 +66,7 @@ The whitepaper presents a direct comparison:
 | **Test Accuracy** | 99.5% (INT8)                | 88% (FP32)                          | **24× higher accuracy**   |
 | **Power**         | 0.5 W                       | 10 W                                | **20× lower power**       |
 | **Latency**       | 0.086 ms                    | 42 ms                               | **488× lower latency**    |
-| **Cost**          | €454                        | €2505                               | **6× lower cost**         |
+| **Cost**          | €45                         | €250                                | **6× lower cost**         |
 | **Throughput**    | 1736 FPS                    | 24 FPS                              | **72× higher FPS**        |
 | **Size**          | 11×11 mm                    | 70×45 mm                            | **26× smaller footprint** |
 
