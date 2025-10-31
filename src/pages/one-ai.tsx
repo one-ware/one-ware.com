@@ -121,7 +121,7 @@ function HomepageHeader() {
                   className="button button--primary button--lg text-sm md:text-lg"
                   href="/one-ai#getStarted"
                 >
-                  <Translate id="homepage.subtitle.ai.getstarted">Get Started</Translate>
+                  <Translate id="homepage.subtitle.ai.getstarted">Start Now for Free</Translate>
                 </Link>
 
 
