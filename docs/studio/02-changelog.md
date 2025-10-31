@@ -4,6 +4,16 @@ title: ONE WARE Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.21.14.0
+
+- Fix menu bar not always showing completely
+- Add possibility to add prerelease packages/plugins
+- Add environment variable and start argument to chose different path for default project folder
+
+## 0.21.13.0
+
+- Welcome Screen rework
+  
 ## 0.21.12.0
 
 - Improve Project Explorer Performance
