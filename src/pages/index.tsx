@@ -3,7 +3,7 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import "aos/dist/aos.css";
 import Typewriter from "typewriter-effect";
 import Translate, { translate } from "@docusaurus/Translate";
@@ -25,6 +25,41 @@ import Head from '@docusaurus/Head';
 function HomepageHeader() {
   const { i18n } = useDocusaurusContext();
   const currentLocale = i18n.currentLocale;
+  const [hoveredBenefit, setHoveredBenefit] = useState<number | null>(null);
+
+  const benefits = [
+    {
+      title: "AI Models in 1 Second",
+      titleId: "oneai.benefits.speed.title",
+      description: "Generate optimized AI models in under one second, eliminating weeks of development time and getting you to market faster than ever before.",
+      descriptionId: "oneai.benefits.speed.description"
+    },
+    {
+      title: "No AI Expertise Required", 
+      titleId: "oneai.benefits.expertise.title",
+      description: "Create professional-grade AI models without deep learning knowledge. Our intuitive interface makes AI development accessible to every developer.",
+      descriptionId: "oneai.benefits.expertise.description"
+    },
+    {
+      title: "Universal Hardware Support",
+      titleId: "oneai.benefits.hardware.title", 
+      description: "Deploy on any hardware - from microcontrollers to GPUs, FPGAs to NPUs. One click deployment across all platforms with optimized performance.",
+      descriptionId: "oneai.benefits.hardware.description"
+    },
+    {
+      title: "Better Than Custom AI",
+      titleId: "oneai.benefits.performance.title",
+      description: "Our AI models consistently outperform manually crafted solutions with higher accuracy, faster inference, and lower resource consumption.",
+      descriptionId: "oneai.benefits.performance.description"
+    }
+  ];
+
+  const hotspots = [
+    { x: 30, y: 25, benefitIndex: 0 },
+    { x: 70, y: 40, benefitIndex: 1 },
+    { x: 25, y: 60, benefitIndex: 2 },
+    { x: 75, y: 75, benefitIndex: 3 }
+  ];
 
   return (
     <header id="hero" className={styles.heroBackground}>
@@ -41,18 +76,21 @@ function HomepageHeader() {
       </div>
 
       <div className={styles.heroBanner}>
-        <div className="z-10 flex items-center justify-center pt-8 px-8 md:pt-12 md:px-12 lg:pt-16 lg:px-16 h-full">
+        <div className="z-10 flex items-center justify-center pt-6 px-8 md:pt-8 md:px-12 lg:pt-12 lg:px-16 h-full">
           <div className="max-w-5xl backdrop-blur-md bg-gray-600/20 rounded-2xl p-6 md:p-8 border border-white/10">
             <div className="text-center">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-                <Translate id="oneai.hero.nextgen.title">
-                  The Next Generation of AI Development
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight md:leading-tight lg:leading-tight">
+                <Translate id="oneai.hero.nextgen.title.part1">
+                  Your Vision and Edge AI Development,
+                </Translate>
+                <br />
+                <Translate id="oneai.hero.nextgen.title.part2">
+                  Fully Automated in One Software
                 </Translate>
               </h1>
 
               <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-8">
                 <Translate id="homepage.subtitle.description">
-                  The world relies on AI models bloated with unnecessary data.
                   ONE AI generates AI tailored to your needs, so you can finish projects faster with better results.
                   Deployed with maximum performance even on the smallest hardware.
                 </Translate>
@@ -79,19 +117,75 @@ function HomepageHeader() {
         </div>
 
         <div className="flex flex-col items-center">
+          {/* Interactive Software Image Section */}
+          <div className="z-10 flex items-center justify-center mt-8">
+            <div className=" rounded-xl border border-white/10 max-w-4xl">
+              <div className="relative group">
+                <img 
+                  src={useBaseUrl('/img/ai/one_ai_plugin/benefits/homepage.webp')}
+                  alt="ONE AI Benefits Illustration"
+                  className="w-full h-auto rounded-lg shadow-xl border border-gray-700 group-hover:border-[#00FFD1]/50 transition-all duration-300"
+                  onError={(e) => {
+                    // Fallback if image doesn't exist
+                    e.currentTarget.src = '/img/ai/Capture.png';
+                  }}
+                />
+                
+                {/* Interactive Hotspots */}
+                {hotspots.map((hotspot, idx) => (
+                  <div
+                    key={idx}
+                    className="absolute group/hotspot cursor-pointer"
+                    style={{
+                      left: `${hotspot.x}%`,
+                      top: `${hotspot.y}%`,
+                      transform: 'translate(-50%, -50%)'
+                    }}
+                    onMouseEnter={() => setHoveredBenefit(hotspot.benefitIndex)}
+                    onMouseLeave={() => setHoveredBenefit(null)}
+                    onClick={() => setHoveredBenefit(hoveredBenefit === hotspot.benefitIndex ? null : hotspot.benefitIndex)}
+                  >
+                    {/* Hotspot Dot */}
+                    <div className="w-4 h-4 bg-[#00FFD1] rounded-full border-2 border-white shadow-lg animate-pulse hover:scale-125 transition-all duration-300">
+                      <div className="w-full h-full bg-[#00FFD1] rounded-full animate-ping opacity-75"></div>
+                    </div>
+                  </div>
+                ))}
+
+                {/* Text Overlay when hovering/clicking */}
+                {hoveredBenefit !== null && (
+                  <div className="absolute inset-0 bg-black/70 rounded-lg flex items-center justify-center transition-all duration-300">
+                    <div className="text-center text-white max-w-md">
+                      <h3 className="text-lg md:text-xl font-bold text-[#00FFD1]">
+                        <Translate id={benefits[hoveredBenefit].titleId}>
+                          {benefits[hoveredBenefit].title}
+                        </Translate>
+                      </h3>
+                      <p className="text-sm md:text-base leading-relaxed">
+                        <Translate id={benefits[hoveredBenefit].descriptionId}>
+                          {benefits[hoveredBenefit].description}
+                        </Translate>
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+
           {/* Featured In Section unten im Header */}
-          <div className="z-10 flex items-end justify-center py-8 px-8 mt-12">
-            <div className="backdrop-blur-md bg-gray-600/20 rounded-2xl p-6 md:p-8 border border-white/10 max-w-7xl">
+          <div className="z-10 flex items-end justify-center py-4 px-4 mt-8">
+            <div className="backdrop-blur-md bg-gray-600/20 rounded-xl p-3 md:p-4 border border-white/10 max-w-4xl">
               
-              <div className="text-center -mb-2">
-                <p className="text-lg md:text-xl text-gray-300">
+              <div className="text-center -mb-1">
+                <p className="text-sm md:text-base text-gray-300">
                   <Translate id="partners.title">
                     Known from:
                   </Translate>
                 </p>
               </div>
 
-              <div className="flex justify-center items-center flex-wrap gap-3 md:gap-6">
+              <div className="flex justify-center items-center flex-wrap gap-2 md:gap-3">
                 <a
                   href="https://tech.eu/2025/06/18/one-ware-raises-eur25m-to-automate-ai-model-configuration-across-industries/"
                   target="_blank"
@@ -101,7 +195,7 @@ function HomepageHeader() {
                   <img
                     src={require("@site/static/img/Featured/f1_g.png").default}
                     alt="Featured 1"
-                    className="h-8 w-16 md:h-12 md:w-20 object-contain hover:opacity-80 transition-opacity opacity-90"
+                    className="h-6 w-12 md:h-8 md:w-16 object-contain hover:opacity-80 transition-opacity opacity-90"
                   />
                 </a>
                 <a
@@ -113,7 +207,7 @@ function HomepageHeader() {
                   <img
                     src={require("@site/static/img/Featured/f5_g.png").default}
                     alt="Featured 5"
-                    className="h-8 w-24 md:h-14 md:w-28 object-contain hover:opacity-80 transition-opacity opacity-90"
+                    className="h-6 w-18 md:h-10 md:w-20 object-contain hover:opacity-80 transition-opacity opacity-90"
                   />
                 </a>
                 <a
@@ -125,7 +219,7 @@ function HomepageHeader() {
                   <img
                     src={require("@site/static/img/Featured/f4_g.png").default}
                     alt="Featured 4"
-                    className="h-8 w-36 md:h-14 md:w-42 object-contain hover:opacity-80 transition-opacity opacity-90"
+                    className="h-6 w-28 md:h-10 md:w-32 object-contain hover:opacity-80 transition-opacity opacity-90"
                   />
                 </a>
                 {/*
@@ -151,7 +245,7 @@ function HomepageHeader() {
                   <img
                     src={require("@site/static/img/Featured/f9_g.png").default}
                     alt="Featured 9"
-                    className="h-8 w-52 md:h-12 md:w-64 object-contain hover:opacity-80 transition-opacity opacity-90"
+                    className="h-6 w-36 md:h-8 md:w-48 object-contain hover:opacity-80 transition-opacity opacity-90"
                   />
                 </a>
                 <a
@@ -163,7 +257,7 @@ function HomepageHeader() {
                   <img
                     src={require("@site/static/img/Featured/f10_g.png").default}
                     alt="Elektor"
-                    className="h-8 w-36 md:h-14 md:w-42 object-contain hover:opacity-80 transition-opacity opacity-90"
+                    className="h-6 w-28 md:h-10 md:w-32 object-contain hover:opacity-80 transition-opacity opacity-90"
                   />
                 </a>
                 
@@ -176,7 +270,7 @@ function HomepageHeader() {
                   <img
                     src={require("@site/static/img/Featured/f7_g.png").default}
                     alt="Featured 7"
-                    className="h-8 w-28 md:h-12 md:w-32 object-contain hover:opacity-80 transition-opacity opacity-90"
+                    className="h-6 w-20 md:h-8 md:w-24 object-contain hover:opacity-80 transition-opacity opacity-90"
                   />
                 </a>
                 <a
@@ -188,7 +282,7 @@ function HomepageHeader() {
                   <img
                     src={require("@site/static/img/Partner/altera_w.png").default}
                     alt="Featured 5"
-                    className="h-8 w-24 md:h-14 md:w-28 object-contain hover:opacity-80 transition-opacity opacity-90"
+                    className="h-6 w-18 md:h-10 md:w-20 object-contain hover:opacity-80 transition-opacity opacity-90"
                   />
                 </a>
                 
