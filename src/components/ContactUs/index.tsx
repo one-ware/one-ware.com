@@ -129,7 +129,7 @@ export default function ContactUs() {
         alert(translate({ id: "contactus.success", message: "Message sent successfully!" }));
         setFormData({ name: "", email: "", message: "", website: "", recaptcha_token: "" });
       } else {
-        alert(translate({ id: "contactus.failed", message: "Message failed to send." }));
+        alert(translate({ id: "contactus.failed", message: "Message failed to send." + status }));
       }
     } catch (err: unknown) {
       console.error("Error submitting form:", err);
