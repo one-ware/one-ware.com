@@ -4,6 +4,16 @@ title: ONE WARE Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.21.15.0
+
+- Fix Visual Issue in Project Explorer
+- Fix Save and Compile not working in Pin Planner
+- Keep files open on Project Reload
+- Fix inconsistent Dropdown menu sizes in Package Manager Version selector
+- Fix possible infinite loop when parsing port declaration using the Regex Method
+- Fixed infinite loop (only occurred when typing ' IS  ' after adding line-break)
+- [Windows] Improved startup time after first install using advanced code sining (because of windows defender)
+
 ## 0.21.14.0
 
 - Fix menu bar not always showing completely
