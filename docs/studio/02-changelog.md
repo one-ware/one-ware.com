@@ -13,6 +13,7 @@ sidebar_label:  Changelog
 - Fix possible infinite loop when parsing port declaration using the Regex Method
 - Fixed infinite loop (only occurred when typing ' IS  ' after adding line-break)
 - [Windows] Improved startup time after first install using advanced code sining (because of windows defender)
+- Fix updating logic when trying to update from prerelease version to stable
 
 ## 0.21.14.0
 
