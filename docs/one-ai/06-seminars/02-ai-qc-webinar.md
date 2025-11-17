@@ -1,0 +1,103 @@
+---
+id: quality-control-webinar
+title: Build Your Own AI Quality Control in <1 Day
+sidebar_label: AI Quality Control Webinar
+---
+
+# Free Webinar: Build Your Own AI Quality Control in < 1 Day
+
+**AI for quality control sounds far too complex?** We'll show you how simple Vision AI can be today.
+
+import Link from '@docusaurus/Link';
+
+<div className="text--center" style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2rem' }}>
+  <Link className="button button--primary button--lg" href="https://short.one-ware.com/webinar/">
+    <p className="m-0 p-0">Register Now for FREE</p>
+  </Link>
+</div>
+
+![Webinar Banner](/img/ai/one_ai_plugin/seminars/webinar.jpg)
+
+## Event Details
+
+**Date & Time:** November 27, 2025 at 10 AM (CET)  
+**Language:** English  
+**Speaker:** Christopher Kreis (AI Developer, ONE WARE)  
+**Target Audience:** Developers, decision-makers, and even end users or production operators without AI expertise  
+**Contact:** info@one-ware.com
+
+## What You'll Learn
+
+Join our free webinar and discover how to use **ONE AI** to build your own AI-based quality control system. From images to deployment in record time - without prior knowledge, without costly development, and most importantly, on your existing hardware or the hardware of your choice.
+
+See live how a robust, production-ready AI model can be trained from a dataset containing only a few example images, including full hardware export.
+
+### In this live webinar, we'll demonstrate how to:
+
+- Understand what ONE AI is and how it can help you train a **production-ready AI model in minutes**
+- Create a proper dataset for quality control applications
+- Apply tips & tricks to get the best performing AI model
+- Build a demo project with a small dataset (~15 images)
+
+## Agenda
+
+### Part 1: Learn how to use ONE AI to build your own Quality Control (~1 h)
+
+- What is ONE AI and how can it help me?
+- How do I create a proper dataset?
+- Learn tips and tricks to get the best AI model
+- Demo project with a small dataset (~15 images)
+
+### Part 2 (Optional): Try it out yourself (~1 h, open ended)
+
+- Train your first AI model with ONE AI using a demo dataset
+- Our team is here to help you with any questions or problems
+- We will send you the finished project afterwards for comparison
+
+## Who Should Register?
+
+This webinar is perfect for you if you:
+
+- Want to kick off your first AI projects in your company
+- Are looking for a very simple and super fast solution for AI quality inspection
+- Want to try AI without depending on external service providers
+- Want to upgrade your existing hardware with high-performance AI
+
+## Prepare for the Webinar
+
+### Start for free today!
+
+Download our **open source IDE ONE WARE Studio** with the **ONE AI extension** to prepare your own Vision AI model before the webinar:
+
+[Download ONE WARE Studio](https://one-ware.com/studio)
+
+### Get ahead with tutorials
+
+Explore our tutorials and see how easy it is to create your first AI project:
+
+[ONE AI Tutorials](https://one-ware.com/docs/one-ai/tutorials)
+
+## Registration
+
+**Register now to secure your spot!**
+
+[Register for the Webinar](https://short.one-ware.com/webinar)
+
+---
+
+## Why ONE AI?
+
+ONE AI makes AI development accessible to everyone - no deep learning expertise required. Our platform enables you to:
+
+- **Generate AI models in under 1 second** - eliminating weeks of development time
+- **Deploy on any hardware** - from microcontrollers to GPUs, FPGAs to NPUs
+- **Achieve better results** than manually crafted solutions with higher accuracy and faster inference
+- **Build production-ready systems** in record time with our pre-built UI for monitoring and remote control
+
+Already in production with leading manufacturing companies and ready for your quality control or automation tasks.
+
+---
+
+**Don't miss this opportunity to revolutionize your quality control process with AI!**
+
+Questions? Contact us at **info@one-ware.com**

@@ -5,15 +5,32 @@ export default function AnnouncementBar() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Check if user has dismissed the banner
-    const isDismissed = localStorage.getItem('docusaurus.announcement.arrow_webinar_2025.dismiss');
-    if (!isDismissed) {
+    // Check if user has dismissed the banner and when
+    const dismissedData = localStorage.getItem('docusaurus.announcement.quality_control_webinar_2025.dismiss');
+    
+    if (!dismissedData) {
       setIsVisible(true);
+    } else {
+      try {
+        const dismissedTime = parseInt(dismissedData, 10);
+        const oneDayInMs = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+        const currentTime = Date.now();
+        
+        // Show banner again if more than 24 hours have passed
+        if (currentTime - dismissedTime > oneDayInMs) {
+          localStorage.removeItem('docusaurus.announcement.quality_control_webinar_2025.dismiss');
+          setIsVisible(true);
+        }
+      } catch {
+        // If parsing fails, show the banner
+        setIsVisible(true);
+      }
     }
   }, []);
 
   const handleClose = () => {
-    localStorage.setItem('docusaurus.announcement.arrow_webinar_2025.dismiss', 'true');
+    // Store the current timestamp instead of just 'true'
+    localStorage.setItem('docusaurus.announcement.quality_control_webinar_2025.dismiss', Date.now().toString());
     setIsVisible(false);
   };
 
@@ -47,17 +64,17 @@ export default function AnnouncementBar() {
       }}>
         <div style={{ flex: 1, minWidth: '300px' }}>
           <strong>
-            <Translate id="announcement.arrow.title">
-              FREE Worldwide Workshop on ONE AI for Altera FPGAs
+            <Translate id="announcement.quality_control.title">
+              FREE Webinar: Build Your Own AI Quality Control in &lt;1 Day
             </Translate>
           </strong>
           {' - '}
-          <Translate id="announcement.arrow.subtitle">
-            Learn FPGA development • Build ultra-efficient AI • Win a development board
+          <Translate id="announcement.quality_control.subtitle">
+            November 27, 2025 at 10 AM (CET) • Learn Vision AI from Dataset to Deployment
           </Translate>
           {' '}
           <a 
-            href="/docs/one-ai/seminars/arrow-agilex3"
+            href="https://short.one-ware.com/webinar/"
             style={{ 
               backgroundColor: '#000000',
               color: '#00FFD1',
@@ -70,7 +87,7 @@ export default function AnnouncementBar() {
               transition: 'all 0.3s ease'
             }}
           >
-            <Translate id="announcement.arrow.cta">
+            <Translate id="announcement.quality_control.cta">
               Register Now
             </Translate>
           </a>

@@ -1,0 +1,63 @@
+---
+id: seminars
+title: Seminars & Webinars
+sidebar_label: Overview
+---
+
+import Link from '@docusaurus/Link';
+
+# ONE AI Seminars & Webinars
+
+Learn how to build AI applications with ONE AI through our free workshops and webinars. Whether you're interested in FPGA development, quality control, or general AI deployment, we have the right event for you.
+
+## Build Your Own AI Quality Control in &lt;1 Day
+**Free Webinar | November 27, 2025 at 10 AM (CET)**
+
+AI for quality control sounds far too complex? We'll show you how simple Vision AI can be today. Learn how to build your own AI-based quality control system from dataset to deployment in record time - without prior knowledge, without costly development, and on your existing hardware.
+
+<div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
+    <img src="/img/ai/one_ai_plugin/seminars/webinar.jpg" alt="Quality Control Webinar" style={{ width: '85%' }} />
+</div>
+
+**What you'll learn:**
+- Train production-ready AI models in minutes with only ~15 example images
+- Create proper datasets for quality control applications
+- Apply tips & tricks to get the best performing AI model
+- Build a complete demo project live during the webinar
+
+**Target Audience:** Developers, decision-makers, production operators - no AI expertise required
+
+<div className="text--center" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
+  <Link className="button button--primary button--lg" href="/docs/one-ai/seminars/quality-control-webinar">
+    <p className="m-0 p-0">Learn More</p>
+  </Link>
+  <Link className="button button--primary button--lg" href="https://short.one-ware.com/webinar" target="_blank" rel="noopener noreferrer">
+    <p className="m-0 p-0">Register Now</p>
+  </Link>
+</div>
+
+---
+
+## Worldwide Agilex 3 AI Workshop
+**Free Hands-On Workshop | Multiple Locations Worldwide**
+
+Join Arrow Electronics and ONE WARE for a comprehensive hands-on workshop on FPGA development and AI acceleration with Altera's Agilex™ 3 FPGAs. This global workshop series combines the latest FPGA technology with innovative AI development.
+
+<div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
+    <img src="/img/ai/one_ai_plugin/seminars/axe3000.webp" alt="Agilex 3 Workshop" style={{ width: '50%' }} />
+</div>
+
+**Workshop Topics:**
+- Agilex™ 3 FPGA foundations and your first design
+- Video processing with MIPI CSI-to-DSI pipeline
+- AI development from dataset to FPGA deployment
+- Hardware optimization and timing closure
+
+**Locations:** France, Germany, UK, India, Taiwan, and more
+
+<div className="text--center" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
+  <Link className="button button--primary button--lg" href="/docs/one-ai/seminars/arrow-agilex3">
+    <p className="m-0 p-0">Learn More & Find Events</p>
+  </Link>
+</div>
+

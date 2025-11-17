@@ -157,6 +157,10 @@ const config: Config = {
               label: "Supported Hardware",
             },
             {
+              to: "/docs/one-ai/seminars",
+              label: "Seminars & Webinars",
+            },
+            {
               type: "html",
               value: '<div style="padding-top: 8px; padding-left: 7px; color: #00caa5ff; font-size: 0.8rem; font-weight: 700;">Features</div>',
             },
@@ -255,6 +259,10 @@ const config: Config = {
               label: "Example Projects",
             },
             {
+              to: "/docs/one-ai/seminars",
+              label: "Seminars & Webinars",
+            },
+            {
               to: "/docs/one-ai/partners",
               label: "Supported Hardware",
             },
@@ -312,6 +320,10 @@ const config: Config = {
             {
               to: "/careers",
               label: "Careers",
+            },
+            {
+              to: "/docs/one-ai/seminars",
+              label: "Seminars & Webinars",
             },
             {
               type: "doc",
