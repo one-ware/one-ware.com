@@ -13,6 +13,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Marquee from "react-fast-marquee";
+import classnames from "classnames";
+import Slider from "react-slick";
 
 import styles from "./index.module.css";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
@@ -64,22 +66,28 @@ function HomepageHeader() {
   return (
     <header id="hero" className={styles.heroBackground}>
       <div className="absolute inset-0 z-0">
-        {/* Desktop: Video Animation */}
-        <video
-          src={require("@site/static/img/animation.webm").default}
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover"
+        {/* Desktop: Background Image */}
+        <div
+          className="w-full h-full bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/img/background.webp')"
+          }}
+        />
+        {/* Gradient overlay über das gesamte Bild */}
+        <div 
+          className="absolute inset-0 w-full h-full"
+          style={{
+            background: 'linear-gradient(to bottom, transparent 0%, transparent 80%, #1B1B1B 100%)'
+          }}
         />
       </div>
 
       <div className={styles.heroBanner}>
-        <div className="z-10 flex items-center justify-center pt-6 px-8 md:pt-8 md:px-12 lg:pt-12 lg:px-16 h-full">
-          <div className="max-w-5xl backdrop-blur-md bg-gray-600/20 rounded-2xl p-6 md:p-8 border border-white/10">
-            <div className="text-center">
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight md:leading-tight lg:leading-tight">
+        <div className="z-10 flex items-start pt-16 md:pt-20 px-4 md:px-6 lg:px-8 h-full max-w-screen-2xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start w-full">
+            {/* Links: Text Content */}
+            <div className="backdrop-blur-md bg-gray-600/20 rounded-2xl p-6 md:p-8 border border-white/10 text-left">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight md:leading-tight lg:leading-tight text-left">
                 <Translate id="oneai.hero.nextgen.title.part1">
                   Your Vision and Edge AI Development,
                 </Translate>
@@ -89,14 +97,14 @@ function HomepageHeader() {
                 </Translate>
               </h1>
 
-              <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-8">
+              <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-8 text-left">
                 <Translate id="homepage.subtitle.description">
                   ONE AI generates AI tailored to your needs, so you can finish projects faster with better results.
                   Deployed with maximum performance even on the smallest hardware.
                 </Translate>
               </p>
 
-              <div className="flex gap-4 flex-col sm:flex-row justify-center">
+              <div className="flex gap-4 flex-col sm:flex-row">
                 <Link href="/one-ai#getStarted">
                   <button className="button button--primary button--outline button--lg w-full sm:w-auto">
                     <Translate id="homepage.subtitle.ai.getstarted">
@@ -113,199 +121,14 @@ function HomepageHeader() {
                 </Link>
               </div>
             </div>
-          </div>
-        </div>
 
-        <div className="flex flex-col items-center">
-          {/* Interactive Software Image Section */}
-          <div className="z-10 flex items-center justify-center mt-8">
-            <div className=" rounded-xl border border-white/10 max-w-4xl">
-              <div className="relative group">
-                <img 
-                  src={useBaseUrl('/img/ai/one_ai_plugin/benefits/homepage.webp')}
-                  alt="ONE AI Benefits Illustration"
-                  className="w-full h-auto rounded-lg shadow-xl border border-gray-700 group-hover:border-[#00FFD1]/50 transition-all duration-300"
-                  onError={(e) => {
-                    // Fallback if image doesn't exist
-                    e.currentTarget.src = '/img/ai/Capture.png';
-                  }}
-                />
-                
-                {/* Interactive Hotspots */}
-                {hotspots.map((hotspot, idx) => (
-                  <div
-                    key={idx}
-                    className="absolute group/hotspot cursor-pointer"
-                    style={{
-                      left: `${hotspot.x}%`,
-                      top: `${hotspot.y}%`,
-                      transform: 'translate(-50%, -50%)'
-                    }}
-                    onMouseEnter={() => setHoveredBenefit(hotspot.benefitIndex)}
-                    onMouseLeave={() => setHoveredBenefit(null)}
-                    onClick={() => setHoveredBenefit(hoveredBenefit === hotspot.benefitIndex ? null : hotspot.benefitIndex)}
-                  >
-                    {/* Hotspot Dot */}
-                    <div className="w-4 h-4 bg-[#00FFD1] rounded-full border-2 border-white shadow-lg animate-pulse hover:scale-125 transition-all duration-300">
-                      <div className="w-full h-full bg-[#00FFD1] rounded-full animate-ping opacity-75"></div>
-                    </div>
-                  </div>
-                ))}
-
-                {/* Text Overlay when hovering/clicking */}
-                {hoveredBenefit !== null && (
-                  <div className="absolute inset-0 bg-black/70 rounded-lg flex items-center justify-center transition-all duration-300">
-                    <div className="text-center text-white max-w-md">
-                      <h3 className="text-lg md:text-xl font-bold text-[#00FFD1]">
-                        <Translate id={benefits[hoveredBenefit].titleId}>
-                          {benefits[hoveredBenefit].title}
-                        </Translate>
-                      </h3>
-                      <p className="text-sm md:text-base leading-relaxed">
-                        <Translate id={benefits[hoveredBenefit].descriptionId}>
-                          {benefits[hoveredBenefit].description}
-                        </Translate>
-                      </p>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-
-          {/* Featured In Section unten im Header */}
-          <div className="z-10 flex items-end justify-center py-4 px-4 mt-8">
-            <div className="backdrop-blur-md bg-gray-600/20 rounded-xl p-3 md:p-4 border border-white/10 max-w-4xl">
-              
-              <div className="text-center -mb-1">
-                <p className="text-sm md:text-base text-gray-300">
-                  <Translate id="partners.title">
-                    Known from:
-                  </Translate>
-                </p>
-              </div>
-
-              <div className="flex justify-center items-center flex-wrap gap-2 md:gap-3">
-                <a
-                  href="https://tech.eu/2025/06/18/one-ware-raises-eur25m-to-automate-ai-model-configuration-across-industries/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block no-underline hover:no-underline"
-                >
-                  <img
-                    src={require("@site/static/img/Featured/f1_g.png").default}
-                    alt="Featured 1"
-                    className="h-6 w-12 md:h-8 md:w-16 object-contain hover:opacity-80 transition-opacity opacity-90"
-                  />
-                </a>
-                <a
-                  href="https://www.maschinenmarkt.vogel.de/one-ai-ki-extension-one-ware-maschinenbau-a-545f6e3fc5ac13f8fa3f55fa5998332f/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block no-underline hover:no-underline"
-                >
-                  <img
-                    src={require("@site/static/img/Featured/f5_g.png").default}
-                    alt="Featured 5"
-                    className="h-6 w-18 md:h-10 md:w-20 object-contain hover:opacity-80 transition-opacity opacity-90"
-                  />
-                </a>
-                <a
-                  href="https://www.elektronikpraxis.de/one-ai-automatisierte-ki-konfiguration-fuer-entwickler-a-09fee486cec031ed0a2edd5dbeeaed0a/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block no-underline hover:no-underline"
-                >
-                  <img
-                    src={require("@site/static/img/Featured/f4_g.png").default}
-                    alt="Featured 4"
-                    className="h-6 w-28 md:h-10 md:w-32 object-contain hover:opacity-80 transition-opacity opacity-90"
-                  />
-                </a>
-                {/*
-                <a
-                  href="https://www.handelsblatt.com/technik/ki/ki-start-ups-jenseits-des-hypes-one-ware-entwickelt-ki-fuer-jede-produktion-01/100149060.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block no-underline hover:no-underline"
-                >
-                  <img
-                    src={require("@site/static/img/Featured/f3_g.png").default}
-                    alt="Featured 3"
-                    className="h-8 w-52 md:h-12 md:w-64 object-contain hover:opacity-80 transition-opacity opacity-90"
-                  />
-                </a>
-                */}
-                <a
-                  href="https://www.vdi-nachrichten.com/technik/automation/ki-im-maschinenbau-auf-bestehender-hardware-nutzen/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block no-underline hover:no-underline"
-                >
-                  <img
-                    src={require("@site/static/img/Featured/f9_g.png").default}
-                    alt="Featured 9"
-                    className="h-6 w-36 md:h-8 md:w-48 object-contain hover:opacity-80 transition-opacity opacity-90"
-                  />
-                </a>
-                <a
-                  href="https://www.elektormagazine.com/news/one-ai-vision-edge-ai-en"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block no-underline hover:no-underline"
-                >
-                  <img
-                    src={require("@site/static/img/Featured/f10_g.png").default}
-                    alt="Elektor"
-                    className="h-6 w-28 md:h-10 md:w-32 object-contain hover:opacity-80 transition-opacity opacity-90"
-                  />
-                </a>
-                
-                <a
-                  href="https://it-production.com/industrie-4-0-i40/neuronales-netzwerk-in-unter-einer-sekunde/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block no-underline hover:no-underline"
-                >
-                  <img
-                    src={require("@site/static/img/Featured/f7_g.png").default}
-                    alt="Featured 7"
-                    className="h-6 w-20 md:h-8 md:w-24 object-contain hover:opacity-80 transition-opacity opacity-90"
-                  />
-                </a>
-                <a
-                  href="https://go.altera.com/l/1090322/2025-04-18/2vvzbn"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block no-underline hover:no-underline"
-                >
-                  <img
-                    src={require("@site/static/img/Partner/altera_w.png").default}
-                    alt="Featured 5"
-                    className="h-6 w-18 md:h-10 md:w-20 object-contain hover:opacity-80 transition-opacity opacity-90"
-                  />
-                </a>
-                
-              </div>
-            </div>
-          </div>
-
-          {/* Animierter Scroll-Pfeil */}
-          <div className="w-full flex justify-center z-10">
-            <div className="flex flex-col items-center animate-bounce">
-              <svg 
-                className="w-10 h-10 text-white opacity-70" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M19 9l-7 7-7-7" 
-                />
-              </svg>
+            {/* Rechts: Workflow Image */}
+            <div className="flex justify-center lg:justify-end">
+              <img
+                src="/img/ai/workflow.webp"
+                alt="AI Workflow"
+                className="max-w-full h-auto rounded-xl shadow-2xl"
+              />
             </div>
           </div>
         </div>
@@ -409,7 +232,7 @@ function IndustryExamplesSection() {
   }
 
   return (
-    <div id="industries" className="py-8 md:py-12 pb-4 md:pb-6">
+    <div id="industries" className="pb-8 md:by-12 pb-4 md:pb-6">
       {/* Überschrift mit normalem Container-Padding */}
       <div className="container mx-auto px-4 mb-8">
         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-left font-bold">
@@ -442,6 +265,154 @@ function IndustryExamplesSection() {
             </div>
           </a>
         ))}
+      </div>
+    </div>
+  );
+}
+
+function AIProcessSection() {
+  const slickRef = useRef<Slider>(null);
+
+  const sliders = [
+    {
+      title: <Translate id="oneai.slider.capture">Capture and Label</Translate>,
+      imageSrc: (
+        <img
+          alt="Capture"
+          src={require("@site/static/img/ai/Capture.png").default}
+        />
+      ),
+      description: (
+        <Translate id="oneai.slider.capture.description">
+          Capture just a few images, label them - ONE AI takes care of the rest.
+          ONE AI requires only a small dataset to deliver a fully functional AI
+          model. Its adaptive architecture automatically scales with your data.
+        </Translate>
+      ),
+    },
+    {
+      title: <Translate id="oneai.slider.guide">Guide and Select</Translate>,
+      imageSrc: (
+        <img
+          alt="Hardware"
+          src={require("@site/static/img/ai/Pre.png").default}
+        />
+      ),
+      description: (
+        <Translate id="oneai.slider.guide.description">
+          Use our intuitive and visual process to teach the AI what is important,
+          where to generalize and what to predict. You can specify your exact
+          hardware and performance requirements and then let ONE AI create the
+          perfect model for your needs.
+        </Translate>
+      ),
+    },
+    {
+      title: <Translate id="oneai.slider.train">Predict and Train</Translate>,
+      imageSrc: (
+        <img
+          alt="Simulation"
+          src={require("@site/static/img/ai/Train.png").default}
+        />
+      ),
+      description: (
+        <Translate id="oneai.slider.train.description">
+          After you start training, ONE AI will automatically generate a custom
+          neural network for your hardware and application. The AI then trains on
+          your data, but only learns what is important. This ensures highest
+          performance and accuracy.
+        </Translate>
+      ),
+    },
+    {
+      title: <Translate id="oneai.slider.deploy">Test and Deploy</Translate>,
+      imageSrc: (
+        <img
+          alt="Extensible"
+          src={require("@site/static/img/ai/Export.png").default}
+        />
+      ),
+      description: (
+        <Translate id="oneai.slider.deploy.description">
+          While training and testing, the AI already behaves like on your target
+          hardware. No matter if you are using an FPGA, Microcontroller, GPU, CPU
+          or TPU. If you are satisfied with the results, you can export the AI as
+          cross-platform executable, universal HDL code, C++ project or
+          ONNX/TF/TF-Lite Model.
+        </Translate>
+      ),
+    },
+  ];
+
+  return (
+    <div className="px-4 md:px-8 lg:px-12 max-w-7xl mx-auto">
+      <div className="text-center md:pb-8 pb-14 ">
+        {sliders && sliders.length && (
+          <div className="pt-5">
+            <div className="relative">
+              {/* Navigation Buttons */}
+              <button
+                onClick={() => slickRef.current?.slickPrev()}
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 transition-all duration-300"
+                aria-label="Previous slide"
+              >
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              
+              <button
+                onClick={() => slickRef.current?.slickNext()}
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 transition-all duration-300"
+                aria-label="Next slide"
+              >
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+
+              <Slider
+                ref={slickRef}
+                dots={false}
+                arrows={false}
+                autoplaySpeed={20000}
+                infinite={true}
+                autoplay={true}
+                style={{ maxWidth: '100%', outline: 'none' }}
+                speed={500}
+                slidesToShow={1}
+                slidesToScroll={1}
+                initialSlide={1}
+                beforeChange={(_c, n) => {
+                  var slideCount = sliders.length;
+                  for (var i = 0; i < slideCount; i++) {
+                    var slide = document.getElementById("slide" + i);
+                    if (slide && styles.activeslide) {
+                      if (i == n)
+                        slide.classList.add(styles.activeslide);
+                      else slide.classList.remove(styles.activeslide);
+                    }
+                  }
+                }}
+              >
+                {sliders.map(({ imageSrc, title, description }, idx) => (
+                  <div key={idx} className="relative">
+                    {imageSrc}
+                    {/* Text Container unten rechts mit Blur-Effekt */}
+                    <div className="absolute bottom-8 right-8 max-w-md">
+                      <div className="backdrop-blur-md bg-gray-600/20 rounded-xl p-4 md:p-6 text-white border border-white/10">
+                        <h3 className="text-base md:text-lg font-bold mb-3">{title}</h3>
+                        <div className="text-sm md:text-sm text-gray-200 leading-relaxed">
+                          {description}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </Slider>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
