@@ -43,6 +43,16 @@ This section presents several real-world use cases where ONE AI demonstrates its
     </div>
   </a>
 
+  <a href="/docs/one-ai/use-cases/difference-detection" style={{textDecoration: 'none'}}>
+    <div style={{border: '1px solid #eaeaea', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 2px 6px rgba(0,0,0,0.05)', transition: 'transform 0.2s'}}>
+      <img src="/img/ai/one_ai_plugin/demos/overlap-difference/image_000118_test.png" alt="Reference-Based Detection" style={{width: '100%', height: '180px', objectFit: 'cover'}} />
+      <div style={{padding: '16px'}}>
+        <h3 style={{margin: '0 0 8px 0'}}>Reference-Based Defect Detection</h3>
+        <p style={{margin: 0, color: '#b3b3b3ff'}}>Leverage multi-image comparison for superior defect detection.</p>
+      </div>
+    </div>
+  </a>
+
 </div>
 
 ## Overview
@@ -65,3 +75,9 @@ Optimized models deployed on the Altera MAX® 10 FPGA achieve **99.5% accuracy, 
 
 ONE AI's neural architecture search beats **hand-crafted neural networks** and traditional methods in PCB defect detection.  
 With **98.4% accuracy** and over **7× faster inference**, ONE AI proves that smarter AI design delivers superior quality control at industrial scale.
+
+
+#### [Reference-Based Defect Detection](/docs/one-ai/use-cases/difference-detection)
+
+ONE AI's **overlap difference** capability enables direct comparison between reference and test images for superior defect detection.  
+With **93% F1-Score** compared to YOLOv8's 56%, and a model **twelve times smaller**, ONE AI demonstrates that multi-image comparison combined with automated architecture optimization provides significant advantages for quality control and surveillance applications.

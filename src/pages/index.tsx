@@ -543,6 +543,28 @@ function ComparisonSection() {
       whitepaper: "/docs/one-ai/use-cases/chip",
       linkText: "More Details",
       linkTextId: "homepage.usecase.link"
+    },
+    {
+      title: "Reference-Based Defect Detection",
+      titleId: "homepage.usecase.difference.title",
+      subtitle: "Leverage multi-image comparison for superior defect detection accuracy",
+      subtitleId: "homepage.usecase.difference.subtitle",
+      image: "/img/ai/one_ai_plugin/demos/overlap-difference/image_000118_test.png",
+      description: "ONE AI's overlap difference capability enables direct comparison between reference and test images, dramatically improving detection accuracy for quality control and surveillance applications. In a challenging benchmark with small objects and complex backgrounds, ONE AI outperformed YOLOv8 with:",
+      descriptionId: "homepage.usecase.difference.description",
+      metrics: [
+        { value: "95.7", label: "F1 Score", labelId: "homepage.metric.f1score" },
+        { value: "8×", label: "Smaller Model", labelId: "homepage.metric.modelsize" },
+        { value: "66%", label: "Better performance", labelId: "homepage.metric.improvement" },
+      ],
+      relatedUseCases: [
+        { title: "Quality Control", titleId: "homepage.related.qualitycontrol" },
+        { title: "Surveillance", titleId: "homepage.related.surveillance" },
+        { title: "PCB Inspection", titleId: "homepage.related.pcbinspection" }
+      ],
+      whitepaper: "/docs/one-ai/use-cases/difference-detection",
+      linkText: "More Details",
+      linkTextId: "homepage.usecase.link"
     }
   ];
   
