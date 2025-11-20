@@ -4,6 +4,14 @@ title: ONE WARE Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.21.16.0
+
+- Add possibility to switch between node selectors
+- Add autolaunch action for plugins
+- Change compatibility requirment to first two digits of a version
+- Add PCF File selection for Yosys
+- Rename "New Project" to "New FPGA Project" for .fpgaproj format
+  
 ## 0.21.15.0
 
 - Fix Visual Issue in Project Explorer
