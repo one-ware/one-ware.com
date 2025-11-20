@@ -31,7 +31,7 @@ To demonstrate this capability, ONE AI was tested on a synthetically created [bi
 ## Analysis
 
 - **Superior Detection Accuracy**:  
-  With an F1-Score of **93%**, ONE AI achieves **37 percentage points better performance** than YOLOv8 (a 66% relative improvement), which can only process single images without reference context.
+  With an F1-Score of **95.7%**, ONE AI achieves **37 percentage points better performance** than YOLOv8 (a 66% relative improvement), which can only process single images without reference context.
 
 - **Architectural Advantage**:  
   By computing the pixel-wise difference between reference and test images, ONE AI's automatically optimized architecture focuses only on relevant changes, effectively cancelling out complex backgrounds. Additionally, all color channels from both the reference and test images are provided as input, giving the model access to both the original image information and the computed difference. This multi-channel approach provides significantly more information than single-image methods. YOLOv8 must learn to distinguish objects from the entire varying background using only the test image, making the task significantly harder.
@@ -54,7 +54,7 @@ To demonstrate this capability, ONE AI was tested on a synthetically created [bi
 
 The benchmark demonstrates that **multi-image comparison combined with automated architecture optimization** provides a significant advantage over traditional single-image approaches.
 
-With **93% F1-Score** vs. YOLOv8's 56% and a model **12× smaller**, ONE AI proves that:
+With **95.7% F1-Score** vs. YOLOv8's 56% and a model **12× smaller**, ONE AI proves that:
 * **Smarter input processing** (overlap difference) dramatically improves detection accuracy
 * **Automated architecture search** creates optimized, lightweight models tailored to the task
 * **Reference-based comparison** is superior for applications where spatially aligned images are available

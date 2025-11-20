@@ -3,6 +3,8 @@ id: difference-image-demo
 title: Difference Detection Demo
 sidebar_label: Object Detection (Difference)
 ---
+import Link from '@docusaurus/Link';
+
 # Difference Detection Demo
 
 ## About this Demo
@@ -15,9 +17,14 @@ compared to a reference or template by direct difference between the images. Thi
 from the same perspective and position.
 
 ## Dataset Overview
-The dataset is artificially created with our own Image Composition Tool (Demo coming soon) due to the lack of open source datasets. Taking the overlap difference only
+The dataset is artificially created with our own [Image Composition Tool](https://github.com/one-ware/OneAI_demo_datasets/blob/main/dataset_generator/create_dataset.ipynb) due to the lack of open source datasets. Taking the overlap difference only
 makes sense when we have a dataset with images that are spatially aligned, i.e. so similar that taking the difference of them is a benefit by cancelling out the
 background and leaving only relevant parts.
+<div className="text--center" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
+  <Link className="button button--primary button--lg" href="https://github.com/one-ware/OneAI_demo_datasets/blob/main/dataset_generator/create_dataset.ipynb" target="_blank" rel="noopener noreferrer">
+    <p className="m-0 p-0">Create Own Dataset</p>
+  </Link>
+</div>
 
 The dataset is created using a time lapse video of a city skyline as background. For the objects to detect, we have two different bird images (one bright, one dark) and two different drone
 images (one bright, one dark). The background images were taken from the skyline video by skipping some frames, leading to a total of 40 different backgrounds.
@@ -135,7 +142,7 @@ In order to receive a more detailed analysis of the performance, we choose **Sho
 
 ![test](/img/ai/one_ai_plugin/demos/overlap-difference/birds_drones_test.png)
 
-This model receives with the given parameters an F1 score of **95%**. To evaluate this result, we trained a YOLOv8 model for comparison with the same data, preprocessing and
+This model receives with the given parameters an F1 score of **95.7%**. To evaluate this result, we trained a YOLOv8 model for comparison with the same data, preprocessing and
 augmentation for 30 epochs (10 minutes). However, since YOLOv8 cannot handle image pairs or compute overlap differences, it was only trained on the single test images containing 
 the objects (without the template images). This means YOLOv8 had to detect the small objects against the complex city background without the benefit of the reference template. 
 With that approach, YOLOv8 only achieves an F1 score of **56%**, demonstrating that our model's overlap difference method is significantly superior for such use cases where spatially
