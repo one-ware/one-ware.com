@@ -62,7 +62,7 @@ After applying the threshold filter, the image is reduced to a binary (black-and
 Our dataset is very small, so we want to apply a wide variety of augmentations to extend the dataset. 
 We use the following augmentations:
 - **Move Augmentation**: We shift the picture by **±30%** in both directions. Ensure that the print does not move out of the bounding box to get the best results. 
-- **Rotate Augmentations**: Our goal is to detect the print in almost every kind of appearance including rotations so we set the augmentation values from **-180** to **180**
+- **Rotate Augmentations**: Our goal is to detect the print in almost every kind of appearance including rotations so we set let the image rotate from **-180** to **180°**.
 - **Resize Augmentation**: Here we choose a value of **±50%** to get the pictures at different scales. 
 - **Noise Augmentation**: This augmentation makes the model robust against noise from the camera. We set the maximum value to **10%**.
 - **Frequency Augmentaion**: This is also an augmentation to increase the model's robustness, in this case against blur. We let the sigma value iterate from **0%** to **1%**. Make sure you activate the checkboxes of the low pass filter. 
