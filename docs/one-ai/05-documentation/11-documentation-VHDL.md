@@ -21,13 +21,13 @@ The VHDL export gives you a folder with the following content:
 
 # Core Concept: Stream
 
-All modules of the OneAI-code make use of streams. These are a signal construct, used to pass data into and throughout the ANN in VHDL. Streams define the following signals:
+All modules of the OneAI-code make use of streams. These are a signal type, used to pass data into and throughout the ANN in VHDL. The stream type ``CNN_Stream_T`` is defined in the file ``ONEAI_Confic_Package.vhd``. Streams implement the following signals:
 
 - ``Data_CLK`` Design clock
 - ``Data_Valid`` Indicator that data is valid
 - ``Column`` Current pixel column
 - ``Row`` Current pixel row
-- ``Filter`` Current pixel filter (relevant for convolution)
+- ``Filter`` Current pixel filter (relevant for convolution, for the input of the ANN usually leave this at ``0``)
 
 This is paired with a ``Data`` signal consisting of n-dimensions depending on the images colour channels. Each channel is a 7-bit unsigned signal encoding the respecting pixel value in the range 0...127.
 
