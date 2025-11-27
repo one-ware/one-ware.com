@@ -458,7 +458,7 @@ const config: Config = {
       qualityControlWebinar: {
         announcementId: 'quality_control_webinar_2025',
         translateId: 'quality_control',
-        title: 'FREE Webinar: Build Your Own AI Quality Control in &lt;1 Day',
+        title: 'FREE Webinar: Build Your Own AI Quality Control in < 1 Day',
         subtitle: 'November 27, 2025 at 10 AM (CET) • Learn Vision AI from Dataset to Deployment',
         link: 'https://short.one-ware.com/webinar/',
         cta: 'Register Now',
