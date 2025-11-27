@@ -446,6 +446,25 @@ const config: Config = {
       darkTheme: prismThemes.vsDark,
       additionalLanguages: ["json", "csharp"],
     },
+    announcementConfigs: {
+      arrowWorkshop: {
+        announcementId: 'arrow_webinar_2025',
+        translateId: 'arrow',
+        title: 'FREE Worldwide Workshop on ONE AI for Altera FPGAs',
+        subtitle: 'Learn FPGA development • Build ultra-efficient AI • Win a development board',
+        link: '/docs/one-ai/seminars/arrow-agilex3',
+        cta: 'Register Now',
+      },
+      qualityControlWebinar: {
+        announcementId: 'quality_control_webinar_2025',
+        translateId: 'quality_control',
+        title: 'FREE Webinar: Build Your Own AI Quality Control in &lt;1 Day',
+        subtitle: 'November 27, 2025 at 10 AM (CET) • Learn Vision AI from Dataset to Deployment',
+        link: 'https://short.one-ware.com/webinar/',
+        cta: 'Register Now',
+      },
+    },
+    activeAnnouncement: 'arrowWorkshop',
   } satisfies Preset.ThemeConfig,
 };
 
