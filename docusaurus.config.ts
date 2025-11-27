@@ -67,6 +67,10 @@ const config: Config = {
             from: '/one-ai/choosing-parameters',
             to: '/docs/one-ai/help/choosing-parameters-guide',
           },
+          {
+            from: '/webinar-2025-11-27',
+            to: '/docs/one-ai/Webinars/webinar-2025-11-27',
+          }
         ],
       }],
   ],
