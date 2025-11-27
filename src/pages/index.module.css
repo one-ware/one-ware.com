@@ -8,6 +8,7 @@
 } 
 
 .heroBackground{
+  background-image: linear-gradient(135deg,#235059,#111111,#262626);
   box-shadow: rgb(0 0 0 / 50%) 0px -10px 13px -7px inset; 
   position: relative;
   top: 0;
