@@ -124,7 +124,7 @@ The following flow chart depicts a possible tool chain. The colorized parts are 
 ![Export 4](/img/ai/one_ai_plugin/getting_started/export_model_embedding_stacked.png)
 
 When exporting a model file you can integrate our AI into your existing software solution or create your own.
-When exporting a project or binary we provide the necessary runtime along with the model. A project obtained this way can easily be adapted to your needs, see also our [documentation](/docs/one-ai/getting-started/documentation-cpp-api).
+When exporting a project or binary we provide the necessary runtime along with the model. A project obtained this way can easily be adapted to your needs, see also our [documentation](/docs/one-ai/documentation/documentation-cpp-api).
 
 import SupportBanner from '@site/src/components/SupportBanner';
 
