@@ -545,9 +545,9 @@ function ComparisonSection() {
       linkTextId: "homepage.usecase.link"
     },
     {
-      title: "Reference-Based Defect Detection",
+      title: "Reference-Based Object Detection",
       titleId: "homepage.usecase.difference.title",
-      subtitle: "Leverage multi-image comparison for superior defect detection accuracy",
+      subtitle: "Leverage multi-image comparison for superior object detection accuracy",
       subtitleId: "homepage.usecase.difference.subtitle",
       image: "/img/ai/one_ai_plugin/demos/overlap-difference/image_000118_test.png",
       description: "ONE AI's overlap difference capability enables direct comparison between reference and test images, dramatically improving detection accuracy for quality control and surveillance applications. In a challenging benchmark with small objects and complex backgrounds, ONE AI outperformed YOLOv8 with:",
@@ -555,7 +555,7 @@ function ComparisonSection() {
       metrics: [
         { value: "95.7", label: "F1 Score", labelId: "homepage.metric.f1score" },
         { value: "8×", label: "Smaller Model", labelId: "homepage.metric.modelsize" },
-        { value: "66%", label: "Better performance", labelId: "homepage.metric.improvement" },
+        { value: "39.7%", label: "Better performance", labelId: "homepage.metric.improvement" },
       ],
       relatedUseCases: [
         { title: "Quality Control", titleId: "homepage.related.qualitycontrol" },
