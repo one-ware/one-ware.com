@@ -4,14 +4,15 @@ title: VHDL Documentation
 sidebar_label: VHDL Documentation
 ---
 
-# VHDL Export
+# The OneWare VHDL Code
 
 When exporting your trained model you have the option to export as a VHDL project for an FPGA. Aside from the model itself this project contains also the VHDL code necessary to run your model. This page gives you the necessary information to integrate your OneAI model into your FPGA project.
+
+# Export Project Content
 
 The VHDL export gives you a folder with the following content:
 - ``Core`` Contains helper modules concerning ANN-architecture.
 - ``Filters`` Contains helper modules for data preprocessing.
-- ``Quartus IP`` ???
 - ``ONEAI_Confic_Package.vhd`` Configuration settings.
 - ``ONEAI_Data_Package.vhd`` The model weights.
 - ``ONEAI_Simulation.vhd`` A VHDL file you can use to simulate the model.
@@ -20,7 +21,7 @@ The VHDL export gives you a folder with the following content:
 
 # Core Concept: Stream
 
-All modules of the OneAI-code make use of streams. These are used to pass data into and throughout the ANN. Streams define the following signals:
+All modules of the OneAI-code make use of streams. These are a signal construct used to pass data into and throughout the ANN in VHDL. Streams define the following signals:
 
 - ``Data_CLK`` Design clock
 - ``Data_Valid`` Indicator that data is valid
@@ -32,11 +33,11 @@ This is paired with a ``Data`` signal consisting of n-dimensions depending on th
 
 # Simulation
 
-For simulation purposes you can simply use the ``ONEAI_Simulation`` module as the top level entity. 
+For simulation purposes you can simply use the ``ONEAI_Simulation`` module as the top level entity.
 
 ![ModelSim Simulation Start](/img/ai/one_ai_plugin/documentation/vhdl_simulation_start.png)
 
-This will take example data included in the ``Test_Data_Package.vhd`` and run it through the model.
+This simulation module will take example data included in the ``Test_Data_Package.vhd`` and run it through the model. Here you have the oportunity to verify correct inputs (``iStream``) and the output produced by the ANN (``oStream``).
 
 ![ModelSim iStream Wave](/img/ai/one_ai_plugin/documentation/vhdl_simulation_iStream.png)
 ![ModelSim oStream Wave](/img/ai/one_ai_plugin/documentation/vhdl_simulation_oStream.png)
@@ -52,8 +53,8 @@ When including the OneAI model into your FPGA project simply include the ``ONEAI
 - ``oData_1`` Output data (n-channel)
 - ``oCycle_1`` Current output cycle
 
-The output of the ``CNN``-module adheres to the stream format as well. For classifiers the output data is the confidence for each of the classes. As there is only one output data channel, the confidences for each class are given out in consecutive clock cycles. The confidence is encoded as a 7-bit usinged integer as well. A percentage based confidence can be derived by dividing this value by 1.27 in the postprocessing.
+The output of the ``CNN``-module adheres to the stream format as well. For classifiers the output data is the confidence for each of the classes. As there is only one output data channel, the confidences for each class are given out in consecutive clock cycles. The current cycle is indicated by the ``oCycle_1`` signal. The confidence is encoded as a 7-bit usinged integer from the ``oData_1`` signal. A percentage based confidence can be derived by dividing this value by 1.27 in the postprocessing.
 
-Note that the CNN needs a 1ms warmup after the reset release.
+Note that the ``CNN``-module needs a 1 ms warmup after the reset release, before any input is processed.
 
 
