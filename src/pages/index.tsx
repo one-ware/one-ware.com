@@ -555,7 +555,7 @@ function ComparisonSection() {
       metrics: [
         { value: "95.7", label: "F1 Score", labelId: "homepage.metric.f1score" },
         { value: "8×", label: "Smaller Model", labelId: "homepage.metric.modelsize" },
-        { value: "39.7%", label: "Better performance", labelId: "homepage.metric.improvement" },
+        { value: "10×", label: "Fewer Errors", labelId: "homepage.metric.fewererrors" },
       ],
       relatedUseCases: [
         { title: "Quality Control", titleId: "homepage.related.qualitycontrol" },
