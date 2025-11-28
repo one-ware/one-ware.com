@@ -1,0 +1,131 @@
+---
+id: teacup-print-detection
+title: Teacup Print Detection Demo
+sidebar_label: Object Detection (Teacups)
+---
+import Link from '@docusaurus/Link';
+
+# Teacup Print Detection Demo
+
+## About this demo 
+
+This demo shows you how to build a simple object detection model, just by taking some photos of an object with a highly varying background. If you are unfamiliar with the OneAI Extension, we recommend to first take a look at our guide [Getting Started with One AI](/docs/one-ai/01-getting-started/01-getting-started.mdx). In this guide you will learn how to handle such **small and highly variable datasets** and how to properly use **pre-filtering and augmentation** to find a model that solves this problem quite well. 
+
+This demo was also part of an online webinar, which was later uploaded to YouTube. You can watch it [here](https://www.youtube.com/watch?v=vN1ZBED_aDU).
+
+## Dataset overview
+For this tutorial, we created our own small dataset of teacups with a print of the One-Ware logo. The cups vary in size, positioning, rotation, and background. The pictures were shot using an iPhone 16 Pro while holding the cups in different positions. The background varies strongly, e.g., in front of a monitor or a plant. We shot a total 20 pictures, which we manually split into train, test, and validation sets. Additionally, we downscaled the pictures from **4284 \* 5712** to **720 \* 960**.
+
+Here are a few examples from the dataset:
+
+<div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '20px' }}>
+    <img src="/img/ai/one_ai_plugin/demos/tea_cup_print/train_1.jpg" alt="tea_cup_example_1" style={{ width: '30%' }} />
+    <img src="/img/ai/one_ai_plugin/demos/tea_cup_print/train_5.jpg" alt="tea_cup_example_2" style={{ width: '30%' }} />
+    <img src="/img/ai/one_ai_plugin/demos/tea_cup_print/train_14.jpg" alt="tea_cup_example_3" style={{ width: '30%' }} />
+</div>
+
+If you want to build your own small dataset, make sure to: 
+- **Ensure balanced feature representation:** In our case, the cup appears in the training images from different angles. For a fair evaluation, the test set should also include images with more challenging viewpoints. This helps to check if the model generalizes instead of memorizing easy examples.
+- **Keep it simple:** With only around 20 images, even detecting a single cup is challenging for a model. Start with an object that is visually distinct and easy to recognize, and ideally begin with just one object class. 
+- **Keep your goal in mind:** The model learns from what it gets. You want to supply the model with pictures, which are conceptually equivalent to the pictures used during inference. For example, if you expect the model to detect objects in front of a specific background or within certain rotations, ensure that the training data reflects these conditions.
+The more variation you introduce, the more complexity you require in the model architecture. 
+
+If you want to follow the tutorial, including the annotations step by step, with our dataset, you can download the pictures [here](https://github.com/one-ware/OneAI_demo_datasets/blob/main/datasets/one-ware_cups.zip). If you just want to train and test the model, you can download the complete project folder [here](https://github.com/one-ware/OneAI_demo_datasets/blob/main/projects/teacup_print_detection.zip).
+
+## Preparing the dataset
+If you want to apply the settings of the project yourself, you need to create a new AI Generator. Click on **AI** > **Open AI Generator**, enter a name, and select **Image Detection**. This automatically opens a ``.oneai`` file, which contains the settings for the AI Generator.
+
+To import the pictures, you can either click on the **Import** button and then on the **Import folders** button. Or you can just drag and drop the corresponding folders in One-Ware studio. Make sure to uncheck **Use Validation Split** for the validation data and set **Validation Image Percentage** at the test section to **0%**, since we split the data manually.
+
+Now we have to annotate the data. To do this, click on the icon in the bottom right corner of a picture to open the annotation tool. To add a new label, click on the **+** symbol and enter a name for the label. In this case we only need one label, which we call "print". Now you can select the print with the marking tool on the top, save this picture as labeled, and continue with the next one.
+
+![model_export](/img/ai/one_ai_plugin/demos/tea_cup_print/annotation_tool.jpg)
+
+## Filters and Augmentations
+Since the dataset is very small, we aim to both reduce the image information to its most essential features through prefiltering and increase variation through augmentation to enrich the training data. 
+
+To keep it short, we just point out the values we used for the following settings with a brief explanation of why we chose these values. For further details about the augmentation or prefilters, please refer to the [documantation](/docs/one-ai/01-getting-started/30-filters-and-augmentations.md) or previous tutorials. 
+
+### Prefilers
+As shown under **Initial Resize**, the images remain relatively large for the requirements of this task, even after downscaling. Since high pixel resolution is not necessary here, keeping the initial size would only increase model complexity and raise the risk of overfitting. To address this, we apply a **resolution filter** that reduces the image size to **25%** of the original.
+Next, we add a **Color Filter** after the augmentation. This placement is important because we will apply additional color augmentations afterward. The goal is to enhance the contrast and make the logo stand out more clearly. We set the **Brightness** to **-20** and the **Contrast** to **150**.
+Since color is not important for this task, we remove it by setting the **Saturation** to **0**. To avoid unnecessary processing of color channels, which is now irrelevant because the image is grayscale, we disable the **green (G) **and **blue (B)** channels in the **Channel Filter**.
+
+![prefilters](/img/ai/one_ai_plugin/demos/tea_cup_print/prefilter.jpg)
+
+### Augmentations
+Our dataset is very small, so we want to apply a wide variety of augmentations to extend the dataset. 
+We use the following augmentations:
+- **Move Augmentation**: We shift the picture by **±20%** in both directions. Ensure that the print does not move out of the bounding box to get the best results. 
+- **Rotate Augmentations**: Our goal is to detect the print in almost every kind of appearance, including rotations, so we let the image rotate from **-180** to **180°**.
+- **Resize Augmentation**: Here we choose a value of **±20%** to get the pictures at different scales. 
+- **Noise Augmentation**: This augmentation makes the model robust against noise from the camera. We set the maximum value to **5%**.
+- **Color Augmentation**: We set the Brightness and Contrast to **±10** and the Saturation to **±20**. This augmentation step makes sense when you consider real-world photography, where lighting conditions can vary significantly.
+
+![augmentations](/img/ai/one_ai_plugin/demos/tea_cup_print/augmentations.jpg)
+
+In general, when applying augmentation, keep in mind that it should always fit the corresponding task. It doesn't make sense to flip the image in any way if the cup cannot realistically appear in that orientation in the real world.
+
+## Model settings
+We set the Maximum Memory Usage to 90%, because we are not limited by any hardware for this tutorial.We set the estimated surrounding minimum values to 25 for width and 20 for height, and the maximum values to 40 for width and 30 for height.
+We change both **Estimated Surrounding Min** values to **15%** and both **Estimated Surrounding Max** values to **35%**.
+The **Same Class Difference** is set to **20%**, since the print is always the same but shown from different angles. 
+The **Background Difference** is set to **75%**, because we have very different backgrounds in the pictures. However, some pictures share the same background and just show a different rotation of the cup and print.
+For **Detect Simplicity** we choose **75%**, because the task is relatively simple.   
+
+Note that all these settings refer to the raw dataset, without any prefiltering or augmentation process.
+
+## Training the model
+After all the configurations, we finally come to the most interesting part of this tutorial: training the model. 
+To connect to the server, click the **Sync** button and create a new model by clicking on the **+**. Click on the **Train** button in the top-right corner to open the training configurations, where we change the training duration to **15** minutes. 
+We set the **early-stopping patience** to *50%*. This means that if the model does not improve for half of the total training time, the training process will stop. This setting also helps reduce the risk of overfitting and avoids unnecessary training. 
+
+<div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '20px' }}>
+    <img src="/img/ai/one_ai_plugin/demos/tea_cup_print/training.jpg" alt="training_settings" style={{ width: '50%' }} />
+</div>
+
+Finally we can start the training by clicking **Start Training**. 
+
+In the **Logs** section we can see some specifications about the model selection, for example, the number of the parameters. In the **Statistics** section, we can follow the training, where the F1 score, as well as the training loss and validation loss, are plotted.
+ 
+## Testing the model
+Once training is complete, you can test the model by clicking Test. In the test settings, enable Check last vs best model to choose between the best model from training and the final model, helping to avoid overfitting.
+Once training is complete, you can test the model by clicking Test. This opens the test configuration, where you can set additional parameters:
+- **Visualize amount**: The percentage of test images to display. Since our test dataset contains only 5 images, we can set this to **100%**.
+- **IoU threshold (Intersection over Union)**: The minimum overlap required between predicted and true labels for a detection to be considered correct.
+- **Show metrics**: Enable this to display key performance values, including F1 score, precision, and recall.
+- **Visualize problematic**: Shows misclassified or uncertain samples. This is also supported only for classification tasks.
+- **Generate Heatmap**: Produces a heatmap highlighting the areas the model focuses on. Currently, this is supported only for classification tasks.
+- **Check last vs best model**: Allows you to choose between the best model during training and the final model to avoid overfitting.
+
+By clicking **Start Testing**, you can start the test process, which will take a moment and then output the results in the **Logs** section. On the One-Ware cloud, you can see how the model performs on the test pictures. To get there, click on **Tests** and then on the internet icon. 
+This opens the browser, where you can log in to your OneWare cloud and view some of the test set results. Fortunately, our model performs very well and correctly detects the logo. When an annotation is correct, the label is highlighted in green.
+
+<div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '20px' }}>
+    <img src="/img/ai/one_ai_plugin/demos/tea_cup_print/test1.jpg" alt="test_img1" style={{ width: '30%' }} />
+    <img src="/img/ai/one_ai_plugin/demos/tea_cup_print/test2.jpg" alt="test_img2" style={{ width: '30%' }} />
+    <img src="/img/ai/one_ai_plugin/demos/tea_cup_print/test3.jpg" alt="test_img3" style={{ width: '30%' }} />
+</div>
+
+## Model export
+[🔗 model export guide](/docs/one-ai/getting-started/training-and-export#exporting-a-trained-model)
+To make the model available for different tasks, you can export and download it. Click on **Export** to open the export configuration menu. 
+
+![model_export](/img/ai/one_ai_plugin/demos/tea_cup_print/export_detector.jpg)
+
+Then, click **Start Export** to begin the process. Once the server has completed the export, you can download the model by clicking the **downward arrow** in the Exports section. 
+![model_download](/img/ai/one_ai_plugin/demos/tea_cup_print/download_model.jpg)
+
+
+
+Once downloaded, the model can be used to annotate additional images or tested directly using the camera tool. To do this, open the annotation tool on an image—whether it has already been annotated or not. To use model-based annotation, first click the dropdown arrow shown in the image below. This will allow you to select from all downloaded models for this project. Choose the desired model and click the **+** button to add it. You can also adjust the model's confidence setting, which affects …
+
+<div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '20px' }}>
+    <img src="/img/ai/one_ai_plugin/demos/tea_cup_print/ai_annotation.jpg" alt="ai_annotation" style={{ width: '70%' }} />
+</div>
+
+Once the model is added, you can automatically label images and evaluate its performance by clicking the AI button next to the dropdown menu. The model will automatically annotate any labels it detects in the image.
+
+import SupportBanner from '@site/src/components/SupportBanner';
+
+<SupportBanner subject="ONE AI Tutorial Support" />

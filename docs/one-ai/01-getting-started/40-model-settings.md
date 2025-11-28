@@ -50,6 +50,8 @@ To achieve the best results, you need to provide some additional information abo
 - ``Background Difference``: Estimate how much the backgrounds vary in the images.
 - ``Detect Simplicity (%)``: Give an estimate for your task's overall difficulty.
 
+Note that these parameters apply to the preprocessed and augmented images. If you use size augmentations, for example, make sure the estimated surrounding values still match the resulting range of image sizes.
+
 :::tip Need help with the settings?
 Check out our [guide on choosing the right parameters](/docs/one-ai/help/choosing-parameters-guide).
 :::
