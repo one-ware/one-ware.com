@@ -142,11 +142,7 @@ In order to receive a more detailed analysis of the performance, we choose **Sho
 
 ![test](/img/ai/one_ai_plugin/demos/overlap-difference/birds_drones_test.png)
 
-This model receives with the given parameters an F1 score of **95.7%**. To evaluate this result, we trained a YOLOv8 model for comparison with the same data, preprocessing and
-augmentation for 30 epochs (10 minutes). However, since YOLOv8 cannot handle image pairs or compute overlap differences, it was only trained on the single test images containing 
-the objects (without the template images). This means YOLOv8 had to detect the small objects against the complex city background without the benefit of the reference template. 
-With that approach, YOLOv8 only achieves an F1 score of **56%**, demonstrating that our model's overlap difference method is significantly superior for such use cases where spatially
-aligned image pairs are available.
+This model receives with the given parameters an F1 score of **95.7%**. For comparison, we trained a YOLOv8 model on the same data, preprocessing, and augmentation for 30 epochs (10 minutes). However, since YOLOv8 cannot handle image pairs or compute overlap differences, it was only trained on the single test images containing the objects (without the template images), requiring it to detect small objects against a complex city background without the benefit of a reference template. With this approach, YOLOv8 achieved an F1 score of **56%**. This demonstrates that our model's overlap difference method is significantly superior for use cases where spatially aligned images are available, resulting in more than **10 times fewer errors** than YOLOv8.
 
 The visualizations from the test process can be seen in the Cloud and reached either by clicking the **View Online** Button on the top-right corner or by clicking on the link given in the logs.
 In the Cloud, the results can be seen when clicking under the current project and model under **tests**: The sample predictions and precision-recall curve can either be downloaded as a zip or simply viewed.
