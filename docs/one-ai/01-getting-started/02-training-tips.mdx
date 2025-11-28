@@ -1,0 +1,48 @@
+---
+id: training-tips
+title: Tips for Training your own AI Models
+sidebar_label: Training Tips
+---
+
+import Link from '@docusaurus/Link';
+import SupportBanner from '@site/src/components/SupportBanner';
+
+<SupportBanner subject="ONE AI Training Tips Support" />
+
+## What kind of AI models can I build with ONE AI?
+Currently, ONE AI can create models that solve various computer vision tasks. You can work on audio or time series data as well, by converting it to a visual representation with OneWare Studio's ``Spectrogram Generator``. We are planning to add models that work directly on time series data in the future.
+
+The supported computer vision tasks are:
+- Image Classification: assigning categories that apply to the entire image (e.g. *defective* vs. *non-defective*)
+- Object Detection: identifying and locating multiple objects within an image (e.g. detecting objects on an assembly line)
+- Semantic Segmentation (coming soon): assigning a class label to each pixel in the image (e.g. marking different tissue types in medical images)
+
+## Create your first AI project
+The first step to creating your own AI model is to create a new project in OneWare Studio. To do so you need to click on ``AI`` in the menu bar and select ``Open AI Generator``.
+
+![AI Generator](/img/ai/one_ai_plugin/getting_started/ai_generator.png)
+
+## Load your dataset
+- Only explain dataset import, reference full guide for other options
+- Mention how to use reference images
+
+## Add filters to process your images
+- Try minimizing unnecessary information:
+  - Crop
+  - Resize
+  - Grayscale + Channel Filter
+- Make it easier to focus on relevant parts:
+  - Contrast
+  - Brightness
+  - Frequency Filter
+
+## Add augmentations to increase dataset size
+- Adds diversity to your dataset
+- Helps to prevent overfitting
+- Don't do augmentations that don't make sense for your application (e.g. flipping)
+
+## Provide context for your application
+
+## Train your model
+
+## Test and export your model

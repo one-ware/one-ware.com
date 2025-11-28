@@ -1,0 +1,62 @@
+---
+id: getting-started
+title: Quick Start Guide
+sidebar_label: Getting Started
+---
+
+import Link from '@docusaurus/Link';
+import SupportBanner from '@site/src/components/SupportBanner';
+
+# Todo: update links
+
+## What is ONE AI and how can it help me?
+With ONE AI you can create custom AI models that are tailored to your individual needs in minutes without needing to be an expert in AI development. This allows everyone to benefit from the potential of AI and opens up new use cases that weren't feasible before.
+
+You don't need powerful hardware for benefiting from AI anymore. The computationally intensive training process is done on our cloud servers, while the models themselves are optimized for your hardware and can run on any device, even microcontrollers with very limited resources.
+
+ONE AI excels when you need an AI that solve a single specific task. Instead of using large generic models that try to cover all possible scenarios, ONE AI allows you to create small and efficient models that focus on exactly what you need.
+
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+  <img src="/img/ai/one_ai_plugin/use_cases/capture/preview.png" alt="Use Case" style={{ width: '50%' }} />
+</div>
+
+## Installation
+[🔗 installation guide](/docs/one-ai/getting-started/installation)  
+Follow the following steps to get started with ONE AI:
+- [Install OneWare Studio](/docs/studio/setup)
+- Install the ONE AI Extension
+- [Sign up to ONE AI](https://cloud.one-ware.com/Account/Register)
+- Complete the address verification to get free welcome credits
+
+## Download demo project
+We created a small demo project that shows how to use ONE AI to create a quality control application for potato chips. The goal is to distinguish between good and burned potato chips.
+
+<div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
+    <img src="/img/ai/one_ai_plugin/demos/potato_chip/chips_non-defective_01.jpg" alt="chips_example_non-defective_01" style={{ width: '20%' }} />
+    <img src="/img/ai/one_ai_plugin/demos/potato_chip/chips_non-defective_02.jpg" alt="chips_example_non-defective_02" style={{ width: '20%' }} />
+    <img src="/img/ai/one_ai_plugin/demos/potato_chip/chips_defective_01.jpg" alt="chips_example_defective_01" style={{ width: '20%' }} />
+    <img src="/img/ai/one_ai_plugin/demos/potato_chip/chips_defective_02.jpg" alt="chips_example_defective_02" style={{ width: '20%' }} />
+</div>
+
+<div className="text--center" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
+  <Link className="button button--primary button--lg" href="https://github.com/one-ware/OneAI_demo_datasets/blob/main/projects/Chips.zip" target="_blank" rel="noopener noreferrer">
+    <p className="m-0 p-0">Download Project</p>
+  </Link>
+  <Link className="button button--primary button--lg" href="/docs/one-ai/tutorials/potato-chip-demo">
+    <p className="m-0 p-0">Check out Guide</p>
+  </Link>
+</div>
+
+After you download and unzipped the project, you can open it in OneWare Studio by clicking on ``File`` > ``Open`` > ``Folder``.
+
+## Start training
+Since the demo project is already configured, you can directly start training the AI model. Go to the ``Training`` tab and click on ``Sync`` to connect to the OneWare Cloud. Afterwards you need to click on ``Create Model`` to create a new model instance, after which you can click on the ``Train`` button. Because the application is very simple, it is sufficient to train the model for only 2 minutes. The other settings can be left at their default values.
+
+## Where to go from here?
+We have several different guides and tutorials to help you get started with ONE AI:
+- [Tips for training your own AI models](/docs/one-ai/getting-started/training-tips)
+- [Full ONE AI documentation](/docs/one-ai/getting-started/overview)
+- [Tutorial overview](/docs/one-ai/tutorials)
+- [Use case overview](/docs/one-ai/use-cases)
+
+<SupportBanner subject="ONE AI Getting Started Support" />
