@@ -108,7 +108,7 @@ Together with ONE WARE Studio you benefit from an end-to-end workflow from datas
 | 25.11.2025 | Stuttgart, Germany | Höpfigheimer Strasse 5, 74321 Bietigheim-Bissingen |
 | 27.11.2025 | Frankfurt, Germany | Frankfurter Str. 211, 63263 Neu-Isenburg |
 | 02.12.2025 | Freiburg, Germany | Am Gansacker 10, 79224 Freiburg |
-| 09.12.2025 | Berlin, Germany | Regus Center Signature P1, Potsdamer Platz 1, 10785 Berlin |
+| 09.12.2025 | Berlin, Germany | Eurostars Berlin, Friedrichstrasse 99, 10117 Berlin |
 | TBD        | Leipzig, Germany | Hauptstrasse 103, 4416 Leipzig |
 
 ---
