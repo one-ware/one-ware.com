@@ -47,9 +47,6 @@ export default function CameraStation({ isActive, onDataFull, showCelebration = 
     const [isDropped, setIsDropped] = useState(false);
     const [animationKey, setAnimationKey] = useState(0);
 
-    const [isFileDragOver, setIsFileDragOver] = useState(false);
-    const [droppedImages, setDroppedImages] = useState<string[]>([]);
-    const fileInputRef = useRef<HTMLInputElement>(null);
 
     const [visibleIconCount, setVisibleIconCount] = useState(0);
 
@@ -248,87 +245,10 @@ export default function CameraStation({ isActive, onDataFull, showCelebration = 
         };
     }, [isDragging, dragPos, onDataFull, allowCustomUpload, onDataDropped]);
 
-    const handleFiles = (files: FileList | null) => {
-        if (!files || files.length === 0) return;
-
-        const imageFiles = Array.from(files).filter(file => file.type.startsWith('image/'));
-        if (imageFiles.length === 0) return;
-
-        imageFiles.forEach(file => {
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                if (e.target?.result) {
-                    setDroppedImages(prev => [...prev, e.target!.result as string]);
-                }
-            };
-            reader.readAsDataURL(file);
-        });
-
-        if (allowCustomUpload && onDataDropped) {
-            onDataDropped();
-            return;
-        }
-
-        setIsDropped(true);
-        let count = 0;
-        const fillInterval = setInterval(() => {
-            count += 2;
-            setCollectedCount(count);
-            if (count >= 16) {
-                clearInterval(fillInterval);
-                if (onDataFull) {
-                    setTimeout(onDataFull, 300);
-                }
-            }
-        }, 30);
-    };
-
-    const handleFileInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        handleFiles(e.target.files);
-    };
-
-    const handleFileDrop = (e: React.DragEvent) => {
-        e.preventDefault();
-        e.stopPropagation();
-        setIsFileDragOver(false);
-        handleFiles(e.dataTransfer.files);
-    };
-
-    const handleFileDragOver = (e: React.DragEvent) => {
-        e.preventDefault();
-        e.stopPropagation();
-        if (e.dataTransfer.types.includes('Files')) {
-            setIsFileDragOver(true);
-        }
-    };
-
-    const handleFileDragLeave = (e: React.DragEvent) => {
-        e.preventDefault();
-        e.stopPropagation();
-        setIsFileDragOver(false);
-    };
-
-    const handleDropBoxClick = () => {
-        if (!isDropped && fileInputRef.current) {
-            fileInputRef.current.click();
-        }
-    };
-
     return (
         <div
             className="w-full h-full relative select-none"
-            onDrop={handleFileDrop}
-            onDragOver={handleFileDragOver}
-            onDragLeave={handleFileDragLeave}
         >
-             <input
-                ref={fileInputRef}
-                type="file"
-                accept="image/*"
-                multiple
-                onChange={handleFileInputChange}
-                style={{ display: 'none' }}
-             />
 
              <svg ref={svgRef} viewBox="0 0 400 300" className="w-full h-full" preserveAspectRatio="xMinYMid meet" style={{ overflow: 'visible' }}>
                 <defs>
@@ -395,15 +315,14 @@ export default function CameraStation({ isActive, onDataFull, showCelebration = 
                     {!isDropped && (
                         <g
                             transform={`translate(${DATA_BOX_X}, ${DATA_BOX_Y})`}
-                            opacity={isDragging || isFileDragOver ? 1 : 0.6}
-                            style={{ transition: 'all 0.3s ease', cursor: 'pointer' }}
-                            onClick={handleDropBoxClick}
+                            opacity={isDragging ? 1 : 0.6}
+                            style={{ transition: 'all 0.3s ease' }}
                         >
                             <rect
                                 x="-60" y="-60" width="120" height="120" rx="14"
-                                fill={isFileDragOver ? "rgba(0,255,209,0.1)" : "rgba(0,0,0,0.2)"}
+                                fill="rgba(0,0,0,0.2)"
                                 stroke="var(--ifm-color-primary)"
-                                strokeWidth={isDragging || isFileDragOver ? "2.5" : "1.5"}
+                                strokeWidth={isDragging ? "2.5" : "1.5"}
                                 strokeDasharray="6 6"
                                 style={{ transition: 'all 0.3s' }}
                             />
@@ -415,26 +334,10 @@ export default function CameraStation({ isActive, onDataFull, showCelebration = 
                                 <path d="M60,40 L60,46 A14,14 0 0,1 46,60 L40,60" />
                             </g>
 
-                            {!allowCustomUpload && (
-                                <g stroke="var(--ifm-color-primary)" strokeWidth="1.5" strokeLinecap="round">
-                                    <line x1="0" y1="-15" x2="0" y2="15" />
-                                    <line x1="-15" y1="0" x2="15" y2="0" />
-                                </g>
-                            )}
-
-                            {allowCustomUpload && (
-                                <text
-                                    textAnchor="middle"
-                                    fill="var(--ifm-color-primary)"
-                                    fontSize="14"
-                                    fontWeight="500"
-                                >
-                                    <tspan x="0" dy="-24">Click</tspan>
-                                    <tspan x="0" dy="16">or</tspan>
-                                    <tspan x="0" dy="16">drop</tspan>
-                                    <tspan x="0" dy="16">images</tspan>
-                                </text>
-                            )}
+                            <g stroke="var(--ifm-color-primary)" strokeWidth="1.5" strokeLinecap="round">
+                                <line x1="0" y1="-15" x2="0" y2="15" />
+                                <line x1="-15" y1="0" x2="15" y2="0" />
+                            </g>
                         </g>
                     )}
 
@@ -453,7 +356,7 @@ export default function CameraStation({ isActive, onDataFull, showCelebration = 
                     <circle
                         cx={DATA_BOX_X} cy={DATA_BOX_Y} r="60"
                         fill="none" stroke="var(--ifm-color-primary)" strokeWidth="2" strokeDasharray="8 4"
-                        opacity={isDragging || isFileDragOver ? 0.4 : 0}
+                        opacity={isDragging ? 0.4 : 0}
                         style={{ transition: 'opacity 0.3s' }}
                     />
 

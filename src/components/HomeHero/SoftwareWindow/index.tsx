@@ -469,11 +469,9 @@ export default function SoftwareWindow({
     >
       <div className="oneware-refraction-shine"></div>
 
-      <div 
+      <div
           className="oneware-window-header"
-          onMouseDown={handleHeaderMouseDown}
-          style={{ 
-              cursor: isWindowDragging ? 'grabbing' : 'grab',
+          style={{
               position: 'relative',
               zIndex: 50
           }}

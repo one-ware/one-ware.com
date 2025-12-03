@@ -225,3 +225,13 @@ body {
 .grecaptcha-badge {
   visibility: hidden !important;
 }
+
+@media (max-width: 1400px) {
+  .navbar__toggle {
+    display: inherit !important;
+  }
+  .navbar__items--right > .navbar__item:not(.header-github-link),
+  .navbar__items:not(.navbar__items--right) > .navbar__item:not(.navbar__brand) {
+    display: none !important;
+  }
+}

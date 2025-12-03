@@ -16,7 +16,7 @@ interface TopMetricsProps {
 
 export default function TopMetrics({ isActive, animateSetup = false, animatePrecision = false, isImproved = false, animateHardwareSwitch = false, retrainedPrecision = false, isInteractive = false, onUserChange, onBusyChange, onFpsChange, targetAccuracy }: TopMetricsProps) {
   const [displayedFps, setDisplayedFps] = useState(25);
-  const [displayedAccuracy, setDisplayedAccuracy] = useState(92.4);
+  const [displayedAccuracy, setDisplayedAccuracy] = useState(0.0);
   const [selectedHardware, setSelectedHardware] = useState<string | null>(null);
 
   const [cursorPos, setCursorPos] = useState({ x: 110, y: 150 });
@@ -42,7 +42,7 @@ export default function TopMetrics({ isActive, animateSetup = false, animatePrec
         setCursorVisible(false);
         setSelectedHardware(null);
         setDisplayedFps(25);
-        setDisplayedAccuracy(92.4);
+        setDisplayedAccuracy(0.0);
     }
   }, [isActive]);
 
@@ -190,7 +190,7 @@ export default function TopMetrics({ isActive, animateSetup = false, animatePrec
         };
         accuracyAnimationRef.current = requestAnimationFrame(animateAcc);
       } else if (!isInteractive) {
-          setDisplayedAccuracy(92.4);
+          setDisplayedAccuracy(0.0);
       }
 
       return () => {
@@ -443,7 +443,7 @@ export default function TopMetrics({ isActive, animateSetup = false, animatePrec
               <div className="flex items-end gap-2 min-w-[40%]">
                   <span
                       className={`font-light tracking-tight text-white drop-shadow-lg transition-all duration-300 ${displayedFps > 0 ? 'scale-105 text-[var(--ifm-color-primary)]' : ''}`}
-                      style={{ fontSize: 'clamp(0.9rem, 3vw, 2rem)', lineHeight: 1 }}
+                      style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.5rem)', lineHeight: 1 }}
                   >
                       {formatFps(displayedFps)}
                   </span>
@@ -500,7 +500,7 @@ export default function TopMetrics({ isActive, animateSetup = false, animatePrec
           <div className="flex items-end gap-2">
               <span
                   className={`font-light tracking-tight drop-shadow-lg transition-colors duration-1000 ${isImproved ? 'text-[var(--ifm-color-primary)] drop-shadow-[0_0_15px_rgba(0,255,209,0.6)]' : 'text-white'}`}
-                  style={{ fontSize: 'clamp(0.9rem, 3vw, 2rem)', lineHeight: 1 }}
+                  style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.5rem)', lineHeight: 1 }}
               >
                   {formatAcc(displayedAccuracy)}
               </span>

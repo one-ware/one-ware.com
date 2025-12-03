@@ -129,9 +129,9 @@ export default function HomeHero() {
         style={{ paddingTop: "var(--ifm-navbar-height)", height: "100%" }}
       >
         <div className="w-full max-w-[98%] sm:max-w-[95%] flex flex-col gap-4 sm:gap-6 2xl:gap-8 min-h-[calc(100vh-var(--ifm-navbar-height))] 2xl:h-[80vh] 2xl:min-h-0">
-          <div className="flex flex-col 2xl:flex-row items-center gap-4 sm:gap-6 2xl:gap-12 flex-1">
-            <div className="w-full 2xl:w-[40%] flex flex-col justify-center space-y-4 sm:space-y-6 2xl:space-y-8 text-center 2xl:text-left py-4 2xl:py-0">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl 2xl:text-8xl font-bold leading-tight sm:leading-relaxed">
+          <div className="flex flex-col 2xl:flex-row items-center gap-2 sm:gap-4 2xl:gap-12 flex-1">
+            <div className="w-full 2xl:w-[40%] flex flex-col justify-center space-y-4 sm:space-y-6 2xl:space-y-8 text-center 2xl:text-left py-2 sm:py-4 2xl:py-0">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">
                 <span
                   className="text-[var(--ifm-color-primary)] block"
                   style={{
@@ -153,9 +153,8 @@ export default function HomeHero() {
                 </span>
               </h1>
               <p
-                className="text-white text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl 2xl:text-3xl font-normal"
+                className="text-white text-lg md:text-xl leading-relaxed"
                 style={{
-                  lineHeight: "1.6",
                   animation: "fadeInUp 0.8s ease-out forwards",
                   animationDelay: "0.2s",
                   opacity: 0,
@@ -209,7 +208,7 @@ export default function HomeHero() {
                 opacity: 0,
               }}
             >
-              <button className="button button--primary button--outline button--md sm:button--lg w-full sm:w-auto">
+              <button className="button button--primary button--outline button--lg w-full sm:w-auto">
                 Start Now for Free
               </button>
             </Link>
@@ -221,7 +220,7 @@ export default function HomeHero() {
                 opacity: 0,
               }}
             >
-              <button className="button button--primary button--md sm:button--lg w-full sm:w-auto">
+              <button className="button button--primary button--lg w-full sm:w-auto">
                 Discover ONE AI
               </button>
             </Link>
