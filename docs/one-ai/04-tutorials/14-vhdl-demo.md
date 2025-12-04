@@ -111,11 +111,11 @@ You should adapt the command to reflect the actual serial port used on your comp
 - ``--timeout x`` Timeout interval in seconds for the serial connection. Default 3s.
 - ``--camera x`` ID of the camera to use. Default 0.
 
-<!--![Terminal View of OneART.py](/img/ai/one_ai_plugin/documentation/vhdl_terminal.png)-->
+![Terminal View of OneART.py](/img/ai/one_ai_plugin/documentation/vhdl_terminal.png)
 
 After launch, the script establishes a serial connection to the FPGA. Type ``?`` to test the connection. IF everything works the FPGA will send the [answer](https://en.wikipedia.org/wiki/Answer_to_the_Ultimate_Question_of_Life,_the_Universe,_and_Everything) to the question about life, the universe and everything. Type ``c`` to start the webcam capture. This will then continuously send frames from the capture to the FPGA and print the classification result onto the depicted webcam feed. You now can hold written digits in front of the camera to verify the accuracy of the CNN.
 
-<!--![Classification Result](/img/ai/one_ai_plugin/documentation/vhdl_stream_screenshot.jpg)-->
+![Classification Result](/img/ai/one_ai_plugin/documentation/vhdl_stream_screenshot.jpg)
 
 The following is a complete list of available commands within the script environment:
 
