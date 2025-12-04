@@ -8,7 +8,7 @@ sidebar_label: VHDL Documentation
 
 When exporting your trained model you have the option to export as a VHDL project for an FPGA. Aside from the model itself this project contains also the VHDL code necessary to run your model. This page gives you the necessary information to integrate your OneAI model into your FPGA project.
 
-# Export Project Content
+## Export Project Content
 
 The VHDL export gives you a folder with the following content:
 - ``Core`` Contains helper modules concerning CNN-architecture.
@@ -20,7 +20,7 @@ The VHDL export gives you a folder with the following content:
 - ``ONEAI_Top.vhd`` The top level design entity to integrate into your project.
 - ``Test_Data_Package.vhd`` Test data for simulation.
 
-# Core Concept: Stream
+## Core Concept: Stream
 
 All modules of the OneAI-code make use of streams. These are a signal type, used to pass data into and throughout the CNN in VHDL. The stream type ``CNN_Stream_T`` is defined in the file ``ONEAI_Confic_Package.vhd``. Streams implement the following signals:
 
@@ -34,7 +34,7 @@ This is paired with a ``Data`` signal consisting of n-dimensions depending on th
 
 In case of multiple input ``Data`` signals (e.g. multi image analysis) all ``Data`` signals need to adhere to the same input stream, i.e. they must share clock, valid, ... signals.
 
-# Simulation
+## Simulation
 
 For simulation purposes you can simply use the ``ONEAI_Simulation`` module as the top level entity.
 
@@ -46,7 +46,7 @@ This simulation module will take example data included in the ``Test_Data_Packag
 ![ModelSim oStream Wave](/img/ai/one_ai_plugin/documentation/vhdl_simulation_oStream.png)
 
 
-# Implementation
+## Implementation
 
 When including the OneAI model into your FPGA project simply include the ``ONEAI_Top.vhd`` module ``CNN`` into your design. The module has one input stream paired with one or more data signals. E.g. for standard RGB-image classification with one image, there is one data signal ``iData_1`` with three channels. A multi image input would require multiple ``iData_x`` signals.
 
