@@ -455,16 +455,24 @@ const config: Config = {
         link: '/docs/one-ai/seminars/arrow-agilex3',
         cta: 'Register Now',
       },
-      qualityControlWebinar: {
-        announcementId: 'quality_control_webinar_2025',
-        translateId: 'quality_control',
-        title: 'FREE Webinar: Build Your Own AI Quality Control in < 1 Day',
-        subtitle: 'November 27, 2025 at 10 AM (CET) • Learn Vision AI from Dataset to Deployment',
+      qualityControlWorkshop: {
+        announcementId: 'workshop_2025_12_18',
+        translateId: 'workshop_2025_12_18',
+        title: 'FREE Online Workshop: Build Your Own AI Quality Control',
+        subtitle: 'December 18, 2025 at 10 AM (CET) • Applying Vision AI from Dataset to Deployment',
         link: 'https://short.one-ware.com/webinar/',
         cta: 'Register Now',
       },
+      qualityControlWebinar: {
+        announcementId: 'webinar_2026_01_28',
+        translateId: 'webinar_2026_01_28',
+        title: 'FREE Online Webinar: Build Your Own AI Quality Control',
+        subtitle: 'January 28, 2026 at 10 AM (CET) • Learn Vision AI from Dataset to Deployment',
+        link: 'https://short.one-ware.com/webinar-january/',
+        cta: 'Register Now',
+      },
     },
-    activeAnnouncement: 'arrowWorkshop',
+    activeAnnouncement: 'qualityControlWorkshop',
   } satisfies Preset.ThemeConfig,
 };
 
