@@ -6,7 +6,7 @@ This website is built using [Docusaurus](https://docusaurus.io/), a modern stati
 
 ### Requirements
 
-- Node 20
+- Node 22
 
 ### Installation
 
