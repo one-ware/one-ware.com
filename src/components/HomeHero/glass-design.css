@@ -1,0 +1,188 @@
+:root {
+    --primary: var(--ifm-color-primary);
+
+    --glass-surface: rgba(0, 0, 0, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-highlight: rgba(255, 255, 255, 0.2);
+    --container-bg: rgba(20, 20, 20, 0.4);
+    --blur-strength: 10px;
+}
+
+.oneware-dashboard-container {
+    position: relative;
+    z-index: 10;
+
+    width: 95vw;
+    height: auto;
+    min-height: 45vh;
+    max-width: 100%;
+    aspect-ratio: 3/4;
+
+    background: var(--container-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    box-shadow:
+        0 20px 40px -10px rgba(0,0,0,0.6),
+        inset 0 0 0 1px rgba(255,255,255,0.05);
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+@media (min-width: 640px) {
+    .oneware-dashboard-container {
+        width: 85vw;
+        aspect-ratio: 4/3;
+        border-radius: 12px;
+        box-shadow:
+            0 30px 60px -10px rgba(0,0,0,0.6),
+            inset 0 0 0 1px rgba(255,255,255,0.05);
+    }
+}
+
+@media (min-width: 1024px) {
+    .oneware-dashboard-container {
+        width: 80vw;
+        max-width: 1000px;
+        min-height: 55vh;
+    }
+}
+
+@media (min-width: 1536px) {
+    .oneware-dashboard-container {
+        width: 90vw;
+        height: 60vh;
+        min-height: auto;
+        aspect-ratio: auto;
+        max-width: 1400px;
+        border-radius: 14px;
+        box-shadow:
+            0 40px 80px -10px rgba(0,0,0,0.6),
+            inset 0 0 0 1px rgba(255,255,255,0.05);
+    }
+}
+
+.oneware-window-header {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.02);
+    flex-shrink: 0;
+}
+
+@media (min-width: 640px) {
+    .oneware-window-header {
+        height: 38px;
+        padding: 0 16px;
+    }
+}
+
+@media (min-width: 1536px) {
+    .oneware-window-header {
+        height: 44px;
+        padding: 0 20px;
+    }
+}
+
+.oneware-window-controls {
+    display: flex;
+    gap: 6px;
+}
+
+@media (min-width: 640px) {
+    .oneware-window-controls {
+        gap: 8px;
+    }
+}
+
+.oneware-control-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+@media (min-width: 640px) {
+    .oneware-control-dot {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+.oneware-dot-red {
+    background-color: #FF5F56;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.oneware-dot-yellow {
+    background-color: #FFBD2E;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.oneware-dot-green {
+    background-color: #27C93F;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.oneware-window-title {
+    flex: 1;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.05em;
+    margin-right: 40px;
+}
+
+@media (min-width: 640px) {
+    .oneware-window-title {
+        font-size: 11px;
+        margin-right: 48px;
+    }
+}
+
+@media (min-width: 1536px) {
+    .oneware-window-title {
+        font-size: 12px;
+        margin-right: 52px;
+    }
+}
+
+.oneware-glass-panel {
+    background: var(--glass-surface);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    backdrop-filter: blur(var(--blur-strength));
+    -webkit-backdrop-filter: blur(var(--blur-strength));
+    box-shadow:
+        0 4px 12px rgba(0,0,0,0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.oneware-section-header {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ifm-color-primary);
+    margin-bottom: 4px;
+    padding-left: 4px;
+    text-shadow: 0 0 20px rgba(0, 255, 209, 0.4);
+}
+
+.scrollbar-thin {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+    display: none;
+}
