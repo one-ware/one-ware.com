@@ -1,5 +1,5 @@
 ---
-slug: december-2026-devupdate
+slug: december-2025-devupdate
 title: "December DEV Update 🎅🏻"
 authors: [hmennen]
 tags:
