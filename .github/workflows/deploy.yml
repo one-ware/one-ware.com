@@ -21,13 +21,23 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Install sshpass
-        run: sudo apt-get update && sudo apt-get install -y sshpass
-      - name: Deploy with rsync over SSH/password
+      - name: Deploy via SFTP using LFTP
+        env:
+          LFTP_USER: ${{ secrets.ONEWARE_SFTP_SSH_USER }}
+          LFTP_PASS: ${{ secrets.ONEWARE_SFTP_SSH_PW }}
         run: |
-          sshpass -p "${{ secrets.ONEWARE_SFTP_SSH_PW }}" \
-          rsync -avz \
+          lftp -f "
+          set sftp:auto-confirm yes
+          set net:max-retries 2
+          set net:timeout 20
+          open -u $LFTP_USER,$LFTP_PASS sftp://5017617850.ssh.w2.strato.hosting
+          mirror -R \
+            --parallel=4 \
+            --only-newer \
+            --verbose \
+            --exclude-glob .htaccess \
+            --exclude-glob .well-known/* \
             --delete \
-            -e "ssh -o StrictHostKeyChecking=no" \
-            ./build/ \
-            ${{ secrets.ONEWARE_SFTP_SSH_USER }}@5017617850.ssh.w2.strato.hosting:/
+            build/ /
+          bye
+          "
