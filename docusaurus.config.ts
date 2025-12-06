@@ -1,6 +1,8 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+const path = require("path");
+const fs = require("fs-extra");
 
 const config: Config = {
   title: "ONE WARE",
@@ -44,6 +46,21 @@ const config: Config = {
   //],
 
   plugins: [
+    async function preserveTimeStamps(context, options) {
+      return {
+        name: "preserve-static-timestamps",
+        async postBuild({ siteDir, outDir }) {
+          const staticDir = path.join(siteDir, "static");
+          const destDir = outDir;
+
+          await fs.copy(staticDir, destDir, {
+            overwrite: true,
+            preserveTimestamps: true,   // ⭐ THIS IS THE MAGIC SETTING
+          });
+        },
+      };
+    },
+
     async function myPlugin(context, options) {
       return {
         name: "docusaurus-tailwindcss",

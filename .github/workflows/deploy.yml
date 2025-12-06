@@ -21,26 +21,16 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Install lftp
-        run: |
-          sudo apt install -y lftp
-      - name: Deploy via SFTP using LFTP
-        env:
-          LFTP_USER: ${{ secrets.ONEWARE_SFTP_SSH_USER }}
-          LFTP_PASS: ${{ secrets.ONEWARE_SFTP_SSH_PW }}
-        run: |
-          lftp -f "
-          set sftp:auto-confirm yes
-          set net:max-retries 2
-          set net:timeout 20
-          open -u $LFTP_USER,$LFTP_PASS sftp://5017617850.ssh.w2.strato.hosting
-          mirror -R \
-            --parallel=4 \
-            --only-newer \
-            --verbose \
-            --exclude-glob .htaccess \
-            --exclude-glob .well-known/* \
-            --delete \
-            build/ /
-          bye
-          "
+      - name: Upload
+        uses: Black-HOST/deployer@v1
+        with:
+          protocol: sftp
+          server: 5017617850.ssh.w2.strato.hosting
+          username: ${{ secrets.ONEWARE_SFTP_SSH_USER }}
+          password: ${{ secrets.ONEWARE_SFTP_SSH_PW }}
+          remote_dir: "/"
+          local_dir: "build/."
+          exclude: ".htaccess,.well-known/**"
+          delete: true
+          parallel: 4
+          only_newer: true

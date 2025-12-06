@@ -16,6 +16,8 @@ tags:
 
 We are pleased to announce a **strategic partnership between El Camino GmbH and ONE WARE GmbH** to accelerate the deployment of highly efficient AI solutions.
 
+<!-- truncate -->
+
 By combining **El Camino’s deep FPGA and solution expertise** with **ONE WARE’s ONE AI platform**, both companies enable:
 
 - **Faster implementation**  
