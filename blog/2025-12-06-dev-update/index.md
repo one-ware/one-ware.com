@@ -44,7 +44,7 @@ Having fast and accurate prefilters is one of our biggest priorities. Before, we
 
 With update 0.8.0, we have a new system in place, swapping out the CPU filters with fancy GPU-rendered ones! This allows us to apply the filters with full accuracy while keeping great performance.
 
-<video autoPlay loop muted playsInline>
+<video autoPlay loop muted playsInline style={{ maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto', marginBottom: '5px' }}>
   <source src={require('./img/prefilters.webm').default} type="video/webm" />
 </video>
 
