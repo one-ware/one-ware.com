@@ -40,7 +40,7 @@ You can use the following hotkeys now:
 
 ## GPU-Accelerated Prefilters
 
-Having fast and accurate prefilters is one of our biggest priorities. Before, we were struggling with performance, which is why we always applied the prefilters to the preview only. This worked quite well but had some accuracy issues.
+Having fast and accurate prefilters is one of our biggest priorities. Before, we were struggling with performance, which is why we always applied the prefilters to the reduced preview size. This worked quite well but had some accuracy issues, since an accurate preview needs to be applied for the full scaled image.
 
 With update 0.8.0, we have a new system in place, swapping out the CPU filters with fancy GPU-rendered ones! This allows us to apply the filters with full accuracy while keeping great performance.
 
