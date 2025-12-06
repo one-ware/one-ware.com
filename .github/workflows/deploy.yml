@@ -21,6 +21,9 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Install lftp
+        run: |
+          sudo apt install -y lftp
       - name: Deploy via SFTP using LFTP
         env:
           LFTP_USER: ${{ secrets.ONEWARE_SFTP_SSH_USER }}
