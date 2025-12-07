@@ -1,7 +1,7 @@
 ---
 id: documentation-cpp-api
 title: C++-API Documentation
-sidebar_label: C++-API Documentation
+sidebar_label: C++ API
 ---
 
 # The OneWare C++-API

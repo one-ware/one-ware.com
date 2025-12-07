@@ -86,7 +86,7 @@ Then, we estimate the variance of numbers from the same class. We observe quite 
 The last model setting is the option to organize the classes into **Groups**. This is an advanced setting that isn't necessary for this task, so we leave it at the default. We recommend leaving all classes in the same group unless you are certain that your task benefits from splitting the model into multiple sub-models.
 
 ## Training the model
-[🔗 training settings guide](/docs/one-ai/getting-started/training-and-export#training-a-new-ai-model)  
+[🔗 training settings guide](/docs/one-ai/getting-started/training)  
 Now, it's time to set up the training configuration for the model. In the **Training** tab we need to click on **Sync** to synchronize our data and existing model trainings with the ONE WARE servers. After that, we create a new model and click on **Train**. For this demo, a **Training Time** of **20 minutes** is required for the model to fully converge. We leave the **patience** at the default value of **30%**.
 
 The setting **Enable Quantization Optimization** is used to train a quantized model instead of a normal floating point model. Quantized models use fewer bits to represent the model's weights, which reduces the memory consumption and increases the speed. Using quantization is required for most FPGAs and also for some microcontrollers, however, it is not possible to export quantized in the ONNX format. Because we aren't going to actually deploy the model on an FPGA in this demo, we leave **Enable Quantization Optimization** unchecked so we can use the ONNX export instead.
@@ -100,7 +100,7 @@ If you don't want to train for that long, you can reduce the **Training Time** t
 Finally, we click on **Start Training**. You can monitor the training progress in the **Logs** and **Statistics** tabs.
 
 ## Model export
-[🔗 model export guide](/docs/one-ai/getting-started/training-and-export#exporting-a-trained-model)  
+[🔗 model export guide](/docs/one-ai/getting-started/export)  
 After the training is completed, we need to export our model. We configured our model to run on an Altera™ Max® 10 16K, but for now we are content with testing its capabilities on a computer. To use the model inside of OneWare Studio's camera tool, we need to export it as an ONNX model. To do so, we click on the **Export** button, which opens a new window with configurations. In the **Export type** drop-down menu, we select ONNX since that is the format we need.
 
 Next we can activate different settings, that change how our model is exported. If we check the **Export with pre- and postprocessing** checkbox, ONE AI will build all of our filters directly into the model. We activate this setting, because the filter pipeline is an important part of our model. The next setting allows us to change between exporting a floating point or quantized model. At the moment, the ONNX model export supports only floating point models, so we will receive a floating point model whether we check the box or not.
@@ -114,7 +114,7 @@ After the export is finished, we can download the exported ONNX model by clickin
 ![model_download](/img/ai/one_ai_plugin/demos/handwritten-digits/nist_sd19_download.jpg)
 
 ## Testing the model
-[🔗 camera tool guide](/docs/one-ai/getting-started/camera-tool)  
+[🔗 camera tool guide](/docs/one-ai/getting-started/dataset/camera-tool)  
 Now it's time to test our trained model. To do so, we click on **AI** in the menu bar and then **Camera Tool**. Select your camera in the drop-down menu, then click on the plus icon to add it. Next, we need to change the camera's resolution by clicking on the gear icon and setting the **Width** and **Height** to **128** to match the resolution of our images. Afterwards, you need to press the **Restart Camera** button to apply the changes. It might happen that your camera doesn't support this specific resolution. You can check this by looking at the **Supported Size** field directly above the **Restart Camera Button**. If it doesn't show **128 x 128** you need to add a crop to the camera image. You can enter the position and size of the crop at the bottom of the settings. You can tune the position by dragging the crop that is shown in the preview. You can also draw the crop directly onto the camera preview but it is a lot harder to select a crop that is exactly **128 x 128** this way.
 
 We can improve the classification accuracy by going to the camera settings and turning the **Brightness** and **Contrast** to their maximum. This results in the paper showing up in a bright white with a deep black number. For some cameras it is important to turn on **Auto Exposure** further down in the settings, because the image would be underexposed otherwise.

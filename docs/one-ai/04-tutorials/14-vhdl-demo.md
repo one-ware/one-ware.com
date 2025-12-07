@@ -29,7 +29,7 @@ As we want to export for an FPGA the option **Enable Quantization Optimization**
 
 
 ## Model export {#export}
-[🔗 model export guide](/docs/one-ai/getting-started/training-and-export#exporting-a-trained-model)  
+[🔗 model export guide](/docs/one-ai/getting-started/export)  
 After the training is completed, we need to export our model. To do so, we click on the **Export** button, which opens a new window with configurations. In the **Export type** drop-down menu, we select **Project** and then under Platform choose **FPGA**. The **Model Type** is then automatically changed to **VHDL**, exactly what we want.
 
 Next we can activate different settings, that change how our model is exported. If we check the **Export with pre- and postprocessing** checkbox, ONE AI will build all of our filters directly into the model. We activate this setting, because the filter pipeline is an important part of our model. The next setting allows us to change between exporting a floating point or quantized model. As we want a quantized model, we leave this unchecked.

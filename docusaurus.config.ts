@@ -82,7 +82,7 @@ const config: Config = {
           },
           {
             from: '/one-ai/choosing-parameters',
-            to: '/docs/one-ai/help/choosing-parameters-guide',
+            to: '/docs/one-ai/getting-started/help/choosing-parameters-guide',
           },
           {
             from: '/webinar-2025-11-27',
@@ -187,7 +187,7 @@ const config: Config = {
             },
             {
               type: "html",
-              value: '<a href="/docs/one-ai/getting-started/camera-tool" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Capture Tool</a>',
+              value: '<a href="/docs/one-ai/getting-started/dataset/camera-tool" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Capture Tool</a>',
             },
             {
               type: "html",
@@ -195,7 +195,7 @@ const config: Config = {
             },
             {
               type: "html",
-              value: '<a href="/docs/one-ai/getting-started/training-and-export" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Export</a>',
+              value: '<a href="/docs/one-ai/getting-started/export" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Export</a>',
             },
             {
               type: "html",
@@ -365,8 +365,8 @@ const config: Config = {
           style: { "marginLeft": "2px", "marginRight": "2px" }
         },
         {
-          to: "/one-ai#getStarted",
-          label: "Get Started",
+          to: "/docs/one-ai/getting-started",
+          label: "Free Download",
           position: "right",
           className: "button button--primary button--md text-gray-900 font-bold navbarbutton getstartedbutton",
           style: { "marginLeft": "2px" }

@@ -4,6 +4,11 @@ title: Installation and Registration
 sidebar_label: Installation
 ---
 
+
+import Link from '@docusaurus/Link';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 In this tutorial, we will guide you through the setup and installation process to get you started with ONE AI.
 
 ONE AI consists of a cloud service and an extension for our open source software OneWare Studio. OneWare Studio runs on your local PC and is used to configure your AI project. When you are ready, the data is send to the OneWare Cloud and your model is trained on our servers. This ensures maximum performance - you don't need powerful hardware to train a model with ONE AI.
@@ -11,7 +16,75 @@ ONE AI consists of a cloud service and an extension for our open source software
 The data that you upload to the OneWare Cloud is stored securely on our own servers in germany. If you work with sensitive data, you can contact us via mail: sales@one-ware.com, so we can provide a local training service that runs on your own hardware and ensures that the data doesn't leave your company. While you use OneWare Studio, your data is stored locally on your PC until you press the ``Sync`` button in the ``Training`` tab. This means that you can already start with creating an account and configuring your settings until we can provide your local training service.
 
 ## 1. Download and install OneWare Studio
-First, you need to install OneWare Studio on your PC. You can download it [here](/docs/studio/setup) for Windows, Linux and macOS. Simply follow the installer and start OneWare Studio after you've finished the installation process.
+First, you need to install OneWare Studio on your PC. 
+
+<Tabs
+  groupId="operating-systems"
+  queryString="current-os">
+  <TabItem value="windows" label='Windows'>
+
+Download ONE WARE Studio:
+
+<iframe style={{marginBottom: "5px"}} src="https://cdn.one-ware.com/onewarestudio/WinDownload.htm" frameborder="0" width="100%" height="40px"></iframe>
+
+Or install using winget:
+```
+winget install OneWare.OneWareStudio
+```
+
+  </TabItem>
+  <TabItem value="linux" label='Linux'>
+
+#### Using Snap (Recommended)
+
+ONE WARE Studio is officially distributed as a Snap package in the Snap Store:<br/>
+
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/oneware)
+
+You can install it by running:
+
+```
+sudo snap install --classic oneware
+```
+
+**Note:** If snap isn't available in your Linux distribution, please check the following [Installing Snapd guide](https://snapcraft.io/docs/installing-snapd), which can help you get that set up.
+
+#### Using Flatpak
+
+Another possibility is the use of our flatpak: <br/>
+
+[![Get it from Flathub](https://flathub.org/api/badge?locale=en)](https://flathub.org/apps/com.one_ware.OneWare)
+
+You can install it by running:
+
+```
+flatpak install flathub com.one_ware.OneWare
+```
+
+#### Manual Installation
+
+If you can't install snap or flatpak on your machine, it is possible to download the binaries manually from [GitHub](https://github.com/one-ware/OneWare/releases) (select the .tgz version for universal linux support). Please note that as of now these binaries have no update functionality, so make sure to check for updates regularly.
+
+  </TabItem>
+  <TabItem value="macos" label='MacOS'>
+
+:::warning MacOS Version
+**The Application is not signed** yet, so it will be detected as broken by MacOS. 
+You can fix this by executing the following in the terminal **after installing it to /Applications using the .dmg**.
+```
+sudo xattr -r -d com.apple.quarantine '/Applications/OneWare Studio.app'
+``` 
+:::
+
+| Architecture | Download |
+|---|---|
+| x64 (Intel) |<iframe style={{marginTop: "10px"}}  src="https://cdn.one-ware.com/onewarestudio/MacOSDownload-x64.htm" frameborder="0" width="100%" height="40px"></iframe>|
+| arm64 (Apple Silicon) |<iframe style={{marginTop: "10px", marginRight: "50px"}} src="https://cdn.one-ware.com/onewarestudio/MacOSDownload-arm64.htm" frameborder="0" width="100%" height="40px"></iframe>|
+
+  </TabItem>
+</Tabs>
+
+Then Simply follow the installer and start OneWare Studio after you've finished the installation process.
 
 [![Install](/img/ai/one_ai_plugin/getting_started/installation/installation_wizard.webp)](/docs/studio/setup)
 
