@@ -1,0 +1,47 @@
+---
+title: Advanced
+---
+
+## Architectural design
+
+This documentation is beyond the [Getting started](/docs/one-ai/getting-started/export/onnx/) guide and helps you to understand the design to customize it according to your project requirements.
+
+### Prediction flow
+
+This diagrams shows the flow of the prediction process.
+
+![Prediction Flow](img/OneWare.AI.Onnx_Flow.svg)
+
+#### Image processing 
+The default ```IOnnxImageProcessor``` uses SkiaSharp under the hood. As the interface specifies it is required to return ```(float[] imageData, int inputWidth, int inputHeight)``` as well as the original dimension ```(int width, int height)```. 
+This class takes the input dimension specified in the model metadata into account. If nothing is specified, the image dimension will be used. The float Array contains the normalized rgb values. The default one can be replaced in the ```OnnxConfiguration``` (property ImageProcessor)
+available in the ```OnnxModel``` constructor.
+
+#### OnnxPrediction
+The default ```OnnxPrediction``` classes passes the necessary data to the ```InferenceSession``` referenced to the ```OnnxModel``` and processing the output. Aside from the ```OnnxSegmentationPrediction``` the result is scaled back to original image dimension. 
+The segmentation matrix stays unscaled to save memory because most image libraries provide a in-place scaling algorithm anyway. The defaults can be overriden in the ```OnnxConfiguration``` (property PredictionFactory) available in the ```OnnxModel``` constructor.
+
+## Prediction classes
+
+The following diagram shows the default prediction classes:
+
+![Prediction](img/OneWare.AI.Onnx_OnnxPrediction.svg)
+
+### Output data
+
+The following diagram shows the output data classes:
+
+![Output](img/OneWare.AI.Onnx_OnnxOutput.svg)
+
+### Image data processing
+
+The following diagram shows the image data processing class definition:
+
+![Image data processing](img/OneWare.AI.Onnx_IOnnxDataProcessing.svg)
+
+## Getting help
+
+To learn more about OneAI or OneWare Studio, check out the [documentation](/docs/one-ai/getting-started). 
+If the package isn't working the way you expect, or you have questions in generally, don't hesitate to get in touch with us
+via [support@one-ware.com](mailto:support@one-ware.com).
+In addition, we welcome reproducible bug reports as well as feature requests. 

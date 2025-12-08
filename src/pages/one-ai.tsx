@@ -119,7 +119,7 @@ function HomepageHeader() {
 
                 <Link
                   className="button button--primary button--lg text-sm md:text-lg"
-                  href="/one-ai#getStarted"
+                  href="/docs/one-ai/getting-started"
                 >
                   <Translate id="homepage.subtitle.ai.getstarted">Start Now for Free</Translate>
                 </Link>
@@ -164,7 +164,7 @@ function ComparisonSection() {
         { value: "20×", label: "Lower Power", labelId: "homepage.metric.power" },
         { value: "6×", label: "Lower Cost", labelId: "homepage.metric.cost" },
       ],
-      whitepaper: "/docs/one-ai/use-cases/chip",
+      whitepaper: "/docs/one-ai/getting-started/export/FPGA/",
       linkText: "More Details",
       linkTextId: "oneai.usecase.link"
     },
@@ -181,7 +181,26 @@ function ComparisonSection() {
         { value: "1-Click", label: "Deployment", labelId: "oneai.metric.deployment" },
         { value: "< 1 Day", label: "Development Time", labelId: "oneai.metric.devtime" },
       ],
-      whitepaper: "/docs/one-ai/use-cases/camera-tool",
+      whitepaper: "/docs/one-ai/getting-started/dataset/camera-tool",
+      linkText: "More Details",
+      linkTextId: "oneai.usecase.link"
+    },
+    {
+      title: "Direct Integration with SDK",
+      titleId: "oneai.usecase.sdk.title",
+      subtitle: "Deploy AI in Any Application",
+      subtitleId: "oneai.usecase.sdk.subtitle",
+      backgroundImage: "/img/ai/one_ai_plugin/demos/overlap-difference/image_000118_test.png",
+      displayImage: "/img/ai/one_ai_plugin/use_cases/pcb/integration.png",
+      description: "ONE AI can create generic ONNX or Tensorflow Lite models that can be integrated directly with your application using our SDK. One example AI model,that you can integrate, detects small objects on complex backgrounds and outperformes YOLOv8 with:",
+      descriptionId: "oneai.usecase.sdk.description",
+      metricsLayout: 3,
+      metrics: [
+        { value: "95.7", label: "F1 Score", labelId: "homepage.metric.f1score" },
+        { value: "8×", label: "Smaller Model", labelId: "homepage.metric.modelsize" },
+        { value: "10×", label: "Fewer Errors", labelId: "homepage.metric.fewererrors" },
+      ],
+      whitepaper: "/docs/one-ai/getting-started/export/onnx",
       linkText: "More Details",
       linkTextId: "oneai.usecase.link"
     },
@@ -198,7 +217,7 @@ function ComparisonSection() {
         { value: "98.4", label: "F1 Score", labelId: "oneai.metric.f1score" },
         { value: "750 %", label: "Speed Increase", labelId: "oneai.metric.speed" },
       ],
-      whitepaper: "/docs/one-ai/use-cases/pcb",
+      whitepaper: "/docs/one-ai/getting-started/export",
       linkText: "More Details",
       linkTextId: "oneai.usecase.link"
     }
@@ -287,8 +306,8 @@ function ComparisonSection() {
 
                         {/* Metrics & Button unten */}
                         <div className="flex flex-col gap-4">
-                          {/* Metrics Grid - 2x2 auf Mobile, sonst in einer Reihe */}
-                          <div className={`grid gap-2 w-full ${useCase.metrics.length === 4 ? 'grid-cols-2 lg:grid-cols-4' : 'grid-cols-2'}`}>
+                          {/* Metrics Grid - 2x2 auf Mobile, bei 3 oder 4 Metrics in einer Reihe */}
+                          <div className={`grid gap-2 w-full ${useCase.metrics.length === 4 ? 'grid-cols-2 lg:grid-cols-4' : useCase.metrics.length === 3 ? 'grid-cols-3' : 'grid-cols-2'}`}>
                             {useCase.metrics.map((metric, metricIdx) => (
                               <div key={metricIdx} className="p-3 bg-black/40 border border-white/10 rounded-lg text-center">
                                 <h5 className="text-xl sm:text-2xl font-bold primary-text">
@@ -386,7 +405,7 @@ function GetStarted() {
           <p className="text-xl md:text-2xl font-bold mt-8">
             <div className="mb-4">
               1.{" "}
-              <a href="/docs/studio/setup" target="_blank" className="underline hover:no-underline">
+              <a href="/docs/one-ai/getting-started#installation" target="_blank" className="underline hover:no-underline">
                 <Translate id="oneai.getstarted.step2.download">
                   Download
                 </Translate>
@@ -416,7 +435,7 @@ function GetStarted() {
           <div className="flex justify-center gap-4 mt-2 flex-col md:flex-row">
             <a href="/docs/one-ai/getting-started" target="_blank">
               <button className="button button--primary text-xl">
-                <Translate id="oneai.getstarted.cta.tutorial">Complete Tutorial</Translate>
+                <Translate id="oneai.getstarted.cta.tutorial">Quick Start Guide</Translate>
               </button>
             </a>
           </div>

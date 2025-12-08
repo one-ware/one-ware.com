@@ -1,6 +1,8 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+const path = require("path");
+const fs = require("fs-extra");
 
 const config: Config = {
   title: "ONE WARE",
@@ -44,6 +46,21 @@ const config: Config = {
   //],
 
   plugins: [
+    async function preserveTimeStamps(context, options) {
+      return {
+        name: "preserve-static-timestamps",
+        async postBuild({ siteDir, outDir }) {
+          const staticDir = path.join(siteDir, "static");
+          const destDir = outDir;
+
+          await fs.copy(staticDir, destDir, {
+            overwrite: true,
+            preserveTimestamps: true,   // ⭐ THIS IS THE MAGIC SETTING
+          });
+        },
+      };
+    },
+
     async function myPlugin(context, options) {
       return {
         name: "docusaurus-tailwindcss",
@@ -65,7 +82,7 @@ const config: Config = {
           },
           {
             from: '/one-ai/choosing-parameters',
-            to: '/docs/one-ai/help/choosing-parameters-guide',
+            to: '/docs/one-ai/getting-started/help/choosing-parameters-guide',
           },
           {
             from: '/webinar-2025-11-27',
@@ -170,7 +187,7 @@ const config: Config = {
             },
             {
               type: "html",
-              value: '<a href="/docs/one-ai/getting-started/camera-tool" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Capture Tool</a>',
+              value: '<a href="/docs/one-ai/getting-started/dataset/camera-tool" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Capture Tool</a>',
             },
             {
               type: "html",
@@ -178,7 +195,7 @@ const config: Config = {
             },
             {
               type: "html",
-              value: '<a href="/docs/one-ai/getting-started/training-and-export" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Export</a>',
+              value: '<a href="/docs/one-ai/getting-started/export" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Export</a>',
             },
             {
               type: "html",
@@ -348,8 +365,8 @@ const config: Config = {
           style: { "marginLeft": "2px", "marginRight": "2px" }
         },
         {
-          to: "/one-ai#getStarted",
-          label: "Get Started",
+          to: "/docs/one-ai/getting-started",
+          label: "Free Download",
           position: "right",
           className: "button button--primary button--md text-gray-900 font-bold navbarbutton getstartedbutton",
           style: { "marginLeft": "2px" }
@@ -455,16 +472,24 @@ const config: Config = {
         link: '/docs/one-ai/seminars/arrow-agilex3',
         cta: 'Register Now',
       },
-      qualityControlWebinar: {
-        announcementId: 'quality_control_webinar_2025',
-        translateId: 'quality_control',
-        title: 'FREE Webinar: Build Your Own AI Quality Control in < 1 Day',
-        subtitle: 'November 27, 2025 at 10 AM (CET) • Learn Vision AI from Dataset to Deployment',
+      qualityControlWorkshop: {
+        announcementId: 'workshop_2025_12_18',
+        translateId: 'workshop_2025_12_18',
+        title: 'FREE Online Workshop: Build Your Own AI Quality Control',
+        subtitle: 'December 18, 2025 at 10 AM (CET) • Applying Vision AI from Dataset to Deployment',
         link: 'https://short.one-ware.com/webinar/',
         cta: 'Register Now',
       },
+      qualityControlWebinar: {
+        announcementId: 'webinar_2026_01_28',
+        translateId: 'webinar_2026_01_28',
+        title: 'FREE Online Webinar: Build Your Own AI Quality Control',
+        subtitle: 'January 28, 2026 at 10 AM (CET) • Learn Vision AI from Dataset to Deployment',
+        link: 'https://short.one-ware.com/webinar-january/',
+        cta: 'Register Now',
+      },
     },
-    activeAnnouncement: 'arrowWorkshop',
+    activeAnnouncement: 'qualityControlWorkshop',
   } satisfies Preset.ThemeConfig,
 };
 

@@ -49,7 +49,7 @@ To keep it short, we just point out the values we used for the following setting
 ### Prefilers
 As shown under **Initial Resize**, the images remain relatively large for the requirements of this task, even after downscaling. Since high pixel resolution is not necessary here, keeping the initial size would only increase model complexity and raise the risk of overfitting. To address this, we apply a **resolution filter** that reduces the image size to **25%** of the original.
 Next, we add a **Color Filter** after the augmentation. This placement is important because we will apply additional color augmentations afterward. The goal is to enhance the contrast and make the logo stand out more clearly. We set the **Brightness** to **-20** and the **Contrast** to **150**.
-Since color is not important for this task, we remove it by setting the **Saturation** to **0**. To avoid unnecessary processing of color channels, which is now irrelevant because the image is grayscale, we disable the **green (G) **and **blue (B)** channels in the **Channel Filter**.
+Since color is not important for this task, we remove it by setting the **Saturation** to **0**. To avoid unnecessary processing of color channels, which is now irrelevant because the image is grayscale, we disable the **green (G)** and **blue (B)** channels in the **Channel Filter**.
 
 ![prefilters](/img/ai/one_ai_plugin/demos/tea_cup_print/prefilter.jpg)
 
@@ -67,8 +67,7 @@ We use the following augmentations:
 In general, when applying augmentation, keep in mind that it should always fit the corresponding task. It doesn't make sense to flip the image in any way if the cup cannot realistically appear in that orientation in the real world.
 
 ## Model settings
-We set the Maximum Memory Usage to 90%, because we are not limited by any hardware for this tutorial.We set the estimated surrounding minimum values to 25 for width and 20 for height, and the maximum values to 40 for width and 30 for height.
-We change both **Estimated Surrounding Min** values to **15%** and both **Estimated Surrounding Max** values to **35%**.
+We set the **Maximum Memory Usage** to **90%**, because we are not limited by any hardware for this tutorial. We set the estimated surrounding **minimum** values to **25** for **width** and **20** for **height**, and the **maximum** values to **40** for **width** and **30** for **height**.
 The **Same Class Difference** is set to **20%**, since the print is always the same but shown from different angles. 
 The **Background Difference** is set to **75%**, because we have very different backgrounds in the pictures. However, some pictures share the same background and just show a different rotation of the cup and print.
 For **Detect Simplicity** we choose **75%**, because the task is relatively simple.   
@@ -108,7 +107,7 @@ This opens the browser, where you can log in to your OneWare cloud and view some
 </div>
 
 ## Model export
-[🔗 model export guide](/docs/one-ai/getting-started/training-and-export#exporting-a-trained-model)
+[🔗 model export guide](/docs/one-ai/getting-started/export)
 To make the model available for different tasks, you can export and download it. Click on **Export** to open the export configuration menu. 
 
 ![model_export](/img/ai/one_ai_plugin/demos/tea_cup_print/export_detector.jpg)

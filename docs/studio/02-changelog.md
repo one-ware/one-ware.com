@@ -4,6 +4,14 @@ title: ONE WARE Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.21.17.0
+
+- Fix Opacity for Watermarks
+- Add PackageWindowService
+- Upgrade to .NET 10
+- Fix folder deletion crash
+- Simplify feedback form
+
 ## 0.21.16.0
 
 - Add possibility to switch between node selectors

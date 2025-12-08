@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
       - name: Install dependencies
         run: npm ci
       - name: Build
@@ -32,4 +32,5 @@ jobs:
           local_dir: "build/."
           exclude: ".htaccess,.well-known/**"
           delete: true
+          parallel: 4
           only_newer: true

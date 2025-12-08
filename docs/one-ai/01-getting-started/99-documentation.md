@@ -1,7 +1,7 @@
 ---
 id: one-ai-documentation
-title: Full Documentation
-sidebar_label: Full Documentations
+title: Backup Documentation
+sidebar_label: Backup Documentations
 draft: true
 ---
 
@@ -264,7 +264,7 @@ This augmentation adds a random noise to the images to help the model become rob
 
 ## 7. Model Settings
 The ``Model Settings`` tab allows you to tune the model generation to your specific needs. You can make further specifications on the parameters you want to predict, e.g. whether you want to predict an objects position and size or whether you only need its position. For achieving the best results, you also need to make some estimates about your task, like specifying the expected size of objects or the overall complexity of the task.  
-For a more detailed explanation, you can follow [this guide](/docs/one-ai/help/choosing-parameters-guide) on how to set the right parameters.
+For a more detailed explanation, you can follow [this guide](/docs/one-ai/getting-started/help/choosing-parameters-guide) on how to set the right parameters.
 
 ### Output Settings
 <img src="/img/ai/one_ai_plugin/getting_started/model_settings_output.png" alt="Model Settings Output" style={{ width: '100%' }} /> 
@@ -364,7 +364,7 @@ Select the model you want to train with the current data and settings. Then clic
 
 ![Train 2](/img/ai/one_ai_plugin/getting_started/train_2.webp)
 
-First, you need to specify for how long you want to train your model. A detailed guide what training time works best can be found [here](/docs/one-ai/help/choosing-parameters-guide#training). You can also use early stopping to end the training early if the model doesn't improve any more. To do so you need to set the ``Patience for Early Stopping``. For example, if you set the training time to an hour and the patience to 10%, the training is stopped early if the model doesn't improve for six minutes.  
+First, you need to specify for how long you want to train your model. A detailed guide what training time works best can be found [here](/docs/one-ai/getting-started/help/choosing-parameters-guide#training). You can also use early stopping to end the training early if the model doesn't improve any more. To do so you need to set the ``Patience for Early Stopping``. For example, if you set the training time to an hour and the patience to 10%, the training is stopped early if the model doesn't improve for six minutes.  
 If you want to export a quantized model, you should ``Enable Quantization Optimization``. Quantization reduces the amount of bits that are used to represent the model weights. This reduces the size of the model and increases its speed while only slightly decreasing its accuracy. This is a huge advantage if you intend to run your model on an FPGA or a microcontroller.  
 If you enable quantization, you can use the ``Percentage Quantization Optimization`` setting to control the percentage of training time that is dedicated to fine-tuning quantized calculations. While quantization aware training improves the performance of quantized models, it also slows down training, so it is a good idea to start the training normally and switch to quantization aware training later on. A good tradeoff between training time and model performance is at 30%, but if you want the best performing model, you should set the percentage to 100%.  
 The next setting allows you to choose whether you only want to train your model on images that contain objects. This allows the model to learn faster how objects look and how to detect them, but the model also spends less time learning how to correctly identify the background.  

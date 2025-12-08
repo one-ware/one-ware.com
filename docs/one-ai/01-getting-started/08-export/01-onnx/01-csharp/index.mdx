@@ -1,0 +1,46 @@
+---
+title: Getting started
+---
+
+[OneWare.AI.Onnx](https://www.nuget.org/packages/OneWare.AI.Onnx) is a helper library to get the predicted result from a OneAI generated .onnx model, which can be used for object-detection, classification or segmentation.
+The api is easy to use, has a clean architecture and is customizable.
+
+With these few lines of code the api consumer is able to extract the OnnxOutput for further data processing:
+
+```csharp
+using SKBitmap skBitmap = SKBitmap.Decode(bitmapPath);
+OnnxModel model = new(onnxModelPath);
+OnnxOutput result = model.PredictOutput(skBitmap, keepSessionOpen: false);
+
+switch (result)
+{
+    case OnnxRectsOutput rectsOutput:
+        //further data processing
+        break;
+    case OnnxClassesOutput classesOutput:
+        //further data processing
+        break;
+    case OnnxSegmentationOutput segmentationOutput:
+        //further data processing
+        break;
+}
+```
+
+The default ```IOnnxImageProcessor``` uses SkiaSharp for extracting the data out of the image. 
+Therefore, the example uses the ```SKBitmap```. This is customizable via the ```OnnxConfiguration``` 
+of the ```OnnxModel```.
+
+## Features
+
++ entire data processing to get the result from a OneAI generated .onnx model
++ most efficient image data extraction when using the default IOnnxImageProcessor
++ customizable through the configuration property in the ```OnnxModel```. Within this property the api consumer is e.g. able to specify
+his own ```IOnnxImageProcessor``` as well as override the default ```OnnxPrediction``` for full control of data processing.
++ [advanced documentation](/docs/one-ai/getting-started/export/onnx/csharp/advanced)
+
+## Getting help
+
+To learn more about OneAI or OneWare Studio, check out the [documentation](https://one-ware.com/docs/one-ai/getting-started). 
+If the package isn't working the way you expect, or you have questions in generally, don't hesitate to get in touch with us
+via [support@one-ware.com](mailto:support@one-ware.com).
+In addition, we welcome reproducible bug reports as well as feature requests. 

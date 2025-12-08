@@ -235,3 +235,8 @@ body {
     display: none !important;
   }
 }
+
+/* Increase the padding of nested items in the docusaurus sidebar */
+.theme-doc-sidebar-menu .menu__list {
+  padding-left: 2rem;
+}

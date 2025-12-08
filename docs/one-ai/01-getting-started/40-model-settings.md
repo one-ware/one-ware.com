@@ -5,7 +5,7 @@ sidebar_label: Model Settings
 ---
 
 The ``Model Settings`` tab allows you to tune the model generation to your individual needs. You can specify what parameters you want to predict, the required precision and how fast your model needs to be. For example, if the size of your objects is known, you can tell ONE AI to only predict object positions to save resources. To achieve the best results, you also need to make some estimates about your task, like specifying the expected size of objects or the overall complexity of the task.  
-We have a [guide on choosing the right parameters](/docs/one-ai/help/choosing-parameters-guide), which explains the settings using different example tasks. If you're unsure whether your settings are correct, this is a great place to learn more.
+We have a [guide on choosing the right parameters](/docs/one-ai/getting-started/help/choosing-parameters-guide), which explains the settings using different example tasks. If you're unsure whether your settings are correct, this is a great place to learn more.
 
 ## Output Settings
 In the ``Output Settings``, you can control the output of your model and specify the amount of hardware resources it is allowed to use.
@@ -53,7 +53,7 @@ To achieve the best results, you need to provide some additional information abo
 Note that these parameters apply to the preprocessed and augmented images. If you use size augmentations, for example, make sure the estimated surrounding values still match the resulting range of image sizes.
 
 :::tip Need help with the settings?
-Check out our [guide on choosing the right parameters](/docs/one-ai/help/choosing-parameters-guide).
+Check out our [guide on choosing the right parameters](/docs/one-ai/getting-started/help/choosing-parameters-guide).
 :::
 
 ### For Classification Tasks
