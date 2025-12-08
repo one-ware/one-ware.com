@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, memo } from 'react';
+import { useDelayedUnmount } from '../hooks/useDelayedUnmount';
 
 interface TopMetricsProps {
   isActive: boolean;
@@ -14,7 +15,7 @@ interface TopMetricsProps {
   targetAccuracy?: number;
 }
 
-export default function TopMetrics({ isActive, animateSetup = false, animatePrecision = false, isImproved = false, animateHardwareSwitch = false, retrainedPrecision = false, isInteractive = false, onUserChange, onBusyChange, onFpsChange, targetAccuracy }: TopMetricsProps) {
+export default memo(function TopMetrics({ isActive, animateSetup = false, animatePrecision = false, isImproved = false, animateHardwareSwitch = false, retrainedPrecision = false, isInteractive = false, onUserChange, onBusyChange, onFpsChange, targetAccuracy }: TopMetricsProps) {
   const [displayedFps, setDisplayedFps] = useState(25);
   const [displayedAccuracy, setDisplayedAccuracy] = useState(0.0);
   const [selectedHardware, setSelectedHardware] = useState<string | null>(null);
@@ -345,6 +346,9 @@ export default function TopMetrics({ isActive, animateSetup = false, animatePrec
   const formatFps = (val: number) => Math.round(val).toString();
   const formatAcc = (val: number) => val.toFixed(1);
 
+  const shouldRenderCursor = useDelayedUnmount(cursorVisible, 300);
+  const shouldRenderPanels = useDelayedUnmount(isActive && isReady, 1200);
+
   const getPanelStyle = (delayIndex: number): React.CSSProperties => {
       const isVisible = isActive && isReady;
       return {
@@ -360,7 +364,7 @@ export default function TopMetrics({ isActive, animateSetup = false, animatePrec
       };
   };
 
-  const glassPanelClass = "oneware-glass-panel relative overflow-hidden flex-1 flex flex-col px-3 py-2 sm:px-4 sm:py-2.5 lg:px-6 lg:py-3";
+  const glassPanelClass = "oneware-glass-panel relative overflow-hidden flex-1 min-w-0 flex flex-col px-3 py-2 sm:px-4 sm:py-2.5 lg:px-6 lg:py-3";
 
   return (
     <div
@@ -368,32 +372,35 @@ export default function TopMetrics({ isActive, animateSetup = false, animatePrec
       className="relative overflow-hidden"
       style={{ flex: 1, minHeight: 0 }}
     >
-      <div
-        className="pointer-events-none absolute z-50"
-        style={{
-            left: `${cursorPos.x}%`,
-            top: `${cursorPos.y}%`,
-            opacity: cursorVisible ? 1 : 0,
-            transform: `translate(-20%, -20%) scale(${isClicking ? 0.85 : 1})`,
-            transition: cursorTransition === 'none'
-                ? 'transform 0.15s ease-out, opacity 0.3s ease'
-                : `${cursorTransition}, transform 0.15s ease-out, opacity 0.3s ease`
-        }}
-      >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.3))' }}>
-            <path d="M5.5 3.5L19 10L11.5 12.5L9 20L5.5 3.5Z" fill="var(--ifm-color-primary)" stroke="white" strokeWidth="1.5" strokeLinejoin="round"/>
-        </svg>
-      </div>
-
-      <div
-        className="overflow-x-auto lg:overflow-x-visible overflow-y-hidden scrollbar-thin h-full"
-      >
+      {shouldRenderCursor && (
         <div
-          className="flex flex-nowrap h-full w-full"
-          style={{ gap: 'clamp(8px, 1.5vw, 16px)' }}
+          className="pointer-events-none absolute z-50"
+          style={{
+              left: `${cursorPos.x}%`,
+              top: `${cursorPos.y}%`,
+              opacity: cursorVisible ? 1 : 0,
+              transform: `translate(-20%, -20%) scale(${isClicking ? 0.85 : 1})`,
+              transition: cursorTransition === 'none'
+                  ? 'transform 0.15s ease-out, opacity 0.3s ease'
+                  : `${cursorTransition}, transform 0.15s ease-out, opacity 0.3s ease`
+          }}
         >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.3))' }}>
+              <path d="M5.5 3.5L19 10L11.5 12.5L9 20L5.5 3.5Z" fill="var(--ifm-color-primary)" stroke="white" strokeWidth="1.5" strokeLinejoin="round"/>
+          </svg>
+        </div>
+      )}
 
-      <div className={glassPanelClass} style={{ ...getPanelStyle(0), minWidth: '150px' }}>
+      {shouldRenderPanels && (
+        <div
+          className="overflow-x-auto lg:overflow-x-visible overflow-y-hidden scrollbar-thin h-full"
+        >
+          <div
+            className="flex flex-nowrap h-full w-full"
+            style={{ gap: 'clamp(8px, 1.5vw, 16px)' }}
+          >
+
+        <div className={glassPanelClass} style={{ ...getPanelStyle(0), minWidth: '150px' }}>
           <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-50" />
           <div className="oneware-section-header flex-shrink-0" style={{ margin: 0, padding: 0, fontSize: 'clamp(0.45rem, 1.2vw, 0.75rem)' }}>
               HARDWARE
@@ -527,8 +534,9 @@ export default function TopMetrics({ isActive, animateSetup = false, animatePrec
                </svg>
           </div>
       </div>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
-}
+});

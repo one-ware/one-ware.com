@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import React, { useState, useRef, useEffect, useCallback, memo } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import "../glass-design.css";
@@ -9,6 +9,71 @@ import TopMetrics from "./TopMetrics";
 import Neural3DNetwork from "../NeuralNetwork";
 import TrainingProgressOverlay from "./TrainingProgressOverlay";
 import DeployView from "./DeployView";
+import { usePerformance } from "../index";
+import { useDelayedUnmount } from '../hooks/useDelayedUnmount';
+
+const TitleAnimation = memo(function TitleAnimation({
+  isActive,
+  isSmallScreen
+}: {
+  isActive: boolean;
+  isSmallScreen: boolean;
+}) {
+  const spanRef = useRef<HTMLSpanElement>(null);
+  const animationRef = useRef<{ timeout?: NodeJS.Timeout; frame?: number }>({});
+
+  useEffect(() => {
+    if (!isActive) {
+      if (spanRef.current) spanRef.current.textContent = "";
+      return;
+    }
+
+    const targetText = isSmallScreen ? " - CONVEYOR BELT" : " - CONVEYOR BELT DETECTION";
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-=+<>/";
+    let cycles = 0;
+    let lastTime = 0;
+    const interval = 20;
+
+    const animate = (time: number) => {
+      if (time - lastTime < interval) {
+        animationRef.current.frame = requestAnimationFrame(animate);
+        return;
+      }
+      lastTime = time;
+
+      const fixedCount = Math.floor(cycles / 2);
+      const visibleCount = Math.min(targetText.length, fixedCount + 3);
+      let output = "";
+
+      for (let i = 0; i < visibleCount; i++) {
+        if (i < fixedCount) output += targetText[i];
+        else if (targetText[i] === " ") output += " ";
+        else output += chars[Math.floor(Math.random() * chars.length)];
+      }
+
+      if (spanRef.current) spanRef.current.textContent = output;
+
+      if (fixedCount >= targetText.length) {
+        if (spanRef.current) spanRef.current.textContent = targetText;
+        return;
+      }
+
+      cycles++;
+      animationRef.current.frame = requestAnimationFrame(animate);
+    };
+
+    animationRef.current.timeout = setTimeout(() => {
+      animationRef.current.frame = requestAnimationFrame(animate);
+    }, 500);
+
+    return () => {
+      if (animationRef.current.timeout) clearTimeout(animationRef.current.timeout);
+      if (animationRef.current.frame) cancelAnimationFrame(animationRef.current.frame);
+    };
+  }, [isActive, isSmallScreen]);
+
+  return <span ref={spanRef} />;
+});
 
 interface SoftwareWindowProps {
   isDragging: boolean;
@@ -91,9 +156,9 @@ export default function SoftwareWindow({
   const dragStartRef = useRef({ x: 0, y: 0 });
   const windowStartPosRef = useRef({ x: 0, y: 0 });
 
-  const [titleSuffix, setTitleSuffix] = useState("");
-
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  const { tier: performanceTier } = usePerformance();
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -105,6 +170,12 @@ export default function SoftwareWindow({
   }, []);
 
   const isFinalLayout = isCollapsed || isMovingToCorner;
+
+  const cameraStationVisible = isFinalLayout && !(isRetraining || isResettingModel || isRetrainingAnalysis || isCollapsingToCore || isRebuildingBase || isRetrainingPurple);
+  const shouldRenderCameraStation = useDelayedUnmount(cameraStationVisible, 300);
+
+  const trainingPanelVisible = !((isFinalLayout && !isRetrainingAnalysis) || isResettingModel || isCollapsingToCore);
+  const shouldRenderTrainingPanel = useDelayedUnmount(trainingPanelVisible, 800);
 
   const handleHeaderMouseDown = (e: React.MouseEvent) => {
     if (e.button !== 0) return;
@@ -144,37 +215,6 @@ export default function SoftwareWindow({
         document.body.style.cursor = '';
     };
   }, [isWindowDragging]);
-
-
-  useEffect(() => {
-    if (hasTrainingData) {
-      const targetText = isSmallScreen ? " - CONVEYOR BELT" : " - CONVEYOR BELT DETECTION";
-      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-=+<>/";
-      let cycles = 0;
-      const startDelay = setTimeout(() => {
-        const interval = setInterval(() => {
-          let output = "";
-          const fixedCount = Math.floor(cycles / 2);
-          const visibleCount = Math.min(targetText.length, fixedCount + 3);
-          for (let i = 0; i < visibleCount; i++) {
-            if (i < fixedCount) output += targetText[i];
-            else if (targetText[i] === " ") output += " ";
-            else output += chars[Math.floor(Math.random() * chars.length)];
-          }
-          setTitleSuffix(output);
-          if (fixedCount >= targetText.length) {
-            clearInterval(interval);
-            setTitleSuffix(targetText);
-          }
-          cycles++;
-        }, 20);
-        return () => clearInterval(interval);
-      }, 500);
-      return () => clearTimeout(startDelay);
-    } else {
-      setTitleSuffix("");
-    }
-  }, [hasTrainingData, isSmallScreen]);
 
   const handleCablesComplete = () => {
     if (isRetrainingAnalysis && !isRetrainingPurple) {
@@ -481,7 +521,7 @@ export default function SoftwareWindow({
           <div className="oneware-control-dot oneware-dot-yellow"></div>
           <div className="oneware-control-dot oneware-dot-green"></div>
         </div>
-        <div className="oneware-window-title">ONEWARE{titleSuffix}</div>
+        <div className="oneware-window-title">ONEWARE<TitleAnimation isActive={hasTrainingData} isSmallScreen={isSmallScreen} /></div>
       </div>
 
       <div
@@ -539,6 +579,7 @@ export default function SoftwareWindow({
                transition: "all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1)"
              }}
         >
+             {shouldRenderCameraStation && (
              <div
                 style={{
                     position: "absolute",
@@ -547,20 +588,22 @@ export default function SoftwareWindow({
                     width: isFinalLayout ? COL_1_WIDTH : "100%",
                     height: ROW_1_HEIGHT,
                     zIndex: 20,
-                    opacity: (isRetraining || isResettingModel || isRetrainingAnalysis || isCollapsingToCore || isRebuildingBase || isRetrainingPurple) ? 0 : (isFinalLayout ? 1 : 0),
-                    pointerEvents: isFinalLayout && !isCollapsingToCore && !isRebuildingBase && !isRetrainingPurple ? 'auto' : 'none',
+                    opacity: cameraStationVisible ? 1 : 0,
+                    pointerEvents: cameraStationVisible ? 'auto' : 'none',
                     transition: 'opacity 0.25s ease-out'
                 }}
              >
                  <CameraStation
-                   isActive={isFinalLayout && !isRetraining && !isResettingModel && !isRetrainingAnalysis && !isCollapsingToCore && !isRebuildingBase && !isRetrainingPurple}
+                   isActive={cameraStationVisible}
                    onDataFull={handleDataFull}
                    showCelebration={showDataCelebration}
                    allowCustomUpload={isImprovementPhase}
                    onDataDropped={handleDataDropped}
                  />
              </div>
+             )}
 
+                          {shouldRenderTrainingPanel && (
                           <div
                              ref={setTrainingPanelRef}
                              style={{
@@ -572,13 +615,13 @@ export default function SoftwareWindow({
                                     ? "75%"
                                     : "100%",
                                  zIndex: 15,
-                                 opacity: ((isFinalLayout && !isRetrainingAnalysis) || isResettingModel || isCollapsingToCore) ? 0 : 1,
-                                 transform: ((isFinalLayout && !isRetrainingAnalysis) || isResettingModel || isCollapsingToCore) ? "translateX(-50px)" : "translateX(0)",
+                                 opacity: trainingPanelVisible ? 1 : 0,
+                                 transform: trainingPanelVisible ? "translateX(0)" : "translateX(-50px)",
                                  pointerEvents: "none",
                                  transition: "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
                              }}
                           >
-                              <div style={{ width: '100%', height: '100%', position: 'relative', pointerEvents: ((isFinalLayout && !isRetrainingAnalysis) || isResettingModel || isCollapsingToCore) ? 'none' : 'auto' }}>
+                              <div style={{ width: '100%', height: '100%', position: 'relative', pointerEvents: trainingPanelVisible ? 'auto' : 'none' }}>
                                   <TrainingDataOverlay
                                      isDragging={isDragging}
                                      isGhostHovering={isGhostHovering}
@@ -598,7 +641,9 @@ export default function SoftwareWindow({
                                   />
                               </div>
                           </div>
+                          )}
 
+                          {(showNetwork || isCollapsingToCore || isRebuildingBase || isRetrainingPurple) && (
                           <Canvas
                             camera={{ position: [0, 0, 40], fov: 20 }}
                             style={{
@@ -618,7 +663,6 @@ export default function SoftwareWindow({
                                 : "translate3d(0, 0, 0)",
                               transition: disableCanvasTransitions ? "none" : "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
                               zIndex: 20,
-                              opacity: (showNetwork || isCollapsingToCore || isRebuildingBase || isRetrainingPurple) ? 1 : 0,
                             }}
                             resize={{ scroll: false, debounce: 0 }}
                           >
@@ -639,9 +683,13 @@ export default function SoftwareWindow({
                               onCollapseComplete={handleCollapseComplete}
                               onRebuildComplete={handleRebuildProgressComplete}
                               currentFps={currentFps}
+                              isSmallScreen={isSmallScreen}
+                              performanceTier={performanceTier}
                             />
                             <OrbitControls enableZoom={false} enablePan={false} rotateSpeed={0.5} />
                           </Canvas>
+                          )}
+                          {!(isRetraining || isResettingModel || isRetrainingAnalysis || isCollapsingToCore || isRebuildingBase || isRetrainingPurple) && (
                           <div
                             style={{
                               position: "absolute",
@@ -649,17 +697,17 @@ export default function SoftwareWindow({
                               left: 0,
                               width: "100%",
                               height: isFinalLayout ? ROW_2_HEIGHT : "100%",
-                              opacity: (isRetraining || isResettingModel || isRetrainingAnalysis || isCollapsingToCore || isRebuildingBase || isRetrainingPurple) ? 0 : 1,
                               zIndex: isFinalLayout ? 10 : 0,
-                              transition: "opacity 0.25s ease-out",
                             }}
                           >
                             <ConveyorBelt
                               isActive={isFinalLayout && !isRetraining && !isResettingModel && !isRetrainingAnalysis && !isCollapsingToCore && !isRebuildingBase && !isRetrainingPurple}
                               showStation={!isFinalLayout}
                               speedMultiplier={Math.max(0.8, Math.min(1.2, currentFps / 50))}
+                              performanceTier={performanceTier}
                             />
                           </div>
+                          )}
 
                           <TrainingProgressOverlay
                             isActive={isProgressBarVisible}

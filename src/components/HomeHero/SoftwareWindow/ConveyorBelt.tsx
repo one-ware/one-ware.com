@@ -1,7 +1,16 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback, memo, useMemo } from "react";
+import { usePerformance } from "../index";
 
 const APPLE_SPEED_PX_PER_SEC = 250;
 const SPAWN_RATE_SEC = 0.45;
+const SPAWN_RATE_BY_TIER = {
+  high: 0.45,
+  low: 1.2,
+};
+const APPLE_SPEED_BY_TIER = {
+  high: 250,
+  low: 350,
+};
 const SCANNER_X = 90;
 const END_X = 800;
 const APPLE_RADIUS = 18;
@@ -27,23 +36,47 @@ interface ConveyorBeltProps {
   showStation?: boolean;
   onScan?: () => void;
   speedMultiplier?: number;
+  performanceTier?: 'high' | 'low';
 }
 
-export default function ConveyorBelt({ isActive, showStation = true, onScan, speedMultiplier = 1.0 }: ConveyorBeltProps) {
+export default memo(function ConveyorBelt({ isActive, showStation = true, onScan, speedMultiplier = 1.0, performanceTier = 'high' }: ConveyorBeltProps) {
   const [apples, setApples] = useState<Apple[]>([]);
   const [animStage, setAnimStage] = useState(0);
   const [pusherExtended, setPusherExtended] = useState(false);
 
+  const applesRef = useRef<Apple[]>([]);
   const lastFrameTime = useRef(0);
   const spawnTimer = useRef(0);
   const reqRef = useRef<number | null>(null);
   const applesSinceBadRef = useRef(2);
   const pusherTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const speedMultiplierRef = useRef(speedMultiplier);
+  const onScanRef = useRef(onScan);
+  const performanceTierRef = useRef(performanceTier);
+
+  useEffect(() => {
+    speedMultiplierRef.current = speedMultiplier;
+  }, [speedMultiplier]);
+
+  useEffect(() => {
+    onScanRef.current = onScan;
+  }, [onScan]);
+
+  useEffect(() => {
+    performanceTierRef.current = performanceTier;
+  }, [performanceTier]);
+
+  const triggerPusher = useCallback(() => {
+    setPusherExtended(true);
+    if (pusherTimeoutRef.current) clearTimeout(pusherTimeoutRef.current);
+    pusherTimeoutRef.current = setTimeout(() => setPusherExtended(false), 150);
+  }, []);
 
   useEffect(() => {
     if (isActive) {
       setAnimStage(0);
       setApples([]);
+      applesRef.current = [];
       setPusherExtended(false);
       lastFrameTime.current = 0;
       spawnTimer.current = 0;
@@ -61,6 +94,7 @@ export default function ConveyorBelt({ isActive, showStation = true, onScan, spe
     } else {
       setAnimStage(0);
       setApples([]);
+      applesRef.current = [];
     }
   }, [isActive]);
 
@@ -93,11 +127,8 @@ export default function ConveyorBelt({ isActive, showStation = true, onScan, spe
       };
     };
 
-    const triggerPusher = () => {
-       setPusherExtended(true);
-       if (pusherTimeoutRef.current) clearTimeout(pusherTimeoutRef.current);
-       pusherTimeoutRef.current = setTimeout(() => setPusherExtended(false), 150);
-    };
+    let frameCount = 0;
+    const UPDATE_INTERVAL = 1;
 
     const animate = (time: number) => {
       if (!lastFrameTime.current) lastFrameTime.current = time;
@@ -105,80 +136,83 @@ export default function ConveyorBelt({ isActive, showStation = true, onScan, spe
       const safeDelta = Math.min(deltaMs / 1000, 0.1);
       lastFrameTime.current = time;
 
+      const currentSpeed = speedMultiplierRef.current;
+      let needsPusher = false;
+      let hadScan = false;
+
       spawnTimer.current += safeDelta;
-      const newApples: Apple[] = [];
-      const effectiveSpawnRate = SPAWN_RATE_SEC / speedMultiplier;
+      const baseSpawnRate = SPAWN_RATE_BY_TIER[performanceTierRef.current];
+      const effectiveSpawnRate = baseSpawnRate / currentSpeed;
       while (spawnTimer.current >= effectiveSpawnRate) {
-          newApples.push(createApple());
-          spawnTimer.current -= effectiveSpawnRate;
+        applesRef.current.push(createApple());
+        spawnTimer.current -= effectiveSpawnRate;
       }
-      if (newApples.length > 0) setApples((prev) => [...prev, ...newApples]);
 
-      setApples((prevApples) => {
-        return prevApples
-          .map((apple) => {
-            let { x, y, scanStatus, rejected, rotation } = apple;
-            const effectiveSpeed = APPLE_SPEED_PX_PER_SEC * speedMultiplier;
-            const moveDist = effectiveSpeed * safeDelta;
+      const baseSpeed = APPLE_SPEED_BY_TIER[performanceTierRef.current];
+      const effectiveSpeed = baseSpeed * currentSpeed;
+      const moveDist = effectiveSpeed * safeDelta;
 
-            if (x > SCANNER_X - 20 && x < SCANNER_X + 20) {
-              if (scanStatus === "unknown") {
-                scanStatus = apple.isRotten ? "scanned_bad" : "scanned_good";
-                if (onScan) onScan();
-              }
-            }
+      for (let i = applesRef.current.length - 1; i >= 0; i--) {
+        const apple = applesRef.current[i];
 
-            let { rejectTime, rejectVelocityX, rejectVelocityY, rejectOpacity } = apple;
+        if (apple.x > SCANNER_X - 20 && apple.x < SCANNER_X + 20) {
+          if (apple.scanStatus === "unknown") {
+            apple.scanStatus = apple.isRotten ? "scanned_bad" : "scanned_good";
+            hadScan = true;
+          }
+        }
 
-            if (!rejected && scanStatus === "scanned_bad" && x > PUSHER_X) {
-              rejected = true;
-              triggerPusher();
-              rejectVelocityX = 0;
-              rejectVelocityY = 500;
-              rejectTime = 0;
-            }
+        if (!apple.rejected && apple.scanStatus === "scanned_bad" && apple.x > PUSHER_X) {
+          apple.rejected = true;
+          needsPusher = true;
+          apple.rejectVelocityY = 500;
+          apple.rejectTime = 0;
+        }
 
-            if (rejected) {
-              rejectTime += safeDelta;
+        if (apple.rejected) {
+          apple.rejectTime += safeDelta;
+          apple.rejectVelocityY += 400 * safeDelta;
+          apple.y += apple.rejectVelocityY * safeDelta;
+          apple.rotation += 180 * safeDelta;
+          apple.rejectOpacity = Math.max(0, apple.rejectOpacity - safeDelta * 4);
+        } else {
+          apple.x += moveDist;
+        }
 
-              rejectVelocityY += 400 * safeDelta;
+        if (apple.x >= END_X + 100 || apple.y >= 600 || apple.rejectOpacity <= 0) {
+          applesRef.current.splice(i, 1);
+        }
+      }
 
-              y += rejectVelocityY * safeDelta;
+      if (needsPusher) triggerPusher();
+      if (hadScan && onScanRef.current) onScanRef.current();
 
-              rotation += 180 * safeDelta;
+      frameCount++;
+      if (frameCount >= UPDATE_INTERVAL) {
+        frameCount = 0;
+        setApples([...applesRef.current]);
+      }
 
-              rejectOpacity = Math.max(0, rejectOpacity - safeDelta * 4);
-            } else {
-              x += moveDist;
-            }
-
-            return { ...apple, x, y, scanStatus, rejected, rotation, rejectTime, rejectVelocityX, rejectVelocityY, rejectOpacity };
-          })
-          .filter((apple) => apple.x < END_X + 100 && apple.y < 600 && apple.rejectOpacity > 0);
-      });
       reqRef.current = requestAnimationFrame(animate);
     };
 
     reqRef.current = requestAnimationFrame(animate);
-    return () => { if (reqRef.current) cancelAnimationFrame(reqRef.current); };
-  }, [animStage, onScan]);
+    return () => {
+      if (reqRef.current) cancelAnimationFrame(reqRef.current);
+    };
+  }, [animStage, triggerPusher]);
 
   const isRunning = animStage >= 6;
-
   const viewBox = showStation ? "0 0 800 430" : "0 205 800 225";
 
   return (
     <div className="w-full h-full relative overflow-hidden select-none">
-      <svg 
-        viewBox={viewBox} 
+      <svg
+        viewBox={viewBox}
         className="w-full h-full absolute top-0 left-0 transition-all duration-700"
         preserveAspectRatio="xMidYMid slice"
       >
         <defs>
-          <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="2.5" result="coloredBlur" />
-            <feMerge><feMergeNode in="coloredBlur" /><feMergeNode in="SourceGraphic" /></feMerge>
-          </filter>
            <linearGradient id="metal-gradient-vertical" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stopColor="#2a2a2a" />
             <stop offset="50%" stopColor="#555" />
@@ -246,53 +280,51 @@ export default function ConveyorBelt({ isActive, showStation = true, onScan, spe
           <g clipPath="url(#belt-clip)">
             <rect x="0" y={BELT_Y} width="800" height="12" fill="url(#belt-surface)" />
             <g opacity="0.3">
-              {Array.from({ length: 40 }).map((_, i) => (
-                <rect key={i} x={i * 40} y={BELT_Y} width="2" height="12" fill="#444">
-                  {isRunning && <animate attributeName="x" from={i * 40} to={i * 40 + 40} dur={`${0.16 / speedMultiplier}s`} repeatCount="indefinite" />}
-                </rect>
+              {Array.from({ length: 21 }).map((_, i) => (
+                <rect key={i} x={i * 40} y={BELT_Y} width="2" height="12" fill="#444" />
               ))}
             </g>
           </g>
         </g>
 
         {apples.map((apple) => (
-          <g key={apple.id} transform={`translate(${apple.x}, ${apple.y})`} opacity={apple.rejectOpacity}>
-            <g transform={`rotate(${apple.rejected ? apple.rotation : 0})`}>
-              {!apple.rejected && <ellipse cx="0" cy={APPLE_RADIUS} rx={APPLE_RADIUS - 2} ry="4" fill="black" opacity="0.6" filter="url(#neon-glow)" />}
-              <g transform="scale(0.9)">
-                <circle cx="0" cy="0" r={APPLE_RADIUS} fill={apple.isRotten ? "#4a442a" : "#dc2626"} stroke={apple.isRotten ? "#2c281a" : "#7f1d1d"} strokeWidth="1" />
-                <circle cx="-5" cy="-5" r={APPLE_RADIUS - 5} fill="white" opacity="0.1" />
-                <circle cx="8" cy="8" r={APPLE_RADIUS - 8} fill="black" opacity="0.2" />
-                {apple.isRotten ? (
-                  <>
-                    <path d="M-10,-5 Q0,5 10,-2 Q5,10 -5,8 Z" fill="#2c281a" opacity="0.8" />
-                    <circle cx="5" cy="5" r="3" fill="#1a1205" opacity="0.7" />
-                    <circle cx="-7" cy="7" r="2" fill="#1a1205" opacity="0.6" />
-                  </>
-                ) : (
-                  <ellipse cx="-6" cy="-8" rx="5" ry="3" fill="white" opacity="0.4" transform="rotate(-45)" />
-                )}
-                <path d="M0,-15 Q2,-25 8,-28" stroke="#3f2c08" strokeWidth="2" fill="none" strokeLinecap="round" />
-                <path d="M0,-16 Q-12,-22 0,-28 Q12,-22 0,-16" fill={apple.isRotten ? "#3f6212" : "#22c55e"} />
-              </g>
+          performanceTier === 'low' ? (
+            <g key={apple.id} transform={`translate(${apple.x}, ${apple.y})`} opacity={apple.rejectOpacity}>
+              <circle r={APPLE_RADIUS * 0.9} fill={apple.isRotten ? "#4a442a" : "#dc2626"} />
+              <path d="M0,-15 Q2,-20 5,-22" stroke="#3f2c08" strokeWidth="2" fill="none" />
+              {apple.scanStatus !== "unknown" && (
+                <circle r={APPLE_RADIUS + 4} stroke={apple.scanStatus === "scanned_bad" ? "#ef4444" : "var(--ifm-color-primary)"} strokeWidth="1.5" fill="none" />
+              )}
             </g>
-
-            {apple.scanStatus === "scanned_bad" && !apple.rejected && (
-              <circle cx="0" cy="0" r={APPLE_RADIUS + 5} stroke="#ef4444" strokeWidth="1.5" fill="none" strokeDasharray="2 2" filter="url(#neon-glow)" opacity="0.8">
-                <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="3s" repeatCount="indefinite" />
-              </circle>
-            )}
-            {apple.scanStatus === "scanned_good" && <circle cx="0" cy="0" r={APPLE_RADIUS + 5} stroke="var(--ifm-color-primary)" strokeWidth="1" fill="none" opacity="0.4" filter="url(#neon-glow)" />}
-
-            {apple.rejected && apple.rejectTime < 0.15 && (
-              <g opacity={1 - apple.rejectTime / 0.15}>
-                <circle cx="0" cy="0" r={APPLE_RADIUS + 10 + apple.rejectTime * 100} stroke="#ef4444" strokeWidth="2" fill="none" filter="url(#neon-glow)" />
-                <circle cx="0" cy="0" r={APPLE_RADIUS + 5 + apple.rejectTime * 60} stroke="#fbbf24" strokeWidth="1" fill="none" />
+          ) : (
+            <g key={apple.id} transform={`translate(${apple.x}, ${apple.y})`} opacity={apple.rejectOpacity}>
+              <g transform={`rotate(${apple.rejected ? apple.rotation : 0})`}>
+                {!apple.rejected && <ellipse cx="0" cy={APPLE_RADIUS} rx={APPLE_RADIUS - 2} ry="4" fill="black" opacity="0.4" />}
+                <g transform="scale(0.9)">
+                  <circle cx="0" cy="0" r={APPLE_RADIUS} fill={apple.isRotten ? "#4a442a" : "#dc2626"} stroke={apple.isRotten ? "#2c281a" : "#7f1d1d"} strokeWidth="1" />
+                  <circle cx="-5" cy="-5" r={APPLE_RADIUS - 5} fill="white" opacity="0.1" />
+                  {apple.isRotten ? (
+                    <path d="M-10,-5 Q0,5 10,-2 Q5,10 -5,8 Z" fill="#2c281a" opacity="0.8" />
+                  ) : (
+                    <ellipse cx="-6" cy="-8" rx="5" ry="3" fill="white" opacity="0.4" transform="rotate(-45)" />
+                  )}
+                  <path d="M0,-15 Q2,-25 8,-28" stroke="#3f2c08" strokeWidth="2" fill="none" strokeLinecap="round" />
+                  <path d="M0,-16 Q-12,-22 0,-28 Q12,-22 0,-16" fill={apple.isRotten ? "#3f6212" : "#22c55e"} />
+                </g>
               </g>
-            )}
-          </g>
+
+              {apple.scanStatus === "scanned_bad" && !apple.rejected && (
+                <circle cx="0" cy="0" r={APPLE_RADIUS + 5} stroke="#ef4444" strokeWidth="2" fill="none" strokeDasharray="2 2" opacity="0.9" />
+              )}
+              {apple.scanStatus === "scanned_good" && <circle cx="0" cy="0" r={APPLE_RADIUS + 5} stroke="var(--ifm-color-primary)" strokeWidth="1.5" fill="none" opacity="0.6" />}
+
+              {apple.rejected && apple.rejectTime < 0.15 && (
+                <circle cx="0" cy="0" r={APPLE_RADIUS + 10 + apple.rejectTime * 100} stroke="#ef4444" strokeWidth="2" fill="none" opacity={1 - apple.rejectTime / 0.15} />
+              )}
+            </g>
+          )
         ))}
       </svg>
     </div>
   );
-}
+});

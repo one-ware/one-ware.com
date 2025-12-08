@@ -21,7 +21,8 @@ export function FolderWithApple({ isDragging, hasDropped, onMouseDown, setSource
       style={{
         width: 'clamp(40px, 8vw, 120px)',
         zIndex: 20,
-        opacity: isHidden ? 0 : 1
+        opacity: isHidden ? 0 : 1,
+        touchAction: 'none'
       }}
       onMouseDown={!hasDropped ? onMouseDown : undefined}
     >
@@ -39,11 +40,12 @@ export function DragPreview({ x, y }: { x: number, y: number }) {
       <div
         className="fixed pointer-events-none z-[9999]"
         style={{
-            left: x,
-            top: y,
-            transform: 'translate(-50%, -50%) rotate(-5deg)',
+            left: 0,
+            top: 0,
+            transform: `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%) rotate(-5deg)`,
             width: 'clamp(45px, 12vw, 100px)',
-            height: 'clamp(34px, 9vw, 75px)'
+            height: 'clamp(34px, 9vw, 75px)',
+            willChange: 'transform'
         }}
       >
         <GlassFolderDrag

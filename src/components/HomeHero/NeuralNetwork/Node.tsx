@@ -4,11 +4,20 @@ import { Sphere } from '@react-three/drei';
 import * as THREE from 'three';
 import { NeuralNode } from './types';
 
-export const Node = React.memo(function Node({ node }: { node: NeuralNode }) {
+export const Node = React.memo(function Node({
+  node,
+  performanceTier = 'high'
+}: {
+  node: NeuralNode;
+  performanceTier?: 'high' | 'low';
+}) {
   const meshRef = useRef<THREE.Mesh>(null);
   const groupRef = useRef<THREE.Group>(null);
 
   const currentScaleRef = useRef(0);
+
+  const segments = performanceTier === 'low' ? 6 : 12;
+  const outerSegments = performanceTier === 'low' ? 4 : 8;
 
   useFrame((state) => {
     if (groupRef.current) {
@@ -22,11 +31,11 @@ export const Node = React.memo(function Node({ node }: { node: NeuralNode }) {
       } else {
         currentScaleRef.current = targetScale;
       }
-      
+
       groupRef.current.scale.setScalar(currentScaleRef.current);
     }
 
-    if (meshRef.current) {
+    if (meshRef.current && performanceTier === 'high') {
       const time = state.clock.getElapsedTime();
       const glow = 0.5 + Math.sin(time * node.glowSpeed) * 0.5;
 
@@ -38,10 +47,12 @@ export const Node = React.memo(function Node({ node }: { node: NeuralNode }) {
 
   return (
     <group ref={groupRef}>
-      <Sphere args={[node.size * 1.5, 16, 16]}>
-        <meshBasicMaterial color={node.color} transparent opacity={0.15} />
-      </Sphere>
-      <Sphere ref={meshRef} args={[node.size, 32, 32]}>
+      {performanceTier === 'high' && (
+        <Sphere args={[node.size * 1.5, outerSegments, outerSegments]}>
+          <meshBasicMaterial color={node.color} transparent opacity={0.15} />
+        </Sphere>
+      )}
+      <Sphere ref={meshRef} args={[node.size, segments, segments]}>
         <meshStandardMaterial
           color={node.color}
           emissive={node.color}

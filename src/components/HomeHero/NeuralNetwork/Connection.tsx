@@ -3,10 +3,11 @@ import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import { NeuralNode } from './types';
 
-export const Connection = React.memo(({ startNode, endNode, animationOffset }: {
+export const Connection = React.memo(({ startNode, endNode, animationOffset, disableAnimation = false }: {
   startNode: NeuralNode;
   endNode: NeuralNode;
   animationOffset: number;
+  disableAnimation?: boolean;
 }) => {
   const lineRef = useRef<THREE.Line>(null);
   const glowSegments = useRef<THREE.Line[]>([]);
@@ -26,6 +27,8 @@ export const Connection = React.memo(({ startNode, endNode, animationOffset }: {
         lineRef.current.material.opacity = 0.25 * connectionOpacity;
       }
     }
+
+    if (disableAnimation) return;
 
     const time = state.clock.getElapsedTime();
     const progress = ((time * 0.4 + animationOffset) % 1);
@@ -76,6 +79,7 @@ export const Connection = React.memo(({ startNode, endNode, animationOffset }: {
   });
 
   const [glowLines] = useState(() => {
+    if (disableAnimation) return [];
     const points = [startNode.currentPosition.clone(), endNode.currentPosition.clone()];
     return Array.from({ length: 11 }, () => {
       const glowGeometry = new THREE.BufferGeometry().setFromPoints(points);

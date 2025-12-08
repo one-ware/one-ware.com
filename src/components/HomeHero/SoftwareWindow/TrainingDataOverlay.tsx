@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, memo } from "react";
 
 interface TrainingDataOverlayProps {
   isDragging: boolean;
@@ -18,7 +18,7 @@ interface TrainingDataOverlayProps {
   startAnalysis?: boolean;
 }
 
-export default function TrainingDataOverlay({
+export default memo(function TrainingDataOverlay({
   isDragging,
   onDrop,
   hasData,
@@ -582,24 +582,17 @@ export default function TrainingDataOverlay({
                 }
 
                 @keyframes lupe-snake-move {
-                    /* Row 0: L -> R */
                     0% { transform: translate(13px, 13px); }
                     23% { transform: translate(97px, 13px); }
-                    25% { transform: translate(97px, 41px); } /* Smooth Drop */
-
-                    /* Row 1: R -> L */
+                    25% { transform: translate(97px, 41px); }
                     48% { transform: translate(13px, 41px); }
-                    50% { transform: translate(13px, 69px); } /* Smooth Drop */
-
-                    /* Row 2: L -> R */
+                    50% { transform: translate(13px, 69px); }
                     73% { transform: translate(97px, 69px); }
-                    75% { transform: translate(97px, 97px); } /* Smooth Drop */
-
-                    /* Row 3: R -> L (End) */
+                    75% { transform: translate(97px, 97px); }
                     100% { transform: translate(13px, 97px); }
                 }
             `}</style>
       </svg>
     </div>
   );
-}
+});

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef } from "react";
+import React, { useState, useEffect, useCallback, useRef, createContext, useContext } from "react";
 import Link from "@docusaurus/Link";
 import BackgroundGridSimple from "./BackgroundGridSimple";
 import { FolderWithApple, DragPreview } from "./FolderWithApple";
@@ -6,11 +6,87 @@ import SoftwareWindow from "./SoftwareWindow";
 import GhostDragAnimation from "./GhostDragAnimation";
 import "./glass-design.css";
 
+export type PerformanceTier = 'high' | 'low';
+
+export interface PerformanceSettings {
+  tier: PerformanceTier;
+  updateInterval: number;
+  maxApples: number;
+  appleDetailLevel: 'full' | 'simple';
+  enableShadows: boolean;
+  enableGlow: boolean;
+  nodeCount: number;
+  trainingNodeCount: number;
+  physicsUpdateInterval: number;
+}
+
+const PERFORMANCE_CONFIGS: Record<PerformanceTier, PerformanceSettings> = {
+  high: {
+    tier: 'high',
+    updateInterval: 1,
+    maxApples: 10,
+    appleDetailLevel: 'full',
+    enableShadows: true,
+    enableGlow: true,
+    nodeCount: 30,
+    trainingNodeCount: 30,
+    physicsUpdateInterval: 1,
+  },
+  low: {
+    tier: 'low',
+    updateInterval: 3,
+    maxApples: 4,
+    appleDetailLevel: 'simple',
+    enableShadows: false,
+    enableGlow: false,
+    nodeCount: 12,
+    trainingNodeCount: 12,
+    physicsUpdateInterval: 3,
+  },
+};
+
+interface PerformanceContextValue {
+  settings: PerformanceSettings;
+  fps: number;
+  tier: PerformanceTier;
+}
+
+const PerformanceContext = createContext<PerformanceContextValue>({
+  settings: PERFORMANCE_CONFIGS.high,
+  fps: 60,
+  tier: 'high',
+});
+
+export const usePerformance = () => useContext(PerformanceContext);
+
+function detectInitialTier(): PerformanceTier {
+  if (typeof window === 'undefined') return 'high';
+
+  const isMobileOrTablet = window.innerWidth < 1024 ||
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+  return isMobileOrTablet ? 'low' : 'high';
+}
+
+function useAdaptivePerformance() {
+  const [currentTier] = useState<PerformanceTier>(detectInitialTier);
+
+  return {
+    tier: currentTier,
+    fps: 60,
+    settings: PERFORMANCE_CONFIGS[currentTier],
+  };
+}
+
 export default function HomeHero() {
+  const performanceValue = useAdaptivePerformance();
+
   const [isDragging, setIsDragging] = useState(false);
   const [hasDropped, setHasDropped] = useState(false);
   const [dragPos, setDragPos] = useState({ x: 0, y: 0 });
   const dragPosRef = useRef({ x: 0, y: 0 });
+  const dragRafRef = useRef<number | null>(null);
+  const pendingDragPos = useRef<{ x: number, y: number } | null>(null);
 
   const sourceFolderRef = useRef<HTMLDivElement>(null);
   const [targetPanelRef, setTargetPanelRef] = useState<HTMLElement | null>(
@@ -55,8 +131,18 @@ export default function HomeHero() {
       if (isDragging) {
         const clientX = "touches" in e ? e.touches[0]?.clientX ?? 0 : e.clientX;
         const clientY = "touches" in e ? e.touches[0]?.clientY ?? 0 : e.clientY;
-        setDragPos({ x: clientX, y: clientY });
         dragPosRef.current = { x: clientX, y: clientY };
+
+        pendingDragPos.current = { x: clientX, y: clientY };
+        if (!dragRafRef.current) {
+          dragRafRef.current = requestAnimationFrame(() => {
+            if (pendingDragPos.current) {
+              setDragPos(pendingDragPos.current);
+              pendingDragPos.current = null;
+            }
+            dragRafRef.current = null;
+          });
+        }
       }
     },
     [isDragging]
@@ -64,6 +150,10 @@ export default function HomeHero() {
 
   const handleDragEnd = useCallback(() => {
     if (isDragging) {
+      if (dragRafRef.current) {
+        cancelAnimationFrame(dragRafRef.current);
+        dragRafRef.current = null;
+      }
       if (targetPanelRef) {
         const rect = targetPanelRef.getBoundingClientRect();
         const { x, y } = dragPosRef.current;
@@ -84,7 +174,7 @@ export default function HomeHero() {
     if (isDragging) {
       window.addEventListener("mousemove", handleDragMove);
       window.addEventListener("mouseup", handleDragEnd);
-      window.addEventListener("touchmove", handleDragMove, { passive: false });
+      window.addEventListener("touchmove", handleDragMove, { passive: true });
       window.addEventListener("touchend", handleDragEnd);
     } else {
       window.removeEventListener("mousemove", handleDragMove);
@@ -106,6 +196,7 @@ export default function HomeHero() {
   };
 
   return (
+    <PerformanceContext.Provider value={performanceValue}>
     <section
       className="relative overflow-hidden min-h-screen 2xl:h-[calc(100vh+var(--ifm-navbar-height))]"
       style={{
@@ -125,13 +216,13 @@ export default function HomeHero() {
       />
 
       <div
-        className="relative z-10 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 lg:px-16"
-        style={{ paddingTop: "var(--ifm-navbar-height)", height: "100%" }}
+        className="relative z-10 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 lg:px-16 min-h-screen"
+        style={{ paddingTop: "var(--ifm-navbar-height)" }}
       >
-        <div className="w-full max-w-[98%] sm:max-w-[95%] flex flex-col gap-4 sm:gap-6 2xl:gap-8 min-h-[calc(100vh-var(--ifm-navbar-height))] 2xl:h-[80vh] 2xl:min-h-0">
-          <div className="flex flex-col 2xl:flex-row items-center gap-2 sm:gap-4 2xl:gap-12 flex-1">
+        <div className="w-full max-w-[98%] sm:max-w-[95%] flex flex-col gap-10 sm:gap-12 2xl:gap-14">
+            <div className="flex flex-col 2xl:flex-row items-center gap-2 sm:gap-4 2xl:gap-12">
             <div className="w-full 2xl:w-[40%] flex flex-col justify-center space-y-4 sm:space-y-6 2xl:space-y-8 text-center 2xl:text-left py-2 sm:py-4 2xl:py-0">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
                 <span
                   className="text-[var(--ifm-color-primary)] block"
                   style={{
@@ -153,7 +244,7 @@ export default function HomeHero() {
                 </span>
               </h1>
               <p
-                className="text-white text-lg md:text-xl leading-relaxed"
+                className="text-white text-xl md:text-2xl leading-relaxed"
                 style={{
                   animation: "fadeInUp 0.8s ease-out forwards",
                   animationDelay: "0.2s",
@@ -199,7 +290,7 @@ export default function HomeHero() {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 2xl:gap-16 pt-12 pb-12 sm:py-6 2xl:py-8">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 2xl:gap-16 w-full">
             <Link
               href="/one-ai#getStarted"
               style={{
@@ -224,7 +315,7 @@ export default function HomeHero() {
                 Discover ONE AI
               </button>
             </Link>
-          </div>
+            </div>
         </div>
       </div>
 
@@ -251,5 +342,6 @@ export default function HomeHero() {
         }
       `}</style>
     </section>
+    </PerformanceContext.Provider>
   );
 }

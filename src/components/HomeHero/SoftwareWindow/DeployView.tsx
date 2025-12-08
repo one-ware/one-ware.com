@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import '../glass-design.css';
 
 interface DeployViewProps {
     onDeploy: () => void;
 }
 
-export default function DeployView({ onDeploy }: DeployViewProps) {
+export default memo(function DeployView({ onDeploy }: DeployViewProps) {
     const [isHovered, setIsHovered] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
     const [isPressed, setIsPressed] = useState(false);
@@ -89,4 +89,4 @@ export default function DeployView({ onDeploy }: DeployViewProps) {
             </button>
         </div>
     );
-}
+});

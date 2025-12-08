@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, memo } from "react";
 import RobotHeadGraphic from "../components/RobotHeadGraphic";
+import { useDelayedUnmount } from '../hooks/useDelayedUnmount';
 
 interface TrainingProgressOverlayProps {
   isActive: boolean;
@@ -11,7 +12,7 @@ interface TrainingProgressOverlayProps {
   duration?: number;
 }
 
-export default function TrainingProgressOverlay({
+export default memo(function TrainingProgressOverlay({
   isActive,
   isRebuilding,
   isResetting = false,
@@ -92,6 +93,10 @@ export default function TrainingProgressOverlay({
     };
   }, [isActive]);
 
+  const shouldRender = useDelayedUnmount(isActive && !hideUI, 500);
+
+  if (!shouldRender) return null;
+
   return (
     <div
       className={`absolute transition-opacity duration-500 ${
@@ -143,4 +148,4 @@ export default function TrainingProgressOverlay({
       </div>
     </div>
   );
-}
+});

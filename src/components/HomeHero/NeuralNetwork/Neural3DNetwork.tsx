@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useMemo } from 'react';
+import React, { useRef, useState, useEffect, useMemo, memo } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import { NeuralNode } from './types';
@@ -9,6 +9,15 @@ const _diff = new THREE.Vector3();
 const _centerPull = new THREE.Vector3();
 const _noise = new THREE.Vector3();
 const _force = new THREE.Vector3();
+const _tempVec = new THREE.Vector3();
+const _zeroVec = new THREE.Vector3(0, 0, 0);
+
+const NODE_COUNTS = {
+  high: { base: 30, training: 30 },
+  low: { base: 10, training: 10 },
+};
+
+const TOTAL_ANIMATION_DURATION = 2500;
 
 interface Neural3DNetworkProps {
   isTraining?: boolean;
@@ -25,9 +34,14 @@ interface Neural3DNetworkProps {
   onCollapseComplete?: () => void;
   onRebuildComplete?: () => void;
   currentFps?: number;
+  isSmallScreen?: boolean;
+  nodeCount?: number;
+  trainingNodeCount?: number;
+  physicsUpdateInterval?: number;
+  performanceTier?: 'high' | 'low';
 }
 
-export function Neural3DNetwork({
+export const Neural3DNetwork = memo(function Neural3DNetwork({
   isTraining = false,
   isBuildingBase = false,
   isRebuilding = false,
@@ -41,7 +55,9 @@ export function Neural3DNetwork({
   trainingColor = 'orange',
   onCollapseComplete,
   onRebuildComplete,
-  currentFps = 50
+  currentFps = 50,
+  isSmallScreen: isSmallScreenProp,
+  performanceTier = 'high'
 }: Neural3DNetworkProps) {
   const groupRef = useRef<THREE.Group>(null);
 
@@ -68,16 +84,20 @@ export function Neural3DNetwork({
   const rebuildStartTimeRef = useRef(0);
   const [purpleNodesAdded, setPurpleNodesAdded] = useState(false);
   const [redNodesAdded, setRedNodesAdded] = useState(false);
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [isSmallScreenInternal, setIsSmallScreenInternal] = useState(
+    typeof window !== 'undefined' ? window.innerWidth < 1024 : false
+  );
 
   useEffect(() => {
+    if (isSmallScreenProp !== undefined) return;
     const checkScreenSize = () => {
-      setIsSmallScreen(window.innerWidth < 1024);
+      setIsSmallScreenInternal(window.innerWidth < 1024);
     };
-    checkScreenSize();
     window.addEventListener('resize', checkScreenSize);
     return () => window.removeEventListener('resize', checkScreenSize);
-  }, []);
+  }, [isSmallScreenProp]);
+
+  const isSmallScreen = isSmallScreenProp ?? isSmallScreenInternal;
 
   useEffect(() => {
     if (trainingColor === 'orange') {
@@ -116,6 +136,9 @@ export function Neural3DNetwork({
   const trainingColorRef = useRef(trainingColor);
   trainingColorRef.current = trainingColor;
 
+  const performanceTierRef = useRef(performanceTier);
+  performanceTierRef.current = performanceTier;
+
   useEffect(() => {
     if (blueprintRef.current.length > 0) return;
 
@@ -135,8 +158,7 @@ export function Neural3DNetwork({
       scale: 0,
     });
 
-    const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
-    const totalNodes = isMobile ? 15 : 30;
+    const totalNodes = NODE_COUNTS[performanceTier].base;
     const radius = 3.5;
     const goldenRatio = (1 + Math.sqrt(5)) / 2;
     
@@ -284,70 +306,76 @@ export function Neural3DNetwork({
     const delta = Math.min(state.clock.getDelta(), 0.1);
 
     if (groupRef.current) {
-        groupRef.current.rotation.y = time * 0.05;
+        if (performanceTierRef.current !== 'low') {
+            groupRef.current.rotation.y = time * 0.18;
+        }
         let targetY = isExpanded ? 0.8 : 0;
         groupRef.current.position.y += (targetY - groupRef.current.position.y) * 0.05;
     }
 
-    const REPULSION = 1.5;
-    const SPRING_STRENGTH = 0.05;
-    const CENTERING = 0.005;
-    const DAMPING = 0.97;
-    const NOISE_STRENGTH = 0.05;
+    if (performanceTierRef.current !== 'low') {
+        const REPULSION = 1.5;
+        const SPRING_STRENGTH = 0.05;
+        const CENTERING = 0.005;
+        const DAMPING = 0.97;
+        const NOISE_STRENGTH = 0.05;
 
-    const visibleNodes = nodesRef.current.filter(n => n.scale > 0.01);
+        const visibleNodes = nodesRef.current.filter(n => n.scale > 0.01);
 
-    visibleNodes.forEach(node => {
-        const vel = getVelocity(node.id);
-        const pos = node.currentPosition;
+        visibleNodes.forEach(node => {
+            const vel = getVelocity(node.id);
+            const pos = node.currentPosition;
 
-        visibleNodes.forEach(other => {
-            if (node === other) return;
-            _diff.subVectors(pos, other.currentPosition);
-            let dist = _diff.length();
-            if (dist < 0.1) dist = 0.1;
-            
-            if (dist < 4.0) {
-                _diff.normalize().multiplyScalar((REPULSION / (dist * dist)) * delta);
-                vel.add(_diff);
-            }
+            visibleNodes.forEach(other => {
+                if (node === other) return;
+                _diff.subVectors(pos, other.currentPosition);
+                let dist = _diff.length();
+                if (dist < 0.1) dist = 0.1;
+
+                if (dist < 4.0) {
+                    _diff.normalize().multiplyScalar((REPULSION / (dist * dist)) * delta);
+                    vel.add(_diff);
+                }
+            });
+
+            node.connections.forEach(neighbor => {
+                if (neighbor.scale > 0.01) {
+                    _diff.subVectors(neighbor.currentPosition, pos);
+                    const dist = _diff.length();
+                    const restLength = 2.0;
+
+                    const stretch = dist - restLength;
+                    _diff.normalize().multiplyScalar(stretch * SPRING_STRENGTH * delta);
+                    vel.add(_diff);
+                }
+            });
+
+            _centerPull.subVectors(node.basePosition, pos);
+            vel.add(_centerPull.multiplyScalar(CENTERING * delta));
+
+            _noise.set(
+                Math.sin(time * 2 + node.id) * NOISE_STRENGTH,
+                Math.cos(time * 1.5 + node.id) * NOISE_STRENGTH,
+                Math.sin(time * 2.5 + node.id) * NOISE_STRENGTH
+            );
+            vel.add(_noise);
         });
 
-        node.connections.forEach(neighbor => {
-            if (neighbor.scale > 0.01) {
-                _diff.subVectors(neighbor.currentPosition, pos);
-                const dist = _diff.length();
-                const restLength = 2.0;
-
-                const stretch = dist - restLength;
-                _diff.normalize().multiplyScalar(stretch * SPRING_STRENGTH * delta);
-                vel.add(_diff);
-            }
+        visibleNodes.forEach(node => {
+            const vel = getVelocity(node.id);
+            vel.multiplyScalar(DAMPING);
+            _tempVec.copy(vel).multiplyScalar(delta * 10);
+            node.currentPosition.add(_tempVec);
         });
-
-        _centerPull.subVectors(node.basePosition, pos);
-        vel.add(_centerPull.multiplyScalar(CENTERING * delta));
-
-        _noise.set(
-            Math.sin(time * 2 + node.id) * NOISE_STRENGTH,
-            Math.cos(time * 1.5 + node.id) * NOISE_STRENGTH,
-            Math.sin(time * 2.5 + node.id) * NOISE_STRENGTH
-        );
-        vel.add(_noise);
-    });
-
-    visibleNodes.forEach(node => {
-        const vel = getVelocity(node.id);
-        vel.multiplyScalar(DAMPING);
-        node.currentPosition.add(vel.clone().multiplyScalar(delta * 10));
-    });
+    }
 
     if (isBuildingBaseRef.current) {
-        const duration = 2500;
+        const duration = TOTAL_ANIMATION_DURATION;
         const elapsed = Date.now() - buildBaseStartTimeRef.current;
         const progress = Math.min(elapsed / duration, 1);
 
-        const totalBlueprint = blueprintRef.current.length;
+        const tierNodeCount = NODE_COUNTS[performanceTierRef.current].base + 1;
+        const totalBlueprint = Math.min(tierNodeCount, blueprintRef.current.length);
         const targetCount = Math.max(1, Math.ceil(progress * totalBlueprint));
 
         if (targetCount > builtCountRef.current) {
@@ -387,6 +415,148 @@ export function Neural3DNetwork({
             }
         });
     }
+
+    if (isTrainingRef.current && !isRebuildingRef.current && !isResettingRef.current && !isCollapsingToCoreRef.current) {
+        const now = Date.now();
+        const elapsedTotal = now - trainingStartTimeRef.current;
+
+        const currentColor = trainingColorRef.current;
+        const targetColor = currentColor === 'purple' ? '#A020F0' : (currentColor === 'red' ? '#FF4444' : '#FF9500');
+        const trainingNodes = nodesRef.current.filter(n => n.color === targetColor);
+
+        if (trainingNodes.length > 0) {
+            const DURATION = 800;
+            const STAGGER = Math.floor((TOTAL_ANIMATION_DURATION - DURATION) / trainingNodes.length);
+            const totalAnimationTime = (trainingNodes.length * STAGGER) + DURATION;
+
+            trainingNodes.forEach((node, i) => {
+                const startT = i * STAGGER;
+                if (elapsedTotal > startT) {
+                     const localElapsed = elapsedTotal - startT;
+                     const localP = Math.min(localElapsed / DURATION, 1);
+                     node.scale = 1 - Math.pow(1 - localP, 3);
+                } else {
+                     node.scale = 0;
+                }
+            });
+
+            if (elapsedTotal >= totalAnimationTime && !hasTriggeredTrainingComplete.current) {
+                hasTriggeredTrainingComplete.current = true;
+                if (onTrainingCompleteRef.current) onTrainingCompleteRef.current();
+            }
+        }
+    }
+
+    if (isCollapsingToCoreRef.current) {
+        const duration = TOTAL_ANIMATION_DURATION;
+        const elapsed = Date.now() - collapseStartTimeRef.current;
+
+        const nonCoreNodes = nodesRef.current
+            .filter((_, i) => i !== 0)
+            .map(node => ({
+                node,
+                distance: node.basePosition.length()
+            }))
+            .sort((a, b) => b.distance - a.distance)
+            .map(item => item.node);
+
+        const FADE_DURATION = 250;
+        const CORE_FADE_DURATION_INNER = 200;
+        const STAGGER = nonCoreNodes.length > 0
+            ? Math.floor((duration - FADE_DURATION - CORE_FADE_DURATION_INNER) / nonCoreNodes.length)
+            : 20;
+
+        if (nodesRef.current[0]) {
+            nodesRef.current[0].scale = 1;
+        }
+
+        nonCoreNodes.forEach((node, i) => {
+            const startT = i * STAGGER;
+            const elapsedForNode = elapsed - startT;
+
+            if (elapsedForNode > 0) {
+                const localP = Math.min(elapsedForNode / FADE_DURATION, 1);
+                const easeP = 1 - Math.pow(1 - localP, 2);
+                node.scale = Math.max(0, 1 - easeP);
+
+                if (node.scale > 0.01) {
+                    node.currentPosition.lerp(_zeroVec, easeP * 0.5);
+                }
+            }
+        });
+
+        const totalAnimationTime = (nonCoreNodes.length * STAGGER) + FADE_DURATION;
+        const CORE_FADE_DURATION = 200;
+
+        if (elapsed >= totalAnimationTime && nodesRef.current[0]) {
+            const coreElapsed = elapsed - totalAnimationTime;
+            const coreProgress = Math.min(coreElapsed / CORE_FADE_DURATION, 1);
+            const easeP = 1 - Math.pow(1 - coreProgress, 2);
+            nodesRef.current[0].scale = Math.max(0, 1 - easeP);
+        }
+
+        const totalWithCore = totalAnimationTime + CORE_FADE_DURATION;
+        if (elapsed >= totalWithCore && !hasTriggeredCollapseComplete.current) {
+            hasTriggeredCollapseComplete.current = true;
+            if (onCollapseCompleteRef.current) onCollapseCompleteRef.current();
+        }
+    }
+
+    if (isRebuildingBaseRef.current) {
+        const duration = TOTAL_ANIMATION_DURATION;
+        const elapsed = Date.now() - rebuildBaseStartTimeRef.current;
+        const progress = Math.min(elapsed / duration, 1);
+
+        const tierNodeCount = NODE_COUNTS[performanceTierRef.current].base + 1;
+        const totalBlueprint = Math.min(tierNodeCount, blueprintRef.current.length);
+        const targetCount = Math.max(1, Math.ceil(progress * totalBlueprint));
+
+        if (targetCount > rebuildBuiltCountRef.current) {
+            const startIdx = rebuildBuiltCountRef.current;
+            const endIdx = targetCount;
+
+            const currentList = [...nodesRef.current];
+            const currentPairs = [...connectionPairsRef.current];
+
+            for (let i = startIdx; i < endIdx; i++) {
+                const newNode = blueprintRef.current[i];
+                if (newNode.color !== '#00FFD1') continue;
+                newNode.scale = 0;
+                newNode.currentPosition.copy(newNode.basePosition);
+
+                const conns = connectNodeToExisting(newNode, currentList);
+                currentPairs.push(...conns);
+                if (!currentList.includes(newNode)) {
+                    currentList.push(newNode);
+                }
+            }
+
+            nodesRef.current = currentList;
+            connectionPairsRef.current = currentPairs;
+            rebuildBuiltCountRef.current = targetCount;
+
+            setNodes(currentList);
+            setConnectionPairs(currentPairs);
+        }
+
+        const baseNodes = nodesRef.current.filter(n => n.color === '#00FFD1');
+        baseNodes.forEach((node, i) => {
+            if (i === 0) { node.scale = 1; return; }
+
+            const startP = i / totalBlueprint;
+            if (progress > startP) {
+                const localP = Math.min((progress - startP) * 5, 1);
+                node.scale = localP;
+            } else {
+                node.scale = 0;
+            }
+        });
+
+        if (progress >= 1 && !hasTriggeredRebuildComplete.current) {
+            hasTriggeredRebuildComplete.current = true;
+            if (onRebuildCompleteRef.current) onRebuildCompleteRef.current();
+        }
+    }
   });
 
   useEffect(() => {
@@ -395,7 +565,7 @@ export function Neural3DNetwork({
         isTrainingRef.current = true;
         trainingStartTimeRef.current = Date.now();
 
-        const totalNew = isSmallScreen ? 15 : 30;
+        const totalNew = NODE_COUNTS[performanceTier].training;
         const radius = 4.5;
 
         const currentList = [...nodesRef.current];
@@ -474,7 +644,7 @@ export function Neural3DNetwork({
             node.connections = node.connections.filter(conn => baseNodeIds.has(conn.id));
         });
 
-        const totalNew = isSmallScreen ? 15 : 30;
+        const totalNew = NODE_COUNTS[performanceTier].training;
         const radius = 4.5;
 
         const currentList = [...nodesRef.current];
@@ -551,7 +721,7 @@ export function Neural3DNetwork({
             node.connections = node.connections.filter(conn => baseNodeIds.has(conn.id));
         });
 
-        const totalNew = isSmallScreen ? 15 : 30;
+        const totalNew = NODE_COUNTS[performanceTier].training;
         const radius = 4.5;
 
         const currentList = [...nodesRef.current];
@@ -595,199 +765,6 @@ export function Neural3DNetwork({
     }
   }, [isTraining, orangeNodesAdded, purpleNodesAdded, redNodesAdded, trainingColor, isSmallScreen]);
 
-  useFrame((state) => {
-    const time = state.clock.getElapsedTime();
-    if (groupRef.current) {
-        groupRef.current.rotation.y = time * 0.18;
-        let targetY = isExpanded ? 0.8 : 0;
-        groupRef.current.position.y += (targetY - groupRef.current.position.y) * 0.05;
-    }
-
-    if (isBuildingBaseRef.current) {
-        const duration = 2500;
-        const elapsed = Date.now() - buildBaseStartTimeRef.current;
-        const progress = Math.min(elapsed / duration, 1);
-
-        const totalBlueprint = blueprintRef.current.length;
-        const targetCount = Math.max(1, Math.ceil(progress * totalBlueprint));
-
-        if (targetCount > builtCountRef.current) {
-            const startIdx = builtCountRef.current;
-            const endIdx = targetCount;
-            
-            const currentList = [...nodesRef.current];
-            const currentPairs = [...connectionPairsRef.current];
-
-            for (let i = startIdx; i < endIdx; i++) {
-                const newNode = blueprintRef.current[i];
-                newNode.scale = 0; 
-                
-                const conns = connectNodeToExisting(newNode, currentList);
-                currentPairs.push(...conns);
-                currentList.push(newNode);
-            }
-
-            nodesRef.current = currentList;
-            connectionPairsRef.current = currentPairs;
-            builtCountRef.current = targetCount;
-
-            setNodes(currentList);
-            setConnectionPairs(currentPairs);
-        }
-
-        const baseNodes = nodesRef.current.filter(n => n.color === '#00FFD1');
-        baseNodes.forEach((node, i) => {
-            if (i === 0) { node.scale = 1; return; }
-
-            const startP = i / totalBlueprint;
-            if (progress > startP) {
-                const localP = Math.min((progress - startP) * 5, 1);
-                node.scale = localP;
-            } else {
-                node.scale = 0;
-            }
-        });
-    }
-
-    if (isTrainingRef.current && !isRebuildingRef.current && !isResettingRef.current && !isCollapsingToCoreRef.current) {
-        const now = Date.now();
-        const elapsedTotal = now - trainingStartTimeRef.current;
-
-        const currentColor = trainingColorRef.current;
-        const targetColor = currentColor === 'purple' ? '#A020F0' : (currentColor === 'red' ? '#FF4444' : '#FF9500');
-        const trainingNodes = nodesRef.current.filter(n => n.color === targetColor);
-
-        if (trainingNodes.length > 0) {
-            const STAGGER = isSmallScreen ? 240 : 120;
-            const DURATION = 800;
-            const totalAnimationTime = (trainingNodes.length * STAGGER) + DURATION;
-
-            trainingNodes.forEach((node, i) => {
-                const startT = i * STAGGER;
-                if (elapsedTotal > startT) {
-                     const localElapsed = elapsedTotal - startT;
-                     const localP = Math.min(localElapsed / DURATION, 1);
-                     node.scale = 1 - Math.pow(1 - localP, 3);
-                } else {
-                     node.scale = 0;
-                }
-            });
-
-            if (elapsedTotal >= totalAnimationTime && !hasTriggeredTrainingComplete.current) {
-                hasTriggeredTrainingComplete.current = true;
-                if (onTrainingCompleteRef.current) onTrainingCompleteRef.current();
-            }
-        }
-    }
-
-    if (isCollapsingToCoreRef.current) {
-        const duration = 2500;
-        const elapsed = Date.now() - collapseStartTimeRef.current;
-
-        const nonCoreNodes = nodesRef.current
-            .filter((_, i) => i !== 0)
-            .map(node => ({
-                node,
-                distance: node.basePosition.length()
-            }))
-            .sort((a, b) => b.distance - a.distance)
-            .map(item => item.node);
-
-        const STAGGER = isSmallScreen ? 40 : 20;
-        const FADE_DURATION = 250;
-
-        if (nodesRef.current[0]) {
-            nodesRef.current[0].scale = 1;
-        }
-
-        nonCoreNodes.forEach((node, i) => {
-            const startT = i * STAGGER;
-            const elapsedForNode = elapsed - startT;
-
-            if (elapsedForNode > 0) {
-                const localP = Math.min(elapsedForNode / FADE_DURATION, 1);
-                const easeP = 1 - Math.pow(1 - localP, 2);
-                node.scale = Math.max(0, 1 - easeP);
-
-                if (node.scale > 0.01) {
-                    node.currentPosition.lerp(new THREE.Vector3(0, 0, 0), easeP * 0.5);
-                }
-            }
-        });
-
-        const totalAnimationTime = (nonCoreNodes.length * STAGGER) + FADE_DURATION;
-        const CORE_FADE_DURATION = 200;
-
-        if (elapsed >= totalAnimationTime && nodesRef.current[0]) {
-            const coreElapsed = elapsed - totalAnimationTime;
-            const coreProgress = Math.min(coreElapsed / CORE_FADE_DURATION, 1);
-            const easeP = 1 - Math.pow(1 - coreProgress, 2);
-            nodesRef.current[0].scale = Math.max(0, 1 - easeP);
-        }
-
-        const totalWithCore = totalAnimationTime + CORE_FADE_DURATION;
-        if (elapsed >= totalWithCore && !hasTriggeredCollapseComplete.current) {
-            hasTriggeredCollapseComplete.current = true;
-            if (onCollapseCompleteRef.current) onCollapseCompleteRef.current();
-        }
-    }
-
-    if (isRebuildingBaseRef.current) {
-        const duration = 2500;
-        const elapsed = Date.now() - rebuildBaseStartTimeRef.current;
-        const progress = Math.min(elapsed / duration, 1);
-
-        const totalBlueprint = blueprintRef.current.length;
-        const targetCount = Math.max(1, Math.ceil(progress * totalBlueprint));
-
-        if (targetCount > rebuildBuiltCountRef.current) {
-            const startIdx = rebuildBuiltCountRef.current;
-            const endIdx = targetCount;
-
-            const currentList = [...nodesRef.current];
-            const currentPairs = [...connectionPairsRef.current];
-
-            for (let i = startIdx; i < endIdx; i++) {
-                const newNode = blueprintRef.current[i];
-                if (newNode.color !== '#00FFD1') continue;
-                newNode.scale = 0;
-                newNode.currentPosition.copy(newNode.basePosition);
-
-                const conns = connectNodeToExisting(newNode, currentList);
-                currentPairs.push(...conns);
-                if (!currentList.includes(newNode)) {
-                    currentList.push(newNode);
-                }
-            }
-
-            nodesRef.current = currentList;
-            connectionPairsRef.current = currentPairs;
-            rebuildBuiltCountRef.current = targetCount;
-
-            setNodes(currentList);
-            setConnectionPairs(currentPairs);
-        }
-
-        const baseNodes = nodesRef.current.filter(n => n.color === '#00FFD1');
-        baseNodes.forEach((node, i) => {
-            if (i === 0) { node.scale = 1; return; }
-
-            const startP = i / totalBlueprint;
-            if (progress > startP) {
-                const localP = Math.min((progress - startP) * 5, 1);
-                node.scale = localP;
-            } else {
-                node.scale = 0;
-            }
-        });
-
-        if (progress >= 1 && !hasTriggeredRebuildComplete.current) {
-            hasTriggeredRebuildComplete.current = true;
-            if (onRebuildCompleteRef.current) onRebuildCompleteRef.current();
-        }
-    }
-  });
-
   return (
     <group ref={groupRef}>
       <ambientLight intensity={0.4} />
@@ -805,12 +782,13 @@ export function Neural3DNetwork({
           startNode={conn.start}
           endNode={conn.end}
           animationOffset={conn.animationOffset}
+          disableAnimation={performanceTier === 'low'}
         />
       ))}
 
       {nodesRef.current.map((node) => (
-        <Node key={`node-${node.id}`} node={node} />
+        <Node key={`node-${node.id}`} node={node} performanceTier={performanceTier} />
       ))}
     </group>
   );
-}
+});

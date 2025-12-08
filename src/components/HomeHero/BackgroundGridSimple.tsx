@@ -6,6 +6,8 @@ export default function BackgroundGridSimple() {
       <img
         src="/img/background.webp"
         alt=""
+        loading="lazy"
+        decoding="async"
         className="absolute left-0 top-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-black/40" />

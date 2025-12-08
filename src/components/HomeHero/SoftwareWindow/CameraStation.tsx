@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, memo } from "react";
 import DataGrid from "./DataGrid";
+import { useDelayedUnmount } from '../hooks/useDelayedUnmount';
 
 interface CameraStationProps {
   isActive: boolean;
@@ -38,8 +39,9 @@ const ICON_DELAYS = [
     5500,
 ];
 
-export default function CameraStation({ isActive, onDataFull, showCelebration = false, allowCustomUpload = false, onDataDropped }: CameraStationProps) {
+export default memo(function CameraStation({ isActive, onDataFull, showCelebration = false, allowCustomUpload = false, onDataDropped }: CameraStationProps) {
     const isVisible = isActive;
+    const shouldRender = useDelayedUnmount(isVisible, 800);
     const [collectedCount, setCollectedCount] = useState(0);
 
     const [isDragging, setIsDragging] = useState(false);
@@ -265,6 +267,7 @@ export default function CameraStation({ isActive, onDataFull, showCelebration = 
                     </symbol>
                 </defs>
 
+                {shouldRender && (
                 <g style={{
                     opacity: isVisible ? 1 : 0,
                     transform: isVisible ? 'scale(1)' : 'scale(0.9)',
@@ -507,6 +510,7 @@ export default function CameraStation({ isActive, onDataFull, showCelebration = 
                     )}
 
                 </g>
+                )}
             </svg>
             <style>{`
                 .icon-fade {
@@ -515,4 +519,4 @@ export default function CameraStation({ isActive, onDataFull, showCelebration = 
             `}</style>
         </div>
     )
-}
+});
