@@ -4,6 +4,11 @@ title: ONE WARE Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.21.18.0
+
+- Fix upgrading to prerelease
+- Add MacOS Code Signing
+
 ## 0.21.17.0
 
 - Fix Opacity for Watermarks
