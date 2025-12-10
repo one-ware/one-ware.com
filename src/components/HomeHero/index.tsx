@@ -319,7 +319,7 @@ export default function HomeHero() {
 
             <div className="flex lg:hidden flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 2xl:gap-16 w-full mb-16 lg:mb-0">
             <Link
-              href="/one-ai#getStarted"
+              href="/docs/one-ai/getting-started"
               style={{
                 animation: "fadeInUp 0.8s ease-out forwards",
                 animationDelay: "0.5s",
