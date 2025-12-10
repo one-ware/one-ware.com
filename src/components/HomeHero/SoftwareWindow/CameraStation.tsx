@@ -229,7 +229,7 @@ export default memo(function CameraStation({ isActive, onDataFull, showCelebrati
                             setTimeout(onDataFull, 300);
                         }
                     }
-                }, 30);
+                }, 50);
             }
         };
 

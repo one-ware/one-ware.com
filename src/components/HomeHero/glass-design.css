@@ -5,7 +5,7 @@
     --glass-border: rgba(255, 255, 255, 0.1);
     --glass-highlight: rgba(255, 255, 255, 0.2);
     --container-bg: rgba(20, 20, 20, 0.4);
-    --blur-strength: 10px;
+    --blur-strength: 6px;
 }
 
 .oneware-dashboard-container {
@@ -19,8 +19,8 @@
     aspect-ratio: 3/4;
 
     background: var(--container-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
 
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 10px;
@@ -39,7 +39,7 @@
         aspect-ratio: 4/3;
         border-radius: 12px;
         box-shadow:
-            0 30px 60px -10px rgba(0,0,0,0.6),
+            0 20px 30px -10px rgba(0,0,0,0.6),
             inset 0 0 0 1px rgba(255,255,255,0.05);
     }
 }
@@ -61,7 +61,7 @@
         max-width: 1400px;
         border-radius: 14px;
         box-shadow:
-            0 40px 80px -10px rgba(0,0,0,0.6),
+            0 25px 40px -10px rgba(0,0,0,0.6),
             inset 0 0 0 1px rgba(255,255,255,0.05);
     }
 }

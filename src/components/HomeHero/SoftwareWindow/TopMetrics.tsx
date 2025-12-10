@@ -128,7 +128,7 @@ export default memo(function TopMetrics({ isActive, animateSetup = false, animat
                     setupIntervalRef.current = null;
                     finishSequence();
                 }
-            }, 16);
+            }, 32);
 
             setupIntervalRef.current = interval;
 
@@ -261,7 +261,7 @@ export default memo(function TopMetrics({ isActive, animateSetup = false, animat
                     hwSwitchIntervalRef.current = null;
                     finishSequence();
                 }
-            }, 16);
+            }, 32);
 
             hwSwitchIntervalRef.current = interval;
 

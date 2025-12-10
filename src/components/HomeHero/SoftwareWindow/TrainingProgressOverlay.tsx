@@ -28,6 +28,7 @@ export default memo(function TrainingProgressOverlay({
   const durationRef = useRef<number>(duration);
   const onCompleteRef = useRef(onComplete);
   const hasStartedRef = useRef(false);
+  const lastProgressRef = useRef(0);
 
   useEffect(() => {
     onCompleteRef.current = onComplete;
@@ -66,7 +67,11 @@ export default memo(function TrainingProgressOverlay({
       const animate = () => {
         const elapsed = Date.now() - startTimeRef.current;
         const p = Math.min(elapsed / durationRef.current, 1);
-        setProgress(p * 100);
+        const newProgress = Math.round(p * 100);
+        if (newProgress !== lastProgressRef.current) {
+          lastProgressRef.current = newProgress;
+          setProgress(newProgress);
+        }
 
         if (p < 1) {
           requestRef.current = requestAnimationFrame(animate);
@@ -81,6 +86,7 @@ export default memo(function TrainingProgressOverlay({
       requestRef.current = requestAnimationFrame(animate);
     } else {
       hasStartedRef.current = false;
+      lastProgressRef.current = 0;
       if (requestRef.current) cancelAnimationFrame(requestRef.current);
       setTimeout(() => {
         setProgress(0);
@@ -133,7 +139,7 @@ export default memo(function TrainingProgressOverlay({
             className="font-bold flex-shrink-0 ml-2"
             style={{ fontSize: "clamp(7px, 1.8vw, 14px)" }}
           >
-            {Math.round(progress)}%
+            {progress}%
           </span>
         </div>
         <div
@@ -142,7 +148,10 @@ export default memo(function TrainingProgressOverlay({
         >
           <div
             className="h-full bg-[var(--ifm-color-primary)] shadow-[0_0_15px_var(--ifm-color-primary)]"
-            style={{ width: `${progress}%` }}
+            style={{
+              width: `${progress}%`,
+              transition: "width 80ms linear"
+            }}
           />
         </div>
       </div>

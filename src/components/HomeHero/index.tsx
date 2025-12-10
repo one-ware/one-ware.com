@@ -27,9 +27,9 @@ const PERFORMANCE_CONFIGS: Record<PerformanceTier, PerformanceSettings> = {
     maxApples: 10,
     appleDetailLevel: 'full',
     enableShadows: true,
-    enableGlow: true,
-    nodeCount: 30,
-    trainingNodeCount: 30,
+    enableGlow: false,
+    nodeCount: 20,
+    trainingNodeCount: 20,
     physicsUpdateInterval: 1,
   },
   low: {
@@ -39,8 +39,8 @@ const PERFORMANCE_CONFIGS: Record<PerformanceTier, PerformanceSettings> = {
     appleDetailLevel: 'simple',
     enableShadows: false,
     enableGlow: false,
-    nodeCount: 12,
-    trainingNodeCount: 12,
+    nodeCount: 10,
+    trainingNodeCount: 10,
     physicsUpdateInterval: 3,
   },
 };
