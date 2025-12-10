@@ -255,6 +255,33 @@ export default function HomeHero() {
                 <br />
                 Fully Automated in One Software
               </p>
+
+              <div className="hidden lg:flex flex-row items-center justify-center 2xl:justify-start gap-4 mt-8 w-full">
+                <Link
+                  href="/docs/one-ai/getting-started"
+                  style={{
+                    animation: "fadeInUp 0.8s ease-out forwards",
+                    animationDelay: "0.5s",
+                    opacity: 0,
+                  }}
+                >
+                  <button className="button button--primary button--lg">
+                    Free Download
+                  </button>
+                </Link>
+                <Link
+                  href="/one-ai"
+                  style={{
+                    animation: "fadeInUp 0.8s ease-out forwards",
+                    animationDelay: "0.6s",
+                    opacity: 0,
+                  }}
+                >
+                  <button className="button button--primary button--outline button--lg">
+                    Learn More
+                  </button>
+                </Link>
+              </div>
             </div>
 
             <div className="relative flex items-center 2xl:items-end justify-center 2xl:justify-end w-full 2xl:w-[60%] h-auto 2xl:h-full select-none flex-1 2xl:flex-initial">
@@ -290,7 +317,7 @@ export default function HomeHero() {
             </div>
           </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 2xl:gap-16 w-full">
+            <div className="flex lg:hidden flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 2xl:gap-16 w-full mb-16 lg:mb-0">
             <Link
               href="/one-ai#getStarted"
               style={{
@@ -300,7 +327,7 @@ export default function HomeHero() {
               }}
             >
               <button className="button button--primary button--outline button--lg w-full sm:w-auto">
-                Start Now for Free
+                Free Download
               </button>
             </Link>
             <Link
@@ -312,7 +339,7 @@ export default function HomeHero() {
               }}
             >
               <button className="button button--primary button--lg w-full sm:w-auto">
-                Discover ONE AI
+                Learn More
               </button>
             </Link>
             </div>
