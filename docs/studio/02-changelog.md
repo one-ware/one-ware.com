@@ -4,6 +4,10 @@ title: ONE WARE Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.21.19.0
+
+- Revert PackageStatus change leading to incompatible Hardware Support Packages in OneAI Extension
+  
 ## 0.21.18.0
 
 - Fix upgrading to prerelease
