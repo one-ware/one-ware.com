@@ -116,6 +116,11 @@ Support of selected devkits and reference designs for edge-AI on FPGA.
 ### **Rendered.ai**
 [Rendered.ai](https://rendered.ai/) specializes in quality synthetic image data generation and can quickly provide a physically accurate, fully labeled dataset customized to your use case.
 
+### Accelerat
+Accelerat provides advanced embedded software solutions for guaranteeing high levels of safety and security on modern cyber-physical systems. Accelerat supports One Ware ecosystem with AI Bunker: technology to protect the IPs of AI Models from theft and unauthorised access once they are deployed at the edge.
+
+### Digikey
+ONE Ware is partner of Digikey’s Design Service Provider Program to enable customers on the full solution approach. With ONE WARE highly efficient AI models, customer can build AI applications in very short time with minimized risk and use latest AI technologies for development.
 :::
 
 ---
