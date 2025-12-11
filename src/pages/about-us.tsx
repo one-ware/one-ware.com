@@ -118,18 +118,19 @@ export default function AboutUs(): JSX.Element {
 
       <section className="w-full" style={{ margin: 0, padding: 0 }}>
         <div className="relative w-full bg-black" style={{ height: "clamp(200px, 35vw, 60vh)", margin: 0, padding: 0 }}>
-          {isPlaying && (
-            <video
-              ref={videoRef}
-              className="absolute inset-0 w-full h-full object-cover"
-              onEnded={() => setIsPlaying(false)}
-            />
-          )}
+          <video
+            ref={videoRef}
+            className="absolute inset-0 w-full h-full object-cover"
+            onEnded={() => setIsPlaying(false)}
+            src={require("@site/static/img/AboutUs/WebsiteVideoBlur1.mp4").default}
+            controls={isPlaying}
+            preload="metadata"
+          />
 
           {!isPlaying && (
             <button
               onClick={handlePlayClick}
-              className="absolute inset-0 w-full h-full flex items-center justify-center cursor-pointer bg-black"
+              className="absolute inset-0 w-full h-full flex items-center justify-center cursor-pointer bg-black/40"
             >
               <div
                 className="flex items-center justify-center transition-transform hover:scale-110 w-20 h-20 rounded-full"

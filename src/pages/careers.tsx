@@ -150,18 +150,18 @@ export default function CareersPage(): JSX.Element {
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <div className="relative w-full aspect-video bg-black">
-              {isPlaying && (
-                <video
-                  ref={videoRef}
-                  className="absolute inset-0 w-full h-full object-cover"
-                  onEnded={() => setIsPlaying(false)}
-                />
-              )}
+              <video
+                ref={videoRef}
+                className="absolute inset-0 w-full h-full object-cover"
+                onEnded={() => setIsPlaying(false)}
+                src={require("@site/static/img/AboutUs/WebsiteVideoBlur1.mp4").default}
+                controls={isPlaying}
+              />
 
               {!isPlaying && (
                 <button
                   onClick={handlePlayClick}
-                  className="absolute inset-0 w-full h-full flex flex-col items-center justify-center cursor-pointer bg-black"
+                  className="absolute inset-0 w-full h-full flex flex-col items-center justify-center cursor-pointer bg-black/40"
                 >
                   <div className="absolute top-[15%] flex flex-col items-center gap-6">
                     <span className="text-[var(--ifm-color-primary)] text-sm md:text-base font-medium uppercase" style={{ letterSpacing: '0.15em' }}>
