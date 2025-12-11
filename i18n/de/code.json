@@ -1392,5 +1392,269 @@
   },
   "oneai.examples.cta.button.secondary": {
     "message": "Loslegen"
+  },
+  "seminars.page.title": {
+    "message": "Events und Webinare"
+  },
+  "seminars.page.description": {
+    "message": "Manchmal virtuell. Manchmal live. Immer inspirierend. Entdecken Sie hier unsere Veranstaltungen."
+  },
+  "seminars.hero.overline": {
+    "message": "Events & Seminare"
+  },
+  "seminars.hero.title.line1": {
+    "message": "Wissen teilen,"
+  },
+  "seminars.hero.title.line2": {
+    "message": "Zukunft gestalten"
+  },
+  "seminars.hero.description": {
+    "message": "Praxisnahe Workshops, inspirierende Webinare und spannende Events - erweitern Sie Ihr Know-how mit unseren Experten."
+  },
+  "seminars.section.upcoming": {
+    "message": "Kommende Veranstaltungen"
+  },
+  "seminars.section.past": {
+    "message": "Vergangene Veranstaltungen"
+  },
+  "seminars.filter.search.label": {
+    "message": "Suche"
+  },
+  "seminars.filter.search.placeholder": {
+    "message": "Titel durchsuchen..."
+  },
+  "seminars.filter.category.label": {
+    "message": "Kategorie"
+  },
+  "seminars.filter.category.all": {
+    "message": "Alle"
+  },
+  "seminars.filter.type.label": {
+    "message": "Typ"
+  },
+  "seminars.filter.type.all": {
+    "message": "Alle"
+  },
+  "seminars.filter.dateFrom.label": {
+    "message": "Von"
+  },
+  "seminars.filter.dateTo.label": {
+    "message": "Bis"
+  },
+  "seminars.empty.upcoming": {
+    "message": "Keine kommenden Veranstaltungen gefunden."
+  },
+  "seminars.empty.past": {
+    "message": "Keine vergangenen Veranstaltungen gefunden."
+  },
+  "seminars.type.workshop": {
+    "message": "Workshop"
+  },
+  "seminars.type.webinar": {
+    "message": "Webinar"
+  },
+  "seminars.type.event": {
+    "message": "Event"
+  },
+  "seminars.detail.date": {
+    "message": "Datum"
+  },
+  "seminars.detail.time": {
+    "message": "Uhrzeit"
+  },
+  "seminars.detail.location": {
+    "message": "Ort"
+  },
+  "seminars.detail.language": {
+    "message": "Sprache"
+  },
+  "seminars.detail.speaker": {
+    "message": "Referent"
+  },
+  "seminars.detail.contact": {
+    "message": "Kontakt"
+  },
+  "seminars.detail.highlights": {
+    "message": "Das lernen Sie"
+  },
+  "seminars.detail.about": {
+    "message": "Über dieses Event"
+  },
+  "seminars.detail.agenda": {
+    "message": "Agenda"
+  },
+  "seminars.detail.dates": {
+    "message": "Termine & Orte"
+  },
+  "seminars.detail.registration": {
+    "message": "Anmeldung"
+  },
+  "seminars.detail.registerNow": {
+    "message": "Jetzt anmelden"
+  },
+  "seminars.detail.playVideo": {
+    "message": "Video abspielen"
+  },
+  "seminars.detail.videoConsent": {
+    "message": "Mit Klick akzeptieren Sie die Datenschutzrichtlinie von YouTube"
+  },
+  "seminars.detail.learnMore": {
+    "message": "Mehr erfahren"
+  },
+  "seminars.calendar.addTo": {
+    "message": "Zum Kalender hinzufügen"
+  },
+  "seminars.calendar.outlook": {
+    "message": "Outlook / iCal"
+  },
+  "seminars.calendar.google": {
+    "message": "Google Kalender"
+  },
+  "seminars.calendar.outlookWeb": {
+    "message": "Outlook.com"
+  },
+  "seminars.form.name": {
+    "message": "Name"
+  },
+  "seminars.form.email": {
+    "message": "E-Mail"
+  },
+  "seminars.form.submit": {
+    "message": "Jetzt anmelden"
+  },
+  "seminars.form.submitting": {
+    "message": "Wird gesendet..."
+  },
+  "seminars.form.select": {
+    "message": "Bitte auswählen"
+  },
+  "seminars.form.success.title": {
+    "message": "Anmeldung erfolgreich!"
+  },
+  "seminars.form.success.message": {
+    "message": "Vielen Dank für Ihre Anmeldung. Sie erhalten in Kürze eine Bestätigungs-E-Mail."
+  },
+  "seminars.form.error": {
+    "message": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns unter info@one-ware.com."
+  },
+  "cookies.title": {
+    "message": "Cookie-Einstellungen"
+  },
+  "cookies.message": {
+    "message": "Wir verwenden Cookies für Marketing und Analyse, um unsere Dienste zu verbessern und den Erfolg unserer Kampagnen zu messen."
+  },
+  "cookies.necessary": {
+    "message": "Nur notwendige"
+  },
+  "cookies.accept": {
+    "message": "Alle akzeptieren"
+  },
+  "cookies.settings": {
+    "message": "Cookie-Einstellungen"
+  },
+  "partnerwizard.title": {
+    "message": "Finde deine Hardware"
+  },
+  "partnerwizard.reset": {
+    "message": "Zurücksetzen"
+  },
+  "partnerwizard.hardwareType": {
+    "message": "Hardware-Typ"
+  },
+  "partnerwizard.selectHardwareType": {
+    "message": "Wähle einen Hardware-Typ..."
+  },
+  "partnerwizard.vendor": {
+    "message": "Hersteller"
+  },
+  "partnerwizard.selectVendor": {
+    "message": "Wähle einen Hersteller..."
+  },
+  "partnerwizard.selectHardwareTypeFirst": {
+    "message": "Zuerst Hardware-Typ wählen"
+  },
+  "partnerwizard.operatingSystem": {
+    "message": "Betriebssystem"
+  },
+  "partnerwizard.selectOS": {
+    "message": "Wähle ein Betriebssystem..."
+  },
+  "partnerwizard.selectVendorFirst": {
+    "message": "Zuerst Hersteller wählen"
+  },
+  "partnerwizard.integrationMethod": {
+    "message": "Integrations-Methode"
+  },
+  "partnerwizard.selectIntegration": {
+    "message": "Wähle eine Integrations-Methode..."
+  },
+  "partnerwizard.selectOSFirst": {
+    "message": "Zuerst Betriebssystem wählen"
+  },
+  "partnerwizard.availableExportOptions": {
+    "message": "Verfügbare Export-Optionen"
+  },
+  "partnerwizard.noExportOptions": {
+    "message": "Für diese Kombination sind keine Export-Optionen verfügbar."
+  },
+  "partnerwizard.os.none": {
+    "message": "Kein Betriebssystem"
+  },
+  "partnerwizard.os.windows": {
+    "message": "Windows"
+  },
+  "partnerwizard.os.linux": {
+    "message": "Linux"
+  },
+  "partnerwizard.os.mac": {
+    "message": "macOS"
+  },
+  "partnerwizard.integration.prebuiltUi": {
+    "message": "ONE WARE Studio"
+  },
+  "partnerwizard.integration.easyIntegration": {
+    "message": "Eigene Software"
+  },
+  "partnerwizard.integration.fastInference": {
+    "message": "Eigene Software"
+  },
+  "careers.hero.title1": {
+    "message": "Wir_Suchen"
+  },
+  "careers.hero.title2": {
+    "message": "Dich"
+  },
+  "faq.search.placeholder": {
+    "message": "Fragen durchsuchen..."
+  },
+  "faq.search.noResults": {
+    "message": "Keine Fragen gefunden für \"{searchQuery}\""
+  },
+  "faq.search.tryDifferent": {
+    "message": "Versuchen Sie einen anderen Suchbegriff oder stellen Sie Ihre Frage unten."
+  },
+  "faq.form.name": {
+    "message": "Name"
+  },
+  "faq.form.email": {
+    "message": "E-Mail"
+  },
+  "faq.form.question": {
+    "message": "Ihre Frage"
+  },
+  "faq.form.submit": {
+    "message": "Absenden"
+  },
+  "faq.form.sending": {
+    "message": "Wird gesendet..."
+  },
+  "faq.form.success": {
+    "message": "Ihre Frage wurde erfolgreich gesendet!"
+  },
+  "faq.form.error": {
+    "message": "Fehler beim Senden Ihrer Frage. Bitte versuchen Sie es erneut."
+  },
+  "faq.form.errorGeneral": {
+    "message": "Ein Fehler ist beim Senden Ihrer Frage aufgetreten."
   }
 }

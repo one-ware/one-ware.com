@@ -1,118 +1,470 @@
-// src/pages/careers.tsx
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Layout from "@theme/Layout";
-import { JOBS_DATA } from "../data/jobsData";
 import Translate, { translate } from "@docusaurus/Translate";
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import {JSX} from "react";
+import { JOBS_DATA } from "../data/jobsData";
+import { EMPLOYEE_STORIES } from "../data/employeeStories";
+import NeuralNetworkSimple from "../components/NeuralNetworkSimple";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { JSX } from "react";
 
+function getLocalizedField<T extends Record<string, unknown>>(obj: T, field: keyof T, locale: string): unknown {
+  if (locale === "de") {
+    const deKey = `${String(field)}_de` as keyof T;
+    if (obj[deKey] !== undefined) {
+      return obj[deKey];
+    }
+  }
+  return obj[field];
+}
 
 export default function CareersPage(): JSX.Element {
+  const { i18n } = useDocusaurusContext();
+  const locale = i18n.currentLocale;
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [activeStory, setActiveStory] = useState(0);
+  const [displayedStory, setDisplayedStory] = useState(0);
+  const [slideDirection, setSlideDirection] = useState<'left' | 'right'>('right');
+  const [slidePhase, setSlidePhase] = useState<'idle' | 'exit' | 'enter'>('idle');
+  const [heroVisible, setHeroVisible] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
-const { i18n } = useDocusaurusContext();
-const locale =  i18n.currentLocale;
+  const handleStoryChange = (newIndex: number) => {
+    if (newIndex === activeStory || slidePhase !== 'idle') return;
 
-  const openLinkInNewWindow = (url) => {
+    setSlideDirection(newIndex > activeStory ? 'right' : 'left');
+    setActiveStory(newIndex);
+    setSlidePhase('exit');
+
+    setTimeout(() => {
+      setDisplayedStory(newIndex);
+      setSlidePhase('enter');
+
+      setTimeout(() => {
+        setSlidePhase('idle');
+      }, 500);
+    }, 300);
+  };
+
+  useEffect(() => {
+    const timer = setTimeout(() => setHeroVisible(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const openLinkInNewWindow = (url: string) => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
 
- return (
-   <Layout title="Careers at ONE WARE" description="Join ONE WARE and help to revolutionize Edge AI development.">
-    {/* Open Positions Section */}
-    <section id="positions" className="py-12">
-      <div className="container mx-auto">
-        <div className="text-center mb-10">
-          <span className="inline-block px-4 py-1 border-solid border border-gray-400 primary-text rounded-full text-sm uppercase tracking-wide">
-            <Translate id="positions.hiring">Hiring</Translate>
-          </span>
-          <h2 className="mt-6 text-3xl font-bold">
-            <Translate id="positions.join.1">Join</Translate>{" "}        
-            <span className="primary-text">ONE WARE</span>{" "} 
-            <Translate id="positions.join.2">today!</Translate> 
-          </h2>
-          <div className="flex justify-center my-6">
-            <p className="text-xl text-white max-w-xl">
-              <Translate id="positions.cta">
-                If you're interested in any of the positions, please send us
-                your CV and introduction to
-              </Translate>{" "}
-              <a href="mailto:career@one-ware.com">career@one-ware.com</a>.  
-            </p>
-          </div>
+  const scrollToJobs = () => {
+    document.getElementById("jobs")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handlePlayClick = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
+  };
+
+  const allJobs = JOBS_DATA.flatMap(({ positions }) =>
+    positions.map((position) => position)
+  );
+
+  return (
+    <Layout
+      title={translate({ id: "careers.meta.title", message: "Careers at ONE WARE" })}
+      description={translate({ id: "careers.meta.description", message: "Join ONE WARE and help to revolutionize Edge AI development." })}
+    >
+      <section
+        className="relative min-h-[66vh] flex items-center"
+        style={{
+          marginTop: "calc(var(--ifm-navbar-height) * -1)",
+          paddingTop: "var(--ifm-navbar-height)",
+        }}
+      >
+        <div className="absolute inset-0 z-0">
+          <img
+            src={require("@site/static/img/background.webp").default}
+            alt=""
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/50" />
         </div>
 
-        <div className="mx-auto max-w-4xl">
-          {JOBS_DATA.map(({ category, positions }) => (
-            <div key={category} className="mb-12">
-              {/* Category Header */}
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-2xl font-semibold text-white m-0">
-                  <Translate id={`category.${category}`}>{category}</Translate>
-                </h3>
-                <span className="inline-block px-4 py-1 primary-background text-black rounded-full text-sm uppercase">    
-                    {positions.length}{" "}
-                    {positions.length === 1 ?  <Translate id="positions.openJobscounter.1">Opening</Translate> : <Translate id="positions.openJobscounter.2">Openings</Translate>}            
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-0">
+            <div className="w-full lg:w-1/2 text-center lg:text-left flex flex-col justify-center">
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-extralight text-white leading-none tracking-tight">
+                <span
+                  className="block transition-all duration-700 ease-out"
+                  style={{
+                    opacity: heroVisible ? 1 : 0,
+                    transform: heroVisible ? 'translateY(0)' : 'translateY(30px)',
+                  }}
+                >
+                  <Translate id="careers.hero.title1">We_Are</Translate>
+                </span>
+                <span
+                  className="block transition-all duration-700 ease-out delay-150"
+                  style={{
+                    opacity: heroVisible ? 1 : 0,
+                    transform: heroVisible ? 'translateY(0)' : 'translateY(30px)',
+                    transitionDelay: '150ms',
+                  }}
+                >
+                  <Translate id="careers.hero.title2">Hiring</Translate>
+                </span>
+              </h1>
+            </div>
+
+            <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start justify-center">
+              <p
+                className="text-lg md:text-xl text-gray-300 max-w-md text-center lg:text-left mb-8 transition-all duration-700 ease-out"
+                style={{
+                  opacity: heroVisible ? 1 : 0,
+                  transform: heroVisible ? 'translateY(0)' : 'translateY(20px)',
+                  transitionDelay: '300ms',
+                }}
+              >
+                <Translate id="careers.hero.subtitle">
+                  Join our team and help shape the future of Edge AI development. We're looking for passionate people who want to make a difference.
+                </Translate>
+              </p>
+              <button
+                onClick={scrollToJobs}
+                className="button button--primary button--outline button--lg"
+                style={{
+                  opacity: heroVisible ? 1 : 0,
+                  transform: heroVisible ? 'translateY(0)' : 'translateY(20px)',
+                  transition: 'opacity 700ms ease-out, transform 700ms ease-out',
+                  transitionDelay: '450ms',
+                }}
+              >
+                <Translate id="careers.hero.cta">View Open Positions</Translate>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="jobs" className="bg-white py-16 md:py-24">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="relative w-full aspect-video bg-black">
+              {isPlaying && (
+                <video
+                  ref={videoRef}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  onEnded={() => setIsPlaying(false)}
+                />
+              )}
+
+              {!isPlaying && (
+                <button
+                  onClick={handlePlayClick}
+                  className="absolute inset-0 w-full h-full flex flex-col items-center justify-center cursor-pointer bg-black"
+                >
+                  <div className="absolute top-[15%] flex flex-col items-center gap-6">
+                    <span className="text-[var(--ifm-color-primary)] text-sm md:text-base font-medium uppercase" style={{ letterSpacing: '0.15em' }}>
+                      <Translate id="careers.video.joinTeam">JOIN OUR TEAM</Translate>
+                    </span>
+                    <span className="text-white text-2xl md:text-3xl font-medium uppercase" style={{ letterSpacing: '0.15em' }}>
+                      <Translate id="careers.video.applyToday">APPLY TODAY</Translate>
+                    </span>
+                  </div>
+
+                  <div
+                    className="flex items-center justify-center transition-transform hover:scale-110 w-20 h-20 rounded-full"
+                    style={{ border: '1px solid white' }}
+                  >
+                    <svg
+                      width="52"
+                      height="52"
+                      viewBox="0 0 24 24"
+                      fill="#fff"
+                      className="ml-1"
+                    >
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                </button>
+              )}
+            </div>
+
+            <div className="mt-12 md:mt-16 w-full sm:w-4/5 mx-auto">
+              {allJobs.map((job, index) => (
+                <div
+                  key={job.id}
+                  onClick={() =>
+                    openLinkInNewWindow(
+                      require(`@site/static/career/${locale}/${job.url}`).default
+                    )
+                  }
+                  className="cursor-pointer group"
+                >
+                  <div className="flex items-center pt-6 pb-2 pr-8 md:pr-12 transition-all duration-300" style={{ borderBottom: "1px solid #6b7280" }}>
+                    <span className="text-gray-600 text-sm md:text-base font-normal w-10 flex-shrink-0 transition-colors duration-300 group-hover:text-[var(--ifm-color-primary)]">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+
+                    <span className="flex-grow flex justify-center">
+                      <span className="w-full sm:w-72 md:w-96 text-left">
+                        <span className="block text-gray-600 text-sm md:text-base font-normal transition-colors duration-300 group-hover:text-[var(--ifm-color-primary)]">
+                          {getLocalizedField(job, "title", locale) as string}
+                        </span>
+                        <span className="block text-gray-400 text-xs font-normal transition-colors duration-300 group-hover:text-gray-500">
+                          {getLocalizedField(job, "location", locale) as string}
+                        </span>
+                      </span>
+                    </span>
+
+                    <span className="text-gray-600 flex-shrink-0 transition-all duration-300 group-hover:text-[var(--ifm-color-primary)] group-hover:translate-x-2">
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M17 8l4 4m0 0l-4 4m4-4H3"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-20">
+              <h2 className="text-gray-600 text-3xl md:text-4xl font-normal text-left mb-12">
+                <Translate id="careers.whoweare.title">Who we are</Translate>
+              </h2>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                {[1, 2, 3, 4].map((item, index) => (
+                  <div
+                    key={item}
+                    className="flex flex-col group cursor-pointer"
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
+                    <div className="flex justify-center">
+                      <div className="w-full aspect-square max-w-40 rounded-full mb-4 bg-black transition-all duration-500 group-hover:scale-105 group-hover:shadow-lg" />
+                    </div>
+                    <h3 className="text-gray-600 text-sm md:text-base font-normal mb-3 text-left transition-colors duration-300 group-hover:text-[var(--ifm-color-primary)]">
+                      <Translate id="careers.whoweare.item.title">Networking Technology</Translate>
+                    </h3>
+                    <p className="text-gray-500 text-xs md:text-sm font-normal text-left transition-colors duration-300 group-hover:text-gray-700">
+                      <Translate id="careers.whoweare.item.description">Networking Technology Refers To The Various Tools, Devices, And Protocols</Translate>
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="alternative-background py-16 md:py-24">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            <p className="text-[var(--ifm-color-primary)] text-sm md:text-base font-normal uppercase mb-2 text-center">
+              <Translate id="careers.facts.label">Real Numbers</Translate>
+            </p>
+            <h2 className="text-white text-xl md:text-2xl font-light uppercase mb-16 text-center tracking-widest">
+              <Translate id="careers.facts.title">Why you should work with us</Translate>
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="flex flex-col items-center text-center md:items-end md:text-right">
+                <span className="text-[var(--ifm-color-primary)] text-2xl md:text-3xl font-normal uppercase">
+                  <Translate id="careers.facts.stat1.value">Lorem Ipsum</Translate>
+                </span>
+                <span className="text-gray-400 text-xs uppercase mt-1">
+                  <Translate id="careers.facts.stat1.label">Info</Translate>
+                </span>
+                <span className="text-[var(--ifm-color-primary)] text-2xl md:text-3xl font-normal mt-8">
+                  <Translate id="careers.facts.stat2.value">56789</Translate>
+                </span>
+                <span className="text-gray-400 text-xs uppercase mt-1">
+                  <Translate id="careers.facts.stat2.label">Info</Translate>
                 </span>
               </div>
 
-              <div className="w-full bg-transparent rounded-lg p-4">
-                <table className="w-full border-collapse border-none bg-transparent">
-                  <thead className="border-none">
-                    <tr className="border-none text-sm font-semibold text-white uppercase tracking-wide">
-                      <th className="py-3 text-left w-2/3  border-none">
-                        <Translate id="table.role">Role</Translate>
-                      </th>
-                      <th className="py-3 text-left w-1/3  border-none">
-                        <Translate id="table.type">Type</Translate>
-                      </th>
-                      <th className="py-3 text-left w-1/3  border-none">
-                        <Translate id="table.location">Location</Translate>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="border-none">
-                    {positions.map(
-                      ({
-                        id,
-                        title,
-                        description,
-                        type,
-                        location,
-                        url,
-                      }) => (
-                        <React.Fragment key={id}>
-                          <tr
-                            onClick={() =>
-                              openLinkInNewWindow(require(`@site/static/career/${locale}/${url}`).default)
-                            }
-                            className="cursor-pointer hover:bg-zinc-700 "
-                          >
-                            <td className="py-4 border-none">
-                              <div className="text-lg font-medium primary-text transition duration-150">
-                                <Translate id={`job.title.${id}`}>{title}</Translate>
-                              </div>
-                              <p className="text-sm text-gray-400">
-                                <Translate id={`job.description.${id}`}>{description}</Translate>
-                              </p>
-                            </td>
-                            <td className="py-4 text-sm text-gray-300 border-none">
-                              <Translate id={`job.type.${id}`}>{type}</Translate>
-                            </td>
-                            <td className="py-4 text-sm text-gray-300 border-none w-1/4">
-                              <Translate id={`job.location.${id}`}>{location}</Translate>
-                            </td>
-                          </tr>
-                        </React.Fragment>
-                      )
-                    )}
-                  </tbody>
-                </table>
+              <div className="flex items-center justify-center">
+                <NeuralNetworkSimple width={180} height={180} autoRotate={true} />
+              </div>
+
+              <div className="flex flex-col items-center text-center md:items-start md:text-left">
+                <span className="text-[var(--ifm-color-primary)] text-2xl md:text-3xl font-normal">
+                  <Translate id="careers.facts.stat3.value">1234</Translate>
+                </span>
+                <span className="text-gray-400 text-xs uppercase mt-1">
+                  <Translate id="careers.facts.stat3.label">Happy Customers</Translate>
+                </span>
+                <span className="text-[var(--ifm-color-primary)] text-2xl md:text-3xl font-normal uppercase mt-8">
+                  <Translate id="careers.facts.stat4.value">Lorem Ipsum</Translate>
+                </span>
+                <span className="text-gray-400 text-xs uppercase mt-1">
+                  <Translate id="careers.facts.stat4.label">Info</Translate>
+                </span>
               </div>
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-    </section>
-  </Layout>
-);
+      </section>
+
+      <section className="bg-white py-16 md:py-24">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-gray-600 text-xl md:text-2xl font-light uppercase mb-12 text-center tracking-widest">
+              <Translate id="careers.stories.title">Employee Story</Translate>
+            </h2>
+
+            <div className="bg-gray-200 p-6 sm:p-8 md:p-12 pb-6 overflow-hidden">
+              <div
+                className={`story-content ${
+                  slidePhase === 'exit'
+                    ? slideDirection === 'right' ? 'slide-exit-left' : 'slide-exit-right'
+                    : slidePhase === 'enter'
+                    ? slideDirection === 'right' ? 'slide-enter-right' : 'slide-enter-left'
+                    : ''
+                }`}
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-[11fr_9fr] gap-8 lg:gap-24">
+                  <div className="flex flex-col justify-center text-center lg:text-left">
+                    <p className="text-gray-600 text-base md:text-lg italic leading-relaxed min-h-[8rem]">
+                      "{getLocalizedField(EMPLOYEE_STORIES[displayedStory], "quote", locale) as string}"
+                    </p>
+
+                    <div className="mt-8 flex items-start gap-8">
+                      <span className="text-[var(--ifm-color-primary)] text-4xl sm:text-5xl md:text-6xl font-bold italic" style={{ lineHeight: 0.7 }}>
+                        "
+                      </span>
+                      <div className="space-y-1">
+                        <span className="text-gray-700 text-sm md:text-base font-normal block">
+                          {EMPLOYEE_STORIES[displayedStory].name}
+                        </span>
+                        <span className="text-gray-500 text-sm md:text-base block">
+                          {getLocalizedField(EMPLOYEE_STORIES[displayedStory], "position", locale) as string}
+                        </span>
+                        <span className="text-[var(--ifm-color-primary)] text-sm md:text-base block">
+                          {getLocalizedField(EMPLOYEE_STORIES[displayedStory], "cyanText", locale) as string}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="order-first lg:order-none">
+                    <div className="w-full aspect-square max-w-xs mx-auto lg:max-w-none lg:h-full bg-black" />
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex justify-center gap-3 mt-8">
+                {EMPLOYEE_STORIES.map((_, index) => (
+                  <div
+                    key={index}
+                    onClick={() => handleStoryChange(index)}
+                    className={`w-2.5 h-2.5 rounded-full cursor-pointer transition-all duration-300 hover:scale-125 ${
+                      index === activeStory ? "bg-[var(--ifm-color-primary)]" : "bg-neutral-100 hover:bg-neutral-300"
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[var(--ifm-color-primary)] py-16 md:py-24">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-gray-700 text-xl md:text-2xl font-light uppercase mb-12 text-center tracking-widest">
+              <Translate id="careers.companies.title">Great Companies Using Our Services</Translate>
+            </h2>
+
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-6">
+              {[1, 2, 3, 4, 5, 6].map((item) => (
+                <div
+                  key={item}
+                  className="w-24 sm:w-32 h-8 sm:h-10 bg-black transition-all duration-300 hover:scale-110 hover:opacity-80 cursor-pointer"
+                />
+              ))}
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+              {[1, 2, 3, 4].map((item) => (
+                <div
+                  key={item}
+                  className="w-24 sm:w-32 h-8 sm:h-10 bg-black transition-all duration-300 hover:scale-110 hover:opacity-80 cursor-pointer"
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <style>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-in {
+          animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .story-content {
+          transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+        }
+
+        .slide-exit-left {
+          transform: translateX(-60px);
+          opacity: 0;
+        }
+
+        .slide-exit-right {
+          transform: translateX(60px);
+          opacity: 0;
+        }
+
+        .slide-enter-right {
+          animation: enterFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        .slide-enter-left {
+          animation: enterFromLeft 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        @keyframes enterFromRight {
+          from {
+            transform: translateX(60px);
+            opacity: 0;
+          }
+          to {
+            transform: translateX(0);
+            opacity: 1;
+          }
+        }
+
+        @keyframes enterFromLeft {
+          from {
+            transform: translateX(-60px);
+            opacity: 0;
+          }
+          to {
+            transform: translateX(0);
+            opacity: 1;
+          }
+        }
+      `}</style>
+    </Layout>
+  );
 }

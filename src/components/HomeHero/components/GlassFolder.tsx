@@ -16,8 +16,8 @@ interface GlassFolderProps {
 export default function GlassFolder({
   children,
   label,
-  width = '120px',
-  height = '90px',
+  width = 'clamp(70px, 10vw, 120px)',
+  height = 'clamp(52px, 7.5vw, 90px)',
   className = '',
   style,
   borderColor = 'rgba(255, 255, 255, 0.15)',

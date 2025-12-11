@@ -90,9 +90,48 @@ body {
   background-color: var(--ifm-navbar-link-hover-color);
 }
 
-[data-isindex="1"][data-scroll='0'] .navbar{
+.navbar {
+  background: rgba(18, 18, 18, 0.95) !important;
+  border-bottom: none !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+[data-isindex="1"][data-scroll='0'] .navbar {
   background: transparent !important;
-  box-shadow: none;  
+  border-bottom: none !important;
+  box-shadow: none;
+}
+
+.navbar__link {
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.navbar__link:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.navbar__item.dropdown > .navbar__link::after {
+  content: '';
+  width: 14px;
+  height: 14px;
+  margin-left: 4px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  transform: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  opacity: 0.7;
+}
+
+.navbar__item.dropdown:hover > .navbar__link::after {
+  transform: translateY(1px);
+  opacity: 1;
 }
 
 .dropdown > .active {
@@ -202,12 +241,23 @@ body {
   z-index: -10;
 }
 
-.navbarbutton:hover{
-  color: black;
+.navbarbutton {
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+
+.navbarbutton:hover {
+  color: var(--ifm-color-primary) !important;
+  border-color: var(--ifm-color-primary) !important;
+}
+
+.getstartedbutton:hover {
+  color: var(--ifm-color-primary) !important;
+  background: rgba(18, 18, 18, 0.95) !important;
 }
 
 @media (max-width: 768px) {
-  .getstartedbutton{
+  .getstartedbutton {
     color: black;
   }
 }
@@ -226,7 +276,7 @@ body {
   visibility: hidden !important;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1500px) {
   .navbar__toggle {
     display: inherit !important;
   }
@@ -239,4 +289,94 @@ body {
 /* Increase the padding of nested items in the docusaurus sidebar */
 .theme-doc-sidebar-menu .menu__list {
   padding-left: 2rem;
+}
+
+/* ===== Roboflow-Style Dropdown Menu ===== */
+
+/* Dropdown Menu Container */
+.dropdown__menu {
+  width: 280px;
+  padding: 8px;
+  border-radius: 12px;
+  background: rgba(30, 30, 30, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Dropdown Links with Icons */
+.dropdown__link {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px !important;
+  border-radius: 8px;
+  transition: all 0.15s ease;
+  margin: 2px 0;
+}
+
+.dropdown__link:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Icon Styling */
+.dropdown__link-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+  color: inherit;
+  flex-shrink: 0;
+  transition: color 0.15s ease;
+}
+
+/* Highlighted Links (Product Headers) */
+.dropdown__link--highlight {
+  font-weight: 600 !important;
+  color: var(--ifm-color-primary) !important;
+  margin-top: 8px;
+}
+
+.dropdown__link--highlight:first-child {
+  margin-top: 0;
+}
+
+.dropdown__link--highlight .dropdown__link-icon {
+  color: var(--ifm-color-primary);
+}
+
+/* Remove default list styling */
+.dropdown__menu li {
+  list-style: none;
+}
+
+/* Category Label (e.g. "Features") */
+.dropdown__label {
+  padding: 12px 14px 6px 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Homepage transparent navbar dropdown */
+[data-isindex="1"][data-scroll='0'] .dropdown__menu {
+  background: rgba(30, 30, 30, 0.95);
+  backdrop-filter: blur(12px);
+}
+
+/* ===== Mobile Menu Icons ===== */
+.menu__link--with-icon {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu__link-icon {
+  width: 18px;
+  height: 18px;
+  color: inherit;
+  flex-shrink: 0;
 }

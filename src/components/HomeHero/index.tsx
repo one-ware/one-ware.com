@@ -217,7 +217,7 @@ export default function HomeHero() {
 
       <div
         className="relative z-10 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 lg:px-16 min-h-screen"
-        style={{ paddingTop: "var(--ifm-navbar-height)" }}
+        style={{ paddingTop: "calc(var(--ifm-navbar-height) + 2rem)" }}
       >
         <div className="w-full max-w-[98%] sm:max-w-[95%] flex flex-col gap-10 sm:gap-12 2xl:gap-14">
             <div className="flex flex-col 2xl:flex-row items-center gap-2 sm:gap-4 2xl:gap-12">
@@ -285,7 +285,7 @@ export default function HomeHero() {
             </div>
 
             <div className="relative flex items-center 2xl:items-end justify-center 2xl:justify-end w-full 2xl:w-[60%] h-auto 2xl:h-full select-none flex-1 2xl:flex-initial">
-              <div className="absolute 2xl:relative z-30 2xl:z-auto bottom-4 sm:bottom-6 2xl:bottom-auto left-4 sm:left-8 2xl:left-auto 2xl:mr-8 sm:2xl:mr-16">
+              <div className="absolute 2xl:relative z-30 2xl:z-auto bottom-12 sm:bottom-10 2xl:bottom-auto left-4 sm:left-8 2xl:left-auto 2xl:mr-8 sm:2xl:mr-16">
                 <FolderWithApple
                   style={{
                     animation: "fadeInUp 0.8s ease-out forwards",

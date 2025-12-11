@@ -2,12 +2,16 @@
 sidebar_label:  Partners and Supported Vendors
 ---
 
+import PartnerFilterWizard from '@site/src/components/PartnerFilterWizard';
+
 # Partners and Supported Vendors
 
 :::important
  **ONE AI works with all chip vendors. Next to tailored AI model generation for dedicated hardware, we are also providing standard outputs (e.g., HDL, code, ONNX) that can be used in almost any toolchain.**
  If your chip vendor is not listed as supported vendor and you want to onboard quickly, please contact us at **[info@one-ware.com](mailto:info@one-ware.com)**.
  :::
+
+<PartnerFilterWizard />
 
 ## Supported Chip- and Hardware Vendors
 

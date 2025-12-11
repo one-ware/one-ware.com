@@ -39,6 +39,8 @@ export default function GhostDragAnimation({ sourceRef, targetRef, show, onHover
   const requestRef = useRef<number | undefined>(undefined);
   const startTimeRef = useRef<number | undefined>(undefined);
   const lastHoverState = useRef<boolean>(false);
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const isPausedRef = useRef<boolean>(false);
 
   useEffect(() => {
     const updatePositions = () => {
@@ -80,17 +82,42 @@ export default function GhostDragAnimation({ sourceRef, targetRef, show, onHover
 
       const throttledUpdate = throttle(updatePositions, 100);
 
+      const handleScroll = () => {
+        throttledUpdate();
+
+        isPausedRef.current = true;
+        startTimeRef.current = undefined;
+
+        if (opacityGroupRef.current) {
+          opacityGroupRef.current.style.opacity = '0';
+        }
+        if (folderGroupRef.current) {
+          folderGroupRef.current.style.opacity = '0';
+        }
+
+        if (scrollTimeoutRef.current) {
+          clearTimeout(scrollTimeoutRef.current);
+        }
+
+        scrollTimeoutRef.current = setTimeout(() => {
+          isPausedRef.current = false;
+          startTimeRef.current = undefined;
+        }, 1000);
+      };
+
       window.addEventListener('resize', throttledUpdate);
-      window.addEventListener('scroll', throttledUpdate);
+      window.addEventListener('scroll', handleScroll);
 
       return () => {
         window.removeEventListener('resize', throttledUpdate);
-        window.removeEventListener('scroll', throttledUpdate);
+        window.removeEventListener('scroll', handleScroll);
         if (requestRef.current) cancelAnimationFrame(requestRef.current);
+        if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
       };
     } else {
       return () => {
         if (requestRef.current) cancelAnimationFrame(requestRef.current);
+        if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
       };
     }
   }, [show, sourceRef, targetRef]);
@@ -112,6 +139,10 @@ export default function GhostDragAnimation({ sourceRef, targetRef, show, onHover
     }
 
     const animate = (time: number) => {
+      if (isPausedRef.current) {
+        requestRef.current = requestAnimationFrame(animate);
+        return;
+      }
       if (!startTimeRef.current) startTimeRef.current = time;
       const coords = coordsRef.current;
       if (!coords) return;

@@ -32,7 +32,7 @@ const config: Config = {
   stylesheets: [
     "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css",
     "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css",
-    "https://fonts.googleapis.com/css?family=Montserrat",
+    "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap",
   ],
 
   //headTags: [
@@ -151,19 +151,12 @@ const config: Config = {
           label: "Products",
           to: "/one-ai",
           activeBaseRegex: "(^.*/one-ai$)|(^.*/docs/one-ai/.*$)",
-          className: "navbar__dropdown--wide",
+          className: "navbar__dropdown--products",
           items: [
             {
               to: "/one-ai",
               label: "ONE AI",
-              className: "navbar__dropdown--custom-link",
-              style: {
-                fontWeight: "bold",
-                color: "#00FFD1",
-                textDecoration: "none",
-                display: "block",
-                padding: "8px 12px"
-              }
+              className: "dropdown__link--highlight",
             },
             {
               to: "/docs/one-ai/getting-started",
@@ -174,7 +167,7 @@ const config: Config = {
               label: "Demo Projects",
             },
             {
-              to: "/docs/one-ai/partners",
+              to: "/docs/one-ai/getting-started/export",
               label: "Supported Hardware",
             },
             {
@@ -183,39 +176,28 @@ const config: Config = {
             },
             {
               type: "html",
-              value: '<div style="padding-top: 8px; padding-left: 7px; color: #00caa5ff; font-size: 0.8rem; font-weight: 700;">Features</div>',
+              value: '<div class="dropdown__label">Features</div>',
             },
             {
-              type: "html",
-              value: '<a href="/docs/one-ai/getting-started/dataset/camera-tool" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Capture Tool</a>',
+              to: "/docs/one-ai/getting-started/dataset/camera-tool",
+              label: "Capture Tool",
             },
             {
-              type: "html",
-              value: '<a href="/docs/one-ai/getting-started/filters-and-augmentations" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Filters & Augmentation</a>',
+              to: "/docs/one-ai/getting-started/filters-and-augmentations",
+              label: "Filters & Augmentation",
             },
             {
-              type: "html",
-              value: '<a href="/docs/one-ai/getting-started/export" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Export</a>',
-            },
-            {
-              type: "html",
-              value: '<hr style="margin: 0.5rem 0; border: none; border-top: 1px solid var(--ifm-color-primary);">',
+              to: "/docs/one-ai/getting-started/export",
+              label: "Export",
             },
             {
               to: "/studio",
               label: "ONE WARE Studio",
-              className: "navbar__dropdown--custom-link",
-              style: {
-                fontWeight: "bold",
-                color: "#00FFD1",
-                textDecoration: "none",
-                display: "block",
-                padding: "8px 12px"
-              }
+              className: "dropdown__link--highlight",
             },
             {
               to: "/docs/studio/setup",
-              label: "Get Started",
+              label: "Studio Get Started",
             },
             {
               to: "/docs/studio/plugins/overview/",
@@ -227,42 +209,45 @@ const config: Config = {
           type: "dropdown",
           position: "left",
           label: "Solutions",
+          className: "navbar__dropdown--solutions",
           items: [
             {
               to: "/docs/one-ai/use-cases/",
               label: "Applications",
+              className: "dropdown__link--highlight",
             },
             {
-              type: "html",
-              value: '<a href="/docs/one-ai/use-cases/camera-tool" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Quality Control</a>',
+              to: "/docs/one-ai/use-cases/camera-tool",
+              label: "Quality Control",
             },
             {
-              type: "html",
-              value: '<a href="/docs/one-ai/use-cases/chip" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Edge AI</a>',
+              to: "/docs/one-ai/use-cases/chip",
+              label: "Edge AI",
             },
             {
-              type: "html",
-              value: '<a href="/docs/one-ai/use-cases/pcb" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Vision AI</a>',
+              to: "/docs/one-ai/use-cases/pcb",
+              label: "Vision AI",
             },
             {
               to: "/#industries",
               label: "Industries",
+              className: "dropdown__link--highlight",
             },
             {
-              type: "html",
-              value: '<a href="/docs/one-ai/industries/manufacturing" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Manufacturing</a>',
+              to: "/docs/one-ai/industries/manufacturing",
+              label: "Manufacturing",
             },
             {
-              type: "html",
-              value: '<a href="/docs/one-ai/industries/healthcare" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Healthcare</a>',
+              to: "/docs/one-ai/industries/healthcare",
+              label: "Healthcare",
             },
             {
-              type: "html",
-              value: '<a href="/docs/one-ai/industries/food-beverage" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Food & Beverage</a>',
+              to: "/docs/one-ai/industries/food-beverage",
+              label: "Food & Beverage",
             },
             {
-              type: "html",
-              value: '<a href="/docs/one-ai/industries/agriculture" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Agriculture</a>',
+              to: "/docs/one-ai/industries/agriculture",
+              label: "Agriculture",
             },
           ],
         },
@@ -284,12 +269,16 @@ const config: Config = {
               label: "Seminars & Webinars",
             },
             {
-              to: "/docs/one-ai/partners",
+              to: "/docs/one-ai/getting-started/export",
               label: "Supported Hardware",
             },
             {
               to: "/docs/one-ai/open-source-program",
               label: "Open Source Program",
+            },
+            {
+              to: "/docs/one-ai/getting-started/help/questions-and-answers",
+              label: "Questions & Answers",
             },
             {
               href: "https://discord.com/invite/NCN9VAh",
