@@ -2,6 +2,39 @@ import React, { useState, useEffect, useRef, memo } from "react";
 import RobotHeadGraphic from "../components/RobotHeadGraphic";
 import { useDelayedUnmount } from '../hooks/useDelayedUnmount';
 
+function useZoomScale() {
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    const updateScale = () => {
+      const zoomLevel = Math.round(window.devicePixelRatio * 100);
+
+      if (zoomLevel > 120) {
+        setScale(100 / zoomLevel);
+      } else {
+        setScale(1);
+      }
+    };
+
+    updateScale();
+    window.addEventListener('resize', updateScale);
+
+    const visualViewport = window.visualViewport;
+    if (visualViewport) {
+      visualViewport.addEventListener('resize', updateScale);
+    }
+
+    return () => {
+      window.removeEventListener('resize', updateScale);
+      if (visualViewport) {
+        visualViewport.removeEventListener('resize', updateScale);
+      }
+    };
+  }, []);
+
+  return scale;
+}
+
 interface TrainingProgressOverlayProps {
   isActive: boolean;
   isRebuilding: boolean;
@@ -21,6 +54,7 @@ export default memo(function TrainingProgressOverlay({
   onComplete,
   duration = 4500,
 }: TrainingProgressOverlayProps) {
+  const zoomScale = useZoomScale();
   const [progress, setProgress] = useState(0);
   const [hideUI, setHideUI] = useState(false);
   const requestRef = useRef<number | undefined>(undefined);
@@ -103,6 +137,9 @@ export default memo(function TrainingProgressOverlay({
 
   if (!shouldRender) return null;
 
+  const robotSize = `calc(clamp(48px, 12vw, 128px) * ${zoomScale})`;
+  const fontSize = `calc(clamp(7px, 1.8vw, 14px) * ${zoomScale})`;
+
   return (
     <div
       className={`absolute transition-opacity duration-500 ${
@@ -114,37 +151,37 @@ export default memo(function TrainingProgressOverlay({
         bottom: "clamp(4px, 1vh, 8px)",
         left: "clamp(8px, 2vw, 32px)",
         right: "clamp(8px, 2vw, 32px)",
-        gap: "clamp(8px, 2vw, 24px)",
+        gap: `calc(clamp(8px, 2vw, 24px) * ${zoomScale})`,
       }}
     >
       <div
         className="relative flex-shrink-0"
         style={{
-          width: "clamp(48px, 12vw, 128px)",
-          height: "clamp(48px, 12vw, 128px)",
+          width: robotSize,
+          height: robotSize,
         }}
       >
         <RobotHeadGraphic isActive={isActive} showGears={progress < 40} />
       </div>
 
       <div className="flex-1 min-w-0">
-        <div className="flex justify-between items-end mb-1 sm:mb-3 text-[var(--ifm-color-primary)] tracking-wider">
+        <div className="flex justify-between items-end mb-1 sm:mb-2 text-[var(--ifm-color-primary)] tracking-wider">
           <span
             className="uppercase font-bold drop-shadow-[0_0_5px_rgba(0,255,209,0.5)] tracking-[0.1em] sm:tracking-[0.2em] truncate"
-            style={{ fontSize: "clamp(7px, 1.8vw, 14px)" }}
+            style={{ fontSize }}
           >
             {getProgressText(progress)}
           </span>
           <span
             className="font-bold flex-shrink-0 ml-2"
-            style={{ fontSize: "clamp(7px, 1.8vw, 14px)" }}
+            style={{ fontSize }}
           >
             {progress}%
           </span>
         </div>
         <div
           className="w-full bg-white/10 rounded-full overflow-hidden"
-          style={{ height: "clamp(2px, 0.4vh, 6px)" }}
+          style={{ height: `calc(clamp(2px, 0.4vh, 6px) * ${zoomScale})` }}
         >
           <div
             className="h-full bg-[var(--ifm-color-primary)] shadow-[0_0_15px_var(--ifm-color-primary)]"

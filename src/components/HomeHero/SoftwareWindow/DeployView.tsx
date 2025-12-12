@@ -1,11 +1,45 @@
 import React, { useState, useEffect, memo } from 'react';
 import '../glass-design.css';
 
+function useZoomScale() {
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    const updateScale = () => {
+      const zoomLevel = Math.round(window.devicePixelRatio * 100);
+
+      if (zoomLevel > 120) {
+        setScale(100 / zoomLevel);
+      } else {
+        setScale(1);
+      }
+    };
+
+    updateScale();
+    window.addEventListener('resize', updateScale);
+
+    const visualViewport = window.visualViewport;
+    if (visualViewport) {
+      visualViewport.addEventListener('resize', updateScale);
+    }
+
+    return () => {
+      window.removeEventListener('resize', updateScale);
+      if (visualViewport) {
+        visualViewport.removeEventListener('resize', updateScale);
+      }
+    };
+  }, []);
+
+  return scale;
+}
+
 interface DeployViewProps {
     onDeploy: () => void;
 }
 
 export default memo(function DeployView({ onDeploy }: DeployViewProps) {
+    const zoomScale = useZoomScale();
     const [isHovered, setIsHovered] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
     const [isPressed, setIsPressed] = useState(false);
@@ -26,7 +60,12 @@ export default memo(function DeployView({ onDeploy }: DeployViewProps) {
     return (
         <div
             className="absolute left-1/2 -translate-x-1/2 z-50 flex items-center justify-center"
-            style={{ perspective: '1000px', bottom: 'clamp(20px, 5vh, 40px)' }}
+            style={{
+                perspective: '1000px',
+                bottom: 'clamp(20px, 5vh, 40px)',
+                transform: `translateX(-50%) scale(${zoomScale})`,
+                transformOrigin: 'center bottom',
+            }}
         >
             <button
                 onClick={handleClick}
