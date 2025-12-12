@@ -216,7 +216,7 @@ export default function HomeHero() {
       />
 
       <div
-        className="relative z-10 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 lg:px-16 min-h-screen"
+        className="relative z-0 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 lg:px-16 min-h-screen"
         style={{ paddingTop: "calc(var(--ifm-navbar-height) + 2rem)" }}
       >
         <div className="w-full max-w-[98%] sm:max-w-[95%] flex flex-col gap-10 sm:gap-12 2xl:gap-14">
@@ -256,7 +256,7 @@ export default function HomeHero() {
                 Fully Automated in One Software
               </p>
 
-              <div className="hidden lg:flex flex-row items-center justify-center 2xl:justify-start gap-4 mt-8 w-full">
+              <div className="hidden 2xl:flex flex-row items-center justify-center 2xl:justify-start gap-4 mt-8 w-full">
                 <Link
                   href="/docs/one-ai/getting-started"
                   style={{
@@ -285,7 +285,7 @@ export default function HomeHero() {
             </div>
 
             <div className="relative flex items-center 2xl:items-end justify-center 2xl:justify-end w-full 2xl:w-[60%] h-auto 2xl:h-full select-none flex-1 2xl:flex-initial">
-              <div className="absolute 2xl:relative z-30 2xl:z-auto bottom-12 sm:bottom-10 2xl:bottom-auto left-4 sm:left-8 2xl:left-auto 2xl:mr-8 sm:2xl:mr-16">
+              <div className="absolute 2xl:relative z-20 2xl:z-auto bottom-12 sm:bottom-10 2xl:bottom-auto left-4 sm:left-8 2xl:left-auto 2xl:mr-8 sm:2xl:mr-16">
                 <FolderWithApple
                   style={{
                     animation: "fadeInUp 0.8s ease-out forwards",
@@ -317,7 +317,7 @@ export default function HomeHero() {
             </div>
           </div>
 
-            <div className="flex lg:hidden flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 2xl:gap-16 w-full mb-16 lg:mb-0">
+            <div className="flex 2xl:hidden flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 2xl:gap-16 w-full mb-16 2xl:mb-0">
             <Link
               href="/docs/one-ai/getting-started"
               style={{

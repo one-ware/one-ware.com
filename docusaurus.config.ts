@@ -255,6 +255,7 @@ const config: Config = {
           type: "dropdown",
           position: "left",
           label: "Developers",
+          className: "navbar__dropdown--developers",
           items: [
             {
               to: "/docs/one-ai/getting-started",
@@ -347,18 +348,14 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: "https://cloud.one-ware.com/Account/Login",
+          type: "html",
           position: "right",
-          label: "Login",
-          className: "button button--primary button--outline button--md font-bold navbarbutton",
-          style: { "marginLeft": "2px", "marginRight": "2px" }
+          value: `<a href="https://cloud.one-ware.com/Account/Login" class="button button--primary button--outline button--md font-bold navbarbutton loginbutton" style="display: inline-flex; align-items: center; gap: 6px;"><span class="login-button-text">Login</span><svg class="login-button-icon" style="display: none;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg></a>`,
         },
         {
-          to: "/docs/one-ai/getting-started",
-          label: "Free Download",
+          type: "html",
           position: "right",
-          className: "button button--primary button--md text-gray-900 font-bold navbarbutton getstartedbutton",
-          style: { "marginLeft": "2px" }
+          value: `<a href="/docs/one-ai/getting-started" class="button button--primary button--md text-gray-900 font-bold navbarbutton getstartedbutton" style="display: inline-flex; align-items: center; gap: 6px;"><span class="download-button-text">Free Download</span><svg class="download-button-icon" style="display: none;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>`,
         },
 
       ],
