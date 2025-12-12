@@ -493,7 +493,7 @@ export default function SoftwareWindow({
 
   const isMoved = windowPos.x !== 0 || windowPos.y !== 0;
   const rootStyle = {
-      height: "60vh",
+      height: isSmallScreen ? "55vh" : "60vh",
       aspectRatio: "4/3",
       ...style,
       ...( (isWindowDragging || isMoved) ? { animation: 'none', opacity: 1 } : {} ),
@@ -572,7 +572,7 @@ export default function SoftwareWindow({
                  }
              }}
              style={{
-               flex: 5,
+               flex: isSmallScreen ? 4 : 5,
                minHeight: 0,
                position: "relative",
                overflow: "hidden",
