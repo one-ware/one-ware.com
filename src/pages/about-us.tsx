@@ -72,18 +72,18 @@ export default function AboutUs(): JSX.Element {
                 <div className="flex flex-row lg:flex-col gap-8 lg:gap-0 lg:space-y-8">
                   <div className="text-center lg:text-left">
                     <span className="text-gray-700 text-3xl md:text-4xl font-light">
-                      60.0K+
+                      15+
                     </span>
                     <span className="text-gray-400 text-xs uppercase block mt-1">
-                      Connectivity
+                      Employees
                     </span>
                   </div>
                   <div className="text-center lg:text-left">
                     <span className="text-gray-700 text-3xl md:text-4xl font-light">
-                      88.0K+
+                      2024
                     </span>
                     <span className="text-gray-400 text-xs uppercase block mt-1">
-                      Performance
+                      Founded
                     </span>
                   </div>
                 </div>
@@ -96,18 +96,18 @@ export default function AboutUs(): JSX.Element {
               <div className="flex flex-col sm:flex-row lg:flex-col justify-center gap-4 sm:gap-6 lg:gap-8 w-full lg:w-auto">
                 <div className="bg-gray-200 p-4 sm:p-6 flex-1">
                   <h3 className="text-gray-700 text-sm sm:text-base font-medium mb-2">
-                    Lorem Ipsum Dolor
+                    Easing the way from idea to deployed Edge AI
                   </h3>
                   <p className="text-gray-500 text-xs sm:text-sm">
-                    Consectetur adipiscing elit sed do eiusmod tempor incididunt.
+                    One Ware provides an easy workflow from idea to deployed AI solution. Our goal is to enable you to create your own customised AI perfectly tailored to your project and deployment environment. When it comes to AI, One Ware removes the bottleneck of scarce experts, long development times and expensive hardware upgrades that usually hinder AI integration. That means state-of-the-art accuracy without data centers, heavyweight teams or months of trial and error.
                   </p>
                 </div>
                 <div className="bg-gray-200 p-4 sm:p-6 flex-1">
                   <h3 className="text-gray-700 text-sm sm:text-base font-medium mb-2">
-                    Sed Ut Perspiciatis
+                    AI that fits your hardware
                   </h3>
                   <p className="text-gray-500 text-xs sm:text-sm">
-                    Unde omnis iste natus error sit voluptatem accusantium.
+                    All this is possible through ONE AI, our patent-pending platform that automatically generates custom neural networks for your specific dataset, latency, power and hardware targets. From modern GPUs to decade-old FPGAs and microcontrollers, ONE WARE helps you run state-of-the-art AI on the hardware you already have. This is complemented with ONE WARE Studio, a powerful IDE that lets your engineers simulate, optimize and deploy computer vision and edge AI like any other software project.
                   </p>
                 </div>
               </div>
@@ -161,9 +161,10 @@ export default function AboutUs(): JSX.Element {
                 <span className="block">Perspective of AI</span>
               </h2>
               <p className="text-gray-500 text-xs sm:text-sm max-w-xs text-left md:text-right">
-                Networking Technology Refers To The
+                We believe AI should feel like any other software tool:
                 <br />
-                Various Tool, Devices, And Protocols
+                simple to integrate, vendor-independent and available on
+                every device – not limited to the data center.
               </p>
             </div>
 
@@ -173,29 +174,34 @@ export default function AboutUs(): JSX.Element {
 
                 <div className="flex flex-col justify-center">
                   <h3 className="text-gray-700 text-xl md:text-2xl font-medium mb-4 text-center md:text-left">
-                    Lorem Ipsum Dolor
+                    Bringing AI development to every engineer
                   </h3>
                   <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6 md:mb-8 text-center md:text-left">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                    enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                    ONE WARE was founded to remove the bottlenecks of manual model
+                    design, hardware-specific tooling and expensive cloud-only
+                    solutions. By combining our open-source IDE with the fully
+                    automated ONE AI engine, we enable embedded, automation and
+                    software teams to create and deploy powerful AI models as part
+                    of their everyday engineering workflow. Thus reducing development
+					time to days instead of months, saving costs and valuable resources.
+					We work to make efficient AI processes possible.
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-4 sm:gap-12 items-center md:items-start">
                     <div className="text-center md:text-left">
                       <span className="text-gray-700 text-2xl md:text-3xl font-light">
-                        60.0K+
+                        4K+
                       </span>
                       <span className="text-gray-500 text-xs uppercase block mt-1">
-                        Connectivity
+                        AI Models/Day
                       </span>
                     </div>
                     <div className="text-center md:text-left">
                       <span className="text-gray-700 text-2xl md:text-3xl font-light">
-                        88.0K+
+                        &lt;1s
                       </span>
                       <span className="text-gray-500 text-xs uppercase block mt-1">
-                        Performance
+                        Prediction Time
                       </span>
                     </div>
                   </div>
@@ -224,7 +230,7 @@ export default function AboutUs(): JSX.Element {
               Join our Team
             </p>
             <h2 className="text-gray-800 text-2xl md:text-3xl font-medium mb-8">
-              You share our vision? Lets work on it, together!
+              You share our vision? Let&apos;s work on it, together!
             </h2>
             <Link
               to="/careers"
