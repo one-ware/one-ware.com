@@ -276,13 +276,76 @@ body {
   visibility: hidden !important;
 }
 
-@media (max-width: 1500px) {
-  .navbar__toggle {
-    display: inherit !important;
+@media (max-width: 1500px) and (min-width: 997px) {
+  .navbar__link {
+    font-size: 0.8rem;
+    padding: 6px 8px;
   }
-  .navbar__items--right > .navbar__item:not(.header-github-link),
-  .navbar__items:not(.navbar__items--right) > .navbar__item:not(.navbar__brand) {
+
+  .navbarbutton {
+    padding: 4px 10px !important;
+    font-size: 0.75rem;
+  }
+
+  .navbar__brand img {
+    height: 28px;
+  }
+
+  .login-button-text,
+  .download-button-text {
+    display: none;
+  }
+
+  .login-button-icon,
+  .download-button-icon {
+    display: inline-flex !important;
+  }
+
+  .navbar__items--right {
+    gap: 2px !important;
+  }
+
+  .navbar__items--right > .navbar__item {
+    margin: 0 !important;
+    padding: 0 2px !important;
+  }
+
+  .navbar__items--right .navbarbutton {
+    margin: 0 !important;
+    padding: 4px 8px !important;
+  }
+
+  .navbar__search {
+    margin-left: 2px !important;
+  }
+
+  .DocSearch-Button {
+    height: 30px !important;
+    padding: 0 8px !important;
+    font-size: 0.8rem !important;
+    border-radius: 6px !important;
+  }
+
+  .DocSearch-Button-Placeholder {
+    font-size: 0.8rem !important;
+  }
+
+  .DocSearch-Search-Icon {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  .DocSearch-Button-Keys {
     display: none !important;
+  }
+
+  a.navbar__dropdown--developers {
+    font-size: 0 !important;
+  }
+
+  a.navbar__dropdown--developers::before {
+    content: "Devs" !important;
+    font-size: 0.8rem !important;
   }
 }
 
@@ -379,4 +442,21 @@ body {
   height: 18px;
   color: inherit;
   flex-shrink: 0;
+}
+
+.navbar-sidebar .navbarbutton {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  margin: 4px 0 !important;
+}
+
+.navbar-sidebar .login-button-text,
+.navbar-sidebar .download-button-text {
+  display: inline !important;
+}
+
+.navbar-sidebar .login-button-icon,
+.navbar-sidebar .download-button-icon {
+  display: none !important;
 }

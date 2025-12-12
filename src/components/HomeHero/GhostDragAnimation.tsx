@@ -217,7 +217,7 @@ export default function GhostDragAnimation({ sourceRef, targetRef, show, onHover
   const initialPathLen = coordsRef.current?.pathLen || 0;
 
   return (
-    <div ref={containerRef} className="fixed inset-0 pointer-events-none z-[10000] overflow-hidden" style={{ willChange: 'transform' }}>
+    <div ref={containerRef} className="fixed inset-0 pointer-events-none z-[30] overflow-hidden" style={{ willChange: 'transform' }}>
       <svg className="w-full h-full" style={{ willChange: 'transform' }}>
         <defs>
           <filter id="glow-strong">

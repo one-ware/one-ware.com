@@ -1,6 +1,39 @@
 import React, { useState, useEffect, useRef, memo } from 'react';
 import { useDelayedUnmount } from '../hooks/useDelayedUnmount';
 
+function useZoomScale() {
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    const updateScale = () => {
+      const zoomLevel = Math.round(window.devicePixelRatio * 100);
+
+      if (zoomLevel > 120) {
+        setScale(100 / zoomLevel);
+      } else {
+        setScale(1);
+      }
+    };
+
+    updateScale();
+    window.addEventListener('resize', updateScale);
+
+    const visualViewport = window.visualViewport;
+    if (visualViewport) {
+      visualViewport.addEventListener('resize', updateScale);
+    }
+
+    return () => {
+      window.removeEventListener('resize', updateScale);
+      if (visualViewport) {
+        visualViewport.removeEventListener('resize', updateScale);
+      }
+    };
+  }, []);
+
+  return scale;
+}
+
 interface TopMetricsProps {
   isActive: boolean;
   animateSetup?: boolean;
@@ -16,6 +49,7 @@ interface TopMetricsProps {
 }
 
 export default memo(function TopMetrics({ isActive, animateSetup = false, animatePrecision = false, isImproved = false, animateHardwareSwitch = false, retrainedPrecision = false, isInteractive = false, onUserChange, onBusyChange, onFpsChange, targetAccuracy }: TopMetricsProps) {
+  const zoomScale = useZoomScale();
   const [displayedFps, setDisplayedFps] = useState(25);
   const [displayedAccuracy, setDisplayedAccuracy] = useState(0.0);
   const [selectedHardware, setSelectedHardware] = useState<string | null>(null);
@@ -393,20 +427,26 @@ export default memo(function TopMetrics({ isActive, animateSetup = false, animat
 
       {shouldRenderPanels && (
         <div
-          className="overflow-x-auto lg:overflow-x-visible overflow-y-hidden scrollbar-thin h-full"
+          className="overflow-visible scrollbar-thin h-full w-full"
+          style={{
+            transform: `scale(${zoomScale})`,
+            transformOrigin: 'top left',
+            width: zoomScale < 1 ? `${100 / zoomScale}%` : '100%',
+            height: zoomScale < 1 ? `${100 / zoomScale}%` : '100%',
+          }}
         >
           <div
             className="flex flex-nowrap h-full w-full"
             style={{ gap: 'clamp(8px, 1.5vw, 16px)' }}
           >
 
-        <div className={glassPanelClass} style={{ ...getPanelStyle(0), minWidth: '150px' }}>
+        <div className={glassPanelClass} style={{ ...getPanelStyle(0), minWidth: '120px' }}>
           <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-50" />
-          <div className="oneware-section-header flex-shrink-0" style={{ margin: 0, padding: 0, fontSize: 'clamp(0.45rem, 1.2vw, 0.75rem)' }}>
+          <div className="oneware-section-header flex-shrink-0" style={{ margin: 0, padding: 0, fontSize: 'clamp(0.4rem, 1vw, 0.7rem)' }}>
               HARDWARE
           </div>
           <div className="flex-1 flex flex-col justify-center">
-          <div className="flex p-[2px] bg-black/20 rounded-lg border border-white/5 w-full">
+          <div className="flex p-[1px] bg-black/20 rounded-md border border-white/5 w-full">
                   {['PC', 'FPGA', 'MCU'].map((hw, i) => (
                       <div
                         key={hw}
@@ -418,14 +458,14 @@ export default memo(function TopMetrics({ isActive, animateSetup = false, animat
                           }
                         }}
                         className={`
-                          flex-1 flex items-center justify-center py-1.5 rounded-[6px] transition-all duration-300 ease-out relative overflow-hidden
+                          flex-1 flex items-center justify-center py-1 rounded-[4px] transition-all duration-300 ease-out relative overflow-hidden
                           ${isInteractive ? 'cursor-pointer pointer-events-auto hover:bg-white/5' : 'cursor-default pointer-events-none'}
                           ${selectedHardware === hw
                               ? 'text-[var(--ifm-color-primary)] font-bold bg-white/5 border border-[var(--ifm-color-primary)]/20 shadow-[inset_0_0_15px_rgba(0,255,209,0.05)]'
                               : 'text-white/30 border border-transparent'}
                         `}
                       >
-                          <span className="relative z-10 tracking-wider" style={{ fontSize: 'clamp(0.45rem, 1.2vw, 0.75rem)' }}>
+                          <span className="relative z-10 tracking-wider" style={{ fontSize: 'clamp(0.4rem, 1vw, 0.65rem)' }}>
                               {hw}
                           </span>
                           <div
