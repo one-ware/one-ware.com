@@ -26,8 +26,6 @@ export const partnerFilterData: PartnerFilterData = {
               toolchain: 'Intel FPGA AI Suite',
               docLink: '/docs/one-ai/getting-started/export',
             },
-          ],
-          fast_inference: [
             {
               format: 'VHDL',
               toolchain: 'Quartus Prime',
@@ -59,8 +57,6 @@ export const partnerFilterData: PartnerFilterData = {
               toolchain: 'Vitis AI',
               docLink: '/docs/one-ai/getting-started/export',
             },
-          ],
-          fast_inference: [
             {
               format: 'VHDL',
               toolchain: 'Vivado / Vitis',
@@ -79,8 +75,6 @@ export const partnerFilterData: PartnerFilterData = {
               toolchain: 'sensAI Toolchain',
               docLink: '/docs/one-ai/getting-started/export',
             },
-          ],
-          fast_inference: [
             {
               format: 'VHDL',
               toolchain: 'Lattice Diamond / Radiant',
@@ -99,8 +93,6 @@ export const partnerFilterData: PartnerFilterData = {
               toolchain: 'VectorBlox Accelerator / Libero',
               docLink: '/docs/one-ai/getting-started/export',
             },
-          ],
-          fast_inference: [
             {
               format: 'VHDL',
               toolchain: 'Libero SoC',
@@ -119,8 +111,6 @@ export const partnerFilterData: PartnerFilterData = {
               toolchain: 'Efinity Toolchain',
               docLink: '/docs/one-ai/getting-started/export',
             },
-          ],
-          fast_inference: [
             {
               format: 'VHDL',
               toolchain: 'Efinity IDE',
@@ -144,8 +134,6 @@ export const partnerFilterData: PartnerFilterData = {
               toolchain: 'Gowin ML Toolchains',
               docLink: '/docs/one-ai/getting-started/export',
             },
-          ],
-          fast_inference: [
             {
               format: 'VHDL',
               toolchain: 'Gowin IDE',
@@ -182,8 +170,6 @@ export const partnerFilterData: PartnerFilterData = {
               toolchain: 'Vendor-specific Tools',
               docLink: '/docs/one-ai/getting-started/export',
             },
-          ],
-          fast_inference: [
             {
               format: 'VHDL',
               description: 'Universally applicable',
@@ -295,8 +281,6 @@ export const partnerFilterData: PartnerFilterData = {
               format: 'ONNX',
               docLink: '/docs/one-ai/getting-started/export',
             },
-          ],
-          fast_inference: [
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build',
@@ -360,8 +344,6 @@ export const partnerFilterData: PartnerFilterData = {
               format: 'ONNX',
               docLink: '/docs/one-ai/getting-started/export',
             },
-          ],
-          fast_inference: [
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build',
@@ -408,8 +390,6 @@ export const partnerFilterData: PartnerFilterData = {
               format: 'ONNX',
               docLink: '/docs/one-ai/getting-started/export',
             },
-          ],
-          fast_inference: [
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build',
@@ -446,11 +426,9 @@ export const partnerFilterData: PartnerFilterData = {
               toolchain: 'OpenVINO',
               docLink: '/docs/one-ai/getting-started/export',
             },
-          ],
-          fast_inference: [
             {
               format: 'C++ Projekt',
-              toolchain: 'Linux/Windows Build',
+              toolchain: 'Linux Build',
               docLink: '/docs/one-ai/getting-started/export',
             },
           ],
@@ -478,11 +456,9 @@ export const partnerFilterData: PartnerFilterData = {
               toolchain: 'MIVisionX',
               docLink: '/docs/one-ai/getting-started/export',
             },
-          ],
-          fast_inference: [
             {
               format: 'C++ Projekt',
-              toolchain: 'Linux/Windows Build',
+              toolchain: 'Linux Build',
               docLink: '/docs/one-ai/getting-started/export',
             },
           ],
@@ -559,8 +535,6 @@ export const partnerFilterData: PartnerFilterData = {
               format: 'ONNX',
               docLink: '/docs/one-ai/getting-started/export/onnx',
             },
-          ],
-          fast_inference: [
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build',
@@ -592,8 +566,6 @@ export const partnerFilterData: PartnerFilterData = {
               toolchain: 'ONNX Runtime',
               docLink: '/docs/one-ai/getting-started/export/onnx',
             },
-          ],
-          fast_inference: [
             {
               format: 'TF-Lite (quantized)',
               toolchain: 'TensorRT',
@@ -625,8 +597,6 @@ export const partnerFilterData: PartnerFilterData = {
               toolchain: 'QNN SDK',
               docLink: '/docs/one-ai/getting-started/export',
             },
-          ],
-          fast_inference: [
             {
               format: 'TF-Lite (quantized)',
               toolchain: 'QNN SDK',
@@ -855,8 +825,6 @@ export const partnerFilterData: PartnerFilterData = {
               description: 'Use in custom software',
               docLink: '/docs/one-ai/getting-started/export/onnx',
             },
-          ],
-          fast_inference: [
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build (exe or source)',
@@ -886,8 +854,6 @@ export const partnerFilterData: PartnerFilterData = {
               description: 'Use in custom software',
               docLink: '/docs/one-ai/getting-started/export/onnx',
             },
-          ],
-          fast_inference: [
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build (exe or source)',
@@ -913,8 +879,6 @@ export const partnerFilterData: PartnerFilterData = {
               toolchain: 'ONNX Runtime',
               docLink: '/docs/one-ai/getting-started/export/onnx',
             },
-          ],
-          fast_inference: [
             {
               format: 'TF-Lite (quantized)',
               toolchain: 'TensorRT',
@@ -949,8 +913,6 @@ export const partnerFilterData: PartnerFilterData = {
               description: 'Use in custom software',
               docLink: '/docs/one-ai/getting-started/export/onnx',
             },
-          ],
-          fast_inference: [
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build (exe or source)',
@@ -987,11 +949,9 @@ export const partnerFilterData: PartnerFilterData = {
               description: 'Use in custom software',
               docLink: '/docs/one-ai/getting-started/export/onnx',
             },
-          ],
-          fast_inference: [
             {
               format: 'C++ Projekt',
-              toolchain: 'Linux/Windows Build',
+              toolchain: 'Linux Build',
               docLink: '/docs/one-ai/getting-started/export',
             },
           ],
@@ -1019,8 +979,6 @@ export const partnerFilterData: PartnerFilterData = {
               description: 'Use in custom software',
               docLink: '/docs/one-ai/getting-started/export/onnx',
             },
-          ],
-          fast_inference: [
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build',
@@ -1050,8 +1008,6 @@ export const partnerFilterData: PartnerFilterData = {
               description: 'Use in custom software',
               docLink: '/docs/one-ai/getting-started/export/onnx',
             },
-          ],
-          fast_inference: [
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build',
@@ -1082,8 +1038,6 @@ export const partnerFilterData: PartnerFilterData = {
               description: 'Use in custom software',
               docLink: '/docs/one-ai/getting-started/export/onnx',
             },
-          ],
-          fast_inference: [
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build',
@@ -1113,8 +1067,6 @@ export const partnerFilterData: PartnerFilterData = {
               toolchain: 'TwinCAT ML',
               docLink: '/docs/one-ai/getting-started/export/onnx',
             },
-          ],
-          fast_inference: [
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build',
@@ -1144,8 +1096,6 @@ export const partnerFilterData: PartnerFilterData = {
               description: 'Use in custom software',
               docLink: '/docs/one-ai/getting-started/export/onnx',
             },
-          ],
-          fast_inference: [
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build',
@@ -1175,8 +1125,6 @@ export const partnerFilterData: PartnerFilterData = {
               description: 'Use in custom software',
               docLink: '/docs/one-ai/getting-started/export/onnx',
             },
-          ],
-          fast_inference: [
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build',
@@ -1206,8 +1154,6 @@ export const partnerFilterData: PartnerFilterData = {
               description: 'Use in custom software',
               docLink: '/docs/one-ai/getting-started/export/onnx',
             },
-          ],
-          fast_inference: [
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build',
