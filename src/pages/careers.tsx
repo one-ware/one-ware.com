@@ -69,6 +69,43 @@ export default function CareersPage(): JSX.Element {
     positions.map((position) => position)
   );
 
+  const whoWeAre = [
+    {
+      key: "1",
+      name: "Leon Beier",
+      position: "CEO",
+      imageSrc: require("@site/static/img/AboutUs/Leon.png").default,
+    },
+    {
+      key: "2",
+      name: "Ali Durmaz",
+      position: "COO",
+      imageSrc: require("@site/static/img/AboutUs/Ali.png").default,
+    },
+    {
+      key: "3",
+      name: "Leo Wiegand",
+      position: "CRO",
+      imageSrc: require("@site/static/img/AboutUs/Leo.png").default,
+    },
+    {
+      key: "4",
+      name: "Hendrik Mennen",
+      position: "CTO",
+      imageSrc: require("@site/static/img/AboutUs/Hendrik.png").default,
+    },
+  ]
+
+  const featuredIn = [
+    { key: "1", imageSrc: require("@site/static/img/Featured/f1_g.png").default },
+    { key: "2", imageSrc: require("@site/static/img/Featured/f3_g.png").default },
+    { key: "3", imageSrc: require("@site/static/img/Featured/f4_g.png").default },
+    { key: "4", imageSrc: require("@site/static/img/Featured/f5_g.png").default },
+    { key: "5", imageSrc: require("@site/static/img/Featured/f7_g.png").default },
+    { key: "6", imageSrc: require("@site/static/img/Featured/f9_g.png").default },
+    { key: "7", imageSrc: require("@site/static/img/Featured/f10_g.png").default },
+  ]
+
   return (
     <Layout
       title={translate({ id: "careers.meta.title", message: "Careers at ONE WARE" })}
@@ -101,7 +138,7 @@ export default function CareersPage(): JSX.Element {
                     transform: heroVisible ? 'translateY(0)' : 'translateY(30px)',
                   }}
                 >
-                  <Translate id="careers.hero.title1">We_Are</Translate>
+                  <Translate id="careers.hero.title1">We Are</Translate>
                 </span>
                 <span
                   className="block transition-all duration-700 ease-out delay-150"
@@ -126,7 +163,7 @@ export default function CareersPage(): JSX.Element {
                 }}
               >
                 <Translate id="careers.hero.subtitle">
-                  Join our team and help shape the future of Edge AI development. We're looking for passionate people who want to make a difference.
+                  Join our team and help shape the future of Vision and Edge AI development. We're looking for passionate people who want to make a difference.
                 </Translate>
               </p>
               <button
@@ -243,20 +280,22 @@ export default function CareersPage(): JSX.Element {
               </h2>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-                {[1, 2, 3, 4].map((item, index) => (
+                {whoWeAre.map((item, index) => (
                   <div
-                    key={item}
+                    key={item.key}
                     className="flex flex-col group cursor-pointer"
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     <div className="flex justify-center">
-                      <div className="w-full aspect-square max-w-40 rounded-full mb-4 bg-black transition-all duration-500 group-hover:scale-105 group-hover:shadow-lg" />
+                      <div className="w-full aspect-square max-w-40 rounded-full mb-4 bg-black overflow-hidden relative transition-all duration-500 group-hover:scale-105 group-hover:shadow-lg">
+                        <img src={item.imageSrc} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                      </div>
                     </div>
                     <h3 className="text-gray-600 text-sm md:text-base font-normal mb-3 text-left transition-colors duration-300 group-hover:text-[var(--ifm-color-primary)]">
-                      <Translate id="careers.whoweare.item.title">Networking Technology</Translate>
+                      <Translate id={`careers.whoweare.item.title.${item.key}`}>{item.name}</Translate>
                     </h3>
                     <p className="text-gray-500 text-xs md:text-sm font-normal text-left transition-colors duration-300 group-hover:text-gray-700">
-                      <Translate id="careers.whoweare.item.description">Networking Technology Refers To The Various Tools, Devices, And Protocols</Translate>
+                      <Translate id={`careers.whoweare.item.description.${item.key}`}>{item.position}</Translate>
                     </p>
                   </div>
                 ))}
@@ -279,16 +318,16 @@ export default function CareersPage(): JSX.Element {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="flex flex-col items-center text-center md:items-end md:text-right">
                 <span className="text-[var(--ifm-color-primary)] text-2xl md:text-3xl font-normal uppercase">
-                  <Translate id="careers.facts.stat1.value">Lorem Ipsum</Translate>
+                  <Translate id="careers.facts.stat1.value">2024</Translate>
                 </span>
                 <span className="text-gray-400 text-xs uppercase mt-1">
-                  <Translate id="careers.facts.stat1.label">Info</Translate>
+                  <Translate id="careers.facts.stat1.label">Founded</Translate>
                 </span>
-                <span className="text-[var(--ifm-color-primary)] text-2xl md:text-3xl font-normal mt-8">
-                  <Translate id="careers.facts.stat2.value">56789</Translate>
+                <span className="text-[var(--ifm-color-primary)] text-2xl md:text-3xl font-normal uppercase mt-8">
+                  <Translate id="careers.facts.stat2.value">Cutting Edge Technologies</Translate>
                 </span>
                 <span className="text-gray-400 text-xs uppercase mt-1">
-                  <Translate id="careers.facts.stat2.label">Info</Translate>
+                  <Translate id="careers.facts.stat2.label">Brand-new products found nowhere else</Translate>
                 </span>
               </div>
 
@@ -298,16 +337,18 @@ export default function CareersPage(): JSX.Element {
 
               <div className="flex flex-col items-center text-center md:items-start md:text-left">
                 <span className="text-[var(--ifm-color-primary)] text-2xl md:text-3xl font-normal">
-                  <Translate id="careers.facts.stat3.value">1234</Translate>
+                  <Translate id="careers.facts.stat3.value">15+</Translate>
                 </span>
                 <span className="text-gray-400 text-xs uppercase mt-1">
-                  <Translate id="careers.facts.stat3.label">Happy Customers</Translate>
+                  <Translate id="careers.facts.stat3.label">Employees</Translate>
                 </span>
                 <span className="text-[var(--ifm-color-primary)] text-2xl md:text-3xl font-normal uppercase mt-8">
-                  <Translate id="careers.facts.stat4.value">Lorem Ipsum</Translate>
+                  <Translate id="careers.facts.stat4.value.l1">We Value</Translate>
+                  <br />
+                  <Translate id="careers.facts.stat4.value.l2">Creativity</Translate>
                 </span>
                 <span className="text-gray-400 text-xs uppercase mt-1">
-                  <Translate id="careers.facts.stat4.label">Info</Translate>
+                  <Translate id="careers.facts.stat4.label">Bring your ideas, shape what we build</Translate>
                 </span>
               </div>
             </div>
@@ -382,26 +423,28 @@ export default function CareersPage(): JSX.Element {
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-gray-700 text-xl md:text-2xl font-light uppercase mb-12 text-center tracking-widest">
-              <Translate id="careers.companies.title">Great Companies Using Our Services</Translate>
+              <Translate id="careers.companies.title">Known From</Translate>
             </h2>
 
             <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-6">
-              {[1, 2, 3, 4, 5, 6].map((item) => (
+              {featuredIn.map((item) => (
                 <div
-                  key={item}
-                  className="w-24 sm:w-32 h-8 sm:h-10 bg-black transition-all duration-300 hover:scale-110 hover:opacity-80 cursor-pointer"
-                />
+                  key={item.key}
+                  className="w-24 sm:w-32 h-8 sm:h-10 bg-black overflow-hidden relative transition-all duration-300 hover:scale-110 hover:opacity-80 cursor-pointer"
+                >
+                  <img src={item.imageSrc} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                </div>
               ))}
             </div>
 
-            <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+            {/* <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
               {[1, 2, 3, 4].map((item) => (
                 <div
                   key={item}
                   className="w-24 sm:w-32 h-8 sm:h-10 bg-black transition-all duration-300 hover:scale-110 hover:opacity-80 cursor-pointer"
                 />
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
