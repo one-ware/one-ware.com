@@ -1,0 +1,61 @@
+---
+id: webinar-2025-12-18
+sidebar_label: Workshop 18.12.2025
+unlisted: true
+---
+
+# Workshop: Build Your Own AI Quality Control
+
+## Materials
+- [Slides](https://onewarecom.sharepoint.com/:b:/s/Public/IQDy3R5ZqAE5R65P3WIRInXuAcuySCTELYL4Fq-4XmGX27k?e=k9iT88)
+- [Dataset 1: Chips](https://onewarecom.sharepoint.com/:u:/s/Public/IQA25cLTRYjTRZoJ_0mJxJDgAdojrdTy6HOZF7NYP5pwlKM?e=gHQF5w)
+- [Dataset 2: Strawberries](https://onewarecom.sharepoint.com/:u:/s/Public/IQAyaxhLhs98Q5MbGjayyaApAVqBpXbRCAepA5-KOL-0oNI?e=ocYDCR)
+- [Dataset 3: Coffee Mugs](https://onewarecom.sharepoint.com/:u:/s/Public/IQAl9u1eYqr-Tox991lKifWrAWBfItQQzeJCuEWSsW2Z56E?e=extbhG)
+
+## Datasets
+### Dataset 1: Chips
+This dataset contains quality control images from a food processing plant that produces potato chips. During the production process, the chips can get burned making them unsuitable for consumption. The goal is to create an AI that can classify an image of a potato chip as defective or non-defective.
+
+<div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
+    <img src="/img/ai/one_ai_plugin/demos/potato_chip/chips_non-defective_01.jpg" alt="chips_example_non-defective_01" style={{ width: '20%' }} />
+    <img src="/img/ai/one_ai_plugin/demos/potato_chip/chips_non-defective_02.jpg" alt="chips_example_non-defective_02" style={{ width: '20%' }} />
+    <img src="/img/ai/one_ai_plugin/demos/potato_chip/chips_defective_01.jpg" alt="chips_example_defective_01" style={{ width: '20%' }} />
+    <img src="/img/ai/one_ai_plugin/demos/potato_chip/chips_defective_02.jpg" alt="chips_example_defective_02" style={{ width: '20%' }} />
+</div>
+
+- Dataset format: Classification
+- Training time: 2 minutes
+
+### Dataset 2: Strawberries
+This dataset contains images of a conveyor belt that is transporting candy strawberries but can also contain foreign objects. The goal is to create an AI that can detect the objects on the conveyor belt so that the foreign objects can be sorted out. The dataset was created artificially by placing images of objects on top of images of the conveyor belt.
+
+- Dataset format: COCO
+- Training time: 5 minutes
+
+### Dataset 3: Coffee Mugs
+This dataset contains images of our ONE WARE coffee mugs. We created artificial defects by drawing scratches onto the images of the mugs. The goal is to create an AI model that can detect these scratches so that defective mugs can be sorted out.
+
+- Dataset format: COCO
+- Training time: 5 minutes
+
+### Dataset 4: GC10-Det
+The GC10-Det dataset contains images from a real-world industrial setting that is used for metallic surface defect detection. The original dataset contains ten different types of defects, but for this exercise we only use a single type of defect ("water spot"), to keep the training time short.
+
+- Dataset format: COCO
+- Training time: 5 minutes
+
+## Your task
+
+0. **Set up OneWare Studio**: Follow the instructions in our [setup guide](/docs/one-ai/getting-started/installation) to install OneWare Studio, the OneAI extension and to create an account.
+1. **Choose one of the exercise datasets and download it**
+2. **Create a new project** by clicking on ``AI`` > ``OneAI Project Generator``
+3. **Import the exercise dataset**. You can check whether the import was successful by clicking on one of the images and checking the annotations.
+4. **Set up filters and augmentations**: The default settings will already create a good starting point, but we can improve the model by tuning the filters and augmentations to our application.
+5. **Configure the model settings**: provide additional information about the application to obtain the best possible model.
+6. **Train the model** for the specified time.
+7. **Test the model** and look for cases where the performance can be improved.
+
+## Additional resources
+- [Getting Started Guide](/docs/one-ai/getting-started)
+- [Overview of our Tutorials](/docs/one-ai/tutorials)
+- [Overview of potential Use Cases](/docs/one-ai/use-cases)
