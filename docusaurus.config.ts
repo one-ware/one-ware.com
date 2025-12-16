@@ -87,6 +87,10 @@ const config: Config = {
           {
             from: '/webinar-2025-11-27',
             to: '/docs/one-ai/Webinars/webinar-2025-11-27',
+          },
+          {
+            from: '/webinar-2025-12-18',
+            to: '/docs/one-ai/Webinars/webinar-2025-12-18',
           }
         ],
       }],
