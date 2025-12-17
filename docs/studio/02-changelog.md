@@ -8,6 +8,7 @@ sidebar_label:  Changelog
 
 - Fix Regex VHDL Node Extractor parsing comments
 - Fix OSSCadSuite Environment Variable (which caused NextPNR to not work properly)
+- Implement Functionality to open OneWare from browser links oneware://...
   
 ## 0.21.19.0
 
