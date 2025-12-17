@@ -4,6 +4,11 @@ title: ONE WARE Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.21.20.0
+
+- Fix Regex VHDL Node Extractor parsing comments
+- Fix OSSCadSuite Environment Variable (which caused NextPNR to not work properly)
+  
 ## 0.21.19.0
 
 - Revert PackageStatus change leading to incompatible Hardware Support Packages in OneAI Extension
