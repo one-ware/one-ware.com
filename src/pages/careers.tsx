@@ -138,7 +138,7 @@ export default function CareersPage(): JSX.Element {
                     transform: heroVisible ? 'translateY(0)' : 'translateY(30px)',
                   }}
                 >
-                  <Translate id="careers.hero.title1">We Are</Translate>
+                  <Translate id="careers.hero.title1">We_Are</Translate>
                 </span>
                 <span
                   className="block transition-all duration-700 ease-out delay-150"
