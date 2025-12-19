@@ -2,6 +2,7 @@ import React, { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import axios from "axios";
 import { CiLinkedin } from "react-icons/ci";
 import Translate, { translate } from "@docusaurus/Translate";
+import { trackEvent } from "../../utils/tracking";
 
 declare global {
   interface Window {
@@ -102,6 +103,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
       if (status === "success") {
         setChristopherFormStatus("success");
         setChristopherFormData({ name: "", email: "", message: "", website: "", recaptcha_token: "" });
+        trackEvent("contact_form_submit", { label: "Christopher Contact Form" });
       } else {
         setChristopherFormStatus("error");
       }
@@ -139,6 +141,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
       if (status === "success") {
         setFormStatus("success");
         setFormData({ name: "", email: "", message: "", website: "", recaptcha_token: "" });
+        trackEvent("contact_form_submit", { label: "Leo Contact Form" });
       } else {
         setFormStatus("error");
       }
@@ -202,7 +205,10 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                       />
                     </button>
                     <button
-                      onClick={() => setMode("booking")}
+                      onClick={() => {
+                        setMode("booking");
+                        trackEvent("schedule_meeting", { label: "Leo Meeting" });
+                      }}
                       className="group relative px-6 py-3 rounded-xl font-medium overflow-hidden transition-all duration-300 w-full"
                       style={{
                         background: "rgba(0, 255, 209, 0.05)",
@@ -224,6 +230,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                       href="https://www.linkedin.com/in/leo-wiegand-b27aa0272/"
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => trackEvent("linkedin_click", { label: "Leo LinkedIn" })}
                       className="group relative px-6 py-3 rounded-xl font-medium overflow-hidden transition-all duration-300 w-full"
                       style={{
                         background: "rgba(0, 255, 209, 0.05)",
@@ -443,7 +450,10 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                       />
                     </button>
                     <button
-                      onClick={() => setChristopherMode("booking")}
+                      onClick={() => {
+                        setChristopherMode("booking");
+                        trackEvent("schedule_meeting", { label: "Christopher Meeting" });
+                      }}
                       className="group relative px-6 py-3 rounded-xl font-medium overflow-hidden transition-all duration-300 w-full"
                       style={{
                         background: "rgba(0, 255, 209, 0.05)",
@@ -463,6 +473,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                     </button>
                     <a
                       href="mailto:support@one-ware.com"
+                      onClick={() => trackEvent("email_click", { label: "Christopher Email" })}
                       className="group relative px-6 py-3 rounded-xl font-medium overflow-hidden transition-all duration-300 w-full"
                       style={{
                         background: "rgba(0, 255, 209, 0.05)",

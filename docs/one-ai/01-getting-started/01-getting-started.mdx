@@ -8,6 +8,7 @@ import Link from '@docusaurus/Link';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import SupportBanner from '@site/src/components/SupportBanner';
+import TrackedLink from '@site/src/components/TrackedLink';
 
 ## Why ONE AI?
 With ONE AI, anyone can create custom AI models in minutes without AI expertise. Train powerful models on our cloud servers, then deploy lightweight, optimized models that run efficiently on any device - even resource-limited microcontrollers.
@@ -91,9 +92,9 @@ We created a small demo project that shows how to use ONE AI to create a quality
 </div>
 
 <div className="text--center" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
-  <Link className="button button--primary button--lg" href="https://github.com/one-ware/OneAI_demo_datasets/blob/main/projects/Chips.zip" target="_blank" rel="noopener noreferrer">
+  <TrackedLink className="button button--primary button--lg" href="https://github.com/one-ware/OneAI_demo_datasets/blob/main/projects/Chips.zip" eventType="download_start" eventLabel="Chip Demo Download">
     <p className="m-0 p-0">Download Chip Demo</p>
-  </Link>
+  </TrackedLink>
   <Link className="button button--primary button--lg" href="/docs/one-ai/tutorials">
     <p className="m-0 p-0">Select Different Project</p>
   </Link>
