@@ -63,12 +63,12 @@ export default function AboutUs(): JSX.Element {
                   transitionDelay: "300ms",
                 }}
               >
-                AI Software Technology
+                Automating AI Development
               </span>
             </div>
 
-            <div className="flex flex-col lg:grid lg:grid-cols-[auto_1fr_auto] gap-8 items-center">
-              <div className="flex flex-row lg:flex-col justify-center items-center lg:items-start w-full lg:w-auto">
+            <div className="flex flex-col lg:grid lg:grid-cols-[auto_auto_auto] gap-0 items-center">
+              <div className="flex flex-row lg:flex-col justify-center items-center lg:items-start w-full lg:w-auto lg:mr-12 py-8 lg:py-0">
                 <div className="flex flex-row lg:flex-col gap-8 lg:gap-0 lg:space-y-8">
                   <div className="text-center lg:text-left">
                     <span className="text-gray-700 text-3xl md:text-4xl font-light">
@@ -89,25 +89,31 @@ export default function AboutUs(): JSX.Element {
                 </div>
               </div>
 
-              <div className="flex items-center justify-center order-first lg:order-none">
-                <div className="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 bg-[var(--ifm-color-primary)]" />
+              <div className="flex items-center justify-start order-first lg:order-none w-full">
+                <div className="w-full lg:w-[40rem] lg:h-80 relative overflow-hidden">
+                  <img
+                    src={require("@site/static/img/AboutUs/Team.jpeg").default}
+                    alt="Team"
+                    className="w-full h-auto lg:absolute lg:inset-0 lg:h-full lg:object-cover"
+                  />
+                </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row lg:flex-col justify-center gap-4 sm:gap-6 lg:gap-8 w-full lg:w-auto">
-                <div className="bg-gray-200 p-4 sm:p-6 flex-1">
-                  <h3 className="text-gray-700 text-sm sm:text-base font-medium mb-2">
-                    Easing the way from idea to deployed Edge AI
+              <div className="flex flex-col sm:flex-row lg:flex-col justify-center gap-2 sm:gap-4 lg:gap-2 w-full lg:w-128 ml-8 mr-8 mb-8">
+                <div className="bg-gray-200 p-3 sm:p-4 flex-1">
+                  <h3 className="text-gray-700 text-sm sm:text-base font-medium mb-1">
+                    What We Do
                   </h3>
-                  <p className="text-gray-500 text-xs sm:text-sm">
-                    One Ware provides an easy workflow from idea to deployed AI solution. Our goal is to enable you to create your own customised AI perfectly tailored to your project and deployment environment. When it comes to AI, One Ware removes the bottleneck of scarce experts, long development times and expensive hardware upgrades that usually hinder AI integration. That means state-of-the-art accuracy without data centers, heavyweight teams or months of trial and error.
+                  <p className="text-gray-500 text-xs sm:text-sm leading-tight">
+                    We provide software that automates the entire AI development lifecycle. Our solution enables you to create customized AI models perfectly tailored to your project, significantly reducing complexity and development time.
                   </p>
                 </div>
-                <div className="bg-gray-200 p-4 sm:p-6 flex-1">
-                  <h3 className="text-gray-700 text-sm sm:text-base font-medium mb-2">
-                    AI that fits your hardware
+                <div className="bg-gray-200 p-3 sm:p-4 flex-1">
+                  <h3 className="text-gray-700 text-sm sm:text-base font-medium mb-1">
+                    What Makes Us Unique
                   </h3>
-                  <p className="text-gray-500 text-xs sm:text-sm">
-                    All this is possible through ONE AI, our patent-pending platform that automatically generates custom neural networks for your specific dataset, latency, power and hardware targets. From modern GPUs to decade-old FPGAs and microcontrollers, ONE WARE helps you run state-of-the-art AI on the hardware you already have. This is complemented with ONE WARE Studio, a powerful IDE that lets your engineers simulate, optimize and deploy computer vision and edge AI like any other software project.
+                  <p className="text-gray-500 text-xs sm:text-sm leading-tight">
+                    We hold a patent for our automatic neural network architecture creation process. Driven by a team of young developers rethinking AI, we bring a fresh perspective to enable state-of-the-art performance on any hardware.
                   </p>
                 </div>
               </div>
@@ -157,34 +163,30 @@ export default function AboutUs(): JSX.Element {
             <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-4 mb-8 md:mb-12">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-extralight text-gray-700 leading-tight">
                 <span className="block">Our Vision_</span>
-                <span className="block">Revolutionizing the</span>
-                <span className="block">Perspective of AI</span>
+                <span className="block">Revolutionizing</span>
+                <span className="block">AI Development</span>
               </h2>
               <p className="text-gray-500 text-xs sm:text-sm max-w-xs text-left md:text-right">
-                We believe AI should feel like any other software tool:
-                <br />
-                simple to integrate, vendor-independent and available on
-                every device – not limited to the data center.
+                AI developed in Minutes not Months
               </p>
             </div>
 
             <div className="bg-gray-200 p-4 sm:p-6 md:p-8">
               <div className="grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-6 md:gap-12">
-                <div className="bg-black w-full aspect-square max-w-xs mx-auto md:max-w-none" />
+                <div className="w-full aspect-square max-w-xs mx-auto md:max-w-none relative">
+                  <img
+                    src={require("@site/static/img/AboutUs/software.png").default}
+                    alt="Software"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
 
                 <div className="flex flex-col justify-center">
                   <h3 className="text-gray-700 text-xl md:text-2xl font-medium mb-4 text-center md:text-left">
-                    Bringing AI development to every engineer
+                    Bringing AI Development to Every Engineer
                   </h3>
                   <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6 md:mb-8 text-center md:text-left">
-                    ONE WARE was founded to remove the bottlenecks of manual model
-                    design, hardware-specific tooling and expensive cloud-only
-                    solutions. By combining our open-source IDE with the fully
-                    automated ONE AI engine, we enable embedded, automation and
-                    software teams to create and deploy powerful AI models as part
-                    of their everyday engineering workflow. Thus reducing development
-					time to days instead of months, saving costs and valuable resources.
-					We work to make efficient AI processes possible.
+                    ONE WARE automates the entire AI development lifecycle, unlocking the potential of ideas that often remain stuck in the drawer due to complexity or resource constraints. By streamlining the process from data to deployment, we enable you to turn these concepts into reality in the shortest possible time. We make efficient, AI-driven processes accessible, empowering you to innovate and optimize where it was previously not feasible.
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-4 sm:gap-12 items-center md:items-start">

@@ -21,6 +21,7 @@ export default function TeamGrid({ members, title }: TeamGridProps) {
             key={member.email}
             className="flex flex-col group cursor-pointer"
             style={{ animationDelay: `${index * 100}ms` }}
+            onClick={() => window.location.href = `mailto:${member.email}`}
           >
             <div className="flex justify-center">
               <img
@@ -36,17 +37,21 @@ export default function TeamGrid({ members, title }: TeamGridProps) {
               {member.role}
             </p>
             <div className="flex flex-col items-center gap-1">
-              <a
-                href={member.linkedIn}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-stone-400 text-xs hover:text-[var(--ifm-color-primary)] transition-colors duration-300"
-              >
-                LinkedIn
-              </a>
+              {member.linkedIn && (
+                <a
+                  href={member.linkedIn}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-stone-400 text-xs hover:text-[var(--ifm-color-primary)] transition-colors duration-300"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  LinkedIn
+                </a>
+              )}
               <a
                 href={`mailto:${member.email}`}
                 className="text-stone-400 text-xs hover:text-[var(--ifm-color-primary)] transition-colors duration-300"
+                onClick={(e) => e.stopPropagation()}
               >
                 {member.email}
               </a>

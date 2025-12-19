@@ -167,41 +167,13 @@ const config: Config = {
               label: "Demo Projects",
             },
             {
-              to: "/docs/one-ai/getting-started/export",
+              to: "/docs/one-ai/supported-vendors",
               label: "Supported Hardware",
-            },
-            {
-              to: "/docs/one-ai/seminars",
-              label: "Seminars & Webinars",
-            },
-            {
-              type: "html",
-              value: '<div class="dropdown__label">Features</div>',
-            },
-            {
-              to: "/docs/one-ai/getting-started/dataset/camera-tool",
-              label: "Capture Tool",
-            },
-            {
-              to: "/docs/one-ai/getting-started/filters-and-augmentations",
-              label: "Filters & Augmentation",
-            },
-            {
-              to: "/docs/one-ai/getting-started/export",
-              label: "Export",
             },
             {
               to: "/studio",
               label: "ONE WARE Studio",
               className: "dropdown__link--highlight",
-            },
-            {
-              to: "/docs/studio/setup",
-              label: "Studio Get Started",
-            },
-            {
-              to: "/docs/studio/plugins/overview/",
-              label: "Contribute",
             }
           ],
         },
@@ -213,24 +185,7 @@ const config: Config = {
           items: [
             {
               to: "/docs/one-ai/use-cases/",
-              label: "Applications",
-              className: "dropdown__link--highlight",
-            },
-            {
-              to: "/docs/one-ai/use-cases/camera-tool",
-              label: "Quality Control",
-            },
-            {
-              to: "/docs/one-ai/use-cases/chip",
-              label: "Edge AI",
-            },
-            {
-              to: "/docs/one-ai/use-cases/pcb",
-              label: "Vision AI",
-            },
-            {
-              to: "/#industries",
-              label: "Industries",
+              label: "Showcase",
               className: "dropdown__link--highlight",
             },
             {
@@ -254,32 +209,28 @@ const config: Config = {
         {
           type: "dropdown",
           position: "left",
-          label: "Developers",
+          label: "Resources",
           className: "navbar__dropdown--developers",
           items: [
             {
-              to: "/docs/one-ai/getting-started",
+              to: "/docs/one-ai/getting-started/full-documentation",
               label: "Documentation",
             },
             {
               to: "/docs/one-ai/tutorials",
-              label: "Example Projects",
+              label: "Templates",
             },
+            // {
+            //   to: "/docs/one-ai/getting-started/help/questions-and-answers",
+            //   label: "Questions & Answers",
+            // },
             {
-              to: "/docs/one-ai/seminars",
-              label: "Seminars & Webinars",
-            },
-            {
-              to: "/docs/one-ai/getting-started/export",
+              to: "/docs/one-ai/supported-vendors",
               label: "Supported Hardware",
             },
             {
-              to: "/docs/one-ai/open-source-program",
-              label: "Open Source Program",
-            },
-            {
-              to: "/docs/one-ai/getting-started/help/questions-and-answers",
-              label: "Questions & Answers",
+              to: "/docs/one-ai/seminars",
+              label: "Events",
             },
             {
               href: "https://discord.com/invite/NCN9VAh",
@@ -321,12 +272,8 @@ const config: Config = {
           label: "Company",
           items: [
             {
-              to: "/docs/one-ai/partners",
-              label: "Partners",
-            },
-            {
               to: "/about-us",
-              label: "About Us",
+              label: "About",
             },
             {
               to: "/careers",
@@ -334,8 +281,13 @@ const config: Config = {
             },
             {
               to: "/docs/one-ai/seminars",
-              label: "Seminars & Webinars",
+              label: "Events",
             },
+            {
+              to: "/docs/one-ai/partners",
+              label: "Partners",
+            },
+            
             {
               type: "doc",
               docId: "contact/contact",

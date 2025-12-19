@@ -94,16 +94,80 @@ export default function CareersPage(): JSX.Element {
       position: "CTO",
       imageSrc: require("@site/static/img/AboutUs/Hendrik.png").default,
     },
+    {
+      key: "5",
+      name: "Helmut Plötz",
+      position: "Vice President of Global Sales",
+      imageSrc: require("@site/static/img/AboutUs/default.png").default,
+    },
+    {
+      key: "6",
+      name: "Christopher",
+      position: "AI Engineer",
+      imageSrc: require("@site/static/img/support_christopher.webp").default,
+    },
+    {
+      key: "7",
+      name: "Annalena",
+      position: "AI Engineer",
+      imageSrc: require("@site/static/img/AboutUs/annalena.png").default,
+    },
+    {
+      key: "8",
+      name: "Thimo",
+      position: "Embedded AI Engineer",
+      imageSrc: require("@site/static/img/AboutUs/default.png").default,
+    },
+    {
+      key: "9",
+      name: "Matthias",
+      position: "Software Engineer",
+      imageSrc: require("@site/static/img/AboutUs/default.png").default,
+    },
+    {
+      key: "10",
+      name: "Nils",
+      position: "Software Engineer",
+      imageSrc: require("@site/static/img/AboutUs/default.png").default,
+    },
+    {
+      key: "11",
+      name: "Sebastian",
+      position: "Founders Associate",
+      imageSrc: require("@site/static/img/AboutUs/default.png").default,
+    },
+    {
+      key: "12",
+      name: "Till",
+      position: "Working Student - AI",
+      imageSrc: require("@site/static/img/AboutUs/default.png").default,
+    },
+    {
+      key: "13",
+      name: "Allen",
+      position: "Working Student - AI",
+      imageSrc: require("@site/static/img/AboutUs/default.png").default,
+    },
+    {
+      key: "14",
+      name: "Dominik",
+      position: "Working Student - Sales",
+      imageSrc: require("@site/static/img/AboutUs/default.png").default,
+    },
+    {
+      key: "15",
+      name: "Nele",
+      position: "Working Student - Marketing",
+      imageSrc: require("@site/static/img/AboutUs/default.png").default,
+    },
   ]
 
   const featuredIn = [
     { key: "1", imageSrc: require("@site/static/img/Featured/f1_g.png").default },
-    { key: "2", imageSrc: require("@site/static/img/Featured/f3_g.png").default },
     { key: "3", imageSrc: require("@site/static/img/Featured/f4_g.png").default },
-    { key: "4", imageSrc: require("@site/static/img/Featured/f5_g.png").default },
-    { key: "5", imageSrc: require("@site/static/img/Featured/f7_g.png").default },
     { key: "6", imageSrc: require("@site/static/img/Featured/f9_g.png").default },
     { key: "7", imageSrc: require("@site/static/img/Featured/f10_g.png").default },
+    { key: "8", imageSrc: require("@site/static/img/Partner/altera_w.png").default },
   ]
 
   return (
@@ -287,7 +351,7 @@ export default function CareersPage(): JSX.Element {
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     <div className="flex justify-center">
-                      <div className="w-full aspect-square max-w-40 rounded-full mb-4 bg-black overflow-hidden relative transition-all duration-500 group-hover:scale-105 group-hover:shadow-lg">
+                      <div className="w-full aspect-square max-w-40 rounded-full mb-4 overflow-hidden relative transition-all duration-500 group-hover:scale-105 group-hover:shadow-lg">
                         <img src={item.imageSrc} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
                       </div>
                     </div>
@@ -309,7 +373,7 @@ export default function CareersPage(): JSX.Element {
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <p className="text-[var(--ifm-color-primary)] text-sm md:text-base font-normal uppercase mb-2 text-center">
-              <Translate id="careers.facts.label">Real Numbers</Translate>
+              <Translate id="careers.facts.label">Key Facts</Translate>
             </p>
             <h2 className="text-white text-xl md:text-2xl font-light uppercase mb-16 text-center tracking-widest">
               <Translate id="careers.facts.title">Why you should work with us</Translate>
@@ -430,9 +494,9 @@ export default function CareersPage(): JSX.Element {
               {featuredIn.map((item) => (
                 <div
                   key={item.key}
-                  className="w-24 sm:w-32 h-8 sm:h-10 bg-black overflow-hidden relative transition-all duration-300 hover:scale-110 hover:opacity-80 cursor-pointer"
+                  className="w-32 sm:w-44 h-12 sm:h-16 bg-black overflow-hidden relative transition-all duration-300 hover:scale-110 hover:opacity-80 cursor-pointer"
                 >
-                  <img src={item.imageSrc} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                  <img src={item.imageSrc} alt="" className="absolute inset-0 w-full h-full object-contain p-2" loading="lazy" />
                 </div>
               ))}
             </div>
