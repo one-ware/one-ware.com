@@ -493,8 +493,6 @@ export default function SoftwareWindow({
 
   const isMoved = windowPos.x !== 0 || windowPos.y !== 0;
   const rootStyle = {
-      height: isSmallScreen ? "55vh" : "60vh",
-      aspectRatio: "4/3",
       ...style,
       ...( (isWindowDragging || isMoved) ? { animation: 'none', opacity: 1 } : {} ),
       transform: isMoved
@@ -526,7 +524,6 @@ export default function SoftwareWindow({
 
       <div
         style={{
-          flex: 1,
           padding: "clamp(12px, 2vw, 24px)",
           overflow: "hidden",
           position: "relative",
@@ -539,7 +536,7 @@ export default function SoftwareWindow({
         <div
           style={{
             flex: 1,
-            minHeight: 0,
+            minHeight: isSmallScreen ? 'clamp(32px, 7vh, 70px)' : 'clamp(40px, 11vh, 120px)',
             display: "flex",
             opacity: 1,
             overflow: "hidden",
@@ -573,7 +570,7 @@ export default function SoftwareWindow({
              }}
              style={{
                flex: isSmallScreen ? 4 : 5,
-               minHeight: 0,
+               minHeight: isSmallScreen ? 'clamp(150px, 30vh, 320px)' : 'clamp(180px, 40vh, 600px)',
                position: "relative",
                overflow: "hidden",
                transition: "all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1)"

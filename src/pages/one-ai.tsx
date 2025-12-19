@@ -956,13 +956,9 @@ export default function OneAi() {
           </div>
         </div>
 
-        <div className="alternative-background">
-          <SupportSection />
-        </div>
-
         <div className="container pb-20 mt-20">
           <div id="contact" className="mb-10">
-            <ContactUs />
+            <ContactUs subtitle={<Translate id="oneai.support.subtitle">Our experts are here to help you succeed.</Translate>} />
           </div>
         </div>
       </main>
@@ -970,81 +966,3 @@ export default function OneAi() {
   );
 }
 
-function SupportSection() {
-  return (
-    <div className="py-12 md:py-16">
-      <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-200 mb-6">
-              <Translate id="oneai.support.title">
-                Need Help Getting Started?
-              </Translate>
-            </h2>
-            <p className="text-xl text-gray-300">
-              <Translate id="oneai.support.subtitle">
-                Our development expert is here to help you succeed.
-              </Translate>
-            </p>
-          </div>
-          
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-10 md:p-16 border border-gray-700">
-            <div className="flex flex-col md:flex-row items-center gap-10 md:gap-12">
-              <div className="flex-shrink-0">
-                <img 
-                  src={require("@site/static/img/support_christopher.webp").default}
-                  alt="Christopher Kreis"
-                  className="w-40 h-40 md:w-64 md:h-64 rounded-full object-cover border-4 border-[#00FFD1]/20"
-                />
-              </div>
-              
-              <div className="flex-1 text-center md:text-left">
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
-                  Christopher
-                </h3>
-                <p className="text-[#00FFD1] font-semibold mb-6 text-lg">
-                  <Translate id="oneai.support.role">
-                    Your Development Support
-                  </Translate>
-                </p>
-                <p className="text-gray-300 mb-8 leading-relaxed text-lg">
-                  <Translate id="oneai.support.description">
-                    Whether you have questions about proper usage, encounter problems, or aren't achieving the results you expected - Christopher is here to help. Get personalized assistance with your ONE AI development journey.
-                  </Translate>
-                </p>
-                
-                <div className="flex flex-col sm:flex-row gap-6 justify-center md:justify-start">
-                  <a 
-                    href="mailto:support@one-ware.com?subject=ONE AI Support Request"
-                    className="inline-flex items-center justify-center px-8 py-4 bg-[#00FFD1] text-black font-semibold rounded-xl hover:bg-[#00FFD1]/90 transition-colors duration-300 text-lg"
-                  >
-                    <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                    <Translate id="oneai.support.cta">
-                      Get Support Now
-                    </Translate>
-                  </a>
-                  
-                  <div className="text-center md:text-left">
-                    <p className="text-base text-gray-400 mb-2">
-                      <Translate id="oneai.support.email.label">
-                        Email us directly:
-                      </Translate>
-                    </p>
-                    <a 
-                      href="mailto:support@one-ware.com"
-                      className="text-[#00FFD1] hover:text-[#00FFD1]/80 font-mono text-base"
-                    >
-                      support@one-ware.com
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}

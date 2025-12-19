@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef, createContext, useContext } from "react";
 import Link from "@docusaurus/Link";
+import Translate from "@docusaurus/Translate";
 import BackgroundGridSimple from "./BackgroundGridSimple";
 import { FolderWithApple, DragPreview } from "./FolderWithApple";
 import SoftwareWindow from "./SoftwareWindow";
@@ -198,7 +199,7 @@ export default function HomeHero() {
   return (
     <PerformanceContext.Provider value={performanceValue}>
     <section
-      className="relative overflow-hidden min-h-screen 2xl:h-[calc(100vh+var(--ifm-navbar-height))]"
+      className="relative overflow-hidden min-h-screen"
       style={{
         marginTop: "calc(var(--ifm-navbar-height) * -1)",
         background: "#050505",
@@ -230,7 +231,7 @@ export default function HomeHero() {
                     opacity: 0,
                   }}
                 >
-                  Create your
+                  <Translate id="homehero.title1">Create your</Translate>
                 </span>
                 <span
                   className="text-[var(--ifm-color-primary)] block"
@@ -240,7 +241,7 @@ export default function HomeHero() {
                     opacity: 0,
                   }}
                 >
-                  Custom AI
+                  <Translate id="homehero.title2">Custom AI</Translate>
                 </span>
               </h1>
               <p
@@ -251,9 +252,9 @@ export default function HomeHero() {
                   opacity: 0,
                 }}
               >
-                Vision and Edge AI Development,
+                <Translate id="homehero.subtitle1">Vision and Edge AI Development,</Translate>
                 <br />
-                Fully Automated in One Software
+                <Translate id="homehero.subtitle2">Fully Automated in One Software</Translate>
               </p>
 
               <div className="hidden 2xl:flex flex-row items-center justify-center 2xl:justify-start gap-4 mt-8 w-full">
@@ -266,7 +267,7 @@ export default function HomeHero() {
                   }}
                 >
                   <button className="button button--primary button--lg">
-                    Free Download
+                    <Translate id="homehero.button.download">Free Download</Translate>
                   </button>
                 </Link>
                 <Link
@@ -278,13 +279,13 @@ export default function HomeHero() {
                   }}
                 >
                   <button className="button button--primary button--outline button--lg">
-                    Learn More
+                    <Translate id="homehero.button.learnmore">Learn More</Translate>
                   </button>
                 </Link>
               </div>
             </div>
 
-            <div className="relative flex items-center 2xl:items-end justify-center 2xl:justify-end w-full 2xl:w-[60%] h-auto 2xl:h-full select-none flex-1 2xl:flex-initial">
+            <div className="relative flex items-center 2xl:items-end justify-center 2xl:justify-end w-full 2xl:w-[60%] h-auto select-none flex-1 2xl:flex-initial">
               <div className="absolute 2xl:relative z-20 2xl:z-auto bottom-12 sm:bottom-10 2xl:bottom-auto left-4 sm:left-8 2xl:left-auto 2xl:mr-8 sm:2xl:mr-16">
                 <FolderWithApple
                   style={{
@@ -327,7 +328,7 @@ export default function HomeHero() {
               }}
             >
               <button className="button button--primary button--outline button--lg w-full sm:w-auto">
-                Free Download
+                <Translate id="homehero.button.download">Free Download</Translate>
               </button>
             </Link>
             <Link
@@ -339,7 +340,7 @@ export default function HomeHero() {
               }}
             >
               <button className="button button--primary button--lg w-full sm:w-auto">
-                Learn More
+                <Translate id="homehero.button.learnmore">Learn More</Translate>
               </button>
             </Link>
             </div>

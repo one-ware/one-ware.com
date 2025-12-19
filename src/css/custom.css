@@ -338,15 +338,6 @@ body {
   .DocSearch-Button-Keys {
     display: none !important;
   }
-
-  a.navbar__dropdown--developers {
-    font-size: 0 !important;
-  }
-
-  a.navbar__dropdown--developers::before {
-    content: "Devs" !important;
-    font-size: 0.8rem !important;
-  }
 }
 
 @media (max-width: 1100px) and (min-width: 996px) {
@@ -360,6 +351,32 @@ body {
 
   .navbar__items--right > .navbar__item {
     padding: 0 1px !important;
+  }
+
+  a.navbar__dropdown--developers {
+    font-size: 0 !important;
+  }
+
+  a.navbar__dropdown--developers::before {
+    content: "Docs" !important;
+    font-size: 0.8rem !important;
+  }
+
+  .loginbutton .login-button-text {
+    display: none !important;
+  }
+
+  .loginbutton .login-button-icon {
+    display: block !important;
+  }
+
+  .getstartedbutton .download-button-text {
+    font-size: 0 !important;
+  }
+
+  .getstartedbutton .download-button-text::before {
+    content: "Download" !important;
+    font-size: 0.875rem !important;
   }
 }
 

@@ -163,11 +163,11 @@ export default function CareersPage(): JSX.Element {
   ]
 
   const featuredIn = [
-    { key: "1", imageSrc: require("@site/static/img/Featured/f1_g.png").default },
-    { key: "3", imageSrc: require("@site/static/img/Featured/f4_g.png").default },
-    { key: "6", imageSrc: require("@site/static/img/Featured/f9_g.png").default },
-    { key: "7", imageSrc: require("@site/static/img/Featured/f10_g.png").default },
-    { key: "8", imageSrc: require("@site/static/img/Partner/altera_w.png").default },
+    { key: "1", imageSrc: require("@site/static/img/Featured/f1_g.png").default, url: "https://tech.eu/2025/06/18/one-ware-raises-eur25m-to-automate-ai-model-configuration-across-industries/" },
+    { key: "3", imageSrc: require("@site/static/img/Featured/f4_g.png").default, url: "https://www.elektronikpraxis.de/one-ai-automatisierte-ki-konfiguration-fuer-entwickler-a-09fee486cec031ed0a2edd5dbeeaed0a/" },
+    { key: "6", imageSrc: require("@site/static/img/Featured/f9_g.png").default, url: "https://www.maschinenmarkt.vogel.de/one-ai-ki-extension-one-ware-maschinenbau-a-545f6e3fc5ac13f8fa3f55fa5998332f/" },
+    { key: "7", imageSrc: require("@site/static/img/Featured/f10_g.png").default, url: "https://it-production.com/industrie-4-0-i40/neuronales-netzwerk-in-unter-einer-sekunde/" },
+    { key: "8", imageSrc: require("@site/static/img/Partner/altera_w.png").default, url: "https://go.altera.com/l/1090322/2025-04-18/2vvzbn" },
   ]
 
   return (
@@ -462,22 +462,54 @@ export default function CareersPage(): JSX.Element {
                   </div>
 
                   <div className="order-first lg:order-none">
-                    <div className="w-full aspect-square max-w-xs mx-auto lg:max-w-none lg:h-full bg-black" />
+                    <div className="w-full aspect-square max-w-xs mx-auto lg:max-w-none lg:h-full relative overflow-hidden">
+                      {EMPLOYEE_STORIES[displayedStory].image && (
+                        <img
+                          src={EMPLOYEE_STORIES[displayedStory].image}
+                          alt={EMPLOYEE_STORIES[displayedStory].name}
+                          className="absolute inset-0 w-full h-full object-cover"
+                        />
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div className="flex justify-center gap-3 mt-8">
-                {EMPLOYEE_STORIES.map((_, index) => (
-                  <div
-                    key={index}
-                    onClick={() => handleStoryChange(index)}
-                    className={`w-2.5 h-2.5 rounded-full cursor-pointer transition-all duration-300 hover:scale-125 ${
-                      index === activeStory ? "bg-[var(--ifm-color-primary)]" : "bg-neutral-100 hover:bg-neutral-300"
-                    }`}
-                  />
-                ))}
-              </div>
+              {EMPLOYEE_STORIES.length > 1 && (
+                <div className="flex justify-center items-center gap-8 mt-8">
+                  <svg
+                    onClick={() => handleStoryChange(activeStory - 1 < 0 ? EMPLOYEE_STORIES.length - 1 : activeStory - 1)}
+                    className="w-5 h-5 cursor-pointer text-[var(--ifm-color-primary)] hover:-translate-x-1 transition-transform duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2.5}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                  </svg>
+                  <div className="flex gap-3">
+                    {EMPLOYEE_STORIES.map((_, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleStoryChange(index)}
+                        className={`w-2 h-2 rounded-full cursor-pointer transition-all duration-300 ${
+                          index === activeStory ? "bg-[var(--ifm-color-primary)]" : "bg-neutral-300 hover:bg-neutral-400"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                  <svg
+                    onClick={() => handleStoryChange(activeStory + 1 >= EMPLOYEE_STORIES.length ? 0 : activeStory + 1)}
+                    className="w-5 h-5 cursor-pointer text-[var(--ifm-color-primary)] hover:translate-x-1 transition-transform duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2.5}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -492,12 +524,15 @@ export default function CareersPage(): JSX.Element {
 
             <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-6">
               {featuredIn.map((item) => (
-                <div
+                <a
                   key={item.key}
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-32 sm:w-44 h-12 sm:h-16 bg-black overflow-hidden relative transition-all duration-300 hover:scale-110 hover:opacity-80 cursor-pointer"
                 >
                   <img src={item.imageSrc} alt="" className="absolute inset-0 w-full h-full object-contain p-2" loading="lazy" />
-                </div>
+                </a>
               ))}
             </div>
 
