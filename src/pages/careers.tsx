@@ -462,7 +462,15 @@ export default function CareersPage(): JSX.Element {
                   </div>
 
                   <div className="order-first lg:order-none">
-                    <div className="w-full aspect-square max-w-xs mx-auto lg:max-w-none lg:h-full bg-black" />
+                    <div className="w-full aspect-square max-w-xs mx-auto lg:max-w-none lg:h-full relative overflow-hidden">
+                      {EMPLOYEE_STORIES[displayedStory].image && (
+                        <img
+                          src={EMPLOYEE_STORIES[displayedStory].image}
+                          alt={EMPLOYEE_STORIES[displayedStory].name}
+                          className="absolute inset-0 w-full h-full object-cover"
+                        />
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
