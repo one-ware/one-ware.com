@@ -9,6 +9,7 @@ sidebar_label:  Changelog
 - Make native dependency resolve for plugins more robust (fixes a possible issue on MacOS)
 - Fix Output View sometimes showing wrong line colors
 - Adjust URL open protocol as start option
+- Add possibility to reset settings to default value
 
 ## 0.21.20.0
 
