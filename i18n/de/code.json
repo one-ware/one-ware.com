@@ -1624,6 +1624,60 @@
   "careers.hero.title2": {
     "message": "Dich"
   },
+  "careers.meta.title": {
+    "message": "Karriere bei ONE WARE"
+  },
+  "careers.meta.description": {
+    "message": "Werde Teil von ONE WARE und hilf mit, die Edge-AI-Entwicklung zu revolutionieren."
+  },
+  "careers.hero.subtitle": {
+    "message": "Werde Teil unseres Teams und gestalte die Zukunft der Vision- und Edge-AI-Entwicklung mit. Wir suchen leidenschaftliche Menschen, die etwas bewegen wollen."
+  },
+  "careers.hero.cta": {
+    "message": "Offene Stellen ansehen"
+  },
+  "careers.video.joinTeam": {
+    "message": "WERDE TEIL DES TEAMS"
+  },
+  "careers.video.applyToday": {
+    "message": "JETZT BEWERBEN"
+  },
+  "careers.whoweare.title": {
+    "message": "Wer wir sind"
+  },
+  "careers.facts.label": {
+    "message": "Fakten"
+  },
+  "careers.facts.title": {
+    "message": "Warum du bei uns arbeiten solltest"
+  },
+  "careers.facts.stat1.label": {
+    "message": "Gegründet"
+  },
+  "careers.facts.stat2.value": {
+    "message": "Neueste Technologien"
+  },
+  "careers.facts.stat2.label": {
+    "message": "Innovative Produkte, die es sonst nirgends gibt"
+  },
+  "careers.facts.stat3.label": {
+    "message": "Mitarbeiter"
+  },
+  "careers.facts.stat4.value.l1": {
+    "message": "Wir schätzen"
+  },
+  "careers.facts.stat4.value.l2": {
+    "message": "Kreativität"
+  },
+  "careers.facts.stat4.label": {
+    "message": "Bring deine Ideen ein, gestalte mit"
+  },
+  "careers.stories.title": {
+    "message": "Mitarbeiter-Geschichte"
+  },
+  "careers.companies.title": {
+    "message": "Bekannt aus"
+  },
   "faq.search.placeholder": {
     "message": "Fragen durchsuchen..."
   },
@@ -1656,5 +1710,107 @@
   },
   "faq.form.errorGeneral": {
     "message": "Ein Fehler ist beim Senden Ihrer Frage aufgetreten."
+  },
+  "aboutus.meta.title": {
+    "message": "Über Uns"
+  },
+  "aboutus.meta.description": {
+    "message": "Über unser Team"
+  },
+  "aboutus.hero.title1": {
+    "message": "Über Uns_"
+  },
+  "aboutus.hero.title2": {
+    "message": "Unternehmen"
+  },
+  "aboutus.hero.tagline": {
+    "message": "KI-Entwicklung automatisiert"
+  },
+  "aboutus.stats.employees": {
+    "message": "Mitarbeiter"
+  },
+  "aboutus.stats.founded": {
+    "message": "Gegründet"
+  },
+  "aboutus.info.whatwedo.title": {
+    "message": "Was wir machen"
+  },
+  "aboutus.info.whatwedo.text": {
+    "message": "Wir bieten Software, die den gesamten KI-Entwicklungsprozess automatisiert. Unsere Lösung ermöglicht es Ihnen, maßgeschneiderte KI-Modelle zu erstellen, die perfekt auf Ihr Projekt abgestimmt sind, und reduziert dabei Komplexität und Entwicklungszeit erheblich."
+  },
+  "aboutus.info.unique.title": {
+    "message": "Was uns einzigartig macht"
+  },
+  "aboutus.info.unique.text": {
+    "message": "Wir besitzen ein Patent für unseren automatischen Prozess zur Erstellung neuronaler Netzwerkarchitekturen. Angetrieben von einem Team junger Entwickler, die KI neu denken, bringen wir eine frische Perspektive ein, um Spitzenleistung auf jeder Hardware zu ermöglichen."
+  },
+  "aboutus.vision.title1": {
+    "message": "Unsere Vision_"
+  },
+  "aboutus.vision.title2": {
+    "message": "Revolution der"
+  },
+  "aboutus.vision.title3": {
+    "message": "KI-Entwicklung"
+  },
+  "aboutus.vision.tagline": {
+    "message": "KI entwickelt in Minuten statt Monaten"
+  },
+  "aboutus.vision.subtitle": {
+    "message": "KI-Entwicklung für jeden Ingenieur zugänglich machen"
+  },
+  "aboutus.vision.text": {
+    "message": "ONE WARE automatisiert den gesamten KI-Entwicklungsprozess und erschließt das Potenzial von Ideen, die oft aufgrund von Komplexität oder Ressourcenbeschränkungen in der Schublade liegen bleiben. Durch die Optimierung des Prozesses von Daten bis zur Bereitstellung ermöglichen wir es Ihnen, diese Konzepte in kürzester Zeit in die Realität umzusetzen. Wir machen effiziente, KI-gesteuerte Prozesse zugänglich und befähigen Sie zu innovieren und zu optimieren, wo es bisher nicht machbar war."
+  },
+  "aboutus.vision.stats.models": {
+    "message": "KI-Modelle/Tag"
+  },
+  "aboutus.vision.stats.prediction": {
+    "message": "Vorhersagezeit"
+  },
+  "aboutus.team.title": {
+    "message": "Wer wir sind"
+  },
+  "aboutus.join.subtitle": {
+    "message": "Werde Teil unseres Teams"
+  },
+  "aboutus.join.title": {
+    "message": "Du teilst unsere Vision? Lass uns gemeinsam daran arbeiten!"
+  },
+  "aboutus.join.button": {
+    "message": "Karriere"
+  },
+  "contactus.christopher.select.description": {
+    "message": "Senden Sie Christopher eine Nachricht für Entwicklungs-Support, oder vereinbaren Sie ein Meeting, um Ihre technischen Herausforderungen im Detail zu besprechen."
+  },
+  "contactus.christopher.booking.coming": {
+    "message": "Terminbuchung demnächst verfügbar"
+  },
+  "contactus.select.title": {
+    "message": "Wie möchten Sie uns erreichen?"
+  },
+  "contactus.select.description": {
+    "message": "Senden Sie uns eine kurze Nachricht für allgemeine Anfragen, oder buchen Sie direkt ein Meeting, um Ihr Projekt im Detail mit unserem Team zu besprechen."
+  },
+  "contactus.select.form": {
+    "message": "Nachricht senden"
+  },
+  "contactus.select.booking": {
+    "message": "Meeting vereinbaren"
+  },
+  "contactus.booking.title": {
+    "message": "Meeting vereinbaren"
+  },
+  "contactus.success": {
+    "message": "Nachricht erfolgreich gesendet!"
+  },
+  "contactus.success.description": {
+    "message": "Wir melden uns so schnell wie möglich bei Ihnen."
+  },
+  "contactus.back": {
+    "message": "Zurück"
+  },
+  "contactus.error": {
+    "message": "Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten."
   }
 }

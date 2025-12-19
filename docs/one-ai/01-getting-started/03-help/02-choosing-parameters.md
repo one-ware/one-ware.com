@@ -44,7 +44,7 @@ The authors Yildiz and Wörgötter presented an approach for detecting screws in
 
 ### Object Detection
 **Dice**  
-This is the [dataset](https://public.roboflow.com/object-detection/dice) that was used in our [Dice Detection Demo](/docs/one-ai/tutorials/dice-demo). It contains images of 6-sided dice that were positioned either on a white table or on a CATAN game board. The goal is to detect the position of the dice and predict the number that they are showing. There are also images containing a collection of varying dice.
+This [dataset](https://public.roboflow.com/object-detection/dice) contains images of 6-sided dice that were positioned either on a white table or on a CATAN game board. The goal is to detect the position of the dice and predict the number that they are showing. There are also images containing a collection of varying dice.
 
 <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
     <img src="/img/ai/one_ai_plugin/demos/dice/dice_example_single.jpg" alt="dice_example_single" style={{ width: '25%' }} />

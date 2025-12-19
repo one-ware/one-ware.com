@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Layout from "@theme/Layout";
 import { JSX } from "react";
-import Translate from "@docusaurus/Translate";
+import Translate, { translate } from "@docusaurus/Translate";
 import TeamGrid from "../components/TeamGrid";
 import { TEAM_MEMBERS } from "../data/teamData";
 import Link from "@docusaurus/Link";
@@ -24,7 +24,10 @@ export default function AboutUs(): JSX.Element {
   };
 
   return (
-    <Layout title="About Us" description="About our Team">
+    <Layout
+      title={translate({ id: "aboutus.meta.title", message: "About Us" })}
+      description={translate({ id: "aboutus.meta.description", message: "About our Team" })}
+    >
       <section
         className="bg-white relative min-h-screen flex items-center"
         style={{
@@ -43,7 +46,7 @@ export default function AboutUs(): JSX.Element {
                     transform: heroVisible ? "translateY(0)" : "translateY(30px)",
                   }}
                 >
-                  About Us_
+                  <Translate id="aboutus.hero.title1">About Us_</Translate>
                 </span>
                 <span
                   className="block transition-all duration-700 ease-out"
@@ -53,7 +56,7 @@ export default function AboutUs(): JSX.Element {
                     transitionDelay: "150ms",
                   }}
                 >
-                  Company
+                  <Translate id="aboutus.hero.title2">Company</Translate>
                 </span>
               </h1>
               <span
@@ -63,19 +66,19 @@ export default function AboutUs(): JSX.Element {
                   transitionDelay: "300ms",
                 }}
               >
-                Automating AI Development
+                <Translate id="aboutus.hero.tagline">Automating AI Development</Translate>
               </span>
             </div>
 
-            <div className="flex flex-col lg:grid lg:grid-cols-[auto_auto_auto] gap-0 items-center">
-              <div className="flex flex-row lg:flex-col justify-center items-center lg:items-start w-full lg:w-auto lg:mr-12 py-8 lg:py-0">
+            <div className="flex flex-col lg:grid lg:grid-cols-[auto_auto_auto] gap-0 items-center lg:items-start">
+              <div className="flex flex-row lg:flex-col justify-center items-center lg:items-start w-full lg:w-auto lg:mr-12 py-8 lg:py-0 lg:h-80">
                 <div className="flex flex-row lg:flex-col gap-8 lg:gap-0 lg:space-y-8">
                   <div className="text-center lg:text-left">
                     <span className="text-gray-700 text-3xl md:text-4xl font-light">
                       15+
                     </span>
                     <span className="text-gray-400 text-xs uppercase block mt-1">
-                      Employees
+                      <Translate id="aboutus.stats.employees">Employees</Translate>
                     </span>
                   </div>
                   <div className="text-center lg:text-left">
@@ -83,7 +86,7 @@ export default function AboutUs(): JSX.Element {
                       2024
                     </span>
                     <span className="text-gray-400 text-xs uppercase block mt-1">
-                      Founded
+                      <Translate id="aboutus.stats.founded">Founded</Translate>
                     </span>
                   </div>
                 </div>
@@ -99,21 +102,21 @@ export default function AboutUs(): JSX.Element {
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row lg:flex-col justify-center gap-2 sm:gap-4 lg:gap-2 w-full lg:w-128 ml-8 mr-8 mb-8">
-                <div className="bg-gray-200 p-3 sm:p-4 flex-1">
+              <div className="flex flex-col sm:flex-row lg:flex-col justify-center gap-2 sm:gap-4 lg:gap-2 w-full lg:w-128 lg:h-80 ml-8 mr-8 mb-8 lg:mb-0">
+                <div className="bg-gray-200 p-3 sm:p-4 flex-1 flex flex-col justify-center">
                   <h3 className="text-gray-700 text-sm sm:text-base font-medium mb-1">
-                    What We Do
+                    <Translate id="aboutus.info.whatwedo.title">What We Do</Translate>
                   </h3>
                   <p className="text-gray-500 text-xs sm:text-sm leading-tight">
-                    We provide software that automates the entire AI development lifecycle. Our solution enables you to create customized AI models perfectly tailored to your project, significantly reducing complexity and development time.
+                    <Translate id="aboutus.info.whatwedo.text">We provide software that automates the entire AI development lifecycle. Our solution enables you to create customized AI models perfectly tailored to your project, significantly reducing complexity and development time.</Translate>
                   </p>
                 </div>
-                <div className="bg-gray-200 p-3 sm:p-4 flex-1">
+                <div className="bg-gray-200 p-3 sm:p-4 flex-1 flex flex-col justify-center">
                   <h3 className="text-gray-700 text-sm sm:text-base font-medium mb-1">
-                    What Makes Us Unique
+                    <Translate id="aboutus.info.unique.title">What Makes Us Unique</Translate>
                   </h3>
                   <p className="text-gray-500 text-xs sm:text-sm leading-tight">
-                    We hold a patent for our automatic neural network architecture creation process. Driven by a team of young developers rethinking AI, we bring a fresh perspective to enable state-of-the-art performance on any hardware.
+                    <Translate id="aboutus.info.unique.text">We hold a patent for our automatic neural network architecture creation process. Driven by a team of young developers rethinking AI, we bring a fresh perspective to enable state-of-the-art performance on any hardware.</Translate>
                   </p>
                 </div>
               </div>
@@ -162,12 +165,12 @@ export default function AboutUs(): JSX.Element {
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-4 mb-8 md:mb-12">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-extralight text-gray-700 leading-tight">
-                <span className="block">Our Vision_</span>
-                <span className="block">Revolutionizing</span>
-                <span className="block">AI Development</span>
+                <span className="block"><Translate id="aboutus.vision.title1">Our Vision_</Translate></span>
+                <span className="block"><Translate id="aboutus.vision.title2">Revolutionizing</Translate></span>
+                <span className="block"><Translate id="aboutus.vision.title3">AI Development</Translate></span>
               </h2>
               <p className="text-gray-500 text-xs sm:text-sm max-w-xs text-left md:text-right">
-                AI developed in Minutes not Months
+                <Translate id="aboutus.vision.tagline">AI developed in Minutes not Months</Translate>
               </p>
             </div>
 
@@ -183,10 +186,10 @@ export default function AboutUs(): JSX.Element {
 
                 <div className="flex flex-col justify-center">
                   <h3 className="text-gray-700 text-xl md:text-2xl font-medium mb-4 text-center md:text-left">
-                    Bringing AI Development to Every Engineer
+                    <Translate id="aboutus.vision.subtitle">Bringing AI Development to Every Engineer</Translate>
                   </h3>
                   <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6 md:mb-8 text-center md:text-left">
-                    ONE WARE automates the entire AI development lifecycle, unlocking the potential of ideas that often remain stuck in the drawer due to complexity or resource constraints. By streamlining the process from data to deployment, we enable you to turn these concepts into reality in the shortest possible time. We make efficient, AI-driven processes accessible, empowering you to innovate and optimize where it was previously not feasible.
+                    <Translate id="aboutus.vision.text">ONE WARE automates the entire AI development lifecycle, unlocking the potential of ideas that often remain stuck in the drawer due to complexity or resource constraints. By streamlining the process from data to deployment, we enable you to turn these concepts into reality in the shortest possible time. We make efficient, AI-driven processes accessible, empowering you to innovate and optimize where it was previously not feasible.</Translate>
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-4 sm:gap-12 items-center md:items-start">
@@ -195,7 +198,7 @@ export default function AboutUs(): JSX.Element {
                         4K+
                       </span>
                       <span className="text-gray-500 text-xs uppercase block mt-1">
-                        AI Models/Day
+                        <Translate id="aboutus.vision.stats.models">AI Models/Day</Translate>
                       </span>
                     </div>
                     <div className="text-center md:text-left">
@@ -203,7 +206,7 @@ export default function AboutUs(): JSX.Element {
                         &lt;1s
                       </span>
                       <span className="text-gray-500 text-xs uppercase block mt-1">
-                        Prediction Time
+                        <Translate id="aboutus.vision.stats.prediction">Prediction Time</Translate>
                       </span>
                     </div>
                   </div>
@@ -218,7 +221,7 @@ export default function AboutUs(): JSX.Element {
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-gray-600 text-3xl md:text-4xl font-normal text-left mb-12">
-              Who we are
+              <Translate id="aboutus.team.title">Who we are</Translate>
             </h2>
             <TeamGrid members={TEAM_MEMBERS} />
           </div>
@@ -229,17 +232,17 @@ export default function AboutUs(): JSX.Element {
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto text-center">
             <p className="text-gray-700 text-sm md:text-base font-medium uppercase mb-4 tracking-widest">
-              Join our Team
+              <Translate id="aboutus.join.subtitle">Join our Team</Translate>
             </p>
             <h2 className="text-gray-800 text-2xl md:text-3xl font-medium mb-8">
-              You share our vision? Let&apos;s work on it, together!
+              <Translate id="aboutus.join.title">You share our vision? Let's work on it, together!</Translate>
             </h2>
             <Link
               to="/careers"
               className="inline-block bg-black text-white px-8 py-3 text-sm font-medium uppercase tracking-wider hover:bg-gray-800 transition-colors"
               style={{ borderRadius: 0 }}
             >
-              Career
+              <Translate id="aboutus.join.button">Career</Translate>
             </Link>
           </div>
         </div>
