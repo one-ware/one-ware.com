@@ -4,6 +4,12 @@ title: ONE WARE Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.21.21.0
+
+- Make native dependency resolve for plugins more robust (fixes a possible issue on MacOS)
+- Fix Output View sometimes showing wrong line colors
+- Adjust URL open protocol as start option
+
 ## 0.21.20.0
 
 - Fix Regex VHDL Node Extractor parsing comments
