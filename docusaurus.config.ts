@@ -182,7 +182,7 @@ const config: Config = {
               label: "Supported Hardware",
             },
             {
-              to: "/docs/one-ai/seminars",
+              to: "/seminars",
               label: "Seminars & Webinars",
             },
             {
@@ -284,7 +284,7 @@ const config: Config = {
               label: "Example Projects",
             },
             {
-              to: "/docs/one-ai/seminars",
+              to: "/seminars",
               label: "Seminars & Webinars",
             },
             {
@@ -347,7 +347,7 @@ const config: Config = {
               label: "Careers",
             },
             {
-              to: "/docs/one-ai/seminars",
+              to: "/seminars",
               label: "Seminars & Webinars",
             },
             {
