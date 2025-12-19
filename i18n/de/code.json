@@ -1392,5 +1392,8 @@
   },
   "oneai.examples.cta.button.secondary": {
     "message": "Loslegen"
+  },
+  "seminars.form.error.already_registered": {
+    "message": "Sie sind bereits für dieses Event registriert."
   }
 }

@@ -648,8 +648,7 @@ export const EVENTS: Event[] = [
         label_de: "Ihre Erfahrung mit KI",
         type: "select",
         options: ["Beginner", "Intermediate", "Advanced"],
-        options_de: ["Anfänger", "Fortgeschritten", "Experte"],
-        required: true
+        options_de: ["Anfänger", "Fortgeschritten", "Experte"]
       },
       {
         name: "interests",
@@ -676,7 +675,7 @@ export const EVENTS: Event[] = [
     time: "10:00 AM CET",
     category: "AI",
     type: "webinar",
-    image: "/img/ai/one_ai_plugin/seminars/webinar_banner_2026_01_28.png",
+    image: "/img/ai/one_ai_plugin/seminars/webinar_banner_2026_01_28.webp",
     shortDescription: "AI for quality control sounds far too complex? We'll show you how simple Vision AI can be today.",
     shortDescription_de: "KI für Qualitätskontrolle klingt zu komplex? Wir zeigen Ihnen, wie einfach Vision AI heute sein kann.",
     subtitle: "AI for quality control sounds far too complex? We'll show you how simple Vision AI can be today.",
@@ -799,7 +798,8 @@ export const EVENTS: Event[] = [
         label_de: "Ihre Branche",
         type: "select",
         options: ["Manufacturing", "Automotive", "Electronics", "Food & Beverage", "Other"],
-        options_de: ["Fertigung", "Automobil", "Elektronik", "Lebensmittel", "Sonstiges"]
+        options_de: ["Fertigung", "Automobil", "Elektronik", "Lebensmittel", "Sonstiges"],
+        required: true
       },
       {
         name: "hardwareTargets",
@@ -818,12 +818,15 @@ export const EVENTS: Event[] = [
   }
 ];
 
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+
 export const UPCOMING_EVENTS = EVENTS
-  .filter(e => e.status === "upcoming")
-  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  .filter(e => new Date(e.date) >= today)
+  .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 
 export const PAST_EVENTS = EVENTS
-  .filter(e => e.status === "past")
+  .filter(e => new Date(e.date) < today)
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 export const EVENTS_DATA = UPCOMING_EVENTS;
