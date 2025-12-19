@@ -1,7 +1,8 @@
 ---
 id: dice-demo
 title: Dice Detection Demo
-sidebar_label: Object Detection (Dice)
+sidebar_label: "[Draft] Object Detection (Dice)"
+draft: true
 ---
 # Dice Detection Demo
 

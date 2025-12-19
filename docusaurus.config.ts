@@ -87,6 +87,10 @@ const config: Config = {
           {
             from: '/webinar-2025-11-27',
             to: '/docs/one-ai/Webinars/webinar-2025-11-27',
+          },
+          {
+            from: '/webinar-2025-12-18',
+            to: '/docs/one-ai/Webinars/webinar-2025-12-18',
           }
         ],
       }],
@@ -423,11 +427,11 @@ const config: Config = {
         translateId: 'webinar_2026_01_28',
         title: 'FREE Online Webinar: Build Your Own AI Quality Control',
         subtitle: 'January 28, 2026 at 10 AM (CET) • Learn Vision AI from Dataset to Deployment',
-        link: 'https://short.one-ware.com/webinar-january/',
+        link: 'https://short.one-ware.com/webinar/',
         cta: 'Register Now',
       },
     },
-    activeAnnouncement: 'qualityControlWorkshop',
+    activeAnnouncement: 'qualityControlWebinar',
   } satisfies Preset.ThemeConfig,
 };
 
