@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 import NeonFolderGraphic from './components/NeonFolderGraphic';
 
 interface GhostDragAnimationProps {
@@ -41,42 +41,43 @@ export default function GhostDragAnimation({ sourceRef, targetRef, show, onHover
   const lastHoverState = useRef<boolean>(false);
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const isPausedRef = useRef<boolean>(false);
+  const lastCycleRef = useRef<number>(-1);
+
+  const updatePositions = useCallback(() => {
+    if (sourceRef.current && targetRef) {
+      const sourceRect = sourceRef.current.getBoundingClientRect();
+      const targetRect = targetRef.getBoundingClientRect();
+
+      const startX = sourceRect.left + sourceRect.width / 2;
+      const startY = sourceRect.top + sourceRect.height / 2;
+      const endX = targetRect.left + targetRect.width / 2;
+      const endY = targetRect.top + targetRect.height / 2;
+
+      const midX = (startX + endX) / 2;
+      const midY = (startY + endY) / 2;
+      const dist = Math.sqrt(Math.pow(endX - startX, 2) + Math.pow(endY - startY, 2));
+
+      const controlX = midX;
+      const controlY = midY - Math.min(200, dist * 0.4);
+
+      const dist1 = Math.sqrt(Math.pow(controlX - startX, 2) + Math.pow(controlY - startY, 2));
+      const dist2 = Math.sqrt(Math.pow(endX - controlX, 2) + Math.pow(endY - controlY, 2));
+      const pathLen = (dist1 + dist2 + dist) / 2;
+
+      coordsRef.current = { startX, startY, endX, endY, controlX, controlY, pathLen };
+
+      const pathD = `M ${startX} ${startY} Q ${controlX} ${controlY} ${endX} ${endY}`;
+      if (pathRef.current) {
+        pathRef.current.setAttribute('d', pathD);
+      }
+      if (maskPathRef.current) {
+        maskPathRef.current.setAttribute('d', pathD);
+        maskPathRef.current.setAttribute('stroke-dasharray', String(pathLen));
+      }
+    }
+  }, [sourceRef, targetRef]);
 
   useEffect(() => {
-    const updatePositions = () => {
-      if (sourceRef.current && targetRef && show) {
-        const sourceRect = sourceRef.current.getBoundingClientRect();
-        const targetRect = targetRef.getBoundingClientRect();
-
-        const startX = sourceRect.left + sourceRect.width / 2;
-        const startY = sourceRect.top + sourceRect.height / 2;
-        const endX = targetRect.left + targetRect.width / 2;
-        const endY = targetRect.top + targetRect.height / 2;
-
-        const midX = (startX + endX) / 2;
-        const midY = (startY + endY) / 2;
-        const dist = Math.sqrt(Math.pow(endX - startX, 2) + Math.pow(endY - startY, 2));
-
-        const controlX = midX;
-        const controlY = midY - Math.min(200, dist * 0.4);
-
-        const dist1 = Math.sqrt(Math.pow(controlX - startX, 2) + Math.pow(controlY - startY, 2));
-        const dist2 = Math.sqrt(Math.pow(endX - controlX, 2) + Math.pow(endY - controlY, 2));
-        const pathLen = (dist1 + dist2 + dist) / 2;
-
-        coordsRef.current = { startX, startY, endX, endY, controlX, controlY, pathLen };
-
-        const pathD = `M ${startX} ${startY} Q ${controlX} ${controlY} ${endX} ${endY}`;
-        if (pathRef.current) {
-          pathRef.current.setAttribute('d', pathD);
-        }
-        if (maskPathRef.current) {
-          maskPathRef.current.setAttribute('d', pathD);
-          maskPathRef.current.setAttribute('stroke-dasharray', String(pathLen));
-        }
-      }
-    };
-
     if (show) {
       updatePositions();
 
@@ -102,6 +103,7 @@ export default function GhostDragAnimation({ sourceRef, targetRef, show, onHover
         scrollTimeoutRef.current = setTimeout(() => {
           isPausedRef.current = false;
           startTimeRef.current = undefined;
+          lastCycleRef.current = -1;
         }, 1000);
       };
 
@@ -120,11 +122,12 @@ export default function GhostDragAnimation({ sourceRef, targetRef, show, onHover
         if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
       };
     }
-  }, [show, sourceRef, targetRef]);
+  }, [show, updatePositions]);
 
   useEffect(() => {
     if (show) {
       startTimeRef.current = undefined;
+      lastCycleRef.current = -1;
     }
   }, [show]);
 
@@ -144,11 +147,19 @@ export default function GhostDragAnimation({ sourceRef, targetRef, show, onHover
         return;
       }
       if (!startTimeRef.current) startTimeRef.current = time;
-      const coords = coordsRef.current;
-      if (!coords) return;
 
       const duration = 3000;
       const elapsed = time - startTimeRef.current;
+      const currentCycle = Math.floor(elapsed / duration);
+
+      if (currentCycle !== lastCycleRef.current) {
+        lastCycleRef.current = currentCycle;
+        updatePositions();
+      }
+
+      const coords = coordsRef.current;
+      if (!coords) return;
+
       let t = (elapsed % duration) / duration;
 
       let moveT = t / 0.8;
@@ -207,7 +218,7 @@ export default function GhostDragAnimation({ sourceRef, targetRef, show, onHover
         lastHoverState.current = false;
       }
     };
-  }, [show, onHoverChange]);
+  }, [show, onHoverChange, updatePositions]);
 
   if (!show) return null;
 
