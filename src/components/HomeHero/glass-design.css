@@ -13,10 +13,8 @@
     z-index: 10;
 
     width: 95vw;
-    height: auto;
-    min-height: 45vh;
+    height: max-content;
     max-width: 100%;
-    aspect-ratio: 3/4;
 
     background: var(--container-bg);
     backdrop-filter: blur(6px);
@@ -36,7 +34,6 @@
 @media (min-width: 640px) {
     .oneware-dashboard-container {
         width: 85vw;
-        aspect-ratio: 4/3;
         border-radius: 12px;
         box-shadow:
             0 20px 30px -10px rgba(0,0,0,0.6),
@@ -48,16 +45,12 @@
     .oneware-dashboard-container {
         width: 80vw;
         max-width: 1000px;
-        min-height: 55vh;
     }
 }
 
 @media (min-width: 1536px) {
     .oneware-dashboard-container {
         width: 90vw;
-        height: 60vh;
-        min-height: auto;
-        aspect-ratio: auto;
         max-width: 1400px;
         border-radius: 14px;
         box-shadow:

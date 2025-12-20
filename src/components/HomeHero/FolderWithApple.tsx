@@ -20,7 +20,7 @@ export function FolderWithApple({ isDragging, hasDropped, onMouseDown, setSource
       className={`flex-shrink-0 relative mb-0 2xl:mb-8 cursor-grab active:cursor-grabbing transition-opacity duration-300 ${hasDropped ? 'pointer-events-none' : ''}`}
       style={{
         width: 'clamp(40px, 8vw, 120px)',
-        zIndex: 20,
+        zIndex: 1,
         opacity: isHidden ? 0 : 1,
         touchAction: 'none'
       }}
@@ -38,7 +38,7 @@ export function FolderWithApple({ isDragging, hasDropped, onMouseDown, setSource
 export function DragPreview({ x, y }: { x: number, y: number }) {
     return (
       <div
-        className="fixed pointer-events-none z-[9999]"
+        className="fixed pointer-events-none z-[40]"
         style={{
             left: 0,
             top: 0,

@@ -131,13 +131,13 @@ export default memo(function TrainingProgressOverlay({
         <div className="flex justify-between items-end mb-1 sm:mb-3 text-[var(--ifm-color-primary)] tracking-wider">
           <span
             className="uppercase font-bold drop-shadow-[0_0_5px_rgba(0,255,209,0.5)] tracking-[0.1em] sm:tracking-[0.2em] truncate"
-            style={{ fontSize: "clamp(7px, 1.8vw, 14px)" }}
+            style={{ fontSize: "clamp(10px, 1.8vw, 14px)" }}
           >
             {getProgressText(progress)}
           </span>
           <span
             className="font-bold flex-shrink-0 ml-2"
-            style={{ fontSize: "clamp(7px, 1.8vw, 14px)" }}
+            style={{ fontSize: "clamp(10px, 1.8vw, 14px)" }}
           >
             {progress}%
           </span>
