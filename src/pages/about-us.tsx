@@ -81,7 +81,7 @@ export default function AboutUs(): JSX.Element {
                 <div className="flex flex-row lg:flex-col gap-8 lg:gap-0 lg:space-y-8">
                   <div className="text-center lg:text-left">
                     <span className="text-gray-700 text-3xl md:text-4xl font-light">
-                      15+
+                      15
                     </span>
                     <span className="text-gray-400 text-xs uppercase block mt-1">
                       <Translate id="aboutus.stats.employees">Employees</Translate>

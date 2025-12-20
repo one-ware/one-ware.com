@@ -407,7 +407,7 @@ export default function CareersPage(): JSX.Element {
 
               <div className="flex flex-col items-center text-center md:items-start md:text-left">
                 <span className="text-[var(--ifm-color-primary)] text-2xl md:text-3xl font-normal">
-                  <Translate id="careers.facts.stat3.value">15+</Translate>
+                  <Translate id="careers.facts.stat3.value">15</Translate>
                 </span>
                 <span className="text-gray-400 text-xs uppercase mt-1">
                   <Translate id="careers.facts.stat3.label">Employees</Translate>
