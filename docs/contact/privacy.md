@@ -265,6 +265,32 @@ Please read the information about your right to object under Art. 21 GDPR below.
 
 ---
 
+### Embedded YouTube Videos
+
+**Type and purpose of processing**  
+We embed YouTube videos on our website. The operator of the corresponding plugins is Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland (hereinafter "Google").
+
+We use the "privacy-enhanced mode" (youtube-nocookie.com) and a "2-click solution" to protect your data. This means that:
+1.  When you visit a page with an embedded video, a preview image is loaded. No connection to YouTube servers is established at this stage.
+2.  A connection to YouTube servers is only established if you actively click on the video to play it.
+3.  By clicking on the video, you give your consent to the data transfer to Google.
+
+If you play a video, Google receives the information that you have accessed the corresponding page of our website. In addition, further data (e.g. IP address, browser information) is transmitted to Google. If you are logged in to your Google account, this data will be assigned directly to your account.
+
+**Legal basis**  
+The legal basis for the integration of YouTube and the associated data transfer is your consent (Art. 6 para. 1 lit. a GDPR).
+
+**Recipients**  
+The recipient of the data is Google Ireland Limited. It cannot be ruled out that Google also transfers data to servers in the USA.
+
+**Revocation of consent**  
+You can revoke your consent at any time by reloading the page or not playing further videos. The revocation of consent does not affect the lawfulness of processing based on consent before its revocation.
+
+**Further information**  
+Further information on data protection at YouTube can be found in the provider's privacy policy at: [https://policies.google.com/privacy](https://policies.google.com/privacy)
+
+---
+
 ## Information about your right to object under Art. 21 GDPR
 
 ### Right to object in individual cases

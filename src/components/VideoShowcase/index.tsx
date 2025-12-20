@@ -8,7 +8,7 @@ const demos = [
     title: "High Speed Quality Control",
     video: "/img/demos/chip.webm",
     image: "/img/ai/one_ai_plugin/use_cases/chip/defect.png",
-    link: "/docs/one-ai/use-cases/chip",
+    link: "/docs/one-ai/tutorials/potato-chip-demo",
     metrics: {
       left: { value: 24, unit: " x", label: "Less Errors vs Universal AI" },
       center: { value: "Efficient" as const, label: "AI Model" },
@@ -54,8 +54,8 @@ const demos = [
     link: "/docs/one-ai/tutorials/handwritten-digits-demo",
     metrics: {
       left: { value: 99, unit: " %", label: "Accuracy" },
-      center: { value: "Efficient" as const, label: "Complexity" },
-      right: { value: 50, unit: " x", label: " Faster vs ResNet18"},
+      center: { value: "Efficient" as const, label: "AI Model" },
+      right: { value: 100, unit: " x", label: " Faster vs ResNet18", prefix: ">"},
     },
   },
   {
