@@ -1,6 +1,6 @@
 import React, { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import axios from "axios";
-import { CiLinkedin } from "react-icons/ci";
+
 import Translate, { translate } from "@docusaurus/Translate";
 import { trackEvent } from "../../utils/tracking";
 
@@ -141,7 +141,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
       if (status === "success") {
         setFormStatus("success");
         setFormData({ name: "", email: "", message: "", website: "", recaptcha_token: "" });
-        trackEvent("contact_form_submit", { label: "Leo Contact Form" });
+        trackEvent("contact_form_submit", { label: "Helmut Contact Form" });
       } else {
         setFormStatus("error");
       }
@@ -169,18 +169,18 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
               {mode === "select" && (
                 <div className="flex-1 flex flex-col text-center">
                   <img
-                    src={require("@site/static/img/AboutUs/Leo.png").default}
-                    alt="Leo Wiegand - Sales Representative"
+                    src={require("@site/static/img/AboutUs/helmut.png").default}
+                    alt="Helmut Plötz - Vice President of Global Sales"
                     className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-[#00FFD1]/20 mx-auto mb-6"
                   />
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">Leo Wiegand</h3>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">Helmut Plötz</h3>
                   <p className="text-[#00FFD1] font-semibold mb-4 text-lg">
-                    <Translate id="contactus.leo.role">Your Sales Contact</Translate>
+                    <Translate id="contactus.helmut.role">Vice President of Global Sales</Translate>
                   </p>
                   <p className="text-gray-300 mb-6 leading-relaxed text-base max-w-md mx-auto">
-                    <Translate id="contactus.leo.description">
-                      Leo is our sales expert who takes care of projects of all kinds. Whether you need evaluations for ideas,
-                      custom quotes, partnership opportunities, or strategic consulting — Leo is your go-to contact for
+                    <Translate id="contactus.helmut.description">
+                      Helmut is our sales expert who takes care of projects of all kinds. Whether you need evaluations for ideas,
+                      custom quotes, partnership opportunities, or strategic consulting — Helmut is your go-to contact for
                       business inquiries.
                     </Translate>
                   </p>
@@ -204,10 +204,30 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                         style={{ background: "rgba(0, 255, 209, 0.08)" }}
                       />
                     </button>
+                    <a
+                      href="mailto:sales@one-ware.com"
+                      onClick={() => trackEvent("email_click", { label: "Helmut Email" })}
+                      className="group relative px-6 py-3 rounded-xl font-medium overflow-hidden transition-all duration-300 w-full"
+                      style={{
+                        background: "rgba(0, 255, 209, 0.05)",
+                        border: "1px solid rgba(0, 255, 209, 0.3)"
+                      }}
+                    >
+                      <span className="relative z-10 flex items-center justify-center gap-3 text-base text-[var(--ifm-color-primary)] group-hover:text-[var(--ifm-color-primary-lighter)] transition-colors">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        sales@one-ware.com
+                      </span>
+                      <div
+                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        style={{ background: "rgba(0, 255, 209, 0.08)" }}
+                      />
+                    </a>
                     <button
                       onClick={() => {
                         setMode("booking");
-                        trackEvent("schedule_meeting", { label: "Leo Meeting" });
+                        trackEvent("schedule_meeting", { label: "Helmut Meeting" });
                       }}
                       className="group relative px-6 py-3 rounded-xl font-medium overflow-hidden transition-all duration-300 w-full"
                       style={{
@@ -226,26 +246,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                         style={{ background: "rgba(0, 255, 209, 0.08)" }}
                       />
                     </button>
-                    <a
-                      href="https://www.linkedin.com/in/leo-wiegand-b27aa0272/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => trackEvent("linkedin_click", { label: "Leo LinkedIn" })}
-                      className="group relative px-6 py-3 rounded-xl font-medium overflow-hidden transition-all duration-300 w-full"
-                      style={{
-                        background: "rgba(0, 255, 209, 0.05)",
-                        border: "1px solid rgba(0, 255, 209, 0.3)"
-                      }}
-                    >
-                      <span className="relative z-10 flex items-center justify-center gap-3 text-base text-[var(--ifm-color-primary)] group-hover:text-[var(--ifm-color-primary-lighter)] transition-colors">
-                        <CiLinkedin className="w-5 h-5" />
-                        LinkedIn
-                      </span>
-                      <div
-                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        style={{ background: "rgba(0, 255, 209, 0.08)" }}
-                      />
-                    </a>
+                    
                   </div>
                 </div>
               )}
@@ -469,7 +470,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                         style={{ background: "rgba(0, 255, 209, 0.08)" }}
                       />
                     </a>
-                    {/* Spacer to align with Leo's 3 buttons */}
+                    {/* Spacer to align with Helmut's 2 buttons */}
                     <div className="px-6 py-3 w-full opacity-0 pointer-events-none">
                       <span className="flex items-center justify-center gap-3 text-base">
                         Placeholder

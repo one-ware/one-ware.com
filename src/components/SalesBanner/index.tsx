@@ -25,8 +25,8 @@ const SalesBanner: React.FC<SalesBannerProps> = ({
     }}>
       <div style={{ flexShrink: 0 }}>
         <img 
-          src="/img/AboutUs/Leo.png"
-          alt="Leo Wiegand - Sales Representative"
+          src="/img/AboutUs/helmut.png"
+          alt="Helmut Plötz - Vice President of Global Sales"
           style={{
             width: '150px',
             height: '150px',
@@ -43,7 +43,7 @@ const SalesBanner: React.FC<SalesBannerProps> = ({
         <p style={{ margin: '0 0 16px 0', fontSize: '18px', lineHeight: 1.6, color: '#e0e0e0' }}>
           {customText || (
             <>
-              <strong>Leo Wiegand</strong> is our sales expert who takes care of projects of all kinds. Whether you need evaluations for ideas, custom quotes, or strategic consulting - Leo is your go-to contact for business inquiries.
+              <strong>Helmut Plötz</strong> is our sales expert who takes care of projects of all kinds. Whether you need evaluations for ideas, custom quotes, or strategic consulting - Helmut is your go-to contact for business inquiries.
             </>
           )}
         </p>

@@ -180,7 +180,7 @@ import SalesBanner from '@site/src/components/SalesBanner';
   subject="ONE AI Healthcare Solutions" 
   customText={
     <>
-      <strong>Leo Wiegand</strong> is our sales expert who takes care of projects of all kinds. Whether you need evaluations for ideas, custom quotes, or strategic consulting - Leo is your go-to contact for business inquiries.
+      <strong>Helmut Plötz</strong> is our sales expert who takes care of projects of all kinds. Whether you need evaluations for ideas, custom quotes, or strategic consulting - Helmut is your go-to contact for business inquiries.
     </>
   }
   customHeading="Ready to Revolutionize Healthcare?"
