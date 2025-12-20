@@ -28,6 +28,12 @@ export default function CareersPage(): JSX.Element {
   const [heroVisible, setHeroVisible] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.volume = 0.5;
+    }
+  }, []);
+
   const handleStoryChange = (newIndex: number) => {
     if (newIndex === activeStory || slidePhase !== 'idle') return;
 
@@ -98,7 +104,7 @@ export default function CareersPage(): JSX.Element {
       key: "5",
       name: "Helmut Plötz",
       position: "Vice President of Global Sales",
-      imageSrc: require("@site/static/img/AboutUs/default.png").default,
+      imageSrc: require("@site/static/img/AboutUs/helmut.png").default,
     },
     {
       key: "6",
@@ -165,8 +171,8 @@ export default function CareersPage(): JSX.Element {
   const featuredIn = [
     { key: "1", imageSrc: require("@site/static/img/Featured/f1_g.png").default, url: "https://tech.eu/2025/06/18/one-ware-raises-eur25m-to-automate-ai-model-configuration-across-industries/" },
     { key: "3", imageSrc: require("@site/static/img/Featured/f4_g.png").default, url: "https://www.elektronikpraxis.de/one-ai-automatisierte-ki-konfiguration-fuer-entwickler-a-09fee486cec031ed0a2edd5dbeeaed0a/" },
-    { key: "6", imageSrc: require("@site/static/img/Featured/f9_g.png").default, url: "https://www.maschinenmarkt.vogel.de/one-ai-ki-extension-one-ware-maschinenbau-a-545f6e3fc5ac13f8fa3f55fa5998332f/" },
-    { key: "7", imageSrc: require("@site/static/img/Featured/f10_g.png").default, url: "https://it-production.com/industrie-4-0-i40/neuronales-netzwerk-in-unter-einer-sekunde/" },
+    { key: "6", imageSrc: require("@site/static/img/Featured/f9_g.png").default, url: "https://www.vdi-nachrichten.com/technik/automation/ki-im-maschinenbau-auf-bestehender-hardware-nutzen/" },
+    { key: "7", imageSrc: require("@site/static/img/Featured/f10_g.png").default, url: "https://www.elektormagazine.com/news/one-ai-vision-edge-ai-en" },
     { key: "8", imageSrc: require("@site/static/img/Partner/altera_w.png").default, url: "https://go.altera.com/l/1090322/2025-04-18/2vvzbn" },
   ]
 

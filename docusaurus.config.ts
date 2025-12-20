@@ -222,7 +222,7 @@ const config: Config = {
             },
             {
               to: "/docs/one-ai/tutorials",
-              label: "Templates",
+              label: "Example Projects",
             },
             // {
             //   to: "/docs/one-ai/getting-started/help/questions-and-answers",

@@ -12,6 +12,12 @@ export default function AboutUs(): JSX.Element {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.volume = 0.5;
+    }
+  }, []);
+
+  useEffect(() => {
     const timer = setTimeout(() => setHeroVisible(true), 100);
     return () => clearTimeout(timer);
   }, []);

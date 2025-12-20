@@ -111,7 +111,7 @@ function IndustryExamplesSection() {
   }
 
   return (
-    <div id="industries" className="py-8 md:py-12 pb-4 md:pb-6">
+    <div id="industries" className="pb-12 md:pb-16 pt-4 md:pt-6">
       {/* Überschrift mit normalem Container-Padding */}
       <div className="container mx-auto px-4 mb-8">
         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-left font-bold">
@@ -336,8 +336,9 @@ export default function Home() {
         <div className="dropshadowbottom">
           <div className="dropshadowtop diagclipbottom">
             <div className="default-background pb-12">
-              <IndustryExamplesSection />
               <VideoShowcase />
+              <IndustryExamplesSection />
+              
             </div>
           </div>
         </div>

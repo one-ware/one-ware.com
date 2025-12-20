@@ -449,28 +449,6 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                         style={{ background: "rgba(0, 255, 209, 0.08)" }}
                       />
                     </button>
-                    <button
-                      onClick={() => {
-                        setChristopherMode("booking");
-                        trackEvent("schedule_meeting", { label: "Christopher Meeting" });
-                      }}
-                      className="group relative px-6 py-3 rounded-xl font-medium overflow-hidden transition-all duration-300 w-full"
-                      style={{
-                        background: "rgba(0, 255, 209, 0.05)",
-                        border: "1px solid rgba(0, 255, 209, 0.3)"
-                      }}
-                    >
-                      <span className="relative z-10 flex items-center justify-center gap-3 text-base text-[var(--ifm-color-primary)] group-hover:text-[var(--ifm-color-primary-lighter)] transition-colors">
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                        <Translate id="contactus.select.booking">Schedule a Meeting</Translate>
-                      </span>
-                      <div
-                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        style={{ background: "rgba(0, 255, 209, 0.08)" }}
-                      />
-                    </button>
                     <a
                       href="mailto:support@one-ware.com"
                       onClick={() => trackEvent("email_click", { label: "Christopher Email" })}
@@ -491,6 +469,12 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                         style={{ background: "rgba(0, 255, 209, 0.08)" }}
                       />
                     </a>
+                    {/* Spacer to align with Leo's 3 buttons */}
+                    <div className="px-6 py-3 w-full opacity-0 pointer-events-none">
+                      <span className="flex items-center justify-center gap-3 text-base">
+                        Placeholder
+                      </span>
+                    </div>
                   </div>
                 </div>
               )}

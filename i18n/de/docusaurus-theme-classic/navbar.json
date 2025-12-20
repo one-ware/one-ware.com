@@ -92,7 +92,7 @@
     "description": "Navbar item with label Documentation"
   },
   "item.label.Templates": {
-    "message": "Vorlagen",
+    "message": "Beispiel Projekte",
     "description": "Navbar item with label Templates"
   },
   "item.label.Events": {

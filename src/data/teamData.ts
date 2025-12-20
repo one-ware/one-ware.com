@@ -38,7 +38,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Helmut Plötz",
     role: "Vice President of Global Sales",
-    image: require("@site/static/img/AboutUs/default.png").default,
+    image: require("@site/static/img/AboutUs/helmut.png").default,
     linkedIn: "https://www.linkedin.com/in/helmut-ploetz-853342160/",
     email: "sales@one-ware.com",
   },

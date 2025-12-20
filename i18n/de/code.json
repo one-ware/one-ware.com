@@ -1,4 +1,22 @@
 {
+  "homehero.title1": {
+    "message": "Erstelle deine"
+  },
+  "homehero.title2": {
+    "message": "Maßgeschneiderte KI"
+  },
+  "homehero.subtitle1": {
+    "message": "Vision und Edge AI Entwicklung,"
+  },
+  "homehero.subtitle2": {
+    "message": "Automatisiert in einer Software"
+  },
+  "homehero.button.download": {
+    "message": "Kostenloser Download"
+  },
+  "homehero.button.learnmore": {
+    "message": "Mehr Erfahren"
+  },
   "homepage.every": {
     "message": "Jede "
   },
@@ -45,7 +63,7 @@
     "message": "Für jede Branche:"
   },
   "homepage.usecase.title": {
-    "message": "Beispiel-Anwendungsfälle"
+    "message": "Showcase"
   },
   "homepage.usecase.quality.title": {
     "message": "All-in-ONE Qualitätskontrolle"
