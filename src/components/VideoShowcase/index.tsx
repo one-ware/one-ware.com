@@ -74,11 +74,51 @@ const demos = [
 export default function VideoShowcase() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
   const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
+  const observerRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const currentActive = hoveredIndex !== null ? hoveredIndex : activeIndex;
 
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) {
+      if (autoPlayRef.current) {
+        clearInterval(autoPlayRef.current);
+        autoPlayRef.current = null;
+      }
+      
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const index = Number(entry.target.getAttribute('data-index'));
+              setActiveIndex(index);
+            }
+          });
+        },
+        {
+          threshold: 0.6,
+          rootMargin: "-10% 0px -10% 0px"
+        }
+      );
+
+      observerRefs.current.forEach((ref) => {
+        if (ref) observer.observe(ref);
+      });
+
+      return () => observer.disconnect();
+    }
+
     if (hoveredIndex !== null) {
       if (autoPlayRef.current) {
         clearInterval(autoPlayRef.current);
@@ -96,7 +136,7 @@ export default function VideoShowcase() {
         clearInterval(autoPlayRef.current);
       }
     };
-  }, [hoveredIndex]);
+  }, [hoveredIndex, isMobile]);
 
   return (
     <section className="py-6 md:py-8">
@@ -107,17 +147,22 @@ export default function VideoShowcase() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {demos.map((demo, idx) => (
-            <VideoShowcaseCard
+            <div 
               key={idx}
-              video={demo.video}
-              image={demo.image}
-              title={demo.title}
-              metrics={demo.metrics}
-              link={demo.link}
-              isActive={currentActive === idx}
-              onMouseEnter={() => setHoveredIndex(idx)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            />
+              ref={el => { observerRefs.current[idx] = el }}
+              data-index={idx}
+            >
+              <VideoShowcaseCard
+                video={demo.video}
+                image={demo.image}
+                title={demo.title}
+                metrics={demo.metrics}
+                link={demo.link}
+                isActive={currentActive === idx}
+                onMouseEnter={() => !isMobile && setHoveredIndex(idx)}
+                onMouseLeave={() => !isMobile && setHoveredIndex(null)}
+              />
+            </div>
           ))}
         </div>
       </div>
