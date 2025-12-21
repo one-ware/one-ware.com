@@ -4,6 +4,8 @@ title: AI Industry Automation in One Click
 sidebar_label: Quality Control in One Click
 ---
 
+import LiteYouTubeEmbed from '@site/src/components/LiteYouTubeEmbed';
+
 ### High Speed and Precise Quality Control or General Factory Automation in One Click
 
 From **[potato chip inspection](/docs/one-ai/use-cases/chip)** to **[PCB defect detection](/docs/one-ai/use-cases/pcb)**, ONE AI has shown that it can generate models that are not only **leaner and faster**, but also **more accurate** than both universal networks and hand-crafted expert designs. These results have been confirmed in our joint whitepaper with Altera—where even a decade-old MAX® 10 FPGA outperformed Nvidia’s Jetson Orin Nano—and in independent PCB benchmarks, where ONE AI surpassed researcher-built architectures while running more than ten times faster.
@@ -40,8 +42,12 @@ Every decision is logged. Operators can override classifications (“actually OK
 
 The following demo shows how a **MAX® 10 FPGA** can be used to implement real-time AI-based quality control directly in production:
 
-<div style={{display:'flex', justifyContent:'center', margin:'20px 0'}}>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/ywtKTb8Z3_Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style={{borderRadius:'8px'}}></iframe>
+<div style={{display:'flex', justifyContent:'center', margin:'20px 0', maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto'}}>
+  <LiteYouTubeEmbed
+    videoId="ywtKTb8Z3_Q"
+    previewImage="https://i.ytimg.com/vi/ywtKTb8Z3_Q/maxresdefault.jpg"
+    title="AI in running production"
+  />
 </div>
 
 The same principle applies with a **conveyor belt**, a **NUC PC**, and the Camera Tool: the AI evaluates each part in real time, and the PLC sorts out defective items automatically. What begins as a dataset experiment quickly becomes a **fully operational QC station** on the shop floor.

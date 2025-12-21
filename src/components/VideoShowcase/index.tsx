@@ -1,8 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
 import Translate from "@docusaurus/Translate";
-import VideoShowcaseCard from "./VideoShowcaseCard";
+import VideoShowcaseCard, { Metrics } from "./VideoShowcaseCard";
 
-const demos = [
+export interface ShowcaseItem {
+  title: string;
+  video?: string;
+  image?: string;
+  link: string;
+  metrics: Metrics;
+}
+
+const defaultDemos: ShowcaseItem[] = [
   
   {
     title: "High Speed Quality Control",
@@ -71,7 +79,13 @@ const demos = [
   
 ];
 
-export default function VideoShowcase() {
+interface VideoShowcaseProps {
+  items?: ShowcaseItem[];
+  columns?: 2 | 3;
+}
+
+export default function VideoShowcase({ items = defaultDemos, columns = 3 }: VideoShowcaseProps) {
+  const demos = items;
   const [activeIndex, setActiveIndex] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false);
@@ -145,7 +159,7 @@ export default function VideoShowcase() {
           <Translate id="homepage.usecase.title">Showcase</Translate>
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className={`grid grid-cols-1 md:grid-cols-2 ${columns === 3 ? 'lg:grid-cols-3' : ''} gap-6`}>
           {demos.map((demo, idx) => (
             <div 
               key={idx}

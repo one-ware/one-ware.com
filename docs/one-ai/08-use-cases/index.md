@@ -4,56 +4,78 @@ title: ONE AI Use Cases Overview
 sidebar_label: Use Cases
 ---
 
-# ONE AI Use Cases
+import VideoShowcase from '@site/src/components/VideoShowcase';
 
-ONE AI enables practical, high-performance AI applications across diverse industries.  
-From food inspection to electronics manufacturing, its optimized architectures deliver **higher accuracy, lower latency, and reduced hardware demands** compared to conventional approaches.
+Discover example use-cases where ONE AI outperforms universal AI models and even specialized solutions developed by scientists.
 
-This section presents several real-world use cases where ONE AI demonstrates its strengths:
+These demonstrations highlight how our automated architecture optimization achieves superior accuracy and efficiency, enabling high-performance AI on everything from low-power FPGAs to standard industrial PCs.
 
-<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginTop: '32px'}}>
-
-  <a href="/docs/one-ai/use-cases/camera-tool" style={{textDecoration: 'none'}}>
-    <div style={{border: '1px solid #eaeaea', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 2px 6px rgba(0,0,0,0.05)', transition: 'transform 0.2s'}}>
-      <img src="/img/ai/one_ai_plugin/use_cases/capture/full.png" alt="Camera Tool" style={{width: '100%', height: '180px', objectFit: 'cover'}} />
-      <div style={{padding: '16px'}}>
-        <h3 style={{margin: '0 0 8px 0'}}>AI Quality Control in One Click</h3>
-        <p style={{margin: 0, color: '#b3b3b3ff'}}>Transform AI models into a production-ready QC station instantly using the Camera Tool.</p>
-      </div>
-    </div>
-  </a>
-
-  <a href="/docs/one-ai/use-cases/chip" style={{textDecoration: 'none'}}>
-    <div style={{border: '1px solid #eaeaea', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 2px 6px rgba(0,0,0,0.05)', transition: 'transform 0.2s'}}>
-      <img src="/img/ai/one_ai_plugin/use_cases/chip/good.png" alt="Potato Chip Inspection" style={{width: '100%', height: '180px', objectFit: 'cover'}} />
-      <div style={{padding: '16px'}}>
-        <h3 style={{margin: '0 0 8px 0'}}>High Speed and Efficient Edge AI</h3>
-        <p style={{margin: 0, color: '#b3b3b3ff'}}>Real-time potato chip inspection with optimized models outperforming generic models on modern GPUs.</p>
-      </div>
-    </div>
-  </a>
-
-  <a href="/docs/one-ai/use-cases/pcb" style={{textDecoration: 'none'}}>
-    <div style={{border: '1px solid #eaeaea', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 2px 6px rgba(0,0,0,0.05)', transition: 'transform 0.2s'}}>
-      <img src="/img/ai/one_ai_plugin/use_cases/pcb/pcb.png" alt="PCB Quality Control" style={{width: '100%', height: '180px', objectFit: 'cover'}} />
-      <div style={{padding: '16px'}}>
-        <h3 style={{margin: '0 0 8px 0'}}>High Precision Computer Vision</h3>
-        <p style={{margin: 0, color: '#b3b3b3ff'}}>ONE AI's model for PCB inspection surpassing hand-crafted models in both accuracy and speed.</p>
-      </div>
-    </div>
-  </a>
-
-  <a href="/docs/one-ai/use-cases/difference-detection" style={{textDecoration: 'none'}}>
-    <div style={{border: '1px solid #eaeaea', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 2px 6px rgba(0,0,0,0.05)', transition: 'transform 0.2s'}}>
-      <img src="/img/ai/one_ai_plugin/demos/overlap-difference/image_000118_test.png" alt="Reference-Based Detection" style={{width: '100%', height: '180px', objectFit: 'cover'}} />
-      <div style={{padding: '16px'}}>
-        <h3 style={{margin: '0 0 8px 0'}}>Reference-Based Object Detection</h3>
-        <p style={{margin: 0, color: '#b3b3b3ff'}}>Leverage multi-image comparison for superior object detection.</p>
-      </div>
-    </div>
-  </a>
-
-</div>
+<VideoShowcase columns={2} items={[
+  {
+    title: "High Speed Quality Control",
+    video: "/img/demos/chip.webm",
+    image: "/img/ai/one_ai_plugin/use_cases/chip/defect.png",
+    link: "/docs/one-ai/use-cases/chip",
+    metrics: {
+      left: { value: 24, unit: " x", label: "Less Errors vs Universal AI" },
+      center: { value: "Efficient", label: "AI Model" },
+      right: { value: 72, unit: " x", label: "Faster vs Universal AI" },
+    },
+  },
+  {
+    title: "Object Detection with Comparison",
+    video: "/img/demos/drone.webm",
+    image: "/img/demos/compare.jpg",
+    link: "/docs/one-ai/use-cases/difference-detection",
+    metrics: {
+      left: { value: 10, unit: " x", label: "Less Errors vs YOLOv8" },
+      center: { value: "Balanced", label: "AI Model" },
+      right: { value: 8, unit: " x", label: "More Efficient vs YOLOv8" },
+    },
+  },
+  {
+    title: "High Precision Object Detection",
+    image: "/img/ai/one_ai_plugin/use_cases/pcb/pcb.png",
+    link: "/docs/one-ai/use-cases/pcb",
+    metrics: {
+      left: { value: 6.4, unit: " x", label: "Less Errors vs Image Processing" },
+      center: { value: "Advanced", label: "AI Model" },
+      right: { value: 7.5, unit: " x", label: "Faster vs AI from Scientists" },
+    },
+  },
+  {
+    title: "Simple Object Detection",
+    video: "/img/demos/cup.webm",
+    image: "/img/ai/one_ai_plugin/demos/tea_cup_print/demo.png",
+    link: "/docs/one-ai/tutorials/teacup-print-detection",
+    metrics: {
+      left: { value: 100, unit: " %", label: "Accuracy"},
+      center: { value: "Efficient", label: "AI Model" },
+      right: { value: 16, unit: "", label: "Images for Training" , startValue: 20000 },
+    },
+  },
+  {
+    title: "Simple Classification",
+    video: "/img/demos/number.webm",
+    image: "/img/ai/one_ai_plugin/demos/handwritten-digits/nist_sd19_examples.jpg",
+    link: "/docs/one-ai/tutorials/handwritten-digits-demo",
+    metrics: {
+      left: { value: 99, unit: " %", label: "Accuracy" },
+      center: { value: "Efficient", label: "AI Model" },
+      right: { value: 100, unit: " x", label: " Faster vs ResNet18", prefix: ">"},
+    },
+  },
+  {
+    title: "All-in-ONE Quality Control",
+    image: "/img/ai/one_ai_plugin/use_cases/capture/preview.png",
+    link: "/docs/one-ai/use-cases/camera-tool",
+    metrics: {
+      left: { value: 1, unit: "-Click", label: "Deployment", startValue: 50 },
+      center: { value: "Any", label: "AI Model" },
+      right: { value: 1, unit: " Day", label: "Development Time", startValue: 300, prefix: "<" },
+    },
+  },
+]} />
 
 ## Overview
 
