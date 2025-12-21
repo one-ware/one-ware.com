@@ -143,9 +143,7 @@ export default function VideoShowcaseCard({
         <div
           className="relative overflow-hidden transition-all duration-500 h-full flex flex-col"
           style={{
-            background: "rgba(0, 0, 0, 0.15)",
-            backdropFilter: "blur(6px)",
-            WebkitBackdropFilter: "blur(6px)",
+            background: "rgba(20, 20, 20, 0.85)",
             border: isActive ? "1px solid rgba(0, 255, 209, 0.5)" : "1px solid rgba(255, 255, 255, 0.1)",
             borderRadius: "14px",
             boxShadow: isActive ? "0 8px 32px rgba(0, 255, 209, 0.15)" : "none",
