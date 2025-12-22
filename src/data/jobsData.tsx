@@ -36,4 +36,27 @@ export const JOBS_DATA: JobCategory[] = [
       }
     ],
   },
+  {
+    category: "Business & Management",
+    positions: [
+      {
+        id: "business.1",
+        title: "Founders Associate",
+        description: "Actively shape our growth through Finance, Strategy, and Marketing",
+        description_de: "Gestalte aktiv unser Wachstum durch Finanzen, Strategie und Marketing",
+        url: "Founders Associate.pdf",
+        type: "Full Time",
+        location: "Osnabrück - Hybrid",
+      },
+      {
+        id: "business.2",
+        title: "Product Owner",
+        description: "Translate technology into a scalable, market-ready product with excellent UX",
+        description_de: "Übersetze Technologie in ein skalierbares, marktfähiges Produkt mit exzellenter UX",
+        url: "Product Owner.pdf",
+        type: "Full Time",
+        location: "Osnabrück - Hybrid",
+      }
+    ],
+  },
 ];
