@@ -12,10 +12,11 @@ interface TopMetricsProps {
   onUserChange?: () => void;
   onBusyChange?: (busy: boolean) => void;
   onFpsChange?: (fps: number) => void;
+  onAccuracyChange?: (accuracy: number) => void;
   targetAccuracy?: number;
 }
 
-export default memo(function TopMetrics({ isActive, animateSetup = false, animatePrecision = false, isImproved = false, animateHardwareSwitch = false, retrainedPrecision = false, isInteractive = false, onUserChange, onBusyChange, onFpsChange, targetAccuracy }: TopMetricsProps) {
+export default memo(function TopMetrics({ isActive, animateSetup = false, animatePrecision = false, isImproved = false, animateHardwareSwitch = false, retrainedPrecision = false, isInteractive = false, onUserChange, onBusyChange, onFpsChange, onAccuracyChange, targetAccuracy }: TopMetricsProps) {
   const [setupAnimationRunning, setSetupAnimationRunning] = useState(false);
   const [hwSwitchAnimationRunning, setHwSwitchAnimationRunning] = useState(false);
   const setupAnimationStartedRef = useRef(false);
@@ -342,6 +343,7 @@ export default memo(function TopMetrics({ isActive, animateSetup = false, animat
   useEffect(() => { onFpsChangeRef.current = onFpsChange; }, [onFpsChange]);
   useEffect(() => { onBusyChangeRef.current = onBusyChange; }, [onBusyChange]);
   useEffect(() => { displayedFpsRef.current = displayedFps; }, [displayedFps]);
+  useEffect(() => { if (onAccuracyChange) onAccuracyChange(displayedAccuracy); }, [displayedAccuracy, onAccuracyChange]);
 
   const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
     if (!canUserInteract) return;
@@ -474,39 +476,47 @@ export default memo(function TopMetrics({ isActive, animateSetup = false, animat
       </div>
 
       {isCompact ? (
-        <div className={glassPanelClass} style={{ ...getPanelStyle(1), minWidth: '120px', flex: 2 }}>
+        <div className={glassPanelClass} style={{ ...getPanelStyle(1), minWidth: '100px', flex: 1 }}>
           <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-50" />
-          <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                  background: 'radial-gradient(circle at center, rgba(0, 255, 209, 0.4) 0%, transparent 70%)',
-                  opacity: isImproved ? 0.6 : 0,
-                  transition: 'opacity 0.8s ease-out',
-                  zIndex: 5
-              }}
-          />
           <div className="oneware-section-header flex-shrink-0" style={{ margin: 0, padding: 0, fontSize: 'clamp(0.5rem, 1.2vw, 0.75rem)' }}>
-              METRICS
+              FRAMERATE
           </div>
-          <div className="flex-1 flex items-center justify-around gap-2">
-            <div className="flex items-baseline gap-1">
-              <span
-                className={`font-light tracking-tight drop-shadow-lg transition-all duration-300 ${displayedFps > 0 ? 'text-[var(--ifm-color-primary)]' : 'text-white'}`}
-                style={{ fontSize: 'clamp(0.85rem, 2vw, 1.2rem)', lineHeight: 1 }}
+          <div className="flex-1 flex flex-col justify-center">
+            <div className="flex items-end gap-3">
+              <div className="flex items-end gap-1 min-w-[35%]">
+                <span
+                  className={`font-light tracking-tight drop-shadow-lg transition-all duration-300 ${displayedFps > 0 ? 'text-[var(--ifm-color-primary)]' : 'text-white'}`}
+                  style={{ fontSize: 'clamp(0.9rem, 2vw, 1.2rem)', lineHeight: 1 }}
+                >
+                  {formatFps(displayedFps)}
+                </span>
+                <span className="font-medium text-white/40 uppercase tracking-widest" style={{ fontSize: 'clamp(8px, 1.5vw, 12px)' }}>FPS</span>
+              </div>
+              <div
+                ref={fpsSliderRef}
+                id="fps-slider-track"
+                className={`relative h-[16px] flex-1 flex items-center ${canUserInteract ? 'cursor-pointer' : ''} touch-none`}
+                onMouseDown={handleDragStart}
+                onTouchStart={handleDragStart}
               >
-                {formatFps(displayedFps)}
-              </span>
-              <span className="font-medium text-white/40 uppercase tracking-widest" style={{ fontSize: 'clamp(6px, 1.5vw, 10px)' }}>FPS</span>
-            </div>
-            <div className="w-[1px] h-4 bg-white/10" />
-            <div className="flex items-baseline gap-1">
-              <span
-                className={`font-light tracking-tight drop-shadow-lg transition-colors duration-1000 ${isImproved ? 'text-[var(--ifm-color-primary)] drop-shadow-[0_0_15px_rgba(0,255,209,0.6)]' : 'text-white'}`}
-                style={{ fontSize: 'clamp(0.85rem, 2vw, 1.2rem)', lineHeight: 1 }}
-              >
-                {formatAcc(displayedAccuracy)}
-              </span>
-              <span className="font-medium text-white/40 uppercase tracking-widest" style={{ fontSize: 'clamp(6px, 1.5vw, 10px)' }}>% ACC</span>
+                <div className="absolute left-0 right-0 h-[2px] bg-white/10 rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-[var(--ifm-color-primary)] shadow-[0_0_10px_var(--ifm-color-primary)]"
+                    style={{
+                      width: `${displayedFps}%`,
+                      transition: `width ${isClicking || isUserDraggingFps ? '0s' : '0.2s'} linear`
+                    }}
+                  />
+                </div>
+                <div
+                  className="absolute h-[12px] w-[4px] bg-[var(--ifm-color-primary)] rounded-[1px] shadow-[0_0_10px_var(--ifm-color-primary)] z-10 top-1/2 -translate-y-1/2"
+                  style={{
+                    left: `${displayedFps}%`,
+                    transform: 'translate(-50%, -50%)',
+                    transition: `left ${isClicking || isUserDraggingFps ? '0s' : '0.2s'} linear`
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
