@@ -15,11 +15,9 @@ export default function DownloadButton({ os, className }: DownloadButtonProps) {
   useEffect(() => {
     const fetchLatestRelease = async () => {
       try {
-        const response = await fetch('https://api.github.com/repos/one-ware/OneWare/releases/latest');
-        const data = await response.json();
+        const response = await fetch('https://api.github.com/repos/one-ware/OneWare/releases');
+        const releases = await response.json();
         
-        setVersion(data.tag_name);
-
         let assetName = '';
         if (os === 'windows') {
           assetName = '-win-x64.msi';
@@ -29,9 +27,15 @@ export default function DownloadButton({ os, className }: DownloadButtonProps) {
           assetName = '-osx-arm64.dmg';
         }
 
-        const asset = data.assets.find((a: any) => a.name.endsWith(assetName));
-        if (asset) {
-          setDownloadUrl(asset.browser_download_url);
+        for (const release of releases) {
+          if (release.draft || release.prerelease) continue;
+
+          const asset = release.assets.find((a: any) => a.name.endsWith(assetName));
+          if (asset) {
+            setVersion(release.tag_name);
+            setDownloadUrl(asset.browser_download_url);
+            break;
+          }
         }
       } catch (error) {
         console.error('Error fetching latest release:', error);
