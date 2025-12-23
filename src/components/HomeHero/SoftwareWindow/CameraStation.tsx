@@ -8,6 +8,7 @@ interface CameraStationProps {
   showCelebration?: boolean;
   allowCustomUpload?: boolean;
   onDataDropped?: () => void;
+  accuracy?: number;
 }
 
 const CAMERA_X = 60;
@@ -39,7 +40,7 @@ const ICON_DELAYS = [
     5500,
 ];
 
-export default memo(function CameraStation({ isActive, onDataFull, showCelebration = false, allowCustomUpload = false, onDataDropped }: CameraStationProps) {
+export default memo(function CameraStation({ isActive, onDataFull, showCelebration = false, allowCustomUpload = false, onDataDropped, accuracy = 0 }: CameraStationProps) {
     const isVisible = isActive;
     const shouldRender = useDelayedUnmount(isVisible, 800);
     const [collectedCount, setCollectedCount] = useState(0);
@@ -346,6 +347,41 @@ export default memo(function CameraStation({ isActive, onDataFull, showCelebrati
 
                     {isDropped && (
                         <DataGrid filledCount={collectedCount} x={DATA_BOX_X} y={DATA_BOX_Y} showCelebration={false} />
+                    )}
+
+                    {accuracy > 0 && (
+                        <g transform={`translate(${DATA_BOX_X}, 70)`}>
+                            <rect
+                                x="-60" y="-26" width="120" height="58" rx="10"
+                                fill="rgba(0,0,0,0.5)"
+                                stroke="var(--ifm-color-primary)"
+                                strokeWidth="1.5"
+                                strokeOpacity="0.4"
+                            />
+                            <text
+                                x="0" y="0"
+                                textAnchor="middle"
+                                dominantBaseline="middle"
+                                fill="var(--ifm-color-primary)"
+                                fontSize="24"
+                                fontWeight="300"
+                                fontFamily="Montserrat, sans-serif"
+                            >
+                                {accuracy.toFixed(1)}%
+                            </text>
+                            <text
+                                x="0" y="20"
+                                textAnchor="middle"
+                                dominantBaseline="middle"
+                                fill="rgba(255,255,255,0.5)"
+                                fontSize="14"
+                                fontWeight="500"
+                                fontFamily="Montserrat, sans-serif"
+                                letterSpacing="0.1em"
+                            >
+                                ACCURACY
+                            </text>
+                        </g>
                     )}
 
                     {collectedCount >= 16 && (

@@ -8,7 +8,8 @@ export default function BackgroundGridSimple() {
         alt=""
         loading="lazy"
         decoding="async"
-        className="absolute left-0 top-0 w-full h-full object-cover"
+        className="absolute left-0 top-0 w-full h-full object-cover md:object-center"
+        style={{ objectPosition: '70% center' }}
       />
       <div className="absolute inset-0 bg-black/40" />
     </div>
