@@ -22,7 +22,7 @@ In this tutorial, we will use the BD3 dataset to build an AI model following our
     <img src="/img/ai/one_ai_plugin/demos/bd3-building-defects/example3.jpg" alt="example3" style={{ width: '30%' }} />
 </div>
 
-To ensure comparable conditions, we use the same train, validation, and test split as in the original work, generated with the authors’ provided script, which is available in the dataset’s [Github repository of the dataset](https://github.com/Praveenkottari/BD3-Dataset). The pre-split dataset can be downloaded [here] for use in this tutorial. You can also download the complete project folder, including all the configurations we will apply in the following steps.
+To ensure comparable conditions, we use the same train, validation, and test split as in the original work, generated with the authors’ provided script, which is available in the dataset’s [Github repository of the dataset](https://github.com/Praveenkottari/BD3-Dataset). The pre-split dataset can be downloaded [here](https://onewarecom.sharepoint.com/:u:/s/Public/IQAs9Ec5yiIvQ5hXd7oQ-a-PAXyasRPIgXb8DTO-JsbmJYc?e=elzcAc) for use in this tutorial. You can also download the complete project folder [here](https://onewarecom.sharepoint.com/:u:/s/Public/IQBqxmnKGzERQrz865UMxdpMAbz7VJhCHSP_hbEXdB29QDY?e=saGHWP), including all the configurations we will apply in the following steps.
 
 
 ### License 
@@ -118,9 +118,8 @@ On the one-ware cloud platform, you can also visually inspect the model's perfor
 
 ## Model export
 [🔗 model export guide](/docs/one-ai/getting-started/export)
-To make the model available for different tasks, you can export and download it. Click on **Export** to open the export configuration menu. 
 
-Then, click **Start Export** to begin the process. Once the server has completed the export, you can download the model by clicking the **downward arrow** in the Exports section. 
+To make the model available for different tasks, you can export and download it. Click on **Export** to open the export configuration menu. Then, click **Start Export** to begin the process. Once the server has completed the export, you can download the model by clicking the **downward arrow** in the Exports section. 
 
 ![model_export](/img/ai/one_ai_plugin/demos/bd3-building-defects/export_model.jpg)
 
