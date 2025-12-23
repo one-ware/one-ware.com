@@ -29,6 +29,14 @@ All of these features are now released with the recent OneWare Studio and OneAI 
 
 After fighting macOS hardened runtime as well as dependency hell on Linux, the Camera tool is finally working on all our supported platforms! Our macOS App is also now properly code signed, so no workaround is needed anymore.
 
+**The Camera Tool allows you to create your own dataset, test your trained models, and even build a quality control system directly in OneWare Studio.**
+
+- Support for multiple cameras and presets simultaneously  
+- Quick and convenient dataset creation  
+- Real-time testing of trained models  
+- Real-time Ai-Quality Control with remote control
+
+
 **[Try it out now!](/docs/studio/setup)**
 
 ## Segmentation & Annotation Tool Changes
