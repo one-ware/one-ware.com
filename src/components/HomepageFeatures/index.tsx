@@ -8,7 +8,7 @@ export default function HomepageFeatures(): JSX.Element {
     <section className={`${styles.features} container my-20`}>
       <div className="grid md:grid-cols-2  md:my-10 bottomsplit pb-20">
         <div data-aos="fade-left" className="md:px-10">
-          <img src={require('@site/static/img/ai/Capture.png').default} />
+          <img src={require('@site/static/img/ai/Capture.png').default} loading="lazy" decoding="async" alt="ONE AI Capture" />
         </div>
 
         <div
@@ -38,7 +38,7 @@ export default function HomepageFeatures(): JSX.Element {
 
       <div className="grid md:grid-cols-2 md:my-10 md:pt-10">
         <div className="p-5 md:order-2" data-aos="fade-right">
-          <img src={require('@site/static/img/studio/slides2/simulator.png').default} />
+          <img src={require('@site/static/img/studio/slides2/simulator.png').default} loading="lazy" decoding="async" alt="ONE WARE Studio Simulator" />
         </div>
 
         <div
