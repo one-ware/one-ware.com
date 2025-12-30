@@ -158,7 +158,7 @@ function TestimonialsSection() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Testimonial 1 */}
-        <div className="bg-gray-300 hover:bg-gray-400 bg-opacity-95 p-6 rounded-lg shadow-xl relative min-h-[280px] transition-colors duration-300 cursor-pointer">
+        <div className="bg-gray-300 hover:bg-gray-400 bg-opacity-95 p-6 shadow-xl relative min-h-[280px] transition-colors duration-300 cursor-pointer">
           <a
             href="https://go.altera.com/l/1090322/2025-04-18/2vvzbn"
             target="_blank"
@@ -201,7 +201,7 @@ function TestimonialsSection() {
         </div>
 
         {/* Testimonial 2 */}
-        <div className="bg-gray-300 hover:bg-gray-400 bg-opacity-95 p-6 rounded-lg shadow-xl relative min-h-[280px] transition-colors duration-300 cursor-pointer">
+        <div className="bg-gray-300 hover:bg-gray-400 bg-opacity-95 p-6 shadow-xl relative min-h-[280px] transition-colors duration-300 cursor-pointer">
           <a
             href="https://hdo-gmbh.com/"
             target="_blank"
@@ -242,7 +242,7 @@ function TestimonialsSection() {
         </div>
 
         {/* Testimonial 3 */}
-        <div className="bg-gray-300 hover:bg-gray-400 bg-opacity-95 p-6 rounded-lg shadow-xl relative min-h-[280px] transition-colors duration-300 cursor-pointer">
+        <div className="bg-gray-300 hover:bg-gray-400 bg-opacity-95 p-6 shadow-xl relative min-h-[280px] transition-colors duration-300 cursor-pointer">
           <a
             href="https://www.cuspcapital.com/"
             target="_blank"

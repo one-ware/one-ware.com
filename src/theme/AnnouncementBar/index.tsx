@@ -121,7 +121,7 @@ export default function AnnouncementBar() {
                 backgroundColor: '#000000',
                 color: '#00FFD1',
                 padding: '6px 16px',
-                borderRadius: '6px',
+                borderRadius: 0,
                 textDecoration: 'none',
                 fontWeight: 'bold',
                 marginLeft: '12px',

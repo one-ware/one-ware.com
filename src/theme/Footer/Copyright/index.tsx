@@ -36,7 +36,7 @@ export default function FooterCopyright({ copyright }: Props): ReactNode {
 
       <button
         onClick={resetConsent}
-        className="mt-3 inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-300 hover:scale-105"
+        className="mt-3 inline-flex items-center gap-2 px-3 py-1.5 text-xs font-medium transition-all duration-300 hover:scale-105"
         style={{
           background: 'rgba(255, 255, 255, 0.05)',
           border: '1px solid rgba(255, 255, 255, 0.1)',

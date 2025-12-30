@@ -42,7 +42,7 @@ export default function AboutUs(): JSX.Element {
         }}
       >
         <div className="container mx-auto px-6 h-full flex items-center">
-          <div className="w-full">
+          <div className="w-full pt-8 md:pt-0">
             <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-4 mb-8 md:mb-16">
               <h1 className="text-6xl md:text-7xl lg:text-8xl font-extralight text-gray-700 leading-none tracking-tight">
                 <span

@@ -36,7 +36,7 @@ export default memo(function DeployView({ onDeploy }: DeployViewProps) {
                 style={{
                     width: 'clamp(80px, 20vw, 200px)',
                     height: 'clamp(26px, 5vw, 48px)',
-                    borderRadius: 'clamp(8px, 1.5vw, 12px)',
+                    borderRadius: 0,
 
                     background: 'rgba(0, 0, 0, 0.2)',
                     backdropFilter: 'blur(12px)',
