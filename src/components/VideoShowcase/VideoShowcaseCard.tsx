@@ -154,13 +154,13 @@ export default function VideoShowcaseCard({
           style={{
             background: "rgba(20, 20, 20, 0.85)",
             border: isActive ? "1px solid rgba(0, 255, 209, 0.5)" : "1px solid rgba(255, 255, 255, 0.1)",
-            borderRadius: "14px",
+            borderRadius: 0,
             boxShadow: isActive ? "0 8px 32px rgba(0, 255, 209, 0.15)" : "none",
             transform: isActive ? "scale(1.02)" : "scale(1)",
             opacity: isActive ? 1 : 0.6,
           }}
         >
-          <div className="relative overflow-hidden flex-shrink-0" style={{ borderRadius: "14px 14px 0 0", aspectRatio: "16 / 9" }}>
+          <div className="relative overflow-hidden flex-shrink-0" style={{ aspectRatio: "16 / 9" }}>
             {videoSrc && (
               <video
                 ref={videoRef}
@@ -200,7 +200,6 @@ export default function VideoShowcaseCard({
                 style={{
                   background: "rgba(0, 0, 0, 0.3)",
                   border: "1px solid rgba(255, 255, 255, 0.08)",
-                  borderRadius: "8px",
                 }}
               >
                 <div
@@ -219,7 +218,6 @@ export default function VideoShowcaseCard({
                 style={{
                   background: "rgba(0, 0, 0, 0.3)",
                   border: "1px solid rgba(255, 255, 255, 0.08)",
-                  borderRadius: "8px",
                 }}
               >
                 <div className={`text-sm sm:text-base lg:text-lg font-bold whitespace-nowrap ${complexityColor[metrics.center.value]}`}>
@@ -235,7 +233,6 @@ export default function VideoShowcaseCard({
                 style={{
                   background: "rgba(0, 0, 0, 0.3)",
                   border: "1px solid rgba(255, 255, 255, 0.08)",
-                  borderRadius: "8px",
                 }}
               >
                 <div

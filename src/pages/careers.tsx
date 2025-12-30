@@ -330,6 +330,7 @@ export default function CareersPage(): JSX.Element {
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
+                        style={{ transform: 'translateZ(0)' }}
                       >
                         <path
                           strokeLinecap="round"
