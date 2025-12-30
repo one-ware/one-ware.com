@@ -108,7 +108,7 @@ function CustomDropdown({ label, stepNumber, value, onChange, options, disabled,
             : value
             ? '1px solid rgba(0, 255, 209, 0.3)'
             : '1px solid rgba(255, 255, 255, 0.15)',
-          borderRadius: isOpen ? '14px 14px 0 0' : '14px',
+          borderRadius: 0,
           color: disabled ? '#555' : value ? '#00FFD1' : '#e0e0e0',
           fontSize: '15px',
           fontWeight: value ? '600' : '400',
@@ -147,7 +147,7 @@ function CustomDropdown({ label, stepNumber, value, onChange, options, disabled,
             background: 'rgba(20, 22, 28, 0.98)',
             border: '1px solid rgba(0, 255, 209, 0.3)',
             borderTop: 'none',
-            borderRadius: '0 0 14px 14px',
+            borderRadius: 0,
             overflow: 'hidden',
             zIndex: 100,
             maxHeight: '300px',
@@ -221,7 +221,7 @@ function CustomDropdown({ label, stepNumber, value, onChange, options, disabled,
 function ExportCard({ option }: { option: ExportOption }) {
   return (
     <div
-      className="p-4 sm:p-[18px_22px] rounded-[14px] transition-all duration-[250ms] hover:border-[rgba(0,255,209,0.4)] hover:-translate-y-0.5"
+      className="p-4 sm:p-[18px_22px] transition-all duration-[250ms] hover:border-[rgba(0,255,209,0.4)] hover:-translate-y-0.5"
       style={{
         background: 'rgba(0, 255, 209, 0.03)',
         border: '1px solid rgba(0, 255, 209, 0.15)',
@@ -234,7 +234,7 @@ function ExportCard({ option }: { option: ExportOption }) {
         }}
       >
         <span
-          className="px-2 sm:px-3 py-1 text-[10px] sm:text-xs font-bold uppercase tracking-wide rounded-lg"
+          className="px-2 sm:px-3 py-1 text-[10px] sm:text-xs font-bold uppercase tracking-wide"
           style={{
             background: '#00FFD1',
             color: '#000',
@@ -264,7 +264,7 @@ function ExportCard({ option }: { option: ExportOption }) {
         {option.docLink && (
           <a
             href={option.docLink}
-            className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium no-underline px-2 sm:px-3 py-1.5 rounded-lg transition-all duration-200 hover:!bg-[rgba(0,255,209,0.2)]"
+            className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium no-underline px-2 sm:px-3 py-1.5 transition-all duration-200 hover:!bg-[rgba(0,255,209,0.2)]"
             style={{
               color: '#00FFD1',
               background: 'rgba(0, 255, 209, 0.1)',
@@ -282,7 +282,7 @@ function ExportCard({ option }: { option: ExportOption }) {
         {option.tutorialLink && (
           <a
             href={option.tutorialLink}
-            className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium no-underline px-2 sm:px-3 py-1.5 rounded-lg transition-all duration-200 hover:!bg-[rgba(0,255,209,0.2)]"
+            className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium no-underline px-2 sm:px-3 py-1.5 transition-all duration-200 hover:!bg-[rgba(0,255,209,0.2)]"
             style={{
               color: '#00FFD1',
               background: 'rgba(0, 255, 209, 0.1)',
@@ -385,7 +385,7 @@ export default function PartnerFilterWizard() {
       style={{
         background: 'linear-gradient(135deg, rgba(0, 255, 209, 0.05), rgba(0, 255, 209, 0.01))',
         border: '1px solid rgba(0, 255, 209, 0.15)',
-        borderRadius: '20px',
+        borderRadius: 0,
         padding: '32px',
         marginTop: '32px',
         marginBottom: '40px',
@@ -425,7 +425,7 @@ export default function PartnerFilterWizard() {
               padding: '10px 18px',
               background: 'rgba(255, 255, 255, 0.05)',
               border: '1px solid rgba(255, 255, 255, 0.2)',
-              borderRadius: '10px',
+              borderRadius: 0,
               color: '#a0a0a0',
               fontSize: '14px',
               cursor: 'pointer',
@@ -504,7 +504,7 @@ export default function PartnerFilterWizard() {
 
       {exportOptions.length > 0 && (
         <div
-          className="p-4 sm:p-6 rounded-2xl"
+          className="p-4 sm:p-6"
           style={{
             background: 'rgba(0, 255, 209, 0.05)',
             border: '1px solid rgba(0, 255, 209, 0.2)',
@@ -532,7 +532,7 @@ export default function PartnerFilterWizard() {
             padding: '24px',
             background: 'rgba(255, 200, 0, 0.1)',
             border: '1px solid rgba(255, 200, 0, 0.3)',
-            borderRadius: '14px',
+            borderRadius: 0,
             color: '#ffc800',
             fontSize: '15px',
           }}

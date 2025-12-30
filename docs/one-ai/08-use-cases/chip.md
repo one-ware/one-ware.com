@@ -15,11 +15,11 @@ The challenge: reliably detecting burn marks and defects in real time on a fast 
 
 <div style={{display: 'flex', justifyContent: 'center', gap: '20px', margin: '20px 0'}}>
   <div style={{textAlign: 'center'}}>
-    <img src="/img/ai/one_ai_plugin/use_cases/chip/good.png" alt="Good quality potato chip" style={{height: '200px', objectFit: 'cover', borderRadius: '8px'}} />
+    <img src="/img/ai/one_ai_plugin/use_cases/chip/good.png" alt="Good quality potato chip" style={{height: '200px', objectFit: 'cover'}} />
     <p style={{marginTop: '8px', fontSize: '14px', color: '#c1c1c1ff'}}>Good</p>
   </div>
   <div style={{textAlign: 'center'}}>
-    <img src="/img/ai/one_ai_plugin/use_cases/chip/defect.png" alt="Defective potato chip with burn marks" style={{height: '200px', objectFit: 'cover', borderRadius: '8px'}} />
+    <img src="/img/ai/one_ai_plugin/use_cases/chip/defect.png" alt="Defective potato chip with burn marks" style={{height: '200px', objectFit: 'cover'}} />
     <p style={{marginTop: '8px', fontSize: '14px', color: '#c1c1c1ff'}}>Defective (Burn Marks)</p>
   </div>
 </div>
