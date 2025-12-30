@@ -15,7 +15,7 @@ const SalesBanner: React.FC<SalesBannerProps> = ({
     <div style={{
       background: 'linear-gradient(135deg, #1B2027, #1B2027)',
       border: '1px solid #1B2027',
-      borderRadius: '20px',
+      borderRadius: 0,
       padding: '32px',
       margin: '24px 0',
       display: 'flex',

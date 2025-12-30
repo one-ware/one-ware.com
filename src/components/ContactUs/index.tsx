@@ -163,7 +163,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
       <div className={`mt-12 mb-4 w-full ${compact ? '' : 'px-6 lg:px-12'}`}>
         <div className={`flex flex-col lg:flex-row gap-8 items-stretch ${compact ? '' : 'max-w-7xl mx-auto'}`}>
           <div className="w-full lg:w-1/2">
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-gray-700 h-full flex flex-col">
+            <div className="bg-gray-800/50 backdrop-blur-sm p-8 md:p-12 border border-gray-700 h-full flex flex-col">
               {mode === "select" && (
                 <div className="flex-1 flex flex-col text-center">
                   <img
@@ -187,7 +187,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                   <div className="flex flex-col gap-3 w-full max-w-sm mx-auto mt-auto">
                     <button
                       onClick={() => setMode("form")}
-                      className="group relative px-6 py-3 rounded-xl font-medium overflow-hidden transition-all duration-300 w-full"
+                      className="group relative px-6 py-3 font-medium overflow-hidden transition-all duration-300 w-full"
                       style={{
                         background: "rgba(0, 255, 209, 0.05)",
                         border: "1px solid rgba(0, 255, 209, 0.3)"
@@ -207,7 +207,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                     <a
                       href="mailto:sales@one-ware.com"
                       onClick={() => trackEvent("email_click", { label: "Helmut Email" })}
-                      className="group relative px-6 py-3 rounded-xl font-medium overflow-hidden transition-all duration-300 w-full"
+                      className="group relative px-6 py-3 font-medium overflow-hidden transition-all duration-300 w-full"
                       style={{
                         background: "rgba(0, 255, 209, 0.05)",
                         border: "1px solid rgba(0, 255, 209, 0.3)"
@@ -229,7 +229,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                         setMode("booking");
                         trackEvent("schedule_meeting", { label: "Helmut Meeting" });
                       }}
-                      className="group relative px-6 py-3 rounded-xl font-medium overflow-hidden transition-all duration-300 w-full"
+                      className="group relative px-6 py-3 font-medium overflow-hidden transition-all duration-300 w-full"
                       style={{
                         background: "rgba(0, 255, 209, 0.05)",
                         border: "1px solid rgba(0, 255, 209, 0.3)"
@@ -253,7 +253,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
 
               {mode === "form" && formStatus === "success" && (
                 <div className="flex-1 flex flex-col items-center justify-center text-center">
-                  <div className="w-16 h-16 rounded-full bg-[#00FFD1]/20 flex items-center justify-center mb-6">
+                  <div className="w-16 h-16 bg-[#00FFD1]/20 flex items-center justify-center mb-6">
                     <svg className="w-8 h-8 text-[#00FFD1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
@@ -266,7 +266,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                   </p>
                   <button
                     onClick={() => { setFormStatus("idle"); setMode("select"); }}
-                    className="group relative px-8 py-4 rounded-xl font-medium overflow-hidden transition-all duration-300"
+                    className="group relative px-8 py-4 font-medium overflow-hidden transition-all duration-300"
                     style={{
                       background: "rgba(0, 255, 209, 0.05)",
                       border: "1px solid rgba(0, 255, 209, 0.3)"
@@ -291,7 +291,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                     </h3>
                     <button
                       onClick={() => { setFormStatus("idle"); setMode("select"); }}
-                      className="group relative p-2 rounded-lg overflow-hidden transition-all duration-300"
+                      className="group relative p-2 overflow-hidden transition-all duration-300"
                       style={{
                         background: "rgba(0, 255, 209, 0.05)",
                         border: "1px solid rgba(0, 255, 209, 0.3)"
@@ -308,7 +308,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                   </div>
 
                   {formStatus === "error" && (
-                    <div className="mb-4 p-4 rounded-lg bg-red-500/10 border border-red-500/30">
+                    <div className="mb-4 p-4 bg-red-500/10 border border-red-500/30">
                       <p className="text-red-400 text-sm">
                         <Translate id="contactus.error">An error occurred while sending your message.</Translate>
                       </p>
@@ -331,7 +331,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                       <input
                         type="text"
                         name="name"
-                        className="w-full px-4 py-3 border border-gray-600 bg-gray-700 text-white rounded-lg focus:outline-none focus:border-[#00FFD1] transition-colors"
+                        className="w-full px-4 py-3 border border-gray-600 bg-gray-700 text-white focus:outline-none focus:border-[#00FFD1] transition-colors"
                         value={formData.name}
                         onChange={handleChange}
                         required
@@ -343,7 +343,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                       <input
                         type="email"
                         name="email"
-                        className="w-full px-4 py-3 border border-gray-600 bg-gray-700 text-white rounded-lg focus:outline-none focus:border-[#00FFD1] transition-colors"
+                        className="w-full px-4 py-3 border border-gray-600 bg-gray-700 text-white focus:outline-none focus:border-[#00FFD1] transition-colors"
                         value={formData.email}
                         onChange={handleChange}
                         required
@@ -356,7 +356,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                       </span>
                       <textarea
                         name="message"
-                        className="flex-1 w-full px-4 py-3 border border-gray-600 bg-gray-700 text-white rounded-lg focus:outline-none focus:border-[#00FFD1] transition-colors resize-none min-h-[100px]"
+                        className="flex-1 w-full px-4 py-3 border border-gray-600 bg-gray-700 text-white focus:outline-none focus:border-[#00FFD1] transition-colors resize-none min-h-[100px]"
                         value={formData.message}
                         onChange={handleChange}
                         required
@@ -381,7 +381,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                     </h3>
                     <button
                       onClick={() => setMode("select")}
-                      className="group relative p-2 rounded-lg overflow-hidden transition-all duration-300"
+                      className="group relative p-2 overflow-hidden transition-all duration-300"
                       style={{
                         background: "rgba(0, 255, 209, 0.05)",
                         border: "1px solid rgba(0, 255, 209, 0.3)"
@@ -411,7 +411,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
           </div>
 
           <div className="w-full lg:w-1/2">
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-gray-700 h-full flex flex-col">
+            <div className="bg-gray-800/50 backdrop-blur-sm p-8 md:p-12 border border-gray-700 h-full flex flex-col">
               {christopherMode === "select" && (
                 <div className="flex-1 flex flex-col text-center">
                   <img
@@ -435,7 +435,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                   <div className="flex flex-col gap-3 w-full max-w-sm mx-auto mt-auto">
                     <button
                       onClick={() => setChristopherMode("form")}
-                      className="group relative px-6 py-3 rounded-xl font-medium overflow-hidden transition-all duration-300 w-full"
+                      className="group relative px-6 py-3 font-medium overflow-hidden transition-all duration-300 w-full"
                       style={{
                         background: "rgba(0, 255, 209, 0.05)",
                         border: "1px solid rgba(0, 255, 209, 0.3)"
@@ -455,7 +455,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                     <a
                       href="mailto:support@one-ware.com"
                       onClick={() => trackEvent("email_click", { label: "Christopher Email" })}
-                      className="group relative px-6 py-3 rounded-xl font-medium overflow-hidden transition-all duration-300 w-full"
+                      className="group relative px-6 py-3 font-medium overflow-hidden transition-all duration-300 w-full"
                       style={{
                         background: "rgba(0, 255, 209, 0.05)",
                         border: "1px solid rgba(0, 255, 209, 0.3)"
@@ -484,7 +484,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
 
               {christopherMode === "form" && christopherFormStatus === "success" && (
                 <div className="flex-1 flex flex-col items-center justify-center text-center">
-                  <div className="w-16 h-16 rounded-full bg-[#00FFD1]/20 flex items-center justify-center mb-6">
+                  <div className="w-16 h-16 bg-[#00FFD1]/20 flex items-center justify-center mb-6">
                     <svg className="w-8 h-8 text-[#00FFD1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
@@ -497,7 +497,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                   </p>
                   <button
                     onClick={() => { setChristopherFormStatus("idle"); setChristopherMode("select"); }}
-                    className="group relative px-8 py-4 rounded-xl font-medium overflow-hidden transition-all duration-300"
+                    className="group relative px-8 py-4 font-medium overflow-hidden transition-all duration-300"
                     style={{
                       background: "rgba(0, 255, 209, 0.05)",
                       border: "1px solid rgba(0, 255, 209, 0.3)"
@@ -522,7 +522,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                     </h3>
                     <button
                       onClick={() => { setChristopherFormStatus("idle"); setChristopherMode("select"); }}
-                      className="group relative p-2 rounded-lg overflow-hidden transition-all duration-300"
+                      className="group relative p-2 overflow-hidden transition-all duration-300"
                       style={{
                         background: "rgba(0, 255, 209, 0.05)",
                         border: "1px solid rgba(0, 255, 209, 0.3)"
@@ -539,7 +539,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                   </div>
 
                   {christopherFormStatus === "error" && (
-                    <div className="mb-4 p-4 rounded-lg bg-red-500/10 border border-red-500/30">
+                    <div className="mb-4 p-4 bg-red-500/10 border border-red-500/30">
                       <p className="text-red-400 text-sm">
                         <Translate id="contactus.error">An error occurred while sending your message.</Translate>
                       </p>
@@ -562,7 +562,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                       <input
                         type="text"
                         name="name"
-                        className="w-full px-4 py-3 border border-gray-600 bg-gray-700 text-white rounded-lg focus:outline-none focus:border-[#00FFD1] transition-colors"
+                        className="w-full px-4 py-3 border border-gray-600 bg-gray-700 text-white focus:outline-none focus:border-[#00FFD1] transition-colors"
                         value={christopherFormData.name}
                         onChange={handleChristopherChange}
                         required
@@ -574,7 +574,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                       <input
                         type="email"
                         name="email"
-                        className="w-full px-4 py-3 border border-gray-600 bg-gray-700 text-white rounded-lg focus:outline-none focus:border-[#00FFD1] transition-colors"
+                        className="w-full px-4 py-3 border border-gray-600 bg-gray-700 text-white focus:outline-none focus:border-[#00FFD1] transition-colors"
                         value={christopherFormData.email}
                         onChange={handleChristopherChange}
                         required
@@ -587,7 +587,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                       </span>
                       <textarea
                         name="message"
-                        className="flex-1 w-full px-4 py-3 border border-gray-600 bg-gray-700 text-white rounded-lg focus:outline-none focus:border-[#00FFD1] transition-colors resize-none min-h-[100px]"
+                        className="flex-1 w-full px-4 py-3 border border-gray-600 bg-gray-700 text-white focus:outline-none focus:border-[#00FFD1] transition-colors resize-none min-h-[100px]"
                         value={christopherFormData.message}
                         onChange={handleChristopherChange}
                         required
@@ -612,7 +612,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                     </h3>
                     <button
                       onClick={() => setChristopherMode("select")}
-                      className="group relative p-2 rounded-lg overflow-hidden transition-all duration-300"
+                      className="group relative p-2 overflow-hidden transition-all duration-300"
                       style={{
                         background: "rgba(0, 255, 209, 0.05)",
                         border: "1px solid rgba(0, 255, 209, 0.3)"

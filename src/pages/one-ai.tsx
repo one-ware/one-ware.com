@@ -260,7 +260,7 @@ function ComparisonSection() {
             <SwiperSlide key={idx}>
               {({ isActive }) => (
                 <div
-                  className={`relative w-full rounded-2xl transition-all duration-500 ease-in-out transform ${isActive ? 'scale-100' : 'scale-90 opacity-60'}`}
+                  className={`relative w-full transition-all duration-500 ease-in-out transform ${isActive ? 'scale-100' : 'scale-90 opacity-60'}`}
                   style={{
                     backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%), url(${useBaseUrl(useCase.backgroundImage)})`,
                     backgroundSize: 'cover',

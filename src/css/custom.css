@@ -107,12 +107,29 @@ body {
   font-weight: 500;
   font-size: 0.9rem;
   padding: 8px 12px;
-  border-radius: 6px;
+  border-radius: 0;
   transition: background 0.15s ease, color 0.15s ease;
 }
 
 .navbar__link:hover {
   background: rgba(255, 255, 255, 0.08);
+}
+
+.button {
+  border-radius: 0 !important;
+}
+
+.navbar .button,
+.navbar .navbarbutton {
+  border-radius: 0 !important;
+}
+
+.navbar .loginbutton:hover {
+  color: #111 !important;
+}
+
+.DocSearch-Button {
+  border-radius: 0 !important;
 }
 
 .navbar__item.dropdown > .navbar__link::after {
@@ -155,7 +172,7 @@ body {
 }
 
 .prism-code{
-  border-radius: 8px 8px 8px 8px;
+  border-radius: 0;
   border: 1px solid var(--ifm-toc-border-color);
   border-width: 1px 1px 1px 1px;
   background-color: #141517 !important;
@@ -323,7 +340,7 @@ body {
     height: 30px !important;
     padding: 0 8px !important;
     font-size: 0.8rem !important;
-    border-radius: 6px !important;
+    border-radius: 0 !important;
   }
 
   .DocSearch-Button-Placeholder {
@@ -391,7 +408,7 @@ body {
 .dropdown__menu {
   width: 280px;
   padding: 8px;
-  border-radius: 12px;
+  border-radius: 0;
   background: rgba(30, 30, 30, 0.95);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -404,7 +421,7 @@ body {
   align-items: center;
   gap: 12px;
   padding: 10px 14px !important;
-  border-radius: 8px;
+  border-radius: 0;
   transition: all 0.15s ease;
   margin: 2px 0;
 }
@@ -490,4 +507,34 @@ body {
 .navbar-sidebar .login-button-icon,
 .navbar-sidebar .download-button-icon {
   display: none !important;
+}
+
+.breadcrumbs__item,
+.breadcrumbs__link {
+  border-radius: 0 !important;
+}
+
+.menu__link {
+  border-radius: 0 !important;
+}
+
+.menu__list-item-collapsible {
+  border-radius: 0 !important;
+}
+
+.pagination-nav__link {
+  border-radius: 0 !important;
+}
+
+.tag_node_modules-\@docusaurus-theme-classic-lib-theme-Tag-styles-module,
+.tagRegular_node_modules-\@docusaurus-theme-classic-lib-theme-Tag-styles-module,
+article a[class*="tag"],
+.tag {
+  border-radius: 0 !important;
+}
+
+.alert,
+.admonition,
+[class*="admonition"] {
+  border-radius: 0 !important;
 }
