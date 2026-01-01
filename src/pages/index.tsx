@@ -20,84 +20,84 @@ function IndustryExamplesSection() {
   const items = [
     {
       key: "aerospace",
-      src: require("@site/static/img/industries/Aerospace.jpg").default,
+      src: require("@site/static/img/industries/Aerospace.webp").default,
       label: "Aerospace",
       labelId: "homepage.industry.aerospace",
       href: "/docs/one-ai/use-cases/chip",
     },
     {
       key: "agriculture",
-      src: require("@site/static/img/industries/Agriculture.jpg").default,
+      src: require("@site/static/img/industries/Agriculture.webp").default,
       label: "Agriculture",
       labelId: "homepage.industry.agriculture",
       href: "/docs/one-ai/industries/agriculture",
     },
     {
       key: "automotive",
-      src: require("@site/static/img/industries/Automotive.jpg").default,
+      src: require("@site/static/img/industries/Automotive.webp").default,
       label: "Automotive",
       labelId: "homepage.industry.automotive",
       href: "/docs/one-ai/use-cases/pcb",
     },
     {
       key: "consumer",
-      src: require("@site/static/img/industries/Consumer.jpg").default,
+      src: require("@site/static/img/industries/Consumer.webp").default,
       label: "Consumer Electronics",
       labelId: "homepage.industry.consumer",
       href: "/docs/one-ai/use-cases/pcb",
     },
     {
       key: "drones",
-      src: require("@site/static/img/industries/Drones.jpg").default,
+      src: require("@site/static/img/industries/Drones.webp").default,
       label: "Drones",
       labelId: "homepage.industry.drones",
       href: "/docs/one-ai/use-cases/chip",
     },
     {
       key: "energy",
-      src: require("@site/static/img/industries/Energy.png").default,
+      src: require("@site/static/img/industries/Energy.webp").default,
       label: "Energy",
       labelId: "homepage.industry.energy",
       href: "/docs/one-ai/use-cases/chip",
     },
     {
       key: "foodbeverage",
-      src: require("@site/static/img/industries/Food_and_Beverage.jpg").default,
+      src: require("@site/static/img/industries/Food_and_Beverage.webp").default,
       label: "Food & Beverage",
       labelId: "homepage.industry.foodbeverage",
       href: "/docs/one-ai/industries/food-beverage",
     },
     {
       key: "healthcare",
-      src: require("@site/static/img/industries/Healthcare.jpg").default,
+      src: require("@site/static/img/industries/Healthcare.webp").default,
       label: "Healthcare",
       labelId: "homepage.industry.healthcare",
       href: "/docs/one-ai/industries/healthcare",
     },
     {
       key: "industry",
-      src: require("@site/static/img/industries/Industrie.jpg").default,
+      src: require("@site/static/img/industries/Industrie.webp").default,
       label: "Industrial Manufacturing",
       labelId: "homepage.industry.industry",
       href: "/docs/one-ai/industries/manufacturing",
     },
     {
       key: "retail",
-      src: require("@site/static/img/industries/Retail.jpg").default,
+      src: require("@site/static/img/industries/Retail.webp").default,
       label: "Retail",
       labelId: "homepage.industry.retail",
       href: "/docs/one-ai/use-cases/pcb",
     },
     {
       key: "security",
-      src: require("@site/static/img/industries/Security.jpg").default,
+      src: require("@site/static/img/industries/Security.webp").default,
       label: "Security",
       labelId: "homepage.industry.security",
       href: "/docs/one-ai/use-cases/pcb",
     },
     {
       key: "transport",
-      src: require("@site/static/img/industries/Transport.jpg").default,
+      src: require("@site/static/img/industries/Transport.webp").default,
       label: "Transport & Logistics",
       labelId: "homepage.industry.transport",
       href: "/docs/one-ai/use-cases/pcb",
@@ -132,6 +132,8 @@ function IndustryExamplesSection() {
             <img
               src={item.src}
               alt={item.label}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
             <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-300" />
@@ -190,6 +192,8 @@ function TestimonialsSection() {
               <img
                 src={require("@site/static/img/Partner/altera.png").default}
                 alt="Altera logo"
+                loading="lazy"
+                decoding="async"
                 className="h-16 w-48 object-contain"
               />
             </div>
@@ -229,6 +233,8 @@ function TestimonialsSection() {
               <img
                 src={require("@site/static/img/Partner/hdo.png").default}
                 alt="HDO logo"
+                loading="lazy"
+                decoding="async"
                 className="h-16 w-48 object-contain"
               />
             </div>
@@ -268,6 +274,8 @@ function TestimonialsSection() {
               <img
                 src={require("@site/static/img/Partner/cusp.png").default}
                 alt="Cusp Capital logo"
+                loading="lazy"
+                decoding="async"
                 className="h-16 w-48 object-contain"
               />
             </div>

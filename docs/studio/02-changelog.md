@@ -4,6 +4,15 @@ title: ONE WARE Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.21.23.0
+
+- Fix Camera Access for Linux (Snap and Flatpak)
+
+## 0.21.22.0
+
+- Fix Camera Access on MacOS
+- Package Advanced runtime Libraries
+
 ## 0.21.21.0
 
 - Make native dependency resolve for plugins more robust (fixes a possible issue on MacOS)

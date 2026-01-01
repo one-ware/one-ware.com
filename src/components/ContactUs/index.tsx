@@ -171,6 +171,8 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                   <img
                     src={require("@site/static/img/AboutUs/helmut.png").default}
                     alt="Helmut Plötz - Vice President of Global Sales"
+                    loading="lazy"
+                    decoding="async"
                     className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-[#00FFD1]/20 mx-auto mb-6"
                   />
                   <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">Helmut Plötz</h3>
@@ -417,6 +419,8 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                   <img
                     src={require("@site/static/img/support_christopher.webp").default}
                     alt="Christopher - Development Support Specialist"
+                    loading="lazy"
+                    decoding="async"
                     className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-[#00FFD1]/20 mx-auto mb-6"
                   />
                   <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">Christopher</h3>

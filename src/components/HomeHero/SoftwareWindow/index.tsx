@@ -1,16 +1,15 @@
-import React, { useState, useRef, useEffect, useCallback, memo } from "react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import React, { useState, useRef, useEffect, useCallback, memo, lazy, Suspense } from "react";
 import "../glass-design.css";
 import TrainingDataOverlay from "./TrainingDataOverlay";
 import ConveyorBelt from "./ConveyorBelt";
 import CameraStation from "./CameraStation";
 import TopMetrics from "./TopMetrics";
-import Neural3DNetwork from "../NeuralNetwork";
 import TrainingProgressOverlay from "./TrainingProgressOverlay";
 import DeployView from "./DeployView";
 import { usePerformance } from "../index";
 import { useDelayedUnmount } from '../hooks/useDelayedUnmount';
+
+const Neural3DCanvas = lazy(() => import('./Neural3DCanvas'));
 
 const TitleAnimation = memo(function TitleAnimation({
   isActive,
@@ -86,6 +85,8 @@ interface SoftwareWindowProps {
 
 const ROW_1_HEIGHT = "55%";
 const ROW_2_HEIGHT = "45%";
+const COMPACT_ROW_1_HEIGHT = "75%";
+const COMPACT_ROW_2_HEIGHT = "25%";
 
 const SCAN_DURATION = 1600;
 const SPLIT_TRANSITION = 1000;
@@ -150,6 +151,7 @@ export default function SoftwareWindow({
   const [currentFps, setCurrentFps] = useState(50);
   const [lastDeployedFps, setLastDeployedFps] = useState(81);
   const [targetAccuracy, setTargetAccuracy] = useState<number | undefined>(undefined);
+  const [displayedAccuracy, setDisplayedAccuracy] = useState(0);
 
   const [windowPos, setWindowPos] = useState({ x: 0, y: 0 });
   const [isWindowDragging, setIsWindowDragging] = useState(false);
@@ -157,7 +159,9 @@ export default function SoftwareWindow({
   const windowStartPosRef = useRef({ x: 0, y: 0 });
 
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [isCompact, setIsCompact] = useState(false);
 
+  const panelRef = useRef<HTMLDivElement>(null);
   const { tier: performanceTier } = usePerformance();
 
   useEffect(() => {
@@ -167,6 +171,17 @@ export default function SoftwareWindow({
     checkScreenSize();
     window.addEventListener('resize', checkScreenSize);
     return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
+  useEffect(() => {
+    if (!panelRef.current) return;
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        setIsCompact(entry.contentRect.width < 475);
+      }
+    });
+    observer.observe(panelRef.current);
+    return () => observer.disconnect();
   }, []);
 
   const isFinalLayout = isCollapsed || isMovingToCorner;
@@ -407,6 +422,10 @@ export default function SoftwareWindow({
     setCurrentFps(fps);
   }, []);
 
+  const handleAccuracyChange = useCallback((accuracy: number) => {
+    setDisplayedAccuracy(accuracy);
+  }, []);
+
   useEffect(() => {
     return () => {
       if (pendingRetrainTimer) {
@@ -554,11 +573,13 @@ export default function SoftwareWindow({
                onUserChange={handleUserChange}
                onBusyChange={handleBusyChange}
                onFpsChange={handleFpsChange}
+               onAccuracyChange={handleAccuracyChange}
                targetAccuracy={targetAccuracy}
              />
         </div>
 
         <div
+             ref={panelRef}
              className="oneware-glass-panel"
              onMouseEnter={() => isDragging && setIsHoveringPanel(true)}
              onMouseLeave={() => setIsHoveringPanel(false)}
@@ -580,7 +601,7 @@ export default function SoftwareWindow({
              <div
                 style={{
                     position: "absolute",
-                    top: 0,
+                    top: isCompact ? "10%" : 0,
                     left: 0,
                     width: isFinalLayout ? COL_1_WIDTH : "100%",
                     height: ROW_1_HEIGHT,
@@ -596,6 +617,7 @@ export default function SoftwareWindow({
                    showCelebration={showDataCelebration}
                    allowCustomUpload={isImprovementPhase}
                    onDataDropped={handleDataDropped}
+                   accuracy={isCompact ? displayedAccuracy : 0}
                  />
              </div>
              )}
@@ -641,39 +663,31 @@ export default function SoftwareWindow({
                           )}
 
                           {(showNetwork || isCollapsingToCore || isRebuildingBase || isRetrainingPurple) && (
-                          <Canvas
-                            camera={{ position: [0, 0, 40], fov: 20 }}
-                            style={{
-                              position: "absolute",
-                              top: 0,
-                              right: (showDeployButton && !isFinalLayout) || isResettingModel || isCollapsingToCore
-                                ? "50%"
-                                : (isFinalLayout ? 0 : 0),
-                              width: (showDeployButton && !isFinalLayout) || isResettingModel || isCollapsingToCore
-                                 ? "75%"
-                                 : (isFinalLayout ? COL_3_WIDTH : "50%"),
-                              height: isProgressBarVisible || (showDeployButton && !isFinalLayout)
-                                  ? "75%"
-                                  : (isFinalLayout ? ROW_1_HEIGHT : "100%"),
-                              transform: (showDeployButton && !isFinalLayout) || isResettingModel || isCollapsingToCore
-                                ? "translate3d(50%, 0, 0)"
-                                : "translate3d(0, 0, 0)",
-                              transition: disableCanvasTransitions ? "none" : "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
-                              zIndex: 20,
-                            }}
-                            resize={{ scroll: false, debounce: 0 }}
-                          >
-                            <ambientLight intensity={0.3} />
-                            <pointLight position={[10, 10, 10]} intensity={0.8} />
-                                                          <Neural3DNetwork
-                                                            isTraining={(isTraining && !hasClickedConveyor && !isRetraining) || isRetrainingPurple}
-                                                            isBuildingBase={isProgressBarVisible && showNetwork && !isRebuildingBase && !isRetrainingAnalysis && !showDeployButton && !hasRetrained}
-                                                            isRebuilding={(isTraining && hasClickedConveyor) || isRetraining}
-                                                            isResetting={isResettingModel}
-                                                            onTrainingComplete={handleNeuralAnimationComplete}
-                                                            isExpanded={false}
-                              shouldReset={false}
-                              startDelay={0}
+                          <Suspense fallback={null}>
+                            <Neural3DCanvas
+                              style={{
+                                position: "absolute",
+                                top: (isFinalLayout && isCompact) ? "10%" : 0,
+                                right: (showDeployButton && !isFinalLayout) || isResettingModel || isCollapsingToCore
+                                  ? "50%"
+                                  : (isFinalLayout ? 0 : 0),
+                                width: (showDeployButton && !isFinalLayout) || isResettingModel || isCollapsingToCore
+                                   ? "75%"
+                                   : (isFinalLayout ? COL_3_WIDTH : "50%"),
+                                height: isProgressBarVisible || (showDeployButton && !isFinalLayout)
+                                    ? "75%"
+                                    : (isFinalLayout ? ROW_1_HEIGHT : "100%"),
+                                transform: (showDeployButton && !isFinalLayout) || isResettingModel || isCollapsingToCore
+                                  ? "translate3d(50%, 0, 0)"
+                                  : "translate3d(0, 0, 0)",
+                                transition: disableCanvasTransitions ? "none" : "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
+                                zIndex: 20,
+                              }}
+                              isTraining={(isTraining && !hasClickedConveyor && !isRetraining) || isRetrainingPurple}
+                              isBuildingBase={isProgressBarVisible && showNetwork && !isRebuildingBase && !isRetrainingAnalysis && !showDeployButton && !hasRetrained}
+                              isRebuilding={(isTraining && hasClickedConveyor) || isRetraining}
+                              isResetting={isResettingModel}
+                              onTrainingComplete={handleNeuralAnimationComplete}
                               isCollapsingToCore={isCollapsingToCore}
                               isRebuildingBase={isRebuildingBase}
                               trainingColor={trainingColor}
@@ -683,17 +697,16 @@ export default function SoftwareWindow({
                               isSmallScreen={isSmallScreen}
                               performanceTier={performanceTier}
                             />
-                            <OrbitControls enableZoom={false} enablePan={false} rotateSpeed={0.5} />
-                          </Canvas>
+                          </Suspense>
                           )}
                           {!(isRetraining || isResettingModel || isRetrainingAnalysis || isCollapsingToCore || isRebuildingBase || isRetrainingPurple) && (
                           <div
                             style={{
                               position: "absolute",
-                              top: isFinalLayout ? ROW_1_HEIGHT : 0,
+                              top: isFinalLayout ? (isCompact ? COMPACT_ROW_1_HEIGHT : ROW_1_HEIGHT) : 0,
                               left: 0,
                               width: "100%",
-                              height: isFinalLayout ? ROW_2_HEIGHT : "100%",
+                              height: isFinalLayout ? (isCompact ? COMPACT_ROW_2_HEIGHT : ROW_2_HEIGHT) : "100%",
                               zIndex: isFinalLayout ? 10 : 0,
                             }}
                           >

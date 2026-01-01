@@ -41,9 +41,18 @@ export default function VideoShowcaseCard({
 }: VideoShowcaseCardProps) {
   const [leftCount, setLeftCount] = useState(metrics.left.value);
   const [rightCount, setRightCount] = useState(metrics.right.value);
+  const [videoSrc, setVideoSrc] = useState<string | null>(null);
   const animationRef = useRef<NodeJS.Timeout | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const prevActiveRef = useRef(false);
+  const hasLoadedVideo = useRef(false);
+
+  useEffect(() => {
+    if (video && isActive && !hasLoadedVideo.current) {
+      hasLoadedVideo.current = true;
+      setVideoSrc(video);
+    }
+  }, [video, isActive]);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -152,23 +161,26 @@ export default function VideoShowcaseCard({
           }}
         >
           <div className="relative overflow-hidden flex-shrink-0" style={{ borderRadius: "14px 14px 0 0", aspectRatio: "16 / 9" }}>
-            {video && (
+            {videoSrc && (
               <video
                 ref={videoRef}
                 loop
                 muted
                 playsInline
+                preload="metadata"
                 className="w-full h-full object-cover absolute inset-0"
               >
-                <source src={video} />
+                <source src={videoSrc} type="video/webm" />
               </video>
             )}
             {image && (
               <img
                 src={image}
                 alt={title}
-                className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-300 ${video && isActive ? 'opacity-0' : 'opacity-100'}`}
-                style={{ zIndex: video && isActive ? 0 : 10 }}
+                loading="lazy"
+                decoding="async"
+                className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-300 ${videoSrc && isActive ? 'opacity-0' : 'opacity-100'}`}
+                style={{ zIndex: videoSrc && isActive ? 0 : 10 }}
               />
             )}
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent z-20" />
