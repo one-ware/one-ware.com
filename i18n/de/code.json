@@ -1836,5 +1836,38 @@
   },
   "seminars.form.error.already_registered": {
     "message": "Sie sind bereits für dieses Event registriert."
+  },
+  "chathero.title": {
+    "message": "Erstelle deine maßgeschneiderte KI"
+  },
+  "chathero.subtitle": {
+    "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore."
+  },
+  "chathero.button.howitworks": {
+    "message": "So funktioniert's"
+  },
+  "chathero.button.showcase": {
+    "message": "Showcase"
+  },
+  "signupmodal.attach.title": {
+    "message": "Anmelden um Dateien hochzuladen"
+  },
+  "signupmodal.attach.subtitle": {
+    "message": "Unterstützung für bis zu 10 Dateien jedes Dateityps"
+  },
+  "signupmodal.send.title": {
+    "message": "Anmelden um deine KI zu erstellen"
+  },
+  "signupmodal.send.subtitle": {
+    "message": "Starte mit deinem maßgeschneiderten KI-Modell"
+  },
+  "signupmodal.button.signin": {
+    "message": "Anmelden"
+  },
+  "signupmodal.button.cancel": {
+    "message": "Abbrechen"
+  },
+  "homehero.title": {
+    "message": "So funktioniert's"
   }
 }
