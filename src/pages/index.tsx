@@ -15,6 +15,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import Head from "@docusaurus/Head";
 import HomeHero from "@site/src/components/HomeHero";
 import VideoShowcase from "@site/src/components/VideoShowcase";
+import ChatHero from "@site/src/components/ChatHero";
 
 function IndustryExamplesSection() {
   const items = [
@@ -339,12 +340,15 @@ export default function Home() {
         />
       </Head>
 
+      <ChatHero />
       <HomeHero />
       <main className="overflow-x-hidden alternative-background ">
         <div className="dropshadowbottom">
           <div className="dropshadowtop diagclipbottom">
             <div className="default-background pb-12">
-              <VideoShowcase />
+              <div id="video">
+                <VideoShowcase />
+              </div>
               <IndustryExamplesSection />
               
             </div>
