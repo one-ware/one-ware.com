@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
 import Translate, { translate } from '@docusaurus/Translate';
+import { useColorMode } from '@docusaurus/theme-common';
 import {
   HardwareType,
   OperatingSystem,
@@ -24,11 +25,22 @@ interface CustomDropdownProps {
   options: DropdownOption[];
   disabled?: boolean;
   placeholder?: string;
+  isDarkMode: boolean;
 }
 
-function CustomDropdown({ label, stepNumber, value, onChange, options, disabled, placeholder }: CustomDropdownProps) {
+function CustomDropdown({ label, stepNumber, value, onChange, options, disabled, placeholder, isDarkMode }: CustomDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const primaryColor = isDarkMode ? '#00FFD1' : '#00a88a';
+  const primaryColorRgba = isDarkMode ? '0, 255, 209' : '0, 168, 138';
+  const textColor = isDarkMode ? '#e0e0e0' : '#374151';
+  const labelColor = isDarkMode ? '#ffffff' : '#1a1a1a';
+  const disabledColor = isDarkMode ? '#555' : '#9ca3af';
+  const disabledBg = isDarkMode ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.03)';
+  const defaultBg = isDarkMode ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.03)';
+  const defaultBorder = isDarkMode ? 'rgba(255, 255, 255, 0.15)' : 'rgba(0, 0, 0, 0.1)';
+  const dropdownBg = isDarkMode ? 'rgba(20, 22, 28, 0.98)' : 'rgba(255, 255, 255, 0.98)';
 
   const selectedLabel = options.find((opt) => opt.value === value)?.label || '';
 
@@ -63,12 +75,12 @@ function CustomDropdown({ label, stepNumber, value, onChange, options, disabled,
             height: '32px',
             borderRadius: '50%',
             background: value
-              ? '#00FFD1'
+              ? primaryColor
               : disabled
-              ? 'rgba(255, 255, 255, 0.05)'
-              : 'rgba(0, 255, 209, 0.15)',
-            border: value ? 'none' : '1px solid rgba(0, 255, 209, 0.3)',
-            color: value ? '#000' : disabled ? '#555' : '#00FFD1',
+              ? disabledBg
+              : `rgba(${primaryColorRgba}, 0.15)`,
+            border: value ? 'none' : `1px solid rgba(${primaryColorRgba}, 0.3)`,
+            color: value ? (isDarkMode ? '#000' : '#fff') : disabled ? disabledColor : primaryColor,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -83,7 +95,7 @@ function CustomDropdown({ label, stepNumber, value, onChange, options, disabled,
           style={{
             fontSize: '16px',
             fontWeight: '600',
-            color: disabled ? '#666' : '#ffffff',
+            color: disabled ? disabledColor : labelColor,
           }}
         >
           {label}
@@ -97,19 +109,19 @@ function CustomDropdown({ label, stepNumber, value, onChange, options, disabled,
           width: '100%',
           padding: '16px 20px',
           background: disabled
-            ? 'rgba(255, 255, 255, 0.02)'
+            ? disabledBg
             : isOpen
-            ? 'rgba(0, 255, 209, 0.08)'
+            ? `rgba(${primaryColorRgba}, 0.08)`
             : value
-            ? 'rgba(0, 255, 209, 0.05)'
-            : 'rgba(255, 255, 255, 0.05)',
+            ? `rgba(${primaryColorRgba}, 0.05)`
+            : defaultBg,
           border: isOpen
-            ? '1px solid rgba(0, 255, 209, 0.5)'
+            ? `1px solid rgba(${primaryColorRgba}, 0.5)`
             : value
-            ? '1px solid rgba(0, 255, 209, 0.3)'
-            : '1px solid rgba(255, 255, 255, 0.15)',
+            ? `1px solid rgba(${primaryColorRgba}, 0.3)`
+            : `1px solid ${defaultBorder}`,
           borderRadius: 0,
-          color: disabled ? '#555' : value ? '#00FFD1' : '#e0e0e0',
+          color: disabled ? disabledColor : value ? primaryColor : textColor,
           fontSize: '15px',
           fontWeight: value ? '600' : '400',
           textAlign: 'left',
@@ -126,7 +138,7 @@ function CustomDropdown({ label, stepNumber, value, onChange, options, disabled,
           height="18"
           viewBox="0 0 24 24"
           fill="none"
-          stroke={disabled ? '#555' : '#00FFD1'}
+          stroke={disabled ? disabledColor : primaryColor}
           strokeWidth="2.5"
           style={{
             transition: 'transform 0.2s ease',
@@ -144,15 +156,15 @@ function CustomDropdown({ label, stepNumber, value, onChange, options, disabled,
             top: '100%',
             left: 0,
             right: 0,
-            background: 'rgba(20, 22, 28, 0.98)',
-            border: '1px solid rgba(0, 255, 209, 0.3)',
+            background: dropdownBg,
+            border: `1px solid rgba(${primaryColorRgba}, 0.3)`,
             borderTop: 'none',
             borderRadius: 0,
             overflow: 'hidden',
             zIndex: 100,
             maxHeight: '300px',
             overflowY: 'auto',
-            boxShadow: '0 8px 24px rgba(0, 0, 0, 0.3)',
+            boxShadow: isDarkMode ? '0 8px 24px rgba(0, 0, 0, 0.3)' : '0 8px 24px rgba(0, 0, 0, 0.1)',
           }}
         >
           {options.map((opt, index) => (
@@ -163,11 +175,11 @@ function CustomDropdown({ label, stepNumber, value, onChange, options, disabled,
                 width: '100%',
                 padding: '14px 20px',
                 background: opt.value === value
-                  ? 'linear-gradient(90deg, rgba(0, 255, 209, 0.2), rgba(0, 255, 209, 0.1))'
+                  ? `linear-gradient(90deg, rgba(${primaryColorRgba}, 0.2), rgba(${primaryColorRgba}, 0.1))`
                   : 'transparent',
                 border: 'none',
-                borderBottom: index < options.length - 1 ? '1px solid rgba(0, 255, 209, 0.1)' : 'none',
-                color: opt.value === value ? '#00FFD1' : '#e0e0e0',
+                borderBottom: index < options.length - 1 ? `1px solid rgba(${primaryColorRgba}, 0.1)` : 'none',
+                color: opt.value === value ? primaryColor : textColor,
                 fontSize: '14px',
                 fontWeight: opt.value === value ? '600' : '400',
                 textAlign: 'left',
@@ -179,14 +191,14 @@ function CustomDropdown({ label, stepNumber, value, onChange, options, disabled,
               }}
               onMouseEnter={(e) => {
                 if (opt.value !== value) {
-                  e.currentTarget.style.background = 'linear-gradient(90deg, rgba(0, 255, 209, 0.1), rgba(0, 255, 209, 0.05))';
-                  e.currentTarget.style.color = '#00FFD1';
+                  e.currentTarget.style.background = `linear-gradient(90deg, rgba(${primaryColorRgba}, 0.1), rgba(${primaryColorRgba}, 0.05))`;
+                  e.currentTarget.style.color = primaryColor;
                 }
               }}
               onMouseLeave={(e) => {
                 if (opt.value !== value) {
                   e.currentTarget.style.background = 'transparent';
-                  e.currentTarget.style.color = '#e0e0e0';
+                  e.currentTarget.style.color = textColor;
                 }
               }}
             >
@@ -195,8 +207,8 @@ function CustomDropdown({ label, stepNumber, value, onChange, options, disabled,
                   width: '20px',
                   height: '20px',
                   borderRadius: '50%',
-                  border: opt.value === value ? 'none' : '2px solid rgba(0, 255, 209, 0.3)',
-                  background: opt.value === value ? '#00FFD1' : 'transparent',
+                  border: opt.value === value ? 'none' : `2px solid rgba(${primaryColorRgba}, 0.3)`,
+                  background: opt.value === value ? primaryColor : 'transparent',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -204,7 +216,7 @@ function CustomDropdown({ label, stepNumber, value, onChange, options, disabled,
                 }}
               >
                 {opt.value === value && (
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="3">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke={isDarkMode ? '#000' : '#fff'} strokeWidth="3">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 )}
@@ -218,13 +230,18 @@ function CustomDropdown({ label, stepNumber, value, onChange, options, disabled,
   );
 }
 
-function ExportCard({ option }: { option: ExportOption }) {
+function ExportCard({ option, isDarkMode }: { option: ExportOption; isDarkMode: boolean }) {
+  const primaryColor = isDarkMode ? '#00FFD1' : '#00a88a';
+  const primaryColorRgba = isDarkMode ? '0, 255, 209' : '0, 168, 138';
+  const textColor = isDarkMode ? '#e0e0e0' : '#374151';
+  const labelColor = isDarkMode ? '#ffffff' : '#1a1a1a';
+
   return (
     <div
-      className="p-4 sm:p-[18px_22px] transition-all duration-[250ms] hover:border-[rgba(0,255,209,0.4)] hover:-translate-y-0.5"
+      className="p-4 sm:p-[18px_22px] transition-all duration-[250ms] hover:-translate-y-0.5"
       style={{
-        background: 'rgba(0, 255, 209, 0.03)',
-        border: '1px solid rgba(0, 255, 209, 0.15)',
+        background: `rgba(${primaryColorRgba}, 0.03)`,
+        border: `1px solid rgba(${primaryColorRgba}, 0.15)`,
       }}
     >
       <div
@@ -236,27 +253,27 @@ function ExportCard({ option }: { option: ExportOption }) {
         <span
           className="px-2 sm:px-3 py-1 text-[10px] sm:text-xs font-bold uppercase tracking-wide"
           style={{
-            background: '#00FFD1',
-            color: '#000',
+            background: primaryColor,
+            color: isDarkMode ? '#000' : '#fff',
           }}
         >
           Export
         </span>
-        <span className="text-white text-sm sm:text-[17px] font-bold break-all">
+        <span className="text-sm sm:text-[17px] font-bold break-all" style={{ color: labelColor }}>
           {option.format}
         </span>
       </div>
 
       {option.toolchain && (
         <div className="mb-2.5 text-xs sm:text-sm">
-          <span style={{ color: 'rgba(0, 255, 209, 0.7)' }} className="font-medium">Toolchain: </span>
-          <span className="text-white break-words">{option.toolchain}</span>
+          <span style={{ color: `rgba(${primaryColorRgba}, 0.7)` }} className="font-medium">Toolchain: </span>
+          <span style={{ color: labelColor }} className="break-words">{option.toolchain}</span>
         </div>
       )}
 
       {option.description && (
         <div className="mb-2.5">
-          <span className="text-[#e0e0e0] text-xs sm:text-sm break-words">{option.description}</span>
+          <span style={{ color: textColor }} className="text-xs sm:text-sm break-words">{option.description}</span>
         </div>
       )}
 
@@ -264,10 +281,10 @@ function ExportCard({ option }: { option: ExportOption }) {
         {option.docLink && (
           <a
             href={option.docLink}
-            className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium no-underline px-2 sm:px-3 py-1.5 transition-all duration-200 hover:!bg-[rgba(0,255,209,0.2)]"
+            className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium no-underline px-2 sm:px-3 py-1.5 transition-all duration-200"
             style={{
-              color: '#00FFD1',
-              background: 'rgba(0, 255, 209, 0.1)',
+              color: primaryColor,
+              background: `rgba(${primaryColorRgba}, 0.1)`,
             }}
           >
             <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -282,10 +299,10 @@ function ExportCard({ option }: { option: ExportOption }) {
         {option.tutorialLink && (
           <a
             href={option.tutorialLink}
-            className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium no-underline px-2 sm:px-3 py-1.5 transition-all duration-200 hover:!bg-[rgba(0,255,209,0.2)]"
+            className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium no-underline px-2 sm:px-3 py-1.5 transition-all duration-200"
             style={{
-              color: '#00FFD1',
-              background: 'rgba(0, 255, 209, 0.1)',
+              color: primaryColor,
+              background: `rgba(${primaryColorRgba}, 0.1)`,
             }}
           >
             <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -300,10 +317,20 @@ function ExportCard({ option }: { option: ExportOption }) {
 }
 
 export default function PartnerFilterWizard() {
+  const { colorMode } = useColorMode();
+  const isDarkMode = colorMode === 'dark';
   const [selectedType, setSelectedType] = useState<HardwareType | ''>('');
   const [selectedVendor, setSelectedVendor] = useState<string>('');
   const [selectedOS, setSelectedOS] = useState<OperatingSystem | ''>('');
   const [selectedIntegration, setSelectedIntegration] = useState<IntegrationMethod | ''>('');
+
+  const primaryColor = isDarkMode ? '#00FFD1' : '#00a88a';
+  const primaryColorRgba = isDarkMode ? '0, 255, 209' : '0, 168, 138';
+  const textColor = isDarkMode ? '#e0e0e0' : '#374151';
+  const labelColor = isDarkMode ? '#ffffff' : '#1a1a1a';
+  const mutedColor = isDarkMode ? '#a0a0a0' : '#6b7280';
+  const defaultBorder = isDarkMode ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.1)';
+  const defaultBg = isDarkMode ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.03)';
 
   const hardwareTypes = useMemo(() => {
     return Object.entries(hardwareTypeLabels).map(([value, label]) => ({
@@ -383,8 +410,8 @@ export default function PartnerFilterWizard() {
   return (
     <div
       style={{
-        background: 'linear-gradient(135deg, rgba(0, 255, 209, 0.05), rgba(0, 255, 209, 0.01))',
-        border: '1px solid rgba(0, 255, 209, 0.15)',
+        background: `linear-gradient(135deg, rgba(${primaryColorRgba}, 0.05), rgba(${primaryColorRgba}, 0.01))`,
+        border: `1px solid rgba(${primaryColorRgba}, 0.15)`,
         borderRadius: 0,
         padding: '32px',
         marginTop: '32px',
@@ -398,7 +425,7 @@ export default function PartnerFilterWizard() {
           justifyContent: 'space-between',
           paddingBottom: '16px',
           marginBottom: '16px',
-          borderBottom: '1px solid rgba(0, 255, 209, 0.15)',
+          borderBottom: `1px solid rgba(${primaryColorRgba}, 0.15)`,
         }}
       >
         <h3
@@ -406,13 +433,13 @@ export default function PartnerFilterWizard() {
             margin: 0,
             fontSize: '22px',
             fontWeight: 'bold',
-            color: '#ffffff',
+            color: labelColor,
             display: 'flex',
             alignItems: 'center',
             gap: '14px',
           }}
         >
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00FFD1" strokeWidth="2">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={primaryColor} strokeWidth="2">
             <circle cx="11" cy="11" r="8" />
             <path d="m21 21-4.35-4.35" />
           </svg>
@@ -423,10 +450,10 @@ export default function PartnerFilterWizard() {
             onClick={handleReset}
             style={{
               padding: '10px 18px',
-              background: 'rgba(255, 255, 255, 0.05)',
-              border: '1px solid rgba(255, 255, 255, 0.2)',
+              background: defaultBg,
+              border: `1px solid ${defaultBorder}`,
               borderRadius: 0,
-              color: '#a0a0a0',
+              color: mutedColor,
               fontSize: '14px',
               cursor: 'pointer',
               transition: 'all 0.2s ease',
@@ -440,9 +467,9 @@ export default function PartnerFilterWizard() {
               e.currentTarget.style.color = '#ff6464';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
-              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
-              e.currentTarget.style.color = '#a0a0a0';
+              e.currentTarget.style.background = defaultBg;
+              e.currentTarget.style.borderColor = defaultBorder;
+              e.currentTarget.style.color = mutedColor;
             }}
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -469,6 +496,7 @@ export default function PartnerFilterWizard() {
           onChange={handleTypeChange}
           options={hardwareTypes}
           placeholder={translate({ id: 'partnerwizard.selectHardwareType', message: 'Select a hardware type...' })}
+          isDarkMode={isDarkMode}
         />
 
         <CustomDropdown
@@ -479,6 +507,7 @@ export default function PartnerFilterWizard() {
           options={vendors}
           disabled={!selectedType}
           placeholder={selectedType ? translate({ id: 'partnerwizard.selectVendor', message: 'Select a vendor...' }) : translate({ id: 'partnerwizard.selectHardwareTypeFirst', message: 'Select hardware type first' })}
+          isDarkMode={isDarkMode}
         />
 
         <CustomDropdown
@@ -489,6 +518,7 @@ export default function PartnerFilterWizard() {
           options={osOptions}
           disabled={!selectedVendor}
           placeholder={selectedVendor ? translate({ id: 'partnerwizard.selectOS', message: 'Select an operating system...' }) : translate({ id: 'partnerwizard.selectVendorFirst', message: 'Select vendor first' })}
+          isDarkMode={isDarkMode}
         />
 
         <CustomDropdown
@@ -499,6 +529,7 @@ export default function PartnerFilterWizard() {
           options={integrationMethods}
           disabled={!selectedOS}
           placeholder={selectedOS ? translate({ id: 'partnerwizard.selectIntegration', message: 'Select an integration method...' }) : translate({ id: 'partnerwizard.selectOSFirst', message: 'Select operating system first' })}
+          isDarkMode={isDarkMode}
         />
       </div>
 
@@ -506,11 +537,11 @@ export default function PartnerFilterWizard() {
         <div
           className="p-4 sm:p-6"
           style={{
-            background: 'rgba(0, 255, 209, 0.05)',
-            border: '1px solid rgba(0, 255, 209, 0.2)',
+            background: `rgba(${primaryColorRgba}, 0.05)`,
+            border: `1px solid rgba(${primaryColorRgba}, 0.2)`,
           }}
         >
-          <div className="flex items-center gap-2 sm:gap-2.5 mb-4 sm:mb-5 text-base sm:text-lg font-bold text-[#00FFD1]">
+          <div className="flex items-center gap-2 sm:gap-2.5 mb-4 sm:mb-5 text-base sm:text-lg font-bold" style={{ color: primaryColor }}>
             <svg className="w-5 h-5 sm:w-[22px] sm:h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
               <polyline points="22 4 12 14.01 9 11.01" />
@@ -519,7 +550,7 @@ export default function PartnerFilterWizard() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-3 sm:gap-4">
             {exportOptions.map((option, index) => (
-              <ExportCard key={`${option.format}-${index}`} option={option} />
+              <ExportCard key={`${option.format}-${index}`} option={option} isDarkMode={isDarkMode} />
             ))}
           </div>
         </div>
