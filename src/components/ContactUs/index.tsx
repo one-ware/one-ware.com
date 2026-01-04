@@ -1,5 +1,6 @@
 import React, { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import axios from "axios";
+import { useColorMode } from "@docusaurus/theme-common";
 
 import Translate, { translate } from "@docusaurus/Translate";
 import { trackEvent } from "../../utils/tracking";
@@ -32,6 +33,8 @@ interface ContactUsProps {
 }
 
 export default function ContactUs({ compact = false, subtitle }: ContactUsProps) {
+  const { colorMode } = useColorMode();
+  const isDarkMode = colorMode === "dark";
   const [mode, setMode] = useState<ContactMode>("select");
   const [christopherMode, setChristopherMode] = useState<ContactMode>("select");
   const [formData, setFormData] = useState<FormData>({
@@ -152,18 +155,18 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
   return (
     <div className="text-center w-full">
       <div className="max-w-4xl mx-auto mb-8">
-        <h2 className="text-3xl md:text-5xl font-bold">
+        <h2 className={`text-3xl md:text-5xl font-bold ${isDarkMode ? "text-white" : "text-gray-900"}`}>
           <Translate id="contactus.headline">Interested? Contact us!</Translate>
         </h2>
         {subtitle && (
-          <p className="text-xl text-gray-300 mt-4">{subtitle}</p>
+          <p className={`text-xl mt-4 ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>{subtitle}</p>
         )}
       </div>
 
       <div className={`mt-12 mb-4 w-full ${compact ? '' : 'px-6 lg:px-12'}`}>
         <div className={`flex flex-col lg:flex-row gap-8 items-stretch ${compact ? '' : 'max-w-7xl mx-auto'}`}>
           <div className="w-full lg:w-1/2">
-            <div className="bg-gray-800/50 backdrop-blur-sm p-8 md:p-12 border border-gray-700 h-full flex flex-col">
+            <div className={`backdrop-blur-sm p-8 md:p-12 border h-full flex flex-col ${isDarkMode ? "bg-gray-800/50 border-gray-700" : "bg-white/80 border-gray-200"}`}>
               {mode === "select" && (
                 <div className="flex-1 flex flex-col text-center">
                   <img
@@ -171,13 +174,13 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                     alt="Helmut Plötz - Vice President of Global Sales"
                     loading="lazy"
                     decoding="async"
-                    className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-[#00FFD1]/20 mx-auto mb-6"
+                    className={`w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 mx-auto mb-6 ${isDarkMode ? "border-[#00FFD1]/20" : "border-[#00a88a]/20"}`}
                   />
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">Helmut Plötz</h3>
-                  <p className="text-[#00FFD1] font-semibold mb-4 text-lg">
+                  <h3 className={`text-2xl md:text-3xl font-bold mb-3 ${isDarkMode ? "text-white" : "text-gray-900"}`}>Helmut Plötz</h3>
+                  <p className="text-[var(--ifm-color-primary)] font-semibold mb-4 text-lg">
                     <Translate id="contactus.helmut.role">Vice President of Global Sales</Translate>
                   </p>
-                  <p className="text-gray-300 mb-6 leading-relaxed text-base max-w-md mx-auto">
+                  <p className={`mb-6 leading-relaxed text-base max-w-md mx-auto ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
                     <Translate id="contactus.helmut.description">
                       Helmut is our sales expert who takes care of projects of all kinds. Whether you need evaluations for ideas,
                       custom quotes, partnership opportunities, or strategic consulting — Helmut is your go-to contact for
@@ -253,15 +256,15 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
 
               {mode === "form" && formStatus === "success" && (
                 <div className="flex-1 flex flex-col items-center justify-center text-center">
-                  <div className="w-16 h-16 bg-[#00FFD1]/20 flex items-center justify-center mb-6">
-                    <svg className="w-8 h-8 text-[#00FFD1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-16 h-16 bg-[var(--ifm-color-primary)]/20 flex items-center justify-center mb-6">
+                    <svg className="w-8 h-8 text-[var(--ifm-color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-200">
+                  <h3 className={`text-2xl md:text-3xl font-bold mb-4 ${isDarkMode ? "text-gray-200" : "text-gray-800"}`}>
                     <Translate id="contactus.success">Message sent successfully!</Translate>
                   </h3>
-                  <p className="text-gray-400 mb-8">
+                  <p className={`mb-8 ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}>
                     <Translate id="contactus.success.description">We will get back to you as soon as possible.</Translate>
                   </p>
                   <button
@@ -286,7 +289,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
               {mode === "form" && formStatus !== "success" && (
                 <>
                   <div className="flex items-center justify-between mb-6">
-                    <h3 className="text-xl md:text-2xl font-bold text-gray-200">
+                    <h3 className={`text-xl md:text-2xl font-bold ${isDarkMode ? "text-gray-200" : "text-gray-800"}`}>
                       <Translate id="contactus.form.title">Send us a message directly</Translate>
                     </h3>
                     <button
@@ -327,11 +330,11 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                     />
 
                     <label className="block mb-4">
-                      <span className="block text-sm font-bold mb-2 text-gray-300">Name</span>
+                      <span className={`block text-sm font-bold mb-2 ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>Name</span>
                       <input
                         type="text"
                         name="name"
-                        className="w-full px-4 py-3 border border-gray-600 bg-gray-700 text-white focus:outline-none focus:border-[#00FFD1] transition-colors"
+                        className={`w-full px-4 py-3 border focus:outline-none focus:border-[var(--ifm-color-primary)] transition-colors ${isDarkMode ? "border-gray-600 bg-gray-700 text-white" : "border-gray-300 bg-white text-gray-900"}`}
                         value={formData.name}
                         onChange={handleChange}
                         required
@@ -339,11 +342,11 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                     </label>
 
                     <label className="block mb-4">
-                      <span className="block text-sm font-bold mb-2 text-gray-300">E-Mail</span>
+                      <span className={`block text-sm font-bold mb-2 ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>E-Mail</span>
                       <input
                         type="email"
                         name="email"
-                        className="w-full px-4 py-3 border border-gray-600 bg-gray-700 text-white focus:outline-none focus:border-[#00FFD1] transition-colors"
+                        className={`w-full px-4 py-3 border focus:outline-none focus:border-[var(--ifm-color-primary)] transition-colors ${isDarkMode ? "border-gray-600 bg-gray-700 text-white" : "border-gray-300 bg-white text-gray-900"}`}
                         value={formData.email}
                         onChange={handleChange}
                         required
@@ -351,12 +354,12 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                     </label>
 
                     <label className="flex-1 flex flex-col mb-6">
-                      <span className="block text-sm font-bold mb-2 text-gray-300">
+                      <span className={`block text-sm font-bold mb-2 ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>
                         <Translate id="contactus.form.1">Message</Translate>
                       </span>
                       <textarea
                         name="message"
-                        className="flex-1 w-full px-4 py-3 border border-gray-600 bg-gray-700 text-white focus:outline-none focus:border-[#00FFD1] transition-colors resize-none min-h-[100px]"
+                        className={`flex-1 w-full px-4 py-3 border focus:outline-none focus:border-[var(--ifm-color-primary)] transition-colors resize-none min-h-[100px] ${isDarkMode ? "border-gray-600 bg-gray-700 text-white" : "border-gray-300 bg-white text-gray-900"}`}
                         value={formData.message}
                         onChange={handleChange}
                         required
@@ -365,7 +368,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
 
                     <button
                       type="submit"
-                      className="text-black w-full font-bold py-4 px-6 button button--primary button--md transition-all hover:scale-[1.02]"
+                      className={`w-full font-bold py-4 px-6 button button--primary button--md transition-all hover:scale-[1.02] ${isDarkMode ? "text-black" : "text-white"}`}
                     >
                       <Translate id="contactus.buttonsend">Send</Translate>
                     </button>
@@ -376,7 +379,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
               {mode === "booking" && (
                 <>
                   <div className="flex items-center justify-between mb-6">
-                    <h3 className="text-xl md:text-2xl font-bold text-gray-200">
+                    <h3 className={`text-xl md:text-2xl font-bold ${isDarkMode ? "text-gray-200" : "text-gray-800"}`}>
                       <Translate id="contactus.booking.title">Schedule a Meeting</Translate>
                     </h3>
                     <button
@@ -411,7 +414,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
           </div>
 
           <div className="w-full lg:w-1/2">
-            <div className="bg-gray-800/50 backdrop-blur-sm p-8 md:p-12 border border-gray-700 h-full flex flex-col">
+            <div className={`backdrop-blur-sm p-8 md:p-12 border h-full flex flex-col ${isDarkMode ? "bg-gray-800/50 border-gray-700" : "bg-white/80 border-gray-200"}`}>
               {christopherMode === "select" && (
                 <div className="flex-1 flex flex-col text-center">
                   <img
@@ -419,13 +422,13 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                     alt="Christopher - Development Support Specialist"
                     loading="lazy"
                     decoding="async"
-                    className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-[#00FFD1]/20 mx-auto mb-6"
+                    className={`w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 mx-auto mb-6 ${isDarkMode ? "border-[#00FFD1]/20" : "border-[#00a88a]/20"}`}
                   />
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">Christopher</h3>
-                  <p className="text-[#00FFD1] font-semibold mb-4 text-lg">
+                  <h3 className={`text-2xl md:text-3xl font-bold mb-3 ${isDarkMode ? "text-white" : "text-gray-900"}`}>Christopher</h3>
+                  <p className="text-[var(--ifm-color-primary)] font-semibold mb-4 text-lg">
                     <Translate id="oneai.support.role">Development Support Specialist</Translate>
                   </p>
-                  <p className="text-gray-300 mb-6 leading-relaxed text-base max-w-md mx-auto">
+                  <p className={`mb-6 leading-relaxed text-base max-w-md mx-auto ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
                     <Translate id="oneai.support.description">
                       Christopher specializes in supporting the development process with ONE AI. He helps you with
                       technical questions, integration challenges, and guides you through the implementation of our
@@ -484,15 +487,15 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
 
               {christopherMode === "form" && christopherFormStatus === "success" && (
                 <div className="flex-1 flex flex-col items-center justify-center text-center">
-                  <div className="w-16 h-16 bg-[#00FFD1]/20 flex items-center justify-center mb-6">
-                    <svg className="w-8 h-8 text-[#00FFD1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-16 h-16 bg-[var(--ifm-color-primary)]/20 flex items-center justify-center mb-6">
+                    <svg className="w-8 h-8 text-[var(--ifm-color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-200">
+                  <h3 className={`text-2xl md:text-3xl font-bold mb-4 ${isDarkMode ? "text-gray-200" : "text-gray-800"}`}>
                     <Translate id="contactus.success">Message sent successfully!</Translate>
                   </h3>
-                  <p className="text-gray-400 mb-8">
+                  <p className={`mb-8 ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}>
                     <Translate id="contactus.success.description">We will get back to you as soon as possible.</Translate>
                   </p>
                   <button
@@ -517,7 +520,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
               {christopherMode === "form" && christopherFormStatus !== "success" && (
                 <>
                   <div className="flex items-center justify-between mb-6">
-                    <h3 className="text-xl md:text-2xl font-bold text-gray-200">
+                    <h3 className={`text-xl md:text-2xl font-bold ${isDarkMode ? "text-gray-200" : "text-gray-800"}`}>
                       <Translate id="contactus.form.title">Send us a message directly</Translate>
                     </h3>
                     <button
@@ -558,11 +561,11 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                     />
 
                     <label className="block mb-4">
-                      <span className="block text-sm font-bold mb-2 text-gray-300">Name</span>
+                      <span className={`block text-sm font-bold mb-2 ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>Name</span>
                       <input
                         type="text"
                         name="name"
-                        className="w-full px-4 py-3 border border-gray-600 bg-gray-700 text-white focus:outline-none focus:border-[#00FFD1] transition-colors"
+                        className={`w-full px-4 py-3 border focus:outline-none focus:border-[var(--ifm-color-primary)] transition-colors ${isDarkMode ? "border-gray-600 bg-gray-700 text-white" : "border-gray-300 bg-white text-gray-900"}`}
                         value={christopherFormData.name}
                         onChange={handleChristopherChange}
                         required
@@ -570,11 +573,11 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                     </label>
 
                     <label className="block mb-4">
-                      <span className="block text-sm font-bold mb-2 text-gray-300">E-Mail</span>
+                      <span className={`block text-sm font-bold mb-2 ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>E-Mail</span>
                       <input
                         type="email"
                         name="email"
-                        className="w-full px-4 py-3 border border-gray-600 bg-gray-700 text-white focus:outline-none focus:border-[#00FFD1] transition-colors"
+                        className={`w-full px-4 py-3 border focus:outline-none focus:border-[var(--ifm-color-primary)] transition-colors ${isDarkMode ? "border-gray-600 bg-gray-700 text-white" : "border-gray-300 bg-white text-gray-900"}`}
                         value={christopherFormData.email}
                         onChange={handleChristopherChange}
                         required
@@ -582,12 +585,12 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                     </label>
 
                     <label className="flex-1 flex flex-col mb-6">
-                      <span className="block text-sm font-bold mb-2 text-gray-300">
+                      <span className={`block text-sm font-bold mb-2 ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>
                         <Translate id="contactus.form.1">Message</Translate>
                       </span>
                       <textarea
                         name="message"
-                        className="flex-1 w-full px-4 py-3 border border-gray-600 bg-gray-700 text-white focus:outline-none focus:border-[#00FFD1] transition-colors resize-none min-h-[100px]"
+                        className={`flex-1 w-full px-4 py-3 border focus:outline-none focus:border-[var(--ifm-color-primary)] transition-colors resize-none min-h-[100px] ${isDarkMode ? "border-gray-600 bg-gray-700 text-white" : "border-gray-300 bg-white text-gray-900"}`}
                         value={christopherFormData.message}
                         onChange={handleChristopherChange}
                         required
@@ -596,7 +599,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
 
                     <button
                       type="submit"
-                      className="text-black w-full font-bold py-4 px-6 button button--primary button--md transition-all hover:scale-[1.02]"
+                      className={`w-full font-bold py-4 px-6 button button--primary button--md transition-all hover:scale-[1.02] ${isDarkMode ? "text-black" : "text-white"}`}
                     >
                       <Translate id="contactus.buttonsend">Send</Translate>
                     </button>
@@ -607,7 +610,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
               {christopherMode === "booking" && (
                 <>
                   <div className="flex items-center justify-between mb-6">
-                    <h3 className="text-xl md:text-2xl font-bold text-gray-200">
+                    <h3 className={`text-xl md:text-2xl font-bold ${isDarkMode ? "text-gray-200" : "text-gray-800"}`}>
                       <Translate id="contactus.booking.title">Schedule a Meeting</Translate>
                     </h3>
                     <button
@@ -628,7 +631,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                     </button>
                   </div>
                   <div className="flex-1 flex items-center justify-center">
-                    <p className="text-gray-400">
+                    <p className={isDarkMode ? "text-gray-400" : "text-gray-600"}>
                       <Translate id="contactus.christopher.booking.coming">Meeting scheduling coming soon</Translate>
                     </p>
                   </div>
