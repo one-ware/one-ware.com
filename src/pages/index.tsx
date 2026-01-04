@@ -7,6 +7,7 @@ import "aos/dist/aos.css";
 import Typewriter from "typewriter-effect";
 import Translate, { translate } from "@docusaurus/Translate";
 import Marquee from "react-fast-marquee";
+import { useColorMode } from "@docusaurus/theme-common";
 
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import initWebsiteEffects from "../components/startEffects";
@@ -151,9 +152,12 @@ function IndustryExamplesSection() {
 }
 
 function TestimonialsSection() {
+  const { colorMode } = useColorMode();
+  const isDarkMode = colorMode === "dark";
+
   return (
     <div className="px-4 md:px-8 lg:px-12 max-w-screen-2xl mx-auto">
-      <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-200 mb-12">
+      <h2 className={`text-2xl md:text-3xl font-bold text-center mb-12 ${isDarkMode ? "text-gray-200" : "text-gray-800"}`}>
         <Translate id="testimonials.title">What Others Say About Us</Translate>
       </h2>
 
@@ -343,27 +347,19 @@ export default function Home() {
       <ChatHero />
       <HomeHero />
       <main className="overflow-x-hidden alternative-background ">
-        <div className="dropshadowbottom">
-          <div className="dropshadowtop diagclipbottom">
-            <div className="default-background pb-12">
-              <div id="video">
-                <VideoShowcase />
-              </div>
-              <IndustryExamplesSection />
-              
-            </div>
+        <div className="default-background pb-12">
+          <div id="video">
+            <VideoShowcase />
           </div>
+          <IndustryExamplesSection />
         </div>
 
         <div className="">
           <HomepageFeatures />
         </div>
-        <div className="dropshadowbottom">
-          <div className="dropshadowtop diagclipbottom">
-            <div className="default-background diagcliptop pt-20 pb-32">
-              <TestimonialsSection />
-            </div>
-          </div>
+
+        <div className="default-background pt-20 pb-32">
+          <TestimonialsSection />
         </div>
 
         <div className="pt-20 pb-20 ">

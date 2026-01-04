@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Translate from "@docusaurus/Translate";
+import { useColorMode } from "@docusaurus/theme-common";
 import VideoShowcaseCard, { Metrics } from "./VideoShowcaseCard";
 
 export interface ShowcaseItem {
@@ -85,6 +86,8 @@ interface VideoShowcaseProps {
 }
 
 export default function VideoShowcase({ items = defaultDemos, columns = 3 }: VideoShowcaseProps) {
+  const { colorMode } = useColorMode();
+  const isDarkMode = colorMode === "dark";
   const demos = items;
   const [activeIndex, setActiveIndex] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -155,7 +158,7 @@ export default function VideoShowcase({ items = defaultDemos, columns = 3 }: Vid
   return (
     <section className="py-6 md:py-8">
       <div className="container mx-auto px-4">
-        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-center font-bold mb-8 md:mb-12">
+        <p className={`text-lg sm:text-xl md:text-2xl lg:text-3xl text-center font-bold mb-8 md:mb-12 ${isDarkMode ? "text-white" : "text-gray-900"}`}>
           <Translate id="homepage.usecase.title">Showcase</Translate>
         </p>
 
