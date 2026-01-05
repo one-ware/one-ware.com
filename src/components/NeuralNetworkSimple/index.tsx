@@ -572,8 +572,8 @@ function NetworkScene({
 // ===== MAIN COMPONENT =====
 
 interface NeuralNetworkSimpleProps {
-  width?: number;
-  height?: number;
+  width?: number | string;
+  height?: number | string;
   color?: string;
   nodeCount?: number;
   className?: string;
