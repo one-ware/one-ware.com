@@ -17,6 +17,7 @@ import Head from "@docusaurus/Head";
 import HomeHero from "@site/src/components/HomeHero";
 import VideoShowcase from "@site/src/components/VideoShowcase";
 import ChatHero from "@site/src/components/ChatHero";
+import OrbitIndustries from "@site/src/components/OrbitIndustries";
 
 function IndustryExamplesSection() {
   const items = [
@@ -352,6 +353,7 @@ export default function Home() {
             <VideoShowcase />
           </div>
           <IndustryExamplesSection />
+          <OrbitIndustries />
         </div>
 
         <div className="">
