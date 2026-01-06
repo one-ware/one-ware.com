@@ -203,6 +203,8 @@ export default function HomeHero() {
       className="relative overflow-hidden min-h-screen"
       style={{
         background: "#050505",
+        marginTop: "calc(var(--ifm-navbar-height) * -1)",
+        paddingTop: "var(--ifm-navbar-height)",
       }}
     >
       <BackgroundGridSimple />
