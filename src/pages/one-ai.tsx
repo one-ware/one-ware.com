@@ -8,13 +8,9 @@ import Link from "@docusaurus/Link";
 import initWebsiteEffects from "../components/startEffects";
 import ContactUs from "../components/ContactUs";
 import Translate, { translate } from "@docusaurus/Translate";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
-import type { Swiper as SwiperCore } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Head from '@docusaurus/Head';
+import HeroBackground from "../components/HeroBackground";
 
 const sliders = [
   {
@@ -89,17 +85,23 @@ const sliders = [
 
 function HomepageHeader() {
   return (
-    <header id="hero" className={`w-full ${styles.heroBackground} h-96`}>
-      <div className="absolute flex flex-col items-center justify-center w-full h-full px-4">
+    <HeroBackground
+      className="w-full min-h-[400px] flex items-center justify-center"
+      style={{
+        marginTop: "calc(var(--ifm-navbar-height) * -1)",
+        paddingTop: "var(--ifm-navbar-height)",
+      }}
+    >
+      <div className="flex flex-col items-center justify-center w-full h-full px-4">
         <div className="flex justify-center w-full">
           <div className="flex-col max-w-5xl mx-auto mt-10">
             <div className="text-center mt-10">
-              <h1 className="font-bold text-3xl md:text-4xl mb-4">
+              <h1 className="font-bold text-3xl md:text-4xl mb-4 dark:text-white text-gray-900">
                 <Translate id="oneai.hero.main.title">
                   Let ONE AI Finish Your Vision and Edge AI Projects
                 </Translate>
               </h1>
-              <h2 className=" text-xl md:text-2xl mb-7 font-normal">
+              <h2 className="text-xl md:text-2xl mb-7 font-normal dark:text-white text-gray-800">
                 <Translate id="oneai.hero.main.subtitle">
                   See the Power of your dataset with the Right AI.
                 </Translate>
@@ -123,30 +125,17 @@ function HomepageHeader() {
                 >
                   <Translate id="homepage.subtitle.ai.getstarted">Start Now for Free</Translate>
                 </Link>
-
-
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className={styles.startArrow} />
-    </header>
+    </HeroBackground>
   );
 }
 
 function ComparisonSection() {
-  // DEINE BUTTON-LOGIK WIEDERHERGESTELLT (Teil 1)
-  // Der Ref für die Swiper-Instanz ist wieder da.
-  const swiperRef = useRef<SwiperCore | null>(null);
-
-  const scrollPrev = () => {
-    swiperRef.current?.slidePrev();
-  };
-
-  const scrollNext = () => {
-    swiperRef.current?.slideNext();
-  };
+  const [activeUseCase, setActiveUseCase] = useState(0);
 
   const useCases = [
     {
@@ -194,7 +183,6 @@ function ComparisonSection() {
       displayImage: "/img/ai/one_ai_plugin/use_cases/pcb/integration.png",
       description: "ONE AI can create generic ONNX or Tensorflow Lite models that can be integrated directly with your application using our SDK. One example AI model,that you can integrate, detects small objects on complex backgrounds and outperformes YOLOv8 with:",
       descriptionId: "oneai.usecase.sdk.description",
-      metricsLayout: 3,
       metrics: [
         { value: "95.7", label: "F1 Score", labelId: "homepage.metric.f1score" },
         { value: "8×", label: "Smaller Model", labelId: "homepage.metric.modelsize" },
@@ -223,168 +211,122 @@ function ComparisonSection() {
     }
   ];
 
+  const currentUseCase = useCases[activeUseCase];
+
+  const handlePrev = () => {
+    setActiveUseCase(activeUseCase - 1 < 0 ? useCases.length - 1 : activeUseCase - 1);
+  };
+
+  const handleNext = () => {
+    setActiveUseCase(activeUseCase + 1 >= useCases.length ? 0 : activeUseCase + 1);
+  };
+
   return (
-    <div id="comparison" className="py-12 md:py-20 overflow-hidden">
-      <div className="container mx-auto px-4 text-center">
-        <h1 className="text-2xl md:text-4xl mb-12 font-bold px-4">
-          <Translate id="oneai.comparison.title">
-            Deployed with ONE Click
-          </Translate>
-        </h1>
-      </div>
+    <section id="comparison" className="py-16 md:py-24 bg-white">
+      <div className="container mx-auto px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-gray-600 text-3xl md:text-4xl font-normal text-left mb-12">
+            <Translate id="oneai.comparison.title">
+              Deployed with ONE Click
+            </Translate>
+          </h2>
 
-      <div className="relative">
-        <Swiper
-          // DEINE BUTTON-LOGIK WIEDERHERGESTELLT (Teil 2)
-          // onSwiper-Callback, um den Ref zu setzen.
-          onSwiper={(swiper) => {
-            swiperRef.current = swiper;
-          }}
-          modules={[Navigation]}
-          rewind={true}
-          centeredSlides={true}
-          grabCursor={true}
-          slidesPerView={1.2}
-          spaceBetween={20}
-          slidesPerGroup={1}
-          watchSlidesProgress={true}
-          initialSlide={1} // Start auf dem 2. Element (Index 1)
-          // modules={[Navigation]}  // kannst du entfernen, da wir eigene Buttons haben
-          breakpoints={{
-            768:  { slidesPerView: 1.5,  spaceBetween: 40 },
-            1280: { slidesPerView: 1.75, spaceBetween: 50 },
-          }}
-        >
-          {useCases.map((useCase, idx) => (
-            // DER ZWEITE WICHTIGE FIX BLEIBT:
-            <SwiperSlide key={idx}>
-              {({ isActive }) => (
+          <div className="p-6 sm:p-8 md:p-12 overflow-hidden" style={{ backgroundColor: '#161616' }}>
+            <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-8 lg:gap-12">
+              <div className="order-first lg:order-none">
                 <div
-                  className={`relative w-full transition-all duration-500 ease-in-out transform ${isActive ? 'scale-100' : 'scale-90 opacity-60'}`}
+                  className="w-full aspect-square max-w-sm mx-auto lg:max-w-none bg-cover bg-center"
                   style={{
-                    backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%), url(${useBaseUrl(useCase.backgroundImage)})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
+                    backgroundImage: `url(${useBaseUrl(currentUseCase.displayImage)})`,
                   }}
-                >
-                  {/* ... der innere Content der Slide bleibt unverändert ... */}
-                   <div className="relative z-10 p-6 sm:p-8 lg:p-12 min-h-[550px] md:min-h-[500px] flex flex-col justify-between bg-gray-900/20 rounded-2xl backdrop-blur-sm border border-white/10">
-                    
-                    {/* Content Wrapper für Desktop Layout */}
-                    <div className="flex flex-col lg:flex-row lg:gap-8 h-full">
-                      
-                      {/* Image Section - links auf Desktop */}
-                      <div className="w-3/4 mx-auto lg:w-1/3 lg:mx-0 lg:flex-shrink-0 mb-4 lg:mb-0 hidden md:block">
-                        <div 
-                          className="w-full aspect-square lg:aspect-[6/7] rounded-lg bg-cover bg-center"
-                          style={{
-                            backgroundImage: `url(${useBaseUrl(useCase.displayImage)})`,
-                          }}
-                        />
-                      </div>
+                />
+              </div>
 
-                      {/* Text & Content Section - rechts auf Desktop */}
-                      <div className="text-left lg:flex-1 flex flex-col justify-between">
-                        {/* Text oben */}
-                        <div>
-                          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold primary-text mb-2">
-                            <Translate id={useCase.titleId}>
-                              {useCase.title}
-                            </Translate>
-                          </h3>
-                          <h4 className="text-lg sm:text-xl lg:text-2xl text-gray-300 font-medium mb-4">
-                            <Translate id={useCase.subtitleId}>
-                              {useCase.subtitle}
-                            </Translate>
-                          </h4>
-                          <p className="text-base sm:text-lg text-gray-200 leading-relaxed mb-6">
-                            <Translate id={useCase.descriptionId}>
-                              {useCase.description}
-                            </Translate>
-                          </p>
-                        </div>
+              <div className="flex flex-col justify-center text-center lg:text-left">
+                <h3 className="text-white text-xl md:text-2xl font-medium mb-2">
+                  <Translate id={currentUseCase.titleId}>
+                    {currentUseCase.title}
+                  </Translate>
+                </h3>
+                <h4 className="text-gray-300 text-base md:text-lg mb-4">
+                  <Translate id={currentUseCase.subtitleId}>
+                    {currentUseCase.subtitle}
+                  </Translate>
+                </h4>
+                <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-6">
+                  <Translate id={currentUseCase.descriptionId}>
+                    {currentUseCase.description}
+                  </Translate>
+                </p>
 
-                        {/* Metrics & Button unten */}
-                        <div className="flex flex-col gap-4">
-                          {/* Metrics Grid - 2x2 auf Mobile, bei 3 oder 4 Metrics in einer Reihe */}
-                          <div className={`grid gap-2 w-full ${useCase.metrics.length === 4 ? 'grid-cols-2 lg:grid-cols-4' : useCase.metrics.length === 3 ? 'grid-cols-3' : 'grid-cols-2'}`}>
-                            {useCase.metrics.map((metric, metricIdx) => (
-                              <div key={metricIdx} className="p-3 bg-black/40 border border-white/10 rounded-lg text-center">
-                                <h5 className="text-xl sm:text-2xl font-bold primary-text">
-                                  {metric.value}
-                                </h5>
-                                <p className="text-sm sm:text-base text-gray-300">
-                                  <Translate id={metric.labelId}>
-                                    {metric.label}
-                                  </Translate>
-                                </p>
-                              </div>
-                            ))}
-                          </div>
-                          
-                          {/* Button darunter */}
-                          <a
-                            href={useCase.whitepaper}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center px-6 py-3 bg-[#00FFD1] text-black font-bold rounded-lg hover:bg-[#00e4ba] transition-all duration-300 transform hover:scale-105 text-sm lg:text-base w-full sm:w-auto justify-center shrink-0"
-                          >
-                            <Translate id={useCase.linkTextId}>
-                              {useCase.linkText}
-                            </Translate>
-                            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
-                          </a>
-                        </div>
-                      </div>
+                <div className="flex flex-row flex-wrap gap-4 sm:gap-8 justify-center lg:justify-start mb-6">
+                  {currentUseCase.metrics.map((metric, metricIdx) => (
+                    <div key={metricIdx} className="text-center lg:text-left">
+                      <span className="text-[var(--ifm-color-primary)] text-2xl md:text-3xl font-light block">
+                        {metric.value}
+                      </span>
+                      <span className="text-gray-400 text-xs uppercase mt-1 block">
+                        <Translate id={metric.labelId}>
+                          {metric.label}
+                        </Translate>
+                      </span>
                     </div>
-                  </div>
+                  ))}
                 </div>
-              )}
-            </SwiperSlide>
-          ))}
-        </Swiper>
 
-        {/* DEINE BUTTON-LOGIK WIEDERHERGESTELLT (Teil 3) */}
-        {/* Die onClick-Handler sind wieder auf den Buttons. */}
-        <button
-          onClick={scrollPrev}
-          aria-label="Previous use case"
-          className="absolute left-4 sm:left-6 lg:left-8 top-1/2 -translate-y-1/2 z-20 p-2 lg:p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-md shadow-lg transition-transform hover:scale-105"
-        >
-          <svg
-            className="w-5 h-5 lg:w-6 lg:h-6 text-[#00FFD1]"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2.5}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
+                <div className="flex justify-center lg:justify-start">
+                  <a
+                    href={currentUseCase.whitepaper}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block bg-[var(--ifm-color-primary)] text-black px-6 py-3 text-sm font-medium uppercase tracking-wider hover:opacity-90 transition-opacity"
+                    style={{ borderRadius: 0 }}
+                  >
+                    <Translate id={currentUseCase.linkTextId}>
+                      {currentUseCase.linkText}
+                    </Translate>
+                  </a>
+                </div>
+              </div>
+            </div>
 
-        <button
-          onClick={scrollNext}
-          aria-label="Next use case"
-          className="absolute right-4 sm:right-6 lg:right-8 top-1/2 -translate-y-1/2 z-20 p-2 lg:p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-md shadow-lg transition-transform hover:scale-105"
-        >
-          <svg
-            className="w-5 h-5 lg:w-6 lg:h-6 text-[#00FFD1]"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2.5}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
+            <div className="flex justify-center items-center gap-8 mt-8 pt-6 border-t border-white/20">
+              <svg
+                onClick={handlePrev}
+                className="w-5 h-5 cursor-pointer text-[var(--ifm-color-primary)] hover:-translate-x-1 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                strokeWidth={2.5}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+              <div className="flex gap-3">
+                {useCases.map((_, index) => (
+                  <div
+                    key={index}
+                    onClick={() => setActiveUseCase(index)}
+                    className={`w-2 h-2 rounded-full cursor-pointer transition-all duration-300 ${
+                      index === activeUseCase ? "bg-[var(--ifm-color-primary)]" : "bg-white/40 hover:bg-white/60"
+                    }`}
+                  />
+                ))}
+              </div>
+              <svg
+                onClick={handleNext}
+                className="w-5 h-5 cursor-pointer text-[var(--ifm-color-primary)] hover:translate-x-1 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                strokeWidth={2.5}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 
@@ -393,19 +335,19 @@ function ComparisonSection() {
 
 function GetStarted() {
   return (
-    <div className="mb-20 overflow-x-hidden">
-      <div className="text-center container m-auto flex space-x-5 justify-center">
-        <div className="flex-col flex text-center">
-          <h1 className="text-2xl md:text-4xl">
+    <HeroBackground className="py-16 md:py-24">
+      <div className="container mx-auto px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="dark:text-white text-gray-900 text-2xl md:text-4xl font-normal mb-8">
             <Translate id="oneai.getstarted.heading">
               Get Started in 3 Simple Steps:
             </Translate>
-          </h1>
+          </h2>
 
-          <p className="text-xl md:text-2xl font-bold mt-8">
-            <div className="mb-4">
-              1.{" "}
-              <a href="/docs/one-ai/getting-started#installation" target="_blank" className="underline hover:no-underline">
+          <div className="space-y-4 dark:text-gray-300 text-gray-700 text-lg md:text-xl mb-8">
+            <div>
+              <span className="font-medium">1.</span>{" "}
+              <a href="/docs/one-ai/getting-started#installation" target="_blank" className="underline hover:no-underline primary-text">
                 <Translate id="oneai.getstarted.step2.download">
                   Download
                 </Translate>
@@ -414,9 +356,9 @@ function GetStarted() {
                 ONE WARE Studio with the ONE AI Extension.
               </Translate>
             </div>
-            <div className="mb-4">
-              2.{" "}
-              <a href="https://cloud.one-ware.com/Account/Register" target="_blank" className="underline hover:no-underline">
+            <div>
+              <span className="font-medium">2.</span>{" "}
+              <a href="https://cloud.one-ware.com/Account/Register" target="_blank" className="underline hover:no-underline primary-text">
                 <Translate id="oneai.getstarted.step1.signup">
                   Sign up
                 </Translate>
@@ -425,30 +367,35 @@ function GetStarted() {
                 , and verify your account.
               </Translate>
             </div>
-            <div className="mb-4">
+            <div>
+              <span className="font-medium">3.</span>{" "}
               <Translate id="oneai.getstarted.step3">
-                3. Build your first AI models for free.
+                Build your first AI models for free.
               </Translate>
             </div>
-          </p>
-
-          <div className="flex justify-center gap-4 mt-2 flex-col md:flex-row">
-            <a href="/docs/one-ai/getting-started" target="_blank">
-              <button className="button button--primary text-xl">
-                <Translate id="oneai.getstarted.cta.tutorial">Quick Start Guide</Translate>
-              </button>
-            </a>
           </div>
 
-          <div className="pt-4 text-center">
-            <hr className="border-gray-600 max-w-md mx-auto" />
-            <p className="text-xl md:text-2xl font-bold text-gray-300">
-              Or <a href="mailto:sales@one-ware.com?subject=Docker Container Request for Local AI Training" className="text-[#00FFD1] hover:text-[#00e4ba] underline transition-colors">Contact sales</a> to request a docker container for local AI training
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+            <Link
+              to="/docs/one-ai/getting-started"
+              className="button button--primary button--lg"
+            >
+              <Translate id="oneai.getstarted.cta.tutorial">Quick Start Guide</Translate>
+            </Link>
+          </div>
+
+          <div className="border-t dark:border-gray-700 border-gray-300 pt-6 mt-6">
+            <p className="dark:text-gray-400 text-gray-600 text-base md:text-lg">
+              <Translate id="oneai.getstarted.contact.or">Or</Translate>{" "}
+              <a href="mailto:sales@one-ware.com?subject=Docker Container Request for Local AI Training" className="primary-text underline hover:no-underline font-medium">
+                <Translate id="oneai.getstarted.contact.sales">Contact sales</Translate>
+              </a>{" "}
+              <Translate id="oneai.getstarted.contact.text">to request a docker container for local AI training</Translate>
             </p>
           </div>
         </div>
       </div>
-    </div>
+    </HeroBackground>
   );
 }
 
@@ -533,7 +480,7 @@ function BenefitsSection() {
   ];
 
   const toggleAccordion = (index: number) => {
-    setActiveIndex(index);
+    setActiveIndex(activeIndex === index ? null : index);
   };
 
   // Hotspot positions for each benefit image (x, y in percentages)
@@ -609,72 +556,87 @@ function BenefitsSection() {
   ];
 
   return (
-    <section className="pt-8 md:pt-12">
-      <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <div className=" mb-6">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">
+    <section className="py-16 md:py-24 bg-gray-100">
+      <div className="container mx-auto px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-gray-600 text-3xl md:text-4xl font-normal text-left mb-12">
             <Translate id="oneai.benefits.section.title">
               Your Benefits as Developer:
             </Translate>
           </h2>
-        </div>
 
-        {/* Benefits Grid - Desktop: Side by side, Mobile: Stacked */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 lg:gap-6 items-start">
-          {/* Benefits Accordion - Takes 1 column on desktop */}
-          <div className="space-y-1.5">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="rounded border transition-all duration-300">
-                {/* Accordion Header */}
-                <button
-                  onClick={() => toggleAccordion(index)}
-                  className="w-full flex items-center justify-between px-2.5 pt-1 text-left focus:outline-none group 
-                  bg-gray-700 text-white border border-gray-700
-                  hover:bg-teal-900 hover:border-teal-900"
-                >
-                  <h3 className="text-lg md:text-lg font-medium text-white pr-2 mb-1 group-hover:text-[#00FFD1] transition-colors">
-                    <Translate id={benefit.titleId}>
-                      {benefit.title}
-                    </Translate>
-                  </h3>
-                  <div className={`transform transition-all duration-200 ${activeIndex === index ? 'rotate-90 scale-110' : 'group-hover:scale-105'}`}>
-                    <svg className="w-4 h-4 text-[#00FFD1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </button>
-                
-                {/* Accordion Content */}
-                <div className={`overflow-hidden transition-all duration-300 ease-in-out ${activeIndex === index ? 'opacity-100' : 'max-h-0 opacity-0'}`}>
-                  <div className="px-2.5 border-t border-gray-700">
-                    <p className="text-gray-300 leading-tight text-md pt-1.5">
-                      <Translate id={benefit.descriptionId}>
-                        {benefit.description}
-                      </Translate>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-8 items-start">
+            <div className="space-y-1">
+              {benefits.map((benefit, index) => {
+                const isOpen = activeIndex === index;
+                return (
+                  <div
+                    key={index}
+                    onClick={() => toggleAccordion(index)}
+                    className={`px-3 cursor-pointer transition-all duration-300 ease-in-out ${
+                      isOpen
+                        ? 'bg-[var(--ifm-color-primary)]'
+                        : 'bg-white/50 hover:bg-white'
+                    }`}
+                  >
+                    <div
+                      className="flex items-center justify-between w-full transition-all duration-300 ease-in-out"
+                      style={{
+                        minHeight: isOpen ? '24px' : '40px',
+                        paddingTop: isOpen ? '8px' : '0px',
+                        paddingBottom: isOpen ? '0px' : '0px'
+                      }}
+                    >
+                      <span className={`text-sm font-medium transition-colors duration-300 m-0 p-0 leading-none ${
+                        isOpen ? 'text-gray-800' : 'text-gray-600'
+                      }`}>
+                        <Translate id={benefit.titleId}>
+                          {benefit.title}
+                        </Translate>
+                      </span>
+                      <svg
+                        className={`w-4 h-4 flex-shrink-0 transition-all duration-300 ease-in-out ${
+                          isOpen ? 'rotate-90 text-gray-800' : 'text-[var(--ifm-color-primary)]'
+                        }`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
 
-          {/* IDE Image - Takes 2 columns on desktop */}
-          <div className="lg:col-span-2 flex items-start justify-center lg:sticky lg:top-20">
-            <div className="w-full max-w-md lg:max-w-full">
-              <div className="relative group">
-                <img 
+                    <div
+                      className="overflow-hidden transition-all duration-300 ease-in-out"
+                      style={{
+                        maxHeight: isOpen ? '200px' : '0px',
+                        opacity: isOpen ? 1 : 0,
+                        marginTop: isOpen ? '8px' : '0px',
+                        marginBottom: isOpen ? '8px' : '0px'
+                      }}
+                    >
+                      <p className="text-gray-800 text-xs leading-relaxed">
+                        <Translate id={benefit.descriptionId}>
+                          {benefit.description}
+                        </Translate>
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="lg:sticky lg:top-24">
+              <div className="bg-white p-4 relative">
+                <img
                   src={useBaseUrl(`/img/ai/one_ai_plugin/benefits/${activeIndex !== null ? activeIndex + 1 : 1}.webp`)}
                   alt="ONE AI Benefit Illustration"
-                  className="w-full h-auto rounded-lg shadow-xl border border-gray-700 group-hover:border-[#00FFD1]/50 transition-all duration-300"
+                  className="w-full h-auto"
                   onError={(e) => {
-                    // Fallback if image doesn't exist
                     e.currentTarget.src = '/img/ai/Capture.png';
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg pointer-events-none"></div>
-                
-                {/* Interactive Hotspots */}
+
                 {hotspots[activeIndex !== null ? activeIndex : 0]?.map((hotspot, idx) => (
                   <div
                     key={idx}
@@ -686,17 +648,14 @@ function BenefitsSection() {
                     }}
                     onClick={() => toggleAccordion(hotspot.targetIndex)}
                   >
-                    {/* Hotspot Dot */}
-                    <div className="w-4 h-4 bg-[#00FFD1] rounded-full border-2 border-white shadow-lg animate-pulse hover:scale-125 transition-all duration-300">
-                      <div className="w-full h-full bg-[#00FFD1] rounded-full animate-ping opacity-75"></div>
+                    <div className="w-4 h-4 bg-[var(--ifm-color-primary)] rounded-full border-2 border-white shadow-lg animate-pulse hover:scale-125 transition-all duration-300">
+                      <div className="w-full h-full bg-[var(--ifm-color-primary)] rounded-full animate-ping opacity-75"></div>
                     </div>
-                    
-                    {/* Tooltip on Hover */}
-                    <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-sm px-3 py-2 rounded-lg shadow-xl border border-gray-700 opacity-0 group-hover/hotspot:opacity-100 transition-opacity duration-300 whitespace-nowrap z-50 pointer-events-none">
+
+                    <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 shadow-lg opacity-0 group-hover/hotspot:opacity-100 transition-opacity duration-300 whitespace-nowrap z-50 pointer-events-none">
                       <Translate id={benefits[hotspot.targetIndex].titleId}>
                         {benefits[hotspot.targetIndex].title}
                       </Translate>
-                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
                     </div>
                   </div>
                 ))}
@@ -712,28 +671,28 @@ function BenefitsSection() {
 function InventionSection() {
   const inventions = [
     {
-      title: "1. Automated Analysis",
-      titleId: "oneai.invention.training.title", 
+      title: "Automated Analysis",
+      titleId: "oneai.invention.training.title",
       image: "/img/ai/Input.webp",
       description: "ONE AI gets the best results if the dataset focusses on a specific task. First it analyzes the data, labels, hardware constraints, needed performance and application context. For example, it analyzes the object sizes in images.",
       descriptionId: "oneai.invention.training.description"
     },
     {
-      title: "2. AI Feature Prediction",
+      title: "AI Feature Prediction",
       titleId: "oneai.invention.architecture.title",
       image: "/img/ai/Prediction.webp",
       description: "ONE AI then uses its knowledge about existing AI research and previously optimized AI models to predict the needed features for the AI model architecture. For example, bigger objects need larger receptive fields.",
       descriptionId: "oneai.invention.architecture.description"
     },
     {
-      title: "3. Build & Train AI Model",
+      title: "Build & Train AI Model",
       titleId: "oneai.invention.generation.title",
-      image: "/img/ai/Architecture.webp", 
+      image: "/img/ai/Architecture.webp",
       description: "ONE AI takes the predictions and then builds a custom neural network architecture that fits all predicted features. Then the AI is trained on the dataset and only learns the relevant information.",
       descriptionId: "oneai.invention.generation.description"
     },
     {
-      title: "4. Deploy Anywhere",
+      title: "Deploy Anywhere",
       titleId: "oneai.invention.deployment.title",
       image: "/img/ai/Export.webp",
       description: "Finally the AI can be deployed across FPGAs, microcontrollers, GPUs, and CPUs without modification. ONE AI handles all the complexity of hardware optimization and implementation automatically.",
@@ -742,78 +701,68 @@ function InventionSection() {
   ];
 
   return (
-    <section className="py-8 md:py-12 to-black">
-      <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <div className="mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+    <section className="py-16 md:py-24 bg-white">
+      <div className="container mx-auto px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-gray-600 text-3xl md:text-4xl font-normal text-left mb-12">
             <Translate id="oneai.invention.section.title">
               How It Works:
             </Translate>
           </h2>
-        </div>
 
-        {/* Responsive Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-          {inventions.map((invention, index) => (
-            <div key={index} className="bg-black bg-opacity-50 rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300 hover:transform hover:scale-105">
-              {/* Title */}
-              <h3 className="text-xl font-bold mb-3 text-white">
-                <Translate id={invention.titleId}>
-                  {invention.title}
-                </Translate>
-              </h3>
-              
-              {/* Image */}
-              <div className="w-full h-64 mb-6 rounded-lg overflow-hidden flex items-center justify-center">
-                <img 
-                  src={useBaseUrl(invention.image)}
-                  alt=""
-                  className="w-full h-full object-contain"
-                  onError={(e) => {
-                    // Fallback to placeholder if image doesn't exist
-                    e.currentTarget.style.display = 'none';
-                    e.currentTarget.parentElement!.innerHTML = `
-                      <div class="w-full h-full flex items-center justify-center">
-                        <div class="text-4xl text-[#00FFD1] opacity-50">🚀</div>
-                      </div>
-                    `;
-                  }}
-                />
-              </div>
-              
-              {/* Description */}
-              <p className="text-gray-300 leading-relaxed">
-                <Translate id={invention.descriptionId}>
-                  {invention.description}
-                </Translate>
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* Call to Action for Example Projects */}
-        <div className="mt-16">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-6 text-center">
-              {/* Title */}
-              <div className="flex items-center">
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white pt-3">
-                  <Translate id="oneai.examples.cta.title">
-                    Ready to Start Now?
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+            {inventions.map((invention, index) => (
+              <div key={index} className="p-6 transition-all duration-300 hover:shadow-lg" style={{ background: '#161616' }}>
+                <span className="text-[var(--ifm-color-primary)] text-xs font-medium uppercase tracking-wider">
+                  Step {index + 1}
+                </span>
+                <h3 className="text-white text-lg font-medium mt-2 mb-4">
+                  <Translate id={invention.titleId}>
+                    {invention.title}
                   </Translate>
                 </h3>
-              </div>
 
-              {/* Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 justify-center flex-shrink-0">
+                <div className="w-full h-48 mb-4 overflow-hidden flex items-center justify-center">
+                  <img
+                    src={useBaseUrl(invention.image)}
+                    alt=""
+                    className="w-full h-full object-contain p-2"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                      e.currentTarget.parentElement!.innerHTML = `
+                        <div class="w-full h-full flex items-center justify-center">
+                          <div class="text-4xl text-[var(--ifm-color-primary)] opacity-50">🚀</div>
+                        </div>
+                      `;
+                    }}
+                  />
+                </div>
+
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  <Translate id={invention.descriptionId}>
+                    {invention.description}
+                  </Translate>
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="max-w-6xl mx-auto mt-16">
+          <div className="bg-[var(--ifm-color-primary)] p-8 md:p-12">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <h3 className="text-gray-800 text-2xl md:text-3xl font-medium">
+                <Translate id="oneai.examples.cta.title">
+                  Ready to Start Now?
+                </Translate>
+              </h3>
+
+              <div className="flex flex-col sm:flex-row gap-3">
                 <Link
                   to="/docs/one-ai/tutorials"
-                  className="inline-flex items-center px-6 py-3 bg-[var(--ifm-color-primary)] text-black font-bold rounded-xl hover:opacity-90 transition-all duration-300 transform hover:scale-105 text-base"
+                  className="inline-block bg-black text-white px-8 py-3 text-sm font-medium uppercase tracking-wider hover:bg-gray-800 transition-colors text-center"
+                  style={{ borderRadius: 0 }}
                 >
-                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                  </svg>
                   <Translate id="oneai.examples.cta.button.main">
                     View Examples
                   </Translate>
@@ -821,11 +770,9 @@ function InventionSection() {
 
                 <Link
                   to="/docs/one-ai/getting-started"
-                  className="inline-flex items-center px-6 py-3 bg-transparent border-2 border-[var(--ifm-color-primary)] text-[var(--ifm-color-primary)] font-bold rounded-xl hover:bg-[var(--ifm-color-primary)] hover:text-black transition-all duration-300 text-base"
+                  className="inline-block bg-transparent border-2 border-black text-black px-8 py-3 text-sm font-medium uppercase tracking-wider hover:bg-black hover:text-white transition-colors text-center"
+                  style={{ borderRadius: 0 }}
                 >
-                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
                   <Translate id="oneai.examples.cta.button.secondary">
                     Get Started
                   </Translate>
@@ -860,106 +807,93 @@ export default function OneAi() {
         <link rel="alternate" hrefLang="de" href="https://one-ware.com/de/one-ai" />
         <link rel="alternate" hrefLang="x-default" href="https://one-ware.com/one-ai" />
       </Head>
-        
-      <div className={`absolute w-full -z-10 ${styles.particleBackground}`}>
-        <div className="h-96 absolute w-full"></div>
-      </div>
 
       <HomepageHeader />
 
       <main>
         <BenefitsSection />
-        <div className="bottomsplit">
-            <InventionSection />
-        </div>
+        <InventionSection />
 
 
-        <div className="text-center pt-12 md:pb-2 pb-12 container overflow-x-hidden bottomsplit">
-          <h1 className="text-2xl md:text-4xl">
-            <Translate id="oneai.compare.heading">
-              The Entire AI Development Process Automated in One Tool
-            </Translate>
-          </h1>
+        <section className="py-16 md:py-24 bg-gray-100">
+          <div className="container mx-auto px-6">
+            <div className="max-w-6xl mx-auto">
+              <h2 className="text-gray-600 text-3xl md:text-4xl font-normal text-left mb-12">
+                <Translate id="oneai.compare.heading">
+                  The Entire AI Development Process Automated in One Tool
+                </Translate>
+              </h2>
 
-          {sliders && sliders.length && (
-            <div className=" pt-5">
-              <Slider
-                ref={slickRef}
-                dots={true}
-                arrows={false}
-                autoplaySpeed={20000}
-                infinite={true}
-                autoplay={true}
-                className={styles.slickSlider}
-                speed={500}
-                slidesToShow={1}
-                slidesToScroll={1}
-                initialSlide={1} // Start auf dem 2. Element (Index 1)
-                beforeChange={(_c, n) => {
-                  var slideCount = sliders.length;
-                  for (var i = 0; i < slideCount; i++) {
-                    var slide = document.getElementById("slide" + i);
-                    if (slide) {
-                      if (i == n)
-                        slide.classList.add(styles.activeslide ?? "");
-                      else slide.classList.remove(styles.activeslide ?? "");
-                    }
-                  }
-                }}
-              >
-                {sliders.map(({ imageSrc, title, description }, idx) => (
-                  <div key={idx}>
-                    {imageSrc}
-                    <div
-                      className={classnames(
-                        "md:hidden mt-5",
-                        styles.slidecaption
-                      )}
-                    >
-                      <h3>{title}</h3>
-                      {description}
-                    </div>
-                  </div>
-                ))}
-              </Slider>
-              <div className="columns-4 my-10 hidden md:block">
-                {sliders.map(({ title, description }, idx) => (
-                  <div
-                    key={idx}
-                    onClick={() => slickRef.current?.slickGoTo(idx)}
-                    className={classnames(
-                      "block padding-vert--lg p-2 overflow-x-hidden",
-                      styles.slidebutton
-                    )}
-                    id={"slide" + idx}
+              {sliders && sliders.length && (
+                <div className="bg-white p-6 sm:p-8 md:p-12">
+                  <Slider
+                    ref={slickRef}
+                    dots={true}
+                    arrows={false}
+                    autoplaySpeed={20000}
+                    infinite={true}
+                    autoplay={true}
+                    className={styles.slickSlider}
+                    speed={500}
+                    slidesToShow={1}
+                    slidesToScroll={1}
+                    initialSlide={1}
+                    beforeChange={(_c, n) => {
+                      var slideCount = sliders.length;
+                      for (var i = 0; i < slideCount; i++) {
+                        var slide = document.getElementById("slide" + i);
+                        if (slide) {
+                          if (i == n)
+                            slide.classList.add(styles.activeslide ?? "");
+                          else slide.classList.remove(styles.activeslide ?? "");
+                        }
+                      }
+                    }}
                   >
-                    <h3>{title}</h3>
-                    <span>{description}</span>
+                    {sliders.map(({ imageSrc, title, description }, idx) => (
+                      <div key={idx}>
+                        {imageSrc}
+                        <div
+                          className={classnames(
+                            "md:hidden mt-5",
+                            styles.slidecaption
+                          )}
+                        >
+                          <h3 className="text-gray-700 font-medium">{title}</h3>
+                          <p className="text-gray-500 text-sm">{description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </Slider>
+                  <div className="grid grid-cols-4 gap-4 mt-10 hidden md:grid">
+                    {sliders.map(({ title, description }, idx) => (
+                      <div
+                        key={idx}
+                        onClick={() => slickRef.current?.slickGoTo(idx)}
+                        className={classnames(
+                          "p-4 cursor-pointer transition-all duration-300 hover:bg-gray-100 border-t-2 border-transparent",
+                          styles.slidebutton
+                        )}
+                        id={"slide" + idx}
+                      >
+                        <h3 className="text-gray-700 text-sm font-medium mb-2">{title}</h3>
+                        <span className="text-gray-500 text-xs leading-relaxed">{description}</span>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
+                </div>
+              )}
             </div>
-          )}
-        </div>
+          </div>
+        </section>
 
         
           <ComparisonSection />
 
-        <div className="dropshadowbottom">
-          <div id="getStarted" className="dropshadowtop-inset pt-20 pb-5" style={{
-            backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,1.0) 100%), url('${require('@site/static/img/background.webp').default}')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}>
-            <GetStarted />
-          </div>
-        </div>
+        <GetStarted />
 
-        <div className="container pb-20 mt-20">
-          <div id="contact" className="mb-10">
-            <ContactUs subtitle={<Translate id="oneai.support.subtitle">Our experts are here to help you succeed.</Translate>} />
-          </div>
+        <div className="pt-20 pb-20">
+          <ContactUs subtitle={<Translate id="oneai.support.subtitle">Our experts are here to help you succeed.</Translate>} />
         </div>
       </main>
     </Layout>
