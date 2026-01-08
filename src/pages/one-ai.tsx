@@ -798,18 +798,18 @@ function InventionSection() {
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-6 text-center">
               {/* Title */}
               <div className="flex items-center">
-                <h3 className="text-2xl md:text-3xl font-bold text-white pt-3">
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white pt-3">
                   <Translate id="oneai.examples.cta.title">
                     Ready to Start Now?
                   </Translate>
                 </h3>
               </div>
-              
+
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 justify-center flex-shrink-0">
                 <Link
                   to="/docs/one-ai/tutorials"
-                  className="inline-flex items-center px-6 py-3 bg-[#00FFD1] text-black font-bold rounded-xl hover:bg-[#00e4ba] transition-all duration-300 transform hover:scale-105 text-base"
+                  className="inline-flex items-center px-6 py-3 bg-[var(--ifm-color-primary)] text-black font-bold rounded-xl hover:opacity-90 transition-all duration-300 transform hover:scale-105 text-base"
                 >
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
@@ -818,10 +818,10 @@ function InventionSection() {
                     View Examples
                   </Translate>
                 </Link>
-                
+
                 <Link
                   to="/docs/one-ai/getting-started"
-                  className="inline-flex items-center px-6 py-3 bg-transparent border-2 border-[#00FFD1] text-[#00FFD1] font-bold rounded-xl hover:bg-[#00FFD1] hover:text-black transition-all duration-300 text-base"
+                  className="inline-flex items-center px-6 py-3 bg-transparent border-2 border-[var(--ifm-color-primary)] text-[var(--ifm-color-primary)] font-bold rounded-xl hover:bg-[var(--ifm-color-primary)] hover:text-black transition-all duration-300 text-base"
                 >
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
