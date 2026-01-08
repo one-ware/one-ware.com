@@ -1869,5 +1869,35 @@
   },
   "homehero.title": {
     "message": "So funktioniert's"
+  },
+  "orbitindustries.title": {
+    "message": "Explore Our Benefits"
+  },
+  "orbitindustries.subtitle": {
+    "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  "orbitindustries.anyHardware.label": {
+    "message": "Jede Hardware"
+  },
+  "orbitindustries.anyHardware.description": {
+    "message": "KI für jede Hardware, egal wie wenig Ressourcen. Von Mikrocontrollern bis FPGAs - ONE AI optimiert für deine exakten Anforderungen."
+  },
+  "orbitindustries.anyRequirements.label": {
+    "message": "Jede Anforderung"
+  },
+  "orbitindustries.anyRequirements.description": {
+    "message": "KI egal wie schnell sie sein muss. Entwickelt für die anspruchsvollsten Echtzeitanwendungen mit garantierter Performance."
+  },
+  "orbitindustries.anyApplication.label": {
+    "message": "Jede Anwendung"
+  },
+  "orbitindustries.anyApplication.description": {
+    "message": "Egal wie komplex die Anwendung ist oder wie untypisch die Daten - ONE AI erstellt maßgeschneiderte neuronale Netze für deinen spezifischen Anwendungsfall."
+  },
+  "orbitindustries.resultsInMinutes.label": {
+    "message": "Ergebnisse in Minuten"
+  },
+  "orbitindustries.resultsInMinutes.description": {
+    "message": "Kann von jedem Entwickler bedient werden. Erhalte produktionsreife KI-Modelle in Minuten statt Monaten - keine ML-Expertise erforderlich."
   }
 }

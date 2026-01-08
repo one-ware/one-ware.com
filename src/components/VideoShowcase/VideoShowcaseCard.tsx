@@ -206,7 +206,6 @@ export default function VideoShowcaseCard({
                 className="p-1.5 sm:p-2 text-center transition-all duration-300 flex flex-col justify-center h-full"
                 style={{
                   background: isDarkMode ? "rgba(0, 0, 0, 0.3)" : "rgba(0, 0, 0, 0.05)",
-                  border: isDarkMode ? "1px solid rgba(255, 255, 255, 0.08)" : "1px solid rgba(0, 0, 0, 0.08)",
                 }}
               >
                 <div
@@ -224,7 +223,6 @@ export default function VideoShowcaseCard({
                 className="p-1.5 sm:p-2 text-center transition-all duration-300 flex flex-col justify-center h-full"
                 style={{
                   background: isDarkMode ? "rgba(0, 0, 0, 0.3)" : "rgba(0, 0, 0, 0.05)",
-                  border: isDarkMode ? "1px solid rgba(255, 255, 255, 0.08)" : "1px solid rgba(0, 0, 0, 0.08)",
                 }}
               >
                 <div className={`text-sm sm:text-base lg:text-lg font-bold whitespace-nowrap ${complexityColor[metrics.center.value]}`}>
@@ -239,7 +237,6 @@ export default function VideoShowcaseCard({
                 className="p-1.5 sm:p-2 text-center transition-all duration-300 flex flex-col justify-center h-full"
                 style={{
                   background: isDarkMode ? "rgba(0, 0, 0, 0.3)" : "rgba(0, 0, 0, 0.05)",
-                  border: isDarkMode ? "1px solid rgba(255, 255, 255, 0.08)" : "1px solid rgba(0, 0, 0, 0.08)",
                 }}
               >
                 <div
