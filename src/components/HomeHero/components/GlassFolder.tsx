@@ -1,4 +1,5 @@
 import React from 'react';
+import { useColorMode } from '@docusaurus/theme-common';
 
 interface GlassFolderProps {
   children?: React.ReactNode;
@@ -25,6 +26,13 @@ export default function GlassFolder({
   hoverEffect = true,
   animStyle,
 }: GlassFolderProps) {
+  const { colorMode } = useColorMode();
+  const isDarkMode = colorMode === 'dark';
+
+  const folderBg = isDarkMode ? 'rgba(20, 20, 20, 0.6)' : 'rgba(15, 15, 15, 0.75)';
+  const labelBg = isDarkMode ? 'rgba(0, 0, 0, 0.4)' : 'rgba(0, 0, 0, 0.6)';
+  const labelBorder = isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(255, 255, 255, 0.15)';
+
   return (
     <div
       className={`relative ${className}`}
@@ -38,7 +46,7 @@ export default function GlassFolder({
       <div
         className={`relative w-full h-full ${hoverEffect ? 'group hover:scale-105' : ''} transition-transform duration-300`}
         style={{
-          background: 'rgba(20, 20, 20, 0.6)',
+          background: folderBg,
           backdropFilter: 'blur(5px)',
           WebkitBackdropFilter: 'blur(5px)',
           border: `1px solid ${borderColor}`,
@@ -54,7 +62,7 @@ export default function GlassFolder({
             left: '0',
             width: '40%',
             height: '14px',
-            background: 'rgba(20, 20, 20, 0.6)',
+            background: folderBg,
             border: `1px solid ${borderColor}`,
             borderBottom: 'none',
             backdropFilter: 'blur(5px)',
@@ -86,11 +94,11 @@ export default function GlassFolder({
               transform: 'translateX(-50%)',
               fontSize: 'clamp(10px, 1.8vw, 14px)',
               fontFamily: 'monospace',
-              color: 'rgba(255, 255, 255, 0.8)',
-              background: 'rgba(0, 0, 0, 0.4)',
+              color: 'rgba(255, 255, 255, 0.9)',
+              background: labelBg,
               padding: '4px 12px',
               borderRadius: '9999px',
-              border: '1px solid rgba(255, 255, 255, 0.1)',
+              border: `1px solid ${labelBorder}`,
               whiteSpace: 'nowrap',
               boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)',
             }}

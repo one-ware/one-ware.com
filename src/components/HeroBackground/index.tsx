@@ -61,9 +61,9 @@ export default function HeroBackground({
             )
           `,
           opacity: enableParallax
-            ? Math.max((isDarkMode ? 0.15 : 0.25) - scrollY * 0.0003, 0)
+            ? Math.max((isDarkMode ? 0.15 : 0.25) - scrollY * 0.00006, 0)
             : (isDarkMode ? 0.15 : 0.25),
-          transform: enableParallax ? `translateY(${scrollY * 0.2}px)` : "none",
+          transform: enableParallax ? `translateY(${scrollY * 0.04}px)` : "none",
           willChange: enableParallax ? "transform, opacity" : "auto",
           zIndex: 0,
         }}
@@ -99,7 +99,7 @@ export default function HeroBackground({
               transparent 100%
             )
           `,
-          transform: enableParallax ? `scale(${1 + scrollY * 0.001}) rotate(${scrollY * 0.02}deg)` : "none",
+          transform: enableParallax ? `scale(${1 + scrollY * 0.0002}) rotate(${scrollY * 0.004}deg)` : "none",
           willChange: enableParallax ? "transform" : "auto",
           zIndex: 1,
         }}
