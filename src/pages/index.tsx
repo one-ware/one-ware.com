@@ -7,6 +7,7 @@ import "aos/dist/aos.css";
 import Typewriter from "typewriter-effect";
 import Translate, { translate } from "@docusaurus/Translate";
 import Marquee from "react-fast-marquee";
+import { useColorMode } from "@docusaurus/theme-common";
 
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import initWebsiteEffects from "../components/startEffects";
@@ -15,6 +16,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import Head from "@docusaurus/Head";
 import HomeHero from "@site/src/components/HomeHero";
 import VideoShowcase from "@site/src/components/VideoShowcase";
+import OrbitIndustries from "@site/src/components/OrbitIndustries";
 
 function IndustryExamplesSection() {
   const items = [
@@ -150,15 +152,18 @@ function IndustryExamplesSection() {
 }
 
 function TestimonialsSection() {
+  const { colorMode } = useColorMode();
+  const isDarkMode = colorMode === "dark";
+
   return (
     <div className="px-4 md:px-8 lg:px-12 max-w-screen-2xl mx-auto">
-      <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-200 mb-12">
+      <h2 className={`text-2xl md:text-3xl font-bold text-center mb-12 ${isDarkMode ? "text-gray-200" : "text-gray-800"}`}>
         <Translate id="testimonials.title">What Others Say About Us</Translate>
       </h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Testimonial 1 */}
-        <div className="bg-gray-300 hover:bg-gray-400 bg-opacity-95 p-6 rounded-lg shadow-xl relative min-h-[280px] transition-colors duration-300 cursor-pointer">
+        <div className="bg-gray-300 hover:bg-gray-400 bg-opacity-95 p-6 shadow-xl relative min-h-[280px] transition-colors duration-300 cursor-pointer">
           <a
             href="https://go.altera.com/l/1090322/2025-04-18/2vvzbn"
             target="_blank"
@@ -201,7 +206,7 @@ function TestimonialsSection() {
         </div>
 
         {/* Testimonial 2 */}
-        <div className="bg-gray-300 hover:bg-gray-400 bg-opacity-95 p-6 rounded-lg shadow-xl relative min-h-[280px] transition-colors duration-300 cursor-pointer">
+        <div className="bg-gray-300 hover:bg-gray-400 bg-opacity-95 p-6 shadow-xl relative min-h-[280px] transition-colors duration-300 cursor-pointer">
           <a
             href="https://hdo-gmbh.com/"
             target="_blank"
@@ -242,7 +247,7 @@ function TestimonialsSection() {
         </div>
 
         {/* Testimonial 3 */}
-        <div className="bg-gray-300 hover:bg-gray-400 bg-opacity-95 p-6 rounded-lg shadow-xl relative min-h-[280px] transition-colors duration-300 cursor-pointer">
+        <div className="bg-gray-300 hover:bg-gray-400 bg-opacity-95 p-6 shadow-xl relative min-h-[280px] transition-colors duration-300 cursor-pointer">
           <a
             href="https://www.cuspcapital.com/"
             target="_blank"
@@ -341,25 +346,20 @@ export default function Home() {
 
       <HomeHero />
       <main className="overflow-x-hidden alternative-background ">
-        <div className="dropshadowbottom">
-          <div className="dropshadowtop diagclipbottom">
-            <div className="default-background pb-12">
-              <VideoShowcase />
-              <IndustryExamplesSection />
-              
-            </div>
+        <div className="default-background pb-12">
+          <div id="video">
+            <VideoShowcase />
           </div>
+          <IndustryExamplesSection />
+          <OrbitIndustries />
         </div>
 
         <div className="">
           <HomepageFeatures />
         </div>
-        <div className="dropshadowbottom">
-          <div className="dropshadowtop diagclipbottom">
-            <div className="default-background diagcliptop pt-20 pb-32">
-              <TestimonialsSection />
-            </div>
-          </div>
+
+        <div className="default-background pt-20 pb-32">
+          <TestimonialsSection />
         </div>
 
         <div className="pt-20 pb-20 ">

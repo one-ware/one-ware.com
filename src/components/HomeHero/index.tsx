@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef, createContext, useContext } from "react";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
-import BackgroundGridSimple from "./BackgroundGridSimple";
+import HeroBackground from "@site/src/components/HeroBackground";
 import { FolderWithApple, DragPreview } from "./FolderWithApple";
 import SoftwareWindow from "./SoftwareWindow";
 import GhostDragAnimation from "./GhostDragAnimation";
@@ -198,14 +198,13 @@ export default function HomeHero() {
 
   return (
     <PerformanceContext.Provider value={performanceValue}>
-    <section
-      className="relative overflow-hidden min-h-screen"
+    <HeroBackground
+      className="min-h-screen"
       style={{
         marginTop: "calc(var(--ifm-navbar-height) * -1)",
-        background: "#050505",
+        paddingTop: "var(--ifm-navbar-height)",
       }}
     >
-      <BackgroundGridSimple />
 
       {isDragging && <DragPreview x={dragPos.x} y={dragPos.y} />}
 
@@ -218,20 +217,19 @@ export default function HomeHero() {
 
       <div
         className="relative z-0 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 lg:px-16 min-h-screen"
-        style={{ paddingTop: "calc(var(--ifm-navbar-height) + 2rem)" }}
       >
         <div className="w-full max-w-[98%] sm:max-w-[95%] flex flex-col gap-10 sm:gap-12 2xl:gap-14">
             <div className="flex flex-col 2xl:flex-row items-center gap-2 sm:gap-4 2xl:gap-12">
             <div className="w-full 2xl:w-[40%] flex flex-col justify-center space-y-4 sm:space-y-6 2xl:space-y-8 text-center 2xl:text-left py-2 sm:py-4 2xl:py-0">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
                 <span
-                  className="text-[var(--ifm-color-primary)] block"
+                  className="dark:text-white text-gray-800 block"
                   style={{
                     animation: "fadeInUp 0.8s ease-out forwards",
                     opacity: 0,
                   }}
                 >
-                  <Translate id="homehero.title1">Create your</Translate>
+                  <Translate id="homehero.title1">Create Your</Translate>
                 </span>
                 <span
                   className="text-[var(--ifm-color-primary)] block"
@@ -245,7 +243,7 @@ export default function HomeHero() {
                 </span>
               </h1>
               <p
-                className="text-white text-xl md:text-2xl leading-relaxed"
+                className="dark:text-white text-gray-800 text-xl md:text-2xl leading-relaxed"
                 style={{
                   animation: "fadeInUp 0.8s ease-out forwards",
                   animationDelay: "0.2s",
@@ -369,7 +367,7 @@ export default function HomeHero() {
           }
         }
       `}</style>
-    </section>
+    </HeroBackground>
     </PerformanceContext.Provider>
   );
 }
