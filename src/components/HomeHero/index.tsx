@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef, createContext, useContext } from "react";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
-import BackgroundGridSimple from "./BackgroundGridSimple";
+import HeroBackground from "@site/src/components/HeroBackground";
 import { FolderWithApple, DragPreview } from "./FolderWithApple";
 import SoftwareWindow from "./SoftwareWindow";
 import GhostDragAnimation from "./GhostDragAnimation";
@@ -198,16 +198,13 @@ export default function HomeHero() {
 
   return (
     <PerformanceContext.Provider value={performanceValue}>
-    <section
-      id="demo"
-      className="relative overflow-hidden min-h-screen"
+    <HeroBackground
+      className="min-h-screen"
       style={{
-        background: "#050505",
         marginTop: "calc(var(--ifm-navbar-height) * -1)",
         paddingTop: "var(--ifm-navbar-height)",
       }}
     >
-      <BackgroundGridSimple />
 
       {isDragging && <DragPreview x={dragPos.x} y={dragPos.y} />}
 
@@ -226,17 +223,27 @@ export default function HomeHero() {
             <div className="w-full 2xl:w-[40%] flex flex-col justify-center space-y-4 sm:space-y-6 2xl:space-y-8 text-center 2xl:text-left py-2 sm:py-4 2xl:py-0">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
                 <span
-                  className="text-[var(--ifm-color-primary)] block"
+                  className="dark:text-white text-gray-800 block"
                   style={{
                     animation: "fadeInUp 0.8s ease-out forwards",
                     opacity: 0,
                   }}
                 >
-                  <Translate id="homehero.title">See How It Works</Translate>
+                  <Translate id="homehero.title1">Create Your</Translate>
+                </span>
+                <span
+                  className="text-[var(--ifm-color-primary)] block"
+                  style={{
+                    animation: "fadeInUp 0.8s ease-out forwards",
+                    animationDelay: "0.1s",
+                    opacity: 0,
+                  }}
+                >
+                  <Translate id="homehero.title2">Custom AI</Translate>
                 </span>
               </h1>
               <p
-                className="text-white text-xl md:text-2xl leading-relaxed"
+                className="dark:text-white text-gray-800 text-xl md:text-2xl leading-relaxed"
                 style={{
                   animation: "fadeInUp 0.8s ease-out forwards",
                   animationDelay: "0.2s",
@@ -360,7 +367,7 @@ export default function HomeHero() {
           }
         }
       `}</style>
-    </section>
+    </HeroBackground>
     </PerformanceContext.Provider>
   );
 }

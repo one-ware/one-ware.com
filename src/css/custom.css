@@ -647,12 +647,17 @@ html[data-theme='light'] .navbar .getstartedbutton:hover {
 }
 
 [data-theme='light'][data-isindex="1"][data-scroll='0'] .navbar {
-  background: rgba(255, 255, 255, 0.95) !important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none;
 }
 
 [data-theme='light'][data-isindex="1"][data-scroll='0'] .navbar__link {
   color: #1a1a1a;
+}
+
+[data-theme='light'][data-isindex="1"][data-scroll='0'] .navbar__item.dropdown > .navbar__link::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a1a1a' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
 }
 
 [data-theme='light'][data-isindex="1"][data-scroll='0'] .loginbutton {
