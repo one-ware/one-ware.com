@@ -16,78 +16,75 @@ interface IndustryItem {
 
 const industries: IndustryItem[] = [
   {
-    id: "benefit1",
-    labelId: "orbitindustries.benefit1.label",
-    label: "Lorem Title",
+    id: "anyHardware",
+    labelId: "orbitindustries.anyHardware.label",
+    label: "Any Hardware",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+        <rect x="4" y="4" width="16" height="16" rx="2" />
+        <rect x="9" y="9" width="6" height="6" />
+        <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3" />
       </svg>
     ),
-    descriptionId: "orbitindustries.benefit1.description",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.",
-    angle: 0,
+    descriptionId: "orbitindustries.anyHardware.description",
+    description: "AI for any hardware, no matter how few resources. From microcontrollers to FPGAs - ONE AI optimizes for your exact constraints.",
+    angle: 315,
   },
   {
-    id: "benefit2",
-    labelId: "orbitindustries.benefit2.label",
-    label: "Lorem Title",
+    id: "anyRequirements",
+    labelId: "orbitindustries.anyRequirements.label",
+    label: "Any Requirements",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M5 17h14v-5H5v5z" />
-        <path d="M2 9h20l-2-4H4L2 9z" />
-        <circle cx="7" cy="17" r="2" />
-        <circle cx="17" cy="17" r="2" />
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
       </svg>
     ),
-    descriptionId: "orbitindustries.benefit2.description",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.",
-    angle: 72,
+    descriptionId: "orbitindustries.anyRequirements.description",
+    description: "AI no matter how fast it needs to be. Built for the most demanding real-time applications with guaranteed performance.",
+    angle: 45,
   },
   {
-    id: "benefit3",
-    labelId: "orbitindustries.benefit3.label",
-    label: "Lorem Title",
+    id: "anyApplication",
+    labelId: "orbitindustries.anyApplication.label",
+    label: "Any Application",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="3" />
-        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+        <path d="M12 2L2 7l10 5 10-5-10-5z" />
+        <path d="M2 17l10 5 10-5" />
+        <path d="M2 12l10 5 10-5" />
       </svg>
     ),
-    descriptionId: "orbitindustries.benefit3.description",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.",
-    angle: 144,
+    descriptionId: "orbitindustries.anyApplication.description",
+    description: "No matter how complex the application or how unusual the data - ONE AI creates custom neural networks tailored to your specific use case.",
+    angle: 225,
   },
   {
-    id: "benefit4",
-    labelId: "orbitindustries.benefit4.label",
-    label: "Lorem Title",
+    id: "resultsInMinutes",
+    labelId: "orbitindustries.resultsInMinutes.label",
+    label: "Results In Minutes",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+        <circle cx="12" cy="12" r="10" />
+        <polyline points="12 6 12 12 16 14" />
       </svg>
     ),
-    descriptionId: "orbitindustries.benefit4.description",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.",
-    angle: 216,
-  },
-  {
-    id: "benefit5",
-    labelId: "orbitindustries.benefit5.label",
-    label: "Lorem Title",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M7 20h10" />
-        <path d="M12 20v-8" />
-        <path d="M12 12c-3.5 0-6-2.5-6-6 3.5 0 6 2.5 6 6z" />
-        <path d="M12 12c3.5 0 6-2.5 6-6-3.5 0-6 2.5-6 6z" />
-      </svg>
-    ),
-    descriptionId: "orbitindustries.benefit5.description",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.",
-    angle: 288,
+    descriptionId: "orbitindustries.resultsInMinutes.description",
+    description: "Can be operated by any developer. Get production-ready AI models in minutes, not months - no ML expertise required.",
+    angle: 135,
   },
 ];
+
+const DESKTOP_PAIRS = [
+  [0, 1],
+  [2, 3],
+];
+
+const MOBILE_PAIRS = [
+  [0, 2],
+  [1, 3],
+];
+
+const AUTO_ROTATE_INTERVAL = 5000;
 
 const CONFIG = {
   orbitRadii: [140, 160, 180],
@@ -109,12 +106,20 @@ function calculatePositions(angle: number) {
   const iconX = CONFIG.centerX + CONFIG.iconRadius * cos;
   const iconY = CONFIG.centerY + CONFIG.iconRadius * sin;
 
-  const lineStartX = iconX + CONFIG.iconSize / 2 + 2;
+  const isLeftSide = iconX < CONFIG.centerX;
+
+  const lineStartX = isLeftSide
+    ? iconX - CONFIG.iconSize / 2 - 2
+    : iconX + CONFIG.iconSize / 2 + 2;
   const lineStartY = iconY;
-  const lineEndX = iconX + CONFIG.iconSize / 2 + CONFIG.cardOffset;
+  const lineEndX = isLeftSide
+    ? iconX - CONFIG.iconSize / 2 - CONFIG.cardOffset
+    : iconX + CONFIG.iconSize / 2 + CONFIG.cardOffset;
   const lineEndY = iconY;
 
-  const cardX = iconX + CONFIG.iconSize / 2 + CONFIG.cardOffset + CONFIG.cardWidth / 2;
+  const cardX = isLeftSide
+    ? iconX - CONFIG.iconSize / 2 - CONFIG.cardOffset - CONFIG.cardWidth / 2
+    : iconX + CONFIG.iconSize / 2 + CONFIG.cardOffset + CONFIG.cardWidth / 2;
   const cardY = iconY;
 
   return { iconX, iconY, cardX, cardY, lineStartX, lineStartY, lineEndX, lineEndY };
@@ -125,11 +130,11 @@ const MOBILE_BREAKPOINT = 900;
 export default function OrbitIndustries() {
   const { colorMode } = useColorMode();
   const isDarkMode = colorMode === "dark";
-  const [hoveredId, setHoveredId] = useState<string | null>(null);
-  const [selectedId, setSelectedId] = useState<string | null>(null);
-  const [displayedIndustry, setDisplayedIndustry] = useState<IndustryItem | null>(null);
+  const [activePair, setActivePair] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     if (!ExecutionEnvironment.canUseDOM) return;
@@ -143,27 +148,41 @@ export default function OrbitIndustries() {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  const handleIconClick = (id: string) => {
-    setSelectedId(selectedId === id ? null : id);
-  };
+  const pairs = isMobile ? MOBILE_PAIRS : DESKTOP_PAIRS;
 
   useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
-        setSelectedId(null);
+    if (isPaused) {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+      return;
+    }
+
+    intervalRef.current = setInterval(() => {
+      setActivePair((prev) => (prev + 1) % pairs.length);
+    }, AUTO_ROTATE_INTERVAL);
+
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
       }
     };
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
-  }, []);
+  }, [isPaused, pairs.length]);
 
-  const selectedIndustry = industries.find((i) => i.id === selectedId);
-
-  useEffect(() => {
-    if (selectedIndustry) {
-      setDisplayedIndustry(selectedIndustry);
+  const handleIconHover = (index: number) => {
+    const pairIndex = pairs.findIndex((pair) => pair.includes(index));
+    if (pairIndex !== -1) {
+      setActivePair(pairIndex);
+      setIsPaused(true);
     }
-  }, [selectedIndustry]);
+  };
+
+  const handleContainerMouseLeave = () => {
+    setIsPaused(false);
+  };
+
+  const currentPair = pairs[activePair];
 
   return (
     <div className="py-12 px-4">
@@ -179,18 +198,13 @@ export default function OrbitIndustries() {
           </p>
         </div>
 
-        <div className="flex flex-col items-center" ref={containerRef}>
+        <div
+          className="flex flex-col items-center"
+          ref={containerRef}
+          onMouseLeave={handleContainerMouseLeave}
+        >
           {isMobile && (
-            <div
-              className="w-full max-w-sm overflow-hidden"
-              style={{
-                maxHeight: selectedIndustry ? 300 : 0,
-                marginBottom: selectedIndustry ? 24 : 0,
-                opacity: selectedIndustry ? 1 : 0,
-                transform: selectedIndustry ? "translateY(0)" : "translateY(-20px)",
-                transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-              }}
-            >
+            <div className="w-full max-w-sm mb-6">
               <div
                 className="p-4"
                 style={{
@@ -203,51 +217,33 @@ export default function OrbitIndustries() {
                     : "0 20px 40px rgba(0, 0, 0, 0.12)",
                 }}
               >
-                {displayedIndustry && (
-                  <>
-                    <div className="flex items-center gap-3 mb-3">
-                      <div
-                        className="flex items-center justify-center shrink-0"
-                        style={{
-                          width: 36,
-                          height: 36,
-                          background: "var(--ifm-color-primary)",
-                          color: "#000",
-                        }}
-                      >
-                        <div style={{ width: 18, height: 18 }}>
-                          {displayedIndustry.icon}
-                        </div>
-                      </div>
-                      <span
-                        className="font-semibold"
-                        style={{ color: isDarkMode ? "#fff" : "#000", fontSize: "16px" }}
-                      >
-                        <Translate id={displayedIndustry.labelId}>{displayedIndustry.label}</Translate>
-                      </span>
+                <div className="flex items-center gap-3 mb-3">
+                  <div
+                    className="flex items-center justify-center shrink-0"
+                    style={{
+                      width: 36,
+                      height: 36,
+                      background: "var(--ifm-color-primary)",
+                      color: "#000",
+                    }}
+                  >
+                    <div style={{ width: 18, height: 18 }}>
+                      {industries[currentPair[0]].icon}
                     </div>
-                    <p
-                      className="text-sm leading-relaxed mb-4"
-                      style={{ color: isDarkMode ? "#999" : "#666" }}
-                    >
-                      <Translate id={displayedIndustry.descriptionId}>{displayedIndustry.description}</Translate>
-                    </p>
-                    <button
-                      className="w-full py-2 px-3 font-medium text-sm"
-                      style={{
-                        background: "var(--ifm-color-primary)",
-                        color: "#000",
-                        border: "none",
-                        cursor: "pointer",
-                        transition: "opacity 0.2s",
-                      }}
-                      onMouseEnter={(e) => e.currentTarget.style.opacity = "0.85"}
-                      onMouseLeave={(e) => e.currentTarget.style.opacity = "1"}
-                    >
-                      <Translate id="orbitindustries.button">Learn More</Translate>
-                    </button>
-                  </>
-                )}
+                  </div>
+                  <span
+                    className="font-semibold"
+                    style={{ color: isDarkMode ? "#fff" : "#000", fontSize: "16px" }}
+                  >
+                    <Translate id={industries[currentPair[0]].labelId}>{industries[currentPair[0]].label}</Translate>
+                  </span>
+                </div>
+                <p
+                  className="text-sm leading-relaxed"
+                  style={{ color: isDarkMode ? "#999" : "#666" }}
+                >
+                  <Translate id={industries[currentPair[0]].descriptionId}>{industries[currentPair[0]].description}</Translate>
+                </p>
               </div>
             </div>
           )}
@@ -288,187 +284,199 @@ export default function OrbitIndustries() {
                 />
               ))}
 
-            {industries.map((industry) => {
-              const positions = calculatePositions(industry.angle);
-              const { iconX, iconY, lineStartX, lineStartY, lineEndX, lineEndY } = positions;
-              const isHovered = hoveredId === industry.id;
-              const isSelected = selectedId === industry.id;
+              {industries.map((industry, index) => {
+                const positions = calculatePositions(industry.angle);
+                const { iconX, iconY, lineStartX, lineStartY, lineEndX, lineEndY } = positions;
+                const isActive = currentPair.includes(index);
 
-              return (
-                <g key={industry.id}>
-                  {!isMobile && (
-                    <line
-                      x1={lineStartX}
-                      y1={lineStartY}
-                      x2={lineEndX}
-                      y2={lineEndY}
-                      stroke="var(--ifm-color-primary)"
-                      strokeWidth="1.5"
-                      style={{
-                        opacity: isSelected ? 1 : 0,
-                        transition: "opacity 0.3s ease",
-                        pointerEvents: "none",
-                      }}
-                    />
-                  )}
-
-                  <g
-                    style={{ cursor: "pointer" }}
-                    onMouseEnter={() => !isMobile && setHoveredId(industry.id)}
-                    onMouseLeave={() => !isMobile && setHoveredId(null)}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleIconClick(industry.id);
-                    }}
-                  >
-                    <circle
-                      cx={iconX}
-                      cy={iconY}
-                      r={CONFIG.iconSize / 2}
-                      fill={(!isMobile && isHovered) || isSelected ? "var(--ifm-color-primary)" : isDarkMode ? "#2a2a2a" : "#e0e0e0"}
-                      style={{
-                        transition: "all 0.3s ease",
-                        filter: (!isMobile && isHovered) || isSelected
-                          ? isDarkMode
-                            ? "drop-shadow(0 10px 25px rgba(0, 255, 209, 0.3))"
-                            : "drop-shadow(0 10px 25px rgba(0, 168, 138, 0.3))"
-                          : isDarkMode
-                            ? "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4))"
-                            : "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1))",
-                        transform: (!isMobile && isHovered) || isSelected ? "scale(1.05)" : "scale(1)",
-                        transformOrigin: `${iconX}px ${iconY}px`,
-                      }}
-                    />
-                    <foreignObject
-                      x={iconX - CONFIG.iconSize / 2}
-                      y={iconY - CONFIG.iconSize / 2}
-                      width={CONFIG.iconSize}
-                      height={CONFIG.iconSize}
-                      style={{ pointerEvents: "none" }}
-                    >
-                      <div
-                        className="flex items-center justify-center"
+                return (
+                  <g key={industry.id}>
+                    {!isMobile && (
+                      <line
+                        x1={lineStartX}
+                        y1={lineStartY}
+                        x2={lineEndX}
+                        y2={lineEndY}
+                        stroke="var(--ifm-color-primary)"
+                        strokeWidth="1.5"
                         style={{
-                          width: CONFIG.iconSize,
-                          height: CONFIG.iconSize,
+                          opacity: isActive ? 1 : 0,
+                          transition: "opacity 0.3s ease",
+                          pointerEvents: "none",
                         }}
+                      />
+                    )}
+
+                    <g
+                      style={{ cursor: "pointer" }}
+                      onMouseEnter={() => handleIconHover(index)}
+                      onClick={() => handleIconHover(index)}
+                    >
+                      <circle
+                        cx={iconX}
+                        cy={iconY}
+                        r={CONFIG.iconSize / 2}
+                        fill={isActive ? "var(--ifm-color-primary)" : isDarkMode ? "#2a2a2a" : "#e0e0e0"}
+                        style={{
+                          transition: "all 0.3s ease",
+                          filter: isActive
+                            ? isDarkMode
+                              ? "drop-shadow(0 10px 25px rgba(0, 255, 209, 0.3))"
+                              : "drop-shadow(0 10px 25px rgba(0, 168, 138, 0.3))"
+                            : isDarkMode
+                              ? "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4))"
+                              : "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1))",
+                          transform: isActive ? "scale(1.05)" : "scale(1)",
+                          transformOrigin: `${iconX}px ${iconY}px`,
+                        }}
+                      />
+                      <foreignObject
+                        x={iconX - CONFIG.iconSize / 2}
+                        y={iconY - CONFIG.iconSize / 2}
+                        width={CONFIG.iconSize}
+                        height={CONFIG.iconSize}
+                        style={{ pointerEvents: "none" }}
                       >
-                        {!isMobile && isHovered && !isSelected ? (
-                          <div
-                            style={{
-                              fontSize: "14px",
-                              fontWeight: 400,
-                              color: "#000",
-                              textAlign: "center",
-                              lineHeight: 1.1,
-                            }}
-                          >
-                            Click<br />Me
-                          </div>
-                        ) : (
+                        <div
+                          className="flex items-center justify-center"
+                          style={{
+                            width: CONFIG.iconSize,
+                            height: CONFIG.iconSize,
+                          }}
+                        >
                           <div
                             style={{
                               width: 28,
                               height: 28,
-                              color: isSelected ? "#000" : isDarkMode ? "#555" : "#666",
+                              color: isActive ? "#000" : isDarkMode ? "#555" : "#666",
                               transition: "color 0.3s ease",
                             }}
                           >
                             {industry.icon}
                           </div>
-                        )}
-                      </div>
-                    </foreignObject>
+                        </div>
+                      </foreignObject>
+                    </g>
                   </g>
-                </g>
-              );
-            })}
+                );
+              })}
 
-            {!isMobile && industries.map((industry) => {
-              const positions = calculatePositions(industry.angle);
-              const { cardX, cardY } = positions;
-              const isSelected = selectedId === industry.id;
+              {!isMobile && industries.map((industry, index) => {
+                const positions = calculatePositions(industry.angle);
+                const { cardX, cardY } = positions;
+                const isActive = currentPair.includes(index);
 
-              return (
-                <foreignObject
-                  key={`card-${industry.id}`}
-                  x={cardX - CONFIG.cardWidth / 2}
-                  y={cardY - 80}
-                  width={CONFIG.cardWidth}
-                  height={170}
-                  style={{
-                    overflow: "visible",
-                    pointerEvents: isSelected ? "auto" : "none",
-                    opacity: isSelected ? 1 : 0,
-                    transition: "opacity 0.3s ease",
-                  }}
-                >
-                  <div
+                return (
+                  <foreignObject
+                    key={`card-${industry.id}`}
+                    x={cardX - CONFIG.cardWidth / 2}
+                    y={cardY - 60}
+                    width={CONFIG.cardWidth}
+                    height={130}
                     style={{
-                      transform: isSelected ? "translateY(0) scale(1)" : "translateY(8px) scale(0.96)",
-                      transition: "transform 0.3s ease",
+                      overflow: "visible",
+                      pointerEvents: isActive ? "auto" : "none",
+                      opacity: isActive ? 1 : 0,
+                      transition: "opacity 0.3s ease",
                     }}
                   >
                     <div
-                      className="p-4"
                       style={{
-                        background: isDarkMode
-                          ? "rgba(30, 30, 30, 0.98)"
-                          : "rgba(255, 255, 255, 0.98)",
-                        border: `1px solid ${isDarkMode ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)"}`,
-                        boxShadow: isDarkMode
-                          ? "0 20px 40px rgba(0, 0, 0, 0.5)"
-                          : "0 20px 40px rgba(0, 0, 0, 0.12)",
+                        transform: isActive ? "translateY(0) scale(1)" : "translateY(8px) scale(0.96)",
+                        transition: "transform 0.3s ease",
                       }}
                     >
-                      <div className="flex items-center gap-3 mb-3">
-                        <div
-                          className="flex items-center justify-center shrink-0"
-                          style={{
-                            width: 36,
-                            height: 36,
-                            background: "var(--ifm-color-primary)",
-                            color: "#000",
-                          }}
-                        >
-                          <div style={{ width: 18, height: 18 }}>
-                            {industry.icon}
-                          </div>
-                        </div>
-                        <span
-                          className="font-semibold"
-                          style={{ color: isDarkMode ? "#fff" : "#000", fontSize: "16px" }}
-                        >
-                          <Translate id={industry.labelId}>{industry.label}</Translate>
-                        </span>
-                      </div>
-                      <p
-                        className="text-sm leading-relaxed mb-4"
-                        style={{ color: isDarkMode ? "#999" : "#666" }}
-                      >
-                        <Translate id={industry.descriptionId}>{industry.description}</Translate>
-                      </p>
-                      <button
-                        className="w-full py-2 px-3 font-medium text-sm"
+                      <div
+                        className="p-4"
                         style={{
-                          background: "var(--ifm-color-primary)",
-                          color: "#000",
-                          border: "none",
-                          cursor: "pointer",
-                          transition: "opacity 0.2s",
+                          background: isDarkMode
+                            ? "rgba(30, 30, 30, 0.98)"
+                            : "rgba(255, 255, 255, 0.98)",
+                          border: `1px solid ${isDarkMode ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)"}`,
+                          boxShadow: isDarkMode
+                            ? "0 20px 40px rgba(0, 0, 0, 0.5)"
+                            : "0 20px 40px rgba(0, 0, 0, 0.12)",
                         }}
-                        onMouseEnter={(e) => e.currentTarget.style.opacity = "0.85"}
-                        onMouseLeave={(e) => e.currentTarget.style.opacity = "1"}
                       >
-                        <Translate id="orbitindustries.button">Learn More</Translate>
-                      </button>
+                        <div className="flex items-center gap-3 mb-3">
+                          <div
+                            className="flex items-center justify-center shrink-0"
+                            style={{
+                              width: 36,
+                              height: 36,
+                              background: "var(--ifm-color-primary)",
+                              color: "#000",
+                            }}
+                          >
+                            <div style={{ width: 18, height: 18 }}>
+                              {industry.icon}
+                            </div>
+                          </div>
+                          <span
+                            className="font-semibold"
+                            style={{ color: isDarkMode ? "#fff" : "#000", fontSize: "16px" }}
+                          >
+                            <Translate id={industry.labelId}>{industry.label}</Translate>
+                          </span>
+                        </div>
+                        <p
+                          className="text-sm leading-relaxed"
+                          style={{ color: isDarkMode ? "#999" : "#666" }}
+                        >
+                          <Translate id={industry.descriptionId}>{industry.description}</Translate>
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </foreignObject>
-              );
-            })}
+                  </foreignObject>
+                );
+              })}
             </svg>
           </div>
+
+          {isMobile && (
+            <div className="w-full max-w-sm mt-6">
+              <div
+                className="p-4"
+                style={{
+                  background: isDarkMode
+                    ? "rgba(30, 30, 30, 0.98)"
+                    : "rgba(255, 255, 255, 0.98)",
+                  border: `1px solid ${isDarkMode ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)"}`,
+                  boxShadow: isDarkMode
+                    ? "0 20px 40px rgba(0, 0, 0, 0.5)"
+                    : "0 20px 40px rgba(0, 0, 0, 0.12)",
+                }}
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <div
+                    className="flex items-center justify-center shrink-0"
+                    style={{
+                      width: 36,
+                      height: 36,
+                      background: "var(--ifm-color-primary)",
+                      color: "#000",
+                    }}
+                  >
+                    <div style={{ width: 18, height: 18 }}>
+                      {industries[currentPair[1]].icon}
+                    </div>
+                  </div>
+                  <span
+                    className="font-semibold"
+                    style={{ color: isDarkMode ? "#fff" : "#000", fontSize: "16px" }}
+                  >
+                    <Translate id={industries[currentPair[1]].labelId}>{industries[currentPair[1]].label}</Translate>
+                  </span>
+                </div>
+                <p
+                  className="text-sm leading-relaxed"
+                  style={{ color: isDarkMode ? "#999" : "#666" }}
+                >
+                  <Translate id={industries[currentPair[1]].descriptionId}>{industries[currentPair[1]].description}</Translate>
+                </p>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
