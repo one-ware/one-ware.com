@@ -443,7 +443,7 @@ body {
   border-radius: 0;
   background: rgba(30, 30, 30, 0.95);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: none;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
@@ -601,7 +601,7 @@ button[class*="toggleButton"]:hover {
 
 [data-theme='light'] .dropdown__menu {
   background: rgba(255, 255, 255, 0.98);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: none;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
@@ -647,8 +647,8 @@ html[data-theme='light'] .navbar .getstartedbutton:hover {
 }
 
 [data-theme='light'][data-isindex="1"][data-scroll='0'] .navbar {
-  background: transparent !important;
-  box-shadow: none;
+  background: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 [data-theme='light'][data-isindex="1"][data-scroll='0'] .navbar__link {
@@ -666,7 +666,7 @@ html[data-theme='light'] .navbar .getstartedbutton:hover {
 
 [data-theme='light'][data-isindex="1"][data-scroll='0'] .dropdown__menu {
   background: rgba(255, 255, 255, 0.98);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: none;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
