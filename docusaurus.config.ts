@@ -175,30 +175,6 @@ const config: Config = {
               label: "Supported Hardware",
             },
             {
-              to: "/seminars",
-              label: "Seminars & Webinars",
-            },
-            {
-              type: "html",
-              value: '<div style="padding-top: 8px; padding-left: 7px; color: #00caa5ff; font-size: 0.8rem; font-weight: 700;">Features</div>',
-            },
-            {
-              type: "html",
-              value: '<a href="/docs/one-ai/getting-started/dataset/camera-tool" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Capture Tool</a>',
-            },
-            {
-              type: "html",
-              value: '<a href="/docs/one-ai/getting-started/filters-and-augmentations" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Filters & Augmentation</a>',
-            },
-            {
-              type: "html",
-              value: '<a href="/docs/one-ai/getting-started/export" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Export</a>',
-            },
-            {
-              type: "html",
-              value: '<hr style="margin: 0.5rem 0; border: none; border-top: 1px solid var(--ifm-color-primary);">',
-            },
-            {
               to: "/studio",
               label: "ONE WARE Studio",
               className: "dropdown__link--highlight",
@@ -257,7 +233,7 @@ const config: Config = {
               label: "Supported Hardware",
             },
             {
-              to: "/docs/one-ai/seminars",
+              to: "/seminars",
               label: "Events",
             },
             {
