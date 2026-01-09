@@ -199,9 +199,9 @@ export default function HomeHero() {
   return (
     <PerformanceContext.Provider value={performanceValue}>
     <section
+      id="demo"
       className="relative overflow-hidden min-h-screen"
       style={{
-        marginTop: "calc(var(--ifm-navbar-height) * -1)",
         background: "#050505",
       }}
     >
@@ -218,7 +218,6 @@ export default function HomeHero() {
 
       <div
         className="relative z-0 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 lg:px-16 min-h-screen"
-        style={{ paddingTop: "calc(var(--ifm-navbar-height) + 2rem)" }}
       >
         <div className="w-full max-w-[98%] sm:max-w-[95%] flex flex-col gap-10 sm:gap-12 2xl:gap-14">
             <div className="flex flex-col 2xl:flex-row items-center gap-2 sm:gap-4 2xl:gap-12">
@@ -231,17 +230,7 @@ export default function HomeHero() {
                     opacity: 0,
                   }}
                 >
-                  <Translate id="homehero.title1">Create your</Translate>
-                </span>
-                <span
-                  className="text-[var(--ifm-color-primary)] block"
-                  style={{
-                    animation: "fadeInUp 0.8s ease-out forwards",
-                    animationDelay: "0.1s",
-                    opacity: 0,
-                  }}
-                >
-                  <Translate id="homehero.title2">Custom AI</Translate>
+                  <Translate id="homehero.title">See How It Works</Translate>
                 </span>
               </h1>
               <p

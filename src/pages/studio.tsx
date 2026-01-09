@@ -229,7 +229,7 @@ function DownloadSection() {
           </p>
           <div className="grid grid-cols-2 md:flex gap-5 md:flex-wrap justify-center">
             <a href="/docs/studio/setup?current-os=windows" className="md:contents">
-              <div className="flex-col w-full md:w-48 h-32 md:h-auto p-4 md:p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm cursor-pointer md:cursor-default hover:opacity-100 transition-opacity flex justify-center items-center">
+              <div className="flex-col w-full md:w-48 h-32 md:h-auto p-4 md:p-6 border shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm cursor-pointer md:cursor-default hover:opacity-100 transition-opacity flex justify-center items-center">
                 <div className="flex flex-col items-center justify-center h-full">
                   <FaWindows size={40} className="md:w-[50px] md:h-[50px]" />
                   <h5 className="mb-1 mt-1 md:mb-2 md:mt-2 text-sm md:text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
@@ -247,7 +247,7 @@ function DownloadSection() {
             </a>
 
             <a href="/docs/studio/setup?current-os=macos" className="md:contents">
-              <div className="flex-col w-full md:w-48 h-32 md:h-auto p-4 md:p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm cursor-pointer md:cursor-default hover:opacity-100 transition-opacity flex justify-center items-center">
+              <div className="flex-col w-full md:w-48 h-32 md:h-auto p-4 md:p-6 border shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm cursor-pointer md:cursor-default hover:opacity-100 transition-opacity flex justify-center items-center">
                 <div className="flex flex-col items-center justify-center h-full">
                   <SiApple size={40} className="md:w-[50px] md:h-[50px]" />
                   <h5 className="mb-1 mt-1 md:mb-2 md:mt-2 text-sm md:text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
@@ -263,7 +263,7 @@ function DownloadSection() {
             </a>
 
             <a href="https://flathub.org/apps/com.one_ware.OneWare" target="_blank" className="md:contents">
-              <div className="flex-col w-full md:w-48 h-32 md:h-auto p-4 md:p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm cursor-pointer md:cursor-default hover:opacity-100 transition-opacity flex justify-center items-center">
+              <div className="flex-col w-full md:w-48 h-32 md:h-auto p-4 md:p-6 border shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm cursor-pointer md:cursor-default hover:opacity-100 transition-opacity flex justify-center items-center">
                 <div className="flex flex-col items-center justify-center h-full">
                   <SiFlathub size={40} className="md:w-[50px] md:h-[50px]" />
                   <h5 className="mb-1 mt-1 md:mb-2 md:mt-2 text-sm md:text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
@@ -279,7 +279,7 @@ function DownloadSection() {
             </a>
 
             <a href="https://snapcraft.io/oneware" target="_blank" className="md:contents">
-              <div className="flex-col w-full md:w-48 h-32 md:h-auto p-4 md:p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm cursor-pointer md:cursor-default hover:opacity-100 transition-opacity flex justify-center items-center">
+              <div className="flex-col w-full md:w-48 h-32 md:h-auto p-4 md:p-6 border shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm cursor-pointer md:cursor-default hover:opacity-100 transition-opacity flex justify-center items-center">
                 <div className="flex flex-col items-center justify-center h-full">
                   <SiSnapcraft size={40} className="md:w-[50px] md:h-[50px]" />
                   <h5 className="mb-1 mt-1 md:mb-2 md:mt-2 text-sm md:text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
