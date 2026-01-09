@@ -12,10 +12,18 @@ interface TopMetricsProps {
   onUserChange?: () => void;
   onBusyChange?: (busy: boolean) => void;
   onFpsChange?: (fps: number) => void;
+  onAccuracyChange?: (accuracy: number) => void;
   targetAccuracy?: number;
 }
 
-export default memo(function TopMetrics({ isActive, animateSetup = false, animatePrecision = false, isImproved = false, animateHardwareSwitch = false, retrainedPrecision = false, isInteractive = false, onUserChange, onBusyChange, onFpsChange, targetAccuracy }: TopMetricsProps) {
+export default memo(function TopMetrics({ isActive, animateSetup = false, animatePrecision = false, isImproved = false, animateHardwareSwitch = false, retrainedPrecision = false, isInteractive = false, onUserChange, onBusyChange, onFpsChange, onAccuracyChange, targetAccuracy }: TopMetricsProps) {
+  const [setupAnimationRunning, setSetupAnimationRunning] = useState(false);
+  const [hwSwitchAnimationRunning, setHwSwitchAnimationRunning] = useState(false);
+  const setupAnimationStartedRef = useRef(false);
+  const hwSwitchAnimationStartedRef = useRef(false);
+
+  const canUserInteract = !setupAnimationRunning && !hwSwitchAnimationRunning;
+
   const [displayedFps, setDisplayedFps] = useState(25);
   const [displayedAccuracy, setDisplayedAccuracy] = useState(0.0);
   const [selectedHardware, setSelectedHardware] = useState<string | null>(null);
@@ -27,8 +35,20 @@ export default memo(function TopMetrics({ isActive, animateSetup = false, animat
 
   const [isReady, setIsReady] = useState(false);
   const [isUserDraggingFps, setIsUserDraggingFps] = useState(false);
+  const [isCompact, setIsCompact] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const fpsSliderRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        setIsCompact(entry.contentRect.width < 475);
+      }
+    });
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   const setupIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const hwSwitchIntervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -44,6 +64,10 @@ export default memo(function TopMetrics({ isActive, animateSetup = false, animat
         setSelectedHardware(null);
         setDisplayedFps(25);
         setDisplayedAccuracy(0.0);
+        setSetupAnimationRunning(false);
+        setHwSwitchAnimationRunning(false);
+        setupAnimationStartedRef.current = false;
+        hwSwitchAnimationStartedRef.current = false;
     }
   }, [isActive]);
 
@@ -72,7 +96,13 @@ export default memo(function TopMetrics({ isActive, animateSetup = false, animat
       setupIntervalRef.current = null;
     }
 
-    if (animateSetup && !isInteractive) {
+    if (!animateSetup) {
+        setupAnimationStartedRef.current = false;
+    }
+
+    if (animateSetup && !setupAnimationStartedRef.current) {
+        setupAnimationStartedRef.current = true;
+        setSetupAnimationRunning(true);
         const sequence = async () => {
             setCursorTransition('all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)');
             setCursorVisible(true);
@@ -92,7 +122,8 @@ export default memo(function TopMetrics({ isActive, animateSetup = false, animat
             await new Promise(r => setTimeout(r, 200));
             const sliderStart = getTargetPos('fps-slider-track', 'left');
             const sliderWidthPercentInit = (sliderStart.width / sliderStart.contWidth) * 100;
-            const startPosX = sliderStart.x + (25 / 100) * sliderWidthPercentInit;
+            const currentFps = displayedFpsRef.current;
+            const startPosX = sliderStart.x + (currentFps / 100) * sliderWidthPercentInit;
             setCursorPos({ x: startPosX, y: sliderStart.y });
 
             await new Promise(r => setTimeout(r, 300));
@@ -104,7 +135,7 @@ export default memo(function TopMetrics({ isActive, animateSetup = false, animat
             const dragDuration = 600;
             const sliderTrackLeft = sliderStart.x;
             const sliderWidthPercent = (sliderStart.width / sliderStart.contWidth) * 100;
-            const startFps = 25;
+            const startFps = currentFps;
             const targetFps = 52;
 
             const startTime = Date.now();
@@ -141,14 +172,11 @@ export default memo(function TopMetrics({ isActive, animateSetup = false, animat
 
                 await new Promise(r => setTimeout(r, 800));
                 setCursorVisible(false);
+                setSetupAnimationRunning(false);
             };
         };
 
         sequence();
-    } else if (!isInteractive) {
-        setSelectedHardware(null);
-        setDisplayedFps(25);
-        setCursorVisible(false);
     }
 
     return () => {
@@ -157,7 +185,7 @@ export default memo(function TopMetrics({ isActive, animateSetup = false, animat
         setupIntervalRef.current = null;
       }
     };
-  }, [animateSetup, isInteractive]);
+  }, [animateSetup]);
 
   const displayedAccuracyRef = useRef(92.4);
   useEffect(() => {
@@ -190,8 +218,6 @@ export default memo(function TopMetrics({ isActive, animateSetup = false, animat
              }
         };
         accuracyAnimationRef.current = requestAnimationFrame(animateAcc);
-      } else if (!isInteractive) {
-          setDisplayedAccuracy(0.0);
       }
 
       return () => {
@@ -200,7 +226,7 @@ export default memo(function TopMetrics({ isActive, animateSetup = false, animat
           accuracyAnimationRef.current = null;
         }
       };
-  }, [animatePrecision, isImproved, retrainedPrecision, isInteractive, targetAccuracy]);
+  }, [animatePrecision, isImproved, retrainedPrecision, targetAccuracy]);
 
   useEffect(() => {
       if (hwSwitchIntervalRef.current) {
@@ -208,7 +234,13 @@ export default memo(function TopMetrics({ isActive, animateSetup = false, animat
         hwSwitchIntervalRef.current = null;
       }
 
-      if (animateHardwareSwitch && selectedHardware === 'PC' && !isInteractive) {
+      if (!animateHardwareSwitch) {
+        hwSwitchAnimationStartedRef.current = false;
+      }
+
+      if (animateHardwareSwitch && !hwSwitchAnimationStartedRef.current) {
+        hwSwitchAnimationStartedRef.current = true;
+        setHwSwitchAnimationRunning(true);
         const sequence = async () => {
             setCursorVisible(true);
             setCursorTransition('all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)');
@@ -228,7 +260,8 @@ export default memo(function TopMetrics({ isActive, animateSetup = false, animat
             await new Promise(r => setTimeout(r, 400));
             const sliderStart = getTargetPos('fps-slider-track', 'left');
             const sliderWidthPercent = (sliderStart.width / sliderStart.contWidth) * 100;
-            const currentFpsPos = sliderStart.x + (52 / 100) * sliderWidthPercent;
+            const currentFps = displayedFpsRef.current;
+            const currentFpsPos = sliderStart.x + (currentFps / 100) * sliderWidthPercent;
             setCursorPos({ x: currentFpsPos, y: sliderStart.y });
 
             await new Promise(r => setTimeout(r, 900));
@@ -238,7 +271,7 @@ export default memo(function TopMetrics({ isActive, animateSetup = false, animat
             await new Promise(r => setTimeout(r, 50));
 
             const dragDuration = 500;
-            const startFps = 52;
+            const startFps = currentFps;
             const targetFps = 81;
             const startTime = Date.now();
 
@@ -274,6 +307,7 @@ export default memo(function TopMetrics({ isActive, animateSetup = false, animat
 
                 await new Promise(r => setTimeout(r, 800));
                 setCursorVisible(false);
+                setHwSwitchAnimationRunning(false);
             };
         };
         sequence();
@@ -285,13 +319,13 @@ export default memo(function TopMetrics({ isActive, animateSetup = false, animat
           hwSwitchIntervalRef.current = null;
         }
       };
-  }, [animateHardwareSwitch, selectedHardware, isInteractive]);
+  }, [animateHardwareSwitch]);
 
   const MIN_FPS = 25;
   const MAX_FPS = 100;
 
   const handleFpsSliderInteraction = (e: React.MouseEvent | MouseEvent | React.TouchEvent | TouchEvent) => {
-    if (!isInteractive || !fpsSliderRef.current) return;
+    if (!canUserInteract || !fpsSliderRef.current) return;
     const rect = fpsSliderRef.current.getBoundingClientRect();
     const clientX = 'touches' in e ? e.touches[0]?.clientX ?? e.changedTouches[0]?.clientX : e.clientX;
     const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
@@ -309,9 +343,10 @@ export default memo(function TopMetrics({ isActive, animateSetup = false, animat
   useEffect(() => { onFpsChangeRef.current = onFpsChange; }, [onFpsChange]);
   useEffect(() => { onBusyChangeRef.current = onBusyChange; }, [onBusyChange]);
   useEffect(() => { displayedFpsRef.current = displayedFps; }, [displayedFps]);
+  useEffect(() => { if (onAccuracyChange) onAccuracyChange(displayedAccuracy); }, [displayedAccuracy, onAccuracyChange]);
 
   const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
-    if (!isInteractive) return;
+    if (!canUserInteract) return;
     setIsUserDraggingFps(true);
     if (onBusyChangeRef.current) onBusyChangeRef.current(true);
     handleFpsSliderInteraction(e);
@@ -329,8 +364,10 @@ export default memo(function TopMetrics({ isActive, animateSetup = false, animat
     const handleEnd = () => {
       setIsUserDraggingFps(false);
       if (onBusyChangeRef.current) onBusyChangeRef.current(false);
-      if (onUserChangeRef.current) onUserChangeRef.current();
-      if (onFpsChangeRef.current) onFpsChangeRef.current(displayedFpsRef.current);
+      if (isInteractive) {
+        if (onUserChangeRef.current) onUserChangeRef.current();
+        if (onFpsChangeRef.current) onFpsChangeRef.current(displayedFpsRef.current);
+      }
       window.removeEventListener('mousemove', handleMove);
       window.removeEventListener('mouseup', handleEnd);
       window.removeEventListener('touchmove', handleMove);
@@ -393,16 +430,16 @@ export default memo(function TopMetrics({ isActive, animateSetup = false, animat
 
       {shouldRenderPanels && (
         <div
-          className="overflow-x-auto lg:overflow-x-visible overflow-y-hidden scrollbar-thin h-full"
+          className="overflow-hidden h-full"
         >
           <div
             className="flex flex-nowrap h-full w-full"
-            style={{ gap: 'clamp(8px, 1.5vw, 16px)' }}
+            style={{ gap: 'clamp(6px, 1.5vw, 16px)' }}
           >
 
-        <div className={glassPanelClass} style={{ ...getPanelStyle(0), minWidth: '150px' }}>
+        <div className={glassPanelClass} style={{ ...getPanelStyle(0), minWidth: isCompact ? '100px' : '150px' }}>
           <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-50" />
-          <div className="oneware-section-header flex-shrink-0" style={{ margin: 0, padding: 0, fontSize: 'clamp(0.45rem, 1.2vw, 0.75rem)' }}>
+          <div className="oneware-section-header flex-shrink-0" style={{ margin: 0, padding: 0, fontSize: 'clamp(0.5rem, 1.2vw, 0.75rem)' }}>
               HARDWARE
           </div>
           <div className="flex-1 flex flex-col justify-center">
@@ -412,14 +449,14 @@ export default memo(function TopMetrics({ isActive, animateSetup = false, animat
                         key={hw}
                         id={`hw-btn-${hw}`}
                         onClick={() => {
-                          if (isInteractive) {
+                          if (canUserInteract) {
                             setSelectedHardware(hw);
-                            if (onUserChange) onUserChange();
+                            if (isInteractive && onUserChange) onUserChange();
                           }
                         }}
                         className={`
-                          flex-1 flex items-center justify-center py-1.5 rounded-[6px] transition-all duration-300 ease-out relative overflow-hidden
-                          ${isInteractive ? 'cursor-pointer pointer-events-auto hover:bg-white/5' : 'cursor-default pointer-events-none'}
+                          flex-1 flex items-center justify-center py-1 sm:py-1.5 rounded-[6px] transition-all duration-300 ease-out relative overflow-hidden
+                          ${canUserInteract ? 'cursor-pointer pointer-events-auto hover:bg-white/5' : 'cursor-default pointer-events-none'}
                           ${selectedHardware === hw
                               ? 'text-[var(--ifm-color-primary)] font-bold bg-white/5 border border-[var(--ifm-color-primary)]/20 shadow-[inset_0_0_15px_rgba(0,255,209,0.05)]'
                               : 'text-white/30 border border-transparent'}
@@ -438,102 +475,151 @@ export default memo(function TopMetrics({ isActive, animateSetup = false, animat
           </div>
       </div>
 
-      <div className={glassPanelClass} style={{ ...getPanelStyle(1), minWidth: '150px' }}>
+      {isCompact ? (
+        <div className={glassPanelClass} style={{ ...getPanelStyle(1), minWidth: '100px', flex: 1 }}>
           <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-50" />
-
-          <div className="oneware-section-header flex-shrink-0" style={{ margin: 0, padding: 0, fontSize: 'clamp(0.45rem, 1.2vw, 0.75rem)' }}>
+          <div className="oneware-section-header flex-shrink-0" style={{ margin: 0, padding: 0, fontSize: 'clamp(0.5rem, 1.2vw, 0.75rem)' }}>
               FRAMERATE
           </div>
-
           <div className="flex-1 flex flex-col justify-center">
-          <div className="flex items-end gap-4">
-              <div className="flex items-end gap-2 min-w-[40%]">
-                  <span
-                      className={`font-light tracking-tight text-white drop-shadow-lg transition-all duration-300 ${displayedFps > 0 ? 'scale-105 text-[var(--ifm-color-primary)]' : ''}`}
-                      style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.5rem)', lineHeight: 1 }}
-                  >
-                      {formatFps(displayedFps)}
-                  </span>
-                  <span className="font-medium text-white/40 uppercase tracking-widest pb-[2px]" style={{ fontSize: 'clamp(7px, 1.8vw, 14px)' }}>FPS</span>
+            <div className="flex items-end gap-3">
+              <div className="flex items-end gap-1 min-w-[35%]">
+                <span
+                  className={`font-light tracking-tight drop-shadow-lg transition-all duration-300 ${displayedFps > 0 ? 'text-[var(--ifm-color-primary)]' : 'text-white'}`}
+                  style={{ fontSize: 'clamp(0.9rem, 2vw, 1.2rem)', lineHeight: 1 }}
+                >
+                  {formatFps(displayedFps)}
+                </span>
+                <span className="font-medium text-white/40 uppercase tracking-widest" style={{ fontSize: 'clamp(8px, 1.5vw, 12px)' }}>FPS</span>
               </div>
-
               <div
                 ref={fpsSliderRef}
                 id="fps-slider-track"
-                className={`relative h-[16px] flex-1 flex items-center mb-1 ${isInteractive ? 'cursor-pointer' : ''} touch-none`}
+                className={`relative h-[16px] flex-1 flex items-center ${canUserInteract ? 'cursor-pointer' : ''} touch-none`}
                 onMouseDown={handleDragStart}
                 onTouchStart={handleDragStart}
               >
-                 <div className="absolute left-0 right-0 h-[2px] bg-white/10 rounded-full overflow-hidden">
-                      <div
-                          className="h-full bg-[var(--ifm-color-primary)] shadow-[0_0_10px_var(--ifm-color-primary)]"
-                          style={{
-                              width: `${displayedFps}%`,
-                              transition: `width ${isClicking || isUserDraggingFps ? '0s' : '0.2s'} linear`
-                          }}
-                      />
-                 </div>
-                 <div
-                    className="absolute h-[12px] w-[4px] bg-[var(--ifm-color-primary)] rounded-[1px] shadow-[0_0_10px_var(--ifm-color-primary)] z-10 top-1/2 -translate-y-1/2"
+                <div className="absolute left-0 right-0 h-[2px] bg-white/10 rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-[var(--ifm-color-primary)] shadow-[0_0_10px_var(--ifm-color-primary)]"
                     style={{
-                        left: `${displayedFps}%`,
-                        transform: 'translate(-50%, -50%)',
-                        transition: `left ${isClicking || isUserDraggingFps ? '0s' : '0.2s'} linear`
+                      width: `${displayedFps}%`,
+                      transition: `width ${isClicking || isUserDraggingFps ? '0s' : '0.2s'} linear`
                     }}
-                 />
-             </div>
-          </div>
-          </div>
-      </div>
-
-      <div className={glassPanelClass} style={{ ...getPanelStyle(2), minWidth: '150px' }}>
-          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-50" />
-
-          <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                  background: 'radial-gradient(circle at center, rgba(0, 255, 209, 0.4) 0%, transparent 70%)',
-                  opacity: isImproved ? 0.6 : 0,
-                  transition: 'opacity 0.8s ease-out',
-                  zIndex: 5
-              }}
-          />
-
-          <div className="oneware-section-header flex-shrink-0" style={{ margin: 0, padding: 0, fontSize: 'clamp(0.45rem, 1.2vw, 0.75rem)' }}>
-              ACCURACY
-          </div>
-
-          <div className="flex-1 flex flex-col justify-center">
-          <div className="flex items-end gap-2">
-              <span
-                  className={`font-light tracking-tight drop-shadow-lg transition-colors duration-1000 ${isImproved ? 'text-[var(--ifm-color-primary)] drop-shadow-[0_0_15px_rgba(0,255,209,0.6)]' : 'text-white'}`}
-                  style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.5rem)', lineHeight: 1 }}
-              >
-                  {formatAcc(displayedAccuracy)}
-              </span>
-              <span className="font-medium text-white/40 uppercase tracking-widest pb-[2px]" style={{ fontSize: 'clamp(7px, 1.8vw, 14px)' }}>%</span>
-          </div>
-          </div>
-
-          <div
-            className="absolute right-2 sm:right-3 lg:right-4 top-1/2 -translate-y-1/2 opacity-30 rotate-180 pointer-events-none"
-            style={{ width: 'clamp(24px, 5vw, 48px)', height: 'clamp(24px, 5vw, 48px)' }}
-          >
-               <svg width="100%" height="100%" viewBox="0 0 40 40">
-                  <circle cx="20" cy="20" r="18" fill="none" stroke="white" strokeWidth="2" strokeOpacity="0.1" />
-                  <circle
-                      cx="20" cy="20" r="18"
-                      fill="none"
-                      stroke="var(--ifm-color-primary)"
-                      strokeWidth="2"
-                      strokeDasharray="113"
-                      strokeDashoffset={isActive ? 113 - (113 * (displayedAccuracy/100)) : 113}
-                      transform="rotate(-90 20 20)"
-                      style={{ transition: 'stroke 1s ease' }}
                   />
-               </svg>
+                </div>
+                <div
+                  className="absolute h-[12px] w-[4px] bg-[var(--ifm-color-primary)] rounded-[1px] shadow-[0_0_10px_var(--ifm-color-primary)] z-10 top-1/2 -translate-y-1/2"
+                  style={{
+                    left: `${displayedFps}%`,
+                    transform: 'translate(-50%, -50%)',
+                    transition: `left ${isClicking || isUserDraggingFps ? '0s' : '0.2s'} linear`
+                  }}
+                />
+              </div>
+            </div>
           </div>
-      </div>
+        </div>
+      ) : (
+        <>
+          <div className={glassPanelClass} style={{ ...getPanelStyle(1), minWidth: '150px' }}>
+              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-50" />
+
+              <div className="oneware-section-header flex-shrink-0" style={{ margin: 0, padding: 0, fontSize: 'clamp(0.6rem, 1.2vw, 0.75rem)' }}>
+                  FRAMERATE
+              </div>
+
+              <div className="flex-1 flex flex-col justify-center">
+              <div className="flex items-end gap-4">
+                  <div className="flex items-end gap-2 min-w-[40%]">
+                      <span
+                          className={`font-light tracking-tight text-white drop-shadow-lg transition-all duration-300 ${displayedFps > 0 ? 'scale-105 text-[var(--ifm-color-primary)]' : ''}`}
+                          style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)', lineHeight: 1 }}
+                      >
+                          {formatFps(displayedFps)}
+                      </span>
+                      <span className="font-medium text-white/40 uppercase tracking-widest pb-[2px]" style={{ fontSize: 'clamp(10px, 1.8vw, 14px)' }}>FPS</span>
+                  </div>
+
+                  <div
+                    ref={fpsSliderRef}
+                    id="fps-slider-track"
+                    className={`relative h-[16px] flex-1 flex items-center mb-1 ${canUserInteract ? 'cursor-pointer' : ''} touch-none`}
+                    onMouseDown={handleDragStart}
+                    onTouchStart={handleDragStart}
+                  >
+                     <div className="absolute left-0 right-0 h-[2px] bg-white/10 rounded-full overflow-hidden">
+                          <div
+                              className="h-full bg-[var(--ifm-color-primary)] shadow-[0_0_10px_var(--ifm-color-primary)]"
+                              style={{
+                                  width: `${displayedFps}%`,
+                                  transition: `width ${isClicking || isUserDraggingFps ? '0s' : '0.2s'} linear`
+                              }}
+                          />
+                     </div>
+                     <div
+                        className="absolute h-[12px] w-[4px] bg-[var(--ifm-color-primary)] rounded-[1px] shadow-[0_0_10px_var(--ifm-color-primary)] z-10 top-1/2 -translate-y-1/2"
+                        style={{
+                            left: `${displayedFps}%`,
+                            transform: 'translate(-50%, -50%)',
+                            transition: `left ${isClicking || isUserDraggingFps ? '0s' : '0.2s'} linear`
+                        }}
+                     />
+                 </div>
+              </div>
+              </div>
+          </div>
+
+          <div className={glassPanelClass} style={{ ...getPanelStyle(2), minWidth: '150px' }}>
+              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-50" />
+
+              <div
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                      background: 'radial-gradient(circle at center, rgba(0, 255, 209, 0.4) 0%, transparent 70%)',
+                      opacity: isImproved ? 0.6 : 0,
+                      transition: 'opacity 0.8s ease-out',
+                      zIndex: 5
+                  }}
+              />
+
+              <div className="oneware-section-header flex-shrink-0" style={{ margin: 0, padding: 0, fontSize: 'clamp(0.6rem, 1.2vw, 0.75rem)' }}>
+                  ACCURACY
+              </div>
+
+              <div className="flex-1 flex flex-col justify-center">
+              <div className="flex items-end gap-2">
+                  <span
+                      className={`font-light tracking-tight drop-shadow-lg transition-colors duration-1000 ${isImproved ? 'text-[var(--ifm-color-primary)] drop-shadow-[0_0_15px_rgba(0,255,209,0.6)]' : 'text-white'}`}
+                      style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)', lineHeight: 1 }}
+                  >
+                      {formatAcc(displayedAccuracy)}
+                  </span>
+                  <span className="font-medium text-white/40 uppercase tracking-widest pb-[2px]" style={{ fontSize: 'clamp(10px, 1.8vw, 14px)' }}>%</span>
+              </div>
+              </div>
+
+              <div
+                className="absolute right-2 sm:right-3 lg:right-4 top-1/2 -translate-y-1/2 opacity-30 rotate-180 pointer-events-none"
+                style={{ width: 'clamp(24px, 5vw, 48px)', height: 'clamp(24px, 5vw, 48px)' }}
+              >
+                   <svg width="100%" height="100%" viewBox="0 0 40 40">
+                      <circle cx="20" cy="20" r="18" fill="none" stroke="white" strokeWidth="2" strokeOpacity="0.1" />
+                      <circle
+                          cx="20" cy="20" r="18"
+                          fill="none"
+                          stroke="var(--ifm-color-primary)"
+                          strokeWidth="2"
+                          strokeDasharray="113"
+                          strokeDashoffset={isActive ? 113 - (113 * (displayedAccuracy/100)) : 113}
+                          transform="rotate(-90 20 20)"
+                          style={{ transition: 'stroke 1s ease' }}
+                      />
+                   </svg>
+              </div>
+          </div>
+        </>
+      )}
           </div>
         </div>
       )}

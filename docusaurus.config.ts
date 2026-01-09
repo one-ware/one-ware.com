@@ -32,7 +32,7 @@ const config: Config = {
   stylesheets: [
     "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css",
     "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css",
-    "https://fonts.googleapis.com/css?family=Montserrat",
+    "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap",
   ],
 
   //headTags: [
@@ -155,19 +155,12 @@ const config: Config = {
           label: "Products",
           to: "/one-ai",
           activeBaseRegex: "(^.*/one-ai$)|(^.*/docs/one-ai/.*$)",
-          className: "navbar__dropdown--wide",
+          className: "navbar__dropdown--products",
           items: [
             {
               to: "/one-ai",
               label: "ONE AI",
-              className: "navbar__dropdown--custom-link",
-              style: {
-                fontWeight: "bold",
-                color: "#00FFD1",
-                textDecoration: "none",
-                display: "block",
-                padding: "8px 12px"
-              }
+              className: "dropdown__link--highlight",
             },
             {
               to: "/docs/one-ai/getting-started",
@@ -178,7 +171,7 @@ const config: Config = {
               label: "Demo Projects",
             },
             {
-              to: "/docs/one-ai/partners",
+              to: "/docs/one-ai/supported-vendors",
               label: "Supported Hardware",
             },
             {
@@ -208,22 +201,7 @@ const config: Config = {
             {
               to: "/studio",
               label: "ONE WARE Studio",
-              className: "navbar__dropdown--custom-link",
-              style: {
-                fontWeight: "bold",
-                color: "#00FFD1",
-                textDecoration: "none",
-                display: "block",
-                padding: "8px 12px"
-              }
-            },
-            {
-              to: "/docs/studio/setup",
-              label: "Get Started",
-            },
-            {
-              to: "/docs/studio/plugins/overview/",
-              label: "Contribute",
+              className: "dropdown__link--highlight",
             }
           ],
         },
@@ -231,69 +209,56 @@ const config: Config = {
           type: "dropdown",
           position: "left",
           label: "Solutions",
+          className: "navbar__dropdown--solutions",
           items: [
             {
               to: "/docs/one-ai/use-cases/",
-              label: "Applications",
+              label: "Showcase",
+              className: "dropdown__link--highlight",
             },
             {
-              type: "html",
-              value: '<a href="/docs/one-ai/use-cases/camera-tool" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Quality Control</a>',
+              to: "/docs/one-ai/industries/manufacturing",
+              label: "Manufacturing",
             },
             {
-              type: "html",
-              value: '<a href="/docs/one-ai/use-cases/chip" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Edge AI</a>',
+              to: "/docs/one-ai/industries/healthcare",
+              label: "Healthcare",
             },
             {
-              type: "html",
-              value: '<a href="/docs/one-ai/use-cases/pcb" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Vision AI</a>',
+              to: "/docs/one-ai/industries/food-beverage",
+              label: "Food & Beverage",
             },
             {
-              to: "/#industries",
-              label: "Industries",
-            },
-            {
-              type: "html",
-              value: '<a href="/docs/one-ai/industries/manufacturing" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Manufacturing</a>',
-            },
-            {
-              type: "html",
-              value: '<a href="/docs/one-ai/industries/healthcare" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Healthcare</a>',
-            },
-            {
-              type: "html",
-              value: '<a href="/docs/one-ai/industries/food-beverage" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Food & Beverage</a>',
-            },
-            {
-              type: "html",
-              value: '<a href="/docs/one-ai/industries/agriculture" style="display: block; padding: 4px 12px 4px 24px; font-size: 0.875rem; text-decoration: none; color: var(--ifm-menu-color);">Agriculture</a>',
+              to: "/docs/one-ai/industries/agriculture",
+              label: "Agriculture",
             },
           ],
         },
         {
           type: "dropdown",
           position: "left",
-          label: "Developers",
+          label: "Resources",
+          className: "navbar__dropdown--developers",
           items: [
             {
-              to: "/docs/one-ai/getting-started",
+              to: "/docs/one-ai/getting-started/full-documentation",
               label: "Documentation",
             },
             {
               to: "/docs/one-ai/tutorials",
               label: "Example Projects",
             },
+            // {
+            //   to: "/docs/one-ai/getting-started/help/questions-and-answers",
+            //   label: "Questions & Answers",
+            // },
             {
-              to: "/seminars",
-              label: "Seminars & Webinars",
-            },
-            {
-              to: "/docs/one-ai/partners",
+              to: "/docs/one-ai/supported-vendors",
               label: "Supported Hardware",
             },
             {
-              to: "/docs/one-ai/open-source-program",
-              label: "Open Source Program",
+              to: "/docs/one-ai/seminars",
+              label: "Events",
             },
             {
               href: "https://discord.com/invite/NCN9VAh",
@@ -335,21 +300,22 @@ const config: Config = {
           label: "Company",
           items: [
             {
-              to: "/docs/one-ai/partners",
-              label: "Partners",
-            },
-            {
               to: "/about-us",
-              label: "About Us",
+              label: "About",
             },
             {
               to: "/careers",
               label: "Careers",
             },
             {
-              to: "/seminars",
-              label: "Seminars & Webinars",
+              to: "/docs/one-ai/seminars",
+              label: "Events",
             },
+            {
+              to: "/docs/one-ai/partners",
+              label: "Partners",
+            },
+            
             {
               type: "doc",
               docId: "contact/contact",
@@ -362,18 +328,14 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: "https://cloud.one-ware.com/Account/Login",
+          type: "html",
           position: "right",
-          label: "Login",
-          className: "button button--primary button--outline button--md font-bold navbarbutton",
-          style: { "marginLeft": "2px", "marginRight": "2px" }
+          value: `<a href="https://cloud.one-ware.com/Account/Login" class="button button--primary button--outline button--md font-bold navbarbutton loginbutton" style="display: inline-flex; align-items: center; gap: 6px;"><span class="login-button-text">Login</span><svg class="login-button-icon" style="display: none;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg></a>`,
         },
         {
-          to: "/docs/one-ai/getting-started",
-          label: "Free Download",
+          type: "html",
           position: "right",
-          className: "button button--primary button--md text-gray-900 font-bold navbarbutton getstartedbutton",
-          style: { "marginLeft": "2px" }
+          value: `<a href="/docs/one-ai/getting-started" class="button button--primary button--md text-gray-900 font-bold navbarbutton getstartedbutton" style="display: inline-flex; align-items: center; gap: 6px;"><span class="download-button-text">Free Download</span><svg class="download-button-icon" style="display: none;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>`,
         },
 
       ],

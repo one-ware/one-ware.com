@@ -26,7 +26,7 @@ export default memo(function DeployView({ onDeploy }: DeployViewProps) {
     return (
         <div
             className="absolute left-1/2 -translate-x-1/2 z-50 flex items-center justify-center"
-            style={{ perspective: '1000px', bottom: 'clamp(20px, 5vh, 40px)' }}
+            style={{ perspective: '1000px', bottom: 'clamp(10px, 3vh, 40px)' }}
         >
             <button
                 onClick={handleClick}
@@ -34,8 +34,8 @@ export default memo(function DeployView({ onDeploy }: DeployViewProps) {
                 onMouseLeave={() => setIsHovered(false)}
                 className="group relative flex items-center justify-center overflow-hidden outline-none"
                 style={{
-                    width: 'clamp(120px, 25vw, 200px)',
-                    height: 'clamp(36px, 6vw, 48px)',
+                    width: 'clamp(80px, 20vw, 200px)',
+                    height: 'clamp(26px, 5vw, 48px)',
                     borderRadius: 'clamp(8px, 1.5vw, 12px)',
 
                     background: 'rgba(0, 0, 0, 0.2)',
@@ -71,7 +71,7 @@ export default memo(function DeployView({ onDeploy }: DeployViewProps) {
                     <span
                         className="font-bold tracking-[0.15em] text-white/90 group-hover:text-[var(--ifm-color-primary)] transition-colors duration-300"
                         style={{
-                            fontSize: 'clamp(10px, 1.5vw, 13px)',
+                            fontSize: 'clamp(9px, 1.5vw, 13px)',
                             textShadow: isHovered ? '0 0 15px rgba(0,255,209,0.4)' : 'none'
                         }}
                     >

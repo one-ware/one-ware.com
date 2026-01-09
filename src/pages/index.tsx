@@ -3,107 +3,101 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
-import { useRef } from "react";
 import "aos/dist/aos.css";
 import Typewriter from "typewriter-effect";
 import Translate, { translate } from "@docusaurus/Translate";
-import { Navigation } from "swiper/modules";
-import type { Swiper as SwiperCore } from "swiper";
-import "swiper/css";
-import "swiper/css/navigation";
-import { Swiper, SwiperSlide } from "swiper/react";
 import Marquee from "react-fast-marquee";
 
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import initWebsiteEffects from "../components/startEffects";
 import ContactUs from "../components/ContactUs";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import UseCaseCard from "@site/src/components/UseCaseComponent/UseCaseCard";
 import Head from "@docusaurus/Head";
 import HomeHero from "@site/src/components/HomeHero";
+import VideoShowcase from "@site/src/components/VideoShowcase";
 
 function IndustryExamplesSection() {
   const items = [
     {
       key: "aerospace",
-      src: require("@site/static/img/industries/Aerospace.jpg").default,
+      src: require("@site/static/img/industries/Aerospace.webp").default,
       label: "Aerospace",
       labelId: "homepage.industry.aerospace",
       href: "/docs/one-ai/use-cases/chip",
     },
     {
       key: "agriculture",
-      src: require("@site/static/img/industries/Agriculture.jpg").default,
+      src: require("@site/static/img/industries/Agriculture.webp").default,
       label: "Agriculture",
       labelId: "homepage.industry.agriculture",
       href: "/docs/one-ai/industries/agriculture",
     },
     {
       key: "automotive",
-      src: require("@site/static/img/industries/Automotive.jpg").default,
+      src: require("@site/static/img/industries/Automotive.webp").default,
       label: "Automotive",
       labelId: "homepage.industry.automotive",
       href: "/docs/one-ai/use-cases/pcb",
     },
     {
       key: "consumer",
-      src: require("@site/static/img/industries/Consumer.jpg").default,
+      src: require("@site/static/img/industries/Consumer.webp").default,
       label: "Consumer Electronics",
       labelId: "homepage.industry.consumer",
       href: "/docs/one-ai/use-cases/pcb",
     },
     {
       key: "drones",
-      src: require("@site/static/img/industries/Drones.jpg").default,
+      src: require("@site/static/img/industries/Drones.webp").default,
       label: "Drones",
       labelId: "homepage.industry.drones",
       href: "/docs/one-ai/use-cases/chip",
     },
     {
       key: "energy",
-      src: require("@site/static/img/industries/Energy.png").default,
+      src: require("@site/static/img/industries/Energy.webp").default,
       label: "Energy",
       labelId: "homepage.industry.energy",
       href: "/docs/one-ai/use-cases/chip",
     },
     {
       key: "foodbeverage",
-      src: require("@site/static/img/industries/Food_and_Beverage.jpg").default,
+      src: require("@site/static/img/industries/Food_and_Beverage.webp").default,
       label: "Food & Beverage",
       labelId: "homepage.industry.foodbeverage",
       href: "/docs/one-ai/industries/food-beverage",
     },
     {
       key: "healthcare",
-      src: require("@site/static/img/industries/Healthcare.jpg").default,
+      src: require("@site/static/img/industries/Healthcare.webp").default,
       label: "Healthcare",
       labelId: "homepage.industry.healthcare",
       href: "/docs/one-ai/industries/healthcare",
     },
     {
       key: "industry",
-      src: require("@site/static/img/industries/Industrie.jpg").default,
+      src: require("@site/static/img/industries/Industrie.webp").default,
       label: "Industrial Manufacturing",
       labelId: "homepage.industry.industry",
       href: "/docs/one-ai/industries/manufacturing",
     },
     {
       key: "retail",
-      src: require("@site/static/img/industries/Retail.jpg").default,
+      src: require("@site/static/img/industries/Retail.webp").default,
       label: "Retail",
       labelId: "homepage.industry.retail",
       href: "/docs/one-ai/use-cases/pcb",
     },
     {
       key: "security",
-      src: require("@site/static/img/industries/Security.jpg").default,
+      src: require("@site/static/img/industries/Security.webp").default,
       label: "Security",
       labelId: "homepage.industry.security",
       href: "/docs/one-ai/use-cases/pcb",
     },
     {
       key: "transport",
-      src: require("@site/static/img/industries/Transport.jpg").default,
+      src: require("@site/static/img/industries/Transport.webp").default,
       label: "Transport & Logistics",
       labelId: "homepage.industry.transport",
       href: "/docs/one-ai/use-cases/pcb",
@@ -117,7 +111,7 @@ function IndustryExamplesSection() {
   }
 
   return (
-    <div id="industries" className="py-8 md:py-12 pb-4 md:pb-6">
+    <div id="industries" className="pb-12 md:pb-16 pt-4 md:pt-6">
       {/* Überschrift mit normalem Container-Padding */}
       <div className="container mx-auto px-4 mb-8">
         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-left font-bold">
@@ -138,6 +132,8 @@ function IndustryExamplesSection() {
             <img
               src={item.src}
               alt={item.label}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
             <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-300" />
@@ -196,6 +192,8 @@ function TestimonialsSection() {
               <img
                 src={require("@site/static/img/Partner/altera.png").default}
                 alt="Altera logo"
+                loading="lazy"
+                decoding="async"
                 className="h-16 w-48 object-contain"
               />
             </div>
@@ -235,6 +233,8 @@ function TestimonialsSection() {
               <img
                 src={require("@site/static/img/Partner/hdo.png").default}
                 alt="HDO logo"
+                loading="lazy"
+                decoding="async"
                 className="h-16 w-48 object-contain"
               />
             </div>
@@ -274,262 +274,13 @@ function TestimonialsSection() {
               <img
                 src={require("@site/static/img/Partner/cusp.png").default}
                 alt="Cusp Capital logo"
+                loading="lazy"
+                decoding="async"
                 className="h-16 w-48 object-contain"
               />
             </div>
           </a>
         </div>
-      </div>
-    </div>
-  );
-}
-
-function ComparisonSection() {
-  // DEINE BUTTON-LOGIK WIEDERHERGESTELLT (Teil 1)
-  // Der Ref für die Swiper-Instanz ist wieder da.
-  const swiperRef = useRef<SwiperCore | null>(null);
-
-  const scrollPrev = () => {
-    swiperRef.current?.slidePrev();
-  };
-
-  const scrollNext = () => {
-    swiperRef.current?.slideNext();
-  };
-
-  const useCases = [
-    {
-      title: "All-in-ONE Quality Control",
-      titleId: "homepage.usecase.quality.title",
-      subtitle: "From idea to realization in one click with one software",
-      subtitleId: "homepage.usecase.quality.subtitle",
-      image: "/img/ai/one_ai_plugin/use_cases/capture/preview_b.png",
-      description:
-        "Eliminate months of development time. Integrate AI with our pre-build UI that supports monitoring, remote control and continuous improvement. Already in production with leading production companies and ready for your quality control or automation task with:",
-      descriptionId: "homepage.usecase.quality.description",
-      metrics: [
-        {
-          value: "1-Click",
-          label: "Deployment",
-          labelId: "homepage.metric.deployment",
-        },
-        {
-          value: "< 1 Day",
-          label: "Development Time",
-          labelId: "homepage.metric.devtime",
-        },
-      ],
-      relatedUseCases: [
-        {
-          title: "Quality Control",
-          titleId: "homepage.related.qualitycontrol",
-        },
-        {
-          title: "Industrial Automation",
-          titleId: "homepage.related.automation",
-        },
-        {
-          title: "Measuring Instruments",
-          titleId: "homepage.related.measuring",
-        },
-      ],
-      whitepaper: "/docs/one-ai/use-cases/camera-tool",
-      linkText: "More Details",
-      linkTextId: "homepage.usecase.link",
-    },
-    {
-      title: "High Precision Object Detection",
-      titleId: "homepage.usecase.detection.title",
-      subtitle:
-        "ONE AI outperforms scientists in under one second by accuracy and speed",
-      subtitleId: "homepage.usecase.detection.subtitle",
-      image: "/img/ai/one_ai_plugin/use_cases/pcb/pcb_b.png",
-      description:
-        "AI models, generated by ONE AI in 0.7 seconds, are not only faster but also more accurate. As example researchers created a custom AI model for a PCB quality control. ONE AI beat not only standard image processing and universal AI models, but also the AI model from the scientists with:",
-      descriptionId: "homepage.usecase.detection.description",
-      metrics: [
-        {
-          value: "98.4",
-          label: "F1 Score",
-          labelId: "homepage.metric.f1score",
-        },
-        {
-          value: "750 %",
-          label: "Speed Increase",
-          labelId: "homepage.metric.speed",
-        },
-      ],
-      relatedUseCases: [
-        {
-          title: "Quality Control",
-          titleId: "homepage.related.qualitycontrol",
-        },
-        { title: "Diagnostic Imaging", titleId: "homepage.related.diagnostic" },
-        { title: "Autonomous Driving", titleId: "homepage.related.autonomous" },
-      ],
-      whitepaper: "/docs/one-ai/use-cases/pcb",
-      linkText: "More Details",
-      linkTextId: "homepage.usecase.link",
-    },
-    {
-      title: "High Speed and Efficient Automation",
-      titleId: "homepage.usecase.automation.title",
-      subtitle:
-        "Run AI on tiny and decade-old chips and still outperform the latest AI hardware",
-      subtitleId: "homepage.usecase.automation.subtitle",
-      image: "/img/ai/one_ai_plugin/use_cases/chip/defect_b.png",
-      description:
-        "With ONE AI you get the most accurate and efficient AI models on any hardware. This includes also mobile systems like drones and your existing hardware. As example, together with our partner Altera we show how Altera's most low-power Chip with ONE AI can now outperform Nvidia's Jetson Orin Nano with:",
-      descriptionId: "homepage.usecase.automation.description",
-      metrics: [
-        {
-          value: "72×",
-          label: "Faster Detection",
-          labelId: "homepage.metric.latency",
-        },
-        {
-          value: "24×",
-          label: "Less Errors",
-          labelId: "homepage.metric.errors",
-        },
-        {
-          value: "20×",
-          label: "Lower Power",
-          labelId: "homepage.metric.power",
-        },
-        { value: "6×", label: "Lower Cost", labelId: "homepage.metric.cost" },
-      ],
-      relatedUseCases: [
-        {
-          title: "Industry Automation",
-          titleId: "homepage.related.industryautomation",
-        },
-        { title: "Drones and Aerospace", titleId: "homepage.related.drones" },
-        {
-          title: "Consumer Electronics",
-          titleId: "homepage.related.electronics",
-        },
-      ],
-      whitepaper: "/docs/one-ai/use-cases/chip",
-      linkText: "More Details",
-      linkTextId: "homepage.usecase.link",
-    },
-    {
-      title: "Reference-Based Object Detection",
-      titleId: "homepage.usecase.difference.title",
-      subtitle:
-        "Leverage multi-image comparison for superior object detection accuracy",
-      subtitleId: "homepage.usecase.difference.subtitle",
-      image:
-        "/img/ai/one_ai_plugin/demos/overlap-difference/image_000118_test.png",
-      description:
-        "ONE AI's overlap difference capability enables direct comparison between reference and test images, dramatically improving detection accuracy for quality control and surveillance applications. In a challenging benchmark with small objects and complex backgrounds, ONE AI outperformed YOLOv8 with:",
-      descriptionId: "homepage.usecase.difference.description",
-      metrics: [
-        {
-          value: "95.7",
-          label: "F1 Score",
-          labelId: "homepage.metric.f1score",
-        },
-        {
-          value: "8×",
-          label: "Smaller Model",
-          labelId: "homepage.metric.modelsize",
-        },
-        {
-          value: "10×",
-          label: "Fewer Errors",
-          labelId: "homepage.metric.fewererrors",
-        },
-      ],
-      relatedUseCases: [
-        {
-          title: "Quality Control",
-          titleId: "homepage.related.qualitycontrol",
-        },
-        { title: "Surveillance", titleId: "homepage.related.surveillance" },
-        { title: "PCB Inspection", titleId: "homepage.related.pcbinspection" },
-      ],
-      whitepaper: "/docs/one-ai/use-cases/difference-detection",
-      linkText: "More Details",
-      linkTextId: "homepage.usecase.link",
-    },
-  ];
-
-  return (
-    <div id="comparison" className="pt-6 md:pt-8 pb-8 md:pb-8 overflow-hidden">
-      <div className="container mx-auto px-4 text-center">
-        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-12 font-bold px-4">
-          <Translate id="homepage.usecase.title">Example Use-Cases</Translate>
-        </p>
-      </div>
-
-      <div className="relative">
-        <Swiper
-          onSwiper={(swiper) => {
-            swiperRef.current = swiper;
-          }}
-          modules={[Navigation]}
-          rewind={true}
-          centeredSlides={true}
-          grabCursor={true}
-          slidesPerView={1.2}
-          spaceBetween={20}
-          slidesPerGroup={1}
-          initialSlide={1}
-          watchSlidesProgress={true}
-          breakpoints={{
-            768: { slidesPerView: 1.5, spaceBetween: 40 },
-            1280: { slidesPerView: 1.75, spaceBetween: 50 },
-          }}
-        >
-          {useCases.map((useCase, idx) => (
-            // DER ZWEITE WICHTIGE FIX BLEIBT:
-            <SwiperSlide key={idx}>
-              {({ isActive }) => (
-                <UseCaseCard data={useCase} isActive={isActive} />
-              )}
-            </SwiperSlide>
-          ))}
-        </Swiper>
-
-        {/* DEINE BUTTON-LOGIK WIEDERHERGESTELLT (Teil 3) */}
-        {/* Die onClick-Handler sind wieder auf den Buttons. */}
-        <button
-          onClick={scrollPrev}
-          aria-label="Previous use case"
-          className="absolute left-4 sm:left-6 lg:left-8 top-1/2 -translate-y-1/2 z-20 p-2 lg:p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 shadow-lg transition-transform hover:scale-105"
-        >
-          <svg
-            className="w-5 h-5 lg:w-6 lg:h-6 text-[#00FFD1]"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2.5}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-
-        <button
-          onClick={scrollNext}
-          aria-label="Next use case"
-          className="absolute right-4 sm:right-6 lg:right-8 top-1/2 -translate-y-1/2 z-20 p-2 lg:p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 shadow-lg transition-transform hover:scale-105"
-        >
-          <svg
-            className="w-5 h-5 lg:w-6 lg:h-6 text-[#00FFD1]"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2.5}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
       </div>
     </div>
   );
@@ -593,8 +344,9 @@ export default function Home() {
         <div className="dropshadowbottom">
           <div className="dropshadowtop diagclipbottom">
             <div className="default-background pb-12">
+              <VideoShowcase />
               <IndustryExamplesSection />
-              <ComparisonSection />
+              
             </div>
           </div>
         </div>
