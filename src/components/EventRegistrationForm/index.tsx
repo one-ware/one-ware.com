@@ -27,7 +27,7 @@ interface FormData {
 const RECAPTCHA_SITE_KEY = "6Ldzg-orAAAAAIOc5GaUtR6gOpdqcW1EHZL7I9mp";
 const API_URL = process.env.NODE_ENV === "development"
   ? "http://localhost:3001/api/register"
-  : "https://events-api.one-ware.com/api/register";
+  : "https://backend.one-ware.com/api/register";
 
 export default function EventRegistrationForm({ event }: EventRegistrationFormProps) {
   const localizedEvent = useLocalizedEvent(event);
