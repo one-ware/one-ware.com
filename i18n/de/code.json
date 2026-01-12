@@ -1830,5 +1830,8 @@
   },
   "contactus.error": {
     "message": "Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten."
+  },
+  "seminars.form.error.already_registered": {
+    "message": "Sie sind bereits für dieses Event registriert."
   }
 }
