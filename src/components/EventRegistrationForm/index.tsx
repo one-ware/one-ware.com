@@ -21,6 +21,7 @@ interface FormData {
   name: string;
   email: string;
   website: string;
+  company: string;
   [key: string]: string | string[] | boolean;
 }
 
@@ -37,6 +38,7 @@ export default function EventRegistrationForm({ event }: EventRegistrationFormPr
     name: "",
     email: "",
     website: "",
+    company: "",
   };
 
   if (event.formFields) {
@@ -191,6 +193,7 @@ export default function EventRegistrationForm({ event }: EventRegistrationFormPr
         name: formData.name,
         email: formData.email,
         website: formData.website,
+        recaptcha_token: token,
         fields,
       });
 
@@ -346,19 +349,41 @@ export default function EventRegistrationForm({ event }: EventRegistrationFormPr
                   </svg>
                 </div>
                 <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  placeholder={translate({ id: "seminars.form.email", message: "E-Mail" }) + " *"}
-                  className="w-full pl-12 pr-4 py-3.5 bg-white/[0.03] border border-white/10 rounded-xl text-white placeholder-white/50 outline-none focus:bg-white/[0.05] focus:border-[var(--ifm-color-primary)] focus:shadow-[0_0_0_3px_rgba(0,202,165,0.15)] transition-all duration-200"
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    placeholder={translate({ id: "seminars.form.email", message: "E-Mail" }) + " *"}
+                    className="w-full pl-12 pr-4 py-3.5 bg-white/[0.03] border border-white/10 rounded-xl text-white placeholder-white/50 outline-none focus:bg-white/[0.05] focus:border-[var(--ifm-color-primary)] focus:shadow-[0_0_0_3px_rgba(0,202,165,0.15)] transition-all duration-200"
+                />
+              </div>
+
+              <div className="relative group">
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <svg
+                      className="w-5 h-5 text-white/50 group-focus-within:text-[var(--ifm-color-primary)] transition-colors"
+                      fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path d="M10 12h4"/>
+                      <path d="M10 8h4"/>
+                      <path d="M14 21v-3a2 2 0 0 0-4 0v3"/>
+                      <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/>
+                      <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/>
+                  </svg>
+                </div>
+                <input
+                    type="text"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    placeholder={translate({id: "seminars.form.company", message: "Company"}) + " (optional)"}
+                    className="w-full pl-12 pr-4 py-3.5 bg-white/[0.03] border border-white/10 rounded-xl text-white placeholder-white/50 outline-none focus:bg-white/[0.05] focus:border-[var(--ifm-color-primary)] focus:shadow-[0_0_0_3px_rgba(0,202,165,0.15)] transition-all duration-200"
                 />
               </div>
 
               {event.formFields && event.formFields.map((field) => (
-                <div key={field.name} className="relative group">
-                  {field.type === "textarea" ? (
+                  <div key={field.name} className="relative group">
+                    {field.type === "textarea" ? (
                     <textarea
                       name={field.name}
                       value={formData[field.name] as string || ""}

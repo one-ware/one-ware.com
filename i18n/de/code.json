@@ -1537,6 +1537,9 @@
   "seminars.form.email": {
     "message": "E-Mail"
   },
+  "seminars.form.company": {
+    "message": "Firma"
+  },
   "seminars.form.submit": {
     "message": "Jetzt anmelden"
   },
