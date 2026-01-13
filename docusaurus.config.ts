@@ -164,21 +164,14 @@ const config: Config = {
           className: "navbar__dropdown--products",
           items: [
             {
-              to: "/one-ai",
-              label: "ONE AI",
+              to: "/",
+              label: "ONE AI Agent",
               className: "dropdown__link--highlight",
             },
             {
-              to: "/docs/one-ai/getting-started",
-              label: "Get Started",
-            },
-            {
-              to: "/docs/one-ai/tutorials",
-              label: "Demo Projects",
-            },
-            {
-              to: "/docs/one-ai/supported-vendors",
-              label: "Supported Hardware",
+              to: "/one-ai",
+              label: "ONE AI Desktop",
+              className: "dropdown__link--highlight",
             },
             {
               to: "/studio",
