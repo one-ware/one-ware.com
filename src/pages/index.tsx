@@ -113,7 +113,7 @@ function IndustryExamplesSection() {
   }
 
   return (
-    <div id="industries" className="pb-12 md:pb-16 pt-4 md:pt-6">
+    <div id="industries" className="pt-4 md:pt-6">
       {/* Überschrift mit normalem Container-Padding */}
       <div className="container mx-auto px-4 mb-8">
         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-left font-bold">
@@ -139,8 +139,8 @@ function IndustryExamplesSection() {
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
             <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-300" />
-            <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-              <p className="text-sm md:text-base font-semibold text-center">
+            <div className="absolute bottom-0 left-0 right-0 p-4">
+              <p className="text-sm md:text-base font-semibold text-center" style={{ color: '#ffffff' }}>
                 <Translate id={item.labelId}>{item.label}</Translate>
               </p>
             </div>
