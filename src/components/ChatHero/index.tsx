@@ -117,7 +117,9 @@ export default function ChatHero() {
           <div
             className="transition-all duration-300"
             style={{
-              background: isDarkMode ? "#282828" : "#f5f5f5",
+              background: isDarkMode ? "rgba(40, 40, 40, 0.7)" : "rgba(245, 245, 245, 0.7)",
+              backdropFilter: "blur(12px)",
+              WebkitBackdropFilter: "blur(12px)",
               border: isDarkMode ? "1px solid rgba(255, 255, 255, 0.08)" : "1px solid rgba(0, 0, 0, 0.1)",
               borderRadius: "12px",
               boxShadow: isDarkMode ? "0 4px 24px rgba(0, 0, 0, 0.3)" : "0 4px 24px rgba(0, 0, 0, 0.1)",
