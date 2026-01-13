@@ -75,13 +75,13 @@ const industries: IndustryItem[] = [
 ];
 
 const DESKTOP_PAIRS = [
-  [0, 1],
-  [2, 3],
+  [0, 3],
+  [1, 2],
 ];
 
 const MOBILE_PAIRS = [
-  [0, 2],
-  [1, 3],
+  [0, 3],
+  [1, 2],
 ];
 
 const AUTO_ROTATE_INTERVAL = 5000;
