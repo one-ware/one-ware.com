@@ -363,14 +363,16 @@ export default function OrbitIndustries() {
 
               {!isMobile && industries.map((industry, index) => {
                 const positions = calculatePositions(industry.angle);
-                const { cardX, cardY } = positions;
+                const { cardX, cardY, iconY } = positions;
                 const isActive = currentPair.includes(index);
+                const isBottomIcon = iconY > CONFIG.centerY;
+                const cardYOffset = isBottomIcon ? -165 : -60;
 
                 return (
                   <foreignObject
                     key={`card-${industry.id}`}
                     x={cardX - CONFIG.cardWidth / 2}
-                    y={cardY - 60}
+                    y={cardY + cardYOffset}
                     width={CONFIG.cardWidth}
                     height={130}
                     style={{
