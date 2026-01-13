@@ -14,6 +14,15 @@
   "homehero.button.learnmore": {
     "message": "Mehr Erfahren"
   },
+  "homehero.benefit.application": {
+    "message": "Jede Anwendung"
+  },
+  "homehero.benefit.hardware": {
+    "message": "Jede Hardware"
+  },
+  "homehero.benefit.requirements": {
+    "message": "Jede Anforderung"
+  },
   "homepage.every": {
     "message": "Jede "
   },
