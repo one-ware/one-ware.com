@@ -98,9 +98,8 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
         recaptcha_token: token,
       });
 
-      const { status } = response.data;
-
-      if (status === "success") {
+      const { success } = response.data;
+      if (success === true) {
         setChristopherFormStatus("success");
         setChristopherFormData({ name: "", email: "", message: "", website: "", recaptcha_token: "" });
         trackEvent("contact_form_submit", { label: "Christopher Contact Form" });
@@ -137,8 +136,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
       });
 
       const { success } = response.data;
-
-      if (success) {
+      if (success === true) {
         setFormStatus("success");
         setFormData({ name: "", email: "", message: "", website: "", recaptcha_token: "" });
         trackEvent("contact_form_submit", { label: "Helmut Contact Form" });
