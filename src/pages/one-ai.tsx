@@ -222,10 +222,10 @@ function ComparisonSection() {
   };
 
   return (
-    <section id="comparison" className="py-16 md:py-24 bg-white">
+    <section id="comparison" className="py-16 md:py-24 bg-white dark:bg-[#1e1e1e]">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-gray-600 text-3xl md:text-4xl font-normal text-left mb-12">
+          <h2 className="text-gray-600 dark:text-gray-300 text-3xl md:text-4xl font-normal text-left mb-12">
             <Translate id="oneai.comparison.title">
               Deployed with ONE Click
             </Translate>
@@ -556,10 +556,10 @@ function BenefitsSection() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-gray-100">
+    <section className="py-16 md:py-24 bg-gray-100 dark:bg-[#161616]">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-gray-600 text-3xl md:text-4xl font-normal text-left mb-12">
+          <h2 className="text-gray-600 dark:text-gray-300 text-3xl md:text-4xl font-normal text-left mb-12">
             <Translate id="oneai.benefits.section.title">
               Your Benefits as Developer:
             </Translate>
@@ -576,7 +576,7 @@ function BenefitsSection() {
                     className={`px-3 cursor-pointer transition-all duration-300 ease-in-out ${
                       isOpen
                         ? 'bg-[var(--ifm-color-primary)]'
-                        : 'bg-white/50 hover:bg-white'
+                        : 'bg-white/50 hover:bg-white dark:bg-[#2a2a2a] dark:hover:bg-[#333]'
                     }`}
                   >
                     <div
@@ -588,7 +588,7 @@ function BenefitsSection() {
                       }}
                     >
                       <span className={`text-sm font-medium transition-colors duration-300 m-0 p-0 leading-none ${
-                        isOpen ? 'text-gray-800' : 'text-gray-600'
+                        isOpen ? 'text-gray-800' : 'text-gray-600 dark:text-gray-300'
                       }`}>
                         <Translate id={benefit.titleId}>
                           {benefit.title}
@@ -627,7 +627,7 @@ function BenefitsSection() {
             </div>
 
             <div className="lg:sticky lg:top-24">
-              <div className="bg-white p-4 relative">
+              <div className="bg-white dark:bg-[#2a2a2a] p-4 relative">
                 <img
                   src={useBaseUrl(`/img/ai/one_ai_plugin/benefits/${activeIndex !== null ? activeIndex + 1 : 1}.webp`)}
                   alt="ONE AI Benefit Illustration"
@@ -701,10 +701,10 @@ function InventionSection() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-white dark:bg-[#1e1e1e]">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-gray-600 text-3xl md:text-4xl font-normal text-left mb-12">
+          <h2 className="text-gray-600 dark:text-gray-300 text-3xl md:text-4xl font-normal text-left mb-12">
             <Translate id="oneai.invention.section.title">
               How It Works:
             </Translate>
@@ -815,17 +815,17 @@ export default function OneAi() {
         <InventionSection />
 
 
-        <section className="py-16 md:py-24 bg-gray-100">
+        <section className="py-16 md:py-24 bg-gray-100 dark:bg-[#161616]">
           <div className="container mx-auto px-6">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-gray-600 text-3xl md:text-4xl font-normal text-left mb-12">
+              <h2 className="text-gray-600 dark:text-gray-300 text-3xl md:text-4xl font-normal text-left mb-12">
                 <Translate id="oneai.compare.heading">
                   The Entire AI Development Process Automated in One Tool
                 </Translate>
               </h2>
 
               {sliders && sliders.length && (
-                <div className="bg-white p-6 sm:p-8 md:p-12">
+                <div className="bg-white dark:bg-[#2a2a2a] p-6 sm:p-8 md:p-12">
                   <Slider
                     ref={slickRef}
                     dots={true}
@@ -859,8 +859,8 @@ export default function OneAi() {
                             styles.slidecaption
                           )}
                         >
-                          <h3 className="text-gray-700 font-medium">{title}</h3>
-                          <p className="text-gray-500 text-sm">{description}</p>
+                          <h3 className="text-gray-700 dark:text-gray-200 font-medium">{title}</h3>
+                          <p className="text-gray-500 dark:text-gray-400 text-sm">{description}</p>
                         </div>
                       </div>
                     ))}
@@ -871,13 +871,13 @@ export default function OneAi() {
                         key={idx}
                         onClick={() => slickRef.current?.slickGoTo(idx)}
                         className={classnames(
-                          "p-4 cursor-pointer transition-all duration-300 hover:bg-gray-100 border-t-2 border-transparent",
+                          "p-4 cursor-pointer transition-all duration-300 hover:bg-gray-100 dark:hover:bg-[#333] border-t-2 border-transparent",
                           styles.slidebutton
                         )}
                         id={"slide" + idx}
                       >
-                        <h3 className="text-gray-700 text-sm font-medium mb-2">{title}</h3>
-                        <span className="text-gray-500 text-xs leading-relaxed">{description}</span>
+                        <h3 className="text-gray-700 dark:text-gray-200 text-sm font-medium mb-2">{title}</h3>
+                        <span className="text-gray-500 dark:text-gray-400 text-xs leading-relaxed">{description}</span>
                       </div>
                     ))}
                   </div>
