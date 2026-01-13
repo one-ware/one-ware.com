@@ -12,7 +12,7 @@ export default function LiteYouTubeEmbed({ videoId, previewImage, title = "YouTu
 
   if (isPlaying) {
     return (
-      <div className="video-container" style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
+      <div className="video-container" style={{ position: 'relative', width: '100%', aspectRatio: '16/9', overflow: 'hidden' }}>
         <iframe
           src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`}
           title={title}
