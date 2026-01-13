@@ -1537,6 +1537,9 @@
   "seminars.form.email": {
     "message": "E-Mail"
   },
+  "seminars.form.company": {
+    "message": "Firma"
+  },
   "seminars.form.submit": {
     "message": "Jetzt anmelden"
   },
@@ -1830,5 +1833,8 @@
   },
   "contactus.error": {
     "message": "Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten."
+  },
+  "seminars.form.error.already_registered": {
+    "message": "Sie sind bereits für dieses Event registriert."
   }
 }

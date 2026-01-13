@@ -22,7 +22,7 @@ interface FormData {
 }
 
 const RECAPTCHA_SITE_KEY = "6Ldzg-orAAAAAIOc5GaUtR6gOpdqcW1EHZL7I9mp";
-const API_URL = "https://contact.one-ware.com/send";
+const API_URL = "https://backend.one-ware.com/api/contact";
 
 type ContactMode = "select" | "form" | "booking";
 
