@@ -61,8 +61,8 @@ export default function HeroBackground({
             )
           `,
           opacity: enableParallax
-            ? Math.max((isDarkMode ? 0.15 : 0.25) - scrollY * 0.00006, 0)
-            : (isDarkMode ? 0.15 : 0.25),
+            ? Math.max((isDarkMode ? 0.3 : 0.5) - scrollY * 0.00006, 0)
+            : (isDarkMode ? 0.3 : 0.5),
           transform: enableParallax ? `translateY(${scrollY * 0.04}px)` : "none",
           willChange: enableParallax ? "transform, opacity" : "auto",
           zIndex: 0,

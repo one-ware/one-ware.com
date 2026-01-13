@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Translate from "@docusaurus/Translate";
 import { useColorMode } from "@docusaurus/theme-common";
 import SignUpModal, { ModalTrigger } from "./SignUpModal";
+import HeroBackground from "../HeroBackground";
 
 const STORAGE_KEY = "chathero_prompt";
 const STORAGE_EXPIRY_DAYS = 90;
@@ -36,24 +37,9 @@ export default function ChatHero() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalTrigger, setModalTrigger] = useState<ModalTrigger>("send");
   const [prompt, setPrompt] = useState("");
-  const [scrollY, setScrollY] = useState(0);
-  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     setPrompt(getStoredPrompt());
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (sectionRef.current) {
-        const rect = sectionRef.current.getBoundingClientRect();
-        if (rect.bottom > 0) {
-          setScrollY(window.scrollY);
-        }
-      }
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handlePromptChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -87,79 +73,16 @@ export default function ChatHero() {
   };
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 lg:px-16 overflow-hidden"
+    <HeroBackground
+      className="px-4 sm:px-6 md:px-12 lg:px-16"
       style={{
         minHeight: "100vh",
-        background: isDarkMode ? "#161616" : "#ffffff",
         marginTop: "calc(var(--ifm-navbar-height) * -1)",
         paddingTop: "var(--ifm-navbar-height)",
       }}
     >
-      <div
-        className="absolute inset-0 pointer-events-none overflow-hidden"
-        style={{
-          willChange: "transform",
-          zIndex: 0,
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            top: "-25%",
-            right: "-20%",
-            width: "75%",
-            height: "55%",
-            background: "var(--ifm-color-primary-lighter)",
-            borderRadius: "50%",
-            filter: "blur(120px)",
-            opacity: Math.max((isDarkMode ? 0.08 : 0.18) - scrollY * 0.0003, 0),
-            transform: `rotate(-15deg) translateY(${scrollY * 0.3}px)`,
-            willChange: "transform, opacity",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            bottom: "-22%",
-            left: "-18%",
-            width: "70%",
-            height: "50%",
-            background: "var(--ifm-color-primary-lighter)",
-            borderRadius: "50%",
-            filter: "blur(120px)",
-            opacity: Math.max((isDarkMode ? 0.08 : 0.18) - scrollY * 0.00025, 0),
-            transform: `rotate(20deg) translateY(${scrollY * 0.2}px)`,
-            willChange: "transform, opacity",
-          }}
-        />
-      </div>
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: `
-            linear-gradient(to right, var(--ifm-color-primary) 1px, transparent 1px),
-            linear-gradient(to bottom, var(--ifm-color-primary) 1px, transparent 1px)
-          `,
-          backgroundSize: "50px 50px",
-          opacity: isDarkMode ? 0.12 : 0.15,
-          maskImage: "radial-gradient(ellipse at center, black 0%, transparent 70%)",
-          WebkitMaskImage: "radial-gradient(ellipse at center, black 0%, transparent 70%)",
-          transform: `translateY(${scrollY * 0.4}px)`,
-          willChange: "transform",
-          zIndex: 1,
-        }}
-      />
-      <div
-        className="w-full max-w-3xl flex flex-col items-center text-center gap-8 sm:gap-12 relative"
-        style={{
-          transform: `translateY(${scrollY * -0.15}px) scale(${Math.max(1 - scrollY * 0.0003, 0.9)})`,
-          opacity: Math.max(1 - scrollY * 0.0012, 0),
-          willChange: "transform, opacity",
-          zIndex: 2,
-        }}
-      >
+      <div className="flex flex-col items-center justify-center min-h-screen">
+        <div className="w-full max-w-3xl flex flex-col items-center text-center gap-8 sm:gap-12 relative">
         <h1
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[var(--ifm-color-primary)]"
           style={{
@@ -281,6 +204,7 @@ export default function ChatHero() {
           </button>
         </div>
       </div>
+      </div>
 
       <SignUpModal
         isOpen={isModalOpen}
@@ -309,6 +233,6 @@ export default function ChatHero() {
           color: var(--ifm-color-primary) !important;
         }
       `}</style>
-    </section>
+    </HeroBackground>
   );
 }
