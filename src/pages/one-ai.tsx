@@ -589,7 +589,7 @@ function BenefitsSection() {
                       }}
                     >
                       <span className={`text-sm font-medium transition-colors duration-300 m-0 p-0 leading-none ${
-                        isOpen ? 'text-gray-800' : 'text-gray-600 dark:text-gray-300'
+                        isOpen ? 'text-white dark:text-gray-800' : 'text-gray-600 dark:text-gray-300'
                       }`}>
                         <Translate id={benefit.titleId}>
                           {benefit.title}
@@ -597,7 +597,7 @@ function BenefitsSection() {
                       </span>
                       <svg
                         className={`w-4 h-4 flex-shrink-0 transition-all duration-300 ease-in-out ${
-                          isOpen ? 'rotate-90 text-gray-800' : 'text-[var(--ifm-color-primary)]'
+                          isOpen ? 'rotate-90 text-white dark:text-gray-800' : 'text-[var(--ifm-color-primary)]'
                         }`}
                         fill="none"
                         stroke="currentColor"
@@ -616,7 +616,7 @@ function BenefitsSection() {
                         marginBottom: isOpen ? '8px' : '0px'
                       }}
                     >
-                      <p className="text-gray-800 text-xs leading-relaxed">
+                      <p className="text-white dark:text-gray-800 text-xs leading-relaxed">
                         <Translate id={benefit.descriptionId}>
                           {benefit.description}
                         </Translate>
