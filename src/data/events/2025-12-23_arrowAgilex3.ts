@@ -1,11 +1,11 @@
 import {Event} from "../../types/eventTypes";
 
-export const arrowAgilex3_2025_09_30 : Event = {
+export const arrowAgilex3_2025_12_23 : Event = {
     id: "arrow-agilex3",
     status: "past",
     title: "Worldwide Agilex 3 AI Workshop",
     title_de: "Weltweiter Agilex 3 AI Workshop",
-    date: "2025-09-30",
+    date: "2025-12-23",
     time: "Full Day",
     category: "FPGA",
     type: "workshop",

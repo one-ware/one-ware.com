@@ -9,7 +9,7 @@ export const qualityControl_2026_01_28: Event = {
     time: "10:00 AM CET",
     category: "AI",
     type: "webinar",
-    image: "/img/ai/one_ai_plugin/seminars/webinar_banner_2026_01_28.webp",
+    image: "/img/ai/one_ai_plugin/seminars/webinar_banner_without_QR_2026_01_28.png",
     shortDescription: "AI for quality control sounds far too complex? We'll show you how simple Vision AI can be today.",
     shortDescription_de: "KI für Qualitätskontrolle klingt zu komplex? Wir zeigen Ihnen, wie einfach Vision AI heute sein kann.",
     subtitle: "AI for quality control sounds far too complex? We'll show you how simple Vision AI can be today.",
