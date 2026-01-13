@@ -11,6 +11,7 @@ import Translate, { translate } from "@docusaurus/Translate";
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Head from '@docusaurus/Head';
 import HeroBackground from "../components/HeroBackground";
+import HomeHero from "../components/HomeHero";
 
 const sliders = [
   {
@@ -814,6 +815,15 @@ export default function OneAi() {
         <BenefitsSection />
         <InventionSection />
 
+        <div
+          style={{
+            borderTop: '1px solid',
+            borderBottom: '1px solid',
+            borderColor: 'var(--ifm-toc-border-color)',
+          }}
+        >
+          <HomeHero />
+        </div>
 
         <section className="py-16 md:py-24 bg-gray-100">
           <div className="container mx-auto px-6">

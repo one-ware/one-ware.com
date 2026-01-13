@@ -200,10 +200,6 @@ export default function HomeHero() {
     <PerformanceContext.Provider value={performanceValue}>
     <HeroBackground
       className="min-h-screen"
-      style={{
-        marginTop: "calc(var(--ifm-navbar-height) * -1)",
-        paddingTop: "var(--ifm-navbar-height)",
-      }}
     >
 
       {isDragging && <DragPreview x={dragPos.x} y={dragPos.y} />}
@@ -229,7 +225,7 @@ export default function HomeHero() {
                     opacity: 0,
                   }}
                 >
-                  <Translate id="homehero.title1">Create Your</Translate>
+                  <Translate id="homehero.title1">How We Automate</Translate>
                 </span>
                 <span
                   className="text-[var(--ifm-color-primary)] block"
@@ -239,7 +235,7 @@ export default function HomeHero() {
                     opacity: 0,
                   }}
                 >
-                  <Translate id="homehero.title2">Custom AI</Translate>
+                  <Translate id="homehero.title2">AI Development</Translate>
                 </span>
               </h1>
               <p
@@ -250,9 +246,7 @@ export default function HomeHero() {
                   opacity: 0,
                 }}
               >
-                <Translate id="homehero.subtitle1">Vision and Edge AI Development,</Translate>
-                <br />
-                <Translate id="homehero.subtitle2">Fully Automated in One Software</Translate>
+                <Translate id="homehero.subtitle">See how your custom AI is created after our AI Agent made the right configuration.</Translate>
               </p>
 
               <div className="hidden 2xl:flex flex-row items-center justify-center 2xl:justify-start gap-4 mt-8 w-full">

@@ -1,15 +1,12 @@
 {
   "homehero.title1": {
-    "message": "Erstelle deine"
+    "message": "So Automatisieren Wir"
   },
   "homehero.title2": {
-    "message": "Maßgeschneiderte KI"
+    "message": "KI-Entwicklung"
   },
-  "homehero.subtitle1": {
-    "message": "Vision und Edge AI Entwicklung,"
-  },
-  "homehero.subtitle2": {
-    "message": "Automatisiert in einer Software"
+  "homehero.subtitle": {
+    "message": "Erlebe, wie deine individuelle KI erstellt wird, nachdem unser KI-Agent die richtige Konfiguration gefunden hat."
   },
   "homehero.button.download": {
     "message": "Kostenloser Download"
