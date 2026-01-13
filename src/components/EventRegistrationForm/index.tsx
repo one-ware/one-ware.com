@@ -192,6 +192,7 @@ export default function EventRegistrationForm({ event }: EventRegistrationFormPr
         eventTitle: localizedEvent.title,
         name: formData.name,
         email: formData.email,
+        company: formData.company,
         website: formData.website,
         recaptcha_token: token,
         fields,
