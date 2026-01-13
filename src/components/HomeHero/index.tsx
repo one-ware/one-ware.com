@@ -242,18 +242,51 @@ export default function HomeHero() {
                   <Translate id="homehero.title2">Custom AI</Translate>
                 </span>
               </h1>
-              <p
-                className="dark:text-white text-gray-800 text-xl md:text-2xl leading-relaxed"
+              <div
+                className="flex flex-col sm:flex-row items-center justify-center 2xl:justify-start gap-4 sm:gap-6"
                 style={{
                   animation: "fadeInUp 0.8s ease-out forwards",
                   animationDelay: "0.2s",
                   opacity: 0,
                 }}
               >
-                <Translate id="homehero.subtitle1">Vision and Edge AI Development,</Translate>
-                <br />
-                <Translate id="homehero.subtitle2">Fully Automated in One Software</Translate>
-              </p>
+                <div className="flex items-center gap-2">
+                  <div className="w-6 h-6 text-[var(--ifm-color-primary)]" style={{ animation: "pulseScale 2s ease-in-out infinite" }}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                      <path d="M2 17l10 5 10-5" />
+                      <path d="M2 12l10 5 10-5" />
+                    </svg>
+                  </div>
+                  <span className="dark:text-white text-gray-800 text-sm font-medium">
+                    <Translate id="homehero.benefit.application">Any Application</Translate>
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <div className="w-6 h-6 text-[var(--ifm-color-primary)]" style={{ animation: "shrinkPulse 2s ease-in-out infinite" }}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="4" y="4" width="16" height="16" rx="2" />
+                      <rect x="9" y="9" width="6" height="6" />
+                      <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3" />
+                    </svg>
+                  </div>
+                  <span className="dark:text-white text-gray-800 text-sm font-medium">
+                    <Translate id="homehero.benefit.hardware">Any Hardware</Translate>
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <div className="w-6 h-6 text-[var(--ifm-color-primary)]" style={{ animation: "flashGlow 1.5s ease-in-out infinite" }}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                    </svg>
+                  </div>
+                  <span className="dark:text-white text-gray-800 text-sm font-medium">
+                    <Translate id="homehero.benefit.requirements">Any Requirements</Translate>
+                  </span>
+                </div>
+              </div>
 
               <div className="hidden 2xl:flex flex-row items-center justify-center 2xl:justify-start gap-4 mt-8 w-full">
                 <Link
@@ -364,6 +397,34 @@ export default function HomeHero() {
           to {
             opacity: 1;
             transform: translateY(0) scale(1);
+          }
+        }
+        @keyframes pulseScale {
+          0%, 100% {
+            transform: scale(1);
+            opacity: 1;
+          }
+          50% {
+            transform: scale(1.15);
+            opacity: 0.8;
+          }
+        }
+        @keyframes shrinkPulse {
+          0%, 100% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(0.75);
+          }
+        }
+        @keyframes flashGlow {
+          0%, 100% {
+            opacity: 0.7;
+            filter: drop-shadow(0 0 0px var(--ifm-color-primary));
+          }
+          50% {
+            opacity: 1;
+            filter: drop-shadow(0 0 6px var(--ifm-color-primary));
           }
         }
       `}</style>
