@@ -582,6 +582,7 @@ export default function EventRegistrationForm({ event }: EventRegistrationFormPr
                   style={{ background: "rgba(0, 255, 209, 0.08)" }}
                 />
               </button>
+              <p className="text-xs">By continuing, you are indicating that you accept our <a href="/docs/contact/privacy">Privacy policy</a></p>
             </form>
           </div>
         </div>
