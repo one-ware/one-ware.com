@@ -152,7 +152,7 @@ export default function CareersPage(): JSX.Element {
       key: "13",
       name: "Allen",
       position: "Working Student - AI",
-      imageSrc: require("@site/static/img/AboutUs/default.png").default,
+      imageSrc: require("@site/static/img/AboutUs/Allen.jpg").default,
     },
     {
       key: "14",
