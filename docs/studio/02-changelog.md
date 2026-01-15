@@ -4,6 +4,17 @@ title: ONE WARE Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.21.25.0
+
+- Add option for automatic restart after Plugin Updates
+- Add option to automatically install Plugins
+
+## 0.21.24.0
+
+- Allow login with browser
+- Add Advanced Combobox (for title, value pairs)
+- New optional email field for Feedback Tool
+
 ## 0.21.23.0
 
 - Fix Camera Access for Linux (Snap and Flatpak)
