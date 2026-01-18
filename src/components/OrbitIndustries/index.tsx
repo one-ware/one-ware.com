@@ -106,23 +106,33 @@ function calculatePositions(angle: number) {
   const iconX = CONFIG.centerX + CONFIG.iconRadius * cos;
   const iconY = CONFIG.centerY + CONFIG.iconRadius * sin;
 
-  const isLeftSide = iconX < CONFIG.centerX;
+  const isTopRight = angle === 45;
+  const isBottomRight = angle === 135;
+  const isBottomLeft = angle === 225;
+  const isTopLeft = angle === 315;
+  const isRightSide = isTopRight || isBottomRight;
+  const isTopSide = isTopRight || isTopLeft;
 
-  const lineStartX = isLeftSide
-    ? iconX - CONFIG.iconSize / 2 - 2
-    : iconX + CONFIG.iconSize / 2 + 2;
-  const lineStartY = iconY;
-  const lineEndX = isLeftSide
-    ? iconX - CONFIG.iconSize / 2 - CONFIG.cardOffset
-    : iconX + CONFIG.iconSize / 2 + CONFIG.cardOffset;
-  const lineEndY = iconY;
+  let lineStartX: number, lineStartY: number, lineEndX: number, lineEndY: number;
+  let cardX: number, cardY: number;
 
-  const cardX = isLeftSide
-    ? iconX - CONFIG.iconSize / 2 - CONFIG.cardOffset - CONFIG.cardWidth / 2
-    : iconX + CONFIG.iconSize / 2 + CONFIG.cardOffset + CONFIG.cardWidth / 2;
-  const cardY = iconY;
+  if (isRightSide) {
+    lineStartX = iconX + CONFIG.iconSize / 2 + 2;
+    lineStartY = iconY;
+    lineEndX = iconX + CONFIG.iconSize / 2 + CONFIG.cardOffset;
+    lineEndY = iconY;
+    cardX = iconX + CONFIG.iconSize / 2 + CONFIG.cardOffset + CONFIG.cardWidth / 2;
+    cardY = iconY;
+  } else {
+    lineStartX = iconX - CONFIG.iconSize / 2 - 2;
+    lineStartY = iconY;
+    lineEndX = iconX - CONFIG.iconSize / 2 - CONFIG.cardOffset;
+    lineEndY = iconY;
+    cardX = iconX - CONFIG.iconSize / 2 - CONFIG.cardOffset - CONFIG.cardWidth / 2;
+    cardY = iconY;
+  }
 
-  return { iconX, iconY, cardX, cardY, lineStartX, lineStartY, lineEndX, lineEndY };
+  return { iconX, iconY, cardX, cardY, lineStartX, lineStartY, lineEndX, lineEndY, isTopSide, isRightSide };
 }
 
 const MOBILE_BREAKPOINT = 900;
@@ -132,6 +142,7 @@ export default function OrbitIndustries() {
   const isDarkMode = colorMode === "dark";
   const [activePair, setActivePair] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -151,6 +162,8 @@ export default function OrbitIndustries() {
   const pairs = isMobile ? MOBILE_PAIRS : DESKTOP_PAIRS;
 
   useEffect(() => {
+    if (!isMobile) return;
+
     if (isPaused) {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
@@ -168,13 +181,23 @@ export default function OrbitIndustries() {
         clearInterval(intervalRef.current);
       }
     };
-  }, [isPaused, pairs.length]);
+  }, [isPaused, pairs.length, isMobile]);
 
   const handleIconHover = (index: number) => {
-    const pairIndex = pairs.findIndex((pair) => pair.includes(index));
-    if (pairIndex !== -1) {
-      setActivePair(pairIndex);
-      setIsPaused(true);
+    if (isMobile) {
+      const pairIndex = pairs.findIndex((pair) => pair.includes(index));
+      if (pairIndex !== -1) {
+        setActivePair(pairIndex);
+        setIsPaused(true);
+      }
+    } else {
+      setHoveredIndex(index);
+    }
+  };
+
+  const handleIconLeave = () => {
+    if (!isMobile) {
+      setHoveredIndex(null);
     }
   };
 
@@ -289,7 +312,9 @@ export default function OrbitIndustries() {
               {industries.map((industry, index) => {
                 const positions = calculatePositions(industry.angle);
                 const { iconX, iconY, lineStartX, lineStartY, lineEndX, lineEndY } = positions;
-                const isActive = currentPair.includes(index);
+                const isActive = isMobile
+                  ? currentPair.includes(index)
+                  : hoveredIndex === index;
 
                 return (
                   <g key={industry.id}>
@@ -300,10 +325,10 @@ export default function OrbitIndustries() {
                         x2={lineEndX}
                         y2={lineEndY}
                         stroke="var(--ifm-color-primary)"
-                        strokeWidth="1.5"
+                        strokeWidth={isActive ? 2.5 : 1.5}
                         style={{
-                          opacity: isActive ? 1 : 0,
-                          transition: "opacity 0.3s ease",
+                          opacity: isActive ? 1 : (hoveredIndex !== null ? 0.15 : 0.3),
+                          transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                           pointerEvents: "none",
                         }}
                       />
@@ -312,6 +337,7 @@ export default function OrbitIndustries() {
                     <g
                       style={{ cursor: "pointer" }}
                       onMouseEnter={() => handleIconHover(index)}
+                      onMouseLeave={handleIconLeave}
                       onClick={() => handleIconHover(index)}
                     >
                       <circle
@@ -319,17 +345,24 @@ export default function OrbitIndustries() {
                         cy={iconY}
                         r={CONFIG.iconSize / 2}
                         fill={isActive ? "var(--ifm-color-primary)" : isDarkMode ? "#2a2a2a" : "#e0e0e0"}
+                        stroke={isActive ? "var(--ifm-color-primary)" : "transparent"}
+                        strokeWidth={isActive ? 3 : 0}
                         style={{
-                          transition: "all 0.3s ease",
+                          transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                           filter: isActive
                             ? isDarkMode
-                              ? "drop-shadow(0 10px 25px rgba(0, 255, 209, 0.3))"
-                              : "drop-shadow(0 10px 25px rgba(0, 168, 138, 0.3))"
-                            : isDarkMode
-                              ? "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4))"
-                              : "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1))",
+                              ? "drop-shadow(0 0 30px rgba(0, 255, 209, 0.6)) drop-shadow(0 15px 35px rgba(0, 255, 209, 0.4))"
+                              : "drop-shadow(0 0 30px rgba(0, 168, 138, 0.5)) drop-shadow(0 15px 35px rgba(0, 168, 138, 0.3))"
+                            : hoveredIndex !== null
+                              ? isDarkMode
+                                ? "drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3))"
+                                : "drop-shadow(0 2px 8px rgba(0, 0, 0, 0.08))"
+                              : isDarkMode
+                                ? "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4))"
+                                : "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1))",
                           transform: isActive ? "scale(1.05)" : "scale(1)",
                           transformOrigin: `${iconX}px ${iconY}px`,
+                          opacity: isActive ? 1 : (hoveredIndex !== null ? 0.5 : 1),
                         }}
                       />
                       <foreignObject
@@ -351,7 +384,8 @@ export default function OrbitIndustries() {
                               width: 28,
                               height: 28,
                               color: isActive ? "#000" : isDarkMode ? "#555" : "#666",
-                              transition: "color 0.3s ease",
+                              transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                              opacity: isActive ? 1 : (hoveredIndex !== null ? 0.4 : 1),
                             }}
                           >
                             {industry.icon}
@@ -365,42 +399,46 @@ export default function OrbitIndustries() {
 
               {!isMobile && industries.map((industry, index) => {
                 const positions = calculatePositions(industry.angle);
-                const { cardX, cardY, iconY } = positions;
-                const isActive = currentPair.includes(index);
-                const isBottomIcon = iconY > CONFIG.centerY;
-                const cardYOffset = isBottomIcon ? -165 : -60;
+                const { cardX, cardY, isTopSide } = positions;
+                const isActive = hoveredIndex === index;
+                const cardHeight = 130;
+
+                let finalX = cardX - CONFIG.cardWidth / 2;
+                let finalY = isTopSide ? cardY - cardHeight + 20 : cardY - 20;
 
                 return (
                   <foreignObject
                     key={`card-${industry.id}`}
-                    x={cardX - CONFIG.cardWidth / 2}
-                    y={cardY + cardYOffset}
+                    x={finalX}
+                    y={finalY}
                     width={CONFIG.cardWidth}
-                    height={130}
+                    height={cardHeight}
                     style={{
                       overflow: "visible",
-                      pointerEvents: isActive ? "auto" : "none",
-                      opacity: isActive ? 1 : 0,
-                      transition: "opacity 0.3s ease",
+                      pointerEvents: "auto",
+                      opacity: isActive ? 1 : (hoveredIndex !== null ? 0.35 : 0.7),
+                      transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                     }}
                   >
-                    <div
-                      style={{
-                        transform: isActive ? "translateY(0) scale(1)" : "translateY(8px) scale(0.96)",
-                        transition: "transform 0.3s ease",
-                      }}
-                    >
+                    <div>
                       <div
                         className="p-4"
                         style={{
                           background: isDarkMode
                             ? "rgba(30, 30, 30, 0.98)"
                             : "rgba(255, 255, 255, 0.98)",
-                          border: `1px solid ${isDarkMode ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)"}`,
-                          boxShadow: isDarkMode
-                            ? "0 20px 40px rgba(0, 0, 0, 0.5)"
-                            : "0 20px 40px rgba(0, 0, 0, 0.12)",
+                          border: isActive
+                            ? `1px solid ${isDarkMode ? "rgba(0, 255, 209, 0.3)" : "rgba(0, 168, 138, 0.3)"}`
+                            : `1px solid ${isDarkMode ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)"}`,
+                          boxShadow: isActive
+                            ? isDarkMode
+                              ? "0 25px 50px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 255, 209, 0.15)"
+                              : "0 25px 50px rgba(0, 0, 0, 0.18), 0 0 40px rgba(0, 168, 138, 0.1)"
+                            : isDarkMode
+                              ? "0 15px 30px rgba(0, 0, 0, 0.4)"
+                              : "0 15px 30px rgba(0, 0, 0, 0.08)",
                           borderRadius: 12,
+                          transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                         }}
                       >
                         <div className="flex items-center gap-3 mb-3">
@@ -412,6 +450,12 @@ export default function OrbitIndustries() {
                               background: "var(--ifm-color-primary)",
                               color: "#000",
                               borderRadius: 8,
+                              boxShadow: isActive
+                                ? isDarkMode
+                                  ? "0 0 20px rgba(0, 255, 209, 0.4)"
+                                  : "0 0 20px rgba(0, 168, 138, 0.3)"
+                                : "none",
+                              transition: "box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                             }}
                           >
                             <div style={{ width: 18, height: 18 }}>
