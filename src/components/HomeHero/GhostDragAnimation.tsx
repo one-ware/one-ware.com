@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useCallback } from 'react';
+import { useColorMode } from '@docusaurus/theme-common';
 import NeonFolderGraphic from './components/NeonFolderGraphic';
 
 interface GhostDragAnimationProps {
@@ -20,6 +21,10 @@ function throttle<T extends (...args: unknown[]) => void>(fn: T, wait: number): 
 }
 
 export default function GhostDragAnimation({ sourceRef, targetRef, show, onHoverChange }: GhostDragAnimationProps) {
+  const { colorMode } = useColorMode();
+  const isDarkMode = colorMode === 'dark';
+  const pathStrokeColor = isDarkMode ? 'rgba(255, 255, 255, 0.15)' : 'rgba(0, 0, 0, 0.25)';
+
   const containerRef = useRef<HTMLDivElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
   const maskPathRef = useRef<SVGPathElement>(null);
@@ -257,7 +262,7 @@ export default function GhostDragAnimation({ sourceRef, targetRef, show, onHover
             ref={pathRef}
             d={initialPath}
             fill="none"
-            stroke="rgba(255, 255, 255, 0.15)"
+            stroke={pathStrokeColor}
             strokeWidth="1.5"
             strokeDasharray="4 6"
             mask="url(#draw-mask)"

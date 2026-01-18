@@ -7,6 +7,7 @@ import "aos/dist/aos.css";
 import Typewriter from "typewriter-effect";
 import Translate, { translate } from "@docusaurus/Translate";
 import Marquee from "react-fast-marquee";
+import { useColorMode } from "@docusaurus/theme-common";
 
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import initWebsiteEffects from "../components/startEffects";
@@ -15,6 +16,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import Head from "@docusaurus/Head";
 import HomeHero from "@site/src/components/HomeHero";
 import VideoShowcase from "@site/src/components/VideoShowcase";
+import OrbitIndustries from "@site/src/components/OrbitIndustries";
 
 function IndustryExamplesSection() {
   const items = [
@@ -111,7 +113,7 @@ function IndustryExamplesSection() {
   }
 
   return (
-    <div id="industries" className="pb-12 md:pb-16 pt-4 md:pt-6">
+    <div id="industries" className="pt-4 md:pt-6">
       {/* Überschrift mit normalem Container-Padding */}
       <div className="container mx-auto px-4 mb-8">
         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-left font-bold">
@@ -137,8 +139,8 @@ function IndustryExamplesSection() {
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
             <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-300" />
-            <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-              <p className="text-sm md:text-base font-semibold text-center">
+            <div className="absolute bottom-0 left-0 right-0 p-4">
+              <p className="text-sm md:text-base font-semibold text-center" style={{ color: '#ffffff' }}>
                 <Translate id={item.labelId}>{item.label}</Translate>
               </p>
             </div>
@@ -150,9 +152,12 @@ function IndustryExamplesSection() {
 }
 
 function TestimonialsSection() {
+  const { colorMode } = useColorMode();
+  const isDarkMode = colorMode === "dark";
+
   return (
     <div className="px-4 md:px-8 lg:px-12 max-w-screen-2xl mx-auto">
-      <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-200 mb-12">
+      <h2 className={`text-2xl md:text-3xl font-bold text-center mb-12 ${isDarkMode ? "text-gray-200" : "text-gray-800"}`}>
         <Translate id="testimonials.title">What Others Say About Us</Translate>
       </h2>
 
@@ -341,25 +346,20 @@ export default function Home() {
 
       <HomeHero />
       <main className="overflow-x-hidden alternative-background ">
-        <div className="dropshadowbottom">
-          <div className="dropshadowtop diagclipbottom">
-            <div className="default-background pb-12">
-              <VideoShowcase />
-              <IndustryExamplesSection />
-              
-            </div>
+        <div className="default-background pb-12">
+          <div id="video">
+            <VideoShowcase />
           </div>
+          <IndustryExamplesSection />
+          <OrbitIndustries />
         </div>
 
         <div className="">
           <HomepageFeatures />
         </div>
-        <div className="dropshadowbottom">
-          <div className="dropshadowtop diagclipbottom">
-            <div className="default-background diagcliptop pt-20 pb-32">
-              <TestimonialsSection />
-            </div>
-          </div>
+
+        <div className="default-background pt-20 pb-32">
+          <TestimonialsSection />
         </div>
 
         <div className="pt-20 pb-20 ">
