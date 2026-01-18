@@ -11,8 +11,8 @@ In quality control and surveillance applications, detecting small differences be
 To demonstrate this capability, ONE AI was tested on a synthetically created [bird and drone detection dataset](/docs/one-ai/tutorials/difference-image-demo#dataset-overview) featuring small objects (7-10% of image size), complex city backgrounds with detailed buildings, and varying lighting conditions. The model was benchmarked against YOLOv8, a state-of-the-art object detection network.
 
 <div style={{display: 'flex', justifyContent: 'center', margin: '20px 0'}}>
-  <img src="/img/ai/one_ai_plugin/demos/overlap-difference/image_000118_temp.png" alt="Reference Template" style={{maxHeight: '250px', marginRight: '10px'}} />
-  <img src="/img/ai/one_ai_plugin/demos/overlap-difference/image_000118_test.png" alt="Test Image with Objects" style={{maxHeight: '250px'}} />
+  <img src="/img/ai/one_ai_plugin/demos/overlap-difference/image_000118_temp.png" alt="Reference Template" style={{maxHeight: '250px', marginRight: '10px', borderRadius:'8px'}} />
+  <img src="/img/ai/one_ai_plugin/demos/overlap-difference/image_000118_test.png" alt="Test Image with Objects" style={{maxHeight: '250px', borderRadius:'8px'}} />
 </div>
 
 ---

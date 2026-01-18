@@ -215,6 +215,7 @@ export default function OrbitIndustries() {
                   boxShadow: isDarkMode
                     ? "0 20px 40px rgba(0, 0, 0, 0.5)"
                     : "0 20px 40px rgba(0, 0, 0, 0.12)",
+                  borderRadius: 12,
                 }}
               >
                 <div className="flex items-center gap-3 mb-3">
@@ -225,6 +226,7 @@ export default function OrbitIndustries() {
                       height: 36,
                       background: "var(--ifm-color-primary)",
                       color: "#000",
+                      borderRadius: 8,
                     }}
                   >
                     <div style={{ width: 18, height: 18 }}>
@@ -398,6 +400,7 @@ export default function OrbitIndustries() {
                           boxShadow: isDarkMode
                             ? "0 20px 40px rgba(0, 0, 0, 0.5)"
                             : "0 20px 40px rgba(0, 0, 0, 0.12)",
+                          borderRadius: 12,
                         }}
                       >
                         <div className="flex items-center gap-3 mb-3">
@@ -408,6 +411,7 @@ export default function OrbitIndustries() {
                               height: 36,
                               background: "var(--ifm-color-primary)",
                               color: "#000",
+                              borderRadius: 8,
                             }}
                           >
                             <div style={{ width: 18, height: 18 }}>
@@ -447,6 +451,7 @@ export default function OrbitIndustries() {
                   boxShadow: isDarkMode
                     ? "0 20px 40px rgba(0, 0, 0, 0.5)"
                     : "0 20px 40px rgba(0, 0, 0, 0.12)",
+                  borderRadius: 12,
                 }}
               >
                 <div className="flex items-center gap-3 mb-3">
@@ -457,6 +462,7 @@ export default function OrbitIndustries() {
                       height: 36,
                       background: "var(--ifm-color-primary)",
                       color: "#000",
+                      borderRadius: 8,
                     }}
                   >
                     <div style={{ width: 18, height: 18 }}>

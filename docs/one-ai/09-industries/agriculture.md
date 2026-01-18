@@ -10,7 +10,7 @@ Agriculture faces challenges from pests, disease, and unpredictable weather whil
 
 
 <div style={{display:'flex', justifyContent:'center', margin:'20px 0'}}>
-  <img src="/img/ai/one_ai_plugin/industries/Landwirtschaft(1).jpg" alt="Camera Tool capturing images for QC" style={{maxHeight:'320px'}} />
+  <img src="/img/ai/one_ai_plugin/industries/Landwirtschaft(1).jpg" alt="Camera Tool capturing images for QC" style={{maxHeight:'320px', borderRadius:'8px'}} />
 </div>
 
 ONE AI brings real-time intelligence directly to the field, running on tractors, drones, and IoT devices to monitor crops, protect yields, and optimize operations without relying on the cloud.
@@ -61,7 +61,7 @@ By automating most steps of AI development, ONE AI delivers instant, accurate in
       e.currentTarget.style.backgroundColor = 'transparent';
     }}
   >
-    <img src="/img/ai/one_ai_plugin/industries/CropStress.jpg" alt="Quality Control Manufacturing" style={{maxHeight:'320px', width:'100%'}} />
+    <img src="/img/ai/one_ai_plugin/industries/CropStress.jpg" alt="Quality Control Manufacturing" style={{maxHeight:'320px', width:'100%', borderRadius:'8px'}} />
     <h4 style={{marginTop:'10px', marginBottom:'5px'}}>Crop Stress Detection</h4>
     <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>Drones and Vision AI identify early signs of disease, drought, or nutrient deficiency, enabling faster intervention and healthier yields.</p>
   </div>
@@ -92,7 +92,7 @@ By automating most steps of AI development, ONE AI delivers instant, accurate in
       e.currentTarget.style.backgroundColor = 'transparent';
     }}
   >
-    <img src="/img/ai/one_ai_plugin/industries/livestockmonitoring.jpg" alt="Industrial Applications" style={{maxHeight:'320px', width:'100%'}} />
+    <img src="/img/ai/one_ai_plugin/industries/livestockmonitoring.jpg" alt="Industrial Applications" style={{maxHeight:'320px', width:'100%', borderRadius:'8px'}} />
     <h4 style={{marginTop:'10px', marginBottom:'5px'}}>Livestock Monitoring</h4>
     <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>Vision AI analyzes animal movement and behavior to detect stress or illness early, improving herd health and productivity.</p>
   </div>
@@ -126,7 +126,7 @@ By automating most steps of AI development, ONE AI delivers instant, accurate in
       e.currentTarget.style.backgroundColor = 'transparent';
     }}
   >
-    <img src="/img/ai/one_ai_plugin/industries/PrecisionFarming.jpg" alt="Predictive Maintenance" style={{maxHeight:'320px', width:'100%'}} />
+    <img src="/img/ai/one_ai_plugin/industries/PrecisionFarming.jpg" alt="Predictive Maintenance" style={{maxHeight:'320px', width:'100%', borderRadius:'8px'}} />
     <h4 style={{marginTop:'10px', marginBottom:'5px'}}>Precision Farming</h4>
     <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>Vision AI guides automated spraying, irrigation, and harvesting to optimize efficiency and reduce resource waste.</p>
   </div>
@@ -157,7 +157,7 @@ By automating most steps of AI development, ONE AI delivers instant, accurate in
       e.currentTarget.style.backgroundColor = 'transparent';
     }}
   >
-    <img src="/img/ai/one_ai_plugin/industries/FieldAnalytics.jpg" alt="Robotics Integration" style={{maxHeight:'320px', width:'100%'}} />
+    <img src="/img/ai/one_ai_plugin/industries/FieldAnalytics.jpg" alt="Robotics Integration" style={{maxHeight:'320px', width:'100%', borderRadius:'8px'}} />
     <h4 style={{marginTop:'10px', marginBottom:'5px'}}>Field Analytics</h4>
     <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>On-site Vision AI delivers actionable insights directly from tractors, drones, and field devices even without connectivity.</p>
   </div>
