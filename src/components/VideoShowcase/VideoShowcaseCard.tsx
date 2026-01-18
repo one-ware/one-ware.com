@@ -159,7 +159,7 @@ export default function VideoShowcaseCard({
             border: isActive
               ? (isDarkMode ? "1px solid rgba(0, 255, 209, 0.5)" : "1px solid rgba(0, 168, 138, 0.5)")
               : (isDarkMode ? "1px solid rgba(255, 255, 255, 0.1)" : "1px solid rgba(0, 0, 0, 0.1)"),
-            borderRadius: 0,
+            borderRadius: 14,
             boxShadow: isActive
               ? (isDarkMode ? "0 8px 32px rgba(0, 255, 209, 0.15)" : "0 8px 32px rgba(0, 168, 138, 0.15)")
               : "none",
@@ -167,7 +167,7 @@ export default function VideoShowcaseCard({
             opacity: isActive ? 1 : 0.6,
           }}
         >
-          <div className="relative overflow-hidden flex-shrink-0" style={{ aspectRatio: "16 / 9" }}>
+          <div className="relative overflow-hidden flex-shrink-0" style={{ borderRadius: "14px 14px 0 0", aspectRatio: "16 / 9" }}>
             {videoSrc && (
               <video
                 ref={videoRef}
@@ -206,6 +206,7 @@ export default function VideoShowcaseCard({
                 className="p-1.5 sm:p-2 text-center transition-all duration-300 flex flex-col justify-center h-full"
                 style={{
                   background: isDarkMode ? "rgba(0, 0, 0, 0.3)" : "rgba(0, 0, 0, 0.05)",
+                  borderRadius: "8px",
                 }}
               >
                 <div
@@ -223,6 +224,7 @@ export default function VideoShowcaseCard({
                 className="p-1.5 sm:p-2 text-center transition-all duration-300 flex flex-col justify-center h-full"
                 style={{
                   background: isDarkMode ? "rgba(0, 0, 0, 0.3)" : "rgba(0, 0, 0, 0.05)",
+                  borderRadius: "8px",
                 }}
               >
                 <div className={`text-sm sm:text-base lg:text-lg font-bold whitespace-nowrap ${complexityColor[metrics.center.value]}`}>
@@ -237,6 +239,7 @@ export default function VideoShowcaseCard({
                 className="p-1.5 sm:p-2 text-center transition-all duration-300 flex flex-col justify-center h-full"
                 style={{
                   background: isDarkMode ? "rgba(0, 0, 0, 0.3)" : "rgba(0, 0, 0, 0.05)",
+                  borderRadius: "8px",
                 }}
               >
                 <div

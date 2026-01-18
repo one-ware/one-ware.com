@@ -11,7 +11,7 @@ import LiteYouTubeEmbed from '@site/src/components/LiteYouTubeEmbed';
 From **[potato chip inspection](/docs/one-ai/use-cases/chip)** to **[PCB defect detection](/docs/one-ai/use-cases/pcb)**, ONE AI has shown that it can generate models that are not only **leaner and faster**, but also **more accurate** than both universal networks and hand-crafted expert designs. These results have been confirmed in our joint whitepaper with Altera—where even a decade-old MAX® 10 FPGA outperformed Nvidia’s Jetson Orin Nano—and in independent PCB benchmarks, where ONE AI surpassed researcher-built architectures while running more than ten times faster.
 
 <div style={{display:'flex', justifyContent:'center', margin:'20px 0'}}>
-  <img src="/img/ai/one_ai_plugin/use_cases/capture/full.png" alt="Camera Tool capturing images for QC" style={{maxHeight:'320px'}} />
+  <img src="/img/ai/one_ai_plugin/use_cases/capture/full.png" alt="Camera Tool capturing images for QC" style={{maxHeight:'320px', borderRadius:'8px'}} />
 </div>
 
 But high-performance models are only the first step. With the **Camera Tool**, they can be used for industry automation or turned into a **production-ready quality control station** instantly - without custom UI development or complex integration work.
@@ -27,7 +27,7 @@ The Camera Tool already provides a clean, full-screen operator interface with cl
 A standard NUC PC and a USB camera are enough. The AI model runs locally, while the Camera Tool handles capture, decision-making, and operator interaction. For production, it connects seamlessly to a PLC to control sorting or rejection systems.
 
 <div style={{display:'flex', justifyContent:'center', margin:'20px 0'}}>
-  <img src="/img/ai/one_ai_plugin/getting_started/camera_tool/capture.png" alt="Camera Tool capturing images for QC" style={{maxHeight:'320px'}} />
+  <img src="/img/ai/one_ai_plugin/getting_started/camera_tool/capture.png" alt="Camera Tool capturing images for QC" style={{maxHeight:'320px', borderRadius:'8px'}} />
 </div>
 
 **Continuous improvement built in**  
