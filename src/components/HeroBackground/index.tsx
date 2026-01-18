@@ -76,7 +76,7 @@ export default function HeroBackground({
             linear-gradient(to right, ${isDarkMode ? "rgba(0, 200, 170, 0.12)" : "rgba(0, 140, 120, 0.1)"} 1px, transparent 1px),
             linear-gradient(to bottom, ${isDarkMode ? "rgba(0, 200, 170, 0.12)" : "rgba(0, 140, 120, 0.1)"} 1px, transparent 1px)
           `,
-          backgroundSize: "50px 50px",
+          backgroundSize: "40px 40px",
           maskImage: `
             linear-gradient(
               150deg,
