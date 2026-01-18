@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import Layout from "@theme/Layout";
 import Translate, { translate } from "@docusaurus/Translate";
 import { useLocation, useHistory } from "@docusaurus/router";
+import { useColorMode } from "@docusaurus/theme-common";
 import { UPCOMING_EVENTS, PAST_EVENTS } from "../data/eventsData";
 import EventCard from "../components/EventCard";
 import EventDetailPage from "../components/EventDetailPage";
@@ -10,17 +11,10 @@ import { JSX } from "react";
 
 const EVENTS_PER_PAGE = 6;
 
-export default function SeminarsPage(): JSX.Element {
-  const location = useLocation();
-  const history = useHistory();
+function SeminarsContent() {
+  const { colorMode } = useColorMode();
+  const isDarkMode = colorMode === "dark";
   const locale = useLocale();
-  const seminarsPath = useLocalizedPath("/seminars");
-
-  const searchParams = new URLSearchParams(location.search);
-  const eventId = searchParams.get("event");
-
-  const allEvents = [...UPCOMING_EVENTS, ...PAST_EVENTS];
-  const selectedEvent = eventId ? allEvents.find(e => e.id === eventId) : null;
 
   const [heroVisible, setHeroVisible] = useState(false);
 
@@ -42,6 +36,8 @@ export default function SeminarsPage(): JSX.Element {
 
   const [categoryDropdownOpen, setCategoryDropdownOpen] = useState(false);
   const [typeDropdownOpen, setTypeDropdownOpen] = useState(false);
+
+  const allEvents = [...UPCOMING_EVENTS, ...PAST_EVENTS];
 
   const availableCategories = useMemo(() =>
     [...new Set(allEvents.map(e => e.category))].sort(),
@@ -186,28 +182,8 @@ export default function SeminarsPage(): JSX.Element {
     }
   };
 
-  const handleBack = () => {
-    history.push(seminarsPath);
-  };
-
-  if (selectedEvent) {
-    return (
-      <Layout
-        title={selectedEvent.title}
-        description={selectedEvent.shortDescription || selectedEvent.description || "Event Details"}
-      >
-        <div style={{ marginTop: "calc(var(--ifm-navbar-height) * -1)" }}>
-          <EventDetailPage event={selectedEvent} onBack={handleBack} />
-        </div>
-      </Layout>
-    );
-  }
-
   return (
-    <Layout
-      title={translate({id: 'seminars.page.title', message: 'Events and Webinars'})}
-      description={translate({id: 'seminars.page.description', message: 'Sometimes virtual. Sometimes live. Always inspiring. Discover our events here.'})}
-    >
+    <>
       <section
         className="relative min-h-[66vh] flex items-center overflow-hidden"
         style={{
@@ -267,14 +243,14 @@ export default function SeminarsPage(): JSX.Element {
         </div>
       </section>
 
-      <section id="events" className="bg-[#161616] pt-8 md:pt-12 pb-16 md:pb-24">
+      <section id="events" className={`${isDarkMode ? "bg-[#161616]" : "bg-white"} pt-8 md:pt-12 pb-16 md:pb-24`}>
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
 
-            <div className="rounded-2xl p-4 md:p-5 mb-12 overflow-visible bg-[#252525] border border-white/10">
+            <div className={`rounded-2xl p-4 md:p-5 mb-12 overflow-visible ${isDarkMode ? "bg-[#252525] border-white/10" : "bg-[#f5f5f5] border-black/10"} border`}>
               <div className="flex flex-col lg:flex-row lg:items-end gap-3 md:gap-4">
                 <div className="w-full lg:flex-[2]">
-                  <label className="block text-xs font-medium text-gray-300 uppercase tracking-wide mb-1.5">
+                  <label className={`block text-xs font-medium ${isDarkMode ? "text-gray-300" : "text-gray-600"} uppercase tracking-wide mb-1.5`}>
                     <Translate id="seminars.filter.search.label">Search</Translate>
                   </label>
                   <div className="relative">
@@ -286,21 +262,21 @@ export default function SeminarsPage(): JSX.Element {
                       value={searchTitle}
                       onChange={(e) => setSearchTitle(e.target.value)}
                       placeholder={translate({id: 'seminars.filter.search.placeholder', message: 'Search titles...'})}
-                      className="w-full h-10 pl-10 pr-4 bg-black/30 border-0 rounded-md text-sm text-white placeholder-gray-400 outline-none shadow-none ring-0 focus:ring-0"
+                      className={`w-full h-10 pl-10 pr-4 ${isDarkMode ? "bg-black/30" : "bg-white border border-black/10"} border-0 rounded-md text-sm ${isDarkMode ? "text-white" : "text-gray-900"} placeholder-gray-400 outline-none shadow-none ring-0 focus:ring-0`}
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:contents gap-3 md:gap-4">
                   <div className="relative category-dropdown lg:flex-1">
-                    <label className="block text-xs font-medium text-gray-300 uppercase tracking-wide mb-1.5">
+                    <label className={`block text-xs font-medium ${isDarkMode ? "text-gray-300" : "text-gray-600"} uppercase tracking-wide mb-1.5`}>
                       <Translate id="seminars.filter.category.label">Category</Translate>
                     </label>
                     <button
                       onClick={() => setCategoryDropdownOpen(!categoryDropdownOpen)}
-                      className="w-full h-10 px-3 bg-black/30 border-0 rounded-md text-left text-sm flex items-center justify-between hover:bg-black/40 shadow-none ring-0 focus:ring-0 focus:outline-none"
+                      className={`w-full h-10 px-3 ${isDarkMode ? "bg-black/30 hover:bg-black/40" : "bg-white hover:bg-gray-100 border border-black/10"} border-0 rounded-md text-left text-sm flex items-center justify-between shadow-none ring-0 focus:ring-0 focus:outline-none`}
                     >
-                      <span className="text-white truncate">
+                      <span className={`${isDarkMode ? "text-white" : "text-gray-900"} truncate`}>
                         {selectedCategories.length === 0
                           ? <Translate id="seminars.filter.category.all">All</Translate>
                           : selectedCategories.length === 1
@@ -312,7 +288,7 @@ export default function SeminarsPage(): JSX.Element {
                       </svg>
                     </button>
                     {categoryDropdownOpen && (
-                      <div className="absolute z-20 mt-1 w-full bg-[#1a1a1a] rounded-md shadow-lg max-h-60 overflow-y-auto border border-white/10">
+                      <div className={`absolute z-20 mt-1 w-full ${isDarkMode ? "bg-[#1a1a1a] border-white/10" : "bg-white border-black/10"} rounded-md shadow-lg max-h-60 overflow-y-auto border`}>
                         {availableCategories.map(category => (
                           <label
                             key={category}
@@ -324,7 +300,7 @@ export default function SeminarsPage(): JSX.Element {
                               onChange={() => toggleCategory(category)}
                               className="w-4 h-4 rounded border-gray-500 text-[var(--ifm-color-primary)] shadow-none ring-0 focus:ring-0"
                             />
-                            <span className="ml-2 text-white">{category}</span>
+                            <span className={`ml-2 ${isDarkMode ? "text-white" : "text-gray-900"}`}>{category}</span>
                           </label>
                         ))}
                       </div>
@@ -332,14 +308,14 @@ export default function SeminarsPage(): JSX.Element {
                   </div>
 
                   <div className="relative type-dropdown lg:flex-1">
-                    <label className="block text-xs font-medium text-gray-300 uppercase tracking-wide mb-1.5">
+                    <label className={`block text-xs font-medium ${isDarkMode ? "text-gray-300" : "text-gray-600"} uppercase tracking-wide mb-1.5`}>
                       <Translate id="seminars.filter.type.label">Type</Translate>
                     </label>
                     <button
                       onClick={() => setTypeDropdownOpen(!typeDropdownOpen)}
-                      className="w-full h-10 px-3 bg-black/30 border-0 rounded-md text-left text-sm flex items-center justify-between hover:bg-black/40 shadow-none ring-0 focus:ring-0 focus:outline-none"
+                      className={`w-full h-10 px-3 ${isDarkMode ? "bg-black/30 hover:bg-black/40" : "bg-white hover:bg-gray-100 border border-black/10"} border-0 rounded-md text-left text-sm flex items-center justify-between shadow-none ring-0 focus:ring-0 focus:outline-none`}
                     >
-                      <span className="text-white truncate">
+                      <span className={`${isDarkMode ? "text-white" : "text-gray-900"} truncate`}>
                         {selectedTypes.length === 0
                           ? <Translate id="seminars.filter.type.all">All</Translate>
                           : selectedTypes.length === 1
@@ -351,7 +327,7 @@ export default function SeminarsPage(): JSX.Element {
                       </svg>
                     </button>
                     {typeDropdownOpen && (
-                      <div className="absolute z-20 mt-1 w-full bg-[#1a1a1a] rounded-md shadow-lg max-h-60 overflow-y-auto border border-white/10">
+                      <div className={`absolute z-20 mt-1 w-full ${isDarkMode ? "bg-[#1a1a1a] border-white/10" : "bg-white border-black/10"} rounded-md shadow-lg max-h-60 overflow-y-auto border`}>
                         {availableTypes.map(type => (
                           <label
                             key={type}
@@ -363,7 +339,7 @@ export default function SeminarsPage(): JSX.Element {
                               onChange={() => toggleType(type)}
                               className="w-4 h-4 rounded border-gray-500 text-[var(--ifm-color-primary)] shadow-none ring-0 focus:ring-0"
                             />
-                            <span className="ml-2 text-white">{getTypeLabel(type)}</span>
+                            <span className={`ml-2 ${isDarkMode ? "text-white" : "text-gray-900"}`}>{getTypeLabel(type)}</span>
                           </label>
                         ))}
                       </div>
@@ -371,7 +347,7 @@ export default function SeminarsPage(): JSX.Element {
                   </div>
 
                   <div className="lg:flex-1">
-                    <label className="block text-xs font-medium text-gray-300 uppercase tracking-wide mb-1.5">
+                    <label className={`block text-xs font-medium ${isDarkMode ? "text-gray-300" : "text-gray-600"} uppercase tracking-wide mb-1.5`}>
                       <Translate id="seminars.filter.dateFrom.label">From</Translate>
                     </label>
                     <input
@@ -379,12 +355,12 @@ export default function SeminarsPage(): JSX.Element {
                       value={dateFrom}
                       onChange={(e) => setDateFrom(e.target.value)}
                       onClick={(e) => (e.target as HTMLInputElement).showPicker()}
-                      className={`date-input w-full h-10 px-3 bg-black/30 border-0 rounded-md text-sm hover:bg-black/40 focus:bg-black/40 outline-none shadow-none ring-0 focus:ring-0 cursor-pointer ${dateFrom ? 'text-white' : 'text-gray-400'}`}
+                      className={`date-input w-full h-10 px-3 ${isDarkMode ? "bg-black/30 hover:bg-black/40 focus:bg-black/40" : "bg-white hover:bg-gray-100 focus:bg-gray-100 border border-black/10"} border-0 rounded-md text-sm outline-none shadow-none ring-0 focus:ring-0 cursor-pointer ${dateFrom ? (isDarkMode ? 'text-white' : 'text-gray-900') : 'text-gray-400'}`}
                     />
                   </div>
 
                   <div className="lg:flex-1">
-                    <label className="block text-xs font-medium text-gray-300 uppercase tracking-wide mb-1.5">
+                    <label className={`block text-xs font-medium ${isDarkMode ? "text-gray-300" : "text-gray-600"} uppercase tracking-wide mb-1.5`}>
                       <Translate id="seminars.filter.dateTo.label">To</Translate>
                     </label>
                     <input
@@ -392,7 +368,7 @@ export default function SeminarsPage(): JSX.Element {
                       value={dateTo}
                       onChange={(e) => setDateTo(e.target.value)}
                       onClick={(e) => (e.target as HTMLInputElement).showPicker()}
-                      className={`date-input w-full h-10 px-3 bg-black/30 border-0 rounded-md text-sm hover:bg-black/40 focus:bg-black/40 outline-none shadow-none ring-0 focus:ring-0 cursor-pointer ${dateTo ? 'text-white' : 'text-gray-400'}`}
+                      className={`date-input w-full h-10 px-3 ${isDarkMode ? "bg-black/30 hover:bg-black/40 focus:bg-black/40" : "bg-white hover:bg-gray-100 focus:bg-gray-100 border border-black/10"} border-0 rounded-md text-sm outline-none shadow-none ring-0 focus:ring-0 cursor-pointer ${dateTo ? (isDarkMode ? 'text-white' : 'text-gray-900') : 'text-gray-400'}`}
                     />
                   </div>
                 </div>
@@ -411,7 +387,7 @@ export default function SeminarsPage(): JSX.Element {
               </div>
             </div>
 
-            <h2 className="text-gray-200 text-3xl md:text-4xl font-normal text-center mb-12">
+            <h2 className={`${isDarkMode ? "text-gray-200" : "text-gray-800"} text-3xl md:text-4xl font-normal text-center mb-12`}>
               <Translate id="seminars.section.upcoming">Upcoming Events</Translate>
             </h2>
 
@@ -429,7 +405,7 @@ export default function SeminarsPage(): JSX.Element {
                   >
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                       {currentEvents.map((event) => (
-                        <EventCard key={event.id} event={event} />
+                        <EventCard key={event.id} event={event} isDarkMode={isDarkMode} />
                       ))}
                     </div>
                   </div>
@@ -452,14 +428,14 @@ export default function SeminarsPage(): JSX.Element {
                 )}
               </>
             ) : (
-              <p className="text-gray-400 text-lg text-center">
+              <p className={`${isDarkMode ? "text-gray-400" : "text-gray-600"} text-lg text-center`}>
                 <Translate id="seminars.empty.upcoming">No upcoming events found.</Translate>
               </p>
             )}
 
             <div className="my-24 border-t border-gray-700" />
 
-            <h2 className="text-gray-200 text-3xl md:text-4xl font-normal text-center mb-12">
+            <h2 className={`${isDarkMode ? "text-gray-200" : "text-gray-800"} text-3xl md:text-4xl font-normal text-center mb-12`}>
               <Translate id="seminars.section.past">Past Events</Translate>
             </h2>
 
@@ -477,7 +453,7 @@ export default function SeminarsPage(): JSX.Element {
                   >
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                       {pastCurrentEvents.map((event) => (
-                        <EventCard key={event.id} event={event} />
+                        <EventCard key={event.id} event={event} isDarkMode={isDarkMode} />
                       ))}
                     </div>
                   </div>
@@ -500,7 +476,7 @@ export default function SeminarsPage(): JSX.Element {
                 )}
               </>
             ) : (
-              <p className="text-gray-400 text-lg text-center">
+              <p className={`${isDarkMode ? "text-gray-400" : "text-gray-600"} text-lg text-center`}>
                 <Translate id="seminars.empty.past">No past events found.</Translate>
               </p>
             )}
@@ -569,6 +545,44 @@ export default function SeminarsPage(): JSX.Element {
           }
         }
       `}</style>
+    </>
+  );
+}
+
+export default function SeminarsPage(): JSX.Element {
+  const location = useLocation();
+  const history = useHistory();
+  const seminarsPath = useLocalizedPath("/seminars");
+
+  const searchParams = new URLSearchParams(location.search);
+  const eventId = searchParams.get("event");
+
+  const allEvents = [...UPCOMING_EVENTS, ...PAST_EVENTS];
+  const selectedEvent = eventId ? allEvents.find(e => e.id === eventId) : null;
+
+  const handleBack = () => {
+    history.push(seminarsPath);
+  };
+
+  if (selectedEvent) {
+    return (
+      <Layout
+        title={selectedEvent.title}
+        description={selectedEvent.shortDescription || selectedEvent.description || "Event Details"}
+      >
+        <div style={{ marginTop: "calc(var(--ifm-navbar-height) * -1)" }}>
+          <EventDetailPage event={selectedEvent} onBack={handleBack} />
+        </div>
+      </Layout>
+    );
+  }
+
+  return (
+    <Layout
+      title={translate({id: 'seminars.page.title', message: 'Events and Webinars'})}
+      description={translate({id: 'seminars.page.description', message: 'Sometimes virtual. Sometimes live. Always inspiring. Discover our events here.'})}
+    >
+      <SeminarsContent />
     </Layout>
   );
 }
