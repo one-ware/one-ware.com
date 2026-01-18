@@ -120,7 +120,7 @@ function CustomDropdown({ label, stepNumber, value, onChange, options, disabled,
             : value
             ? `1px solid rgba(${primaryColorRgba}, 0.3)`
             : `1px solid ${defaultBorder}`,
-          borderRadius: 0,
+          borderRadius: isOpen ? '14px 14px 0 0' : '14px',
           color: disabled ? disabledColor : value ? primaryColor : textColor,
           fontSize: '15px',
           fontWeight: value ? '600' : '400',
@@ -159,7 +159,7 @@ function CustomDropdown({ label, stepNumber, value, onChange, options, disabled,
             background: dropdownBg,
             border: `1px solid rgba(${primaryColorRgba}, 0.3)`,
             borderTop: 'none',
-            borderRadius: 0,
+            borderRadius: '0 0 14px 14px',
             overflow: 'hidden',
             zIndex: 100,
             maxHeight: '300px',
@@ -238,7 +238,7 @@ function ExportCard({ option, isDarkMode }: { option: ExportOption; isDarkMode: 
 
   return (
     <div
-      className="p-4 sm:p-[18px_22px] transition-all duration-[250ms] hover:-translate-y-0.5"
+      className="p-4 sm:p-[18px_22px] rounded-[14px] transition-all duration-[250ms] hover:-translate-y-0.5"
       style={{
         background: `rgba(${primaryColorRgba}, 0.03)`,
         border: `1px solid rgba(${primaryColorRgba}, 0.15)`,
@@ -251,7 +251,7 @@ function ExportCard({ option, isDarkMode }: { option: ExportOption; isDarkMode: 
         }}
       >
         <span
-          className="px-2 sm:px-3 py-1 text-[10px] sm:text-xs font-bold uppercase tracking-wide"
+          className="px-2 sm:px-3 py-1 text-[10px] sm:text-xs font-bold uppercase tracking-wide rounded-lg"
           style={{
             background: primaryColor,
             color: isDarkMode ? '#000' : '#fff',
@@ -281,7 +281,7 @@ function ExportCard({ option, isDarkMode }: { option: ExportOption; isDarkMode: 
         {option.docLink && (
           <a
             href={option.docLink}
-            className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium no-underline px-2 sm:px-3 py-1.5 transition-all duration-200"
+            className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium no-underline px-2 sm:px-3 py-1.5 rounded-lg transition-all duration-200"
             style={{
               color: primaryColor,
               background: `rgba(${primaryColorRgba}, 0.1)`,
@@ -299,7 +299,7 @@ function ExportCard({ option, isDarkMode }: { option: ExportOption; isDarkMode: 
         {option.tutorialLink && (
           <a
             href={option.tutorialLink}
-            className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium no-underline px-2 sm:px-3 py-1.5 transition-all duration-200"
+            className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium no-underline px-2 sm:px-3 py-1.5 rounded-lg transition-all duration-200"
             style={{
               color: primaryColor,
               background: `rgba(${primaryColorRgba}, 0.1)`,
@@ -412,7 +412,7 @@ export default function PartnerFilterWizard() {
       style={{
         background: `linear-gradient(135deg, rgba(${primaryColorRgba}, 0.05), rgba(${primaryColorRgba}, 0.01))`,
         border: `1px solid rgba(${primaryColorRgba}, 0.15)`,
-        borderRadius: 0,
+        borderRadius: '20px',
         padding: '32px',
         marginTop: '32px',
         marginBottom: '40px',
@@ -452,7 +452,7 @@ export default function PartnerFilterWizard() {
               padding: '10px 18px',
               background: defaultBg,
               border: `1px solid ${defaultBorder}`,
-              borderRadius: 0,
+              borderRadius: '10px',
               color: mutedColor,
               fontSize: '14px',
               cursor: 'pointer',
@@ -535,7 +535,7 @@ export default function PartnerFilterWizard() {
 
       {exportOptions.length > 0 && (
         <div
-          className="p-4 sm:p-6"
+          className="p-4 sm:p-6 rounded-2xl"
           style={{
             background: `rgba(${primaryColorRgba}, 0.05)`,
             border: `1px solid rgba(${primaryColorRgba}, 0.2)`,
@@ -563,7 +563,7 @@ export default function PartnerFilterWizard() {
             padding: '24px',
             background: 'rgba(255, 200, 0, 0.1)',
             border: '1px solid rgba(255, 200, 0, 0.3)',
-            borderRadius: 0,
+            borderRadius: '14px',
             color: '#ffc800',
             fontSize: '15px',
           }}

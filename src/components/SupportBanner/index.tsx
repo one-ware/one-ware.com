@@ -19,7 +19,7 @@ const SupportBanner: React.FC<SupportBannerProps> = ({
         ? 'linear-gradient(135deg, rgba(0, 255, 209, 0.1), rgba(0, 255, 209, 0.05))'
         : 'linear-gradient(135deg, rgba(0, 168, 138, 0.1), rgba(0, 168, 138, 0.05))',
       border: isDarkMode ? '1px solid rgba(0, 255, 209, 0.2)' : '1px solid rgba(0, 168, 138, 0.2)',
-      borderRadius: 0,
+      borderRadius: '20px',
       padding: '32px',
       margin: '24px 0',
       display: 'flex',

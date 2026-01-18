@@ -12,7 +12,7 @@ export default function LiteYouTubeEmbed({ videoId, previewImage, title = "YouTu
 
   if (isPlaying) {
     return (
-      <div className="video-container" style={{ position: 'relative', width: '100%', aspectRatio: '16/9', overflow: 'hidden' }}>
+      <div className="video-container" style={{ position: 'relative', width: '100%', aspectRatio: '16/9', overflow: 'hidden', borderRadius: '8px' }}>
         <iframe
           src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`}
           title={title}
@@ -40,6 +40,7 @@ export default function LiteYouTubeEmbed({ videoId, previewImage, title = "YouTu
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        borderRadius: '8px',
         overflow: 'hidden'
       }}
     >
@@ -71,7 +72,7 @@ export default function LiteYouTubeEmbed({ videoId, previewImage, title = "YouTu
       </div>
 
       <div className="absolute bottom-2 left-0 right-0 text-center px-4 z-10">
-        <span className="text-white text-[10px] sm:text-xs bg-black/60 px-2 py-1 backdrop-blur-sm">
+        <span className="text-white text-[10px] sm:text-xs bg-black/60 px-2 py-1 rounded backdrop-blur-sm">
           <Translate id="video.youtube.privacy">
             By playing this video, you agree to data being transferred to YouTube.
           </Translate>

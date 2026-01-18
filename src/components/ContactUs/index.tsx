@@ -166,7 +166,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
       <div className={`mt-12 mb-4 w-full ${compact ? '' : 'px-6 lg:px-12'}`}>
         <div className={`flex flex-col lg:flex-row gap-8 items-stretch ${compact ? '' : 'max-w-7xl mx-auto'}`}>
           <div className="w-full lg:w-1/2">
-            <div className={`backdrop-blur-sm p-8 md:p-12 border h-full flex flex-col ${isDarkMode ? "bg-gray-800/50 border-gray-700" : "bg-white/80 border-gray-200"}`}>
+            <div className={`backdrop-blur-sm rounded-2xl p-8 md:p-12 border h-full flex flex-col ${isDarkMode ? "bg-gray-800/50 border-gray-700" : "bg-white/80 border-gray-200"}`}>
               {mode === "select" && (
                 <div className="flex-1 flex flex-col text-center">
                   <img
@@ -190,10 +190,11 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                   <div className="flex flex-col gap-3 w-full max-w-sm mx-auto mt-auto">
                     <button
                       onClick={() => setMode("form")}
-                      className="group relative px-6 py-3 font-medium overflow-hidden transition-all duration-300 w-full"
+                      className="group relative px-6 py-3 rounded-xl font-medium overflow-hidden transition-all duration-300 w-full"
                       style={{
                         background: "rgba(0, 255, 209, 0.05)",
-                        border: "1px solid rgba(0, 255, 209, 0.3)"
+                        border: "1px solid rgba(0, 255, 209, 0.3)",
+                        borderRadius: 8
                       }}
                     >
                       <span className="relative z-10 flex items-center justify-center gap-3 text-base text-[var(--ifm-color-primary)] group-hover:text-[var(--ifm-color-primary-lighter)] transition-colors">
@@ -210,10 +211,11 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                     <a
                       href="mailto:sales@one-ware.com"
                       onClick={() => trackEvent("email_click", { label: "Helmut Email" })}
-                      className="group relative px-6 py-3 font-medium overflow-hidden transition-all duration-300 w-full"
+                      className="group relative px-6 py-3 rounded-xl font-medium overflow-hidden transition-all duration-300 w-full"
                       style={{
                         background: "rgba(0, 255, 209, 0.05)",
-                        border: "1px solid rgba(0, 255, 209, 0.3)"
+                        border: "1px solid rgba(0, 255, 209, 0.3)",
+                        borderRadius: 8
                       }}
                     >
                       <span className="relative z-10 flex items-center justify-center gap-3 text-base text-[var(--ifm-color-primary)] group-hover:text-[var(--ifm-color-primary-lighter)] transition-colors">
@@ -232,10 +234,11 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                         setMode("booking");
                         trackEvent("schedule_meeting", { label: "Helmut Meeting" });
                       }}
-                      className="group relative px-6 py-3 font-medium overflow-hidden transition-all duration-300 w-full"
+                      className="group relative px-6 py-3 rounded-xl font-medium overflow-hidden transition-all duration-300 w-full"
                       style={{
                         background: "rgba(0, 255, 209, 0.05)",
-                        border: "1px solid rgba(0, 255, 209, 0.3)"
+                        border: "1px solid rgba(0, 255, 209, 0.3)",
+                        borderRadius: 8
                       }}
                     >
                       <span className="relative z-10 flex items-center justify-center gap-3 text-base text-[var(--ifm-color-primary)] group-hover:text-[var(--ifm-color-primary-lighter)] transition-colors">
@@ -256,7 +259,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
 
               {mode === "form" && formStatus === "success" && (
                 <div className="flex-1 flex flex-col items-center justify-center text-center">
-                  <div className="w-16 h-16 bg-[var(--ifm-color-primary)]/20 flex items-center justify-center mb-6">
+                  <div className="w-16 h-16 bg-[var(--ifm-color-primary)]/20 flex items-center justify-center mb-6 rounded-full">
                     <svg className="w-8 h-8 text-[var(--ifm-color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
@@ -269,10 +272,11 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                   </p>
                   <button
                     onClick={() => { setFormStatus("idle"); setMode("select"); }}
-                    className="group relative px-8 py-4 font-medium overflow-hidden transition-all duration-300"
+                    className="group relative px-8 py-4 rounded-xl font-medium overflow-hidden transition-all duration-300"
                     style={{
                       background: "rgba(0, 255, 209, 0.05)",
-                      border: "1px solid rgba(0, 255, 209, 0.3)"
+                      border: "1px solid rgba(0, 255, 209, 0.3)",
+                      borderRadius: 8
                     }}
                   >
                     <span className="relative z-10 text-[var(--ifm-color-primary)] group-hover:text-[var(--ifm-color-primary-lighter)] transition-colors">
@@ -294,10 +298,11 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                     </h3>
                     <button
                       onClick={() => { setFormStatus("idle"); setMode("select"); }}
-                      className="group relative p-2 overflow-hidden transition-all duration-300"
+                      className="group relative p-2 rounded-lg overflow-hidden transition-all duration-300"
                       style={{
                         background: "rgba(0, 255, 209, 0.05)",
-                        border: "1px solid rgba(0, 255, 209, 0.3)"
+                        border: "1px solid rgba(0, 255, 209, 0.3)",
+                        borderRadius: 8
                       }}
                     >
                       <svg className="w-5 h-5 relative z-10 text-[var(--ifm-color-primary)] group-hover:text-[var(--ifm-color-primary-lighter)] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -311,7 +316,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                   </div>
 
                   {formStatus === "error" && (
-                    <div className="mb-4 p-4 bg-red-500/10 border border-red-500/30">
+                    <div className="mb-4 p-4 bg-red-500/10 border border-red-500/30 rounded-lg">
                       <p className="text-red-400 text-sm">
                         <Translate id="contactus.error">An error occurred while sending your message.</Translate>
                       </p>
@@ -334,7 +339,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                       <input
                         type="text"
                         name="name"
-                        className={`w-full px-4 py-3 border focus:outline-none focus:border-[var(--ifm-color-primary)] transition-colors ${isDarkMode ? "border-gray-600 bg-gray-700 text-white" : "border-gray-300 bg-white text-gray-900"}`}
+                        className={`w-full px-4 py-3 border focus:outline-none focus:border-[var(--ifm-color-primary)] transition-colors rounded-lg ${isDarkMode ? "border-gray-600 bg-gray-700 text-white" : "border-gray-300 bg-white text-gray-900"}`}
                         value={formData.name}
                         onChange={handleChange}
                         required
@@ -346,7 +351,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                       <input
                         type="email"
                         name="email"
-                        className={`w-full px-4 py-3 border focus:outline-none focus:border-[var(--ifm-color-primary)] transition-colors ${isDarkMode ? "border-gray-600 bg-gray-700 text-white" : "border-gray-300 bg-white text-gray-900"}`}
+                        className={`w-full px-4 py-3 border focus:outline-none focus:border-[var(--ifm-color-primary)] transition-colors rounded-lg ${isDarkMode ? "border-gray-600 bg-gray-700 text-white" : "border-gray-300 bg-white text-gray-900"}`}
                         value={formData.email}
                         onChange={handleChange}
                         required
@@ -359,7 +364,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                       </span>
                       <textarea
                         name="message"
-                        className={`flex-1 w-full px-4 py-3 border focus:outline-none focus:border-[var(--ifm-color-primary)] transition-colors resize-none min-h-[100px] ${isDarkMode ? "border-gray-600 bg-gray-700 text-white" : "border-gray-300 bg-white text-gray-900"}`}
+                        className={`flex-1 w-full px-4 py-3 border focus:outline-none focus:border-[var(--ifm-color-primary)] transition-colors resize-none min-h-[100px] rounded-lg ${isDarkMode ? "border-gray-600 bg-gray-700 text-white" : "border-gray-300 bg-white text-gray-900"}`}
                         value={formData.message}
                         onChange={handleChange}
                         required
@@ -384,10 +389,11 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                     </h3>
                     <button
                       onClick={() => setMode("select")}
-                      className="group relative p-2 overflow-hidden transition-all duration-300"
+                      className="group relative p-2 rounded-lg overflow-hidden transition-all duration-300"
                       style={{
                         background: "rgba(0, 255, 209, 0.05)",
-                        border: "1px solid rgba(0, 255, 209, 0.3)"
+                        border: "1px solid rgba(0, 255, 209, 0.3)",
+                        borderRadius: 8
                       }}
                     >
                       <svg className="w-5 h-5 relative z-10 text-[var(--ifm-color-primary)] group-hover:text-[var(--ifm-color-primary-lighter)] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -414,7 +420,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
           </div>
 
           <div className="w-full lg:w-1/2">
-            <div className={`backdrop-blur-sm p-8 md:p-12 border h-full flex flex-col ${isDarkMode ? "bg-gray-800/50 border-gray-700" : "bg-white/80 border-gray-200"}`}>
+            <div className={`backdrop-blur-sm rounded-2xl p-8 md:p-12 border h-full flex flex-col ${isDarkMode ? "bg-gray-800/50 border-gray-700" : "bg-white/80 border-gray-200"}`}>
               {christopherMode === "select" && (
                 <div className="flex-1 flex flex-col text-center">
                   <img
@@ -438,10 +444,11 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                   <div className="flex flex-col gap-3 w-full max-w-sm mx-auto mt-auto">
                     <button
                       onClick={() => setChristopherMode("form")}
-                      className="group relative px-6 py-3 font-medium overflow-hidden transition-all duration-300 w-full"
+                      className="group relative px-6 py-3 rounded-xl font-medium overflow-hidden transition-all duration-300 w-full"
                       style={{
                         background: "rgba(0, 255, 209, 0.05)",
-                        border: "1px solid rgba(0, 255, 209, 0.3)"
+                        border: "1px solid rgba(0, 255, 209, 0.3)",
+                        borderRadius: 8
                       }}
                     >
                       <span className="relative z-10 flex items-center justify-center gap-3 text-base text-[var(--ifm-color-primary)] group-hover:text-[var(--ifm-color-primary-lighter)] transition-colors">
@@ -458,10 +465,11 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                     <a
                       href="mailto:support@one-ware.com"
                       onClick={() => trackEvent("email_click", { label: "Christopher Email" })}
-                      className="group relative px-6 py-3 font-medium overflow-hidden transition-all duration-300 w-full"
+                      className="group relative px-6 py-3 rounded-xl font-medium overflow-hidden transition-all duration-300 w-full"
                       style={{
                         background: "rgba(0, 255, 209, 0.05)",
-                        border: "1px solid rgba(0, 255, 209, 0.3)"
+                        border: "1px solid rgba(0, 255, 209, 0.3)",
+                        borderRadius: 8
                       }}
                     >
                       <span className="relative z-10 flex items-center justify-center gap-3 text-base text-[var(--ifm-color-primary)] group-hover:text-[var(--ifm-color-primary-lighter)] transition-colors">
@@ -487,7 +495,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
 
               {christopherMode === "form" && christopherFormStatus === "success" && (
                 <div className="flex-1 flex flex-col items-center justify-center text-center">
-                  <div className="w-16 h-16 bg-[var(--ifm-color-primary)]/20 flex items-center justify-center mb-6">
+                  <div className="w-16 h-16 bg-[var(--ifm-color-primary)]/20 flex items-center justify-center mb-6 rounded-full">
                     <svg className="w-8 h-8 text-[var(--ifm-color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
@@ -500,10 +508,11 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                   </p>
                   <button
                     onClick={() => { setChristopherFormStatus("idle"); setChristopherMode("select"); }}
-                    className="group relative px-8 py-4 font-medium overflow-hidden transition-all duration-300"
+                    className="group relative px-8 py-4 rounded-xl font-medium overflow-hidden transition-all duration-300"
                     style={{
                       background: "rgba(0, 255, 209, 0.05)",
-                      border: "1px solid rgba(0, 255, 209, 0.3)"
+                      border: "1px solid rgba(0, 255, 209, 0.3)",
+                      borderRadius: 8
                     }}
                   >
                     <span className="relative z-10 text-[var(--ifm-color-primary)] group-hover:text-[var(--ifm-color-primary-lighter)] transition-colors">
@@ -525,10 +534,11 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                     </h3>
                     <button
                       onClick={() => { setChristopherFormStatus("idle"); setChristopherMode("select"); }}
-                      className="group relative p-2 overflow-hidden transition-all duration-300"
+                      className="group relative p-2 rounded-lg overflow-hidden transition-all duration-300"
                       style={{
                         background: "rgba(0, 255, 209, 0.05)",
-                        border: "1px solid rgba(0, 255, 209, 0.3)"
+                        border: "1px solid rgba(0, 255, 209, 0.3)",
+                        borderRadius: 8
                       }}
                     >
                       <svg className="w-5 h-5 relative z-10 text-[var(--ifm-color-primary)] group-hover:text-[var(--ifm-color-primary-lighter)] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -542,7 +552,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                   </div>
 
                   {christopherFormStatus === "error" && (
-                    <div className="mb-4 p-4 bg-red-500/10 border border-red-500/30">
+                    <div className="mb-4 p-4 bg-red-500/10 border border-red-500/30 rounded-lg">
                       <p className="text-red-400 text-sm">
                         <Translate id="contactus.error">An error occurred while sending your message.</Translate>
                       </p>
@@ -565,7 +575,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                       <input
                         type="text"
                         name="name"
-                        className={`w-full px-4 py-3 border focus:outline-none focus:border-[var(--ifm-color-primary)] transition-colors ${isDarkMode ? "border-gray-600 bg-gray-700 text-white" : "border-gray-300 bg-white text-gray-900"}`}
+                        className={`w-full px-4 py-3 border focus:outline-none focus:border-[var(--ifm-color-primary)] transition-colors rounded-lg ${isDarkMode ? "border-gray-600 bg-gray-700 text-white" : "border-gray-300 bg-white text-gray-900"}`}
                         value={christopherFormData.name}
                         onChange={handleChristopherChange}
                         required
@@ -577,7 +587,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                       <input
                         type="email"
                         name="email"
-                        className={`w-full px-4 py-3 border focus:outline-none focus:border-[var(--ifm-color-primary)] transition-colors ${isDarkMode ? "border-gray-600 bg-gray-700 text-white" : "border-gray-300 bg-white text-gray-900"}`}
+                        className={`w-full px-4 py-3 border focus:outline-none focus:border-[var(--ifm-color-primary)] transition-colors rounded-lg ${isDarkMode ? "border-gray-600 bg-gray-700 text-white" : "border-gray-300 bg-white text-gray-900"}`}
                         value={christopherFormData.email}
                         onChange={handleChristopherChange}
                         required
@@ -590,7 +600,7 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                       </span>
                       <textarea
                         name="message"
-                        className={`flex-1 w-full px-4 py-3 border focus:outline-none focus:border-[var(--ifm-color-primary)] transition-colors resize-none min-h-[100px] ${isDarkMode ? "border-gray-600 bg-gray-700 text-white" : "border-gray-300 bg-white text-gray-900"}`}
+                        className={`flex-1 w-full px-4 py-3 border focus:outline-none focus:border-[var(--ifm-color-primary)] transition-colors resize-none min-h-[100px] rounded-lg ${isDarkMode ? "border-gray-600 bg-gray-700 text-white" : "border-gray-300 bg-white text-gray-900"}`}
                         value={christopherFormData.message}
                         onChange={handleChristopherChange}
                         required
@@ -615,10 +625,11 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
                     </h3>
                     <button
                       onClick={() => setChristopherMode("select")}
-                      className="group relative p-2 overflow-hidden transition-all duration-300"
+                      className="group relative p-2 rounded-lg overflow-hidden transition-all duration-300"
                       style={{
                         background: "rgba(0, 255, 209, 0.05)",
-                        border: "1px solid rgba(0, 255, 209, 0.3)"
+                        border: "1px solid rgba(0, 255, 209, 0.3)",
+                        borderRadius: 8
                       }}
                     >
                       <svg className="w-5 h-5 relative z-10 text-[var(--ifm-color-primary)] group-hover:text-[var(--ifm-color-primary-lighter)] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
