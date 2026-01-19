@@ -4,6 +4,10 @@ title: ONE WARE Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.21.26.0
+
+- Use Single Instance to open Files / URLs.
+
 ## 0.21.25.0
 
 - Add option for automatic restart after Plugin Updates
