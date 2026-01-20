@@ -233,7 +233,7 @@ const config: Config = {
               label: "Supported Hardware",
             },
             {
-              to: "/docs/one-ai/seminars",
+              to: "/seminars",
               label: "Events",
             },
             {
@@ -284,7 +284,7 @@ const config: Config = {
               label: "Careers",
             },
             {
-              to: "/docs/one-ai/seminars",
+              to: "/seminars",
               label: "Events",
             },
             {

@@ -22,7 +22,7 @@ interface FormData {
 }
 
 const RECAPTCHA_SITE_KEY = "6Ldzg-orAAAAAIOc5GaUtR6gOpdqcW1EHZL7I9mp";
-const API_URL = "https://contact.one-ware.com/send";
+const API_URL = "https://backend.one-ware.com/api/contact";
 
 type ContactMode = "select" | "form" | "booking";
 
@@ -98,9 +98,8 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
         recaptcha_token: token,
       });
 
-      const { status } = response.data;
-
-      if (status === "success") {
+      const { success } = response.data;
+      if (success === true) {
         setChristopherFormStatus("success");
         setChristopherFormData({ name: "", email: "", message: "", website: "", recaptcha_token: "" });
         trackEvent("contact_form_submit", { label: "Christopher Contact Form" });
@@ -136,9 +135,8 @@ export default function ContactUs({ compact = false, subtitle }: ContactUsProps)
         recaptcha_token: token,
       });
 
-      const { status } = response.data;
-
-      if (status === "success") {
+      const { success } = response.data;
+      if (success === true) {
         setFormStatus("success");
         setFormData({ name: "", email: "", message: "", website: "", recaptcha_token: "" });
         trackEvent("contact_form_submit", { label: "Helmut Contact Form" });

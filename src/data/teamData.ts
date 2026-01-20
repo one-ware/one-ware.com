@@ -66,7 +66,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Matthias",
     role: "Software Engineer",
-    image: require("@site/static/img/AboutUs/default.png").default,
+    image: require("@site/static/img/AboutUs/Matthias.png").default,
     linkedIn: "",
     email: "support@one-ware.com",
   },
@@ -94,7 +94,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Allen",
     role: "Working Student - AI",
-    image: require("@site/static/img/AboutUs/default.png").default,
+    image: require("@site/static/img/AboutUs/Allen.jpg").default,
     linkedIn: "",
     email: "support@one-ware.com",
   },
