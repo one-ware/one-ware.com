@@ -4,6 +4,11 @@ title: ONE WARE Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.21.27.0
+
+- Add Linux Arm Version (Flatpak, Snap, .tar.gz)
+- Add OpenCV runtime for linux with bundled FFMPEG (for mp4 input)
+
 ## 0.21.26.0
 
 - Use Single Instance to open Files / URLs.
