@@ -111,12 +111,12 @@ The pixel coordinates in the output refer to the **model's input dimensions**, n
 For semantic segmentation tasks, the output tensor has the shape:
 
 ```
-[1, height, width, 1]
+[1, 1, height, width]
 ```
 
 Each pixel position contains the predicted **Class ID** for that location.
 
-**Example:** A 256x256 segmentation output would be a tensor of shape `[1, 256, 256, 1]` where each value represents the class at that pixel.
+**Example:** A 256x256 segmentation output would be a tensor of shape `[1, 1, 256, 256]` where each value represents the class at that pixel.
 
 ---
 
