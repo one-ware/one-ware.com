@@ -106,6 +106,27 @@ Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie die Seite neu lade
 ### Weitere Informationen
 Weitere Informationen zum Datenschutz bei YouTube finden Sie in der Datenschutzerklärung des Anbieters unter: [https://policies.google.com/privacy](https://policies.google.com/privacy)
 
+## Verwendung von Google Analytics
+
+### Art und Zweck der Verarbeitung
+Wir verwenden auf unserer Website Google Analytics, einen Webanalysedienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland („Google“). Google Analytics verwendet sog. „Cookies“, Textdateien, die auf Ihrem Endgerät gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglichen. Die durch das Cookie erzeugten Informationen über Ihre Benutzung dieser Website werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert. Aufgrund der Aktivierung der IP-Anonymisierung auf dieser Webseite, wird Ihre IP-Adresse von Google jedoch innerhalb von Mitgliedstaaten der Europäischen Union oder in anderen Vertragsstaaten des Abkommens über den Europäischen Wirtschaftsraum zuvor gekürzt. Nur in Ausnahmefällen wird die volle IP-Adresse an einen Server von Google in den USA übertragen und dort gekürzt. Im Auftrag des Betreibers dieser Website wird Google diese Informationen benutzen, um Ihre Nutzung der Website auszuwerten, um Reports über die Websiteaktivitäten zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen gegenüber dem Websitebetreiber zu erbringen.
+
+### Rechtsgrundlage
+Rechtsgrundlage für die Verwendung dieses Dienstes ist Ihre Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO.
+
+### Empfänger
+Empfänger der Daten ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland als Auftragsverarbeiter. Hierfür haben wir mit Google einen Auftragsverarbeitungsvertrag abgeschlossen. Die Google Ireland Limited ist ein Tochterunternehmen der Google LLC mit Sitz in den USA. Es ist nicht ausgeschlossen, dass Ihre Daten auch durch Google in die USA übertragen werden.
+
+### Speicherdauer
+Die von uns gesendeten und mit Cookies, Nutzerkennungen (z. B. User-ID) oder Werbe-IDs verknüpften Daten werden nach 14 Monaten automatisch gelöscht. Die Löschung von Daten, deren Aufbewahrungsdauer erreicht ist, erfolgt automatisch einmal im Monat.
+
+### Drittlandtransfer
+Google LLC ist nach dem EU-US Data Privacy Framework zertifiziert und bietet hierdurch eine Garantie, das europäische Datenschutzrecht einzuhalten.
+
+### Widerruf der Einwilligung
+Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie die Speicherung der Cookies durch eine entsprechende Einstellung Ihrer Browser-Software verhindern; wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website vollumfänglich werden nutzen können.
+Sie können darüber hinaus die Erfassung der durch das Cookie erzeugten und auf Ihre Nutzung der Website bezogenen Daten (inkl. Ihrer IP-Adresse) an Google sowie die Verarbeitung dieser Daten durch Google verhindern, indem Sie das unter dem folgenden Link verfügbare Browser-Plugin herunterladen und installieren: [https://tools.google.com/dlpage/gaoptout?hl=de](https://tools.google.com/dlpage/gaoptout?hl=de).
+
 ## SSL-Verschlüsselung
 Um die Sicherheit Ihrer Daten bei der Übertragung zu schützen, verwenden wir dem aktuellen Stand der Technik entsprechende Verschlüsselungsverfahren (z. B. SSL) über HTTPS.
 
