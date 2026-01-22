@@ -29,5 +29,9 @@ To celebrate this, I used my lunch break to create a quick **Rasperry Detection 
 
 ![Screenshot](img/screenshot.png)
 
-## Support
+## Video Import Tool
+
+## Quick Start Feature
+
+## Monthly Credits
 
