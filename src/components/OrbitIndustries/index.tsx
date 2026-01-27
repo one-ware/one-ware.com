@@ -208,7 +208,7 @@ export default function OrbitIndustries() {
   const currentPair = pairs[activePair];
 
   return (
-    <div className="py-12 px-4">
+    <div className="pt-12 pb-24 md:pb-32 px-4">
       <div className="container mx-auto">
         <div className="text-center mb-8">
           <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-4 ${isDarkMode ? "text-white" : "text-gray-900"}`}>
