@@ -1,9 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import Layout from "@theme/Layout";
 import Translate, { translate } from "@docusaurus/Translate";
-import { JOBS_DATA } from "../data/jobsData";
+import { useLocation, useHistory } from "@docusaurus/router";
+import { ACTIVE_JOBS, getJobById } from "../data/jobsData";
 import { EMPLOYEE_STORIES } from "../data/employeeStories";
 import NeuralNetworkSimple from "../components/NeuralNetworkSimple";
+import JobDetailPage from "../components/JobDetailPage";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { JSX } from "react";
 
@@ -20,6 +22,13 @@ function getLocalizedField<T extends Record<string, unknown>>(obj: T, field: key
 export default function CareersPage(): JSX.Element {
   const { i18n } = useDocusaurusContext();
   const locale = i18n.currentLocale;
+  const location = useLocation();
+  const history = useHistory();
+
+  const searchParams = new URLSearchParams(location.search);
+  const jobId = searchParams.get("job");
+  const selectedJob = jobId ? getJobById(jobId) : null;
+
   const [isPlaying, setIsPlaying] = useState(false);
   const [activeStory, setActiveStory] = useState(0);
   const [displayedStory, setDisplayedStory] = useState(0);
@@ -56,8 +65,14 @@ export default function CareersPage(): JSX.Element {
     return () => clearTimeout(timer);
   }, []);
 
-  const openLinkInNewWindow = (url: string) => {
-    window.open(url, "_blank", "noopener,noreferrer");
+  const careersPath = locale === "de" ? "/de/careers" : "/careers";
+
+  const handleJobClick = (jobId: string) => {
+    history.push(`${careersPath}?job=${jobId}`);
+  };
+
+  const handleBack = () => {
+    history.push(careersPath);
   };
 
   const scrollToJobs = () => {
@@ -70,10 +85,6 @@ export default function CareersPage(): JSX.Element {
       setIsPlaying(true);
     }
   };
-
-  const allJobs = JOBS_DATA.flatMap(({ positions }) =>
-    positions.map((position) => position)
-  );
 
   const whoWeAre = [
     {
@@ -175,6 +186,19 @@ export default function CareersPage(): JSX.Element {
     { key: "7", imageSrc: require("@site/static/img/Featured/f10_g.png").default, url: "https://www.elektormagazine.com/news/one-ai-vision-edge-ai-en" },
     { key: "8", imageSrc: require("@site/static/img/Partner/altera_w.png").default, url: "https://go.altera.com/l/1090322/2025-04-18/2vvzbn" },
   ]
+
+  if (selectedJob) {
+    return (
+      <Layout
+        title={locale === "de" && selectedJob.title_de ? selectedJob.title_de : selectedJob.title}
+        description={locale === "de" && selectedJob.shortDescription_de ? selectedJob.shortDescription_de : selectedJob.shortDescription || "Job Details"}
+      >
+        <div style={{ marginTop: "calc(var(--ifm-navbar-height) * -1)" }}>
+          <JobDetailPage job={selectedJob} onBack={handleBack} />
+        </div>
+      </Layout>
+    );
+  }
 
   return (
     <Layout
@@ -298,14 +322,10 @@ export default function CareersPage(): JSX.Element {
             </div>
 
             <div className="mt-12 md:mt-16 w-full sm:w-4/5 mx-auto">
-              {allJobs.map((job, index) => (
+              {ACTIVE_JOBS.map((job, index) => (
                 <div
                   key={job.id}
-                  onClick={() =>
-                    openLinkInNewWindow(
-                      require(`@site/static/career/${locale}/${job.url}`).default
-                    )
-                  }
+                  onClick={() => handleJobClick(job.id)}
                   className="cursor-pointer group"
                 >
                   <div className="flex items-center pt-6 pb-2 pr-8 md:pr-12 transition-all duration-300" style={{ borderBottom: "1px solid #6b7280" }}>
