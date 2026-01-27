@@ -354,7 +354,7 @@ export default function Home() {
           <IndustryExamplesSection />
         </div>
         <div id="demo">
-          <HomeHero />
+          <HomeHero mode="chat" />
         </div>
         <div
           className="default-background"

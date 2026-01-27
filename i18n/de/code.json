@@ -23,6 +23,72 @@
   "homehero.benefit.requirements": {
     "message": "Jede Anforderung"
   },
+  "homehero.chat.history.title": {
+    "message": "Verlauf"
+  },
+  "homehero.chat.history.pcb": {
+    "message": "Leiterplatten-Inspektion"
+  },
+  "homehero.chat.history.fruit": {
+    "message": "Obst-Sortierung"
+  },
+  "homehero.chat.history.apple": {
+    "message": "Apfel QC"
+  },
+  "homehero.chat.user1": {
+    "message": "Mach Apfel QC"
+  },
+  "homehero.chat.ai1": {
+    "message": "Soll ich helfen bei Datensatz oder Hardware zum Aufnehmen?"
+  },
+  "homehero.chat.user2": {
+    "message": "Ich hab schon Trainings Daten"
+  },
+  "homehero.chat.ai2": {
+    "message": "Hier ist dein fertiges ONE AI Projekt"
+  },
+  "homehero.chat.button.open": {
+    "message": "Projekt Öffnen"
+  },
+  "homehero.chat.newchat": {
+    "message": "Neuer Chat"
+  },
+  "homehero.chat.welcome.title": {
+    "message": "Starte Dein KI-Projekt"
+  },
+  "homehero.chat.welcome.desc": {
+    "message": "Beschreibe was du bauen möchtest und ONE AI erstellt es für dich"
+  },
+  "homehero.chat.welcome.button": {
+    "message": "Demo Starten"
+  },
+  "homehero.chat.lefttitle": {
+    "message": "So funktioniert's"
+  },
+  "homehero.chat.step1": {
+    "message": "Chatte mit Agent um Hardware, Datensatz und KI Projekt zu erstellen"
+  },
+  "homehero.chat.step1.title": {
+    "message": "Projekt konfigurieren"
+  },
+  "homehero.chat.step2": {
+    "message": "Lade Trainingsdaten rein und lasse ONE AI KI erstellen"
+  },
+  "homehero.chat.step2.title": {
+    "message": "Modell trainieren"
+  },
+  "homehero.chat.step3": {
+    "message": "Chatte mit Agent um KI zu integrieren"
+  },
+  "homehero.chat.step3.title": {
+    "message": "Deployen & Integrieren"
+  },
+  "homehero.chat.result": {
+    "message": "Deine KI ist fertig"
+  },
+  "homehero.chat.input.placeholder": {
+    "message": "Nachricht eingeben..."
+  },
   "homepage.every": {
     "message": "Jede "
   },
@@ -404,18 +470,6 @@
   },
   "oneai.hero.nextgen.title": {
     "message": "Die nächste Generation der KI-Entwicklung"
-  },
-  "oneai.hero.main.title": {
-    "message": "Lass ONE AI Deine Vision- und Edge-AI-Projekte fertigstellen"
-  },
-  "oneai.hero.main.subtitle": {
-    "message": "Sieh die Kraft Deines Datensatzes mit der richtigen KI."
-  },
-  "oneai.hero.main.subtitle2": {
-    "message": "Automatisch maßgeschneidert für Deine Bedürfnisse und exportiert für jede Hardware."
-  },
-  "oneai.hero.examples": {
-    "message": "Beispiel-Projekte"
   },
   "homepage.seo.title": {
     "message": "ONE WARE - Die nächste Generation der Computer Vision und Edge AI Entwicklung"

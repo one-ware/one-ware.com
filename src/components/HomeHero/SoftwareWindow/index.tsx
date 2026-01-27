@@ -6,6 +6,7 @@ import CameraStation from "./CameraStation";
 import TopMetrics from "./TopMetrics";
 import TrainingProgressOverlay from "./TrainingProgressOverlay";
 import DeployView from "./DeployView";
+import ChatInterface from "./ChatInterface";
 import { usePerformance } from "../index";
 import { useDelayedUnmount } from '../hooks/useDelayedUnmount';
 
@@ -81,6 +82,8 @@ interface SoftwareWindowProps {
   setTrainingPanelRef?: (ref: HTMLDivElement | null) => void;
   style?: React.CSSProperties;
   isGhostHovering?: boolean;
+  mode?: 'demo' | 'chat';
+  onChatComplete?: () => void;
 }
 
 const ROW_1_HEIGHT = "55%";
@@ -108,8 +111,17 @@ export default function SoftwareWindow({
   hasTrainingData,
   setTrainingPanelRef,
   style,
-  isGhostHovering
+  isGhostHovering,
+  mode = 'demo',
+  onChatComplete
 }: SoftwareWindowProps) {
+  const [chatCompleted, setChatCompleted] = useState(false);
+  const isChatMode = mode === 'chat' && !chatCompleted;
+
+  const handleChatComplete = useCallback(() => {
+    setChatCompleted(true);
+    onChatComplete?.();
+  }, [onChatComplete]);
   const [isTraining, setIsTraining] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [hasClickedConveyor, setHasClickedConveyor] = useState(false);
@@ -549,17 +561,34 @@ export default function SoftwareWindow({
           display: "flex",
           flexDirection: "column",
           gap: "clamp(8px, 1.5vw, 16px)",
-          transition: "gap 1.2s cubic-bezier(0.2, 0.8, 0.2, 1)"
         }}
       >
+        <div
+          style={{
+            position: "absolute",
+            top: "clamp(12px, 2vw, 24px)",
+            left: "clamp(12px, 2vw, 24px)",
+            right: "clamp(12px, 2vw, 24px)",
+            bottom: "clamp(12px, 2vw, 24px)",
+            zIndex: 100,
+            display: "flex",
+            opacity: isChatMode ? 1 : 0,
+            transform: isChatMode ? "scale(1)" : "scale(0.98)",
+            pointerEvents: isChatMode ? "auto" : "none",
+            transition: "opacity 0.5s ease-out, transform 0.5s ease-out",
+          }}
+        >
+          <ChatInterface isActive={isChatMode} onComplete={handleChatComplete} />
+        </div>
         <div
           style={{
             flex: 1,
             minHeight: isSmallScreen ? 'clamp(32px, 7vh, 70px)' : 'clamp(40px, 11vh, 120px)',
             display: "flex",
-            opacity: 1,
+            opacity: isChatMode ? 0 : 1,
+            transform: isChatMode ? "translateY(-10px)" : "translateY(0)",
             overflow: "hidden",
-            transition: "all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1)"
+            transition: "opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s"
           }}
         >
              <TopMetrics
@@ -581,10 +610,10 @@ export default function SoftwareWindow({
         <div
              ref={panelRef}
              className="oneware-glass-panel"
-             onMouseEnter={() => isDragging && setIsHoveringPanel(true)}
+             onMouseEnter={() => !isChatMode && isDragging && setIsHoveringPanel(true)}
              onMouseLeave={() => setIsHoveringPanel(false)}
              onMouseUp={() => {
-                 if (isDragging && isHoveringPanel) {
+                 if (!isChatMode && isDragging && isHoveringPanel) {
                      onDropTrainingData();
                      setIsHoveringPanel(false);
                  }
@@ -594,7 +623,9 @@ export default function SoftwareWindow({
                minHeight: isSmallScreen ? 'clamp(150px, 30vh, 320px)' : 'clamp(180px, 40vh, 600px)',
                position: "relative",
                overflow: "hidden",
-               transition: "all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1)"
+               opacity: isChatMode ? 0 : 1,
+               transform: isChatMode ? "translateY(10px)" : "translateY(0)",
+               transition: "opacity 0.6s ease-out 0.3s, transform 0.6s ease-out 0.3s"
              }}
         >
              {shouldRenderCameraStation && (

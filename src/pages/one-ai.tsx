@@ -84,57 +84,6 @@ const sliders = [
   },
 ];
 
-function HomepageHeader() {
-  return (
-    <HeroBackground
-      className="w-full min-h-[400px] flex items-center justify-center"
-      style={{
-        marginTop: "calc(var(--ifm-navbar-height) * -1)",
-        paddingTop: "var(--ifm-navbar-height)",
-      }}
-    >
-      <div className="flex flex-col items-center justify-center w-full h-full px-4">
-        <div className="flex justify-center w-full">
-          <div className="flex-col max-w-5xl mx-auto mt-10">
-            <div className="text-center mt-10">
-              <h1 className="font-bold text-3xl md:text-4xl mb-4 dark:text-white text-gray-900">
-                <Translate id="oneai.hero.main.title">
-                  Let ONE AI Finish Your Vision and Edge AI Projects
-                </Translate>
-              </h1>
-              <h2 className="text-xl md:text-2xl mb-7 font-normal dark:text-white text-gray-800">
-                <Translate id="oneai.hero.main.subtitle">
-                  See the Power of your dataset with the Right AI.
-                </Translate>
-                <br />
-                <Translate id="oneai.hero.main.subtitle2">
-                  Automatically tailored to your needs and exported for any hardware.
-                </Translate>
-              </h2>
-
-              <div className="flex flex-col md:flex-row justify-center items-center space-y-3 md:space-y-0 md:space-x-5 mb-10">
-                <Link
-                  className="button button--primary button--outline button--lg text-sm md:text-lg"
-                  href="/docs/one-ai/tutorials"
-                >
-                  <Translate id="oneai.hero.examples">Example Projects</Translate>
-                </Link>
-
-                <Link
-                  className="button button--primary button--lg text-sm md:text-lg"
-                  href="/docs/one-ai/getting-started"
-                >
-                  <Translate id="homepage.subtitle.ai.getstarted">Start Now for Free</Translate>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </HeroBackground>
-  );
-}
-
 function ComparisonSection() {
   const [activeUseCase, setActiveUseCase] = useState(0);
 
@@ -809,21 +758,11 @@ export default function OneAi() {
         <link rel="alternate" hrefLang="x-default" href="https://one-ware.com/one-ai" />
       </Head>
 
-      <HomepageHeader />
+      <HomeHero />
 
       <main>
         <BenefitsSection />
         <InventionSection />
-
-        <div
-          style={{
-            borderTop: '1px solid',
-            borderBottom: '1px solid',
-            borderColor: 'var(--ifm-toc-border-color)',
-          }}
-        >
-          <HomeHero />
-        </div>
 
         <section className="py-16 md:py-24 bg-gray-100 dark:bg-[#161616]">
           <div className="container mx-auto px-6">
