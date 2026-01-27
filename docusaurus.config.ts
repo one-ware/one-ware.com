@@ -91,6 +91,10 @@ const config: Config = {
           {
             from: '/webinar-2025-12-18',
             to: '/docs/one-ai/Webinars/webinar-2025-12-18',
+          },
+          {
+            from: '/webinar-2026-01-28',
+            to: '/docs/one-ai/Webinars/webinar-2026-01-28',
           }
         ],
       }],
