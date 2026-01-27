@@ -514,7 +514,7 @@ export default function CareersPage(): JSX.Element {
         </div>
       </section>
 
-      <section className="bg-[var(--ifm-color-primary)] py-16 md:py-24">
+      <section className="bg-[#00FFD1] py-16 md:py-24">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-gray-700 text-xl md:text-2xl font-light uppercase mb-12 text-center tracking-widest">
