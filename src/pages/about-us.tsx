@@ -245,8 +245,8 @@ export default function AboutUs(): JSX.Element {
             </h2>
             <Link
               to="/careers"
-              className="inline-block bg-black text-white px-8 py-3 text-sm font-medium uppercase tracking-wider hover:bg-gray-800 transition-colors"
-              style={{ borderRadius: 0 }}
+              className="inline-block bg-black text-white px-8 py-3 text-sm font-medium uppercase tracking-wider hover:bg-gray-800 transition-colors no-underline hover:no-underline"
+              style={{ borderRadius: 6 }}
             >
               <Translate id="aboutus.join.button">Career</Translate>
             </Link>

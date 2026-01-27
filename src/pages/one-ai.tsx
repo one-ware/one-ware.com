@@ -280,8 +280,8 @@ function ComparisonSection() {
                     href={currentUseCase.whitepaper}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block bg-[var(--ifm-color-primary)] text-black px-6 py-3 text-sm font-medium uppercase tracking-wider hover:opacity-90 transition-opacity"
-                    style={{ borderRadius: 0 }}
+                    className="inline-block bg-[var(--ifm-color-primary)] text-black px-6 py-3 text-sm font-medium uppercase tracking-wider hover:bg-[var(--ifm-color-primary)] hover:text-black no-underline hover:no-underline"
+                    style={{ borderRadius: 6 }}
                   >
                     <Translate id={currentUseCase.linkTextId}>
                       {currentUseCase.linkText}
@@ -761,8 +761,8 @@ function InventionSection() {
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
                   to="/docs/one-ai/tutorials"
-                  className="inline-block bg-black text-white px-8 py-3 text-sm font-medium uppercase tracking-wider hover:bg-gray-800 transition-colors text-center"
-                  style={{ borderRadius: 0 }}
+                  className="inline-block bg-black text-white px-8 py-3 text-sm font-medium uppercase tracking-wider hover:bg-gray-800 transition-colors text-center no-underline hover:no-underline"
+                  style={{ borderRadius: 6 }}
                 >
                   <Translate id="oneai.examples.cta.button.main">
                     View Examples
@@ -771,8 +771,8 @@ function InventionSection() {
 
                 <Link
                   to="/docs/one-ai/getting-started"
-                  className="inline-block bg-transparent border-2 border-black text-black px-8 py-3 text-sm font-medium uppercase tracking-wider hover:bg-black hover:text-white transition-colors text-center"
-                  style={{ borderRadius: 0 }}
+                  className="inline-block bg-transparent border-2 border-black text-black px-8 py-3 text-sm font-medium uppercase tracking-wider hover:bg-black hover:text-white transition-colors text-center no-underline hover:no-underline"
+                  style={{ borderRadius: 6 }}
                 >
                   <Translate id="oneai.examples.cta.button.secondary">
                     Get Started
