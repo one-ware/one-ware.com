@@ -214,11 +214,6 @@ export default function OrbitIndustries() {
           <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-4 ${isDarkMode ? "text-white" : "text-gray-900"}`}>
             <Translate id="orbitindustries.title">Explore Our Benefits</Translate>
           </h2>
-          <p className={`text-lg max-w-2xl mx-auto ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}>
-            <Translate id="orbitindustries.subtitle">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </Translate>
-          </p>
         </div>
 
         <div
