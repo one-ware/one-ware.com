@@ -441,7 +441,7 @@ const config: Config = {
         cta: 'Register Now',
       },
     },
-    activeAnnouncement: 'qualityControlWebinar',
+    // activeAnnouncement: 'qualityControlWebinar',
   } satisfies Preset.ThemeConfig,
 };
 
