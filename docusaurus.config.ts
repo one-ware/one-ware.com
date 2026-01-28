@@ -146,14 +146,16 @@ const config: Config = {
     },
     colorMode: {
       defaultMode: "dark",
-      disableSwitch: true,
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
     },    // Replace with your project's social card
     // For meta tags, we still use the path without require
     image: "/img/social-card.jpg",
     navbar: {
       logo: {
         alt: "ONE WARE",
-        src: "img/start/Logo_SVG-ONE-ware.svg",
+        src: "img/start/Logo_SVG-ONE-ware-dark.svg",
+        srcDark: "img/start/Logo_SVG-ONE-ware.svg",
       },
       hideOnScroll: false,
       items: [

@@ -11,7 +11,7 @@ Printed Circuit Board (PCB) quality inspection is a critical step in electronics
 ONE AI was tested on the same dataset and benchmarked against both **researcher-designed models** and **universal off-the-shelf networks**.  
 
 <div style={{display: 'flex', justifyContent: 'center', margin: '20px 0'}}>
-  <img src="/img/ai/one_ai_plugin/use_cases/pcb/pcb.png" alt="PCB Quality Control Example" style={{maxHeight: '350px', borderRadius: '8px'}} />
+  <img src="/img/ai/one_ai_plugin/use_cases/pcb/pcb.png" alt="PCB Quality Control Example" style={{maxHeight: '350px', borderRadius:'8px'}} />
 </div>
 
 ---
