@@ -42,7 +42,7 @@ export default function AboutUs(): JSX.Element {
         }}
       >
         <div className="container mx-auto px-6 h-full flex items-center">
-          <div className="w-full">
+          <div className="w-full pt-8 md:pt-0">
             <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-4 mb-8 md:mb-16">
               <h1 className="text-6xl md:text-7xl lg:text-8xl font-extralight text-gray-700 leading-none tracking-tight">
                 <span
@@ -245,8 +245,8 @@ export default function AboutUs(): JSX.Element {
             </h2>
             <Link
               to="/careers"
-              className="inline-block bg-black text-white px-8 py-3 text-sm font-medium uppercase tracking-wider hover:bg-gray-800 transition-colors"
-              style={{ borderRadius: 0 }}
+              className="inline-block bg-black text-white px-8 py-3 text-sm font-medium uppercase tracking-wider hover:bg-gray-800 transition-colors no-underline hover:no-underline"
+              style={{ borderRadius: 6 }}
             >
               <Translate id="aboutus.join.button">Career</Translate>
             </Link>

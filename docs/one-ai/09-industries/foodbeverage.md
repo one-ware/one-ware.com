@@ -41,8 +41,7 @@ By automating most steps of AI deployment, ONE AI delivers instant results and o
       textAlign:'center', 
       cursor:'pointer', 
       transition:'transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease', 
-      padding:'15px', 
-      borderRadius:'12px',
+      padding:'15px',
       backgroundColor:'transparent',
       ':hover': {
         transform:'translateY(-5px)', 
@@ -62,7 +61,7 @@ By automating most steps of AI deployment, ONE AI delivers instant results and o
       e.currentTarget.style.backgroundColor = 'transparent';
     }}
   >
-    <img src="/img/ai/one_ai_plugin/industries/Food.jpg" alt="Quality Control Manufacturing" style={{maxHeight:'320px', borderRadius:'8px', width:'100%'}} />
+    <img src="/img/ai/one_ai_plugin/industries/Food.jpg" alt="Quality Control Manufacturing" style={{maxHeight:'320px', width:'100%', borderRadius:'8px'}} />
     <h4 style={{marginTop:'10px', marginBottom:'5px'}}>Ingredient and Product Inspection</h4>
     <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>Vision AI detects defects, discoloration, and contamination in food and beverage products to ensure consistent quality.</p>
   </div>
@@ -73,8 +72,7 @@ By automating most steps of AI deployment, ONE AI delivers instant results and o
       textAlign:'center', 
       cursor:'pointer', 
       transition:'transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease', 
-      padding:'15px', 
-      borderRadius:'12px',
+      padding:'15px',
       backgroundColor:'transparent',
       ':hover': {
         transform:'translateY(-5px)', 
@@ -94,7 +92,7 @@ By automating most steps of AI deployment, ONE AI delivers instant results and o
       e.currentTarget.style.backgroundColor = 'transparent';
     }}
   >
-    <img src="/img/ai/one_ai_plugin/industries/Ettiket.jpg" alt="Industrial Applications" style={{maxHeight:'320px', borderRadius:'8px', width:'100%'}} />
+    <img src="/img/ai/one_ai_plugin/industries/Ettiket.jpg" alt="Industrial Applications" style={{maxHeight:'320px', width:'100%', borderRadius:'8px'}} />
     <h4 style={{marginTop:'10px', marginBottom:'5px'}}>Packaging and Label Verification</h4>
     <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>Automated vision checks confirm label accuracy, print quality, and sealing integrity for compliance and traceability.</p>
   </div>
@@ -108,8 +106,7 @@ By automating most steps of AI deployment, ONE AI delivers instant results and o
       textAlign:'center', 
       cursor:'pointer', 
       transition:'transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease', 
-      padding:'15px', 
-      borderRadius:'12px',
+      padding:'15px',
       backgroundColor:'transparent',
       ':hover': {
         transform:'translateY(-5px)', 
@@ -129,7 +126,7 @@ By automating most steps of AI deployment, ONE AI delivers instant results and o
       e.currentTarget.style.backgroundColor = 'transparent';
     }}
   >
-    <img src="/img/ai/one_ai_plugin/industries/AutomatisierungFoodBefüllung.jpg" alt="Predictive Maintenance" style={{maxHeight:'320px', borderRadius:'8px', width:'100%'}} />
+    <img src="/img/ai/one_ai_plugin/industries/AutomatisierungFoodBefüllung.jpg" alt="Predictive Maintenance" style={{maxHeight:'320px', width:'100%', borderRadius:'8px'}} />
     <h4 style={{marginTop:'10px', marginBottom:'5px'}}>Automated Production Steps</h4>
     <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>AI automates repetitive visual checks and quality decisions throughout the production line — reducing manual effort and increasing speed.</p>
   </div>
@@ -140,8 +137,7 @@ By automating most steps of AI deployment, ONE AI delivers instant results and o
       textAlign:'center', 
       cursor:'pointer', 
       transition:'transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease', 
-      padding:'15px', 
-      borderRadius:'12px',
+      padding:'15px',
       backgroundColor:'transparent',
       ':hover': {
         transform:'translateY(-5px)', 
@@ -161,7 +157,7 @@ By automating most steps of AI deployment, ONE AI delivers instant results and o
       e.currentTarget.style.backgroundColor = 'transparent';
     }}
   >
-    <img src="/img/ai/one_ai_plugin/industries/Füllstand.jpg" alt="Robotics Integration" style={{maxHeight:'320px', borderRadius:'8px', width:'100%'}} />
+    <img src="/img/ai/one_ai_plugin/industries/Füllstand.jpg" alt="Robotics Integration" style={{maxHeight:'320px', width:'100%', borderRadius:'8px'}} />
     <h4 style={{marginTop:'10px', marginBottom:'5px'}}>Filling and Bottling Line Monitoring</h4>
     <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>Vision AI analyzes fill levels, cap alignment, and label positioning to guarantee perfect presentation and consistency.</p>
   </div>

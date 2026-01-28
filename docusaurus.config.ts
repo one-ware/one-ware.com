@@ -146,14 +146,16 @@ const config: Config = {
     },
     colorMode: {
       defaultMode: "dark",
-      disableSwitch: true,
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
     },    // Replace with your project's social card
     // For meta tags, we still use the path without require
     image: "/img/social-card.jpg",
     navbar: {
       logo: {
         alt: "ONE WARE",
-        src: "img/start/Logo_SVG-ONE-ware.svg",
+        src: "img/start/Logo_SVG-ONE-ware-dark.svg",
+        srcDark: "img/start/Logo_SVG-ONE-ware.svg",
       },
       hideOnScroll: false,
       items: [
@@ -166,21 +168,14 @@ const config: Config = {
           className: "navbar__dropdown--products",
           items: [
             {
-              to: "/one-ai",
-              label: "ONE AI",
+              to: "/",
+              label: "ONE AI Agent",
               className: "dropdown__link--highlight",
             },
             {
-              to: "/docs/one-ai/getting-started",
-              label: "Get Started",
-            },
-            {
-              to: "/docs/one-ai/tutorials",
-              label: "Demo Projects",
-            },
-            {
-              to: "/docs/one-ai/supported-vendors",
-              label: "Supported Hardware",
+              to: "/one-ai",
+              label: "ONE AI Desktop",
+              className: "dropdown__link--highlight",
             },
             {
               to: "/studio",
