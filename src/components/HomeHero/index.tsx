@@ -231,8 +231,9 @@ export default function HomeHero() {
                 >
                   <Translate id="homehero.title1">Create Your</Translate>
                 </span>
+                
                 <span
-                  className="text-[var(--ifm-color-primary)] block"
+                  className="dark:text-white text-gray-800 block"
                   style={{
                     animation: "fadeInUp 0.8s ease-out forwards",
                     animationDelay: "0.1s",
@@ -290,7 +291,7 @@ export default function HomeHero() {
 
               <div className="hidden 2xl:flex flex-row items-center justify-center 2xl:justify-start gap-4 mt-8 w-full">
                 <Link
-                  href="/docs/one-ai/getting-started"
+                  href="https://cloud.one-ware.com/Account/Register"
                   style={{
                     animation: "fadeInUp 0.8s ease-out forwards",
                     animationDelay: "0.5s",
@@ -298,7 +299,7 @@ export default function HomeHero() {
                   }}
                 >
                   <button className="button button--primary button--lg">
-                    <Translate id="homehero.button.download">Free Download</Translate>
+                    <Translate id="homehero.button.download">Get Started</Translate>
                   </button>
                 </Link>
                 <Link

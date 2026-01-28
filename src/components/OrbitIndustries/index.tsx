@@ -27,7 +27,7 @@ const industries: IndustryItem[] = [
       </svg>
     ),
     descriptionId: "orbitindustries.anyHardware.description",
-    description: "AI for any hardware, no matter how few resources. From microcontrollers to FPGAs - ONE AI optimizes for your exact constraints.",
+    description: "Deploy AI on any hardware. From CPUs to FPGAs, ONE AI optimizes models for memory, FPS and accuracy.",
     angle: 335,
   },
   {
@@ -40,7 +40,7 @@ const industries: IndustryItem[] = [
       </svg>
     ),
     descriptionId: "orbitindustries.anyRequirements.description",
-    description: "AI no matter how fast it needs to be. Built for the most demanding real-time applications with guaranteed performance.",
+    description: "Built for extreme requirements with ultra-low latency, real-time or maximum throughput.",
     angle: 65,
   },
   {
@@ -55,7 +55,7 @@ const industries: IndustryItem[] = [
       </svg>
     ),
     descriptionId: "orbitindustries.anyApplication.description",
-    description: "No matter how complex the application or how unusual the data - ONE AI creates custom neural networks tailored to your specific use case.",
+    description: "From robots with 3D cameras to MRI systems with dozens of images per analysis, ONE AI always builds the best AI for the job.",
     angle: 245,
   },
   {
@@ -69,7 +69,7 @@ const industries: IndustryItem[] = [
       </svg>
     ),
     descriptionId: "orbitindustries.resultsInMinutes.description",
-    description: "Can be operated by any developer. Get production-ready AI models in minutes, not months - no ML expertise required.",
+    description: "From data to deployment in minutes. Build production-ready AI models without ML expertise.",
     angle: 155,
   },
 ];
