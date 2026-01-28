@@ -382,9 +382,16 @@ function Extension() {
 
         <div className="col items-center mt-10 md:mt-0">
           <img
-            src={require("@site/static/img/start/Elec_Studio.png").default}
+            src="/img/start/Elec_Studio.svg"
             data-aos="slide-left"
             alt="Hardware"
+            className="dark:block hidden"
+          />
+          <img
+            src="/img/start/Elec_Studio-light.svg"
+            data-aos="slide-left"
+            alt="Hardware"
+            className="dark:hidden block"
           />
         </div>
       </div>
