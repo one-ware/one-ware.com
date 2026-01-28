@@ -28,7 +28,7 @@ const industries: IndustryItem[] = [
     ),
     descriptionId: "orbitindustries.anyHardware.description",
     description: "AI for any hardware, no matter how few resources. From microcontrollers to FPGAs - ONE AI optimizes for your exact constraints.",
-    angle: 315,
+    angle: 335,
   },
   {
     id: "anyRequirements",
@@ -41,7 +41,7 @@ const industries: IndustryItem[] = [
     ),
     descriptionId: "orbitindustries.anyRequirements.description",
     description: "AI no matter how fast it needs to be. Built for the most demanding real-time applications with guaranteed performance.",
-    angle: 45,
+    angle: 65,
   },
   {
     id: "anyApplication",
@@ -56,7 +56,7 @@ const industries: IndustryItem[] = [
     ),
     descriptionId: "orbitindustries.anyApplication.description",
     description: "No matter how complex the application or how unusual the data - ONE AI creates custom neural networks tailored to your specific use case.",
-    angle: 225,
+    angle: 245,
   },
   {
     id: "resultsInMinutes",
@@ -70,7 +70,7 @@ const industries: IndustryItem[] = [
     ),
     descriptionId: "orbitindustries.resultsInMinutes.description",
     description: "Can be operated by any developer. Get production-ready AI models in minutes, not months - no ML expertise required.",
-    angle: 135,
+    angle: 155,
   },
 ];
 
@@ -106,10 +106,10 @@ function calculatePositions(angle: number) {
   const iconX = CONFIG.centerX + CONFIG.iconRadius * cos;
   const iconY = CONFIG.centerY + CONFIG.iconRadius * sin;
 
-  const isTopRight = angle === 45;
-  const isBottomRight = angle === 135;
-  const isBottomLeft = angle === 225;
-  const isTopLeft = angle === 315;
+  const isTopRight = angle === 65;
+  const isBottomRight = angle === 155;
+  const isBottomLeft = angle === 245;
+  const isTopLeft = angle === 335;
   const isRightSide = isTopRight || isBottomRight;
   const isTopSide = isTopRight || isTopLeft;
 
