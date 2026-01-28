@@ -471,7 +471,12 @@ export default function OrbitIndustries() {
                         </div>
                         <p
                           className="text-sm leading-relaxed"
-                          style={{ color: isDarkMode ? "#999" : "#666" }}
+                          style={{
+                            color: isActive
+                              ? "var(--ifm-color-primary)"
+                              : isDarkMode ? "#999" : "#666",
+                            transition: "color 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                          }}
                         >
                           <Translate id={industry.descriptionId}>{industry.description}</Translate>
                         </p>
