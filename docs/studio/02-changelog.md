@@ -4,6 +4,15 @@ title: ONE WARE Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.21.28.0
+
+**The next update (1.0) will be a big rework of the plugin system and breaks compatibility with existing updates**
+
+- Minor Bugfixes and ToolService Integration
+- Add command line arguments to gtkwave call
+- Fix restart feature for Flatpaks
+- Add possibility to show validation warnings for settings
+
 ## 0.21.27.0
 
 - Add Linux Arm Version (Flatpak, Snap, .tar.gz)
