@@ -177,49 +177,81 @@ When augmentations transform the image (rotate, flip, resize), the segmentation 
 :::
 
 ## Model settings
-
+[🔗 model settings guide](/docs/one-ai/getting-started/model-settings)  
 ### Output settings
 
-Navigate to **Model Settings → Output Settings**:
+Navigate to **Model Settings → Output Settings** to configure how the segmentation model produces its predictions.
 
-- **Segmentation Type:** `One Class per Pixel`
+#### Segmentation Type: `One Class per Pixel`
+
+This setting defines the segmentation approach:
+
+- **One Class per Pixel** (semantic segmentation): Each pixel in the output is assigned to exactly one class. The model outputs a classification matrix where each cell contains the predicted class ID (0 for background, 1 for wildfire, etc.).
+
+For wildfire detection, we use **One Class per Pixel** to get precise fire region boundaries.
+
+#### Position Prediction Resolution: 100%
+
+**This setting determines the resolution of the segmentation mask output.**
+
+The Position Prediction Resolution controls how detailed the segmentation mask will be relative to the input image size:
+
+- **100% resolution**: Output mask has the same resolution as the input
+  - Example: 128×128 input → 128×128 mask (16,384 pixels to classify)
   
-  This is semantic segmentation where each pixel is assigned to exactly one class. The model outputs a matrix where each cell contains the predicted class ID.
-
-- **Position Prediction Resolution:** 25%
+- **25% resolution** (Wildfire setting): Output mask is 25% of input dimensions
+  - Example: 128×128 input → 32×32 mask (1,024 pixels to classify)
+  - The mask is upscaled for display, but predictions are made at 32×32 resolution
   
-  Controls the output resolution relative to the input. Lower values increase speed but reduce mask precision.
+- **10% resolution**: Very coarse segmentation
+  - Example: 128×128 input → 12×12 mask (144 pixels to classify)
 
-- **Precision Recall Prioritization:** 50%
+For the Wildfire dataset at 128×128 input resolution:
+- 100% resolution produces a **128×128 segmentation mask**
+
+
+#### Precision Recall Prioritization: 50%
+
+Controls the model's bias toward false positives vs. false negatives:
+
+- **< 50% (Favor Precision)**: Reduces false alarms - only labels regions as wildfire when highly confident
+  - Use when false positives are costly (e.g., triggering unnecessary alerts)
   
-  A balanced approach between false positives and false negatives.
+- **50% (Balanced)**: Equal weight on precision and recall
+  - Recommended starting point for most applications
+  
+- **> 50% (Favor Recall)**: Reduces missed detections - labels more regions as potential wildfire
+  - Use when missing a fire is more dangerous than false alarms
 
-<img src="/img/ai/one_ai_plugin/demos/wildfire/output_settings.png" alt="Model output settings" style={{ width: '100%', maxWidth: '800px', display: 'block', margin: '0 auto' }} />
+For wildfire detection, **50% is a balanced approach** that catches most fires without excessive false alarms.
+
+<img src="/img/ai/one_ai_plugin/demos/wildfire/output_settings.png" alt="Model output settings" style={{ width: '100%', maxWidth: '900px', display: 'block', margin: '0 auto' }} />
 
 ### Input settings
 
-The model input settings help the AI understand your detection requirements:
+The model input settings help the AI understand your detection requirements. For detailed explanations of these parameters, refer to the [model settings guide](/docs/one-ai/getting-started/model-settings).
 
-- **Detect Complexity:** 50%
-  
-  Moderate complexity for distinguishing fire regions from background.
+Navigate to **Model Settings → Input Settings** and configure:
 
-- **Same Class Difference:** 50%
-  
-  Wildfire regions can vary in intensity and pattern.
+- **Surrounding Size Mode:** `Relative To Image`
+- **Estimated Surrounding Min/Max :** 100-100%  
 
-- **Background Difference:** 50%
+- **Same Class Difference:** 25%  
+  Wildfire appearance varies moderately in intensity and texture but maintains recognizable characteristics
+
+- **Background Difference:** 25%  
+  Drone imagery backgrounds include forests, fields, and urban areas with moderate variation
+
+- **Detect Complexity:** 25%  
+  Moderately complex task—fire regions have varying patterns but are generally distinctive from background
   
-  Drone imagery backgrounds can vary between images.
 
 ## Hardware settings
+[🔗 hardware settings guide](/docs/one-ai/getting-started/hardware-settings)  
 
-For this demo, we'll use default CPU settings for training. The trained model will be exported as ONNX for testing.
+For this demo, we'll use default CPU settings for training. 
+The trained model will be exported as ONNX for testing.
 
-If you plan to deploy to FPGA:
-1. You can select your target hardware in the **Hardware Settings** tab
-2. **Select Predefined Hardware**, as many preconfigured devices are available
-3. Enable **Advanced** options to tune the hardware further
 
 ## Training the model
 
@@ -279,9 +311,8 @@ Once training completes, export the model for testing and deployment:
 
 1. Click on **Export** to open the export configuration menu
 2. Select **ONNX** as the export format
-3. Choose **Float (32-bit)** or **Quantized (8-bit)** based on your deployment needs
-4. Click **Start Export**
-5. Once the server completes the export, download the model by clicking the **downward arrow** in the Exports section
+3. Click **Start Export**
+4. Once the server completes the export, download the model by clicking the **downward arrow** in the Exports section
 
 The exported `.onnx` file can be used for:
 - Testing within ONE AI
