@@ -41,7 +41,7 @@ When you are following this tutorial you can either import the provided dataset 
 </div>
 
 ### Importing the dataset
-The setup process is similar to the [Potato Chip Demo](/docs/one-ai/tutorials/potato-chip-demo#setting-up-the-project-and-loading-the-data). First, we create a new project with the **AI Generator**. Then, we use the dataset import to load the dataset. Since we are working on a classification problem, we set the format for the import to **Classification** and the annotation **Mode** to **Classes**.
+The setup process is similar to the [Potato Chip Demo](/docs/one-ai/tutorials/potato-chip-demo#setting-up-the-project-and-loading-the-data). First, we create a new project with the **OneAI Project Generator**. Then, we use the dataset import to load the dataset. Since we are working on a classification problem, we set the format for the import to **Classification** and the annotation **Mode** to **Classes**.
 
 We can verify that everything was loaded correctly by checking the annotations of our train and test images.
 
@@ -89,7 +89,7 @@ After having set up the data processing pipeline, we configure the model setting
 
 Next, we provide some additional information on the characteristics of the input data. First, we estimate the area that the model needs to analyze to make a decision for the smallest and the largest numbers. We set these settings **relative to the image**. The surrounding area is set to **(25, 25)** for small objects and to **(70, 70)** for large objects.
 
-Then, we estimate the variance of numbers from the same class. We observe quite a few differences in writing styles like the size, the angle or the line width, so we set the **Same Class Difference** to **40%**. The next setting describes the variation of the background. As there is no variation in the white background, we set the **Background Difference** to **0%**. We set the **Detect Simplicity** to **90%**, because the task isn't that complicated. Next, we need to specify the estimated sizes for small, average and large objects. We set those to **(25, 25)**, **(40, 40)** and **(70, 70)**. Finally we need to tell ONE AI how many image features are relevant for the classification. We set **Maximum Number of Features for Classification** to **4** and **Average Number of Features for Classification** to **2**.
+Then, we estimate the variance of numbers from the same class. We observe quite a few differences in writing styles like the size, the angle or the line width, so we set the **Same Class Difference** to **40%**. The next setting describes the variation of the background. As there is no variation in the white background, we set the **Background Difference** to **0%**. We set the **Detect Complexity** to **10%**, because the task isn't that complicated. Next, we need to specify the estimated sizes for small, average and large objects. We set those to **(25, 25)**, **(40, 40)** and **(70, 70)**. Finally we need to tell ONE AI how many image features are relevant for the classification. We set **Maximum Number of Features for Classification** to **4** and **Average Number of Features for Classification** to **2**.
 
 The last model setting is the option to organize the classes into **Groups**. This is an advanced setting that isn't necessary for this task, so we leave it at the default. We recommend leaving all classes in the same group unless you are certain that your task benefits from splitting the model into multiple sub-models.
 
