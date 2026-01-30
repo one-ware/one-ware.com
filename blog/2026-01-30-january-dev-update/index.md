@@ -1,6 +1,6 @@
 ---
 slug: january-2026-dev-update
-title: "Getting Started with OneAI has never been easier!"
+title: "Dev Update: Get Started with OneAI in Minutes!"
 authors: [hmennen]
 tags:
   [
@@ -15,7 +15,11 @@ tags:
   ]
 ---
 
-Hello and welcome to the first dev update of this year! As you read in the title, we made getting started with One AI much easier!
+Hello and welcome to the first dev update of this year!
+
+Getting started with a new AI platform can be intimidating — configuration, datasets, pipelines, models. We’ve heard from many of you that you want to see results faster, with less setup overhead.
+
+That’s why we’re excited to kick off 2026 with a big usability improvement: *With our new **Quick-Start** feature, you can go from zero to a running Vision AI project in just a few minutes.
 
 <video autoPlay loop muted playsInline style={{ maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto', marginBottom: '5px' }}>
   <source src={require('./img/quick-start.webm').default} type="video/webm" />
@@ -90,7 +94,7 @@ This wraps up some of the biggest changes from the past month — but there's mu
 
 OneWare Studio will receive a major update with a cleaned-up architecture that enables easier plugin integration and advanced features.
 
-We're getting ready for the "Vibe Coding" future 👀
+**We're getting ready for the "Vibe Coding" future 👀**
 
 Alongside our planned release of a OneAI Chat Assistant, you'll be able to use GitHub Copilot as a helpful aid when implementing the remaining pieces to get your AI running on any hardware.
 
@@ -101,15 +105,14 @@ Alongside our planned release of a OneAI Chat Assistant, you'll be able to use G
 ![Copilot C++](img/copilot-cpp.png)
 
 I'll showcase this feature in more detail in the next post.
+**We plan to release OneWare Studio 1.0 in February 2026.**
 
-:::info Coming Soon!
-We plan to release OneWare Studio 1.0 in February 2026.
-:::
 
-You made it this far — thank you for reading ! ❤️
-
-Here is a one-time code for 1000 additional credits:
-
+:::success You made it this far — thank you for reading ! ❤️
+Here is a one-time code for 1000 additional credits:<br/>
 `i-love-oneai`
 
-It will be redeemable [here](https://cloud.one-ware.com/credits) for the next 30 days. Enjoy!
+It will be redeemable [here](https://cloud.one-ware.com/credits) for the next 30 days. 
+:::
+
+**Enjoy and stay tuned for the next update!**
