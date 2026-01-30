@@ -24,11 +24,6 @@ In this tutorial, we will use the BD3 dataset to build an AI model following our
 
 To ensure comparable conditions, we use the same train, validation, and test split as in the original work, generated with the authors’ provided script, which is available in the dataset’s [Github repository of the dataset](https://github.com/Praveenkottari/BD3-Dataset). The pre-split dataset can be downloaded [here](https://onewarecom.sharepoint.com/:u:/s/Public/IQAs9Ec5yiIvQ5hXd7oQ-a-PAXyasRPIgXb8DTO-JsbmJYc?e=elzcAc) for use in this tutorial. You can also download the complete project folder [here](https://onewarecom.sharepoint.com/:u:/s/Public/IQBqxmnKGzERQrz865UMxdpMAbz7VJhCHSP_hbEXdB29QDY?e=saGHWP), including all the configurations we will apply in the following steps.
 
-
-### License 
-The dataset is licensed under the MIT License: 
-Copyright (c) 2024 Pandarasamy Arjunan (Samy). The full license text is provided in the dataset.
-
 **Kottari, P., & Arjunan, P. (2024).**  
 **BD3: Building Defects Detection Dataset for Benchmarking Computer Vision Techniques for Automated Defect Identification.**  
 _In Proceedings of the 11th ACM International Conference on Systems for Energy-Efficient Buildings, Cities, and Transportation (BuildSys '24)_ (pp. 297–301).  
