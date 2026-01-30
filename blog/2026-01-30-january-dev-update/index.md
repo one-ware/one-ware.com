@@ -17,9 +17,9 @@ tags:
 
 Hello and welcome to the first dev update of this year!
 
-Getting started with a new AI platform can be intimidating — configuration, datasets, pipelines, models. We’ve heard from many of you that you want to see results faster, with less setup overhead.
+Getting started with OneAI can be intimidating. We’ve heard from many of you that you want to see results faster, with less setup overhead.
 
-That’s why we’re excited to kick off 2026 with a big usability improvement: *With our new **Quick-Start** feature, you can go from zero to a running Vision AI project in just a few minutes.
+That’s why we’re excited to start 2026 with a big usability improvement: With our new **Quick-Start** feature, you can go from zero to a running Vision AI project in just a few minutes.
 
 <video autoPlay loop muted playsInline style={{ maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto', marginBottom: '5px' }}>
   <source src={require('./img/quick-start.webm').default} type="video/webm" />
