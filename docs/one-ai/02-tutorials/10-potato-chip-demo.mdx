@@ -24,7 +24,7 @@ This demo showcases the usage of OneWare Studio and the OneAI Extension for a de
   <Link className="button button--primary button--lg" href="/docs/one-ai/use-cases/chip">
     <p className="m-0 p-0">Performance Results</p>
   </Link>
-  <Link className="button button--primary button--lg" href="https://github.com/one-ware/OneAI_demo_datasets/blob/main/projects/Chips.zip" target="_blank" rel="noopener noreferrer">
+  <Link className="button button--primary button--lg" href="oneware://oneai/quick-start/chips" target="_blank" rel="noopener noreferrer">
     <p className="m-0 p-0">Download Project</p>
   </Link>
 </div>
@@ -41,26 +41,34 @@ Here are a few examples from the dataset:
     <img src="/img/ai/one_ai_plugin/demos/potato_chip/chips_defective_02.jpg" alt="chips_example_defective_02" style={{ width: '48%' }} />
 </div>
 
-We created a modified version of this dataset with scaled down images. This greatly reduces the size of the dataset while still keeping more than enough details to accurately classify the images. We also corrected a mismatch in the label names that would have caused an issue during the training. You can download the dataset [here](https://github.com/one-ware/OneAI_demo_datasets/blob/main/datasets/Pepsico%20RnD%20Potato%20Lab%20Dataset%20512x512.zip) or the complete project [here](https://github.com/one-ware/OneAI_demo_datasets/blob/main/projects/Chips.zip).
+We created a modified version of this dataset with scaled down images. This greatly reduces the size of the dataset while still keeping more than enough details to accurately classify the images. We also corrected a mismatch in the label names that would have caused an issue during the training. You can download the dataset [here](https://onewarecom.sharepoint.com/:u:/s/Public/IQA9GWRXi_sMQ5lN36gw2HBNAUJZre4ki1zoq6lSnXDrxrk?e=h4oOt7).
 
 ## Setting up the project
-When you are following this tutorial you can either import the provided dataset and configure the settings yourself or you can use the provided project folder that already has all the settings configured.
+When you are following this tutorial, you can either import the provided dataset and set all the configurations yourself or you can download the completed project.
 
-### Using the project folder
-To use the preconfigured project, you first need to [download](https://github.com/one-ware/OneAI_demo_datasets/blob/main/projects/Chips.zip) and unzip it. Afterwards, you can open the project by clicking on **File** > **Open** > **Folder**.
+<div className="text--center" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+  <Link className="button button--primary button--lg" href="https://onewarecom.sharepoint.com/:u:/s/Public/IQA9GWRXi_sMQ5lN36gw2HBNAUJZre4ki1zoq6lSnXDrxrk?e=h4oOt7" target="_blank" rel="noopener noreferrer">
+    <p className="m-0 p-0">Download Dataset</p>
+  </Link>
+  <Link className="button button--primary button--lg" href="oneware://oneai/quick-start/chips" target="_blank" rel="noopener noreferrer">
+    <p className="m-0 p-0">Download Project</p>
+  </Link>
+</div>
 
 ### Importing the dataset
-If you want to apply the settings of the project yourself, you need to create a new AI Generator. Click on **AI** > **Open AI Generator**, enter a name and select **Image Detection**. This automatically opens a ``.oneai`` file, which contains the settings for the AI Generator.
+If you want to apply the settings of the project yourself, you first need to create a new OneAI Project. Click on **AI** > **OneAI Project Generator**, enter a name and select the **Default** template. This automatically opens a ``.oneai`` file with the default settings.
 
 ![New AI](/img/ai/one_ai_plugin/getting_started/new_ai.webp)
 
-To load the dataset, you first need to unzip the provided dataset. Then, you need to go to the **Dataset** tab and click on the **Import** button in the top-right corner. There, you select **Import Existing Dataset**. In the **Import Dataset** window, you need to select the unzipped dataset directory, which contains the folders ``Test`` and ``Train``. The **Format** of the dataset is **Classification**, which means that each class has its own folder containing the images that belong to that class. Since the dataset contains the folders ``Train`` and ``Test``, the images are automatically divided into the existing train and test subsets.
+To load the dataset, you first need to unzip the provided dataset. Then, you need to go to the **Dataset** tab and click on the **Import Labeled Dataset** button. In the **Import Dataset** window, you need to select the unzipped dataset directory, which contains the folders ``Test`` and ``Train``. The **Format** of the dataset is **Classification**, which means that each class has its own folder containing the images that belong to that class.
 
-![dataset_import](/img/ai/one_ai_plugin/demos/potato_chip/chips_dataset_import.png)
+![dataset_import](/img/ai/one_ai_plugin/demos/potato_chip/chips_dataset_import.webp)
 
-Since we want to train a classification model, we need to change the **Mode** from **Objects** to **Classes**. Because we don't have a predefined validation split, we let ONE AI create a validation split from the training data. The required settings are in the **Validation** tab but are already activated by default.
+It is a common approach to divide the dataset into the three subsets train, validation and test. The training set is used to train the model, the validation set is used to monitor the model during the training and to tune hyperparameters, and the test set is used to evaluate the final model after the training is complete. Because the imported dataset contained the folders ``Train`` and ``Test``, the images were automatically divided into the train and test subsets during the import.
 
-If we look into the **Test** tab, we see that we can reuse part of our training or validation set to increase our test set in the final model evaluation. This is useful if no or only a small test set is available, but has the disadvantage of bleeding information from the training data into the test data and thus distorting the results of the evaluation. Since the validation set is currently only used for stopping the training early if there are no further improvements, the effects should be minimal when only the validation set is reused. Reusing parts of the training set, however, will be more impactful and should only be done with caution. Because our dataset already has a separate test set, we don't need to reuse training or validation data, so we set both **Train Image Percentage** and **Validation Image Percentage** to **0%**.
+Because we don't have a predefined validation split, we let ONE AI create a validation split from the training data. The required settings are in the **Validation** tab but are already activated by default.
+
+If we look into the **Test** tab, we see that ONE AI can also create a test split for us. We have the option to reuse parts of the training or validation set or to create a completely separate test set. Reusing parts of the training or validation set should be done with caution, as it introduces an information leak into the test set. This can make the evaluation results look better than they actually are. The effects are small when only the validation set is reused, but reusing parts of the training set will be more impactful. Because our dataset already has a separate test set, these options were deactivated during the dataset import.
 
 If you followed all the steps correctly, the images will show up in the **Train** and **Test** tabs of the **Dataset** section. Make sure that the icon for opening the annotation tool in the bottom-right corner of the images has a teal color, which shows that they are annotated.
 
@@ -78,11 +86,13 @@ Afterwards the Altera™ Max® 10 16K can be selected in the **Hardware configur
 
 ![hardware configuration dialog](/img/ai/one_ai_plugin/demos/potato_chip/hardware_settings.png)
 
+We set the the **Maximum Memory Usage** as well as the **Maximum Multiplier Usage** to **90%** and leave the **FPGA Clock Speed** at **50 MHz**.
+
 ## Filters and augmentations
 [🔗 filters and augmentations guide](/docs/one-ai/getting-started/filters-and-augmentations)  
 Now, we need to set up our data processing pipeline by specifying the filters and augmentations. Filters are applied once to every image and are the same every time. They are used to preprocess the images. Augmentations on the other hand contain random elements and are different for every image and epoch of the training. They are used to increase the size of the dataset without the need to record and annotate new data. Furthermore, augmentations can increase the model's robustness against variations in the data by intentionally reproducing these variations. OneWare Studio allows us to set up two sets of filters - one that is applied before the augmentations and one that is applied afterwards.
 
-For this demo, we can leave the **Initial Resize** filter at the default settings, because all images in the dataset have the same size. We set the **Resolution Filter** to **10%** to reduce the 512x512 images to 51x51. This allows us to reduce the size of the images and thus the required computations while still being able to distinguish key details. For this project, we don't need any further filters.
+We set the **Resize** filter to **10%** to reduce the 512x512 images to 51x51. This allows us to reduce the size of the images and thus the required computations while still being able to distinguish key details. For this project, we don't need any further filters.
 
 In addition, we use the following augmentations:
 - **Move Augmentation**: This augmentation varies the images by shifting it. This makes the model more robust against shifts in the position of the potato chips. We set the amount of shift to **±15%** in both directions.
@@ -98,17 +108,17 @@ Feel free to test around with the filter and augmentation settings. You can add 
 
 ## Model settings
 [🔗 model settings guide](/docs/one-ai/getting-started/model-settings)  
-Now that we have set up our data processing pipeline, we configure the model settings. First, we need to specify the **Classification Type**. Since each image has either the class *Defective* or *Non-Defective*, we set it to **One Class per Image**. Next, we set the **Minimum FPS** to **20** and the **Maximum Memory Usage** as well as the **Maximum Multiplier Usage** to **90%**. Since we are using an Altera™ Max® 10 16K, we leave the **FPGA Clock Speed** at **50 MHz**.
+Now that we have set up our data processing pipeline, we configure the model settings. First, we need to specify the **Classification Type**. Since each image has either the class *Defective* or *Non-Defective*, we set it to **One Class per Image**. Next, we set the **Minimum FPS** to **20** FPS.
 
-Afterwards, we provide some additional information on the characteristics of the data. First, we estimate the area the model needs to analyze to make a decision. In our example, it is enough for the model to see the burnt part of the potato chip. There is no need to analyze the whole chip. Other applications might require the model to see the whole object or even to look at the area surrounding the objects. We set the surrounding area to **(10, 10)** for small objects and to **(30, 30)** for large objects.
+Afterwards, we provide some additional information on the characteristics of the data. First, we estimate the area the model needs to analyze to make a decision. We set these settings **relative to the image**. In our example, it is enough for the model to see the burnt part of the potato chip. There is no need to analyze the whole chip. Other applications might require the model to see the whole object or even to look at the area surrounding the objects. We set the surrounding area to **(10, 10)** for small objects and to **(30, 30)** for large objects.
 
-Next we need to estimate the difference within the same class. There is some moderate variance between the chips and their burn marks but the differences aren't huge. To reflect this, we set the **Same Class Difference** to **40%**. The next setting describes how much the background varies. Since there is very little variation in the background, we set the **Background Difference** to **5%**. Afterwards, we set the **Detect Simplicity** to **90%** since the task is rather simple (easier problems have a higher value). Next, we need to tell the model the estimated sizes for small, average and large objects. We set those to **(5, 5)**, **(15, 15)** and **(30, 30)**. Finally, we need to estimate how many image features are relevant for the classification. Most defective chips contain one or two burn marks, but there are also chips with more burned areas. We thus set **Maximum Number of Features for Classification** to **8** and **Average Number of Features for Classification** to **1.5**.
+Next we need to estimate the difference within the same class. There is some moderate variance between the chips and their burn marks but the differences aren't huge. To reflect this, we set the **Same Class Difference** to **40%**. The next setting describes how much the background varies. Since there is very little variation in the background, we set the **Background Difference** to **5%**. Afterwards, we set the **Detect Complexity** to **10%** since the task is rather simple. Next, we need to tell the model the estimated sizes for small, average and large objects. We set those to **(5, 5)**, **(15, 15)** and **(30, 30)**. Finally, we need to estimate how many image features are relevant for the classification. Most defective chips contain one or two burn marks, but there are also chips with more burned areas. We thus set **Maximum Number of Features for Classification** to **8** and **Average Number of Features for Classification** to **1.5**.
 
 The last model setting is the option to organize the classes into **Groups**. This is an advanced setting that isn't necessary for this task, so we leave it at the default. We recommend leaving all classes in the same group unless you are certain that your task benefits from splitting the model into multiple sub-models.
 
 ## Training the model
 [🔗 training settings guide](/docs/one-ai/getting-started/training)  
-Lastly, we go to the **Training** tab and click on **Sync** to synchronize our data and existing model trainings with the ONE WARE servers. After that, we click on **Create Model** to create a new model. In the next step, we select our model and click on the **Train** button in the top-right corner. A **training time** of **2 minutes** is already sufficient for this task. The **Patience for Early Stopping** can be used to stop the training early if there are no further improvements. Since the training time for this example is so short, this setting doesn't really matter, so we leave it at the default of **100%**. Since we want to export the model to an FPGA, we **Enable Quantization Optimization** to increase its performance. Using quantization is required for most FPGAs and also for some microcontrollers. The option **Focus on Images with Objects** is only relevant for object detection tasks, so we leave the box unchecked. The option **Continue Training** can be used to continue the training of a model that has already been trained. If it is unchecked, the existing model will be overwritten. Since we don't have any prior model, this setting is ignored by ONE AI.
+Lastly, we go to the **Training** tab and click on **Sync** to synchronize our data and existing model trainings with the ONE WARE servers. After that, we click on the plus icon to create a new model and then on the **Train** button in the top-right corner. A **training time** of **2 minutes** is already sufficient for this task. The **Patience for Early Stopping** can be used to stop the training early if there are no further improvements. Since the training time for this example is so short, this setting doesn't really matter, so we leave it at the default of **100%**. Since we want to export the model to an FPGA, we **Enable Quantization Optimization** to increase its performance. Using quantization is required for most FPGAs and also for some microcontrollers. The option **Focus on Images with Objects** is only relevant for object detection tasks, so we leave the box unchecked. The option **Continue Training** can be used to continue the training of a model that has already been trained. If it is unchecked, the existing model will be overwritten. Since we don't have any prior model, this setting is ignored by ONE AI.
 
 Finally, we click on the **Start Training** button. You can monitor the training progress in the **Logs** and **Statistics** tabs.
 
