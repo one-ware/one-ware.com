@@ -14,18 +14,18 @@ export interface ShowcaseItem {
 const defaultDemos: ShowcaseItem[] = [
   
   {
-    title: "High Speed Quality Control",
+    title: "High Speed Image Classification",
     video: "/img/demos/chip.webm",
     image: "/img/ai/one_ai_plugin/use_cases/chip/defect.png",
-    link: "/docs/one-ai/tutorials/potato-chip-demo",
+    link: "https://cloud.one-ware.com/quick-start",
     metrics: {
       left: { value: 24, unit: " x", label: "Less Errors vs Universal AI" },
       center: { value: "Efficient" as const, label: "AI Model" },
-      right: { value: 72, unit: " x", label: "Faster vs Universal AI" },
+      right: { value: 1000, unit: " x", label: "Faster vs Universal AI" , prefix: ">" },
     },
   },
   {
-    title: "Object Detection with Comparison",
+    title: "Video Object Detection",
     video: "/img/demos/drone.webm",
     image: "/img/demos/compare.jpg",
     link: "/docs/one-ai/use-cases/difference-detection",
@@ -36,7 +36,7 @@ const defaultDemos: ShowcaseItem[] = [
     },
   },
   {
-    title: "High Precision Object Detection",
+    title: "Image Comparison AI",
     image: "/img/ai/one_ai_plugin/use_cases/pcb/pcb.png",
     link: "/docs/one-ai/use-cases/pcb",
     metrics: {
@@ -60,7 +60,7 @@ const defaultDemos: ShowcaseItem[] = [
     title: "Simple Classification",
     video: "/img/demos/number.webm",
     image: "/img/ai/one_ai_plugin/demos/handwritten-digits/nist_sd19_examples.jpg",
-    link: "/docs/one-ai/tutorials/handwritten-digits-demo",
+    link: "https://cloud.one-ware.com/quick-start",
     metrics: {
       left: { value: 99, unit: " %", label: "Accuracy" },
       center: { value: "Efficient" as const, label: "AI Model" },
