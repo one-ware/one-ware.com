@@ -1,10 +1,10 @@
 ---
 slug: january-2026-dev-update
-title: "Dev Update: Get Started with OneAI in Minutes!"
+title: "Dev Update: Get Started with One AI in Minutes!"
 authors: [hmennen]
 tags:
   [
-    OneAI,
+    One AI,
     OneWare,
     Developer,
     VisionAI,
@@ -33,11 +33,11 @@ That’s why we’re excited to start 2026 with a big usability improvement: Wit
 
 <!-- truncate -->
 
-After that you should have OneWare Studio, the OneAI Extension and everything ready to get started! Explore the project, try out some settings and start creating your own models.
+After that you should have OneWare Studio, the One AI Extension and everything ready to get started! Explore the project, try out some settings and start creating your own models.
 
 ## Create Projects quicker with Light Mode
 
-Since many of the OneAI Settings can make getting started difficult, we decided to implement a light mode. This will be the default for new projects, but it's also possible to **switch back to Expert Mode** anytime from the menu at `AI` -> `Capability Mode`
+Since many of the One AI Settings can make getting started difficult, we decided to implement a light mode. This will be the default for new projects, but it's also possible to **switch back to Expert Mode** anytime from the menu at `AI` -> `Capability Mode`
 
 ![Capability Mode](img/capability-mode.png)
 
@@ -51,7 +51,7 @@ As you may have noticed already, **everyone now has 5000 Free Monthly Credits**.
 
 ## Support for Linux-Arm
 
-We just released OneWare Studio and our OneAI Extension for the Linux ARM64 platform on both [Flatpak](https://flathub.org/en/apps/com.one_ware.OneWare) as well as [Snap](https://snapcraft.io/oneware).
+We just released OneWare Studio and our One AI Extension for the Linux ARM64 platform on both [Flatpak](https://flathub.org/en/apps/com.one_ware.OneWare) as well as [Snap](https://snapcraft.io/oneware).
 
 [![Get it from Flathub](https://flathub.org/api/badge?locale=en)](https://flathub.org/apps/com.one_ware.OneWare)
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/oneware)
@@ -68,7 +68,7 @@ Sometimes you don't need a fancy and expensive setup, a simple cardboard box can
 Since OneWare Studio now runs on Linux Arm, you can simply get it from Flatpak and run it on your Rasperry Pi.
 
 ![Screenshot](img/screenshot.png)
-**Even when using a loopback camera, the Raspberry Pi is powerful enough to run this demo at up to 60FPS just using the CPU (or maybe OneAI models are just very fast 🔥).**
+**Even when using a loopback camera, the Raspberry Pi is powerful enough to run this demo at up to 60FPS just using the CPU (or maybe One AI models are just very fast 🔥).**
 
 ## Improved Annotation Tool
 
@@ -96,7 +96,7 @@ OneWare Studio will receive a major update with a cleaned-up architecture that e
 
 **We're getting ready for the "Vibe Coding" future 👀**
 
-Alongside our planned release of a OneAI Chat Assistant, you'll be able to use GitHub Copilot as a helpful aid when implementing the remaining pieces to get your AI running on any hardware.
+Alongside our planned release of a One AI Chat Assistant, you'll be able to use GitHub Copilot as a helpful aid when implementing the remaining pieces to get your AI running on any hardware.
 
 ![Copilot Integration](img/copilot-vhdl.png)
 
