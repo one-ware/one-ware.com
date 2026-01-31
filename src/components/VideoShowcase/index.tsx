@@ -46,7 +46,7 @@ const defaultDemos: ShowcaseItem[] = [
     },
   },
   {
-    title: "Simple Object Detection",
+    title: "AI with Small Dataset",
     video: "/img/demos/cup.webm",
     image: "/img/ai/one_ai_plugin/demos/tea_cup_print/demo.png",
     link: "/docs/one-ai/tutorials/teacup-print-detection",
