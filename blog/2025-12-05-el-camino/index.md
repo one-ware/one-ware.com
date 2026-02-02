@@ -33,7 +33,7 @@ Customers benefit from **super-fast and efficient tailor-made AI models** that:
 With this dedicated and solution-oriented approach, the partnership **sets a new benchmark** for accessible, future-proof and energy-efficient AI on FPGAs.
 
 > “**Together we make AI implementation smarter, faster and greener**,”  
-> — *Roland Neumüller, CEO of El Camino GmbH*
+> — *Roland Neumüller, CEO of El Camino GmbH*.   
 
 We look forward to working together to advance the future of sustainable AI and FPGA technologies.
 
