@@ -17,6 +17,15 @@
   "homehero.button.learnmore": {
     "message": "Mehr Erfahren"
   },
+  "homehero.benefit.application": {
+    "message": "Jede Anwendung"
+  },
+  "homehero.benefit.hardware": {
+    "message": "Jede Hardware"
+  },
+  "homehero.benefit.requirements": {
+    "message": "Jede Anforderung"
+  },
   "homepage.every": {
     "message": "Jede "
   },
@@ -481,25 +490,25 @@
     "message": "Verschwenden Sie Ihren individuellen Datensatz nicht an ein generisches KI-Modell. Unsere KI entwirft automatisch KI Modelle, die auf Ihre Daten zugeschnitten sind und Foundation-Modelle sowie NAS in nur 0,7 Sekunden übertreffen."
   },
   "oneai.invention.training.title": {
-    "message": "1. Anwendung Analysieren"
+    "message": "Anwendung Analysieren"
   },
   "oneai.invention.training.description": {
     "message": "ONE AI erzielt die besten Ergebnisse, wenn der Datensatz auf eine spezifische Aufgabe fokussiert ist. Zuerst analysiert es die Daten, Labels, Hardware-Beschränkungen, benötigte Leistung und den Anwendungskontext. Zum Beispiel analysiert es die Objektgrößen in Bildern."
   },
   "oneai.invention.architecture.title": {
-    "message": "2. KI-Features Vorhersagen"
+    "message": "KI-Features Vorhersagen"
   },
   "oneai.invention.architecture.description": {
     "message": "ONE AI nutzt dann sein Wissen über bestehende KI-Forschung und zuvor optimierte KI-Modelle, um die benötigten Features für die KI-Modell-Architektur vorherzusagen. Zum Beispiel benötigen größere Objekte größere rezeptive Felder."
   },
   "oneai.invention.generation.title": {
-    "message": "3. KI-Modell Erstellen & Trainieren"
+    "message": "KI-Modell Erstellen & Trainieren"
   },
   "oneai.invention.generation.description": {
     "message": "ONE AI nimmt die Vorhersagen und erstellt dann eine maßgeschneiderte neuronale Netzwerk-Architektur, die alle vorhergesagten Features erfüllt. Dann wird die KI auf dem Datensatz trainiert und lernt nur die relevanten Informationen."
   },
   "oneai.invention.deployment.title": {
-    "message": "4. Überall Implementieren"
+    "message": "Überall Implementieren"
   },
   "oneai.invention.deployment.description": {
     "message": "Schließlich kann die KI ohne Änderungen auf FPGAs, Mikrocontrollern, GPUs und CPUs bereitgestellt werden. ONE AI übernimmt automatisch die gesamte Komplexität der Hardware-Optimierung und -Implementierung."
@@ -1836,6 +1845,66 @@
   },
   "seminars.form.error.already_registered": {
     "message": "Sie sind bereits für dieses Event registriert."
+  },
+  "chathero.title": {
+    "message": "Erstelle deine maßgeschneiderte KI"
+  },
+  "chathero.subtitle": {
+    "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore."
+  },
+  "chathero.button.howitworks": {
+    "message": "So funktioniert's"
+  },
+  "chathero.button.showcase": {
+    "message": "Showcase"
+  },
+  "signupmodal.attach.title": {
+    "message": "Anmelden um Dateien hochzuladen"
+  },
+  "signupmodal.attach.subtitle": {
+    "message": "Unterstützung für bis zu 10 Dateien jedes Dateityps"
+  },
+  "signupmodal.send.title": {
+    "message": "Anmelden um deine KI zu erstellen"
+  },
+  "signupmodal.send.subtitle": {
+    "message": "Starte mit deinem maßgeschneiderten KI-Modell"
+  },
+  "signupmodal.button.signin": {
+    "message": "Anmelden"
+  },
+  "signupmodal.button.cancel": {
+    "message": "Abbrechen"
+  },
+    "orbitindustries.title": {
+    "message": "Explore Our Benefits"
+  },
+  "orbitindustries.subtitle": {
+    "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  "orbitindustries.anyHardware.label": {
+    "message": "Jede Hardware"
+  },
+  "orbitindustries.anyHardware.description": {
+    "message": "KI für jede Hardware, egal wie wenig Ressourcen. Von Mikrocontrollern bis FPGAs - ONE AI optimiert für deine exakten Anforderungen."
+  },
+  "orbitindustries.anyRequirements.label": {
+    "message": "Jede Anforderung"
+  },
+  "orbitindustries.anyRequirements.description": {
+    "message": "KI egal wie schnell sie sein muss. Entwickelt für die anspruchsvollsten Echtzeitanwendungen mit garantierter Performance."
+  },
+  "orbitindustries.anyApplication.label": {
+    "message": "Jede Anwendung"
+  },
+  "orbitindustries.anyApplication.description": {
+    "message": "Egal wie komplex die Anwendung ist oder wie untypisch die Daten - ONE AI erstellt maßgeschneiderte neuronale Netze für deinen spezifischen Anwendungsfall."
+  },
+  "orbitindustries.resultsInMinutes.label": {
+    "message": "Ergebnisse in Minuten"
+  },
+  "orbitindustries.resultsInMinutes.description": {
+    "message": "Kann von jedem Entwickler bedient werden. Erhalte produktionsreife KI-Modelle in Minuten statt Monaten - keine ML-Expertise erforderlich."
   },
   "careers.detail.location": {
     "message": "Standort"
