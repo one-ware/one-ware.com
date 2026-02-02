@@ -7,6 +7,7 @@ export interface ShowcaseItem {
   title: string;
   video?: string;
   image?: string;
+  architecture?: string;
   link: string;
   metrics: Metrics;
 }
@@ -17,6 +18,7 @@ const defaultDemos: ShowcaseItem[] = [
     title: "High Speed Image Classification",
     video: "/img/demos/chip.webm",
     image: "/img/ai/one_ai_plugin/use_cases/chip/defect.png",
+    architecture: "/img/demos/architecture/architecture_chip.png",
     link: "https://cloud.one-ware.com/quick-start",
     metrics: {
       left: { value: 24, unit: " x", label: "Less Errors vs Universal AI" },
@@ -28,6 +30,7 @@ const defaultDemos: ShowcaseItem[] = [
     title: "Video Object Detection",
     video: "/img/demos/drone.webm",
     image: "/img/demos/compare.jpg",
+    architecture: "/img/demos/architecture/architecture_drones.png",
     link: "/docs/one-ai/use-cases/difference-detection",
     metrics: {
       left: { value: 10, unit: " x", label: "Less Errors vs YOLOv8" },
@@ -38,6 +41,7 @@ const defaultDemos: ShowcaseItem[] = [
   {
     title: "Image Comparison AI",
     image: "/img/ai/one_ai_plugin/use_cases/pcb/pcb.png",
+    architecture: "/img/demos/architecture/architecture_pcb.png",
     link: "/docs/one-ai/use-cases/pcb",
     metrics: {
       left: { value: 6.4, unit: " x", label: "Less Errors vs Image Processing" },
@@ -175,6 +179,7 @@ export default function VideoShowcase({ items = defaultDemos, columns = 3 }: Vid
                 title={demo.title}
                 metrics={demo.metrics}
                 link={demo.link}
+                architecture={demo.architecture}
                 isActive={currentActive === idx}
                 onMouseEnter={() => !isMobile && setHoveredIndex(idx)}
                 onMouseLeave={() => !isMobile && setHoveredIndex(null)}
