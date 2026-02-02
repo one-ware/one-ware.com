@@ -112,7 +112,7 @@ On the one-ware cloud platform, you can also visually inspect the model's perfor
 ![test_online](/img/ai/one_ai_plugin/demos/bd3-building-defects/test_online.jpg)
 
 ## Model export
-[🔗 model export guide](/docs/one-ai/getting-started/export)
+[🔗 model export guide](/docs/one-ai/documentation/export)
 
 To make the model available for different tasks, you can export and download it. Click on **Export** to open the export configuration menu. Then, click **Start Export** to begin the process. Once the server has completed the export, you can download the model by clicking the **downward arrow** in the Exports section. 
 

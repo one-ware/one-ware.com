@@ -115,7 +115,7 @@ function HomepageHeader() {
               <div className="flex flex-col md:flex-row justify-center items-center space-y-3 md:space-y-0 md:space-x-5 mb-10">
                 <Link
                   className="button button--primary button--outline button--lg text-sm md:text-lg"
-                  href="/docs/one-ai/tutorials"
+                  href="/docs/one-ai/tutorials/overview"
                 >
                   <Translate id="oneai.hero.examples">Example Projects</Translate>
                 </Link>
@@ -173,7 +173,7 @@ function ComparisonSection() {
         { value: "1-Click", label: "Deployment", labelId: "oneai.metric.deployment" },
         { value: "< 1 Day", label: "Development Time", labelId: "oneai.metric.devtime" },
       ],
-      whitepaper: "/docs/one-ai/getting-started/dataset/camera-tool",
+      whitepaper: "/docs/one-ai/documentation/camera-tool",
       linkText: "More Details",
       linkTextId: "oneai.usecase.link"
     },
@@ -765,7 +765,7 @@ function InventionSection() {
 
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
-                  to="/docs/one-ai/tutorials"
+                  to="/docs/one-ai/tutorials/overview"
                   className="inline-block bg-black text-white px-8 py-3 text-sm font-medium uppercase tracking-wider hover:bg-gray-800 transition-colors text-center no-underline hover:no-underline"
                   style={{ borderRadius: 6 }}
                 >

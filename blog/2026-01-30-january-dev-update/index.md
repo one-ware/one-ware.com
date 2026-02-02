@@ -59,7 +59,7 @@ We just released OneWare Studio and our One AI Extension for the Linux ARM64 pla
 To celebrate this, I used my lunch break to create a quick **Raspberry Detection on my Raspberry Pi**.
 
 ![Rasperry Detection on Rasperry Pie](img/setup.webp)
-**This demo was trained using just 14 captures from the Raspberry Pi camera, captured directly in OneWare Studio using the [camera tool](/docs/one-ai/getting-started/dataset/camera-tool/).**
+**This demo was trained using just 14 captures from the Raspberry Pi camera, captured directly in OneWare Studio using the [camera tool](/docs/one-ai/documentation/camera-tool/).**
 
 :::success Quick Tip
 Sometimes you don't need a fancy and expensive setup, a simple cardboard box can be enough to create a nice camera booth. 📹

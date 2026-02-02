@@ -177,7 +177,7 @@ const config: Config = {
               label: "Get Started",
             },
             {
-              to: "/docs/one-ai/tutorials",
+              to: "/docs/one-ai/tutorials/overview",
               label: "Demo Projects",
             },
             {
@@ -227,11 +227,11 @@ const config: Config = {
           className: "navbar__dropdown--developers",
           items: [
             {
-              to: "/docs/one-ai/getting-started/full-documentation",
+              to: "/docs/one-ai/documentation/overview",
               label: "Documentation",
             },
             {
-              to: "/docs/one-ai/tutorials",
+              to: "/docs/one-ai/tutorials/overview",
               label: "Example Projects",
             },
             // {

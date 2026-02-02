@@ -20,7 +20,7 @@ Please follow the [Handwritten Digit Classification Demo](/docs/one-ai/tutorials
 
 ### Hardware settings
 
-Instead of the Altera™ Max® 10 16K use the correct settings for the FPGA you are using. In order to simplify parametrization feel free to use the **Extension Manager**, which offers pre-configurations for various FPGA families. Click on **Extras** > **Extensions** to open the **Extension Manager**, then go to the section **Hardware** > **OneAI Support**. Here, install the extension that includes your FPGA. If there is none, please follow the [Specifying custom hardware](/docs/one-ai/getting-started/hardware-settings#specifying-custom-hardware) guide.
+Instead of the Altera™ Max® 10 16K use the correct settings for the FPGA you are using. In order to simplify parametrization feel free to use the **Extension Manager**, which offers pre-configurations for various FPGA families. Click on **Extras** > **Extensions** to open the **Extension Manager**, then go to the section **Hardware** > **OneAI Support**. Here, install the extension that includes your FPGA. If there is none, please follow the [Specifying custom hardware](/docs/one-ai/documentation/hardware-settings#specifying-custom-hardware) guide.
 
 
 ### Training the model
@@ -29,7 +29,7 @@ As we want to export for an FPGA the option **Enable Quantization Optimization**
 
 
 ## Model export {#export}
-[🔗 model export guide](/docs/one-ai/getting-started/export)  
+[🔗 model export guide](/docs/one-ai/documentation/export)  
 After the training is completed, we need to export our model. To do so, we click on the **Export** button, which opens a new window with configurations. In the **Export type** drop-down menu, we select **Project** and then under Platform choose **FPGA**. The **Model Type** is then automatically changed to **VHDL**, exactly what we want.
 
 Next we can activate different settings, that change how our model is exported. If we check the **Export with pre- and postprocessing** checkbox, ONE AI will build all of our filters directly into the model. We activate this setting, because the filter pipeline is an important part of our model. The next setting allows us to change between exporting a floating point or quantized model. As we want a quantized model, we leave this unchecked.

@@ -23,7 +23,7 @@ The first step to creating your own AI model is to create a new project in OneWa
 </div>
 
 ## Load your dataset
-[🔗 dataset guide](/docs/one-ai/getting-started/dataset)  
+[🔗 dataset guide](/docs/one-ai/documentation/dataset)  
 To load your images into OneWare Studio, you need to go to the ``Dataset`` tab in your ONE AI workspace. At the top-right is a button that allows you to import your data. You can load unlabeled images or import an existing dataset that is already labeled. You can even use OneWare Studio's built-in ``Camera Tool`` to record a dataset with a connected camera.
 
 <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
@@ -35,7 +35,7 @@ You can provide reference images to give additional context on how your objects 
 :::
 
 ## Add filters to process your images
-[🔗 guide on image filters](/docs/one-ai/getting-started/filters-and-augmentations#prefilters)  
+[🔗 guide on image filters](/docs/one-ai/documentation/filters-and-augmentations#prefilters)  
 You can use filters to prepare your images for the training process. To get the best results, you should try to simplify the images as much as possible, while keeping all relevant information for your application. For example, you should use the ``Resolution Filter`` to reduce the image size to the minimum that still keeps the important details visible. This makes the task a lot easier for the AI model, because it needs to analyze a smaller image area to make its predictions. Other useful filters for reducing unnecessary information are the ``Crop Filter``, which crops the image to the region of interest or the ``Color Filter`` combined with the ``Channel Filter`` to convert the images to grayscale and only keep a single color channel.
 
 <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
@@ -49,7 +49,7 @@ You can also use filters to enhance relevant information in your images. For exa
 </div>
 
 ## Add augmentations to increase dataset size
-[🔗 guide on augmentations](/docs/one-ai/getting-started/filters-and-augmentations#augmentations)  
+[🔗 guide on augmentations](/docs/one-ai/documentation/filters-and-augmentations#augmentations)  
 You can use data augmentation to artificially increase the size of your dataset by applying random transformations to your images during the training process. This can help to improve the performance of your AI model and prevent overfitting, especially if you have a small dataset. You can also use augmentations more targeted to simulate specific conditions that might occur in your application, such as different lighting conditions or rotations.
 
 <img src="/img/ai/one_ai_plugin/getting_started/augmentation_color.png" alt="Color Augmentation" style={{ width: '40%' }} />
@@ -60,7 +60,7 @@ The default augmentations are a good starting point, but we advise to tune them 
 To get the best results, you should provide some context information about your application in the ``Model Settings`` tab. By providing some simple estimates, like the general task complexity or the variance between objects of the same class, ONE AI can tune the model architecture to your specific use case.
 
 <div className="text--center" style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', marginTop: '2rem' }}>
-  <Link className="button button--primary button--lg" href="/docs/one-ai/getting-started/model-settings">
+  <Link className="button button--primary button--lg" href="/docs/one-ai/documentation/model-settings">
     <p className="m-0 p-0">Model Settings Guide</p>
   </Link>
   <Link className="button button--primary button--lg" href="/docs/one-ai/getting-started/help/choosing-parameters-guide">
@@ -74,18 +74,18 @@ You can run the model test to compute various performance metrics for your train
 ![Camera Tool Live Preview](/img/ai/one_ai_plugin/getting_started/camera_tool/live_preview.png)
 
 <div className="text--center" style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', marginTop: '2rem' }}>
-  <Link className="button button--primary button--lg" href="/docs/one-ai/getting-started/dataset/camera-tool">
+  <Link className="button button--primary button--lg" href="/docs/one-ai/documentation/camera-tool">
     <p className="m-0 p-0">Camera Tool Guide</p>
   </Link>
-  <Link className="button button--primary button--lg" href="/docs/one-ai/getting-started/dataset#5-using-a-trained-model-to-annotate-new-data">
+  <Link className="button button--primary button--lg" href="/docs/one-ai/documentation/dataset#5-using-a-trained-model-to-annotate-new-data">
     <p className="m-0 p-0">Using Models in the Annotation Tool</p>
   </Link>
 </div>
 
 ## Where to go from here?
 We have several different guides and tutorials to help you get started with ONE AI:
-- [Full ONE AI documentation](/docs/one-ai/getting-started/full-documentation)
-- [Tutorial overview](/docs/one-ai/tutorials)
+- [Documentation overview](/docs/one-ai/documentation/overview)
+- [Tutorial overview](/docs/one-ai/tutorials/overview)
 - [Use case overview](/docs/one-ai/use-cases)
 
 <SupportBanner subject="ONE AI Training Tips Support" />

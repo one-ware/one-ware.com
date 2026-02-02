@@ -1,5 +1,5 @@
 ---
-id: full-documentation
+id: overview
 title: Documentation Overview
 sidebar_label: Documentation Overview
 ---
@@ -89,7 +89,7 @@ Enter your ``Project Name`` and choose the ``AI Type``.
 Next, you need to prepare the data that your model is trained on. For the training, you need a set of images as well as annotations that tell ONE AI what the expected output for those images looks like. If you don't have any annotations for your dataset yet, you can label your data directly in OneWare Studio.
 
 <div className="text--center" style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2rem' }}>
-  <Link className="button button--primary button--lg" href="/docs/one-ai/getting-started/dataset">
+  <Link className="button button--primary button--lg" href="/docs/one-ai/documentation/dataset">
     <p className="m-0 p-0">Full Dataset Guide</p>
   </Link>
 </div>
@@ -126,7 +126,7 @@ If your data isn't annotated yet, you can use OneWare Studio's ``Annotation Tool
 In the ``Hardware Settings`` tab, you can specify the target hardware that your model will be deployed on. You have the option to select a predefined hardware or to define custom hardware resources. ONE AI will create a model that is optimized for your hardware and runs within the constraints that were specified in the ``Model Settings``.
 
 <div className="text--center" style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2rem' }}>
-  <Link className="button button--primary button--lg" href="/docs/one-ai/getting-started/hardware-settings">
+  <Link className="button button--primary button--lg" href="/docs/one-ai/documentation/hardware-settings">
     <p className="m-0 p-0">Hardware Settings Guide</p>
   </Link>
 </div>
@@ -140,7 +140,7 @@ Prefilters are used to process your images and can introduce a wide variety of c
 On the right, you can see the settings for the selected prefilter as well as a preview on how it will affect the image. The image on the bottom left shows a preview of your complete prefilter pipeline.
 
 <div className="text--center" style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
-  <Link className="button button--primary button--lg" href="/docs/one-ai/getting-started/filters-and-augmentations#prefilters">
+  <Link className="button button--primary button--lg" href="/docs/one-ai/documentation/filters-and-augmentations#prefilters">
     <p className="m-0 p-0">Prefilters Guide</p>
   </Link>
 </div>
@@ -178,7 +178,7 @@ Below, you'll find some examples for augmentations that are supported by ONE AI.
 </div>
 
 <div className="text--center" style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
-  <Link className="button button--primary button--lg" href="/docs/one-ai/getting-started/filters-and-augmentations#augmentations">
+  <Link className="button button--primary button--lg" href="/docs/one-ai/documentation/filters-and-augmentations#augmentations">
     <p className="m-0 p-0">Augmentations Guide</p>
   </Link>
 </div>
@@ -190,7 +190,7 @@ The ``Model Settings`` tab allows you to tune the model generation to your speci
 <img src="/img/ai/one_ai_plugin/getting_started/model_settings_input_1.png" alt="Model Settings" style={{ width: '100%' }} />
 
 <div className="text--center" style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', marginTop: '2rem' }}>
-  <Link className="button button--primary button--lg" href="/docs/one-ai/getting-started/model-settings">
+  <Link className="button button--primary button--lg" href="/docs/one-ai/documentation/model-settings">
     <p className="m-0 p-0">Model Settings Guide</p>
   </Link>
   <Link className="button button--primary button--lg" href="/docs/one-ai/getting-started/help/choosing-parameters-guide">
@@ -210,7 +210,7 @@ After you've clicked on the ``Train`` button and entered your training settings,
 ![Train 4](/img/ai/Train.png)
 
 <div className="text--center" style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2rem' }}>
-  <Link className="button button--primary button--lg" href="/docs/one-ai/getting-started/training">
+  <Link className="button button--primary button--lg" href="/docs/one-ai/documentation/training">
     <p className="m-0 p-0">Model Training Guide</p>
   </Link>
 </div>
@@ -226,10 +226,10 @@ After the export is finished, the model can be download in the `Exports` tab by 
 ![Export 3](/img/ai/one_ai_plugin/getting_started/export_3.png)
 
 <div className="text--center" style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
-  <Link className="button button--primary button--lg" href="/docs/one-ai/getting-started/export">
+  <Link className="button button--primary button--lg" href="/docs/one-ai/documentation/export">
     <p className="m-0 p-0">Model Export Guide</p>
   </Link>
-  <Link className="button button--primary button--lg" href="/docs/one-ai/getting-started/export/documentation-cpp-api">
+  <Link className="button button--primary button--lg" href="/docs/one-ai/documentation/integration/documentation-cpp-api">
     <p className="m-0 p-0">C++-API Documentation</p>
   </Link>
 </div>
@@ -243,7 +243,7 @@ The ``Camera Tool`` allows you to run your model on live data from a connected c
 ![Camera Tool Live Preview](/img/ai/one_ai_plugin/getting_started/camera_tool/live_preview.png)
 
 <div className="text--center" style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2rem' }}>
-  <Link className="button button--primary button--lg" href="/docs/one-ai/getting-started/dataset/camera-tool">
+  <Link className="button button--primary button--lg" href="/docs/one-ai/documentation/camera-tool">
     <p className="m-0 p-0">Camera Tool Guide</p>
   </Link>
 </div>
@@ -253,7 +253,7 @@ You can also use a trained model in the ``Annotation Tool`` to assist you with l
 ![Generating New Annotations](/img/ai/one_ai_plugin/getting_started/auto_labeling.png)
 
 <div className="text--center" style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2rem' }}>
-  <Link className="button button--primary button--lg" href="/docs/one-ai/getting-started/dataset#5-using-a-trained-model-to-annotate-new-data">
+  <Link className="button button--primary button--lg" href="/docs/one-ai/documentation/dataset#5-using-a-trained-model-to-annotate-new-data">
     <p className="m-0 p-0">Using Models for Data Annotation</p>
   </Link>
 </div>

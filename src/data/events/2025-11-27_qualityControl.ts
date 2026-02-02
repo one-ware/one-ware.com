@@ -164,7 +164,7 @@ export const qualityControl_2025_11_27: Event = {
                 {
                     title: "ONE AI Tutorials",
                     title_de: "ONE AI Tutorials",
-                    url: "https://one-ware.com/docs/one-ai/tutorials",
+                    url: "https://one-ware.com/docs/one-ai/tutorials/overview",
                     description: "Explore our tutorials and see how easy it is to create your first AI project",
                     description_de: "Erkunden Sie unsere Tutorials und sehen Sie, wie einfach es ist, Ihr erstes KI-Projekt zu erstellen"
                 }

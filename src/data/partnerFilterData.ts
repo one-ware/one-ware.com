@@ -12,25 +12,25 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'Direct integration in ONE WARE Studio',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
           easy_integration: [
             {
               format: 'ONNX',
               toolchain: 'Intel FPGA AI Suite',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'TF-Lite',
               toolchain: 'Intel FPGA AI Suite',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'VHDL',
               toolchain: 'Quartus Prime',
               docLink: '/docs/one-ai/getting-started/export/fpga',
-              tutorialLink: '/docs/one-ai/tutorials',
+              tutorialLink: '/docs/one-ai/tutorials/overview',
             },
           ],
         },
@@ -43,19 +43,19 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'Direct integration in ONE WARE Studio',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
           easy_integration: [
             {
               format: 'ONNX',
               toolchain: 'Vitis AI',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'TF-Lite',
               toolchain: 'Vitis AI',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'VHDL',
@@ -73,7 +73,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'TF-Lite',
               toolchain: 'sensAI Toolchain',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'VHDL',
@@ -91,7 +91,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'TF-Lite (quantized)',
               toolchain: 'VectorBlox Accelerator / Libero',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'VHDL',
@@ -109,7 +109,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               toolchain: 'Efinity Toolchain',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'VHDL',
@@ -127,12 +127,12 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               toolchain: 'Gowin IDE',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'TF-Lite',
               toolchain: 'Gowin ML Toolchains',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'VHDL',
@@ -163,12 +163,12 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               toolchain: 'Vendor-specific Tools',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'TF-Lite',
               toolchain: 'Vendor-specific Tools',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'VHDL',
@@ -192,7 +192,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'TF-Lite',
               toolchain: 'eIQ Inference Engines',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -205,7 +205,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               toolchain: 'STM32Cube.AI',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -218,7 +218,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'TF-Lite',
               toolchain: 'TIDL',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -231,7 +231,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               toolchain: 'DRP-AI Translator / e² Studio (e-AI)',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -244,12 +244,12 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'TF-Lite',
               toolchain: 'Vendor-specific Tools',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
               toolchain: 'Vendor-specific Tools',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -268,23 +268,23 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'ONE WARE Studio Integration',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
           easy_integration: [
             {
               format: 'TF-Lite (quantized)',
               toolchain: 'eIQ',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -297,11 +297,11 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'TF-Lite (quantized)',
               toolchain: 'TIDL / Edge AI SDK',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -314,11 +314,11 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'TF-Lite (quantized)',
               toolchain: 'DRP-AI',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -331,23 +331,23 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'ONE WARE Studio Integration',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
           easy_integration: [
             {
               format: 'TF-Lite (quantized)',
               toolchain: 'Linux (Yocto) / Neural ART',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -360,11 +360,11 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'TF-Lite (quantized)',
               toolchain: 'Qualcomm AI Engine SDK / QNN',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -377,23 +377,23 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'ONE WARE Studio Integration',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
           easy_integration: [
             {
               format: 'TF-Lite (quantized)',
               toolchain: 'Vendor-specific Tools',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -412,7 +412,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'ONE WARE Studio Integration',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
           easy_integration: [
@@ -424,12 +424,12 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'TF-Lite',
               toolchain: 'OpenVINO',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -442,7 +442,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'ONE WARE Studio Integration',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
           easy_integration: [
@@ -454,12 +454,12 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'TF-Lite',
               toolchain: 'MIVisionX',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -472,14 +472,14 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'ONE WARE Studio Integration',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
           easy_integration: [
             {
               format: 'TF-Lite',
               toolchain: 'TF-Lite Runtime',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
@@ -497,14 +497,14 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'ONE WARE Studio Integration',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
           easy_integration: [
             {
               format: 'TF-Lite',
               toolchain: 'Core ML Converters / TF-Lite Runtime',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
@@ -522,14 +522,14 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'ONE WARE Studio Integration',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
           easy_integration: [
             {
               format: 'TF-Lite',
               toolchain: 'TF-Lite Runtime',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
@@ -538,7 +538,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -557,7 +557,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'ONE WARE Studio Integration',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
           easy_integration: [
@@ -569,7 +569,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'TF-Lite (quantized)',
               toolchain: 'TensorRT',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -582,7 +582,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'TF-Lite (quantized)',
               toolchain: 'Edge TPU Compiler',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -595,12 +595,12 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               toolchain: 'QNN SDK',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'TF-Lite (quantized)',
               toolchain: 'QNN SDK',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -613,7 +613,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'TF-Lite',
               toolchain: 'Vendor-specific AI SDKs',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
@@ -636,7 +636,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               toolchain: 'AI Model Deployer (TM NPU Modul)',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -649,7 +649,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               toolchain: 'TwinCAT Machine Learning Server',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -662,12 +662,12 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'TF-Lite',
               toolchain: 'Studio 5000',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
               toolchain: 'Containerized Apps',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -680,12 +680,12 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'TF-Lite',
               toolchain: 'iQ Works / GX Works',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
               toolchain: 'iQ Works / GX Works',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -698,12 +698,12 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'TF-Lite',
               toolchain: 'EcoStruxure Control Expert',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
               toolchain: 'Edge/IPC Container Apps',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -716,12 +716,12 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'TF-Lite',
               toolchain: 'Docker Container',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
               toolchain: 'Docker Container (Automation Runtime)',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -734,12 +734,12 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'TF-Lite',
               toolchain: 'Docker Container / ctrlX Store',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
               toolchain: 'Docker Container / ctrlX Store',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -752,12 +752,12 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'TF-Lite',
               toolchain: 'Docker Container / PLCnext Apps',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
               toolchain: 'Docker Container / PLCnext Apps',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -770,12 +770,12 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'TF-Lite',
               toolchain: 'Docker Container (WAGO Edge)',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
               toolchain: 'Docker Container (WAGO Edge)',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -788,12 +788,12 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'TF-Lite',
               toolchain: 'Docker Container',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
               toolchain: 'Docker Container',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -812,13 +812,13 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'ONE WARE Studio Integration',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
           easy_integration: [
             {
               format: 'TF-Lite',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
@@ -828,7 +828,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build (exe or source)',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -841,13 +841,13 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'ONE WARE Studio Integration',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
           easy_integration: [
             {
               format: 'TF-Lite',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
@@ -857,7 +857,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build (exe or source)',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -870,7 +870,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'ONE WARE Studio Integration',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
           easy_integration: [
@@ -882,12 +882,12 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'TF-Lite (quantized)',
               toolchain: 'TensorRT',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build (exe or source)',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -900,13 +900,13 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'ONE WARE Studio Integration',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
           easy_integration: [
             {
               format: 'TF-Lite',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
@@ -916,7 +916,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build (exe or source)',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -935,14 +935,14 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'ONE WARE Studio Integration',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
           easy_integration: [
             {
               format: 'TF-Lite',
               toolchain: 'MELFA / iQ Solutions',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
@@ -952,7 +952,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -965,14 +965,14 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'ONE WARE Studio Integration',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
           easy_integration: [
             {
               format: 'TF-Lite',
               toolchain: 'Studio 5000',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
@@ -982,7 +982,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -995,13 +995,13 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'ONE WARE Studio Integration',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
           easy_integration: [
             {
               format: 'TF-Lite',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
@@ -1011,7 +1011,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -1024,14 +1024,14 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'ONE WARE Studio Integration',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
           easy_integration: [
             {
               format: 'TF-Lite',
               toolchain: 'AI Model Deployer / Industrial Edge Apps',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
@@ -1041,7 +1041,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -1054,13 +1054,13 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'ONE WARE Studio Integration',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
           easy_integration: [
             {
               format: 'TF-Lite',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
@@ -1070,7 +1070,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -1083,13 +1083,13 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'ONE WARE Studio Integration',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
           easy_integration: [
             {
               format: 'TF-Lite',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
@@ -1099,7 +1099,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -1112,13 +1112,13 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'ONE WARE Studio Integration',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
           easy_integration: [
             {
               format: 'TF-Lite',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
@@ -1128,7 +1128,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
@@ -1141,13 +1141,13 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'ONE WARE Studio Integration',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
           easy_integration: [
             {
               format: 'TF-Lite',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
             {
               format: 'ONNX',
@@ -1157,7 +1157,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'C++ Projekt',
               toolchain: 'Linux Build',
-              docLink: '/docs/one-ai/getting-started/export',
+              docLink: '/docs/one-ai/documentation/export',
             },
           ],
         },
