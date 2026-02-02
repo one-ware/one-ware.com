@@ -13,13 +13,14 @@ tags:
     FPGA
   ]
 ---
-## ONE AI makes Edge- and Vision AI fast, precise, and simple
 
 AI and especially Vision AI is no longer just a trend. But it’s not only about chatbots but especially about those application-specific AI solutions that are embedded in today’s machines, products, and technology. Because even though large companies compete with ever larger AI models, anyone who wants truly precise, fast, and above all energy-efficient AI needs AI that is tailored to the specific application.
 
 However, optimizing AI for special applications is complex and requires not only AI expertise but also integration specialists. Current software providers claim to enable AI implementation quickly and without much expertise, but the pre-built AI models they offer cannot possibly cover the countless combinations of applications and hardware that exist in reality.
 
-[test](img/usecase.png)
+![usecase](img/usecase.png)
+
+<!-- truncate -->
 
 ## The efficiency dilemma of AI: Quality, time & cost
 
@@ -31,7 +32,7 @@ The company ONE WARE resolves this optimization conflict with a novel and patent
 
 ONE AI automates the entire AI development process in three steps. First, ONE AI analyzes the dataset along with the application context and the specifications for desired hardware and target performance. In the second step, ONE AI uses its knowledge from current AI research and its own experience in architecture optimization to predict the required characteristics of the target architecture in just one step. In the third step, the suitable AI architecture is automatically assembled from these predicted properties. This entire process takes only 0.7 seconds. Because ONE AI can simultaneously take into account insights from numerous previous research results, the resulting models are often already better than what has previously been achieved after months of manual experimentation and optimization.
 
-[test](img/oneai.png)
+![test](img/oneai.png)
 
 The approach of ONE WARE aims to make the entire AI development up to actual integration simpler and more efficient. Thanks to its intuitive user interface and suitable tutorials, AI development can also be used by people without AI knowledge. After the automatic architecture prediction, the model can be trained and exported optimized for any target hardware. To ensure that the generated models can be deployed on the respective hardware, ONE WARE Studio is available as an open-source development environment. This creates a complete platform: ONE AI handles automated model generation and optimization, while ONE WARE Studio bridges to the target hardware and enables productive deployment.
 
