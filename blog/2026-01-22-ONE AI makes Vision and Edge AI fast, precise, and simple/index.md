@@ -32,7 +32,7 @@ The company ONE WARE resolves this optimization conflict with a novel and patent
 
 ONE AI automates the entire AI development process in three steps. First, ONE AI analyzes the dataset along with the application context and the specifications for desired hardware and target performance. In the second step, ONE AI uses its knowledge from current AI research and its own experience in architecture optimization to predict the required characteristics of the target architecture in just one step. In the third step, the suitable AI architecture is automatically assembled from these predicted properties. This entire process takes only 0.7 seconds. Because ONE AI can simultaneously take into account insights from numerous previous research results, the resulting models are often already better than what has previously been achieved after months of manual experimentation and optimization.
 
-![test](img/oneai.png)
+![oneai](img/oneai.png)
 
 The approach of ONE WARE aims to make the entire AI development up to actual integration simpler and more efficient. Thanks to its intuitive user interface and suitable tutorials, AI development can also be used by people without AI knowledge. After the automatic architecture prediction, the model can be trained and exported optimized for any target hardware. To ensure that the generated models can be deployed on the respective hardware, ONE WARE Studio is available as an open-source development environment. This creates a complete platform: ONE AI handles automated model generation and optimization, while ONE WARE Studio bridges to the target hardware and enables productive deployment.
 
@@ -42,7 +42,7 @@ The difference between universal models and ONE AI in practice is demonstrated b
 
 By using ONE AI, the picture changes completely. The AI predicted in 0.7 seconds achieves 99.5 percent correctly detected defective chips and is 1400 times more efficient than the universal AI. The effect on hardware selection is immediate. Since the inspection speed of the AI far exceeds the production speed, specialized high-performance accelerators are no longer required. Instead, a ten-year-old and twenty times more energy-efficient Altera chip is sufficient to recognize 1700 chips per second. By using self-developed open-source libraries for universal AI export to FPGAs, latency was reduced by a factor of 488 compared to specialized AI hardware. This means that it is no longer primarily about having the “right” hardware with maximum computing power, but about having the right AI architecture. ONE AI thus enables highly performant AI models to be deployed even on over ten-year-old industrial hardware, immediately and without manual optimization or resource waste.
 
-[test](img/potatochips.png)
+![potatochips](img/potatochips.png)
 
 ## Fast and free replication
 
@@ -55,8 +55,6 @@ The approach of ONE WARE is also designed to lower economic barriers. Working wi
 ## Conclusion and outlook
 
 The vision of ONE WARE is clear: AI should increase productivity instead of wasting resources. And these resources include not only unnecessarily large and power-hungry hardware but also development time and costs. ONE AI lays the foundation for this by replacing iterative model trials with targeted architecture prediction, reducing development effort, and enabling reproducibly more precise results.
-
----
 
 ## Reference & Further Reading
 
