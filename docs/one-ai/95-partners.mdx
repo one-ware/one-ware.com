@@ -1,0 +1,103 @@
+---
+id: partners
+title: Our Technology Partners
+sidebar_label: Partners
+---
+
+import { useColorMode } from '@docusaurus/theme-common';
+
+export function PartnerLogo({ name, href, img }) {
+  const { colorMode } = useColorMode();
+  const isDarkMode = colorMode === 'dark';
+  const mask = `url(${img}) center / contain no-repeat`;
+
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`Visit our partner ${name}`}
+      style={{ display: "inline-block" }}
+    >
+      <div
+        role="img"
+        aria-label={`Logo ${name}`}
+        style={{
+          width: 300,
+          height: 150,
+          backgroundColor: isDarkMode ? "#ffffff" : "#1a1a1a",
+          WebkitMask: mask,
+          mask: mask,
+          cursor: "pointer",
+          flexShrink: 0,
+        }}
+      />
+    </a>
+  );
+}
+
+export function PartnerSection({ name, description, href, img, logoLeft = false }) {
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: '3rem', flexWrap: 'wrap', flexDirection: logoLeft ? "row-reverse" : "row", marginBottom: '4rem' }}>
+      <div style={{ flex: 1, whiteSpace: "pre-line" }}>
+          <h2>{name}</h2>
+          {description}
+      </div>
+      <PartnerLogo
+        href={href}
+        img={img}
+        name={name}
+        />
+    </div>
+  );
+}
+
+> **If you want to become a Partner of ONE WARE, please Contact us at [info@one-ware.com](mailto:info@one-ware.com).**
+
+<PartnerSection
+  name="Altera"
+  description="Technology collaboration around edge-AI on FPGAs, enablement for Quartus/NIOS V flows, reference designs and support of selected devkits."
+  href="https://www.altera.com/"
+  img="/img/Partner/altera.png"
+  logoLeft={true}
+  />
+
+<PartnerSection
+  name="Trenz Electronic"
+  description="Support of selected devkits and reference designs for edge-AI on FPGA."
+  href="https://www.trenz-electronic.de/"
+  img="/img/Partner/Trenz-Electronic.webp"
+  logoLeft={true}
+  />
+
+<PartnerSection
+  name="Rendered.ai"
+  description="Rendered.ai specializes in quality synthetic image data generation and can quickly provide a physically accurate, fully labeled dataset customized to your use case."
+  href="https://rendered.ai/"
+  img="/img/Partner/RenderedAI.webp"
+  logoLeft={true}
+  />
+
+<PartnerSection
+  name="Accelerat"
+  description="Accelerat provides advanced embedded software solutions for guaranteeing high levels of safety and security on modern cyber-physical systems. Accelerat supports One Ware ecosystem with AI Bunker: technology to protect the IPs of AI Models from theft and unauthorised access once they are deployed at the edge."
+  href="https://accelerat.eu//"
+  img="/img/Partner/Accelerat.webp"
+  logoLeft={true}
+  />
+
+<PartnerSection
+  name="DigiKey"
+  description="ONE Ware is partner of DigiKey’s Design Service Provider Program to enable customers on the full solution approach. With ONE WARE highly efficient AI models, customer can build AI applications in very short time with minimized risk and use latest AI technologies for development."
+  href="https://www.digikey.com"
+  img=""
+  logoLeft={true}
+  />
+
+<PartnerSection
+  name="El Camino"
+  description="Through the strategic partnership with ONE WARE, the collaboration brings together El Camino’s deep expertise in FPGA-based systems and the ONE AI platform to accelerate the deployment of highly efficient, tailor-made AI solutions. Customers benefit from faster implementation, lower costs and significant sustainability advantages."
+  href="https://www.elcamino.de/"
+  img="/img/Partner/el_camino_landscape.svg"
+  logoLeft={true}
+  />

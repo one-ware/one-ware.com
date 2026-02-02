@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef, createContext, useContext } from "react";
 import Link from "@docusaurus/Link";
-import BackgroundGridSimple from "./BackgroundGridSimple";
+import Translate from "@docusaurus/Translate";
+import HeroBackground from "@site/src/components/HeroBackground";
 import { FolderWithApple, DragPreview } from "./FolderWithApple";
 import SoftwareWindow from "./SoftwareWindow";
 import GhostDragAnimation from "./GhostDragAnimation";
@@ -197,14 +198,13 @@ export default function HomeHero() {
 
   return (
     <PerformanceContext.Provider value={performanceValue}>
-    <section
-      className="relative overflow-hidden min-h-screen 2xl:h-[calc(100vh+var(--ifm-navbar-height))]"
+    <HeroBackground
+      className="min-h-screen"
       style={{
         marginTop: "calc(var(--ifm-navbar-height) * -1)",
-        background: "#050505",
+        paddingTop: "var(--ifm-navbar-height)",
       }}
     >
-      <BackgroundGridSimple />
 
       {isDragging && <DragPreview x={dragPos.x} y={dragPos.y} />}
 
@@ -216,49 +216,82 @@ export default function HomeHero() {
       />
 
       <div
-        className="relative z-10 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 lg:px-16 min-h-screen"
-        style={{ paddingTop: "var(--ifm-navbar-height)" }}
+        className="relative z-0 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 lg:px-16 min-h-screen"
       >
         <div className="w-full max-w-[98%] sm:max-w-[95%] flex flex-col gap-10 sm:gap-12 2xl:gap-14">
             <div className="flex flex-col 2xl:flex-row items-center gap-2 sm:gap-4 2xl:gap-12">
             <div className="w-full 2xl:w-[40%] flex flex-col justify-center space-y-4 sm:space-y-6 2xl:space-y-8 text-center 2xl:text-left py-2 sm:py-4 2xl:py-0">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
                 <span
-                  className="text-[var(--ifm-color-primary)] block"
+                  className="dark:text-white text-gray-800 block"
                   style={{
                     animation: "fadeInUp 0.8s ease-out forwards",
                     opacity: 0,
                   }}
                 >
-                  Create your
+                  <Translate id="homehero.title1">Create Your</Translate>
                 </span>
+                
                 <span
-                  className="text-[var(--ifm-color-primary)] block"
+                  className="dark:text-white text-gray-800 block"
                   style={{
                     animation: "fadeInUp 0.8s ease-out forwards",
                     animationDelay: "0.1s",
                     opacity: 0,
                   }}
                 >
-                  Custom AI
+                  <Translate id="homehero.title2">Custom AI</Translate>
                 </span>
               </h1>
-              <p
-                className="text-white text-xl md:text-2xl leading-relaxed"
+              <div
+                className="flex flex-col sm:flex-row items-center justify-center 2xl:justify-start gap-4 sm:gap-6"
                 style={{
                   animation: "fadeInUp 0.8s ease-out forwards",
                   animationDelay: "0.2s",
                   opacity: 0,
                 }}
               >
-                Vision and Edge AI Development,
-                <br />
-                Fully Automated in One Software
-              </p>
+                <div className="flex items-center gap-2">
+                  <div className="w-6 h-6 text-[var(--ifm-color-primary)]" style={{ animation: "pulseScale 2s ease-in-out infinite" }}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                      <path d="M2 17l10 5 10-5" />
+                      <path d="M2 12l10 5 10-5" />
+                    </svg>
+                  </div>
+                  <span className="dark:text-white text-gray-800 text-sm font-medium">
+                    <Translate id="homehero.benefit.application">Any Application</Translate>
+                  </span>
+                </div>
 
-              <div className="hidden lg:flex flex-row items-center justify-center 2xl:justify-start gap-4 mt-8 w-full">
+                <div className="flex items-center gap-2">
+                  <div className="w-6 h-6 text-[var(--ifm-color-primary)]" style={{ animation: "shrinkPulse 2s ease-in-out infinite" }}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="4" y="4" width="16" height="16" rx="2" />
+                      <rect x="9" y="9" width="6" height="6" />
+                      <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3" />
+                    </svg>
+                  </div>
+                  <span className="dark:text-white text-gray-800 text-sm font-medium">
+                    <Translate id="homehero.benefit.hardware">Any Hardware</Translate>
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <div className="w-6 h-6 text-[var(--ifm-color-primary)]" style={{ animation: "flashGlow 1.5s ease-in-out infinite" }}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                    </svg>
+                  </div>
+                  <span className="dark:text-white text-gray-800 text-sm font-medium">
+                    <Translate id="homehero.benefit.requirements">Any Requirements</Translate>
+                  </span>
+                </div>
+              </div>
+
+              <div className="hidden 2xl:flex flex-row items-center justify-center 2xl:justify-start gap-4 mt-8 w-full">
                 <Link
-                  href="/docs/one-ai/getting-started"
+                  href="https://cloud.one-ware.com/Account/Register"
                   style={{
                     animation: "fadeInUp 0.8s ease-out forwards",
                     animationDelay: "0.5s",
@@ -266,7 +299,7 @@ export default function HomeHero() {
                   }}
                 >
                   <button className="button button--primary button--lg">
-                    Free Download
+                    <Translate id="homehero.button.download">Get Started</Translate>
                   </button>
                 </Link>
                 <Link
@@ -278,14 +311,14 @@ export default function HomeHero() {
                   }}
                 >
                   <button className="button button--primary button--outline button--lg">
-                    Learn More
+                    <Translate id="homehero.button.learnmore">Learn More</Translate>
                   </button>
                 </Link>
               </div>
             </div>
 
-            <div className="relative flex items-center 2xl:items-end justify-center 2xl:justify-end w-full 2xl:w-[60%] h-auto 2xl:h-full select-none flex-1 2xl:flex-initial">
-              <div className="absolute 2xl:relative z-30 2xl:z-auto bottom-4 sm:bottom-6 2xl:bottom-auto left-4 sm:left-8 2xl:left-auto 2xl:mr-8 sm:2xl:mr-16">
+            <div className="relative flex items-center 2xl:items-end justify-center 2xl:justify-end w-full 2xl:w-[60%] h-auto select-none flex-1 2xl:flex-initial">
+              <div className="absolute 2xl:relative z-20 2xl:z-auto bottom-12 sm:bottom-10 2xl:bottom-auto left-4 sm:left-8 2xl:left-auto 2xl:mr-8 sm:2xl:mr-16">
                 <FolderWithApple
                   style={{
                     animation: "fadeInUp 0.8s ease-out forwards",
@@ -317,9 +350,9 @@ export default function HomeHero() {
             </div>
           </div>
 
-            <div className="flex lg:hidden flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 2xl:gap-16 w-full mb-16 lg:mb-0">
+            <div className="flex 2xl:hidden flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 2xl:gap-16 w-full mb-16 2xl:mb-0">
             <Link
-              href="/docs/one-ai/getting-started"
+              href="https://cloud.one-ware.com/Account/Register"
               style={{
                 animation: "fadeInUp 0.8s ease-out forwards",
                 animationDelay: "0.5s",
@@ -327,7 +360,7 @@ export default function HomeHero() {
               }}
             >
               <button className="button button--primary button--outline button--lg w-full sm:w-auto">
-                Free Download
+                <Translate id="homehero.button.download">Get Started</Translate>
               </button>
             </Link>
             <Link
@@ -339,7 +372,7 @@ export default function HomeHero() {
               }}
             >
               <button className="button button--primary button--lg w-full sm:w-auto">
-                Learn More
+                <Translate id="homehero.button.learnmore">Learn More</Translate>
               </button>
             </Link>
             </div>
@@ -367,8 +400,36 @@ export default function HomeHero() {
             transform: translateY(0) scale(1);
           }
         }
+        @keyframes pulseScale {
+          0%, 100% {
+            transform: scale(1);
+            opacity: 1;
+          }
+          50% {
+            transform: scale(1.15);
+            opacity: 0.8;
+          }
+        }
+        @keyframes shrinkPulse {
+          0%, 100% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(0.75);
+          }
+        }
+        @keyframes flashGlow {
+          0%, 100% {
+            opacity: 0.7;
+            filter: drop-shadow(0 0 0px var(--ifm-color-primary));
+          }
+          50% {
+            opacity: 1;
+            filter: drop-shadow(0 0 6px var(--ifm-color-primary));
+          }
+        }
       `}</style>
-    </section>
+    </HeroBackground>
     </PerformanceContext.Provider>
   );
 }

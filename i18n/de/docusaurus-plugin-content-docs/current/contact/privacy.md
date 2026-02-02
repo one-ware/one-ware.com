@@ -83,29 +83,49 @@ Sie können sich jederzeit mit einer Beschwerde an eine Aufsichtsbehörde wenden
 Eine Liste der Aufsichtsbehörden (für den nichtöffentlichen Bereich) mit Anschrift finden Sie unter: https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html.
 
 ## Eingebettete YouTube-Videos
-### Art und Zweck der Verarbeitung:
-Auf einigen unserer Webseiten betten wir YouTube-Videos ein. Betreiber der entsprechenden Plugins ist die YouTube, LLC, 901 Cherry Ave., San Bruno, CA 94066, USA (nachfolgend „YouTube“). Wenn Sie eine Seite mit dem YouTube-Plugin besuchen, wird eine Verbindung zu Servern von YouTube hergestellt. Dabei wird YouTube mitgeteilt, welche Seiten Sie besuchen. Wenn Sie in Ihrem YouTube-Account eingeloggt sind, kann YouTube Ihr Surfverhalten Ihnen persönlich zuzuordnen. Dies verhindern Sie, indem Sie sich vorher aus Ihrem YouTube-Account ausloggen.
 
-Wird ein YouTube-Video gestartet, setzt der Anbieter Cookies ein, die Hinweise über das Nutzerverhalten sammeln.
+### Art und Zweck der Verarbeitung
+Wir binden auf unserer Website YouTube-Videos ein. Betreiber der entsprechenden Plugins ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland (nachfolgend „Google“).
 
-Weitere Informationen zu Zweck und Umfang der Datenerhebung und ihrer Verarbeitung durch YouTube erhalten Sie in den Datenschutzerklärungen des Anbieters, Dort erhalten Sie auch weitere Informationen zu Ihren diesbezüglichen Rechten und Einstellungsmöglichkeiten zum Schutze Ihrer Privatsphäre (https://policies.google.com/privacy). Google verarbeitet Ihre Daten in den USA und hat sich dem EU-US Privacy Shield unterworfen https://www.privacyshield.gov/EU-US-Framework
+Wir nutzen den „erweiterten Datenschutzmodus“ (youtube-nocookie.com) und eine „2-Klick-Lösung“, um Ihre Daten zu schützen. Das bedeutet:
+1. Beim Aufruf einer Seite mit eingebettetem Video wird zunächst nur ein Vorschaubild geladen. Es wird noch keine Verbindung zu den Servern von YouTube hergestellt.
+2. Eine Verbindung zu den YouTube-Servern wird erst hergestellt, wenn Sie das Video aktiv durch einen Klick starten.
+3. Mit dem Klick auf das Video erteilen Sie Ihre Einwilligung zur Datenübertragung an Google.
 
-### Rechtsgrundlage:
-Rechtsgrundlage für die Einbindung von YouTube und dem damit verbundenen Datentransfer zu Google ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).
+Wenn Sie ein Video starten, erhält Google die Information, dass Sie die entsprechende Seite unseres Webauftritts aufgerufen haben. Zudem werden weitere Daten (z. B. IP-Adresse, Browser-Informationen) an Google übertragen. Sind Sie bei Ihrem Google-Konto eingeloggt, werden diese Daten direkt Ihrem Konto zugeordnet.
 
-### Empfänger:
-Der Aufruf von YouTube löst automatisch eine Verbindung zu Google aus.
+### Rechtsgrundlage
+Rechtsgrundlage für die Einbindung von YouTube und die damit verbundene Datenübertragung ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).
 
-### Speicherdauer und Widerruf der Einwilligung:
-Wer das Speichern von Cookies für das Google-Ad-Programm deaktiviert hat, wird auch beim Anschauen von YouTube-Videos mit keinen solchen Cookies rechnen müssen. YouTube legt aber auch in anderen Cookies nicht-personenbezogene Nutzungsinformationen ab. Möchten Sie dies verhindern, so müssen Sie das Speichern von Cookies im Browser blockieren.
+### Empfänger
+Empfänger der Daten ist die Google Ireland Limited. Es ist nicht ausgeschlossen, dass Google Daten auch an Server in die USA überträgt.
 
-Weitere Informationen zum Datenschutz bei „YouTube“ finden Sie in der Datenschutzerklärung des Anbieters unter: https://www.google.de/intl/de/policies/privacy/
+### Widerruf der Einwilligung
+Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie die Seite neu laden oder keine weiteren Videos abspielen. Der Widerruf der Einwilligung berührt die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung nicht.
 
-### Drittlandtransfer:
-Google verarbeitet Ihre Daten in den USA und hat sich dem EU_US Privacy Shield unterworfen https://www.privacyshield.gov/EU-US-Framework.
+### Weitere Informationen
+Weitere Informationen zum Datenschutz bei YouTube finden Sie in der Datenschutzerklärung des Anbieters unter: [https://policies.google.com/privacy](https://policies.google.com/privacy)
 
-### Bereitstellung vorgeschrieben oder erforderlich:
-Die Bereitstellung Ihrer personenbezogenen Daten erfolgt freiwillig, allein auf Basis Ihrer Einwilligung. Sofern Sie den Zugriff unterbinden, kann es hierdurch zu Funktionseinschränkungen auf der Website kommen.
+## Verwendung von Google Analytics
+
+### Art und Zweck der Verarbeitung
+Wir verwenden auf unserer Website Google Analytics, einen Webanalysedienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland („Google“). Google Analytics verwendet sog. „Cookies“, Textdateien, die auf Ihrem Endgerät gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglichen. Die durch das Cookie erzeugten Informationen über Ihre Benutzung dieser Website werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert. Aufgrund der Aktivierung der IP-Anonymisierung auf dieser Webseite, wird Ihre IP-Adresse von Google jedoch innerhalb von Mitgliedstaaten der Europäischen Union oder in anderen Vertragsstaaten des Abkommens über den Europäischen Wirtschaftsraum zuvor gekürzt. Nur in Ausnahmefällen wird die volle IP-Adresse an einen Server von Google in den USA übertragen und dort gekürzt. Im Auftrag des Betreibers dieser Website wird Google diese Informationen benutzen, um Ihre Nutzung der Website auszuwerten, um Reports über die Websiteaktivitäten zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen gegenüber dem Websitebetreiber zu erbringen.
+
+### Rechtsgrundlage
+Rechtsgrundlage für die Verwendung dieses Dienstes ist Ihre Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO.
+
+### Empfänger
+Empfänger der Daten ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland als Auftragsverarbeiter. Hierfür haben wir mit Google einen Auftragsverarbeitungsvertrag abgeschlossen. Die Google Ireland Limited ist ein Tochterunternehmen der Google LLC mit Sitz in den USA. Es ist nicht ausgeschlossen, dass Ihre Daten auch durch Google in die USA übertragen werden.
+
+### Speicherdauer
+Die von uns gesendeten und mit Cookies, Nutzerkennungen (z. B. User-ID) oder Werbe-IDs verknüpften Daten werden nach 14 Monaten automatisch gelöscht. Die Löschung von Daten, deren Aufbewahrungsdauer erreicht ist, erfolgt automatisch einmal im Monat.
+
+### Drittlandtransfer
+Google LLC ist nach dem EU-US Data Privacy Framework zertifiziert und bietet hierdurch eine Garantie, das europäische Datenschutzrecht einzuhalten.
+
+### Widerruf der Einwilligung
+Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie die Speicherung der Cookies durch eine entsprechende Einstellung Ihrer Browser-Software verhindern; wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website vollumfänglich werden nutzen können.
+Sie können darüber hinaus die Erfassung der durch das Cookie erzeugten und auf Ihre Nutzung der Website bezogenen Daten (inkl. Ihrer IP-Adresse) an Google sowie die Verarbeitung dieser Daten durch Google verhindern, indem Sie das unter dem folgenden Link verfügbare Browser-Plugin herunterladen und installieren: [https://tools.google.com/dlpage/gaoptout?hl=de](https://tools.google.com/dlpage/gaoptout?hl=de).
 
 ## SSL-Verschlüsselung
 Um die Sicherheit Ihrer Daten bei der Übertragung zu schützen, verwenden wir dem aktuellen Stand der Technik entsprechende Verschlüsselungsverfahren (z. B. SSL) über HTTPS.

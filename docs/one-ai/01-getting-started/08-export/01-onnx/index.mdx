@@ -26,15 +26,15 @@ When exporting your model, make sure to enable **"Include Pre- and Postprocessin
 When your model uses a single image as input, the input tensor has the following shape:
 
 ```
-[1, height, width, 3]
+[1, 3, height, width]
 ```
 
 | Dimension | Description |
 |-----------|-------------|
 | `1` | Batch size (always 1 for inference) |
+| `3` | RGB color channels |
 | `height` | Image height in pixels (as configured during training) |
 | `width` | Image width in pixels (as configured during training) |
-| `3` | RGB color channels |
 
 **Data Type:** `float32` with values in range `[0, 255]` (when pre-processing is included)
 
@@ -43,17 +43,26 @@ When your model uses a single image as input, the input tensor has the following
 For models that compare multiple images (e.g., difference detection), the input tensor shape is:
 
 ```
-[1, height, width, 3, image_count]
+[1, 3, height, width, image_count]
 ```
 
 | Dimension | Description |
 |-----------|-------------|
 | `1` | Batch size (always 1 for inference) |
+| `3` | RGB color channels |
 | `height` | Image height in pixels |
 | `width` | Image width in pixels |
-| `3` | RGB color channels |
 | `image_count` | Number of input images |
 
+#### Image Order
+
+When working with multiple input images, the dataset typically groups images by a base name with different suffixes (e.g., `img1_rgb.png` and `img1_depth.png`). Therefore, the model expects these images to be stacked in a specific order in the input tensor `[..., image_count]`.
+
+The input index order depends on the suffix names:
+*   **Alphabetical Sorting:** By default, suffixes are sorted alphabetically.
+    *   *Example:* For `_rgb` and `_depth`, `_depth` is assigned **Index 0** and `_rgb` **Index 1**.
+*   **Reference Priority:** If a suffix suggests a reference image (suffix is **"good"**, **"temp"**, **"ref"**, or **"comp"**, case-insensitive), it is forced to **Index 0**, overriding alphabetical order.
+    *   *Note:* If multiple images contain these keywords, those specific images are sorted alphabetically amongst themselves.
 ---
 
 ## Output Format
@@ -111,12 +120,12 @@ The pixel coordinates in the output refer to the **model's input dimensions**, n
 For semantic segmentation tasks, the output tensor has the shape:
 
 ```
-[1, height, width, 1]
+[1, 1, height, width]
 ```
 
 Each pixel position contains the predicted **Class ID** for that location.
 
-**Example:** A 256x256 segmentation output would be a tensor of shape `[1, 256, 256, 1]` where each value represents the class at that pixel.
+**Example:** A 256x256 segmentation output would be a tensor of shape `[1, 1, 256, 256]` where each value represents the class at that pixel.
 
 ---
 

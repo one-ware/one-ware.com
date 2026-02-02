@@ -8,6 +8,7 @@ sidebar_label: Installation
 import Link from '@docusaurus/Link';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import DownloadButton from '@site/src/components/DownloadButton';
 
 In this tutorial, we will guide you through the setup and installation process to get you started with ONE AI.
 
@@ -25,7 +26,7 @@ First, you need to install OneWare Studio on your PC.
 
 Download ONE WARE Studio:
 
-<iframe style={{marginBottom: "5px"}} src="https://cdn.one-ware.com/onewarestudio/WinDownload.htm" frameborder="0" width="100%" height="40px"></iframe>
+<DownloadButton os="windows" />
 
 Or install using winget:
 ```
@@ -70,8 +71,8 @@ If you can't install snap or flatpak on your machine, it is possible to download
 
 | Architecture | Download |
 |---|---|
-| x64 (Intel) |<iframe style={{marginTop: "10px"}}  src="https://cdn.one-ware.com/onewarestudio/MacOSDownload-x64.htm" frameborder="0" width="100%" height="40px"></iframe>|
-| arm64 (Apple Silicon) |<iframe style={{marginTop: "10px", marginRight: "50px"}} src="https://cdn.one-ware.com/onewarestudio/MacOSDownload-arm64.htm" frameborder="0" width="100%" height="40px"></iframe>|
+| x64 (Intel) |<DownloadButton os="mac-intel" />|
+| arm64 (Apple Silicon) |<DownloadButton os="mac-arm" />|
 
   </TabItem>
 </Tabs>

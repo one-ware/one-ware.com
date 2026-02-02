@@ -24,15 +24,15 @@
     "description": "Navbar item with label Careers"
   },
   "item.label.Contact": {
-    "message": "Impressum",
+    "message": "Kontakt",
     "description": "Navbar item with label Contact"
   },
   "item.label.Overview": {
-    "message": "Overview",
+    "message": "Übersicht",
     "description": "Navbar item with label Overview"
   },
   "item.label.Services": {
-    "message": "Services",
+    "message": "Dienstleistungen",
     "description": "Navbar item with label Services"
   },
   "item.label.Studio": {
@@ -40,7 +40,91 @@
     "description": "Navbar item with label Studio"
   },
   "item.label.Setup": {
-    "message": "Setup",
+    "message": "Einrichtung",
     "description": "Navbar item with label Setup"
+  },
+  "item.label.Products": {
+    "message": "Produkte",
+    "description": "Navbar item with label Products"
+  },
+  "item.label.Get Started": {
+    "message": "Erste Schritte",
+    "description": "Navbar item with label Get Started"
+  },
+  "item.label.Demo Projects": {
+    "message": "Demo-Projekte",
+    "description": "Navbar item with label Demo Projects"
+  },
+  "item.label.Supported Hardware": {
+    "message": "Unterstützte Hardware",
+    "description": "Navbar item with label Supported Hardware"
+  },
+  "item.label.Solutions": {
+    "message": "Lösungen",
+    "description": "Navbar item with label Solutions"
+  },
+  "item.label.Showcase": {
+    "message": "Showcase",
+    "description": "Navbar item with label Showcase"
+  },
+  "item.label.Manufacturing": {
+    "message": "Fertigung",
+    "description": "Navbar item with label Manufacturing"
+  },
+  "item.label.Healthcare": {
+    "message": "Gesundheitswesen",
+    "description": "Navbar item with label Healthcare"
+  },
+  "item.label.Food & Beverage": {
+    "message": "Lebensmittel & Getränke",
+    "description": "Navbar item with label Food & Beverage"
+  },
+  "item.label.Agriculture": {
+    "message": "Landwirtschaft",
+    "description": "Navbar item with label Agriculture"
+  },
+  "item.label.Resources": {
+    "message": "Ressourcen",
+    "description": "Navbar item with label Resources"
+  },
+  "item.label.Documentation": {
+    "message": "Dokumentation",
+    "description": "Navbar item with label Documentation"
+  },
+  "item.label.Templates": {
+    "message": "Beispiel Projekte",
+    "description": "Navbar item with label Templates"
+  },
+  "item.label.Events": {
+    "message": "Veranstaltungen",
+    "description": "Navbar item with label Events"
+  },
+  "item.label.Forum (Discord)": {
+    "message": "Forum (Discord)",
+    "description": "Navbar item with label Forum (Discord)"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  },
+  "item.label.Pricing": {
+    "message": "Preise",
+    "description": "Navbar item with label Pricing"
+  },
+  "item.label.Open Source Program": {
+    "message": "Open-Source-Programm",
+    "description": "Navbar item with label Open Source Program"
+  },
+  "item.label.Company": {
+    "message": "Unternehmen",
+    "description": "Navbar item with label Company"
+  },
+  "item.label.About": {
+    "message": "Über Uns",
+    "description": "Navbar item with label About"
+  },
+  "item.label.Partners": {
+    "message": "Partner",
+    "description": "Navbar item with label Partners"
   }
 }

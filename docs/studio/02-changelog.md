@@ -4,6 +4,57 @@ title: ONE WARE Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 0.21.28.0
+
+**The next update (1.0) will be a big rework of the plugin system and breaks compatibility with existing updates**
+
+- Minor Bugfixes and ToolService Integration
+- Add command line arguments to gtkwave call
+- Fix restart feature for Flatpaks
+- Add possibility to show validation warnings for settings
+
+## 0.21.27.0
+
+- Add Linux Arm Version (Flatpak, Snap, .tar.gz)
+- Add OpenCV runtime for linux with bundled FFMPEG (for mp4 input)
+
+## 0.21.26.0
+
+- Use Single Instance to open Files / URLs.
+
+## 0.21.25.0
+
+- Add option for automatic restart after Plugin Updates
+- Add option to automatically install Plugins
+
+## 0.21.24.0
+
+- Allow login with browser
+- Add Advanced Combobox (for title, value pairs)
+- New optional email field for Feedback Tool
+
+## 0.21.23.0
+
+- Fix Camera Access for Linux (Snap and Flatpak)
+
+## 0.21.22.0
+
+- Fix Camera Access on MacOS
+- Package Advanced runtime Libraries
+
+## 0.21.21.0
+
+- Make native dependency resolve for plugins more robust (fixes a possible issue on MacOS)
+- Fix Output View sometimes showing wrong line colors
+- Adjust URL open protocol as start option
+- Add possibility to reset settings to default value
+
+## 0.21.20.0
+
+- Fix Regex VHDL Node Extractor parsing comments
+- Fix OSSCadSuite Environment Variable (which caused NextPNR to not work properly)
+- Implement Functionality to open OneWare from browser links oneware://...
+  
 ## 0.21.19.0
 
 - Revert PackageStatus change leading to incompatible Hardware Support Packages in OneAI Extension

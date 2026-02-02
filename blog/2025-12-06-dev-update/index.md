@@ -1,6 +1,6 @@
 ---
 slug: december-2025-devupdate
-title: "December DEV Update 🎅🏻"
+title: "Dev Update: Improved Usability and Performance"
 authors: [hmennen]
 tags:
   [

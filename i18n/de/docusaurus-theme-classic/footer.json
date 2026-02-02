@@ -51,6 +51,10 @@
     "message": "Datenschutzerklärung",
     "description": "The label of footer link with label=Privacy Policy linking to /docs/contact/privacy"
   },
+  "link.item.label.Terms of Service": {
+    "message": "AGB",
+    "description": "The label of footer link with label=Terms of Service linking to /docs/contact/terms"
+  },
   "copyright": {
     "message": "Copyright © 2025 ONE WARE GmbH",
     "description": "The footer copyright"
