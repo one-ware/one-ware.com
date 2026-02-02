@@ -35,7 +35,9 @@ With ONE AI, anyone can create custom AI models in minutes without AI expertise.
 
 Download ONE WARE Studio:
 
+<div className="mb-4">
 <DownloadButton os="windows" />
+</div>
 
 Or install using winget:
 ```
@@ -92,7 +94,10 @@ If you can't install snap or flatpak on your machine, it is possible to download
 - Complete the address verification to get free welcome credits
 
 ## Download demo project
-We created a small demo project that shows how to use ONE AI to create a quality control application for potato chips. The goal is to distinguish between good and burned potato chips.
+We created two simple demo projects that help you get started with ONE AI. Pressing one of the download buttons below will automatically open OneWare Studio and import the demo project. If you are interested in a different demo, you can check out our full list of tutorials [here](/docs/one-ai/tutorials).
+
+### Demo 1: Quality control for potato chips
+This demo shows how to use ONE AI to create a quality control application for potato chips. The goal is to distinguish between good and burned potato chips.
 
 <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
     <img src="/img/ai/one_ai_plugin/demos/potato_chip/chips_non-defective_01.jpg" alt="chips_example_non-defective_01" style={{ width: '20%' }} />
@@ -102,15 +107,31 @@ We created a small demo project that shows how to use ONE AI to create a quality
 </div>
 
 <div className="text--center" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
-  <TrackedLink className="button button--primary button--lg" href="https://github.com/one-ware/OneAI_demo_datasets/blob/main/projects/Chips.zip" eventType="download_start" eventLabel="Chip Demo Download">
-    <p className="m-0 p-0">Download Chip Demo</p>
+  <TrackedLink className="button button--primary button--lg" href="oneware://oneai/quick-start/chips" eventType="download_start" eventLabel="Chip Demo Download">
+    <p className="m-0 p-0">Download Demo</p>
   </TrackedLink>
-  <Link className="button button--primary button--lg" href="/docs/one-ai/tutorials">
-    <p className="m-0 p-0">Select Different Project</p>
+  <Link className="button button--primary button--lg" href="/docs/one-ai/tutorials/potato-chip-demo">
+    <p className="m-0 p-0">Check out Tutorial</p>
   </Link>
 </div>
 
-After you download and unzipped the project, you can open it in OneWare Studio by clicking on ``File`` > ``Open`` > ``Folder``.
+### Demo 2: Detecting printed logos on cups
+This project demonstrates how to create an object detection model that recognizes the logo that is printed on our company coffee cups.
+
+<div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '20px' }}>
+    <img src="/img/ai/one_ai_plugin/demos/tea_cup_print/train_1.jpg" alt="tea_cup_example_1" style={{ width: '25%' }} />
+    <img src="/img/ai/one_ai_plugin/demos/tea_cup_print/train_5.jpg" alt="tea_cup_example_2" style={{ width: '25%' }} />
+    <img src="/img/ai/one_ai_plugin/demos/tea_cup_print/train_14.jpg" alt="tea_cup_example_3" style={{ width: '25%' }} />
+</div>
+
+<div className="text--center" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
+  <TrackedLink className="button button--primary button--lg" href="https://onewarecom.sharepoint.com/:u:/s/Public/IQDNUaFmNxsVSaf5SWiMlhaIAWpnckVe6pHskW57eKi5eFc?e=emJs4L" eventType="download_start" eventLabel="Cup Demo Download">
+    <p className="m-0 p-0">Download Demo</p>
+  </TrackedLink>
+  <Link className="button button--primary button--lg" href="/docs/one-ai/tutorials/teacup-print-detection">
+    <p className="m-0 p-0">Check out Tutorial</p>
+  </Link>
+</div>
 
 ## Start training
 Since the demo project is already configured, you can directly start training the AI model. Go to the ``Training`` tab and click on ``Sync`` to connect to the OneWare Cloud. Afterwards you need to click on ``Create Model`` to create a new model instance, after which you can click on the ``Train`` button. Because the application is very simple, it is sufficient to train the model for only 2 minutes. The other settings can be left at their default values.
