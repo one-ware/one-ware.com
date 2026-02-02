@@ -8,7 +8,6 @@ import Link from "@docusaurus/Link";
 import initWebsiteEffects from "../components/startEffects";
 import ContactUs from "../components/ContactUs";
 import Translate, { translate } from "@docusaurus/Translate";
-import HeroBackground from "../components/HeroBackground";
 
 import { SiApple } from "react-icons/si";
 import { FaWindows } from "react-icons/fa";
@@ -132,18 +131,12 @@ const sliders = [
 
 function HomepageHeader() {
   return (
-    <HeroBackground
-      className="w-full min-h-[500px] flex flex-col items-center justify-center"
-      style={{
-        marginTop: "calc(var(--ifm-navbar-height) * -1)",
-        paddingTop: "var(--ifm-navbar-height)",
-      }}
-    >
-      <div className="flex flex-col items-center justify-center w-full py-16">
+    <header id="hero" className={`w-full ${styles.heroBackground} h-96`}>
+      <div className="absolute flex flex-col items-center justify-center w-full h-full">
         <div className="flex">
           <div className="flex-col max-w-3xl m-5 mt-10">
             <div className="text-center mt-10">
-              <h1 className="font-medium text-2xl md:text-4xl dark:text-white text-gray-900">
+              <h1 className="font-medium text-2xl md:text-4xl">
                 <Translate id="studio.homepage.hero.title.1">The</Translate>{" "}
                 <span className="primary-text font-bold">
                   <Translate id="studio.homepage.hero.title.2">
@@ -177,7 +170,7 @@ function HomepageHeader() {
                 </Link>
               </div>
 
-              <p className="md:text-xl font-normal mt-10 dark:text-white text-gray-800">
+              <p className="md:text-xl font-normal mt-10">
                 (
                 <Translate id="studio.homepage.hero.opensource.1">
                   Yes, it is
@@ -197,7 +190,9 @@ function HomepageHeader() {
           </div>
         </div>
       </div>
-    </HeroBackground>
+
+      <div className={styles.startArrow} />
+    </header>
   );
 }
 
@@ -206,11 +201,11 @@ function DownloadSection() {
     <div className="py-2 md:py-40 overflow-x-hidden">
       <div className="text-center container m-auto flex space-x-5 justify-center">
         <div className="flex-col flex text-center">
-          <h1 className="text-3xl md:text-5xl dark:text-white text-gray-900">
+          <h1 className="text-3xl md:text-5xl">
             <Translate id="studio.download.heading">Easy Setup!</Translate>
           </h1>
 
-          <p className="text-xl my-8 dark:text-white text-gray-800">
+          <p className="text-xl my-8">
             <Translate id="studio.download.subheading.1">
               ONE WARE Studio is available for
             </Translate>
@@ -234,10 +229,10 @@ function DownloadSection() {
           </p>
           <div className="grid grid-cols-2 md:flex gap-5 md:flex-wrap justify-center">
             <a href="/docs/studio/setup?current-os=windows" className="md:contents">
-              <div className="flex-col w-full md:w-48 h-32 md:h-auto p-4 md:p-6 border rounded-lg shadow opacity-90 text-center dark:bg-black dark:bg-opacity-50 bg-white bg-opacity-50 md:backdrop-blur-sm cursor-pointer md:cursor-default hover:opacity-100 transition-opacity flex justify-center items-center">
+              <div className="flex-col w-full md:w-48 h-32 md:h-auto p-4 md:p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm cursor-pointer md:cursor-default hover:opacity-100 transition-opacity flex justify-center items-center">
                 <div className="flex flex-col items-center justify-center h-full">
                   <FaWindows size={40} className="md:w-[50px] md:h-[50px]" />
-                  <h5 className="mb-1 mt-1 md:mb-2 md:mt-2 text-sm md:text-xl font-semibold tracking-tight dark:text-white text-gray-900">
+                  <h5 className="mb-1 mt-1 md:mb-2 md:mt-2 text-sm md:text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                     <Translate id="studio.download.windows.label">
                       Windows 10+
                     </Translate>
@@ -252,10 +247,10 @@ function DownloadSection() {
             </a>
 
             <a href="/docs/studio/setup?current-os=macos" className="md:contents">
-              <div className="flex-col w-full md:w-48 h-32 md:h-auto p-4 md:p-6 border rounded-lg shadow opacity-90 text-center dark:bg-black dark:bg-opacity-50 bg-white bg-opacity-50 md:backdrop-blur-sm cursor-pointer md:cursor-default hover:opacity-100 transition-opacity flex justify-center items-center">
+              <div className="flex-col w-full md:w-48 h-32 md:h-auto p-4 md:p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm cursor-pointer md:cursor-default hover:opacity-100 transition-opacity flex justify-center items-center">
                 <div className="flex flex-col items-center justify-center h-full">
                   <SiApple size={40} className="md:w-[50px] md:h-[50px]" />
-                  <h5 className="mb-1 mt-1 md:mb-2 md:mt-2 text-sm md:text-xl font-semibold tracking-tight dark:text-white text-gray-900">
+                  <h5 className="mb-1 mt-1 md:mb-2 md:mt-2 text-sm md:text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                     MacOS 12.0+
                   </h5>
                 </div>
@@ -268,10 +263,10 @@ function DownloadSection() {
             </a>
 
             <a href="https://flathub.org/apps/com.one_ware.OneWare" target="_blank" className="md:contents">
-              <div className="flex-col w-full md:w-48 h-32 md:h-auto p-4 md:p-6 border rounded-lg shadow opacity-90 text-center dark:bg-black dark:bg-opacity-50 bg-white bg-opacity-50 md:backdrop-blur-sm cursor-pointer md:cursor-default hover:opacity-100 transition-opacity flex justify-center items-center">
+              <div className="flex-col w-full md:w-48 h-32 md:h-auto p-4 md:p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm cursor-pointer md:cursor-default hover:opacity-100 transition-opacity flex justify-center items-center">
                 <div className="flex flex-col items-center justify-center h-full">
                   <SiFlathub size={40} className="md:w-[50px] md:h-[50px]" />
-                  <h5 className="mb-1 mt-1 md:mb-2 md:mt-2 text-sm md:text-xl font-semibold tracking-tight dark:text-white text-gray-900">
+                  <h5 className="mb-1 mt-1 md:mb-2 md:mt-2 text-sm md:text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                     Flathub
                   </h5>
                 </div>
@@ -284,10 +279,10 @@ function DownloadSection() {
             </a>
 
             <a href="https://snapcraft.io/oneware" target="_blank" className="md:contents">
-              <div className="flex-col w-full md:w-48 h-32 md:h-auto p-4 md:p-6 border rounded-lg shadow opacity-90 text-center dark:bg-black dark:bg-opacity-50 bg-white bg-opacity-50 md:backdrop-blur-sm cursor-pointer md:cursor-default hover:opacity-100 transition-opacity flex justify-center items-center">
+              <div className="flex-col w-full md:w-48 h-32 md:h-auto p-4 md:p-6 border rounded-lg shadow opacity-90 text-center bg-black bg-opacity-50 md:backdrop-blur-sm cursor-pointer md:cursor-default hover:opacity-100 transition-opacity flex justify-center items-center">
                 <div className="flex flex-col items-center justify-center h-full">
                   <SiSnapcraft size={40} className="md:w-[50px] md:h-[50px]" />
-                  <h5 className="mb-1 mt-1 md:mb-2 md:mt-2 text-sm md:text-xl font-semibold tracking-tight dark:text-white text-gray-900">
+                  <h5 className="mb-1 mt-1 md:mb-2 md:mt-2 text-sm md:text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                     Snapstore
                   </h5>
                 </div>
@@ -382,16 +377,9 @@ function Extension() {
 
         <div className="col items-center mt-10 md:mt-0">
           <img
-            src="/img/start/Elec_Studio.svg"
+            src={require("@site/static/img/start/Elec_Studio.png").default}
             data-aos="slide-left"
             alt="Hardware"
-            className="dark:block hidden"
-          />
-          <img
-            src="/img/start/Elec_Studio-light.svg"
-            data-aos="slide-left"
-            alt="Hardware"
-            className="dark:hidden block"
           />
         </div>
       </div>
@@ -409,7 +397,7 @@ export default function Studio() {
       <HomepageHeader />
 
       <main>
-        <div className="default-background pt-16">
+        <div className="default-background diagclipbottom pt-16">
           <div className="container overflow-x-hidden">
             {sliders && sliders.length && (
               <div className="pb-20">
@@ -472,22 +460,33 @@ export default function Studio() {
           </div>
         </div>
 
-        <HeroBackground className="pt-16 pb-16">
-          <DownloadSection />
-        </HeroBackground>
+        <div className="dropshadowbottom">
+          <div className="diagclipbottom dropshadowtop-inset relative pt-16 pb-16" style={{
+            backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,1.0) 100%), url('${require('@site/static/img/background.webp').default}')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}>
+            <DownloadSection />
+          </div>
+        </div>
 
-        <div className="default-background pt-32 md:pt-24">
-          <div className="pb-24 mb-24 container">
+        <div className="default-background diagcliptop pt-32 md:pt-24">
+          <div className="bottomsplit pb-24 mb-24 container">
             <Extension />
           </div>
 
           <VendorSection />
         </div>
 
-        <div className="alternative-background mt-20 pt-6" style={{ borderTop: '1px solid hsla(0,0%,71%,.246)' }}>
-          <div className="container pb-20 mt-20">
-            <div className="mb-10">
-              <ContactUs />
+        <div className="default-background mt-20">
+          <div className="dropshadowtop">
+            <div className="alternative-background diagcliptop pt-6">
+              <div className="container pb-20 mt-20">
+                <div className="mb-10">
+                  <ContactUs />
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -12,18 +12,18 @@ These demonstrations highlight how our automated architecture optimization achie
 
 <VideoShowcase columns={2} items={[
   {
-    title: "High Speed Image Classification",
+    title: "High Speed Quality Control",
     video: "/img/demos/chip.webm",
     image: "/img/ai/one_ai_plugin/use_cases/chip/defect.png",
-    link: "https://cloud.one-ware.com/quick-start",
+    link: "/docs/one-ai/use-cases/chip",
     metrics: {
       left: { value: 24, unit: " x", label: "Less Errors vs Universal AI" },
       center: { value: "Efficient", label: "AI Model" },
-      right: { value: 1000, unit: " x", label: "Faster vs Universal AI", prefix: ">" },
+      right: { value: 72, unit: " x", label: "Faster vs Universal AI" },
     },
   },
   {
-    title: "Video Object Detection",
+    title: "Object Detection with Comparison",
     video: "/img/demos/drone.webm",
     image: "/img/demos/compare.jpg",
     link: "/docs/one-ai/use-cases/difference-detection",
@@ -34,7 +34,7 @@ These demonstrations highlight how our automated architecture optimization achie
     },
   },
   {
-    title: "Image Comparison AI",
+    title: "High Precision Object Detection",
     image: "/img/ai/one_ai_plugin/use_cases/pcb/pcb.png",
     link: "/docs/one-ai/use-cases/pcb",
     metrics: {
@@ -44,25 +44,25 @@ These demonstrations highlight how our automated architecture optimization achie
     },
   },
   {
-    title: "AI with Small Dataset",
+    title: "Simple Object Detection",
     video: "/img/demos/cup.webm",
     image: "/img/ai/one_ai_plugin/demos/tea_cup_print/demo.png",
     link: "/docs/one-ai/tutorials/teacup-print-detection",
     metrics: {
-      left: { value: 100, unit: " %", label: "Accuracy" },
+      left: { value: 100, unit: " %", label: "Accuracy"},
       center: { value: "Efficient", label: "AI Model" },
-      right: { value: 16, unit: "", label: "Images for Training", startValue: 20000 },
+      right: { value: 16, unit: "", label: "Images for Training" , startValue: 20000 },
     },
   },
   {
     title: "Simple Classification",
     video: "/img/demos/number.webm",
     image: "/img/ai/one_ai_plugin/demos/handwritten-digits/nist_sd19_examples.jpg",
-    link: "https://cloud.one-ware.com/quick-start",
+    link: "/docs/one-ai/tutorials/handwritten-digits-demo",
     metrics: {
       left: { value: 99, unit: " %", label: "Accuracy" },
       center: { value: "Efficient", label: "AI Model" },
-      right: { value: 100, unit: " x", label: " Faster vs ResNet18", prefix: ">" },
+      right: { value: 100, unit: " x", label: " Faster vs ResNet18", prefix: ">"},
     },
   },
   {

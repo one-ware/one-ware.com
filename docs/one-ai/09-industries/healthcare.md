@@ -41,7 +41,8 @@ By automating most steps of AI development, ONE AI enables clinicians to adopt a
       textAlign:'center', 
       cursor:'pointer', 
       transition:'transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease', 
-      padding:'15px',
+      padding:'15px', 
+      borderRadius:'12px',
       backgroundColor:'transparent',
       ':hover': {
         transform:'translateY(-5px)', 
@@ -61,7 +62,7 @@ By automating most steps of AI development, ONE AI enables clinicians to adopt a
       e.currentTarget.style.backgroundColor = 'transparent';
     }}
   >
-    <img src="/img/ai/one_ai_plugin/industries/HealthCarePillen.jpg" alt="Quality Control Manufacturing" style={{maxHeight:'320px', width:'100%', borderRadius:'8px'}} />
+    <img src="/img/ai/one_ai_plugin/industries/HealthCarePillen.jpg" alt="Quality Control Manufacturing" style={{maxHeight:'320px', borderRadius:'8px', width:'100%'}} />
     <h4 style={{marginTop:'10px', marginBottom:'5px'}}>Prescription and Inventory Verification</h4>
     <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>AI automatically validates medication labeling, stock accuracy, and prescription fulfillment to improve patient safety.</p>
   </div>
@@ -72,7 +73,8 @@ By automating most steps of AI development, ONE AI enables clinicians to adopt a
       textAlign:'center', 
       cursor:'pointer', 
       transition:'transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease', 
-      padding:'15px',
+      padding:'15px', 
+      borderRadius:'12px',
       backgroundColor:'transparent',
       ':hover': {
         transform:'translateY(-5px)', 
@@ -92,7 +94,7 @@ By automating most steps of AI development, ONE AI enables clinicians to adopt a
       e.currentTarget.style.backgroundColor = 'transparent';
     }}
   >
-    <img src="/img/ai/one_ai_plugin/industries/Healthcare(1).jpg" alt="Industrial Applications" style={{maxHeight:'320px', width:'100%', borderRadius:'8px'}} />
+    <img src="/img/ai/one_ai_plugin/industries/Healthcare(1).jpg" alt="Industrial Applications" style={{maxHeight:'320px', borderRadius:'8px', width:'100%'}} />
     <h4 style={{marginTop:'10px', marginBottom:'5px'}}>Medical Image Analysis</h4>
     <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>Advanced Vision AI enhances diagnostic accuracy across X-rays, MRIs, and ultrasound scans in real time.</p>
   </div>
@@ -106,7 +108,8 @@ By automating most steps of AI development, ONE AI enables clinicians to adopt a
       textAlign:'center', 
       cursor:'pointer', 
       transition:'transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease', 
-      padding:'15px',
+      padding:'15px', 
+      borderRadius:'12px',
       backgroundColor:'transparent',
       ':hover': {
         transform:'translateY(-5px)', 
@@ -126,7 +129,7 @@ By automating most steps of AI development, ONE AI enables clinicians to adopt a
       e.currentTarget.style.backgroundColor = 'transparent';
     }}
   >
-    <img src="/img/ai/one_ai_plugin/industries/healthcareSpritze.jpg" alt="Predictive Maintenance" style={{maxHeight:'320px', width:'100%', borderRadius:'8px'}} />
+    <img src="/img/ai/one_ai_plugin/industries/healthcareSpritze.jpg" alt="Predictive Maintenance" style={{maxHeight:'320px', borderRadius:'8px', width:'100%'}} />
     <h4 style={{marginTop:'10px', marginBottom:'5px'}}>Automated Equipment Inspection</h4>
     <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>Vision AI ensures the precision and reliability of medical devices, instruments, and imaging systems.</p>
   </div>
@@ -137,7 +140,8 @@ By automating most steps of AI development, ONE AI enables clinicians to adopt a
       textAlign:'center', 
       cursor:'pointer', 
       transition:'transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease', 
-      padding:'15px',
+      padding:'15px', 
+      borderRadius:'12px',
       backgroundColor:'transparent',
       ':hover': {
         transform:'translateY(-5px)', 
@@ -157,7 +161,7 @@ By automating most steps of AI development, ONE AI enables clinicians to adopt a
       e.currentTarget.style.backgroundColor = 'transparent';
     }}
   >
-    <img src="/img/ai/one_ai_plugin/industries/PatientScreening.jpg" alt="Robotics Integration" style={{maxHeight:'320px', width:'100%', borderRadius:'8px'}} />
+    <img src="/img/ai/one_ai_plugin/industries/PatientScreening.jpg" alt="Robotics Integration" style={{maxHeight:'320px', borderRadius:'8px', width:'100%'}} />
     <h4 style={{marginTop:'10px', marginBottom:'5px'}}>Continuous Patient Monitoring</h4>
     <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>Sensor-based AI tracks vital signs in real time, detecting early changes to enable faster clinical response through automated visual checks.</p>
   </div>

@@ -54,15 +54,6 @@ For models that compare multiple images (e.g., difference detection), the input 
 | `width` | Image width in pixels |
 | `image_count` | Number of input images |
 
-#### Image Order
-
-When working with multiple input images, the dataset typically groups images by a base name with different suffixes (e.g., `img1_rgb.png` and `img1_depth.png`). Therefore, the model expects these images to be stacked in a specific order in the input tensor `[..., image_count]`.
-
-The input index order depends on the suffix names:
-*   **Alphabetical Sorting:** By default, suffixes are sorted alphabetically.
-    *   *Example:* For `_rgb` and `_depth`, `_depth` is assigned **Index 0** and `_rgb` **Index 1**.
-*   **Reference Priority:** If a suffix suggests a reference image (suffix is **"good"**, **"temp"**, **"ref"**, or **"comp"**, case-insensitive), it is forced to **Index 0**, overriding alphabetical order.
-    *   *Note:* If multiple images contain these keywords, those specific images are sorted alphabetically amongst themselves.
 ---
 
 ## Output Format

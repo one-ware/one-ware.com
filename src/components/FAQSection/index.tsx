@@ -3,7 +3,6 @@ import axios from "axios";
 import { FAQ_DATA, FAQ_CATEGORIES, FAQ_CATEGORY_LABELS, FAQ } from "../../data/faqData";
 import { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { useColorMode } from "@docusaurus/theme-common";
 
 declare global {
   interface Window {
@@ -19,7 +18,6 @@ interface FAQItemProps {
   answer: string;
   isOpen: boolean;
   onToggle: () => void;
-  isDarkMode: boolean;
 }
 
 interface QuestionFormData {
@@ -58,31 +56,21 @@ function getCategoryLabel(category: string, locale: string): string {
   return category;
 }
 
-function FAQItem({ question, answer, isOpen, onToggle, isDarkMode }: FAQItemProps) {
-  const primaryColor = isDarkMode ? "#00FFD1" : "#00a88a";
-  const textColor = isDarkMode ? "#e0e0e0" : "#374151";
-  const bgClosed = isDarkMode ? "rgba(0, 0, 0, 0.3)" : "rgba(0, 0, 0, 0.03)";
-  const borderClosed = isDarkMode ? "1px solid rgba(255, 255, 255, 0.1)" : "1px solid rgba(0, 0, 0, 0.1)";
-  const hoverBg = isDarkMode ? "rgba(0, 255, 209, 0.05)" : "rgba(0, 168, 138, 0.05)";
-
+function FAQItem({ question, answer, isOpen, onToggle }: FAQItemProps) {
   return (
     <div
       style={{
         background: isOpen
-          ? isDarkMode
-            ? "linear-gradient(135deg, rgba(0, 255, 209, 0.08), rgba(0, 255, 209, 0.03))"
-            : "linear-gradient(135deg, rgba(0, 168, 138, 0.08), rgba(0, 168, 138, 0.03))"
-          : bgClosed,
+          ? "linear-gradient(135deg, rgba(0, 255, 209, 0.08), rgba(0, 255, 209, 0.03))"
+          : "rgba(0, 0, 0, 0.3)",
         border: isOpen
-          ? isDarkMode
-            ? "1px solid rgba(0, 255, 209, 0.3)"
-            : "1px solid rgba(0, 168, 138, 0.3)"
-          : borderClosed,
+          ? "1px solid rgba(0, 255, 209, 0.3)"
+          : "1px solid rgba(255, 255, 255, 0.1)",
         borderRadius: "12px",
         marginBottom: "12px",
         overflow: "hidden",
         transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-        boxShadow: isOpen ? `inset 3px 0 0 0 ${primaryColor}` : "none",
+        boxShadow: isOpen ? "inset 3px 0 0 0 #00FFD1" : "none",
       }}
     >
       <button
@@ -100,7 +88,7 @@ function FAQItem({ question, answer, isOpen, onToggle, isDarkMode }: FAQItemProp
           transition: "background 0.2s ease",
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.background = hoverBg;
+          e.currentTarget.style.background = "rgba(0, 255, 209, 0.05)";
         }}
         onMouseLeave={(e) => {
           e.currentTarget.style.background = "transparent";
@@ -109,7 +97,7 @@ function FAQItem({ question, answer, isOpen, onToggle, isDarkMode }: FAQItemProp
         <span
           style={{
             fontWeight: "bold",
-            color: isOpen ? primaryColor : textColor,
+            color: isOpen ? "#00FFD1" : "#e0e0e0",
             fontSize: "18px",
             paddingRight: "16px",
             transition: "color 0.3s ease",
@@ -120,7 +108,7 @@ function FAQItem({ question, answer, isOpen, onToggle, isDarkMode }: FAQItemProp
         </span>
         <span
           style={{
-            color: primaryColor,
+            color: "#00FFD1",
             fontSize: "1.25rem",
             fontWeight: 400,
             lineHeight: 1,
@@ -148,7 +136,7 @@ function FAQItem({ question, answer, isOpen, onToggle, isDarkMode }: FAQItemProp
           <p
             style={{
               padding: "0 20px 20px 20px",
-              color: textColor,
+              color: "#e0e0e0",
               fontSize: "18px",
               lineHeight: 1.6,
               margin: 0,
@@ -167,8 +155,6 @@ function FAQItem({ question, answer, isOpen, onToggle, isDarkMode }: FAQItemProp
 function QuestionForm() {
   const { i18n } = useDocusaurusContext();
   const locale = i18n.currentLocale;
-  const { colorMode } = useColorMode();
-  const isDarkMode = colorMode === "dark";
   const [formData, setFormData] = useState<QuestionFormData>({
     name: "",
     email: "",
@@ -177,12 +163,6 @@ function QuestionForm() {
     recaptcha_token: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const primaryColor = isDarkMode ? "#00FFD1" : "#00a88a";
-  const primaryColorRgba = isDarkMode ? "0, 255, 209" : "0, 168, 138";
-  const textColor = isDarkMode ? "#e0e0e0" : "#374151";
-  const inputBg = isDarkMode ? "rgba(0, 0, 0, 0.3)" : "rgba(255, 255, 255, 0.8)";
-  const inputBorder = isDarkMode ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.1)";
 
   useEffect(() => {
     if (typeof window === "undefined" || process.env.NODE_ENV === "development") return;
@@ -247,10 +227,10 @@ function QuestionForm() {
   const inputStyle: React.CSSProperties = {
     width: "100%",
     padding: "12px 16px",
-    background: inputBg,
-    border: `1px solid ${inputBorder}`,
+    background: "rgba(0, 0, 0, 0.3)",
+    border: "1px solid rgba(255, 255, 255, 0.1)",
     borderRadius: "12px",
-    color: isDarkMode ? "#e0e0e0" : "#1a1a1a",
+    color: "#e0e0e0",
     fontSize: "16px",
     outline: "none",
     transition: "border-color 0.2s ease",
@@ -260,17 +240,15 @@ function QuestionForm() {
     display: "block",
     fontSize: "16px",
     fontWeight: "bold",
-    color: textColor,
+    color: "#e0e0e0",
     marginBottom: "8px",
   };
 
   return (
     <div
       style={{
-        background: isDarkMode
-          ? "linear-gradient(135deg, rgba(0, 255, 209, 0.1), rgba(0, 255, 209, 0.05))"
-          : "linear-gradient(135deg, rgba(0, 168, 138, 0.1), rgba(0, 168, 138, 0.05))",
-        border: isDarkMode ? "1px solid rgba(0, 255, 209, 0.2)" : "1px solid rgba(0, 168, 138, 0.2)",
+        background: "linear-gradient(135deg, rgba(0, 255, 209, 0.1), rgba(0, 255, 209, 0.05))",
+        border: "1px solid rgba(0, 255, 209, 0.2)",
         borderRadius: "20px",
         padding: "32px",
       }}
@@ -297,10 +275,10 @@ function QuestionForm() {
               required
               style={inputStyle}
               onFocus={(e) => {
-                e.target.style.borderColor = `rgba(${primaryColorRgba}, 0.5)`;
+                e.target.style.borderColor = "rgba(0, 255, 209, 0.5)";
               }}
               onBlur={(e) => {
-                e.target.style.borderColor = inputBorder;
+                e.target.style.borderColor = "rgba(255, 255, 255, 0.1)";
               }}
             />
           </div>
@@ -314,10 +292,10 @@ function QuestionForm() {
               required
               style={inputStyle}
               onFocus={(e) => {
-                e.target.style.borderColor = `rgba(${primaryColorRgba}, 0.5)`;
+                e.target.style.borderColor = "rgba(0, 255, 209, 0.5)";
               }}
               onBlur={(e) => {
-                e.target.style.borderColor = inputBorder;
+                e.target.style.borderColor = "rgba(255, 255, 255, 0.1)";
               }}
             />
           </div>
@@ -336,10 +314,10 @@ function QuestionForm() {
               resize: "none",
             }}
             onFocus={(e) => {
-              e.target.style.borderColor = `rgba(${primaryColorRgba}, 0.5)`;
+              e.target.style.borderColor = "rgba(0, 255, 209, 0.5)";
             }}
             onBlur={(e) => {
-              e.target.style.borderColor = inputBorder;
+              e.target.style.borderColor = "rgba(255, 255, 255, 0.1)";
             }}
           />
         </div>
@@ -349,10 +327,10 @@ function QuestionForm() {
           disabled={isSubmitting}
           style={{
             padding: "12px 32px",
-            background: primaryColor,
+            background: "#00FFD1",
             border: "none",
             borderRadius: "8px",
-            color: isDarkMode ? "#000000" : "#ffffff",
+            color: "#000000",
             fontSize: "16px",
             fontWeight: "bold",
             cursor: isSubmitting ? "not-allowed" : "pointer",
@@ -361,11 +339,11 @@ function QuestionForm() {
           }}
           onMouseEnter={(e) => {
             if (!isSubmitting) {
-              e.currentTarget.style.background = isDarkMode ? "#00e6be" : "#008f75";
+              e.currentTarget.style.background = "#00e6be";
             }
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.background = primaryColor;
+            e.currentTarget.style.background = "#00FFD1";
           }}
         >
           {isSubmitting ? translate({ id: "faq.form.sending", message: "Sending..." }) : translate({ id: "faq.form.submit", message: "Submit" })}
@@ -378,17 +356,8 @@ function QuestionForm() {
 function FAQSearch() {
   const { i18n } = useDocusaurusContext();
   const locale = i18n.currentLocale;
-  const { colorMode } = useColorMode();
-  const isDarkMode = colorMode === "dark";
   const [searchQuery, setSearchQuery] = useState("");
   const [openItems, setOpenItems] = useState<Set<string>>(new Set());
-
-  const primaryColor = isDarkMode ? "#00FFD1" : "#00a88a";
-  const primaryColorRgba = isDarkMode ? "0, 255, 209" : "0, 168, 138";
-  const textColor = isDarkMode ? "#e0e0e0" : "#374151";
-  const mutedTextColor = isDarkMode ? "#a0a0a0" : "#6b7280";
-  const inputBg = isDarkMode ? "rgba(0, 0, 0, 0.3)" : "rgba(255, 255, 255, 0.8)";
-  const inputBorder = isDarkMode ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.1)";
 
   const filteredFAQs = useMemo(() => {
     if (!searchQuery.trim()) {
@@ -438,7 +407,7 @@ function FAQSearch() {
             transform: "translateY(-50%)",
             width: "20px",
             height: "20px",
-            color: primaryColor,
+            color: "#00FFD1",
           }}
           fill="none"
           stroke="currentColor"
@@ -462,19 +431,19 @@ function FAQSearch() {
             paddingRight: "16px",
             paddingTop: "14px",
             paddingBottom: "14px",
-            background: inputBg,
-            border: `1px solid ${inputBorder}`,
+            background: "rgba(0, 0, 0, 0.3)",
+            border: "1px solid rgba(255, 255, 255, 0.1)",
             borderRadius: "12px",
-            color: isDarkMode ? "#ffffff" : "#1a1a1a",
+            color: "#ffffff",
             fontSize: "1rem",
             outline: "none",
             transition: "border-color 0.2s ease",
           }}
           onFocus={(e) => {
-            e.target.style.borderColor = `rgba(${primaryColorRgba}, 0.5)`;
+            e.target.style.borderColor = "rgba(0, 255, 209, 0.5)";
           }}
           onBlur={(e) => {
-            e.target.style.borderColor = inputBorder;
+            e.target.style.borderColor = "rgba(255, 255, 255, 0.1)";
           }}
         />
       </div>
@@ -488,10 +457,10 @@ function FAQSearch() {
                   style={{
                     fontSize: "1.1rem",
                     fontWeight: "bold",
-                    color: primaryColor,
+                    color: "#00FFD1",
                     marginBottom: "16px",
                     paddingBottom: "8px",
-                    borderBottom: `1px solid rgba(${primaryColorRgba}, 0.2)`,
+                    borderBottom: "1px solid rgba(0, 255, 209, 0.2)",
                   }}
                 >
                   {getCategoryLabel(category, locale)}
@@ -505,7 +474,6 @@ function FAQSearch() {
                       answer={localized.answer}
                       isOpen={openItems.has(faq.id)}
                       onToggle={() => toggleItem(faq.id)}
-                      isDarkMode={isDarkMode}
                     />
                   );
                 })}
@@ -516,15 +484,15 @@ function FAQSearch() {
               style={{
                 textAlign: "center",
                 padding: "32px 24px",
-                background: isDarkMode ? "rgba(0, 0, 0, 0.2)" : "rgba(0, 0, 0, 0.03)",
+                background: "rgba(0, 0, 0, 0.2)",
                 borderRadius: "12px",
-                border: `1px solid ${inputBorder}`,
+                border: "1px solid rgba(255, 255, 255, 0.1)",
               }}
             >
-              <p style={{ color: textColor, marginBottom: "8px" }}>
+              <p style={{ color: "#e0e0e0", marginBottom: "8px" }}>
                 {translate({ id: "faq.search.noResults", message: "No questions found for \"{searchQuery}\"" }, { searchQuery })}
               </p>
-              <p style={{ color: mutedTextColor, fontSize: "0.875rem" }}>
+              <p style={{ color: "#a0a0a0", fontSize: "0.875rem" }}>
                 {translate({ id: "faq.search.tryDifferent", message: "Try a different search term or submit your question below." })}
               </p>
             </div>
@@ -542,8 +510,6 @@ interface FAQCategoryProps {
 function FAQCategory({ category }: FAQCategoryProps) {
   const { i18n } = useDocusaurusContext();
   const locale = i18n.currentLocale;
-  const { colorMode } = useColorMode();
-  const isDarkMode = colorMode === "dark";
   const [openItems, setOpenItems] = useState<Set<string>>(new Set());
 
   const faqs = useMemo(() => {
@@ -575,7 +541,6 @@ function FAQCategory({ category }: FAQCategoryProps) {
             answer={localized.answer}
             isOpen={openItems.has(faq.id)}
             onToggle={() => toggleItem(faq.id)}
-            isDarkMode={isDarkMode}
           />
         );
       })}

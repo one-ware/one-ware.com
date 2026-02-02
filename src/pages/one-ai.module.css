@@ -48,15 +48,5 @@
 }
 
 .activeslide {
-  background-color: #f3f4f6;
-}
-
-.slickSlider :global(.slick-dots) li button:before {
-  color: #9ca3af;
-  opacity: 0.5;
-}
-
-.slickSlider :global(.slick-dots) li.slick-active button:before {
-  color: var(--ifm-color-primary);
-  opacity: 1;
+  background-color: var(--ifm-color-emphasis-100);
 }

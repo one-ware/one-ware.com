@@ -1,4 +1,4 @@
-export default function Partners() {
+export default function Partners(): JSX.Element {
   return (
     <div className="text-center max-w-2xl m-auto lg:mt-10">
       <h3 className="text-3xl mt-0 col">Our Partners</h3>

@@ -1,5 +1,4 @@
 import React from 'react';
-import { useColorMode } from '@docusaurus/theme-common';
 
 interface GlassFolderDragProps {
   children?: React.ReactNode;
@@ -25,14 +24,9 @@ export default function GlassFolderDrag({
   borderColor = 'rgba(255, 255, 255, 0.15)',
   glowColor,
   hoverEffect = true,
-  backgroundColor,
+  backgroundColor = 'rgba(20, 20, 20, 0.3)',
   blur = '12px',
 }: GlassFolderDragProps) {
-  const { colorMode } = useColorMode();
-  const isDarkMode = colorMode === 'dark';
-
-  const folderBg = backgroundColor ?? (isDarkMode ? 'rgba(20, 20, 20, 0.3)' : 'rgba(15, 15, 15, 0.5)');
-
   return (
     <div
       className={`relative ${className}`}
@@ -46,7 +40,7 @@ export default function GlassFolderDrag({
       <div
         className={`relative w-full h-full ${hoverEffect ? 'group hover:scale-105' : ''} transition-transform duration-300`}
         style={{
-          background: folderBg,
+          background: backgroundColor,
           backdropFilter: `blur(${blur})`,
           WebkitBackdropFilter: `blur(${blur})`,
           border: `1px solid ${borderColor}`,
@@ -61,7 +55,7 @@ export default function GlassFolderDrag({
             left: '0',
             width: '40%',
             height: '14px',
-            background: folderBg,
+            background: backgroundColor,
             border: `1px solid ${borderColor}`,
             borderBottom: 'none',
             backdropFilter: `blur(${blur})`,

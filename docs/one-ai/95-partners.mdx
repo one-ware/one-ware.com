@@ -4,11 +4,7 @@ title: Our Technology Partners
 sidebar_label: Partners
 ---
 
-import { useColorMode } from '@docusaurus/theme-common';
-
 export function PartnerLogo({ name, href, img }) {
-  const { colorMode } = useColorMode();
-  const isDarkMode = colorMode === 'dark';
   const mask = `url(${img}) center / contain no-repeat`;
 
   return (
@@ -25,7 +21,7 @@ export function PartnerLogo({ name, href, img }) {
         style={{
           width: 300,
           height: 150,
-          backgroundColor: isDarkMode ? "#ffffff" : "#1a1a1a",
+          backgroundColor: "#ffffffff",
           WebkitMask: mask,
           mask: mask,
           cursor: "pointer",

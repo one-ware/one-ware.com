@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import Translate from "@docusaurus/Translate";
-import { useColorMode } from "@docusaurus/theme-common";
 import VideoShowcaseCard, { Metrics } from "./VideoShowcaseCard";
 
 export interface ShowcaseItem {
@@ -14,18 +13,18 @@ export interface ShowcaseItem {
 const defaultDemos: ShowcaseItem[] = [
   
   {
-    title: "High Speed Image Classification",
+    title: "High Speed Quality Control",
     video: "/img/demos/chip.webm",
     image: "/img/ai/one_ai_plugin/use_cases/chip/defect.png",
-    link: "https://cloud.one-ware.com/quick-start",
+    link: "/docs/one-ai/tutorials/potato-chip-demo",
     metrics: {
       left: { value: 24, unit: " x", label: "Less Errors vs Universal AI" },
       center: { value: "Efficient" as const, label: "AI Model" },
-      right: { value: 1000, unit: " x", label: "Faster vs Universal AI" , prefix: ">" },
+      right: { value: 72, unit: " x", label: "Faster vs Universal AI" },
     },
   },
   {
-    title: "Video Object Detection",
+    title: "Object Detection with Comparison",
     video: "/img/demos/drone.webm",
     image: "/img/demos/compare.jpg",
     link: "/docs/one-ai/use-cases/difference-detection",
@@ -36,7 +35,7 @@ const defaultDemos: ShowcaseItem[] = [
     },
   },
   {
-    title: "Image Comparison AI",
+    title: "High Precision Object Detection",
     image: "/img/ai/one_ai_plugin/use_cases/pcb/pcb.png",
     link: "/docs/one-ai/use-cases/pcb",
     metrics: {
@@ -46,7 +45,7 @@ const defaultDemos: ShowcaseItem[] = [
     },
   },
   {
-    title: "AI with Small Dataset",
+    title: "Simple Object Detection",
     video: "/img/demos/cup.webm",
     image: "/img/ai/one_ai_plugin/demos/tea_cup_print/demo.png",
     link: "/docs/one-ai/tutorials/teacup-print-detection",
@@ -60,7 +59,7 @@ const defaultDemos: ShowcaseItem[] = [
     title: "Simple Classification",
     video: "/img/demos/number.webm",
     image: "/img/ai/one_ai_plugin/demos/handwritten-digits/nist_sd19_examples.jpg",
-    link: "https://cloud.one-ware.com/quick-start",
+    link: "/docs/one-ai/tutorials/handwritten-digits-demo",
     metrics: {
       left: { value: 99, unit: " %", label: "Accuracy" },
       center: { value: "Efficient" as const, label: "AI Model" },
@@ -86,8 +85,6 @@ interface VideoShowcaseProps {
 }
 
 export default function VideoShowcase({ items = defaultDemos, columns = 3 }: VideoShowcaseProps) {
-  const { colorMode } = useColorMode();
-  const isDarkMode = colorMode === "dark";
   const demos = items;
   const [activeIndex, setActiveIndex] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -158,7 +155,7 @@ export default function VideoShowcase({ items = defaultDemos, columns = 3 }: Vid
   return (
     <section className="py-6 md:py-8">
       <div className="container mx-auto px-4">
-        <p className={`text-lg sm:text-xl md:text-2xl lg:text-3xl text-center font-bold mb-8 md:mb-12 ${isDarkMode ? "text-white" : "text-gray-900"}`}>
+        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-center font-bold mb-8 md:mb-12">
           <Translate id="homepage.usecase.title">Showcase</Translate>
         </p>
 

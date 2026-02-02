@@ -15,7 +15,6 @@ declare global {
 
 interface EventRegistrationFormProps {
   event: Event;
-  isDarkMode: boolean;
 }
 
 interface FormData {
@@ -31,10 +30,9 @@ const API_URL = process.env.NODE_ENV === "development"
   ? "http://localhost:3001/api/register"
   : "https://backend.one-ware.com/api/register";
 
-export default function EventRegistrationForm({ event, isDarkMode }: EventRegistrationFormProps) {
+export default function EventRegistrationForm({ event }: EventRegistrationFormProps) {
   const localizedEvent = useLocalizedEvent(event);
   const dateLocale = useLocalizedDateFormat();
-  const primaryColorRgba = isDarkMode ? "0, 255, 209" : "0, 168, 138";
 
   const initialFormData: FormData = {
     name: "",
@@ -231,17 +229,17 @@ export default function EventRegistrationForm({ event, isDarkMode }: EventRegist
 
   if (submitStatus === "success") {
     return (
-      <div className="relative p-8 md:p-12 rounded-2xl" style={{ background: `linear-gradient(135deg, rgba(${primaryColorRgba}, 0.1), rgba(${primaryColorRgba}, 0.05))`, border: `1px solid rgba(${primaryColorRgba}, 0.2)` }}>
+      <div className="relative p-8 md:p-12 rounded-2xl" style={{ background: "linear-gradient(135deg, rgba(0, 255, 209, 0.1), rgba(0, 255, 209, 0.05))", border: "1px solid rgba(0, 255, 209, 0.2)" }}>
         <div className="text-center py-8">
           <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-[var(--ifm-color-primary)]/20 flex items-center justify-center">
             <svg className="w-10 h-10 text-[var(--ifm-color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h3 className={`text-2xl font-bold ${isDarkMode ? "text-white" : "text-gray-900"} mb-3`}>
+          <h3 className="text-2xl font-bold text-white mb-3">
             <Translate id="seminars.form.success.title">Registration Successful!</Translate>
           </h3>
-          <p className={`${isDarkMode ? "text-gray-400" : "text-gray-600"} text-lg max-w-md mx-auto`}>
+          <p className="text-gray-400 text-lg max-w-md mx-auto">
             <Translate id="seminars.form.success.message">
               Thank you for registering. You will receive an email with the meeting link shortly.
             </Translate>
@@ -252,10 +250,10 @@ export default function EventRegistrationForm({ event, isDarkMode }: EventRegist
   }
 
   return (
-    <div className="relative p-6 md:p-8 lg:p-10 rounded-2xl" style={{ background: `linear-gradient(135deg, rgba(${primaryColorRgba}, 0.1), rgba(${primaryColorRgba}, 0.05))`, border: `1px solid rgba(${primaryColorRgba}, 0.2)` }}>
+    <div className="relative p-6 md:p-8 lg:p-10 rounded-2xl" style={{ background: "linear-gradient(135deg, rgba(0, 255, 209, 0.1), rgba(0, 255, 209, 0.05))", border: "1px solid rgba(0, 255, 209, 0.2)" }}>
 
       <div className="relative z-10">
-        <h2 className={`text-2xl md:text-3xl font-bold ${isDarkMode ? "text-white" : "text-gray-900"} mb-8 text-center`}>
+        <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
           <Translate id="seminars.detail.registration">Registration</Translate>
         </h2>
 
@@ -267,8 +265,8 @@ export default function EventRegistrationForm({ event, isDarkMode }: EventRegist
               </h3>
 
               <div className="space-y-3">
-                <div className={`flex items-center gap-3 ${isDarkMode ? "text-white" : "text-gray-900"}`}>
-                  <div className={`w-8 h-8 rounded-lg ${isDarkMode ? "bg-white/10" : "bg-black/10"} flex items-center justify-center flex-shrink-0`}>
+                <div className="flex items-center gap-3 text-white">
+                  <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
                     <svg className="w-4 h-4 text-[var(--ifm-color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
@@ -277,8 +275,8 @@ export default function EventRegistrationForm({ event, isDarkMode }: EventRegist
                 </div>
 
                 {localizedEvent.time && (
-                  <div className={`flex items-center gap-3 ${isDarkMode ? "text-white" : "text-gray-900"}`}>
-                    <div className={`w-8 h-8 rounded-lg ${isDarkMode ? "bg-white/10" : "bg-black/10"} flex items-center justify-center flex-shrink-0`}>
+                  <div className="flex items-center gap-3 text-white">
+                    <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
                       <svg className="w-4 h-4 text-[var(--ifm-color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
@@ -288,8 +286,8 @@ export default function EventRegistrationForm({ event, isDarkMode }: EventRegist
                 )}
 
                 {localizedEvent.location && (
-                  <div className={`flex items-center gap-3 ${isDarkMode ? "text-white" : "text-gray-900"}`}>
-                    <div className={`w-8 h-8 rounded-lg ${isDarkMode ? "bg-white/10" : "bg-black/10"} flex items-center justify-center flex-shrink-0`}>
+                  <div className="flex items-center gap-3 text-white">
+                    <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
                       <svg className="w-4 h-4 text-[var(--ifm-color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -300,8 +298,8 @@ export default function EventRegistrationForm({ event, isDarkMode }: EventRegist
                 )}
 
                 {localizedEvent.language && (
-                  <div className={`flex items-center gap-3 ${isDarkMode ? "text-white" : "text-gray-900"}`}>
-                    <div className={`w-8 h-8 rounded-lg ${isDarkMode ? "bg-white/10" : "bg-black/10"} flex items-center justify-center flex-shrink-0`}>
+                  <div className="flex items-center gap-3 text-white">
+                    <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
                       <svg className="w-4 h-4 text-[var(--ifm-color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
                       </svg>
@@ -329,7 +327,7 @@ export default function EventRegistrationForm({ event, isDarkMode }: EventRegist
 
               <div className="relative group">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <svg className={`w-5 h-5 ${isDarkMode ? "text-white/50" : "text-black/50"} group-focus-within:text-[var(--ifm-color-primary)] transition-colors`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-white/50 group-focus-within:text-[var(--ifm-color-primary)] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
                 </div>
@@ -340,13 +338,13 @@ export default function EventRegistrationForm({ event, isDarkMode }: EventRegist
                   onChange={handleChange}
                   required
                   placeholder={translate({ id: "seminars.form.name", message: "Name" }) + " *"}
-                  className={`w-full pl-12 pr-4 py-3.5 ${isDarkMode ? "bg-white/[0.03] border-white/10 text-white placeholder-white/50 focus:bg-white/[0.05]" : "bg-black/[0.03] border-black/10 text-gray-900 placeholder-black/50 focus:bg-black/[0.05]"} border rounded-xl outline-none focus:border-[var(--ifm-color-primary)] focus:shadow-[0_0_0_3px_rgba(0,202,165,0.15)] transition-all duration-200`}
+                  className="w-full pl-12 pr-4 py-3.5 bg-white/[0.03] border border-white/10 rounded-xl text-white placeholder-white/50 outline-none focus:bg-white/[0.05] focus:border-[var(--ifm-color-primary)] focus:shadow-[0_0_0_3px_rgba(0,202,165,0.15)] transition-all duration-200"
                 />
               </div>
 
               <div className="relative group">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <svg className={`w-5 h-5 ${isDarkMode ? "text-white/50" : "text-black/50"} group-focus-within:text-[var(--ifm-color-primary)] transition-colors`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-white/50 group-focus-within:text-[var(--ifm-color-primary)] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
@@ -357,14 +355,14 @@ export default function EventRegistrationForm({ event, isDarkMode }: EventRegist
                     onChange={handleChange}
                     required
                     placeholder={translate({ id: "seminars.form.email", message: "E-Mail" }) + " *"}
-                    className={`w-full pl-12 pr-4 py-3.5 ${isDarkMode ? "bg-white/[0.03] border-white/10 text-white placeholder-white/50 focus:bg-white/[0.05]" : "bg-black/[0.03] border-black/10 text-gray-900 placeholder-black/50 focus:bg-black/[0.05]"} border rounded-xl outline-none focus:border-[var(--ifm-color-primary)] focus:shadow-[0_0_0_3px_rgba(0,202,165,0.15)] transition-all duration-200`}
+                    className="w-full pl-12 pr-4 py-3.5 bg-white/[0.03] border border-white/10 rounded-xl text-white placeholder-white/50 outline-none focus:bg-white/[0.05] focus:border-[var(--ifm-color-primary)] focus:shadow-[0_0_0_3px_rgba(0,202,165,0.15)] transition-all duration-200"
                 />
               </div>
 
               <div className="relative group">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                   <svg
-                      className={`w-5 h-5 ${isDarkMode ? "text-white/50" : "text-black/50"} group-focus-within:text-[var(--ifm-color-primary)] transition-colors`}
+                      className="w-5 h-5 text-white/50 group-focus-within:text-[var(--ifm-color-primary)] transition-colors"
                       fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path d="M10 12h4"/>
                       <path d="M10 8h4"/>
@@ -379,7 +377,7 @@ export default function EventRegistrationForm({ event, isDarkMode }: EventRegist
                     value={formData.company}
                     onChange={handleChange}
                     placeholder={translate({id: "seminars.form.company", message: "Company"}) + " (optional)"}
-                    className={`w-full pl-12 pr-4 py-3.5 ${isDarkMode ? "bg-white/[0.03] border-white/10 text-white placeholder-white/50 focus:bg-white/[0.05]" : "bg-black/[0.03] border-black/10 text-gray-900 placeholder-black/50 focus:bg-black/[0.05]"} border rounded-xl outline-none focus:border-[var(--ifm-color-primary)] focus:shadow-[0_0_0_3px_rgba(0,202,165,0.15)] transition-all duration-200`}
+                    className="w-full pl-12 pr-4 py-3.5 bg-white/[0.03] border border-white/10 rounded-xl text-white placeholder-white/50 outline-none focus:bg-white/[0.05] focus:border-[var(--ifm-color-primary)] focus:shadow-[0_0_0_3px_rgba(0,202,165,0.15)] transition-all duration-200"
                 />
               </div>
 
@@ -393,7 +391,7 @@ export default function EventRegistrationForm({ event, isDarkMode }: EventRegist
                       required={field.required}
                       rows={4}
                       placeholder={getLocalizedLabel(field) + (field.required ? " *" : "")}
-                      className={`w-full px-4 py-3.5 ${isDarkMode ? "bg-white/[0.03] border-white/10 text-white placeholder-white/50 focus:bg-white/[0.05]" : "bg-black/[0.03] border-black/10 text-gray-900 placeholder-black/50 focus:bg-black/[0.05]"} border rounded-xl outline-none focus:border-[var(--ifm-color-primary)] focus:shadow-[0_0_0_3px_rgba(0,202,165,0.15)] transition-all duration-200 resize-none`}
+                      className="w-full px-4 py-3.5 bg-white/[0.03] border border-white/10 rounded-xl text-white placeholder-white/50 outline-none focus:bg-white/[0.05] focus:border-[var(--ifm-color-primary)] focus:shadow-[0_0_0_3px_rgba(0,202,165,0.15)] transition-all duration-200 resize-none"
                     />
                   ) : field.type === "select" && field.options ? (
                     <div ref={(el) => { dropdownRefs.current[field.name] = el; }} className="relative">
@@ -404,17 +402,17 @@ export default function EventRegistrationForm({ event, isDarkMode }: EventRegist
                           fieldErrors.has(field.name)
                             ? "bg-red-500/10 border border-red-500/50"
                             : openDropdown === field.name
-                              ? `${isDarkMode ? "bg-white/[0.05]" : "bg-black/[0.05]"} border border-[var(--ifm-color-primary)] shadow-[0_0_0_3px_rgba(0,202,165,0.15)]`
-                              : `${isDarkMode ? "bg-white/[0.03] border-white/10 hover:bg-white/[0.05] hover:border-white/20" : "bg-black/[0.03] border-black/10 hover:bg-black/[0.05] hover:border-black/20"} border`
+                              ? "bg-white/[0.05] border border-[var(--ifm-color-primary)] shadow-[0_0_0_3px_rgba(0,202,165,0.15)]"
+                              : "bg-white/[0.03] border border-white/10 hover:bg-white/[0.05] hover:border-white/20"
                         }`}
                       >
-                        <span className={formData[field.name] ? (isDarkMode ? "text-white" : "text-gray-900") : (isDarkMode ? "text-white/50" : "text-black/50")}>
+                        <span className={formData[field.name] ? "text-white" : "text-white/50"}>
                           {formData[field.name]
                             ? getLocalizedOptions(field)[field.options.indexOf(formData[field.name] as string)] || formData[field.name]
                             : getLocalizedLabel(field) + (field.required ? " *" : "")}
                         </span>
                         <svg
-                          className={`w-4 h-4 ${isDarkMode ? "text-white/50" : "text-black/50"} transition-transform duration-200 ${openDropdown === field.name ? "rotate-180 text-[var(--ifm-color-primary)]" : ""}`}
+                          className={`w-4 h-4 text-white/50 transition-transform duration-200 ${openDropdown === field.name ? "rotate-180 text-[var(--ifm-color-primary)]" : ""}`}
                           fill="none"
                           stroke="currentColor"
                           strokeWidth="2"
@@ -426,7 +424,7 @@ export default function EventRegistrationForm({ event, isDarkMode }: EventRegist
                       {openDropdown === field.name && (
                         <div
                           className="absolute top-[calc(100%+4px)] left-0 right-0 rounded-xl overflow-hidden z-50"
-                          style={{ background: isDarkMode ? "#0d0d0d" : "#ffffff", boxShadow: "0 10px 40px rgba(0, 0, 0, 0.6)" }}
+                          style={{ background: "#0d0d0d", boxShadow: "0 10px 40px rgba(0, 0, 0, 0.6)" }}
                         >
                           {(() => {
                             const options = getLocalizedOptions(field);
@@ -446,9 +444,9 @@ export default function EventRegistrationForm({ event, isDarkMode }: EventRegist
                                   className={`w-full px-4 py-2.5 text-left text-sm transition-all duration-150 flex items-center justify-between ${
                                     isSelected
                                       ? "bg-[var(--ifm-color-primary)]/10 text-[var(--ifm-color-primary)]"
-                                      : isDarkMode ? "bg-white/[0.05] text-white/70 hover:bg-white/[0.08] hover:text-white" : "bg-black/[0.05] text-black/70 hover:bg-black/[0.08] hover:text-black"
+                                      : "bg-white/[0.05] text-white/70 hover:bg-white/[0.08] hover:text-white"
                                   }`}
-                                  style={isLast ? { border: "none" } : { border: "none", borderBottom: isDarkMode ? "1px solid rgba(255,255,255,0.05)" : "1px solid rgba(0,0,0,0.05)" }}
+                                  style={isLast ? { border: "none" } : { border: "none", borderBottom: "1px solid rgba(255,255,255,0.05)" }}
                                 >
                                   <span>{option}</span>
                                   {isSelected && (
@@ -465,7 +463,7 @@ export default function EventRegistrationForm({ event, isDarkMode }: EventRegist
                     </div>
                   ) : field.type === "multiselect" && field.options ? (
                     <div className="w-full">
-                      <div className={`text-sm mb-2 ${fieldErrors.has(field.name) ? "text-red-400" : (isDarkMode ? "text-white/70" : "text-black/70")}`}>
+                      <div className={`text-sm mb-2 ${fieldErrors.has(field.name) ? "text-red-400" : "text-white/70"}`}>
                         {getLocalizedLabel(field)}{field.required ? " *" : ""}
                       </div>
                       <div className={`flex flex-wrap gap-2 ${fieldErrors.has(field.name) ? "p-2 rounded-lg border border-red-500/50 bg-red-500/10" : ""}`}>
@@ -480,7 +478,7 @@ export default function EventRegistrationForm({ event, isDarkMode }: EventRegist
                               className={`px-3 py-2 rounded-lg text-sm transition-all duration-200 ${
                                 isSelected
                                   ? "bg-[var(--ifm-color-primary)]/20 border border-[var(--ifm-color-primary)] text-[var(--ifm-color-primary)]"
-                                  : isDarkMode ? "bg-white/[0.03] border border-white/10 text-white/70 hover:bg-white/[0.05] hover:border-white/20" : "bg-black/[0.03] border border-black/10 text-black/70 hover:bg-black/[0.05] hover:border-black/20"
+                                  : "bg-white/[0.03] border border-white/10 text-white/70 hover:bg-white/[0.05] hover:border-white/20"
                               }`}
                             >
                               {isSelected && (
@@ -507,8 +505,8 @@ export default function EventRegistrationForm({ event, isDarkMode }: EventRegist
                           formData[field.name]
                             ? "bg-[var(--ifm-color-primary)] border-[var(--ifm-color-primary)]"
                             : fieldErrors.has(field.name)
-                              ? `${isDarkMode ? "bg-white/[0.03]" : "bg-black/[0.03]"} border-red-500/50`
-                              : isDarkMode ? "bg-white/[0.03] border-white/30 group-hover/checkbox:border-white/50" : "bg-black/[0.03] border-black/30 group-hover/checkbox:border-black/50"
+                              ? "bg-white/[0.03] border-red-500/50"
+                              : "bg-white/[0.03] border-white/30 group-hover/checkbox:border-white/50"
                         }`}>
                           {formData[field.name] && (
                             <svg className="w-3 h-3 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -517,7 +515,7 @@ export default function EventRegistrationForm({ event, isDarkMode }: EventRegist
                           )}
                         </div>
                       </div>
-                      <span className={`text-sm transition-colors ${fieldErrors.has(field.name) ? "text-red-400" : (isDarkMode ? "text-white/80 group-hover/checkbox:text-white" : "text-black/80 group-hover/checkbox:text-black")}`}>
+                      <span className={`text-sm group-hover/checkbox:text-white transition-colors ${fieldErrors.has(field.name) ? "text-red-400" : "text-white/80"}`}>
                         {getLocalizedLabel(field)}{field.required ? " *" : ""}
                       </span>
                     </label>
@@ -529,7 +527,7 @@ export default function EventRegistrationForm({ event, isDarkMode }: EventRegist
                       onChange={handleChange}
                       required={field.required}
                       placeholder={getLocalizedLabel(field) + (field.required ? " *" : "")}
-                      className={`w-full px-4 py-3.5 ${isDarkMode ? "bg-white/[0.03] border-white/10 text-white placeholder-white/50 focus:bg-white/[0.05]" : "bg-black/[0.03] border-black/10 text-gray-900 placeholder-black/50 focus:bg-black/[0.05]"} border rounded-xl outline-none focus:border-[var(--ifm-color-primary)] focus:shadow-[0_0_0_3px_rgba(0,202,165,0.15)] transition-all duration-200`}
+                      className="w-full px-4 py-3.5 bg-white/[0.03] border border-white/10 rounded-xl text-white placeholder-white/50 outline-none focus:bg-white/[0.05] focus:border-[var(--ifm-color-primary)] focus:shadow-[0_0_0_3px_rgba(0,202,165,0.15)] transition-all duration-200"
                     />
                   )}
                 </div>
@@ -562,8 +560,8 @@ export default function EventRegistrationForm({ event, isDarkMode }: EventRegist
                 disabled={isSubmitting}
                 className="group relative w-full mt-4 px-6 py-3.5 rounded-xl font-medium text-sm overflow-hidden transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 style={{
-                  background: `rgba(${primaryColorRgba}, 0.05)`,
-                  border: `1px solid rgba(${primaryColorRgba}, 0.3)`
+                  background: "rgba(0, 255, 209, 0.05)",
+                  border: "1px solid rgba(0, 255, 209, 0.3)"
                 }}
               >
                 <span className="relative z-10 text-[var(--ifm-color-primary)] group-hover:text-[var(--ifm-color-primary-lighter)] transition-colors">
@@ -581,7 +579,7 @@ export default function EventRegistrationForm({ event, isDarkMode }: EventRegist
                 </span>
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{ background: `rgba(${primaryColorRgba}, 0.08)` }}
+                  style={{ background: "rgba(0, 255, 209, 0.08)" }}
                 />
               </button>
               <p className="text-xs">By continuing, you are indicating that you accept our <a href="/docs/contact/privacy">Privacy policy</a></p>

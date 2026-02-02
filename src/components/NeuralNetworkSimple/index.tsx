@@ -8,7 +8,6 @@ import React, {
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
-import { useColorMode } from "@docusaurus/theme-common";
 
 type PerformanceTier = "high" | "low";
 
@@ -169,7 +168,6 @@ interface InstancedNetworkProps {
   connectionPairsRef: React.MutableRefObject<ConnectionPair[]>;
   color: string;
   performanceTier: PerformanceTier;
-  isDarkMode: boolean;
 }
 
 const InstancedNetwork = React.memo(function InstancedNetwork({
@@ -177,7 +175,6 @@ const InstancedNetwork = React.memo(function InstancedNetwork({
   connectionPairsRef,
   color,
   performanceTier,
-  isDarkMode,
 }: InstancedNetworkProps) {
   const meshRef = useRef<THREE.InstancedMesh>(null);
   const linesRef = useRef<THREE.LineSegments>(null);
@@ -196,17 +193,17 @@ const InstancedNetwork = React.memo(function InstancedNetwork({
         uTime: { value: 0 },
         uPulseIntensity: { value: 0.03 },
         uFresnelPower: { value: 2.5 },
-        uGlowIntensity: { value: isDarkMode ? 2.0 : 1.5 },
-        uCoreIntensity: { value: isDarkMode ? 1.2 : 1.8 },
+        uGlowIntensity: { value: 2.0 },
+        uCoreIntensity: { value: 1.2 },
       },
       vertexShader: NODE_VERTEX_SHADER,
       fragmentShader: NODE_FRAGMENT_SHADER,
       transparent: true,
-      blending: isDarkMode ? THREE.AdditiveBlending : THREE.NormalBlending,
+      blending: THREE.AdditiveBlending,
       depthWrite: false,
       toneMapped: false,
     });
-  }, [isDarkMode]);
+  }, []);
 
   const lineGeometry = useMemo(() => {
     const geo = new THREE.BufferGeometry();
@@ -233,11 +230,11 @@ const InstancedNetwork = React.memo(function InstancedNetwork({
       vertexShader: LINE_VERTEX_SHADER,
       fragmentShader: LINE_FRAGMENT_SHADER,
       transparent: true,
-      blending: isDarkMode ? THREE.AdditiveBlending : THREE.NormalBlending,
+      blending: THREE.AdditiveBlending,
       depthWrite: false,
       toneMapped: false,
     });
-  }, [color, isDarkMode]);
+  }, [color]);
 
   useEffect(() => {
     _color.set(color);
@@ -386,14 +383,12 @@ function NetworkScene({
   autoRotate = false,
   rotationSpeed = 0.15,
   performanceTier = "high",
-  isDarkMode = true,
 }: {
   color?: string;
   nodeCount?: number;
   autoRotate?: boolean;
   rotationSpeed?: number;
   performanceTier?: PerformanceTier;
-  isDarkMode?: boolean;
 }) {
   const groupRef = useRef<THREE.Group>(null);
   const nodesRef = useRef<SimpleNode[]>([]);
@@ -562,7 +557,6 @@ function NetworkScene({
           connectionPairsRef={connectionPairsRef}
           color={color}
           performanceTier={performanceTier}
-          isDarkMode={isDarkMode}
         />
       )}
     </group>
@@ -572,8 +566,8 @@ function NetworkScene({
 // ===== MAIN COMPONENT =====
 
 interface NeuralNetworkSimpleProps {
-  width?: number | string;
-  height?: number | string;
+  width?: number;
+  height?: number;
   color?: string;
   nodeCount?: number;
   className?: string;
@@ -585,15 +579,13 @@ interface NeuralNetworkSimpleProps {
 export default function NeuralNetworkSimple({
   width = 200,
   height = 200,
-  color,
+  color = "#00FFD1",
   nodeCount,
   className = "",
   autoRotate = false,
   rotationSpeed = 0.15,
   performanceTier,
 }: NeuralNetworkSimpleProps) {
-  const { colorMode } = useColorMode();
-  const isDarkMode = colorMode === "dark";
   const [detectedTier, setDetectedTier] = useState<PerformanceTier>("high");
 
   useEffect(() => {
@@ -602,19 +594,17 @@ export default function NeuralNetworkSimple({
 
   const tier = performanceTier ?? detectedTier;
   const effectiveNodeCount = nodeCount ?? NODE_COUNTS[tier];
-  const effectiveColor = color ?? (isDarkMode ? "#00FFD1" : "#00a88a");
 
   return (
     <div style={{ width, height }} className={className}>
       <Canvas camera={{ position: [0, 0, 6], fov: 50 }}>
         <OrbitControls enableZoom={false} enablePan={false} />
         <NetworkScene
-          color={effectiveColor}
+          color={color}
           nodeCount={effectiveNodeCount}
           autoRotate={autoRotate}
           rotationSpeed={rotationSpeed}
           performanceTier={tier}
-          isDarkMode={isDarkMode}
         />
       </Canvas>
     </div>

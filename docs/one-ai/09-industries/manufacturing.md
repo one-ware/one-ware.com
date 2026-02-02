@@ -41,7 +41,8 @@ By [automating most steps of AI development](/docs/one-ai/use-cases/camera-tool)
       textAlign:'center', 
       cursor:'pointer', 
       transition:'transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease', 
-      padding:'15px',
+      padding:'15px', 
+      borderRadius:'12px',
       backgroundColor:'transparent',
       ':hover': {
         transform:'translateY(-5px)', 
@@ -61,7 +62,7 @@ By [automating most steps of AI development](/docs/one-ai/use-cases/camera-tool)
       e.currentTarget.style.backgroundColor = 'transparent';
     }}
   >
-    <img src="/img/ai/one_ai_plugin/industries/QualityControlManufact.jpg" alt="Quality Control Manufacturing" style={{maxHeight:'320px', width:'100%', borderRadius:'8px'}} />
+    <img src="/img/ai/one_ai_plugin/industries/QualityControlManufact.jpg" alt="Quality Control Manufacturing" style={{maxHeight:'320px', borderRadius:'8px', width:'100%'}} />
     <h4 style={{marginTop:'10px', marginBottom:'5px'}}>Quality Control</h4>
     <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>Automated defect detection and real-time quality assessment using existing or retrofitted cameras.</p>
   </div>
@@ -72,7 +73,8 @@ By [automating most steps of AI development](/docs/one-ai/use-cases/camera-tool)
       textAlign:'center', 
       cursor:'pointer', 
       transition:'transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease', 
-      padding:'15px',
+      padding:'15px', 
+      borderRadius:'12px',
       backgroundColor:'transparent',
       ':hover': {
         transform:'translateY(-5px)', 
@@ -92,7 +94,7 @@ By [automating most steps of AI development](/docs/one-ai/use-cases/camera-tool)
       e.currentTarget.style.backgroundColor = 'transparent';
     }}
   >
-    <img src="/img/ai/one_ai_plugin/industries/Industrie.jpg" alt="Industrial Applications" style={{maxHeight:'320px', width:'100%', borderRadius:'8px'}} />
+    <img src="/img/ai/one_ai_plugin/industries/Industrie.jpg" alt="Industrial Applications" style={{maxHeight:'320px', borderRadius:'8px', width:'100%'}} />
     <h4 style={{marginTop:'10px', marginBottom:'5px'}}>Smart Manufacturing</h4>
     <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>Automation and workflow optimization for enhanced efficiency and streamlined production processes.</p>
   </div>
@@ -106,7 +108,8 @@ By [automating most steps of AI development](/docs/one-ai/use-cases/camera-tool)
       textAlign:'center', 
       cursor:'pointer', 
       transition:'transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease', 
-      padding:'15px',
+      padding:'15px', 
+      borderRadius:'12px',
       backgroundColor:'transparent',
       ':hover': {
         transform:'translateY(-5px)', 
@@ -126,7 +129,7 @@ By [automating most steps of AI development](/docs/one-ai/use-cases/camera-tool)
       e.currentTarget.style.backgroundColor = 'transparent';
     }}
   >
-    <img src="/img/ai/one_ai_plugin/industries/PredectiveMaintenance.jpg" alt="Predictive Maintenance" style={{maxHeight:'320px', width:'100%', borderRadius:'8px'}} />
+    <img src="/img/ai/one_ai_plugin/industries/PredectiveMaintenance.jpg" alt="Predictive Maintenance" style={{maxHeight:'320px', borderRadius:'8px', width:'100%'}} />
     <h4 style={{marginTop:'10px', marginBottom:'5px'}}>Predictive Maintenance</h4>
     <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>Early detection of wear and potential failures using sensor and image data.</p>
   </div>
@@ -137,7 +140,8 @@ By [automating most steps of AI development](/docs/one-ai/use-cases/camera-tool)
       textAlign:'center', 
       cursor:'pointer', 
       transition:'transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease', 
-      padding:'15px',
+      padding:'15px', 
+      borderRadius:'12px',
       backgroundColor:'transparent',
       ':hover': {
         transform:'translateY(-5px)', 
@@ -157,7 +161,7 @@ By [automating most steps of AI development](/docs/one-ai/use-cases/camera-tool)
       e.currentTarget.style.backgroundColor = 'transparent';
     }}
   >
-    <img src="/img/ai/one_ai_plugin/industries/Robotics Integration.jpg" alt="Robotics Integration" style={{maxHeight:'320px', width:'100%', borderRadius:'8px'}} />
+    <img src="/img/ai/one_ai_plugin/industries/Robotics Integration.jpg" alt="Robotics Integration" style={{maxHeight:'320px', borderRadius:'8px', width:'100%'}} />
     <h4 style={{marginTop:'10px', marginBottom:'5px'}}>Robotics Integration</h4>
     <p style={{fontSize:'14px', color:'#787878ff', margin:'0', fontWeight:'bold'}}>Intelligent robotics integration for enhanced automation and precision manufacturing.</p>
   </div>

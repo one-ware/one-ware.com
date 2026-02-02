@@ -91,10 +91,6 @@ const config: Config = {
           {
             from: '/webinar-2025-12-18',
             to: '/docs/one-ai/Webinars/webinar-2025-12-18',
-          },
-          {
-            from: '/webinar-2026-01-28',
-            to: '/docs/one-ai/Webinars/webinar-2026-01-28',
           }
         ],
       }],
@@ -146,16 +142,14 @@ const config: Config = {
     },
     colorMode: {
       defaultMode: "dark",
-      disableSwitch: false,
-      respectPrefersColorScheme: true,
+      disableSwitch: true,
     },    // Replace with your project's social card
     // For meta tags, we still use the path without require
     image: "/img/social-card.jpg",
     navbar: {
       logo: {
         alt: "ONE WARE",
-        src: "img/start/Logo_SVG-ONE-ware-dark.svg",
-        srcDark: "img/start/Logo_SVG-ONE-ware.svg",
+        src: "img/start/Logo_SVG-ONE-ware.svg",
       },
       hideOnScroll: false,
       items: [
@@ -321,7 +315,7 @@ const config: Config = {
         {
           type: "html",
           position: "right",
-          value: `<a href="https://cloud.one-ware.com/Account/Register" class="button button--primary button--md text-gray-900 font-bold navbarbutton getstartedbutton" style="display: inline-flex; align-items: center; gap: 6px;"><span class="download-button-text">Get Started</span><svg class="download-button-icon" style="display: none;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>`,
+          value: `<a href="/docs/one-ai/getting-started" class="button button--primary button--md text-gray-900 font-bold navbarbutton getstartedbutton" style="display: inline-flex; align-items: center; gap: 6px;"><span class="download-button-text">Free Download</span><svg class="download-button-icon" style="display: none;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>`,
         },
 
       ],
@@ -441,7 +435,7 @@ const config: Config = {
         cta: 'Register Now',
       },
     },
-    // activeAnnouncement: 'qualityControlWebinar',
+    activeAnnouncement: 'qualityControlWebinar',
   } satisfies Preset.ThemeConfig,
 };
 

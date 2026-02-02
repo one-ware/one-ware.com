@@ -6,10 +6,9 @@ import { useLocalizedEvent, useLocalizedDateFormat, useLocalizedPath } from "../
 
 interface EventCardProps {
   event: Event;
-  isDarkMode: boolean;
 }
 
-export default function EventCard({ event, isDarkMode }: EventCardProps) {
+export default function EventCard({ event }: EventCardProps) {
   const history = useHistory();
   const localizedEvent = useLocalizedEvent(event);
   const dateLocale = useLocalizedDateFormat();
@@ -45,7 +44,7 @@ export default function EventCard({ event, isDarkMode }: EventCardProps) {
   return (
     <div
       onClick={handleClick}
-      className={`group rounded-lg overflow-hidden transition-all duration-300 hover:-translate-y-1 cursor-pointer shadow-md ${isDarkMode ? "bg-[#252525] border-white/15" : "bg-gray-50 border-black/15"} border hover:border-[var(--ifm-color-primary)]/50`}
+      className="group rounded-lg overflow-hidden transition-all duration-300 hover:-translate-y-1 cursor-pointer bg-[#252525] border border-white/10 hover:border-[var(--ifm-color-primary)]/50"
     >
       <div className="relative aspect-[16/9] overflow-hidden bg-black/50">
         <img
@@ -63,11 +62,11 @@ export default function EventCard({ event, isDarkMode }: EventCardProps) {
           {getTypeLabel()}
         </span>
 
-        <h3 className={`text-lg md:text-xl font-semibold mb-3 mt-2 transition-colors duration-300 group-hover:text-[var(--ifm-color-primary)] min-h-[3.5rem] line-clamp-2 ${isDarkMode ? "text-white" : "text-gray-900"}`}>
+        <h3 className="text-lg md:text-xl font-semibold mb-3 mt-2 transition-colors duration-300 group-hover:text-[var(--ifm-color-primary)] min-h-[3.5rem] line-clamp-2 text-white">
           {localizedEvent.title}
         </h3>
 
-        <div className={`flex items-center gap-4 text-sm ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}>
+        <div className="flex items-center gap-4 text-sm text-gray-400">
           <div className="flex items-center gap-2">
             <svg
               className="w-4 h-4"
@@ -103,7 +102,7 @@ export default function EventCard({ event, isDarkMode }: EventCardProps) {
         </div>
 
         {cardDescription && (
-          <p className={`mt-3 text-sm line-clamp-3 min-h-[3.75rem] ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
+          <p className="mt-3 text-sm line-clamp-3 min-h-[3.75rem] text-gray-300">
             {cardDescription}
           </p>
         )}
