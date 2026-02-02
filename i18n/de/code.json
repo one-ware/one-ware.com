@@ -1910,6 +1910,69 @@
     "message": "Ergebnisse in Minuten"
   },
   "orbitindustries.resultsInMinutes.description": {
-    "message": "Von den Daten zur Bereitstellung in Minuten. Erstelle produktionsreife KI-Modelle ohne ML-Expertise."
+    "message": "Kann von jedem Entwickler bedient werden. Erhalte produktionsreife KI-Modelle in Minuten statt Monaten - keine ML-Expertise erforderlich."
+  },
+  "careers.detail.location": {
+    "message": "Standort"
+  },
+  "careers.detail.startDate": {
+    "message": "Start"
+  },
+  "careers.detail.type": {
+    "message": "Typ"
+  },
+  "careers.detail.contact": {
+    "message": "Kontakt"
+  },
+  "careers.detail.applyNow": {
+    "message": "Jetzt Bewerben"
+  },
+  "careers.form.name": {
+    "message": "Name"
+  },
+  "careers.form.email": {
+    "message": "E-Mail"
+  },
+  "careers.form.github": {
+    "message": "GitHub Benutzername"
+  },
+  "careers.form.resume.drag": {
+    "message": "Lebenslauf hier ablegen oder klicken zum Hochladen"
+  },
+  "careers.form.resume.format": {
+    "message": "Nur PDF, max. 10MB"
+  },
+  "careers.form.submit": {
+    "message": "Bewerbung absenden"
+  },
+  "careers.form.submitting": {
+    "message": "Wird gesendet..."
+  },
+  "careers.form.success.title": {
+    "message": "Bewerbung eingereicht!"
+  },
+  "careers.form.success.message": {
+    "message": "Vielen Dank für Ihre Bewerbung. Wir werden sie prüfen und uns in Kürze bei Ihnen melden."
+  },
+  "careers.form.error": {
+    "message": "Beim Absenden Ihrer Bewerbung ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns unter career@one-ware.com."
+  },
+  "careers.form.alreadyApplied": {
+    "message": "Sie haben sich bereits mit dieser E-Mail-Adresse für diese Position beworben."
+  },
+  "careers.form.error.fileType": {
+    "message": "Bitte laden Sie eine PDF-Datei hoch"
+  },
+  "careers.form.error.fileSize": {
+    "message": "Die Dateigröße muss kleiner als 10MB sein"
+  },
+  "careers.form.error.resumeRequired": {
+    "message": "Bitte laden Sie Ihren Lebenslauf hoch"
+  },
+  "careers.form.privacy": {
+    "message": "Mit dem Absenden akzeptieren Sie unsere"
+  },
+  "careers.form.privacyLink": {
+    "message": "Datenschutzrichtlinie"
   }
 }
