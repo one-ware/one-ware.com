@@ -1,9 +1,15 @@
 {
   "homehero.title1": {
-    "message": "Erstelle deine"
+    "message": "Lass ONE AI"
   },
   "homehero.title2": {
-    "message": "Maßgeschneiderte KI"
+    "message": "deine KI entwickeln"
+  },
+  "homehero.no_universal_models": {
+    "message": "Keine universellen KI-Modelle."
+  },
+  "homehero.custom_vision_ai": {
+    "message": "Vision-AI, genau für deine Anwendung."
   },
   "homehero.subtitle1": {
     "message": "Vision und Edge AI Entwicklung,"

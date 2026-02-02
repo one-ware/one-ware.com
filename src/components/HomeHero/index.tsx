@@ -252,7 +252,7 @@ export default function HomeHero() {
                     opacity: 0,
                   }}
                 >
-                  <Translate id="homehero.universal_models">No universal AI models.</Translate>
+                  <Translate id="homehero.no_universal_models">No universal AI models.</Translate>
                 </div>
                 <div
                   className="text-xl md:text-2xl font-light dark:text-gray-300 text-gray-700"
@@ -261,7 +261,7 @@ export default function HomeHero() {
                     opacity: 0,
                   }}
                 >
-                  <Translate id="homehero.universal_models">Vision AI built exactly for your application.</Translate>
+                  <Translate id="homehero.custom_vision_ai">Vision AI built exactly for your application.</Translate>
                 </div>
               </div>
               <div
