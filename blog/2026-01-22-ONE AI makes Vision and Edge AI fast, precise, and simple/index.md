@@ -13,7 +13,7 @@ tags:
     FPGA
   ]
 ---
-## ONE AI makes Edge- and Vision  AI fast, precise, and simple
+## ONE AI makes Edge- and Vision AI fast, precise, and simple
 
 AI and especially Vision AI is no longer just a trend. But it’s not only about chatbots but especially about those application-specific AI solutions that are embedded in today’s machines, products, and technology. Because even though large companies compete with ever larger AI models, anyone who wants truly precise, fast, and above all energy-efficient AI needs AI that is tailored to the specific application.
 
