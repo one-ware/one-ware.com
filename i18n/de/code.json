@@ -1846,64 +1846,67 @@
   "seminars.form.error.already_registered": {
     "message": "Sie sind bereits für dieses Event registriert."
   },
-  "chathero.title": {
-    "message": "Erstelle deine maßgeschneiderte KI"
+  "careers.detail.location": {
+    "message": "Standort"
   },
-  "chathero.subtitle": {
-    "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore."
+  "careers.detail.startDate": {
+    "message": "Start"
   },
-  "chathero.button.howitworks": {
-    "message": "So funktioniert's"
+  "careers.detail.type": {
+    "message": "Typ"
   },
-  "chathero.button.showcase": {
-    "message": "Showcase"
+  "careers.detail.contact": {
+    "message": "Kontakt"
   },
-  "signupmodal.attach.title": {
-    "message": "Anmelden um Dateien hochzuladen"
+  "careers.detail.applyNow": {
+    "message": "Jetzt Bewerben"
   },
-  "signupmodal.attach.subtitle": {
-    "message": "Unterstützung für bis zu 10 Dateien jedes Dateityps"
+  "careers.form.name": {
+    "message": "Name"
   },
-  "signupmodal.send.title": {
-    "message": "Anmelden um deine KI zu erstellen"
+  "careers.form.email": {
+    "message": "E-Mail"
   },
-  "signupmodal.send.subtitle": {
-    "message": "Starte mit deinem maßgeschneiderten KI-Modell"
+  "careers.form.github": {
+    "message": "GitHub Benutzername"
   },
-  "signupmodal.button.signin": {
-    "message": "Anmelden"
+  "careers.form.resume.drag": {
+    "message": "Lebenslauf hier ablegen oder klicken zum Hochladen"
   },
-  "signupmodal.button.cancel": {
-    "message": "Abbrechen"
+  "careers.form.resume.format": {
+    "message": "Nur PDF, max. 10MB"
   },
-    "orbitindustries.title": {
-    "message": "Explore Our Benefits"
+  "careers.form.submit": {
+    "message": "Bewerbung absenden"
   },
-  "orbitindustries.subtitle": {
-    "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  "careers.form.submitting": {
+    "message": "Wird gesendet..."
   },
-  "orbitindustries.anyHardware.label": {
-    "message": "Jede Hardware"
+  "careers.form.success.title": {
+    "message": "Bewerbung eingereicht!"
   },
-  "orbitindustries.anyHardware.description": {
-    "message": "KI für jede Hardware, egal wie wenig Ressourcen. Von Mikrocontrollern bis FPGAs - ONE AI optimiert für deine exakten Anforderungen."
+  "careers.form.success.message": {
+    "message": "Vielen Dank für Ihre Bewerbung. Wir werden sie prüfen und uns in Kürze bei Ihnen melden."
   },
-  "orbitindustries.anyRequirements.label": {
-    "message": "Jede Anforderung"
+  "careers.form.error": {
+    "message": "Beim Absenden Ihrer Bewerbung ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns unter career@one-ware.com."
   },
-  "orbitindustries.anyRequirements.description": {
-    "message": "KI egal wie schnell sie sein muss. Entwickelt für die anspruchsvollsten Echtzeitanwendungen mit garantierter Performance."
+  "careers.form.alreadyApplied": {
+    "message": "Sie haben sich bereits mit dieser E-Mail-Adresse für diese Position beworben."
   },
-  "orbitindustries.anyApplication.label": {
-    "message": "Jede Anwendung"
+  "careers.form.error.fileType": {
+    "message": "Bitte laden Sie eine PDF-Datei hoch"
   },
-  "orbitindustries.anyApplication.description": {
-    "message": "Egal wie komplex die Anwendung ist oder wie untypisch die Daten - ONE AI erstellt maßgeschneiderte neuronale Netze für deinen spezifischen Anwendungsfall."
+  "careers.form.error.fileSize": {
+    "message": "Die Dateigröße muss kleiner als 10MB sein"
   },
-  "orbitindustries.resultsInMinutes.label": {
-    "message": "Ergebnisse in Minuten"
+  "careers.form.error.resumeRequired": {
+    "message": "Bitte laden Sie Ihren Lebenslauf hoch"
   },
-  "orbitindustries.resultsInMinutes.description": {
-    "message": "Kann von jedem Entwickler bedient werden. Erhalte produktionsreife KI-Modelle in Minuten statt Monaten - keine ML-Expertise erforderlich."
+  "careers.form.privacy": {
+    "message": "Mit dem Absenden akzeptieren Sie unsere"
+  },
+  "careers.form.privacyLink": {
+    "message": "Datenschutzrichtlinie"
   }
 }
