@@ -221,7 +221,7 @@ export default function HomeHero() {
         <div className="w-full max-w-[98%] sm:max-w-[95%] flex flex-col gap-10 sm:gap-12 2xl:gap-14">
             <div className="flex flex-col 2xl:flex-row items-center gap-2 sm:gap-4 2xl:gap-12">
             <div className="w-full 2xl:w-[40%] flex flex-col justify-center space-y-4 sm:space-y-6 2xl:space-y-8 text-center 2xl:text-left py-2 sm:py-4 2xl:py-0">
-              <div className="flex flex-col gap-1 sm:gap-2">
+              <div className="flex flex-col gap-1 sm:gap-2 mb-6 sm:mb-0">
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">
                   <span
                     className="text-[var(--ifm-color-primary)] block"
@@ -265,7 +265,7 @@ export default function HomeHero() {
                 </div>
               </div>
               <div
-                className="flex flex-col sm:flex-row items-center justify-center 2xl:justify-start gap-4 sm:gap-6"
+                className="hidden sm:flex flex-col sm:flex-row items-center justify-center 2xl:justify-start gap-4 sm:gap-6"
                 style={{
                   animation: "fadeInUp 0.8s ease-out forwards",
                   animationDelay: "0.2s",
