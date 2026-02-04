@@ -78,11 +78,11 @@ const config: Config = {
         redirects: [
           {
             from: '/one-ai/getting-started',
-            to: '/docs/one-ai/getting-started',
+            to: '/docs/one-ai/getting-started/quick-start-guide',
           },
           {
             from: '/one-ai/choosing-parameters',
-            to: '/docs/one-ai/getting-started/help/choosing-parameters-guide',
+            to: '/docs/one-ai/getting-started/choosing-parameters-guide',
           },
           {
             from: '/webinar-2025-11-27',
@@ -173,7 +173,7 @@ const config: Config = {
               className: "dropdown__link--highlight",
             },
             {
-              to: "/docs/one-ai/getting-started",
+              to: "/docs/one-ai/getting-started/quick-start-guide",
               label: "Get Started",
             },
             {

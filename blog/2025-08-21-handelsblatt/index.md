@@ -49,7 +49,7 @@ Starting **September 1**, we will open **ONE AI** to all interested users and de
 Decision-makers can provide **ONE AI** directly to their developer teams.  
 Developers can **start for free from September 1**.
 
-👉 [Get Started](/docs/one-ai/getting-started)
+👉 [Get Started](/docs/one-ai/getting-started/quick-start-guide)
 
 
 ## Gratitude

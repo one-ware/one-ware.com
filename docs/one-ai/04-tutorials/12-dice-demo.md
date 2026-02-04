@@ -7,7 +7,7 @@ draft: true
 # Dice Detection Demo
 
 ## About this Demo
-This demo showcases the usage of OneWare Studio and the OneAI Extension for a demo case. If you are unfamiliar with the OneAI Extension, we recommend to first take a look at our guide [Getting Started with One AI](/docs/one-ai/getting-started). We also recommend to read the [Potato Chip Classification Demo](/docs/one-ai/tutorials/potato-chip-demo), since it goes into more detail than this demo.
+This demo showcases the usage of OneWare Studio and the OneAI Extension for a demo case. If you are unfamiliar with the OneAI Extension, we recommend to first take a look at our [Quick Start Guide](/docs/one-ai/getting-started/quick-start-guide). We also recommend to read the [Potato Chip Classification Demo](/docs/one-ai/tutorials/potato-chip-demo), since it goes into more detail than this demo.
 
 ## Dataset Overview
 The 6 Sided Dice Dataset was published by [Roboflow](https://public.roboflow.com/object-detection/dice) and contains 359 images of six-sided dice. The data set contains multiple dice of differing colors and size. 160 images contain a CATAN board underneath or near the dice - the other images feature a white table as the background. Most of the images contain only one or two dice, but there are also 13 images containing a mass grouping of dice.

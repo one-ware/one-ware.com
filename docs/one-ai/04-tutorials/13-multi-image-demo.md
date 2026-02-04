@@ -9,7 +9,7 @@ import Link from '@docusaurus/Link';
 
 ## About this Demo
 This demo showcases the usage of OneWare Studio and the OneAI Extension for a demo case where two images are compared in order to detect objects in one image given a template.
-If you are unfamiliar with the OneAI Extension, we recommend to first take a look at our guide [Getting Started with One AI](/docs/one-ai/getting-started).
+If you are unfamiliar with the OneAI Extension, we recommend to first take a look at our [Quick Start Guide](/docs/one-ai/getting-started/quick-start-guide).
 We also recommend to read the [Potato Chip Classification Demo](/docs/one-ai/tutorials/potato-chip-demo), since it goes into more detail than this demo.
 
 OneAI supports multiple images as input to a model and offers different ways to work with them. Overlap difference is one way that may be useful when images can be

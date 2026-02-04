@@ -29,7 +29,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'VHDL',
               toolchain: 'Quartus Prime',
-              docLink: '/docs/one-ai/getting-started/export/fpga',
+              docLink: '/docs/one-ai/documentation/integration/fpga-deployment',
               tutorialLink: '/docs/one-ai/tutorials/overview',
             },
           ],
@@ -60,7 +60,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'VHDL',
               toolchain: 'Vivado / Vitis',
-              docLink: '/docs/one-ai/getting-started/export/fpga',
+              docLink: '/docs/one-ai/documentation/integration/fpga-deployment',
             },
           ],
         },
@@ -78,7 +78,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'VHDL',
               toolchain: 'Lattice Diamond / Radiant',
-              docLink: '/docs/one-ai/getting-started/export/fpga',
+              docLink: '/docs/one-ai/documentation/integration/fpga-deployment',
             },
           ],
         },
@@ -96,7 +96,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'VHDL',
               toolchain: 'Libero SoC',
-              docLink: '/docs/one-ai/getting-started/export/fpga',
+              docLink: '/docs/one-ai/documentation/integration/fpga-deployment',
             },
           ],
         },
@@ -114,7 +114,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'VHDL',
               toolchain: 'Efinity IDE',
-              docLink: '/docs/one-ai/getting-started/export/fpga',
+              docLink: '/docs/one-ai/documentation/integration/fpga-deployment',
             },
           ],
         },
@@ -137,7 +137,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'VHDL',
               toolchain: 'Gowin IDE',
-              docLink: '/docs/one-ai/getting-started/export/fpga',
+              docLink: '/docs/one-ai/documentation/integration/fpga-deployment',
             },
           ],
         },
@@ -150,7 +150,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'VHDL',
               toolchain: 'Cologne Chip Toolchain',
-              docLink: '/docs/one-ai/getting-started/export/fpga',
+              docLink: '/docs/one-ai/documentation/integration/fpga-deployment',
             },
           ],
         },
@@ -173,7 +173,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'VHDL',
               description: 'Universally applicable',
-              docLink: '/docs/one-ai/getting-started/export/fpga',
+              docLink: '/docs/one-ai/documentation/integration/fpga-deployment',
             },
           ],
         },
@@ -419,7 +419,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'Use in custom software',
-              docLink: '/docs/one-ai/getting-started/export/onnx',
+              docLink: '/docs/one-ai/documentation/integration/deployment-overview',
             },
             {
               format: 'TF-Lite',
@@ -449,7 +449,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               toolchain: 'ONNX Runtime (ROCm)',
-              docLink: '/docs/one-ai/getting-started/export/onnx',
+              docLink: '/docs/one-ai/documentation/integration/deployment-overview',
             },
             {
               format: 'TF-Lite',
@@ -484,7 +484,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               toolchain: 'ONNX Runtime',
-              docLink: '/docs/one-ai/getting-started/export/onnx',
+              docLink: '/docs/one-ai/documentation/integration/deployment-overview',
             },
           ],
         },
@@ -509,7 +509,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'Use in custom software',
-              docLink: '/docs/one-ai/getting-started/export/onnx',
+              docLink: '/docs/one-ai/documentation/integration/deployment-overview',
             },
           ],
         },
@@ -533,7 +533,7 @@ export const partnerFilterData: PartnerFilterData = {
             },
             {
               format: 'ONNX',
-              docLink: '/docs/one-ai/getting-started/export/onnx',
+              docLink: '/docs/one-ai/documentation/integration/deployment-overview',
             },
             {
               format: 'C++ Projekt',
@@ -564,7 +564,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               toolchain: 'ONNX Runtime',
-              docLink: '/docs/one-ai/getting-started/export/onnx',
+              docLink: '/docs/one-ai/documentation/integration/deployment-overview',
             },
             {
               format: 'TF-Lite (quantized)',
@@ -617,7 +617,7 @@ export const partnerFilterData: PartnerFilterData = {
             },
             {
               format: 'ONNX',
-              docLink: '/docs/one-ai/getting-started/export/onnx',
+              docLink: '/docs/one-ai/documentation/integration/deployment-overview',
             },
           ],
         },
@@ -823,7 +823,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'Use in custom software',
-              docLink: '/docs/one-ai/getting-started/export/onnx',
+              docLink: '/docs/one-ai/documentation/integration/deployment-overview',
             },
             {
               format: 'C++ Projekt',
@@ -852,7 +852,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'Use in custom software',
-              docLink: '/docs/one-ai/getting-started/export/onnx',
+              docLink: '/docs/one-ai/documentation/integration/deployment-overview',
             },
             {
               format: 'C++ Projekt',
@@ -877,7 +877,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               toolchain: 'ONNX Runtime',
-              docLink: '/docs/one-ai/getting-started/export/onnx',
+              docLink: '/docs/one-ai/documentation/integration/deployment-overview',
             },
             {
               format: 'TF-Lite (quantized)',
@@ -911,7 +911,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'Use in custom software',
-              docLink: '/docs/one-ai/getting-started/export/onnx',
+              docLink: '/docs/one-ai/documentation/integration/deployment-overview',
             },
             {
               format: 'C++ Projekt',
@@ -947,7 +947,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'Use in custom software',
-              docLink: '/docs/one-ai/getting-started/export/onnx',
+              docLink: '/docs/one-ai/documentation/integration/deployment-overview',
             },
             {
               format: 'C++ Projekt',
@@ -977,7 +977,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'Use in custom software',
-              docLink: '/docs/one-ai/getting-started/export/onnx',
+              docLink: '/docs/one-ai/documentation/integration/deployment-overview',
             },
             {
               format: 'C++ Projekt',
@@ -1006,7 +1006,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'Use in custom software',
-              docLink: '/docs/one-ai/getting-started/export/onnx',
+              docLink: '/docs/one-ai/documentation/integration/deployment-overview',
             },
             {
               format: 'C++ Projekt',
@@ -1036,7 +1036,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'Use in custom software',
-              docLink: '/docs/one-ai/getting-started/export/onnx',
+              docLink: '/docs/one-ai/documentation/integration/deployment-overview',
             },
             {
               format: 'C++ Projekt',
@@ -1065,7 +1065,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               toolchain: 'TwinCAT ML',
-              docLink: '/docs/one-ai/getting-started/export/onnx',
+              docLink: '/docs/one-ai/documentation/integration/deployment-overview',
             },
             {
               format: 'C++ Projekt',
@@ -1094,7 +1094,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'Use in custom software',
-              docLink: '/docs/one-ai/getting-started/export/onnx',
+              docLink: '/docs/one-ai/documentation/integration/deployment-overview',
             },
             {
               format: 'C++ Projekt',
@@ -1123,7 +1123,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'Use in custom software',
-              docLink: '/docs/one-ai/getting-started/export/onnx',
+              docLink: '/docs/one-ai/documentation/integration/deployment-overview',
             },
             {
               format: 'C++ Projekt',
@@ -1152,7 +1152,7 @@ export const partnerFilterData: PartnerFilterData = {
             {
               format: 'ONNX',
               description: 'Use in custom software',
-              docLink: '/docs/one-ai/getting-started/export/onnx',
+              docLink: '/docs/one-ai/documentation/integration/deployment-overview',
             },
             {
               format: 'C++ Projekt',

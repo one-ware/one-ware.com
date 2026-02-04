@@ -88,7 +88,7 @@ To help you with creating your own dataset, it is now possible to import a video
 Simply select **Import Video** from the Import Button in your Dataset Tab.
 ![Video Import Tool Selection](img/import-selection.png)
 
-This wraps up some of the biggest changes from the past month — but there's much more to explore. If you've used One AI before, give it another try to see what's new. If you haven't yet, there's never been a better time to [get started](/docs/one-ai/getting-started)!
+This wraps up some of the biggest changes from the past month — but there's much more to explore. If you've used One AI before, give it another try to see what's new. If you haven't yet, there's never been a better time to [get started](/docs/one-ai/getting-started/quick-start-guide)!
 
 ## Upcoming Release: OneWare Studio 1.0
 
