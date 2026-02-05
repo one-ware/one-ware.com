@@ -1,7 +1,7 @@
 ---
 id: difference-image-demo
 title: Difference Detection Demo
-sidebar_label: Object Detection (Difference)
+sidebar_label: Reference-Based Object Detection
 ---
 import Link from '@docusaurus/Link';
 

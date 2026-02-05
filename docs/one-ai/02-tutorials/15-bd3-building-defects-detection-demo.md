@@ -1,7 +1,7 @@
 ---
 id: bd3-building-defects-detection-demo
-title: Building Defects Detection Demo
-sidebar_label: Classification (Building Defects)
+title: Building Defects Classification Demo
+sidebar_label: Building Defects Classification
 ---
 # Building Defects Detection Demo
 
