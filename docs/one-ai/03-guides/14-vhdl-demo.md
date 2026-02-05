@@ -1,6 +1,6 @@
 ---
-id: vhdl-demo
-title: VHDL Project Demo
+id: vhdl-guide
+title: VHDL Project Guide
 sidebar_label: VHDL Project
 ---
 import Link from '@docusaurus/Link';

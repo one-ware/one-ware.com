@@ -19,7 +19,7 @@ One Ware Studio supports [model exports](/docs/one-ai/documentation/export) to T
 
 Through the [hardware setting](/docs/one-ai/documentation/hardware-settings) One Ware Studio makes sure to find the best fitting model for your application. This usually leads to small and efficient models optimized for maximum performance and energy efficiency. For these models, One Ware Studio offers a dedicated VHDL export option. This generates custom hardware implementations tailored to your specific model, allowing highly parallel, low-latency inference directly in the FPGA fabric. This path is ideal for edge, real-time, or resource-constrained applications where every milliwatt and microsecond counts.
 
-For a detailed tutorial on how to obtain and use the VHDL model check out the [VHDL Demo](/docs/one-ai/tutorials/vhdl-demo). Further implementation help for integration into your FPGA project can be found in the [VHDL documentation](/docs/one-ai/documentation/integration/documentation-vhdl).
+For a detailed tutorial on how to obtain and use the VHDL model check out the [VHDL Demo](/docs/one-ai/guides/vhdl-guide). Further implementation help for integration into your FPGA project can be found in the [VHDL documentation](/docs/one-ai/documentation/integration/documentation-vhdl).
 
 ## Soft Core CPU
 

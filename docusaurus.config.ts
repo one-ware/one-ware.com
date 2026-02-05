@@ -198,7 +198,7 @@ const config: Config = {
           className: "navbar__dropdown--solutions",
           items: [
             {
-              to: "/docs/one-ai/use-cases/",
+              to: "/docs/one-ai/use-cases/overview",
               label: "Showcase",
               className: "dropdown__link--highlight",
             },
