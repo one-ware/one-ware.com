@@ -41,7 +41,7 @@ Download our **open-source IDE**, **ONE WARE Studio**, including the **ONE AI ex
 
 Or explore our hands-on tutorials to see how easy it is to create your first AI model:
 
-👉 https://one-ware.com/docs/one-ai/tutorials/
+👉 https://one-ware.com/docs/one-ai/demos/overview
 
 ## Register for Free
 

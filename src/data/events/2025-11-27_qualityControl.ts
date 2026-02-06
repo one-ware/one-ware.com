@@ -162,11 +162,11 @@ export const qualityControl_2025_11_27: Event = {
                     description_de: "Laden Sie unsere Open-Source-IDE mit der ONE AI Erweiterung herunter"
                 },
                 {
-                    title: "ONE AI Tutorials",
-                    title_de: "ONE AI Tutorials",
-                    url: "https://one-ware.com/docs/one-ai/tutorials",
-                    description: "Explore our tutorials and see how easy it is to create your first AI project",
-                    description_de: "Erkunden Sie unsere Tutorials und sehen Sie, wie einfach es ist, Ihr erstes KI-Projekt zu erstellen"
+                    title: "ONE AI Demos",
+                    title_de: "ONE AI Demos",
+                    url: "https://one-ware.com/docs/one-ai/demos/overview",
+                    description: "Explore our demos and see how easy it is to create your first AI project",
+                    description_de: "Erkunden Sie unsere Demos und sehen Sie, wie einfach es ist, Ihr erstes KI-Projekt zu erstellen"
                 }
             ]
         }

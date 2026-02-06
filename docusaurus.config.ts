@@ -78,11 +78,11 @@ const config: Config = {
         redirects: [
           {
             from: '/one-ai/getting-started',
-            to: '/docs/one-ai/getting-started',
+            to: '/docs/one-ai/getting-started/quick-start-guide',
           },
           {
             from: '/one-ai/choosing-parameters',
-            to: '/docs/one-ai/getting-started/help/choosing-parameters-guide',
+            to: '/docs/one-ai/getting-started/choosing-parameters-guide',
           },
           {
             from: '/webinar-2025-11-27',
@@ -173,11 +173,11 @@ const config: Config = {
               className: "dropdown__link--highlight",
             },
             {
-              to: "/docs/one-ai/getting-started",
+              to: "/docs/one-ai/getting-started/quick-start-guide",
               label: "Get Started",
             },
             {
-              to: "/docs/one-ai/tutorials",
+              to: "/docs/one-ai/demos/overview",
               label: "Demo Projects",
             },
             {
@@ -198,7 +198,7 @@ const config: Config = {
           className: "navbar__dropdown--solutions",
           items: [
             {
-              to: "/docs/one-ai/use-cases/",
+              to: "/docs/one-ai/use-cases/overview",
               label: "Showcase",
               className: "dropdown__link--highlight",
             },
@@ -227,11 +227,11 @@ const config: Config = {
           className: "navbar__dropdown--developers",
           items: [
             {
-              to: "/docs/one-ai/getting-started/full-documentation",
+              to: "/docs/one-ai/documentation/overview",
               label: "Documentation",
             },
             {
-              to: "/docs/one-ai/tutorials",
+              to: "/docs/one-ai/demos/overview",
               label: "Example Projects",
             },
             // {
