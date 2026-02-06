@@ -112,7 +112,7 @@ We don't want to prioritize precision nor recall, so we choose the balance with 
 Next, we can specify the performance requirements of the model. We set the **Minimum FPS** to **10**.
 
 
-Further, we know how the dataset was created, so we know that the context around the objects is not important for detecting the object itself. Therefore, we set the **Surrounding Size Mode** to **Relative To Object** and the **Estimated Surrounding Min Size** to **150%** and **Estimated Surrounding Max Size** to **200%**. With these settings, we only set a small necessary surrounding size, since rotation and scaling of the objects may increase the required context.
+Further, we know how the dataset was created, so we know that only the object itself is important for detection, not the surrounding context. Therefore, we set the **Surrounding Size Mode** to **Relative To Object** and the **Estimated Surrounding Min Size** to **100%** and **Estimated Surrounding Max Size** to **100%**. With these settings, we focus on the object without including unnecessary surrounding context, as only the object needs to be analyzed.
 
 Next, we need to estimate the difference within the same class.
 This means here: "How different are the birds (or drones) compared to each other?" In this case, we have for each category one bright-colored and one dark-colored
@@ -123,7 +123,7 @@ In full resolution, the city buildings and changing sky colors create a highly v
 perspective, the effective background variance is reduced. The lower resolution simplifies some of the fine details while still preserving 
 enough information for object detection.
 Therefore, we choose a **Background Difference** of **70%**. Though at first glance the task may seem easy, especially the detection and correct classification of the small objects in front
-of detailed buildings can be very challenging. So we can say the task is placed somewhere between a moderate and a high complexity, and we set the **Detect Simplicity** to **70%**.
+of detailed buildings can be very challenging. So we can say the task is placed somewhere between a moderate and a high complexity, and we set the **Detect Complexity** to **70%**.
 
 In this case, we do not need to create different groups since the drones and birds are very similar in size, color and appearance. So we can leave both labels in the Default
 Group 1.
