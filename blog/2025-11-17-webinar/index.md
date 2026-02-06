@@ -37,11 +37,11 @@ During the session, you'll discover how to:
 Want to get a head start?  
 Download our **open-source IDE**, **ONE WARE Studio**, including the **ONE AI extension**, and prepare your own Vision AI model before the webinar:
 
-👉 https://one-ware.com/docs/studio/setup/
+👉 https://one-ware.com/docs/get-started/installation/
 
 Or explore our hands-on tutorials to see how easy it is to create your first AI model:
 
-👉 https://one-ware.com/docs/one-ai/demos/overview
+👉 https://one-ware.com/docs/tutorials/overview
 
 ## Register for Free
 

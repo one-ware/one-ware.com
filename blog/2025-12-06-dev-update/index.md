@@ -19,7 +19,7 @@ Greetings and welcome to the first of many upcoming dev updates, where I show so
   <source src={require('./img/drive.webm').default} type="video/webm" />
 </video>
 
-**This demo was trained using just 25 frames from a [video](https://www.pexels.com/video/aerial-shot-of-the-road-in-the-middle-of-the-forest-during-winter-6640865/), extracted with our [camera tool](/docs/one-ai/documentation/camera-tool/).**
+**This demo was trained using just 25 frames from a [video](https://www.pexels.com/video/aerial-shot-of-the-road-in-the-middle-of-the-forest-during-winter-6640865/), extracted with our [camera tool](/docs/reference/camera-tool).**
 
 <!-- truncate -->
 

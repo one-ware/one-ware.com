@@ -162,14 +162,14 @@ function HomepageHeader() {
               <div className="flex-col md:space-x-5 mb-10">
                 <Link
                   className="mt-5 button button--primary button--lg hidden md:inline-block text-sm md:text-lg"
-                  href="/docs/studio/setup"
+                  href="/docs/get-started/installation"
                 >
                   Download
                 </Link>
 
                 <Link
                   className="mt-5 button button--primary button--outline button--lg"
-                  href="/docs/studio/setup"
+                  href="/docs/get-started/installation"
                 >
                   <Translate id="studio.homepage.hero.getStarted">
                     Get Started
@@ -233,7 +233,7 @@ function DownloadSection() {
             </Translate>
           </p>
           <div className="grid grid-cols-2 md:flex gap-5 md:flex-wrap justify-center">
-            <a href="/docs/studio/setup?current-os=windows" className="md:contents">
+            <a href="/docs/get-started/installation?current-os=windows" className="md:contents">
               <div className="flex-col w-full md:w-48 h-32 md:h-auto p-4 md:p-6 border rounded-lg shadow opacity-90 text-center dark:bg-black dark:bg-opacity-50 bg-white bg-opacity-50 md:backdrop-blur-sm cursor-pointer md:cursor-default hover:opacity-100 transition-opacity flex justify-center items-center">
                 <div className="flex flex-col items-center justify-center h-full">
                   <FaWindows size={40} className="md:w-[50px] md:h-[50px]" />
@@ -243,7 +243,7 @@ function DownloadSection() {
                     </Translate>
                   </h5>
                 </div>
-                <a href="/docs/studio/setup?current-os=windows" className="hidden md:inline-block">
+                <a href="/docs/get-started/installation?current-os=windows" className="hidden md:inline-block">
                   <button className="mt-2 button button--primary">
                     <Translate id="studio.download.button">Download</Translate>
                   </button>
@@ -251,7 +251,7 @@ function DownloadSection() {
               </div>
             </a>
 
-            <a href="/docs/studio/setup?current-os=macos" className="md:contents">
+            <a href="/docs/get-started/installation?current-os=macos" className="md:contents">
               <div className="flex-col w-full md:w-48 h-32 md:h-auto p-4 md:p-6 border rounded-lg shadow opacity-90 text-center dark:bg-black dark:bg-opacity-50 bg-white bg-opacity-50 md:backdrop-blur-sm cursor-pointer md:cursor-default hover:opacity-100 transition-opacity flex justify-center items-center">
                 <div className="flex flex-col items-center justify-center h-full">
                   <SiApple size={40} className="md:w-[50px] md:h-[50px]" />
@@ -259,7 +259,7 @@ function DownloadSection() {
                     MacOS 12.0+
                   </h5>
                 </div>
-                <a href="/docs/studio/setup?current-os=macos" className="hidden md:inline-block">
+                <a href="/docs/get-started/installation?current-os=macos" className="hidden md:inline-block">
                   <button className="mt-2 button button--primary">
                     Download
                   </button>

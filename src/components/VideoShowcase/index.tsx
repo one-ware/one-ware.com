@@ -31,7 +31,7 @@ const defaultDemos: ShowcaseItem[] = [
     video: "/img/demos/drone.webm",
     image: "/img/demos/compare.jpg",
     architecture: "/img/demos/architecture/architecture_drones.png",
-    link: "/docs/one-ai/use-cases/difference-detection",
+    link: "/docs/use-cases/difference-detection",
     metrics: {
       left: { value: 10, unit: " x", label: "Less Errors vs YOLOv8" },
       center: { value: "Balanced" as const, label: "AI Model" },
@@ -42,7 +42,7 @@ const defaultDemos: ShowcaseItem[] = [
     title: "Image Comparison AI",
     image: "/img/ai/one_ai_plugin/use_cases/pcb/pcb.png",
     architecture: "/img/demos/architecture/architecture_pcb.png",
-    link: "/docs/one-ai/use-cases/pcb",
+    link: "/docs/use-cases/pcb",
     metrics: {
       left: { value: 6.4, unit: " x", label: "Less Errors vs Image Processing" },
       center: { value: "Advanced" as const, label: "AI Model" },
@@ -53,7 +53,7 @@ const defaultDemos: ShowcaseItem[] = [
     title: "AI with Small Dataset",
     video: "/img/demos/cup.webm",
     image: "/img/ai/one_ai_plugin/demos/tea_cup_print/demo.png",
-    link: "/docs/one-ai/demos/teacup-print-detection",
+    link: "/docs/tutorials/teacup-print-detection",
     metrics: {
       left: { value: 100, unit: " %", label: "Accuracy"},
       center: { value: "Efficient" as const, label: "AI Model" },
@@ -74,7 +74,7 @@ const defaultDemos: ShowcaseItem[] = [
   {
     title: "All-in-ONE Quality Control",
     image: "/img/ai/one_ai_plugin/use_cases/capture/preview.png",
-    link: "/docs/one-ai/use-cases/camera-tool",
+    link: "/docs/use-cases/camera-tool",
     metrics: {
       left: { value: 1, unit: "-Click", label: "Deployment", startValue: 50 },
       center: { value: "Any" as const, label: "AI Model" },

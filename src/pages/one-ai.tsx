@@ -115,14 +115,14 @@ function HomepageHeader() {
               <div className="flex flex-col md:flex-row justify-center items-center space-y-3 md:space-y-0 md:space-x-5 mb-10">
                 <Link
                   className="button button--primary button--outline button--lg text-sm md:text-lg"
-                  href="/docs/one-ai/demos/overview"
+                  href="/docs/tutorials/overview"
                 >
                   <Translate id="oneai.hero.examples">Example Projects</Translate>
                 </Link>
 
                 <Link
                   className="button button--primary button--lg text-sm md:text-lg"
-                  href="/docs/one-ai/getting-started/quick-start-guide"
+                  href="/docs/get-started/first-project"
                 >
                   <Translate id="homepage.subtitle.ai.getstarted">Start Now for Free</Translate>
                 </Link>
@@ -156,7 +156,7 @@ function ComparisonSection() {
         { value: "20×", label: "Lower Power", labelId: "homepage.metric.power" },
         { value: "6×", label: "Lower Cost", labelId: "homepage.metric.cost" },
       ],
-      whitepaper: "/docs/one-ai/documentation/integration/fpga-deployment",
+      whitepaper: "/docs/guides/deployment/fpga-deployment",
       linkText: "More Details",
       linkTextId: "oneai.usecase.link"
     },
@@ -173,7 +173,7 @@ function ComparisonSection() {
         { value: "1-Click", label: "Deployment", labelId: "oneai.metric.deployment" },
         { value: "< 1 Day", label: "Development Time", labelId: "oneai.metric.devtime" },
       ],
-      whitepaper: "/docs/one-ai/documentation/camera-tool",
+      whitepaper: "/docs/reference/camera-tool",
       linkText: "More Details",
       linkTextId: "oneai.usecase.link"
     },
@@ -191,7 +191,7 @@ function ComparisonSection() {
         { value: "8×", label: "Smaller Model", labelId: "homepage.metric.modelsize" },
         { value: "10×", label: "Fewer Errors", labelId: "homepage.metric.fewererrors" },
       ],
-      whitepaper: "/docs/one-ai/documentation/integration/deployment-overview",
+      whitepaper: "/docs/guides/deployment/deployment-overview",
       linkText: "More Details",
       linkTextId: "oneai.usecase.link"
     },
@@ -208,7 +208,7 @@ function ComparisonSection() {
         { value: "98.4", label: "F1 Score", labelId: "oneai.metric.f1score" },
         { value: "750 %", label: "Speed Increase", labelId: "oneai.metric.speed" },
       ],
-      whitepaper: "/docs/one-ai/documentation/export",
+      whitepaper: "/docs/reference/export",
       linkText: "More Details",
       linkTextId: "oneai.usecase.link"
     }
@@ -350,7 +350,7 @@ function GetStarted() {
           <div className="space-y-4 dark:text-gray-300 text-gray-700 text-lg md:text-xl mb-8">
             <div>
               <span className="font-medium">1.</span>{" "}
-              <a href="/docs/one-ai/quick-start-guide#free-download" target="_blank" className="underline hover:no-underline primary-text">
+              <a href="/docs/get-started/first-project#free-download" target="_blank" className="underline hover:no-underline primary-text">
                 <Translate id="oneai.getstarted.step2.download">
                   Download
                 </Translate>
@@ -380,7 +380,7 @@ function GetStarted() {
 
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
             <Link
-              to="/docs/one-ai/getting-started/quick-start-guide"
+              to="/docs/get-started/first-project"
               className="button button--primary button--lg"
             >
               <Translate id="oneai.getstarted.cta.tutorial">Quick Start Guide</Translate>
@@ -765,7 +765,7 @@ function InventionSection() {
 
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
-                  to="/docs/one-ai/demos/overview"
+                  to="/docs/tutorials/overview"
                   className="inline-block bg-black text-white px-8 py-3 text-sm font-medium uppercase tracking-wider hover:bg-gray-800 transition-colors text-center no-underline hover:no-underline"
                   style={{ borderRadius: 6 }}
                 >
@@ -775,7 +775,7 @@ function InventionSection() {
                 </Link>
 
                 <Link
-                  to="/docs/one-ai/getting-started/quick-start-guide"
+                  to="/docs/get-started/first-project"
                   className="inline-block bg-transparent border-2 border-black text-black px-8 py-3 text-sm font-medium uppercase tracking-wider hover:bg-black hover:text-white transition-colors text-center no-underline hover:no-underline"
                   style={{ borderRadius: 6 }}
                 >
