@@ -10,7 +10,7 @@ import LiteYouTubeEmbed from '@site/src/components/LiteYouTubeEmbed';
 
 ## About this demo 
 
-This demo shows you how to build a simple object detection model, just by taking some photos of an object with a highly varying background. If you are unfamiliar with the OneAI Extension, we recommend to first take a look at our [Quick Start Guide](/docs/one-ai/getting-started/quick-start-guide). In this guide you will learn how to handle such **small and highly variable datasets** and how to properly use **pre-filtering and augmentation** to find a model that solves this problem quite well. 
+This demo shows you how to build a simple object detection model, just by taking some photos of an object with a highly varying background. If you are unfamiliar with the OneAI Extension, we recommend to first take a look at our [Quick Start Guide](/docs/get-started/first-project). In this guide you will learn how to handle such **small and highly variable datasets** and how to properly use **pre-filtering and augmentation** to find a model that solves this problem quite well. 
 
 This demo was also part of an online webinar, which was later uploaded to YouTube. You can watch it [here](https://www.youtube.com/watch?v=vN1ZBED_aDU).
 
@@ -63,7 +63,7 @@ Now we have to annotate the data. To do this, click on the icon in the bottom ri
 ## Filters and Augmentations
 Since the dataset is very small, we aim to both reduce the image information to its most essential features through prefiltering and to increase variation through augmentation to enrich the training data. 
 
-To keep it short, we just point out the values we used for the following settings with a brief explanation of why we chose these values. For further details about the augmentations or prefilters, please refer to the [documantation](/docs/one-ai/documentation/filters-and-augmentations) or previous tutorials. 
+To keep it short, we just point out the values we used for the following settings with a brief explanation of why we chose these values. For further details about the augmentations or prefilters, please refer to the [documantation](/docs/reference/filters-and-augmentations) or previous tutorials. 
 
 ### Prefilters
 As you can see in the **Resize** filter, the images are relatively large for the requirements of this task, even after being scaled down to 720 x 960. Since the high resolution is not necessary here, keeping the initial size would make the task more complex for the model, because it would need to analyze a large area to detect the print. To address this, we set the **Resolution** in the **Resize** filter to **25%** of the original.  
@@ -122,7 +122,7 @@ This opens the browser, where you can log in to your OneWare Cloud account and v
 </div>
 
 ## Model export
-[🔗 model export guide](/docs/one-ai/documentation/export)  
+[🔗 model export guide](/docs/reference/export)  
 To make the model available for different tasks, you can export and download it. Click on **Export** to open the export configuration menu. 
 
 ![model_export](/img/ai/one_ai_plugin/demos/tea_cup_print/export_detector.jpg)

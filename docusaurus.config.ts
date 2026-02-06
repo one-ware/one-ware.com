@@ -76,26 +76,174 @@ const config: Config = {
     ['@docusaurus/plugin-client-redirects',
       {
         redirects: [
+          // Old getting started redirects
           {
             from: '/one-ai/getting-started',
-            to: '/docs/one-ai/getting-started/quick-start-guide',
+            to: '/docs/get-started/first-project',
+          },
+          {
+            from: '/docs/one-ai/getting-started/quick-start-guide',
+            to: '/docs/get-started/first-project',
+          },
+          {
+            from: '/docs/one-ai/getting-started/installation',
+            to: '/docs/get-started/installation',
+          },
+          {
+            from: '/docs/one-ai/getting-started/training-tips',
+            to: '/docs/get-started/basic-training-tips',
+          },
+          {
+            from: '/docs/one-ai/getting-started/choosing-parameters-guide',
+            to: '/docs/guides/model-optimization/choosing-parameters-guide',
           },
           {
             from: '/one-ai/choosing-parameters',
-            to: '/docs/one-ai/getting-started/choosing-parameters-guide',
+            to: '/docs/guides/model-optimization/choosing-parameters-guide',
           },
           {
+            from: '/docs/one-ai/getting-started/problems-and-solutions',
+            to: '/docs/guides/testing-evaluation/problems-and-solutions-guide',
+          },
+          // Studio setup redirect
+          {
+            from: '/docs/studio/setup',
+            to: '/docs/get-started/installation',
+          },
+          // Demo redirects to tutorials
+          {
+            from: '/docs/one-ai/demos/overview',
+            to: '/docs/tutorials/overview',
+          },
+          {
+            from: '/docs/one-ai/demos/potato-chip-demo',
+            to: '/docs/tutorials/potato-chip-demo',
+          },
+          {
+            from: '/docs/one-ai/demos/handwritten-digits-demo',
+            to: '/docs/tutorials/handwritten-digits-demo',
+          },
+          {
+            from: '/docs/one-ai/demos/teacup-print-detection',
+            to: '/docs/tutorials/teacup-print-detection',
+          },
+          {
+            from: '/docs/one-ai/demos/multi-image-demo',
+            to: '/docs/tutorials/difference-image-demo',
+          },
+          {
+            from: '/docs/one-ai/demos/difference-image-demo',
+            to: '/docs/tutorials/difference-image-demo',
+          },
+          // Documentation redirects to reference
+          {
+            from: '/docs/one-ai/documentation/overview',
+            to: '/docs/reference/overview',
+          },
+          {
+            from: '/docs/one-ai/documentation/dataset',
+            to: '/docs/reference/dataset',
+          },
+          {
+            from: '/docs/one-ai/documentation/camera-tool',
+            to: '/docs/reference/camera-tool',
+          },
+          {
+            from: '/docs/one-ai/documentation/hardware-settings',
+            to: '/docs/reference/hardware-settings',
+          },
+          {
+            from: '/docs/one-ai/documentation/filters-and-augmentations',
+            to: '/docs/reference/filters-and-augmentations',
+          },
+          {
+            from: '/docs/one-ai/documentation/model-settings',
+            to: '/docs/reference/model-settings',
+          },
+          {
+            from: '/docs/one-ai/documentation/training',
+            to: '/docs/reference/training',
+          },
+          {
+            from: '/docs/one-ai/documentation/export',
+            to: '/docs/reference/export',
+          },
+          // Use cases redirects
+          {
+            from: '/docs/one-ai/use-cases/overview',
+            to: '/docs/use-cases/overview',
+          },
+          // Industries redirects
+          {
+            from: '/docs/one-ai/industries/manufacturing',
+            to: '/docs/use-cases/industries/manufacturing',
+          },
+          {
+            from: '/docs/one-ai/industries/healthcare',
+            to: '/docs/use-cases/industries/healthcare',
+          },
+          {
+            from: '/docs/one-ai/industries/food-beverage',
+            to: '/docs/use-cases/industries/food-beverage',
+          },
+          {
+            from: '/docs/one-ai/industries/foodbeverage',
+            to: '/docs/use-cases/industries/food-beverage',
+          },
+          {
+            from: '/docs/one-ai/industries/agriculture',
+            to: '/docs/use-cases/industries/agriculture',
+          },
+          // Resources redirects
+          {
+            from: '/docs/one-ai/pricing',
+            to: '/docs/resources/pricing',
+          },
+          {
+            from: '/docs/one-ai/services',
+            to: '/docs/resources/services',
+          },
+          {
+            from: '/docs/one-ai/partners',
+            to: '/docs/resources/partners',
+          },
+          {
+            from: '/docs/one-ai/vendors',
+            to: '/docs/resources/supported-vendors',
+          },
+          {
+            from: '/docs/one-ai/supported-vendors',
+            to: '/docs/resources/supported-vendors',
+          },
+          {
+            from: '/docs/one-ai/open-source-program',
+            to: '/docs/resources/open-source-program',
+          },
+          // Webinar redirects
+          {
             from: '/webinar-2025-11-27',
-            to: '/docs/one-ai/Webinars/webinar-2025-11-27',
+            to: '/docs/resources/webinars/webinar-2025-11-27',
           },
           {
             from: '/webinar-2025-12-18',
-            to: '/docs/one-ai/Webinars/webinar-2025-12-18',
+            to: '/docs/resources/webinars/webinar-2025-12-18',
           },
           {
             from: '/webinar-2026-01-28',
-            to: '/docs/one-ai/Webinars/webinar-2026-01-28',
-          }
+            to: '/docs/resources/webinars/webinar-2026-01-28',
+          },
+          {
+            from: '/docs/one-ai/Webinars/webinar-2025-11-27',
+            to: '/docs/resources/webinars/webinar-2025-11-27',
+          },
+          {
+            from: '/docs/one-ai/Webinars/webinar-2025-12-18',
+            to: '/docs/resources/webinars/webinar-2025-12-18',
+          },
+          {
+            from: '/docs/one-ai/Webinars/webinar-2026-01-28',
+            to: '/docs/resources/webinars/webinar-2026-01-28',
+          },
         ],
       }],
   ],
@@ -164,7 +312,7 @@ const config: Config = {
           position: "left",
           label: "Products",
           to: "/one-ai",
-          activeBaseRegex: "(^.*/one-ai$)|(^.*/docs/one-ai/.*$)",
+          activeBaseRegex: "(^.*/one-ai$)|(^.*/docs/(get-started|tutorials|guides|reference|use-cases|resources)/.*$)",
           className: "navbar__dropdown--products",
           items: [
             {
@@ -173,15 +321,15 @@ const config: Config = {
               className: "dropdown__link--highlight",
             },
             {
-              to: "/docs/one-ai/getting-started/quick-start-guide",
+              to: "/docs/get-started/installation",
               label: "Get Started",
             },
             {
-              to: "/docs/one-ai/demos/overview",
+              to: "/docs/tutorials/overview",
               label: "Demo Projects",
             },
             {
-              to: "/docs/one-ai/supported-vendors",
+              to: "/docs/resources/supported-vendors",
               label: "Supported Hardware",
             },
             {
@@ -198,24 +346,24 @@ const config: Config = {
           className: "navbar__dropdown--solutions",
           items: [
             {
-              to: "/docs/one-ai/use-cases/overview",
+              to: "/docs/use-cases/overview",
               label: "Showcase",
               className: "dropdown__link--highlight",
             },
             {
-              to: "/docs/one-ai/industries/manufacturing",
+              to: "/docs/use-cases/industries/manufacturing",
               label: "Manufacturing",
             },
             {
-              to: "/docs/one-ai/industries/healthcare",
+              to: "/docs/use-cases/industries/healthcare",
               label: "Healthcare",
             },
             {
-              to: "/docs/one-ai/industries/food-beverage",
+              to: "/docs/use-cases/industries/food-beverage",
               label: "Food & Beverage",
             },
             {
-              to: "/docs/one-ai/industries/agriculture",
+              to: "/docs/use-cases/industries/agriculture",
               label: "Agriculture",
             },
           ],
@@ -227,19 +375,15 @@ const config: Config = {
           className: "navbar__dropdown--developers",
           items: [
             {
-              to: "/docs/one-ai/documentation/overview",
+              to: "/docs/reference/overview",
               label: "Documentation",
             },
             {
-              to: "/docs/one-ai/demos/overview",
+              to: "/docs/tutorials/overview",
               label: "Example Projects",
             },
-            // {
-            //   to: "/docs/one-ai/getting-started/help/questions-and-answers",
-            //   label: "Questions & Answers",
-            // },
             {
-              to: "/docs/one-ai/supported-vendors",
+              to: "/docs/resources/supported-vendors",
               label: "Supported Hardware",
             },
             {
@@ -262,15 +406,15 @@ const config: Config = {
           label: "Pricing",
           items: [
             {
-              to: "docs/one-ai/pricing",
+              to: "docs/resources/pricing",
               label: "Pricing",
             },
             {
-              to: "docs/one-ai/services",
+              to: "docs/resources/services",
               label: "Services",
             },
             {
-              to: "docs/one-ai/open-source-program",
+              to: "docs/resources/open-source-program",
               label: "Open Source Program",
             },
           ],
@@ -298,7 +442,7 @@ const config: Config = {
               label: "Events",
             },
             {
-              to: "/docs/one-ai/partners",
+              to: "/docs/resources/partners",
               label: "Partners",
             },
             
@@ -333,8 +477,8 @@ const config: Config = {
           title: "Docs",
           items: [
             {
-              label: "ONE WARE Studio Setup",
-              to: "/docs/studio/setup",
+              label: "Get Started",
+              to: "/docs/get-started/installation",
             },
           ],
         },

@@ -1,0 +1,133 @@
+---
+id: installation
+title: Installation
+sidebar_label: Installation
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import DownloadButton from '@site/src/components/DownloadButton';
+import Link from '@docusaurus/Link';
+
+## Install ONE WARE Studio
+
+ONE WARE Studio is an open-source IDE that provides the platform for ONE AI. Download and install the software for your operating system.
+
+<Tabs
+  groupId="operating-systems"
+  queryString="current-os">
+  <TabItem value="windows" label='Windows'>
+
+| Architecture | Download |
+|---|---|
+| x64 |<DownloadButton os="windows" />|
+| arm64 | **Coming Soon** |
+
+Or install using winget:
+```
+winget install OneWare.OneWareStudio
+```
+
+  </TabItem>
+  <TabItem value="linux" label='Linux'>
+
+#### Using Snap (Recommended)
+
+ONE WARE Studio is officially distributed as a Snap package in the Snap Store:
+
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/oneware)
+
+You can install it by running:
+
+```
+sudo snap install --classic oneware
+```
+
+**Note:** If snap isn't available in your Linux distribution, please check the following [Installing Snapd guide](https://snapcraft.io/docs/installing-snapd), which can help you get that set up.
+
+#### Using Flatpak
+
+Another possibility is the use of our flatpak:
+
+[![Get it from Flathub](https://flathub.org/api/badge?locale=en)](https://flathub.org/apps/com.one_ware.OneWare)
+
+You can install it by running:
+
+```
+flatpak install flathub com.one_ware.OneWare
+```
+
+#### Manual Installation
+
+If you can't install snap or flatpak on your machine, it is possible to download the binaries manually from [GitHub](https://github.com/one-ware/OneWare/releases) (select the .tgz version for universal linux support). Please note that as of now these binaries have no update functionality, so make sure to check for updates regularly.
+
+  </TabItem>
+  <TabItem value="macos" label='MacOS'>
+
+| Architecture | Download |
+|---|---|
+| x64 (Intel) |<DownloadButton os="mac-intel" />|
+| arm64 (Apple Silicon) |<DownloadButton os="mac-arm" />|
+
+  </TabItem>
+</Tabs>
+
+Simply follow the installer and start ONE WARE Studio after you've finished the installation process.
+
+## Install the ONE AI Extension
+
+When you open ONE WARE Studio for the first time, you are greeted with a welcome screen where you can install the ONE AI Extension by clicking on ``Install now``.
+
+![OneWare Studio greeting](/img/ai/one_ai_plugin/getting_started/installation/OneWare_Studio_greeting.png)
+
+### Adding hardware support
+
+If you want to create an AI model for specific hardware, ONE AI needs to know the technical details to optimize the model for available resources. You can [define hardware resources yourself](/docs/reference/hardware-settings), but we also offer existing configurations for a growing list of hardware.
+
+You can install additional hardware configurations in the ``Extension Manager`` (``Extras`` > ``Extensions`` > ``Hardware`` > ``OneAI Support``).
+
+![hardware extensions](/img/ai/one_ai_plugin/getting_started/installation/hardware_extensions.png)
+
+If there isn't an extension for your hardware, contact us at info@one-ware.com.
+
+## Create Cloud Account
+
+Create a free account at [cloud.one-ware.com](https://cloud.one-ware.com/Account/Register) to access our cloud infrastructure for AI model training.
+
+[![Sign Up](/img/ai/one_ai_plugin/getting_started/installation/signup.webp)](https://cloud.one-ware.com/Account/Register)
+
+## Get Free Credits
+
+After creating your account, enter your address to receive a sign-up bonus of **25,000 credits worth €500** for free. The address is needed for trade restriction checks and company verification. Verification takes up to one business day, but you can continue with the next steps.
+
+You can access the address form from your home page or account settings (``Change Address``).
+
+![Address Verification 1](/img/ai/one_ai_plugin/getting_started/installation/address_verification_1.webp)
+
+## Connect to Cloud
+
+The final step is connecting ONE WARE Studio to the cloud. Click the ``Account`` button on the top right, then ``Login``.
+
+![Connect](/img/ai/one_ai_plugin/getting_started/installation/connect_to_cloud.webp)
+
+Enter your email and password to log in.
+
+![Login](/img/ai/one_ai_plugin/getting_started/installation/login.webp)
+
+After logging in, you should see your account is now connected in ONE WARE Studio.
+
+![Login Success](/img/ai/one_ai_plugin/getting_started/installation/login_success.webp)
+
+## Data Privacy
+
+ONE AI consists of a cloud service and a desktop extension. Your data is stored locally on your PC until you press the ``Sync`` button in the ``Training`` tab. When you're ready, data is sent to OneWare Cloud and your model is trained on our servers in Germany.
+
+If you work with sensitive data, contact us at sales@one-ware.com for a local training service that runs on your own hardware and ensures data doesn't leave your company.
+
+## Next Steps
+
+You're all set! Continue to [your first project](/docs/get-started/first-project) to train your first AI model.
+
+import SupportBanner from '@site/src/components/SupportBanner';
+
+<SupportBanner subject="Installation Support" />

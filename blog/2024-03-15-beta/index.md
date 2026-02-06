@@ -12,7 +12,7 @@ tags:
 
 ## Preview Release
 
-A Preview for ONE WARE Studio is released and can be [tested](/docs/studio/setup) for Windows, MacOS and Linux as of now. 
+A Preview for ONE WARE Studio is released and can be [tested](/docs/get-started/installation) for Windows, MacOS and Linux as of now. 
 ONE WARE Studio is all about extensibility and its features will be gradually extended over time.
 
 Feel free to provide feedback to us at [GitHub](https://github.com/one-ware/OneWare) or at <a href="mailto:info@one-ware.com">info@one-ware.com</a>

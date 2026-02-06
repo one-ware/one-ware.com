@@ -15,7 +15,7 @@ import SupportBanner from '@site/src/components/SupportBanner';
 
 ### Classification
 **Potato Chips**  
-This is the [dataset](https://www.kaggle.com/datasets/concaption/pepsico-lab-potato-quality-control) we used in our [Potato Chip Classification Demo](/docs/one-ai/demos/potato-chip-demo). It contains images of good and burned potato chips that need to be classified for doing quality control. The burn marks can have different sizes and it's possible that the same chip has multiple burn marks.
+This is the [dataset](https://www.kaggle.com/datasets/concaption/pepsico-lab-potato-quality-control) we used in our [Potato Chip Classification Demo](/docs/tutorials/potato-chip-demo). It contains images of good and burned potato chips that need to be classified for doing quality control. The burn marks can have different sizes and it's possible that the same chip has multiple burn marks.
 
 <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
     <img src="/img/ai/one_ai_plugin/choosing_parameters/chips_subtle.jpg" alt="chips_example_01" style={{ width: '25%' }} />
@@ -24,7 +24,7 @@ This is the [dataset](https://www.kaggle.com/datasets/concaption/pepsico-lab-pot
 </div><br/>
 
 **Handwritten Digits**  
-The [NIST Special Database 19](https://www.nist.gov/srd/nist-special-database-19), which we used in our [Handwritten Digit Classification Demo](/docs/one-ai/demos/handwritten-digits-demo), contains images of handwritten numbers. The goal of this demo is to classify the number that is visible in the image.
+The [NIST Special Database 19](https://www.nist.gov/srd/nist-special-database-19), which we used in our [Handwritten Digit Classification Demo](/docs/tutorials/handwritten-digits-demo), contains images of handwritten numbers. The goal of this demo is to classify the number that is visible in the image.
 
 <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
     <img src="/img/ai/one_ai_plugin/choosing_parameters/nist_small.png" alt="nist_example_01" style={{ width: '25%' }} />

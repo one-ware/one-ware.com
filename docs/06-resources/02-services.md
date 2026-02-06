@@ -52,7 +52,7 @@ Alternatively you can export a trained AI models as:
 - Universal HDL code  
 - C++ projects or binaries
 
-Check out [our supported vendor overview](/docs/one-ai/supported-vendors) to see the full list of supported platforms.
+Check out [our supported vendor overview](/docs/resources/supported-vendors) to see the full list of supported platforms.
 
 For chip and hardware manufacturers, we provide a dedicated service to create **custom extensions for ONE WARE Studio**.  
 These extensions make it possible to integrate generated AI models into your hardware environment even faster and more efficiently – giving you and your customers a clear edge over competitors.  

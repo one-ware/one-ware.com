@@ -9,7 +9,7 @@ import SupportBanner from '@site/src/components/SupportBanner';
 # Handwritten Digit Classification Demo
 
 ## About this demo
-This demo showcases the usage of OneWare Studio and the OneAI Extension for a demo case. If you are unfamiliar with the OneAI Extension, we recommend to first take a look at our [Quick Start Guide](/docs/one-ai/getting-started/quick-start-guide). We also recommend to read the [Potato Chip Classification Demo](/docs/one-ai/demos/potato-chip-demo), since it goes into more detail than this demo.
+This demo showcases the usage of OneWare Studio and the OneAI Extension for a demo case. If you are unfamiliar with the OneAI Extension, we recommend to first take a look at our [Quick Start Guide](/docs/get-started/first-project). We also recommend to read the [Potato Chip Classification Demo](/docs/tutorials/potato-chip-demo), since it goes into more detail than this demo.
 
 <div className="text--center" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
   <Link className="button button--primary button--lg" href="oneware://oneai/quick-start/nist" target="_blank" rel="noopener noreferrer">
@@ -41,14 +41,14 @@ When you are following this tutorial, you can either import the provided dataset
 </div>
 
 ### Importing the dataset
-The setup process is similar to the [Potato Chip Demo](/docs/one-ai/demos/potato-chip-demo#setting-up-the-project-and-loading-the-data). First, we create a new project with the **OneAI Project Generator**. Then, we use the dataset import to load the dataset. Since we are working on a classification problem, we set the format for the import to **Classification** and the annotation **Mode** to **Classes**.
+The setup process is similar to the [Potato Chip Demo](/docs/tutorials/potato-chip-demo). First, we create a new project with the **OneAI Project Generator**. Then, we use the dataset import to load the dataset. Since we are working on a classification problem, we set the format for the import to **Classification** and the annotation **Mode** to **Classes**.
 
 We can verify that everything was loaded correctly by checking the annotations of our train and test images.
 
 ![loaded_dataset](/img/ai/one_ai_plugin/demos/handwritten-digits/nist_sd19_loaded_dataset.png)
 
 ## Hardware settings
-[🔗 hardware settings guide](/docs/one-ai/documentation/hardware-settings)  
+[🔗 hardware settings guide](/docs/reference/hardware-settings)  
 Next, we need to select the hardware for which we want to create the model. ONE AI needs the hardware specifications to build a model that is optimized for your hardware and runs within the constraints that were specified in the **Model Settings**. You can use preconfigured hardware settings or specify custom hardware parameters.
 
 For this demo we are going to use an Altera™ Max® 10 16K. Support for the Altera™ Max® 10 isn't included in the base installation of the OneAI Extension, but can be installed in the **Extension Manager**. Click on **Extras** > **Extensions** to open the **Extension Manager**, then go to the section **Hardware** > **OneAI Support**. Here, you need to install the extension **OneAI Altera MAX10 Support**.
@@ -62,7 +62,7 @@ Afterwards the Altera™ Max® 10 16K can be selected in the **Hardware configur
 We set the the **Maximum Memory Usage** as well as the **Maximum Multiplier Usage** to **90%** and leave the **FPGA Clock Speed** at **50 MHz**.
 
 ## Filters and augmentations
-[🔗 filters and augmentations guide](/docs/one-ai/documentation/filters-and-augmentations)  
+[🔗 filters and augmentations guide](/docs/reference/filters-and-augmentations)  
 The next step is to select the filters and augmentations that we want to use. First we need to set the **Resolution** slider in the **Resize** filter. Because our images are already quite small at 128x128 pixels, we set the resolution to **100%** to keep the original size. Next, we apply a few additional filters that will help our model with classifying the images. We use an **Inverse Filter** that is applied before we augment the images to converts the black numbers on a white background to white numbers on a black background. Some of the augmentations, like the **Rotate Augmentation**, fill missing areas with black pixels, so by using the **Inverse Filter**, the background matches the padded areas.
 
 In the **After Augmentation** section, we add a **Normalize Filter**. This will rescale the brightness values of the image and thus increase the robustness against lighting variations.  
@@ -84,7 +84,7 @@ In addition to those filters, we use the following augmentations:
 You might wonder that some of our filters undo the effects of our augmentations. Specifically the **Normalize Filter** and the **Threshold Filter**, which will remove most if not all of the changes from the **Color Augmentation** as well as the **Noise Augmentation**. This behavior is intended. We use the augmentations to simulate variations in real life data that might not have been captured by our training data. We use filters to remove those variations that our model might encounter to increase its robustness. By using both augmentations as well as filters that counteract them, we ensure that our data pipeline is configured correctly and works in real life situations. Otherwise, we might realize during deployment that the threshold we set in the **Threshold Filter** removes too much or too little under different lighting conditions and ruins the model's performance.
 
 ## Model settings
-[🔗 model settings guide](/docs/one-ai/documentation/model-settings)  
+[🔗 model settings guide](/docs/reference/model-settings)  
 After having set up the data processing pipeline, we configure the model settings. First, we need to specify the **Classification Type**. We want to predict one of the numbers for each image, so we set it to **One Class per Image**. For the tests with the webcam, it would be nice if we were able to detect multiple numbers in the same image, but since the training data doesn't contain any images with more than one number, our model won't be able to make these kind of predictions. To get real time predictions, we set the **Minimum FPS** to **60**.
 
 Next, we provide some additional information on the characteristics of the input data. First, we estimate the area that the model needs to analyze to make a decision for the smallest and the largest numbers. We set these settings **relative to the image**. The surrounding area is set to **(25, 25)** for small objects and to **(70, 70)** for large objects.
@@ -94,7 +94,7 @@ Then, we estimate the variance of numbers from the same class. We observe quite 
 The last model setting is the option to organize the classes into **Groups**. This is an advanced setting that isn't necessary for this task, so we leave it at the default. We recommend leaving all classes in the same group unless you are certain that your task benefits from splitting the model into multiple sub-models.
 
 ## Training the model
-[🔗 training settings guide](/docs/one-ai/documentation/training)  
+[🔗 training settings guide](/docs/reference/training)  
 Now, it's time to set up the training configuration for the model. In the **Training** tab we need to click on **Sync** to synchronize our data and existing model trainings with the ONE WARE servers. After that, we create a new model and click on **Train**. For this demo, a **Training Time** of **20 minutes** is required for the model to fully converge. We leave the **patience** at the default value of **30%**.
 
 The setting **Enable Quantization Optimization** is used to train a quantized model instead of a normal floating point model. Quantized models use fewer bits to represent the model's weights, which reduces the memory consumption and increases the speed. Using quantization is required for most FPGAs and also for some microcontrollers, however, it is not possible to export a quantized model in the ONNX format. Because we aren't going to actually deploy the model on an FPGA in this demo, we leave **Enable Quantization Optimization** unchecked so we can use the ONNX export instead.
@@ -108,7 +108,7 @@ If you don't want to train for that long, you can reduce the **Training Time** t
 Finally, we click on **Start Training**. You can monitor the training progress in the **Logs** and **Statistics** tabs.
 
 ## Model export
-[🔗 model export guide](/docs/one-ai/documentation/export)  
+[🔗 model export guide](/docs/reference/export)  
 After the training is completed, we need to export our model. We configured our model to run on an Altera™ Max® 10 16K, but for now we are content with testing its capabilities on a computer. To use the model inside of OneWare Studio's camera tool, we need to export it as an ONNX model. To do so, we click on the **Export** button, which opens a new window with configurations. In the **Export type** drop-down menu, we select ONNX since that is the format we need.
 
 Next we can activate different settings, that change how our model is exported. If we check the **Export with pre- and postprocessing** checkbox, ONE AI will build all of our filters directly into the model. We activate this setting, because the filter pipeline is an important part of our model. The next setting allows us to change between exporting a floating point or quantized model. At the moment, the ONNX model export supports only floating point models, so we will receive a floating point model whether we check the box or not.
@@ -122,7 +122,7 @@ After the export is finished, we can download the exported ONNX model by clickin
 ![model_download](/img/ai/one_ai_plugin/demos/handwritten-digits/nist_sd19_download.jpg)
 
 ## Testing the model
-[🔗 camera tool guide](/docs/one-ai/documentation/camera-tool)  
+[🔗 camera tool guide](/docs/reference/camera-tool)  
 Now it's time to test our trained model. To do so, we click on **AI** in the menu bar and then **Camera Tool**. Select your camera in the drop-down menu, then click on the plus icon to add it. Next, we need to add a crop to the camera image to match the 1:1 aspect ratio of our training images. We do this by clicking on the gear icon and drawing a rectangle on the preview. You can edit the dimensions of the crop in the preset settings on the left. This makes it easy to set the crop to a square shape.
 
 We can improve the classification accuracy by turning the **Brightness** and **Contrast** sliders in the preset settings to their maximum. This results in the paper showing up in a bright white with a deep black number. For some cameras it is important to turn on **Auto Exposure** further down in the settings, because the image would be underexposed otherwise.

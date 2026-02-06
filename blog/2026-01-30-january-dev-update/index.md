@@ -28,7 +28,7 @@ That’s why we’re excited to start 2026 with a big usability improvement: Wit
 **Using the new Quick-Start feature, you can get started with One AI in just three steps!**
 
 1. [Create a OneWare Account](https://cloud.one-ware.com/Account/Register?ReturnUrl=%2Fquick-start)
-1. [Follow the Instructions](/docs/one-ai/getting-started/installation#1-download-and-install-oneware-studio) to install OneWare Studio
+1. [Follow the Instructions](/docs/get-started/installation#1-download-and-install-oneware-studio) to install OneWare Studio
 2. [Choose a quick-start project](https://cloud.one-ware.com/quick-start) and Click on **Open in OneWare Studio**
 
 <!-- truncate -->
@@ -59,7 +59,7 @@ We just released OneWare Studio and our One AI Extension for the Linux ARM64 pla
 To celebrate this, I used my lunch break to create a quick **Raspberry Detection on my Raspberry Pi**.
 
 ![Rasperry Detection on Rasperry Pie](img/setup.webp)
-**This demo was trained using just 14 captures from the Raspberry Pi camera, captured directly in OneWare Studio using the [camera tool](/docs/one-ai/documentation/camera-tool/).**
+**This demo was trained using just 14 captures from the Raspberry Pi camera, captured directly in OneWare Studio using the [camera tool](/docs/reference/camera-tool).**
 
 :::success Quick Tip
 Sometimes you don't need a fancy and expensive setup, a simple cardboard box can be enough to create a nice camera booth. 📹
@@ -88,7 +88,7 @@ To help you with creating your own dataset, it is now possible to import a video
 Simply select **Import Video** from the Import Button in your Dataset Tab.
 ![Video Import Tool Selection](img/import-selection.png)
 
-This wraps up some of the biggest changes from the past month — but there's much more to explore. If you've used One AI before, give it another try to see what's new. If you haven't yet, there's never been a better time to [get started](/docs/one-ai/getting-started/quick-start-guide)!
+This wraps up some of the biggest changes from the past month — but there's much more to explore. If you've used One AI before, give it another try to see what's new. If you haven't yet, there's never been a better time to [get started](/docs/get-started/first-project)!
 
 ## Upcoming Release: OneWare Studio 1.0
 

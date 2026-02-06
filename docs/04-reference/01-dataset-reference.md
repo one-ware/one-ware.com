@@ -25,16 +25,16 @@ When you press the ``Import Existing Dataset`` button, the following window open
 You need to select the directory to import as well as the format of your annotations. Currently, we support the formats YOLO, COCO and Pascal Voc as well as Classification datasets that contain one directory for each class.
 
 If you want to try ONE AI but don't have a dataset, you can check out our examples:
-1. [A quality control of potato chips](/docs/one-ai/demos/potato-chip-demo)
-2. [A detection of handwritten digits](/docs/one-ai/demos/handwritten-digits-demo)
-3. [An object detection of logos on teacups](/docs/one-ai/demos/teacup-print-detection)
+1. [A quality control of potato chips](/docs/tutorials/potato-chip-demo)
+2. [A detection of handwritten digits](/docs/tutorials/handwritten-digits-demo)
+3. [An object detection of logos on teacups](/docs/tutorials/teacup-print-detection)
 
 ### 1.2 Camera tool
 You can use OneWare Studio's integrated ``Camera Tool`` to record images for your dataset. The camera tool allows you to configure camera settings and record images from multiple cameras simultaneously. After adding and configuring your cameras in the ``Configuration`` tab, you need to switch to the ``Capture`` tab. Here, you can record images with the camera button and save them by clicking on the save icon below. The images are automatically named with the timestamp they were captured at, so you don't need to enter names manually.
 
 ![Camera Tool Capture](/img/ai/one_ai_plugin/getting_started/camera_tool/capture.webp)
 
-If you want to learn more about the ``Camera Tool``, you can check out [this guide](/docs/one-ai/documentation/camera-tool).
+If you want to learn more about the ``Camera Tool``, you can check out [this guide](/docs/reference/camera-tool).
 
 :::tip Training with synthetic image data
 For computer vision use cases where viable training data is not available at the scale required because of edge cases, rare objects, or sensitive information / consumer privacy concerns, customized synthetic data generation can be a much faster, less expensive, and more diverse alternative to manual real data collection. If this is a current challenge for your team, explore our partner [Rendered.ai](https://rendered.ai/) for rapid synthetic image data generation to quickly access a clean, well-labeled dataset customized to your use case to train your model with ONE AI.

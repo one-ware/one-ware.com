@@ -81,7 +81,7 @@ The basic file structure for the `fpga.json` looks like this.
 
 Valid properties at the moment are for compiling using Yosys and/or Quartus. These follow the documentation for the respective tools and control how the arguments are set for running the commands needed to compile/program the hardware.
 
-This is an example that is valid for the [Icebreaker V1.0](https://github.com/one-ware/OneWare.IceBreaker/blob/main/FPGA/iCEBreaker%20V1.0e/fpga.json) using [OSS CAD Suite](/docs/studio/tutorials/setup-oss-cad-suite/)
+This is an example that is valid for the [Icebreaker V1.0](https://github.com/one-ware/OneWare.IceBreaker/blob/main/FPGA/iCEBreaker%20V1.0e/fpga.json) using [OSS CAD Suite](/docs/tutorials/studio-basics/setup-oss-cad/)
 
 ```json
 "properties": {
@@ -97,7 +97,7 @@ This is an example that is valid for the [Icebreaker V1.0](https://github.com/on
   }
 ```
 
-This is an example that is valid for the [MAX1000](https://github.com/one-ware/OneWare.Max1000/blob/main/FPGA/MAX1000/fpga.json) using [Quartus](/docs/studio/tutorials/setup-quartus/)
+This is an example that is valid for the [MAX1000](https://github.com/one-ware/OneWare.Max1000/blob/main/FPGA/MAX1000/fpga.json) using [Quartus](/docs/tutorials/studio-basics/setup-quartus/)
 
 ```json
  "properties": {

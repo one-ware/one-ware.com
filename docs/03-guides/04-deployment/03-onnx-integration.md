@@ -38,11 +38,11 @@ of the ```OnnxModel```.
 + most efficient image data extraction when using the default IOnnxImageProcessor
 + customizable through the configuration property in the ```OnnxModel```. Within this property the api consumer is e.g. able to specify
 his own ```IOnnxImageProcessor``` as well as override the default ```OnnxPrediction``` for full control of data processing.
-+ [advanced documentation](/docs/one-ai/documentation/integration/csharp-onnx-sdk-advanced/) to understand the architectural design and customize it according to your project requirements.
++ [advanced documentation](/docs/reference/api-reference/csharp-advanced/csharp-onnx-sdk-advanced/) to understand the architectural design and customize it according to your project requirements.
 
 ## Getting help
 
-To learn more about OneAI or OneWare Studio, check out the [documentation](https://one-ware.com/docs/one-ai/documentation/overview). 
+To learn more about OneAI or OneWare Studio, check out the [documentation](https://one-ware.com/docs/reference/overview). 
 If the package isn't working the way you expect, or you have questions in generally, don't hesitate to get in touch with us
 via [support@one-ware.com](mailto:support@one-ware.com).
 In addition, we welcome reproducible bug reports as well as feature requests. 

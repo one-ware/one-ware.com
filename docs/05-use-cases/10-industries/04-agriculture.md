@@ -49,7 +49,7 @@ By automating most steps of AI development, ONE AI delivers instant, accurate in
         backgroundColor:'rgba(255,255,255,0.3)'
       }
     }}
-    onClick={() => window.location.href = '/docs/one-ai/use-cases/pcb'}
+    onClick={() => window.location.href = '/docs/use-cases/pcb'}
     onMouseEnter={(e) => {
       e.currentTarget.style.transform = 'translateY(-5px)';
       e.currentTarget.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
@@ -80,7 +80,7 @@ By automating most steps of AI development, ONE AI delivers instant, accurate in
         backgroundColor:'rgba(255,255,255,0.3)'
       }
     }}
-    onClick={() => window.location.href = '/docs/one-ai/use-cases/pcb'}
+    onClick={() => window.location.href = '/docs/use-cases/pcb'}
     onMouseEnter={(e) => {
       e.currentTarget.style.transform = 'translateY(-5px)';
       e.currentTarget.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
@@ -114,7 +114,7 @@ By automating most steps of AI development, ONE AI delivers instant, accurate in
         backgroundColor:'rgba(255,255,255,0.3)'
       }
     }}
-    onClick={() => window.location.href = '/docs/one-ai/use-cases/pcb'}
+    onClick={() => window.location.href = '/docs/use-cases/pcb'}
     onMouseEnter={(e) => {
       e.currentTarget.style.transform = 'translateY(-5px)';
       e.currentTarget.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
@@ -145,7 +145,7 @@ By automating most steps of AI development, ONE AI delivers instant, accurate in
         backgroundColor:'rgba(255,255,255,0.3)'
       }
     }}
-    onClick={() => window.location.href = '/docs/one-ai/use-cases/chip'}
+    onClick={() => window.location.href = '/docs/use-cases/chip'}
     onMouseEnter={(e) => {
       e.currentTarget.style.transform = 'translateY(-5px)';
       e.currentTarget.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';

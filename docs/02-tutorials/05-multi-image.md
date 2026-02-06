@@ -9,8 +9,8 @@ import Link from '@docusaurus/Link';
 
 ## About this Demo
 This demo showcases the usage of OneWare Studio and the OneAI Extension where two images are compared in order to detect objects in one image given a template.
-If you are unfamiliar with the OneAI Extension, we recommend first taking a look at our [Quick Start Guide](/docs/one-ai/getting-started/quick-start-guide).
-We also recommend to read the [Potato Chip Classification Demo](/docs/one-ai/demos/potato-chip-demo), since it goes into more detail than this demo.
+If you are unfamiliar with the OneAI Extension, we recommend first taking a look at our [Quick Start Guide](/docs/get-started/first-project).
+We also recommend to read the [Potato Chip Classification Demo](/docs/tutorials/potato-chip-demo), since it goes into more detail than this demo.
 
 OneAI supports multiple images as input to a model and offers different ways to work with them. Overlap difference is one way that may be useful when images can be
 compared to a reference or template by direct difference between the images. This may be a use case in anomaly detection or quality control when images are taken
@@ -69,7 +69,7 @@ file also needs the **_test** extension (e.g. img1_test.txt). Example structure:
     - ...
 
 ## Setting up the Project
-The setup process is similar to the [Potato Chip Demo](/docs/one-ai/demos/potato-chip-demo#setting-up-the-project-and-loading-the-data).
+The setup process is similar to the [Potato Chip Demo](/docs/tutorials/potato-chip-demo#setting-up-the-project-and-loading-the-data).
 First, we create a new project and a new AI Generator.
 Then we open the project folder in a file manager to copy the training data.
 Since this demo deals with an object detection task, we leave the **Mode** at **Annotation**.

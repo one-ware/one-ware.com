@@ -18,10 +18,10 @@ import LiteYouTubeEmbed from '@site/src/components/LiteYouTubeEmbed';
 </div>
 
 ## About this demo
-This demo showcases the usage of OneWare Studio and the OneAI Extension for a demo case. If you are unfamiliar with the OneAI Extension, we recommend to first take a look at our [Quick Start Guide](/docs/one-ai/getting-started/quick-start-guide).
+This demo showcases the usage of OneWare Studio and the OneAI Extension for a demo case. If you are unfamiliar with the OneAI Extension, we recommend to first take a look at our [Quick Start Guide](/docs/get-started/first-project).
 
 <div className="text--center" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-  <Link className="button button--primary button--lg" href="/docs/one-ai/use-cases/chip">
+  <Link className="button button--primary button--lg" href="/docs/use-cases/chip">
     <p className="m-0 p-0">Performance Results</p>
   </Link>
   <Link className="button button--primary button--lg" href="oneware://oneai/quick-start/chips" target="_blank" rel="noopener noreferrer">
@@ -75,7 +75,7 @@ If you followed all the steps correctly, the images will show up in the **Train*
 ![loaded_dataset](/img/ai/one_ai_plugin/demos/potato_chip/chips_loaded_dataset.png)
 
 ## Hardware settings
-[🔗 hardware settings guide](/docs/one-ai/documentation/hardware-settings)  
+[🔗 hardware settings guide](/docs/reference/hardware-settings)  
 Next, we need to select the hardware for which we want to create the model. ONE AI needs the hardware specifications to build a model that is optimized for your hardware and runs within the constraints that were specified in the **Model Settings**. You can use preconfigured hardware settings or specify custom hardware parameters.
 
 For this demo we are going to use an Altera™ Max® 10 16K. Support for the Altera™ Max® 10 isn't included in the base installation of the OneAI Extension, but can be installed in the **Extension Manager**. Click on **Extras** > **Extensions** to open the **Extension Manager**, then go to the section **Hardware** > **OneAI Support**. Here, you need to install the extension **OneAI Altera MAX10 Support**.
@@ -89,7 +89,7 @@ Afterwards the Altera™ Max® 10 16K can be selected in the **Hardware configur
 We set the the **Maximum Memory Usage** as well as the **Maximum Multiplier Usage** to **90%** and leave the **FPGA Clock Speed** at **50 MHz**.
 
 ## Filters and augmentations
-[🔗 filters and augmentations guide](/docs/one-ai/documentation/filters-and-augmentations)  
+[🔗 filters and augmentations guide](/docs/reference/filters-and-augmentations)  
 Now, we need to set up our data processing pipeline by specifying the filters and augmentations. Filters are applied once to every image and are the same every time. They are used to preprocess the images. Augmentations on the other hand contain random elements and are different for every image and epoch of the training. They are used to increase the size of the dataset without the need to record and annotate new data. Furthermore, augmentations can increase the model's robustness against variations in the data by intentionally reproducing these variations. OneWare Studio allows us to set up two sets of filters - one that is applied before the augmentations and one that is applied afterwards.
 
 We set the **Resize** filter to **10%** to reduce the 512x512 images to 51x51. This allows us to reduce the size of the images and thus the required computations while still being able to distinguish key details. For this project, we don't need any further filters.
@@ -107,7 +107,7 @@ Feel free to test around with the filter and augmentation settings. You can add 
 ![augmentations](/img/ai/one_ai_plugin/demos/potato_chip/chips_augmentations.jpg)
 
 ## Model settings
-[🔗 model settings guide](/docs/one-ai/documentation/model-settings)  
+[🔗 model settings guide](/docs/reference/model-settings)  
 Now that we have set up our data processing pipeline, we configure the model settings. First, we need to specify the **Classification Type**. Since each image has either the class *Defective* or *Non-Defective*, we set it to **One Class per Image**. Next, we set the **Minimum FPS** to **20** FPS.
 
 Afterwards, we provide some additional information on the characteristics of the data. First, we estimate the area the model needs to analyze to make a decision. We set these settings **relative to the image**. In our example, it is enough for the model to see the burnt part of the potato chip. There is no need to analyze the whole chip. Other applications might require the model to see the whole object or even to look at the area surrounding the objects. We set the surrounding area to **(10, 10)** for small objects and to **(30, 30)** for large objects.
@@ -117,7 +117,7 @@ Next we need to estimate the difference within the same class. There is some mod
 The last model setting is the option to organize the classes into **Groups**. This is an advanced setting that isn't necessary for this task, so we leave it at the default. We recommend leaving all classes in the same group unless you are certain that your task benefits from splitting the model into multiple sub-models.
 
 ## Training the model
-[🔗 training settings guide](/docs/one-ai/documentation/training)  
+[🔗 training settings guide](/docs/reference/training)  
 Lastly, we go to the **Training** tab and click on **Sync** to synchronize our data and existing model trainings with the ONE WARE servers. After that, we click on the plus icon to create a new model and then on the **Train** button in the top-right corner. A **training time** of **2 minutes** is already sufficient for this task. The **Patience for Early Stopping** can be used to stop the training early if there are no further improvements. Since the training time for this example is so short, this setting doesn't really matter, so we leave it at the default of **100%**. Since we want to export the model to an FPGA, we need to **Enable Quantization Optimization** as quantization is required for most FPGAs and also for some microcontrollers. The option **Focus on Images with Objects** is only relevant for object detection tasks, so we leave the box unchecked. The option **Continue Training** can be used to continue the training of a model that has already been trained. If it is unchecked, the existing model will be overwritten. Since we don't have any prior model, this setting is ignored by ONE AI.
 
 Finally, we click on the **Start Training** button. You can monitor the training progress in the **Logs** and **Statistics** tabs.

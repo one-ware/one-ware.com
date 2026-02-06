@@ -6,7 +6,7 @@ title: Write Your Own Plugin
 Writing a plugin for OneWareStudio can be considered experimental, as not all the API is 100% done yet. 
 Future updates can break your plugin. Documentation is incomplete and looking at the source code is nessesary. 
 A good understanding of C# and Avalonia is recommended.
-**If you just want to add your own hardware support, you can [do it without using C#](/docs/studio/plugins/add-hardware)**
+**If you just want to add your own hardware support, you can [do it without using C#](/docs/guides/studio-extensions/add-hardware)**
 :::
 
 ## Prerequisites

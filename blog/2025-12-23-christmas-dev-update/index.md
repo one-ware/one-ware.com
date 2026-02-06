@@ -37,7 +37,7 @@ After fighting macOS hardened runtime as well as dependency hell on Linux, the C
 - Real-time Ai-Quality Control with remote control
 
 
-**[Try it out now!](/docs/studio/setup)**
+**[Try it out now!](/docs/get-started/installation)**
 
 ## Segmentation & Annotation Tool Changes
 

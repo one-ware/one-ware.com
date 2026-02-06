@@ -1,0 +1,87 @@
+---
+id: basic-training-tips
+title: Basic Training Tips
+sidebar_label: Training Tips
+---
+
+import Link from '@docusaurus/Link';
+import SupportBanner from '@site/src/components/SupportBanner';
+
+## What kind of AI models can you build?
+
+Currently, ONE AI can create models that solve various computer vision tasks:
+
+- **Image Classification**: assigning categories to entire images (e.g. *defective* vs. *non-defective*)
+- **Object Detection**: identifying and locating multiple objects within an image (e.g. detecting objects on an assembly line)
+- **Semantic Segmentation** (coming soon): assigning a class label to each pixel in the image
+
+You can also work on audio or time series data by converting it to a visual representation with ONE WARE Studio's ``Spectrogram Generator``.
+
+## Create an AI Project
+
+To create a new AI project in ONE WARE Studio, click ``AI`` in the menu bar and select ``Open AI Generator``.
+
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+  <img src="/img/ai/one_ai_plugin/getting_started/ai_generator.png" alt="AI Generator" style={{ width: '70%' }} />
+</div>
+
+## Load Your Dataset
+
+To load your images into ONE WARE Studio, go to the ``Dataset`` tab in your ONE AI workspace. At the top-right is a button that allows you to import your data. You can:
+
+- Load unlabeled images
+- Import an existing labeled dataset
+- Use the built-in ``Camera Tool`` to record a dataset with a connected camera
+
+<div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
+  <img src="/img/ai/one_ai_plugin/getting_started/training_data_view.png" alt="Training Data View" style={{ width: '70%' }} />
+</div>
+
+:::tip Using reference images
+You can provide reference images to give additional context on how your objects should look. For example, if you want to detect defects on a product, you can provide images of non-defective product as a reference. Learn more in [this tutorial](/docs/tutorials/difference-image-demo).
+:::
+
+## Add Filters to Process Images
+
+Use filters to prepare your images for training. To get the best results, try to simplify images as much as possible while keeping all relevant information.
+
+Useful filters:
+- **Resolution Filter**: Reduce image size to the minimum that keeps important details visible
+- **Crop Filter**: Crop images to the region of interest
+- **Color Filter**: Adjust contrast, brightness, or convert to grayscale
+- **Channel Filter**: Keep only specific color channels
+
+<div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+    <img src="/img/ai/one_ai_plugin/getting_started/filter_resolution_10.png" alt="Resolution Filter" style={{ width: '30%' }} />
+    <img src="/img/ai/one_ai_plugin/getting_started/filter_color_1.png" alt="Color Filter" style={{ width: '30%' }} />
+</div>
+
+## Add Augmentations
+
+Data augmentation artificially increases your dataset size by applying random transformations to images during training. This helps improve performance and prevent overfitting, especially with small datasets.
+
+<img src="/img/ai/one_ai_plugin/getting_started/augmentation_color.png" alt="Color Augmentation" style={{ width: '40%' }} />
+
+The default augmentations are a good starting point, but tune them to your specific application. Not all augmentations suit every use case - for example, if detecting text or labels, flipping images doesn't make sense.
+
+## Start Training
+
+Once your dataset is ready and filters are configured, you can start training:
+
+1. Go to the ``Training`` tab
+2. Click ``Sync`` to connect to OneWare Cloud
+3. Click ``Create Model``
+4. Click ``Train`` to start training
+
+The training process will run on our cloud servers. You'll see progress updates and can download your model when training completes.
+
+## Next Steps
+
+Now that you understand the basics, explore more advanced topics:
+
+- **[Choosing parameters](/docs/guides/model-optimization/choosing-parameters-guide)** - Learn how to tune model settings for better results
+- **[More tutorials](/docs/tutorials/overview)** - Try different types of AI models
+- **[Troubleshooting guide](/docs/guides/testing-evaluation/problems-and-solutions-guide)** - Solve common issues
+- **[Full documentation](/docs/reference/overview)** - Complete technical reference
+
+<SupportBanner subject="Training Tips Support" />

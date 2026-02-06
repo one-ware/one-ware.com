@@ -1,0 +1,65 @@
+---
+id: first-project
+title: Your First AI Model
+sidebar_label: First Project
+---
+
+import Link from '@docusaurus/Link';
+import SupportBanner from '@site/src/components/SupportBanner';
+import TrackedLink from '@site/src/components/TrackedLink';
+import LiteYouTubeEmbed from '@site/src/components/LiteYouTubeEmbed';
+
+<div style={{ marginBottom: '2rem' }}>
+  <LiteYouTubeEmbed
+    videoId="A7_Ylca_HfQ"
+    previewImage="/img/demos/thumbnail.jpg"
+    title="Getting Started with ONE AI"
+  />
+</div>
+
+## Why ONE AI?
+
+With ONE AI, anyone can create custom AI models in minutes without AI expertise. Train powerful models on our cloud servers, then deploy lightweight, optimized models that run efficiently on any device - even resource-limited microcontrollers.
+
+## Download Demo Project
+
+We've created a simple demo project to help you get started. This demo shows how to use ONE AI to create a quality control application for potato chips. The goal is to distinguish between good and burned potato chips.
+
+<div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
+    <img src="/img/ai/one_ai_plugin/demos/potato_chip/chips_non-defective_01.jpg" alt="chips_example_non-defective_01" style={{ width: '20%' }} />
+    <img src="/img/ai/one_ai_plugin/demos/potato_chip/chips_non-defective_02.jpg" alt="chips_example_non-defective_02" style={{ width: '20%' }} />
+    <img src="/img/ai/one_ai_plugin/demos/potato_chip/chips_defective_01.jpg" alt="chips_example_defective_01" style={{ width: '20%' }} />
+    <img src="/img/ai/one_ai_plugin/demos/potato_chip/chips_defective_02.jpg" alt="chips_example_defective_02" style={{ width: '20%' }} />
+</div>
+
+Clicking the download button below will automatically open ONE WARE Studio and import the demo project.
+
+<div className="text--center" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
+  <TrackedLink className="button button--primary button--lg" href="oneware://oneai/quick-start/chips" eventType="download_start" eventLabel="Chip Demo Download">
+    <p className="m-0 p-0">Download Demo Project</p>
+  </TrackedLink>
+</div>
+
+## Train Your Model
+
+Since the demo project is already configured, you can directly start training the AI model.
+
+1. Go to the ``Training`` tab
+2. Click ``Sync`` to connect to OneWare Cloud
+3. Click ``Create Model`` to create a new model instance
+4. Click the ``Train`` button
+
+Because this application is very simple, it's sufficient to train the model for only **2 minutes**. The other settings can be left at their default values.
+
+![Model training](/img/ai/Train.png)
+
+## What's Next?
+
+Congratulations! You've trained your first AI model. Here are some ways to continue your journey:
+
+- [Complete tutorial for this demo](/docs/tutorials/potato-chip-demo) - Detailed walkthrough with evaluation steps
+- [Basic training tips](/docs/get-started/basic-training-tips) - Learn the fundamentals
+- [More tutorials](/docs/tutorials/overview) - Try other examples
+- [Full documentation](/docs/reference/overview) - Explore all features
+
+<SupportBanner subject="First Project Support" />

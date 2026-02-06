@@ -17,7 +17,7 @@ This doc is incomplete and WIP!
 
 Currently, IVerilog and GHDL are supported. 
 
-To use IVerilog, simply [Setup OSS CAD Suite](/docs/studio/tutorials/setup-oss-cad-suite/).
+To use IVerilog, simply [Setup OSS CAD Suite](/docs/tutorials/studio-basics/setup-oss-cad/).
 
 To use GHDL, download the [GHDL Extension](https://github.com/one-ware/OneWare.GhdlExtension) from the package manager.
 

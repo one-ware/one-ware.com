@@ -19,13 +19,13 @@ ONE AI brings fast, precise intelligence directly to the factory floor, running 
 ## Why ONE AI
 
 **Accelerate AI Development**  
-ONE AI accelerates the development of industrial AI solutions, helping manufacturers produce faster and more reliably. It delivers [highly accurate Vision AI](/docs/one-ai/use-cases/pcb), runs in real time on any [existing factory hardware](/docs/one-ai/use-cases/chip) and can be integrated without new servers or special devices.
+ONE AI accelerates the development of industrial AI solutions, helping manufacturers produce faster and more reliably. It delivers [highly accurate Vision AI](/docs/use-cases/pcb), runs in real time on any [existing factory hardware](/docs/use-cases/chip) and can be integrated without new servers or special devices.
 
 **Built for Your Production**  
 While current AI solutions often rely on universal models that cannot adapt to specific production requirements, ONE AI builds a fully customized AI network for each use case, learning only what is truly relevant to your production. This makes predictions significantly faster and more precise.
 
 **Faster Results and Lower Costs**  
-By [automating most steps of AI development](/docs/one-ai/use-cases/camera-tool), ONE AI lets you benefit from the latest AI advancements in record time with significantly reduced development costs.
+By [automating most steps of AI development](/docs/use-cases/camera-tool), ONE AI lets you benefit from the latest AI advancements in record time with significantly reduced development costs.
 
 
 
@@ -49,7 +49,7 @@ By [automating most steps of AI development](/docs/one-ai/use-cases/camera-tool)
         backgroundColor:'rgba(255,255,255,0.3)'
       }
     }}
-    onClick={() => window.location.href = '/docs/one-ai/use-cases/camera-tool'}
+    onClick={() => window.location.href = '/docs/use-cases/camera-tool'}
     onMouseEnter={(e) => {
       e.currentTarget.style.transform = 'translateY(-5px)';
       e.currentTarget.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
@@ -80,7 +80,7 @@ By [automating most steps of AI development](/docs/one-ai/use-cases/camera-tool)
         backgroundColor:'rgba(255,255,255,0.3)'
       }
     }}
-    onClick={() => window.location.href = '/docs/one-ai/use-cases/camera-tool'}
+    onClick={() => window.location.href = '/docs/use-cases/camera-tool'}
     onMouseEnter={(e) => {
       e.currentTarget.style.transform = 'translateY(-5px)';
       e.currentTarget.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
@@ -114,7 +114,7 @@ By [automating most steps of AI development](/docs/one-ai/use-cases/camera-tool)
         backgroundColor:'rgba(255,255,255,0.3)'
       }
     }}
-    onClick={() => window.location.href = '/docs/one-ai/services'}
+    onClick={() => window.location.href = '/docs/resources/services'}
     onMouseEnter={(e) => {
       e.currentTarget.style.transform = 'translateY(-5px)';
       e.currentTarget.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
@@ -145,7 +145,7 @@ By [automating most steps of AI development](/docs/one-ai/use-cases/camera-tool)
         backgroundColor:'rgba(255,255,255,0.3)'
       }
     }}
-    onClick={() => window.location.href = '/docs/one-ai/use-cases/chip'}
+    onClick={() => window.location.href = '/docs/use-cases/chip'}
     onMouseEnter={(e) => {
       e.currentTarget.style.transform = 'translateY(-5px)';
       e.currentTarget.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';

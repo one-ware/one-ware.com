@@ -8,7 +8,7 @@ import LiteYouTubeEmbed from '@site/src/components/LiteYouTubeEmbed';
 
 ### High Speed and Precise Quality Control or General Factory Automation in One Click
 
-From **[potato chip inspection](/docs/one-ai/use-cases/chip)** to **[PCB defect detection](/docs/one-ai/use-cases/pcb)**, ONE AI has shown that it can generate models that are not only **leaner and faster**, but also **more accurate** than both universal networks and hand-crafted expert designs. These results have been confirmed in our joint whitepaper with Altera—where even a decade-old MAX® 10 FPGA outperformed Nvidia’s Jetson Orin Nano—and in independent PCB benchmarks, where ONE AI surpassed researcher-built architectures while running more than ten times faster.
+From **[potato chip inspection](/docs/use-cases/chip)** to **[PCB defect detection](/docs/use-cases/pcb)**, ONE AI has shown that it can generate models that are not only **leaner and faster**, but also **more accurate** than both universal networks and hand-crafted expert designs. These results have been confirmed in our joint whitepaper with Altera—where even a decade-old MAX® 10 FPGA outperformed Nvidia’s Jetson Orin Nano—and in independent PCB benchmarks, where ONE AI surpassed researcher-built architectures while running more than ten times faster.
 
 <div style={{display:'flex', justifyContent:'center', margin:'20px 0'}}>
   <img src="/img/ai/one_ai_plugin/use_cases/capture/full.png" alt="Camera Tool capturing images for QC" style={{maxHeight:'320px', borderRadius:'8px'}} />
