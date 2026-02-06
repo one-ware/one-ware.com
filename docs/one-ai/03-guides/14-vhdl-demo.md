@@ -13,7 +13,7 @@ This demo showcases how to run a OneAI model on an FPGA for a demo use case. The
 
 As this tutorial is not for any specific FPGA chip or board, board or chip specific sections may be quite vague. Thus, this tutorial assumes a certain familiarity of the user with FPGA development and the board or chip the user wants to run this tutoria on.
 
-Please follow the [Handwritten Digit Classification Demo](/docs/one-ai/tutorials/handwritten-digits-demo) to obtain a CNN model. There are two necessary deviations pointed out in the next section. Stop the **Handwritten Digit Classification Demo** before exporting the model and then follow this tutorial here from the section [Model export](#export) onwards.
+Please follow the [Handwritten Digit Classification Demo](/docs/one-ai/demos/handwritten-digits-demo) to obtain a CNN model. There are two necessary deviations pointed out in the next section. Stop the **Handwritten Digit Classification Demo** before exporting the model and then follow this tutorial here from the section [Model export](#export) onwards.
 
 
 ## Deviations to Handwritten Digit Classification Demo

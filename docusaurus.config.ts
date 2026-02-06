@@ -177,7 +177,7 @@ const config: Config = {
               label: "Get Started",
             },
             {
-              to: "/docs/one-ai/tutorials/overview",
+              to: "/docs/one-ai/demos/overview",
               label: "Demo Projects",
             },
             {
@@ -231,7 +231,7 @@ const config: Config = {
               label: "Documentation",
             },
             {
-              to: "/docs/one-ai/tutorials/overview",
+              to: "/docs/one-ai/demos/overview",
               label: "Example Projects",
             },
             // {

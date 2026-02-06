@@ -8,7 +8,7 @@ sidebar_label: Reference-Based Object Detection
 
 In quality control and surveillance applications, detecting small differences between a reference image and a test image is crucial. Traditional AI approaches treat each image independently, requiring the model to learn the entire background and context. ONE AI's **overlap difference** capability enables direct comparison between spatially aligned images, dramatically improving detection accuracy while reducing computational costs.
 
-To demonstrate this capability, ONE AI was tested on a synthetically created [bird and drone detection dataset](/docs/one-ai/tutorials/difference-image-demo#dataset-overview) featuring small objects (7-10% of image size), complex city backgrounds with detailed buildings, and varying lighting conditions. The model was benchmarked against YOLOv8, a state-of-the-art object detection network.
+To demonstrate this capability, ONE AI was tested on a synthetically created [bird and drone detection dataset](/docs/one-ai/demos/difference-image-demo#dataset-overview) featuring small objects (7-10% of image size), complex city backgrounds with detailed buildings, and varying lighting conditions. The model was benchmarked against YOLOv8, a state-of-the-art object detection network.
 
 <div style={{display: 'flex', justifyContent: 'center', margin: '20px 0'}}>
   <img src="/img/ai/one_ai_plugin/demos/overlap-difference/image_000118_temp.png" alt="Reference Template" style={{maxHeight: '250px', marginRight: '10px', borderRadius:'8px'}} />

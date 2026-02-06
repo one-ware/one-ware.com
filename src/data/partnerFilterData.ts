@@ -30,7 +30,7 @@ export const partnerFilterData: PartnerFilterData = {
               format: 'VHDL',
               toolchain: 'Quartus Prime',
               docLink: '/docs/one-ai/documentation/integration/fpga-deployment',
-              tutorialLink: '/docs/one-ai/tutorials/overview',
+              tutorialLink: '/docs/one-ai/demos/overview',
             },
           ],
         },

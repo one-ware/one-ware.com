@@ -28,9 +28,9 @@ When you press the ``Import Existing Dataset`` button, the following window open
 You need to select the directory to import as well as the format of your annotations. Currently, we support the formats YOLO, COCO and Pascal Voc as well as Classification datasets that contain one directory for each class.
 
 Check out our examples like if you don't have a dataset and want to try ONE AI:
-1. [A quality control of potato chips](/docs/one-ai/tutorials/potato-chip-demo)
-2. [A detection of handwritten digits](/docs/one-ai/tutorials/handwritten-digits-demo)
-3. [An object detection of logos on teacups](/docs/one-ai/tutorials/teacup-print-detection)
+1. [A quality control of potato chips](/docs/one-ai/demos/potato-chip-demo)
+2. [A detection of handwritten digits](/docs/one-ai/demos/handwritten-digits-demo)
+3. [An object detection of logos on teacups](/docs/one-ai/demos/teacup-print-detection)
 
 #### Camera Tool
 You can use OneWare Studio's integrated ``Camera Tool`` to record images for your dataset. The camera tool allows you to configure camera settings and record images from multiple cameras simultaneously.
@@ -511,9 +511,9 @@ The config.txt needs to be placed in the same directory as the main binary.
 ## 12. Examples
 
 Check out our examples like:
-1. [A quality control of potato chips](/docs/one-ai/tutorials/potato-chip-demo)
-2. [A detection of handwritten digits](/docs/one-ai/tutorials/handwritten-digits-demo)
-3. [An object detection of logos on teacups](/docs/one-ai/tutorials/teacup-print-detection)
+1. [A quality control of potato chips](/docs/one-ai/demos/potato-chip-demo)
+2. [A detection of handwritten digits](/docs/one-ai/demos/handwritten-digits-demo)
+3. [An object detection of logos on teacups](/docs/one-ai/demos/teacup-print-detection)
 
 If you have any questions: Don't hesitate to ask our team for help via mail: support@one-ware.com or you can ask in our [Discord for ONE WARE Studio and ONE AI](https://discord.com/invite/NCN9VAh).
 This helps us as well, because we then know what tutorials we can do next. 
