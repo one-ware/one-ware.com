@@ -96,6 +96,9 @@ ONE WARE ist berechtigt, Änderungen am Funktionsumfang der Dienste in anderen a
 5.3.3. personenbezogene Daten enthalten
 („**Verbotene Inhalte**“).
 
+5.4. **Eingaben in den AI-Agent (Prompts)**  
+Eingaben des Kunden an den AI-Assistenten („Prompts“) gelten ebenfalls als „Inhalte“ im Sinne dieser Ziffer 5. Dem Kunden ist es untersagt, personenbezogene Daten oder rechtswidrige Inhalte in den AI-Agent einzugeben. Der Kunde trägt die volle Verantwortung für die Inhalte seiner Prompts.
+
 **7 Vorübergehende Sperrung**
 
 1. ONE WARE ist berechtigt, den Zugang des Kunden zur Software zu sperren, wenn
@@ -138,6 +141,7 @@ ONE WARE ist berechtigt, Änderungen am Funktionsumfang der Dienste in anderen a
 3. In Fällen einfacher Fahrlässigkeit haftet ONE WARE für die Verletzung einer wesentlichen Vertragspflicht. Eine wesentliche Vertragspflicht im Sinne dieser Ziffer ist eine Pflicht, deren Erfüllung die Durchführung des Vertrages überhaupt erst ermöglicht und auf deren Einhaltung der Kunde daher regelmäßig vertrauen darf.
 4. ONE WARE haftet nicht für mangelnden wirtschaftlichen Erfolg, entgangenen Gewinn oder mittelbare Schäden.
 5. Die Haftung ist auf den bei Vertragsschluss typischen, vorhersehbaren Schaden begrenzt.
+5.1. **Haftung für AI-Outputs**: Die vom AI-Agent generierten Ausgaben (z. B. Konfigurationsdateien, Code-Snippets, technische Antworten) sind automatisiert und unverbindlich. ONE WARE übernimmt keine Gewähr für die Richtigkeit, Vollständigkeit oder Eignung dieser Ausgaben für einen bestimmten Zweck. Die Nutzung von AI-generierten Ergebnissen, insbesondere der produktive Einsatz von Konfigurationsdateien, erfolgt auf eigenes Risiko des Kunden. ONE WARE schuldet bezüglich der AI-Beratung grundsätzlich keinen bestimmten Erfolg.
 6. Die Haftung für Schäden durch Datenverlust ist auf den Betrag der Wiederherstellung der Daten begrenzt, der auch bei regelmäßiger und risikoadäquater Datensicherung durch den Kunden angefallen wäre.
 7. Die Haftungsbeschränkungen gelten entsprechend zugunsten der Mitarbeiter, Beauftragten und Erfüllungsgehilfen von ONE WARE.
 8. Eine etwaige Haftung von ONE WARE für gegebene Garantien (die ausdrücklich als solche bezeichnet sein müssen) und für Ansprüche nach dem Produkthaftungsgesetz bleibt unberührt.
@@ -184,6 +188,10 @@ ONE WARE ist berechtigt, Änderungen am Funktionsumfang der Dienste in anderen a
 - **Maximales Datenvolumen pro Projekt:** 50 GB Upload-Limit
 - **Unterstützte Dateiformate:** PNG- und JPG-Bilder sowie TXT-Label-Dateien
 - **Maximale Bildauflösung:** KI-Modell-Vorhersagen werden nur für Bilder bis zu 8000x6000 Pixel unterstützt
+3.1 **AI-Assistent / AI-Agent**  
+Interaktive Unterstützung innerhalb der Plattform zur Beantwortung technischer Fragen und Generierung technischer Vorschläge (z. B. Konfigurationsdateien).  
+- **Speicherung**: Fragen und Antworten werden gespeichert, um Historie und Kontext zu ermöglichen.  
+- **Disclaimer**: Der AI-Agent generiert Antworten auf Basis von Wahrscheinlichkeiten.  Es besteht kein Anspruch auf Vollständigkeit, Fehlerfreiheit oder Eignung für einen bestimmten Zweck. Der Kunde ist verantwortlich, die Ergebnisse vor Verwendung technisch zu validieren.
 4) **Nicht geschuldete Leistungen**
 - Der Anbieter erbringt **keine persönliche oder individuelle Beratung**. Der Support beschränkt sich auf technische Anfragen, Fehlermeldungen und Hilfestellung bei der Nutzung der Plattform.
 - **Feature-Anpassungen, Hardware-Beratung oder KI-Entwicklung im Auftrag des Kunden** erfolgen nur nach gesonderter schriftlicher Vereinbarung.

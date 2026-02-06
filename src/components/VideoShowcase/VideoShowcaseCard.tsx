@@ -25,6 +25,7 @@ interface VideoShowcaseCardProps {
   title: string;
   metrics: Metrics;
   link: string;
+  architecture?: string;
   isActive: boolean;
   onMouseEnter: () => void;
   onMouseLeave: () => void;
@@ -36,6 +37,7 @@ export default function VideoShowcaseCard({
   title,
   metrics,
   link,
+  architecture,
   isActive,
   onMouseEnter,
   onMouseLeave,
@@ -190,6 +192,43 @@ export default function VideoShowcaseCard({
                 style={{ zIndex: videoSrc && isActive ? 0 : 10 }}
               />
             )}
+            
+            {architecture && (
+              <div
+                className="absolute inset-0 overflow-hidden z-30 pointer-events-none"
+                style={{
+                  opacity: !isActive ? 1 : 0,
+                  transition: "opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+                }}
+              >
+                {/* Backdrop Blur Gradient */}
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    backdropFilter: "blur(8px)",
+                    WebkitBackdropFilter: "blur(8px)",
+                    backgroundColor: "rgba(0,0,0,0.4)",
+                    maskImage: "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 45%)",
+                    WebkitMaskImage: "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 45%)",
+                  }}
+                />
+                
+                {/* Architecture Image on the Left */}
+                <div className="absolute inset-y-0 left-0 w-1/3 p-2 flex items-center justify-center">
+                  <img
+                    src={architecture}
+                    alt="Architecture"
+                    className="w-full h-full object-contain drop-shadow-xl"
+                    style={{
+                      filter: isDarkMode ? "brightness(1.2)" : "none",
+                      maskImage: "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
+                      WebkitMaskImage: "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
+                    }}
+                  />
+                </div>
+              </div>
+            )}
+
             <div className={`absolute inset-0 bg-gradient-to-t ${isDarkMode ? "from-black/70" : "from-black/50"} via-transparent to-transparent z-20`} />
           </div>
 

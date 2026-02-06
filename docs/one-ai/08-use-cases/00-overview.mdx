@@ -102,4 +102,4 @@ With **98.4% accuracy** and over **7× faster inference**, ONE AI proves that sm
 #### [Reference-Based Object Detection](/docs/one-ai/use-cases/difference-detection)
 
 ONE AI's **overlap difference** capability enables direct comparison between reference and test images for superior object detection.  
-With **95.7% F1-Score** compared to YOLOv8's 56%, and a model **eight times smaller**, ONE AI demonstrates that multi-image comparison combined with automated architecture optimization provides significant advantages for quality control and surveillance applications.
+With **93.2% F1-Score** compared to YOLOv8's 56%, and a model **eight times smaller**, ONE AI demonstrates that multi-image comparison combined with automated architecture optimization provides significant advantages for quality control and surveillance applications.
