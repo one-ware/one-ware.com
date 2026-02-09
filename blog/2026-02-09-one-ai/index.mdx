@@ -14,15 +14,14 @@ import videoUrl from './img/compare_architecture.webm';
   Your browser does not support the video tag.
 </video>
 
-*Above: ONE AI generating completely different architectures for Depth Data analysis, Image Comparison (QC), Fast Small Object detection, and complex MRI classification.*
+*Above: ONE AI generating completely different architectures for Depth Data analysis, Image Comparison (QC), Fast Small Object detection, and complex MRI classification. These are actual generated neural network architectures.*
 
 If you are building a computer vision system today, the default advice is usually: "Just fine-tune YOLO." If that doesn't work, "Just try this other universal AI model." These universal models are robust and easy to use for some standard tasks.
+We kept running into cases where "just fine-tune YOLO" was the wrong abstraction, especially for high-speed industrial inspection or edge robotics.
 
-<!-- truncate -->
+**For these engineering applications generic assumptions often break down, and you can achieve significantly better results with a tailored approach.**
 
-**But for a vast number of engineering applications, like high-speed industrial inspection, medical imaging, or edge robotics, these generic assumptions often break down, and you can achieve significantly better results with a tailored approach.**
-
-We designed a software to bridge this gap. Instead of trying to force a pre-trained model to work on data it wasn't designed for (like 3D MRI scans or high-speed microscopic images), a completely new neural network architecture is automatically created for the task.
+We designed a software to bridge this gap. Instead of trying to force a pre-trained model to work on data it wasn't designed for (like 3D MRI scans or high-speed microscopic images), a task-specific neural network architecture is predicted based on your dataset and constraints.
 
 I will show 7 examples where this approach works best and what decision our software, ONE AI, makes to get better results. So even if you develop neural network architectures your own, you can take these tips to get better results.
 
@@ -37,21 +36,21 @@ Detecting tiny defects (like pores) alongside larger features (like scratches) i
 
 ONE AI generates **Multi-Scale Architectures**. It combines an "Expert AI" branch with a large receptive field for big features (scratches) and a separate branch optimized for small objects with a more focused receptive field. This ensures that both microscopic pores and macroscopic defects are detected with high precision in a single pass.
 
-### 2. Video Object Detection
+### 2. Video Object Detection (Temporal Motion)
 ![Drone Tracking Demo](./img/drone.jpg)
 
 Standard object detectors treat video feeds as a sequence of completely independent images. If an object becomes blurry, occluded, or rotates into an unrecognizable angle for a single frame, the detection fails.
 
-ONE AI solves this by analyzing **image differences** directly within the architecture. By comparing the current frame with previous frames or a background reference, the model focuses on the *changes* (movement).
-**The Result:** In our benchmarks, this approach achieved an **F1-Score of 95.7%** compared to just **56% with YOLOv8**, resulting in **10x fewer errors** while using significantly less compute.
+ONE AI solves this by analyzing **image differences** directly within the architecture. By comparing the current frame with previous frames (temporal motion), the model focuses on the *changes*.
+**The Result:** In our benchmarks, this approach achieved an **F1-Score of 95.7%** compared to just **56% with YOLOv8**, resulting in **10x fewer errors** while using significantly less compute. (Result: 95.7 F1 vs 56.0 with YOLOv8 on our benchmark — [details here](/docs/one-ai/demos/multi-image-demo))
 
-### 3. Image Comparison
+### 3. Image Comparison (Reference QC)
 ![PCB Quality Control Demo](./img/pcb.jpeg)
 
-In manufacturing, comparing a production part against a "Golden Master" (good part) is a powerful strategy, but standard AIs don't natively understand "comparison."
+In manufacturing, comparing a production part against a reference image (good part) is a powerful strategy, but standard AIs don't natively understand "comparison."
 
 ONE AI builds **Hybrid Comparison Architectures**. The model takes both the live image and the reference image as inputs. It splits into two streams: one branch specifically analyzes the *differences* between the images (comparison), while another branch analyzes the *general features* of the live image.
-**The Result:** ONE AI achieved a **98.4% F-Score**, outperforming both specialized "human-designed" architectures (98.2%) and generic models like YOLO (93.1%), while running **7x to 13x faster**.
+**The Result:** ONE AI achieved a **98.4% F-Score**, outperforming both specialized "human-designed" architectures (98.2%) and generic models like YOLO (93.1%), while running **7x to 13x faster**. (Result: 98.4% F-score, ~465 FPS — [benchmark table here](/docs/one-ai/use-cases/pcb/))
 
 ### 4. Medical Technology
 ![MRI Analysis Demo](./img/mri.jpeg)
@@ -67,13 +66,13 @@ Running segmentation on a drone requires detecting fire and smoke instantly with
 
 ONE AI designs **Application-Specific Segmentation Models**. Since the task is specialized (just fire/smoke vs. background), the model doesn't need the massive capacity of a general-purpose AI. The system generates a significantly smaller, highly optimized architecture that fits easily on an embedded CPU while delivering the necessary speed and accuracy.
 
-### 6. High Speed Classification on Efficient Hardware
+### 6. High Speed Classification on Efficient Hardware 
 ![High Speed Chip Demo](./img/chip.jpeg)
 
 Quality control of potato chips requires checking thousands of items per second. A large, generic AI is overkill and too slow for the required millisecond-level reaction times.
 
 ONE AI creates **Extreme-Efficiency Micro-Models**. Because the visual task is specific (e.g., spotting brown spots), the architecture is stripped down to the absolute essentials.
-**The Result:** Deploying this micro-model on a low-cost FPGA ($45) achieved **1736 FPS** with **0.086ms latency** and **99.5% accuracy**. A generic model (VGG19) on a Jetson Orin Nano ($250) only managed 24 FPS and 88% accuracy. That's **70x faster** at a fraction of the cost.
+**The Result:** Deploying this micro-model on a low-cost FPGA ($45) achieved **1736 FPS** with **0.086ms latency** and **99.5% accuracy**. A generic model (VGG19) on a Jetson Orin Nano ($250) only managed 24 FPS and 88% accuracy. That's **70x faster** at a fraction of the cost. (Result: 0.086ms latency — [details here](/docs/one-ai/demos/potato-chip-demo))
 
 ### 7. Combine Camera and Depth Informations
 ![Depth Analysis Demo](./img/depth.jpeg)
@@ -88,19 +87,19 @@ ONE AI uses **Deep Feature Fusion**. It treats Depth images and RGB images as se
 
 Standard AI development typically forces a tradeoff: **Transfer Learning** uses bloated models that only work well on standard data, while **Neural Architecture Search (NAS)** burns massive amounts of compute to blindly test thousands of variations.
 
-**ONE AI takes a smarter path: It predicts the optimal architecture instantly.**
+**ONE AI takes a smarter path: It predicts an architecture configuration that matches the dataset and deployment constraints**
 
-We built a **Meta-AI** that acts as an intelligent architect. It analyzes your dataset (e.g., object scales, noise), context (e.g., "Quality Control"), and hardware constraints to calculate the perfect neural network structure.
+We built an **architecture prediction model** that acts as an intelligent architect. It analyzes your dataset (e.g., object scales, number of classes), context (e.g., controled vs natural environment), and hardware constraints to predict the optimal neural network structure.
 
-These insights drive our **Flexible Super Model**, a highly adaptive framework that reconfigures itself on the fly. It can shrink to a tiny micro-model for an FPGA or expand into a complex multi-branch network similar to YOLO or U-Net, depending entirely on what your specific task demands.
+The insights drive our **Flexible Super Model**, a highly adaptive framework that reconfigures itself on the fly. It can shrink to a tiny micro-model for an FPGA or expand into a complex multi-branch network similar to YOLO or U-Net, depending entirely on what your specific task demands.
 
-The result? A model mathematically optimized for **your** reality, often 10-100x smaller and faster than generic alternatives, unlocking deployment on hardware where standard AI simply cannot run.
+The result? A model mathematically optimized for specific needs, often significantly smaller and faster than generic baselines in our current benchmarks, unlocking deployment on hardware where standard AI simply cannot run.
 
-### Start Engineering Your AI
+### Reproduce This
 
-Generic models are powerful, but they aren't designed for every specific engineering constraint. ONE AI takes a different approach by calculating the optimal neural network structure directly from your data. 
+Generic models are powerful, but they aren't designed for every specific engineering constraint. ONE AI predicts a task-specific architecture based on dataset and constraints.
 
-**Curious to see what architecture the AI builds for your use case?** You can download ONE WARE Studio for free and test it on your own dataset.
+**If you want to reproduce the demo, here’s the Quick Start + example projects** You can download ONE WARE Studio for free and test it on your own dataset.
 
 *   [**Quick Start Guide**](/docs/one-ai/getting-started/quick-start-guide) - Have your first AI running in minutes.
 *   [**Tutorials & Demos**](/docs/one-ai/demos/overview) - Explore real-world examples.
