@@ -59,65 +59,147 @@ export default function PricingPage(): JSX.Element {
 
       <section className="default-background py-16 md:py-24">
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
-              <div className="rounded-2xl border border-[var(--ifm-color-primary)] p-8 md:p-12 text-center transition-all duration-300 hover:shadow-lg" style={{ background: "var(--ifm-background-surface-color)" }}>
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 items-start mb-20">
+              
+              {/* Free Plan */}
+              <div className="rounded-2xl border border-[var(--ifm-color-primary)] p-8 text-center transition-all duration-300 hover:shadow-lg flex flex-col" style={{ background: "var(--ifm-background-surface-color)" }}>
                 <p className="text-[var(--ifm-color-primary)] text-sm font-semibold uppercase tracking-widest mb-4">
                   <Translate id="pricing.free.label">Free</Translate>
                 </p>
                 <div className="flex items-baseline justify-center gap-2 mb-2">
-                  <span className="text-6xl md:text-7xl font-bold dark:text-white text-gray-900">0€</span>
+                  <span className="text-5xl lg:text-6xl font-bold dark:text-white text-gray-900">0€</span>
                 </div>
                 <p className="text-gray-400 mb-8">
-                  <Translate id="pricing.free.nocreditcard">No credit card needed</Translate>
+                  <Translate id="pricing.free.nocreditcard">No Credit Card Needed</Translate>
                 </p>
-                <div className="space-y-4 mb-10 text-left max-w-sm mx-auto">
+                <div className="space-y-4 mb-10 text-left flex-grow">
                   {[
-                    translate({ id: "pricing.free.feature.credits", message: "3,000 free credits per month" }),
+                    translate({ id: "pricing.free.feature.credits", message: "3,000 Free Credits per Month" }),
+                    translate({ id: "pricing.free.feature.projects", message: "Max. 10 Projects" }),
                     translate({ id: "pricing.free.feature.agent", message: "ONE AI Agent" }),
                     translate({ id: "pricing.free.feature.desktop", message: "ONE AI Desktop" }),
-                    translate({ id: "pricing.free.feature.projects", message: "Max. 10 Projects" }),
+                    translate({ id: "pricing.free.feature.mode", message: "Easy and Expert Mode" }),
+                    translate({ id: "pricing.free.feature.gen", message: "Dataset Generation with Camera" }),
+                    translate({ id: "pricing.free.feature.class", message: "Classification, Object Detection and Segmentation" }),
+                    translate({ id: "pricing.free.feature.label", message: "Automatic Dataset Labelling" }),
+                    translate({ id: "pricing.free.feature.pre", message: "Prefilters and Augmentations" }),
+                    translate({ id: "pricing.free.feature.opt", message: "Optimization for Any Hardware" }),
+                    translate({ id: "pricing.free.feature.train", message: "Training and Test on Our Server (50 Credits per Minute)" }),
+                    translate({ id: "pricing.free.feature.export", message: "Export for Evaluation (ONNX, TF-Lite, VHDL)" }),
                   ].map((feature, i) => (
-                    <div key={i} className="flex items-center gap-3">
-                      <svg className="w-5 h-5 text-[var(--ifm-color-primary)] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div key={i} className="flex items-start gap-3">
+                      <svg className="w-5 h-5 text-[var(--ifm-color-primary)] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      <span className="dark:text-gray-300 text-gray-700">{feature}</span>
+                      <span className="dark:text-gray-300 text-gray-700 text-sm">{feature}</span>
                     </div>
                   ))}
                 </div>
                 <Link href="https://cloud.one-ware.com/Account/Register">
-                  <button className="button button--primary button--lg">
+                  <button className="button button--primary button--lg w-full">
                     <Translate id="pricing.free.cta">Get Started</Translate>
                   </button>
                 </Link>
               </div>
 
-              <div className="flex items-center justify-center">
-                <div className="text-center">
-                  <p className="text-[var(--ifm-color-primary)] text-sm font-semibold uppercase tracking-widest mb-4">
-                    <Translate id="pricing.credits.title">Credits on Demand</Translate>
-                  </p>
-                  <div className="flex items-baseline justify-center gap-3 mb-4">
-                    <span className="text-5xl md:text-6xl font-bold dark:text-white text-gray-900">20€</span>
-                    <span className="text-xl text-gray-400">
-                      / 1,000 <Translate id="pricing.credits.unit">credits</Translate>
-                    </span>
-                  </div>
-                  <p className="dark:text-gray-300 text-gray-600 max-w-sm mx-auto">
-                    <Translate id="pricing.credits.description">
-                      Need more? Purchase additional credits anytime to scale your AI training.
-                    </Translate>
-                  </p>
-                  <p className="dark:text-gray-300 text-gray-600 max-w-sm mx-auto mt-8 pt-8" style={{ borderTop: '1px solid hsla(0,0%,71%,.246)' }}>
-                    <span className="text-[var(--ifm-color-primary)] text-sm font-semibold uppercase tracking-widest block mb-2">
-                      <Translate id="pricing.student.title">Student Program</Translate>
-                    </span>
-                    <Translate id="pricing.student.description">
-                      Apply to get 10,000 free credits per month
-                    </Translate>
-                  </p>
+               {/* Enterprise Plan */}
+               <div className="rounded-2xl border border-[var(--ifm-color-primary)] p-8 text-center transition-all duration-300 hover:shadow-lg flex flex-col" style={{ background: "var(--ifm-background-surface-color)" }}>
+                <p className="text-[var(--ifm-color-primary)] text-sm font-semibold uppercase tracking-widest mb-4">
+                  <Translate id="pricing.enterprise.label">Enterprise</Translate>
+                </p>
+                 <div className="flex items-baseline justify-center gap-2 mb-2">
+                  <span className="text-5xl lg:text-6xl font-bold dark:text-white text-gray-900">Custom</span>
                 </div>
+                <p className="text-gray-400 mb-8">
+                  <Translate id="pricing.enterprise.contact">Contact for pricing</Translate>
+                </p>
+                <div className="space-y-4 mb-10 text-left flex-grow">
+                   {[
+                    translate({ id: "pricing.enterprise.feature.monthly_credits", message: "Credits per Month: Custom" }),
+                    translate({ id: "pricing.enterprise.feature.projects", message: "Max. Projects: Custom" }),
+                    translate({ id: "pricing.enterprise.feature.support", message: "Priority Support" }),
+                    translate({ id: "pricing.enterprise.feature.custom", message: "Custom Integrations" }),
+                    translate({ id: "pricing.enterprise.feature.export", message: "Commercial License for AI Models" }),
+                     translate({ id: "pricing.enterprise.feature.onprem", message: "On-Premise Training" }),
+                  ].map((feature, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <svg className="w-5 h-5 text-[var(--ifm-color-primary)] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="dark:text-gray-300 text-gray-700 text-sm">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+                <button onClick={scrollToContact} className="button button--primary button--lg w-full">
+                  <Translate id="pricing.enterprise.cta">Contact Sales</Translate>
+                </button>
+              </div>
+
+              {/* Student Plan */}
+              <div className="rounded-2xl border border-[var(--ifm-color-primary)] p-8 text-center transition-all duration-300 hover:shadow-lg flex flex-col" style={{ background: "var(--ifm-background-surface-color)" }}>
+                <p className="text-[var(--ifm-color-primary)] text-sm font-semibold uppercase tracking-widest mb-4">
+                  <Translate id="pricing.student.label">Student</Translate>
+                </p>
+                <div className="flex items-baseline justify-center gap-2 mb-2">
+                  <span className="text-5xl lg:text-6xl font-bold dark:text-white text-gray-900">0€</span>
+                </div>
+                <p className="text-gray-400 mb-8">
+                  <Translate id="pricing.student.verification">Verification Required</Translate>
+                </p>
+                <div className="space-y-4 mb-10 text-left flex-grow">
+                  {[
+                    translate({ id: "pricing.student.feature.credits", message: "10,000 Free Credits per Month" }),
+                    translate({ id: "pricing.free.feature.projects", message: "Max. 10 Projects" }),
+                    translate({ id: "pricing.free.feature.agent", message: "ONE AI Agent" }),
+                    translate({ id: "pricing.free.feature.desktop", message: "ONE AI Desktop" }),
+                    translate({ id: "pricing.free.feature.mode", message: "Easy and Expert Mode" }),
+                    translate({ id: "pricing.free.feature.gen", message: "Dataset Generation with Camera" }),
+                    translate({ id: "pricing.free.feature.class", message: "Classification, Object Detection and Segmentation" }),
+                    translate({ id: "pricing.free.feature.label", message: "Automatic Dataset Labelling" }),
+                    translate({ id: "pricing.free.feature.pre", message: "Prefilters and Augmentations" }),
+                    translate({ id: "pricing.free.feature.opt", message: "Optimization for Any Hardware" }),
+                    translate({ id: "pricing.free.feature.train", message: "Training and Test on Our Server (50 Credits per Minute)" }),
+                    translate({ id: "pricing.free.feature.export", message: "Export for Evaluation (ONNX, TF-Lite, VHDL)" }),
+                  ].map((feature, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <svg className="w-5 h-5 text-[var(--ifm-color-primary)] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="dark:text-gray-300 text-gray-700 text-sm">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+                 <Link href="mailto:info@one-ware.com?subject=Student%20Program%20Application">
+                  <button className="button button--primary button--lg w-full mb-4">
+                    <Translate id="pricing.student.cta">Apply Now</Translate>
+                  </button>
+                </Link>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  <Translate id="pricing.student.instruction">
+                    Create a free account and email us from your student address to get upgraded.
+                  </Translate>
+                </p>
+              </div>
+            </div>
+
+            {/* Credits on Demand */}
+            <div className="flex items-center justify-center border-t border-gray-700">
+              <div className="text-center">
+                <p className="text-[var(--ifm-color-primary)] text-sm font-semibold uppercase tracking-widest mb-4">
+                  <Translate id="pricing.credits.title">Credits on Demand</Translate>
+                </p>
+                <div className="flex items-baseline justify-center gap-3 mb-4">
+                  <span className="text-5xl md:text-6xl font-bold dark:text-white text-gray-900">20€</span>
+                  <span className="text-xl text-gray-400">
+                    / 1,000 <Translate id="pricing.credits.unit">credits</Translate>
+                  </span>
+                </div>
+                <p className="dark:text-gray-300 text-gray-600 max-w-sm mx-auto">
+                  <Translate id="pricing.credits.description">
+                    Need more? Purchase additional credits anytime to scale your AI training.
+                  </Translate>
+                </p>
               </div>
             </div>
           </div>
@@ -132,7 +214,7 @@ export default function PricingPage(): JSX.Element {
                 <Translate id="pricing.services.title">Our Services</Translate>
               </h2>
               <p className="dark:text-gray-300 text-gray-600 mb-6">
-                <Translate id="pricing.services.subtitle">Consulting, custom solutions and hardware support</Translate>
+                <Translate id="pricing.services.subtitle">Consulting, Custom Solutions and Hardware Support</Translate>
               </p>
               <Link to="/docs/one-ai/services" className="button button--primary button--outline button--lg">
                 <Translate id="pricing.services.cta">View Services</Translate>
@@ -143,7 +225,7 @@ export default function PricingPage(): JSX.Element {
                 <Translate id="pricing.opensource.title">Open Source Program</Translate>
               </h2>
               <p className="dark:text-gray-300 text-gray-600 mb-6">
-                <Translate id="pricing.opensource.subtitle">Free credits for non-commercial projects</Translate>
+                <Translate id="pricing.opensource.subtitle">Free Credits for Non-Commercial Projects</Translate>
               </p>
               <Link to="/docs/one-ai/open-source-program" className="button button--primary button--outline button--lg">
                 <Translate id="pricing.opensource.cta">Learn More</Translate>
