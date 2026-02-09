@@ -302,7 +302,7 @@ export default function HomeHero({ mode = 'demo' }: HomeHeroProps) {
 
                   <div className="hidden 2xl:flex flex-row items-center justify-center 2xl:justify-start gap-4 mt-8 w-full">
                     <Link
-                      href="/docs/one-ai/getting-started"
+                      href="https://cloud.one-ware.com/Account/Register"
                       style={{
                         animation: "fadeInUp 0.8s ease-out forwards",
                         animationDelay: "0.5s",
@@ -373,7 +373,7 @@ export default function HomeHero({ mode = 'demo' }: HomeHeroProps) {
             {!isChatMode && (
               <div className="flex 2xl:hidden flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 2xl:gap-16 w-full mb-16 2xl:mb-0">
                 <Link
-                  href="/docs/one-ai/getting-started"
+                  href="https://cloud.one-ware.com/Account/Register"
                   style={{
                     animation: "fadeInUp 0.8s ease-out forwards",
                     animationDelay: "0.5s",
