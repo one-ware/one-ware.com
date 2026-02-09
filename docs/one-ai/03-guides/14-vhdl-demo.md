@@ -6,21 +6,21 @@ sidebar_label: VHDL Project
 import Link from '@docusaurus/Link';
 import SupportBanner from '@site/src/components/SupportBanner';
 
-# VHDL Project Demo
+# VHDL Project Guide
 
-## About this demo
-This demo showcases how to run a OneAI model on an FPGA for a demo use case. The use case will be the classification of handwritten digets. You can identify your own handwritten digits using an FPGA board of your choosing and the webcam of your computer. Requirement to run this demo is an FPGA board of your choosing and a computer with access to a webcam. Since communication between the FPGA board and the computer will be conducted via UART, please make sure you have the necessary cables and/or adapters.
+## About this guide
+This guide shows how to run a OneAI model on an FPGA for a demo use case. The use case will be the classification of handwritten digets. You can identify your own handwritten digits using an FPGA board of your choosing and the webcam of your computer. Requirement to run this demo is an FPGA board of your choosing and a computer with access to a webcam. Since communication between the FPGA board and the computer will be conducted via UART, please make sure you have the necessary cables and/or adapters.
 
-As this tutorial is not for any specific FPGA chip or board, board or chip specific sections may be quite vague. Thus, this tutorial assumes a certain familiarity of the user with FPGA development and the board or chip the user wants to run this tutoria on.
+As this tutorial is not for any specific FPGA chip or board, board or chip specific sections may be quite vague. Thus, this guide assumes a certain familiarity of the user with FPGA development and the board or chip the user wants to run this tutorial on.
 
-Please follow the [Handwritten Digit Classification Demo](/docs/one-ai/demos/handwritten-digits-demo) to obtain a CNN model. There are two necessary deviations pointed out in the next section. Stop the **Handwritten Digit Classification Demo** before exporting the model and then follow this tutorial here from the section [Model export](#export) onwards.
+Please follow the [Handwritten Digit Classification Demo](/docs/one-ai/tutorials/handwritten-digits-demo) to obtain a CNN model. There are two necessary deviations pointed out in the next section. Stop the **Handwritten Digit Classification Demo** before exporting the model and then follow this tutorial here from the section [Model export](#export) onwards. Of course you can use a different model with this guide. Adapt necessary steps at your discretion.
 
 
 ## Deviations to Handwritten Digit Classification Demo
 
 ### Hardware settings
 
-Instead of the Altera™ Max® 10 16K use the correct settings for the FPGA you are using. In order to simplify parametrization feel free to use the **Extension Manager**, which offers pre-configurations for various FPGA families. Click on **Extras** > **Extensions** to open the **Extension Manager**, then go to the section **Hardware** > **OneAI Support**. Here, install the extension that includes your FPGA. If there is none, please follow the [Specifying custom hardware](/docs/one-ai/documentation/hardware-settings#specifying-custom-hardware) guide.
+Instead of the Altera™ Max® 10 16K use the correct settings for the FPGA you are using. In order to simplify parametrization feel free to use the **Extension Manager**, which offers pre-configurations for various FPGA families. Click on **Extras** > **Extensions** to open the **Extension Manager**, then go to the section **Hardware** > **OneAI Support**. Here, install the extension that includes your FPGA. If there is none, please follow the [Specifying custom hardware](/docs/one-ai/getting-started/hardware-settings#specifying-custom-hardware) guide.
 
 
 ### Training the model
@@ -29,14 +29,17 @@ As we want to export for an FPGA the option **Enable Quantization Optimization**
 
 
 ## Model export {#export}
-[🔗 model export guide](/docs/one-ai/documentation/export)  
-After the training is completed, we need to export our model. To do so, we click on the **Export** button, which opens a new window with configurations. In the **Export type** drop-down menu, we select **Project** and then under Platform choose **FPGA**. The **Model Type** is then automatically changed to **VHDL**, exactly what we want.
 
-Next we can activate different settings, that change how our model is exported. If we check the **Export with pre- and postprocessing** checkbox, ONE AI will build all of our filters directly into the model. We activate this setting, because the filter pipeline is an important part of our model. The next setting allows us to change between exporting a floating point or quantized model. As we want a quantized model, we leave this unchecked.
+[🔗 model export guide](/docs/one-ai/getting-started/export)  
+After the training is completed, we need to export our model. To do so, we click on the **Export** button, which opens a new window (see image below) with configurations. In the **Export type** drop-down menu, we select **FPGA (VHDL)**.
+
+Next we can activate different settings, that change how our model is exported. If we check the **Export with pre- and postprocessing** checkbox, ONE AI will build all of our filters directly into the model. We activate this setting, because the filter pipeline is an important part of our model. Also activate **Enable post-processing optimization**. The next setting allows us to change between exporting a floating point or quantized model. As we want a quantized model, we leave this unchecked.
 
 The last check box allows us to select whether we want to export the last or the best model. This setting is only relevant for object detection tasks, so we can deactivate it.
 
-![model_export](/img/ai/one_ai_plugin/tutorials/vhdl_export.png)
+Leave the **Model confidence Threshold (%)** at 0%.
+
+![model_export](/img/ai/one_ai_plugin/tutorials/vhdl_export.webp)
 
 After the export is finished, we can download the exported VHDL model by clicking on the green arrow. This will save the model in the folder ``[ai_generator_name]/Export``.
 
@@ -44,7 +47,7 @@ After the export is finished, we can download the exported VHDL model by clickin
 
 ## Simulation
 
-This section describes how to simulate the One Ware VHDL model. While this step is not necessary per se, it is included nontheless for the sake of completeness.
+This section describes how to simulate the One Ware VHDL model. While this step is not necessary per se, it is included nontheless for the sake of completeness. Feel free to skip ahead to ``Testing``.
 
 The downloaded folder contains a **ONEAI_Simulation.vhd**-file. This file implements a test bench ready for use. Use the included **ONEAI_Simulation**-entity as the top-level entity in the simulation tool of your choice.
 

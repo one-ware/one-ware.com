@@ -32,7 +32,7 @@ All modules of the OneAI-code make use of streams. These are a signal type, used
 
 This is paired with a ``Data`` signal consisting of n-dimensions depending on the images colour channels. Each channel is a 7-bit unsigned signal encoding the respecting pixel value in the range 0...127.
 
-In case of multiple input ``Data`` signals (e.g. multi image analysis) all ``Data`` signals need to adhere to the same input stream, i.e. they must share clock, valid, ... signals.
+In case of multiple input ``Data`` signals (e.g. multi image analysis) all ``Data`` signals need to adhere to the same input stream, i.e. they must share clock, valid, column, row and filter signals.
 
 ## Simulation
 
@@ -56,14 +56,16 @@ When including the OneAI model into your FPGA project simply include the ``ONEAI
 - ``oData_1`` Output data (n-channel)
 - ``oCycle_1`` Current output cycle
 
-The output of the ``CNN``-module adheres to the stream format as well. For classifiers the output data is the confidence for each of the classes. As there is only one output data channel, the confidences for each class are given out in consecutive clock cycles. The current class is indicated by the ``oCycle_1`` signal. The confidence is encoded as a 7-bit unsigned integer. A large value indicates a high confidence. A percentage based confidence can be derived by dividing the value of the ``oData_1`` signal by 1.27 in the postprocessing.
+The output of the ``CNN``-module adheres to the stream format as well. The result of the CNN is provided via the ``oData_1`` signal. For classification models the output consists of the confidence values of the CNN for all of the classes. A model with 10 classes will produce 10 confidence values. Each of those will be produced in one clock cycle. The current class is indicated via the ``oCycle_1`` signal. The confidence is encoded as a 7-bit unsigned integer. A large value indicates a high confidence. A percentage based confidence (range 0...100) can be derived by dividing the value of the ``oData_1`` signal by 1.27 in the postprocessing.
 
 | **Cycle** | 0 | 1 | 2 |
 | --- | -- | -- | -- |
 | **CNN Output** | 0x12 | 0x01 | 0xFE |
 | **Probabilities** | 0.14 | 0.01 | 0.99 |
 
-The output will be generated a few clock cycles after the last input pixel is reached. The exact latency depends on the number of layers of the CNN. Be sure to leave the clock running after providing the last pixel data. It is possible to already start the next inference before the output is generated. Just start again with the (0,0) pixel after the last pixel of the former image was provided.
+Note that these are the raw confidence values produced by the model. It is customary to transform these into probabilities by using the softmax function. This post-processing step is not included in the provided VHDL-implementation and needs to be added by the user.
+
+Also note that the output will be generated a few clock cycles after the last input pixel is reached. The exact latency depends on the number of layers of the CNN and thus varies between models. Be sure to leave the clock running after providing the last pixel data. It is possible to already start the next inference before the output is generated. Just start again with the (0,0) pixel after the last pixel of the former image was provided.
 
 Example instantiation of the ``CNN``-module (assuming singular image classification with 3-channel RBG input):
 
