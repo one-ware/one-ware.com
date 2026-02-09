@@ -1974,5 +1974,89 @@
   },
   "careers.form.privacyLink": {
     "message": "Datenschutzrichtlinie"
+  },
+  "pricing.meta.title": {
+    "message": "Preise"
+  },
+  "pricing.meta.description": {
+    "message": "Erstelle deine individuelle KI kostenlos. Flexible Preise für jede Phase."
+  },
+  "pricing.hero.title": {
+    "message": "Preise"
+  },
+  "pricing.hero.subtitle": {
+    "message": "Erstelle deine individuelle KI kostenlos"
+  },
+  "pricing.free.label": {
+    "message": "Kostenlos"
+  },
+  "pricing.free.nocreditcard": {
+    "message": "Keine Kreditkarte erforderlich"
+  },
+  "pricing.free.feature.credits": {
+    "message": "3.000 kostenlose Credits pro Monat"
+  },
+  "pricing.free.feature.agent": {
+    "message": "ONE AI Agent"
+  },
+  "pricing.free.feature.desktop": {
+    "message": "ONE AI Desktop"
+  },
+  "pricing.free.feature.projects": {
+    "message": "Max. 10 Projekte"
+  },
+  "pricing.free.cta": {
+    "message": "Jetzt starten"
+  },
+  "pricing.credits.title": {
+    "message": "Credits nach Bedarf"
+  },
+  "pricing.credits.unit": {
+    "message": "Credits"
+  },
+  "pricing.credits.description": {
+    "message": "Mehr benötigt? Kaufe jederzeit zusätzliche Credits, um dein KI-Training zu skalieren."
+  },
+  "pricing.student.title": {
+    "message": "Studenten-Programm"
+  },
+  "pricing.student.description": {
+    "message": "Bewerbe dich für 10.000 kostenlose Credits pro Monat"
+  },
+  "pricing.student.cta": {
+    "message": "Jetzt bewerben"
+  },
+  "pricing.opensource.title": {
+    "message": "Open-Source-Programm"
+  },
+  "pricing.opensource.description": {
+    "message": "Bewerbe dich für kostenlose Credits für dein Open-Source-Projekt"
+  },
+  "pricing.opensource.cta": {
+    "message": "Mehr erfahren"
+  },
+  "pricing.commercial.title": {
+    "message": "Kommerzielle Nutzung von KI-Modellen"
+  },
+  "pricing.commercial.description": {
+    "message": "Benötigst du eine kommerzielle Lizenz für deine trainierten KI-Modelle? Kontaktiere unser Vertriebsteam."
+  },
+  "pricing.commercial.cta": {
+    "message": "Vertrieb kontaktieren"
+  },
+  "pricing.services.title": {
+    "message": "Unsere Dienstleistungen"
+  },
+  "pricing.services.description": {
+    "message": "Von Beratung und maßgeschneiderten Lösungen bis hin zu Hardware-Support — wir helfen dir, KI in deinen Workflow zu integrieren."
+  },
+  "pricing.services.cta": {
+    "message": "Dienstleistungen ansehen"
+  },
+  "pricing.services.subtitle": {
+    "message": "Beratung, maßgeschneiderte Lösungen und Hardware-Support"
+  },
+  "pricing.opensource.subtitle": {
+    "message": "Kostenlose Credits für nicht-kommerzielle Projekte"
   }
 }
