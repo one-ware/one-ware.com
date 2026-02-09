@@ -81,7 +81,7 @@ export default function ChatHero() {
         paddingTop: "var(--ifm-navbar-height)",
       }}
     >
-      <div className="flex flex-col items-center justify-center min-h-screen">
+      <div className="flex flex-col items-center justify-center min-h-screen relative">
         <div className="w-full max-w-3xl flex flex-col items-center text-center gap-8 sm:gap-12 relative">
         <h1
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[var(--ifm-color-primary)]"
@@ -205,7 +205,29 @@ export default function ChatHero() {
             <Translate id="chathero.button.showcase">Showcase</Translate>
           </button>
         </div>
-      </div>
+        </div>
+
+        <div
+          className="absolute right-6 md:right-12 lg:right-16 top-1/2 -translate-y-1/2 hidden xl:flex flex-col items-start gap-3 max-w-[250px]"
+          style={{
+            animation: "fadeInUp 0.8s ease-out forwards",
+            animationDelay: "0.4s",
+            opacity: 0,
+          }}
+        >
+          <span className={`text-base font-medium ${isDarkMode ? "text-gray-400" : "text-gray-500"}`}>
+            <Translate id="chathero.professional.prefix">Already an AI expert?</Translate>
+          </span>
+          <a
+            href="/studio"
+            className={`text-base no-underline cursor-pointer transition-opacity hover:opacity-80 p-0 flex items-center gap-2 text-left ${isDarkMode ? "text-gray-200" : "text-gray-700"}`}
+          >
+            <Translate id="chathero.professional.link">Explore our Tools for Professionals</Translate>
+            <svg className="shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M7 17l9.2-9.2M17 17V7H7" />
+            </svg>
+          </a>
+        </div>
       </div>
 
       <SignUpModal

@@ -167,6 +167,7 @@ const config: Config = {
               to: "/",
               label: "ONE AI Agent",
               className: "dropdown__link--highlight",
+              activeBasePath: "__none__",
             },
             {
               to: "/one-ai",

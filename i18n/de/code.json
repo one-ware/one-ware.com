@@ -1909,6 +1909,12 @@
   "chathero.button.showcase": {
     "message": "Showcase"
   },
+  "chathero.professional.prefix": {
+    "message": "Schon KI-Experte?"
+  },
+  "chathero.professional.link": {
+    "message": "Entdecke unsere Tools für Profis"
+  },
   "signupmodal.attach.title": {
     "message": "Anmelden um Dateien hochzuladen"
   },

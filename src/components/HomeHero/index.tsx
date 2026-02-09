@@ -233,90 +233,6 @@ export default function HomeHero({ mode = 'demo' }: HomeHeroProps) {
         <div className="w-full max-w-[98%] sm:max-w-[95%] flex flex-col gap-10 sm:gap-12 2xl:gap-14">
             <div className="flex flex-col 2xl:flex-row items-center gap-2 sm:gap-4 2xl:gap-12">
             <div className="w-full 2xl:w-[40%] flex flex-col justify-center space-y-4 sm:space-y-6 2xl:space-y-8 text-center 2xl:text-left py-2 sm:py-4 2xl:py-0">
-              {isChatMode ? (
-                <div
-                  className="flex flex-col gap-8 2xl:gap-10 pt-8 md:pt-12 2xl:pt-0"
-                  style={{
-                    animation: "fadeInUp 0.8s ease-out forwards",
-                    opacity: 0,
-                  }}
-                >
-                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold m-0 leading-tight">
-                    <span className="dark:text-white text-gray-800">
-                      <Translate id="homehero.chat.lefttitle">How It Works</Translate>
-                    </span>
-                  </h1>
-
-                  <div className="flex flex-col gap-4 2xl:gap-5">
-                    <div
-                      className="flex items-center gap-4"
-                      style={{
-                        animation: "fadeInUp 0.5s ease-out forwards",
-                        animationDelay: "0.1s",
-                        opacity: 0,
-                      }}
-                    >
-                      <span className="text-[var(--ifm-color-primary)] font-bold text-xl md:text-2xl w-6">1</span>
-                      <span className="dark:text-white text-gray-900 font-medium text-base md:text-lg">
-                        <Translate id="homehero.chat.step1.title">Configure Your Project</Translate>
-                      </span>
-                    </div>
-
-                    <div
-                      className="flex items-center gap-4"
-                      style={{
-                        animation: "fadeInUp 0.5s ease-out forwards",
-                        animationDelay: "0.2s",
-                        opacity: 0,
-                      }}
-                    >
-                      <span className="text-[var(--ifm-color-primary)] font-bold text-xl md:text-2xl w-6">2</span>
-                      <span className="dark:text-white text-gray-900 font-medium text-base md:text-lg">
-                        <Translate id="homehero.chat.step2.title">Train Your Model</Translate>
-                      </span>
-                    </div>
-
-                    <div
-                      className="flex items-center gap-4"
-                      style={{
-                        animation: "fadeInUp 0.5s ease-out forwards",
-                        animationDelay: "0.3s",
-                        opacity: 0,
-                      }}
-                    >
-                      <span className="text-[var(--ifm-color-primary)] font-bold text-xl md:text-2xl w-6">3</span>
-                      <span className="dark:text-white text-gray-900 font-medium text-base md:text-lg">
-                        <Translate id="homehero.chat.step3.title">Deploy & Integrate</Translate>
-                      </span>
-                    </div>
-
-                    <div
-                      className="flex items-center gap-4 mt-2"
-                      style={{
-                        animation: "fadeInUp 0.5s ease-out forwards",
-                        animationDelay: "0.4s",
-                        opacity: 0,
-                      }}
-                    >
-                      <svg
-                        className="w-6 flex-shrink-0"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="var(--ifm-color-primary)"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <polyline points="9 18 15 12 9 6" />
-                      </svg>
-                      <span className="text-[var(--ifm-color-primary)] font-semibold text-base md:text-lg">
-                        <Translate id="homehero.chat.result">Your AI is ready</Translate>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <>
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
                     <span
                       className="dark:text-white text-gray-800 block"
@@ -410,8 +326,6 @@ export default function HomeHero({ mode = 'demo' }: HomeHeroProps) {
                       </button>
                     </Link>
                   </div>
-                </>
-              )}
             </div>
 
             <div className="relative flex items-center 2xl:items-end justify-center 2xl:justify-end w-full 2xl:w-[60%] h-auto select-none flex-1 2xl:flex-initial">
