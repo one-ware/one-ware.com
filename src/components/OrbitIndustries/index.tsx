@@ -27,7 +27,7 @@ const industries: IndustryItem[] = [
       </svg>
     ),
     descriptionId: "orbitindustries.anyHardware.description",
-    description: "Deploy AI on any hardware. From CPUs to FPGAs, ONE AI optimizes models for memory, FPS and accuracy.",
+    description: "AI for any hardware, no matter how few resources. From microcontrollers to FPGAs - ONE AI optimizes for your exact constraints.",
     angle: 335,
   },
   {
@@ -40,7 +40,7 @@ const industries: IndustryItem[] = [
       </svg>
     ),
     descriptionId: "orbitindustries.anyRequirements.description",
-    description: "Built for extreme requirements with ultra-low latency, real-time or maximum throughput.",
+    description: "AI no matter how fast it needs to be. Built for the most demanding real-time applications with guaranteed performance.",
     angle: 65,
   },
   {
@@ -55,7 +55,7 @@ const industries: IndustryItem[] = [
       </svg>
     ),
     descriptionId: "orbitindustries.anyApplication.description",
-    description: "From robots with 3D cameras to MRI systems with dozens of images per analysis, ONE AI always builds the best AI for the job.",
+    description: "No matter how complex the application or how unusual the data - ONE AI creates custom neural networks tailored to your specific use case.",
     angle: 245,
   },
   {
@@ -69,7 +69,7 @@ const industries: IndustryItem[] = [
       </svg>
     ),
     descriptionId: "orbitindustries.resultsInMinutes.description",
-    description: "From data to deployment in minutes. Build production-ready AI models without ML expertise.",
+    description: "Can be operated by any developer. Get production-ready AI models in minutes, not months - no ML expertise required.",
     angle: 155,
   },
 ];
@@ -214,6 +214,11 @@ export default function OrbitIndustries() {
           <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-4 ${isDarkMode ? "text-white" : "text-gray-900"}`}>
             <Translate id="orbitindustries.title">Explore Our Benefits</Translate>
           </h2>
+          <p className={`text-lg max-w-2xl mx-auto ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}>
+            <Translate id="orbitindustries.subtitle">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </Translate>
+          </p>
         </div>
 
         <div
@@ -466,7 +471,12 @@ export default function OrbitIndustries() {
                         </div>
                         <p
                           className="text-sm leading-relaxed"
-                          style={{ color: isDarkMode ? "#999" : "#666" }}
+                          style={{
+                            color: isActive
+                              ? "var(--ifm-color-primary)"
+                              : isDarkMode ? "#999" : "#666",
+                            transition: "color 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                          }}
                         >
                           <Translate id={industry.descriptionId}>{industry.description}</Translate>
                         </p>

@@ -1,21 +1,12 @@
 {
   "homehero.title1": {
-    "message": "Lass ONE AI"
+    "message": "So Automatisieren Wir"
   },
   "homehero.title2": {
-    "message": "deine KI entwickeln"
+    "message": "KI-Entwicklung"
   },
-  "homehero.no_universal_models": {
-    "message": "Keine universellen KI-Modelle."
-  },
-  "homehero.custom_vision_ai": {
-    "message": "Vision-AI, genau für deine Anwendung."
-  },
-  "homehero.subtitle1": {
-    "message": "Vision und Edge AI Entwicklung,"
-  },
-  "homehero.subtitle2": {
-    "message": "Automatisiert in einer Software"
+  "homehero.subtitle": {
+    "message": "Erlebe, wie deine individuelle KI erstellt wird, nachdem unser KI-Agent die richtige Konfiguration gefunden hat."
   },
   "homehero.button.download": {
     "message": "Kostenloser Download"
@@ -31,6 +22,72 @@
   },
   "homehero.benefit.requirements": {
     "message": "Jede Anforderung"
+  },
+  "homehero.chat.history.title": {
+    "message": "Verlauf"
+  },
+  "homehero.chat.history.pcb": {
+    "message": "Leiterplatten-Inspektion"
+  },
+  "homehero.chat.history.fruit": {
+    "message": "Obst-Sortierung"
+  },
+  "homehero.chat.history.apple": {
+    "message": "Apfel QC"
+  },
+  "homehero.chat.user1": {
+    "message": "Mach Apfel QC"
+  },
+  "homehero.chat.ai1": {
+    "message": "Soll ich helfen bei Datensatz oder Hardware zum Aufnehmen?"
+  },
+  "homehero.chat.user2": {
+    "message": "Ich hab schon Trainings Daten"
+  },
+  "homehero.chat.ai2": {
+    "message": "Hier ist dein fertiges ONE AI Projekt"
+  },
+  "homehero.chat.button.open": {
+    "message": "Projekt Öffnen"
+  },
+  "homehero.chat.newchat": {
+    "message": "Neuer Chat"
+  },
+  "homehero.chat.welcome.title": {
+    "message": "Starte Dein KI-Projekt"
+  },
+  "homehero.chat.welcome.desc": {
+    "message": "Beschreibe was du bauen möchtest und ONE AI erstellt es für dich"
+  },
+  "homehero.chat.welcome.button": {
+    "message": "Demo Starten"
+  },
+  "homehero.chat.lefttitle": {
+    "message": "So funktioniert's"
+  },
+  "homehero.chat.step1": {
+    "message": "Chatte mit Agent um Hardware, Datensatz und KI Projekt zu erstellen"
+  },
+  "homehero.chat.step1.title": {
+    "message": "Projekt konfigurieren"
+  },
+  "homehero.chat.step2": {
+    "message": "Lade Trainingsdaten rein und lasse ONE AI KI erstellen"
+  },
+  "homehero.chat.step2.title": {
+    "message": "Modell trainieren"
+  },
+  "homehero.chat.step3": {
+    "message": "Chatte mit Agent um KI zu integrieren"
+  },
+  "homehero.chat.step3.title": {
+    "message": "Deployen & Integrieren"
+  },
+  "homehero.chat.result": {
+    "message": "Deine KI ist fertig"
+  },
+  "homehero.chat.input.placeholder": {
+    "message": "Nachricht eingeben..."
   },
   "homepage.every": {
     "message": "Jede "
@@ -413,18 +470,6 @@
   },
   "oneai.hero.nextgen.title": {
     "message": "Die nächste Generation der KI-Entwicklung"
-  },
-  "oneai.hero.main.title": {
-    "message": "Lass ONE AI Deine Vision- und Edge-AI-Projekte fertigstellen"
-  },
-  "oneai.hero.main.subtitle": {
-    "message": "Sieh die Kraft Deines Datensatzes mit der richtigen KI."
-  },
-  "oneai.hero.main.subtitle2": {
-    "message": "Automatisch maßgeschneidert für Deine Bedürfnisse und exportiert für jede Hardware."
-  },
-  "oneai.hero.examples": {
-    "message": "Beispiel-Projekte"
   },
   "homepage.seo.title": {
     "message": "ONE WARE - Die nächste Generation der Computer Vision und Edge AI Entwicklung"
@@ -1864,6 +1909,12 @@
   "chathero.button.showcase": {
     "message": "Showcase"
   },
+  "chathero.professional.prefix": {
+    "message": "Schon KI-Experte?"
+  },
+  "chathero.professional.link": {
+    "message": "Entdecke unsere Tools für Profis"
+  },
   "signupmodal.attach.title": {
     "message": "Anmelden um Dateien hochzuladen"
   },
@@ -1883,7 +1934,7 @@
     "message": "Abbrechen"
   },
     "orbitindustries.title": {
-    "message": "Entdecke unsere Vorteile"
+    "message": "Explore Our Benefits"
   },
   "orbitindustries.subtitle": {
     "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
@@ -1892,87 +1943,24 @@
     "message": "Jede Hardware"
   },
   "orbitindustries.anyHardware.description": {
-    "message": "Bringe KI auf jede Hardware. Von CPUs bis FPGAs - ONE AI optimiert Modelle für Speicher, FPS und Genauigkeit."
+    "message": "KI für jede Hardware, egal wie wenig Ressourcen. Von Mikrocontrollern bis FPGAs - ONE AI optimiert für deine exakten Anforderungen."
   },
   "orbitindustries.anyRequirements.label": {
     "message": "Jede Anforderung"
   },
   "orbitindustries.anyRequirements.description": {
-    "message": "Entwickelt für extreme Anforderungen mit ultra-niedriger Latenz, Echtzeitfähigkeit oder maximalem Durchsatz."
+    "message": "KI egal wie schnell sie sein muss. Entwickelt für die anspruchsvollsten Echtzeitanwendungen mit garantierter Performance."
   },
   "orbitindustries.anyApplication.label": {
     "message": "Jede Anwendung"
   },
   "orbitindustries.anyApplication.description": {
-    "message": "Von Robotern mit 3D-Kameras bis zu MRT-Systemen mit Dutzenden Bildern pro Analyse - ONE AI erstellt immer die beste KI für die Aufgabe."
+    "message": "Egal wie komplex die Anwendung ist oder wie untypisch die Daten - ONE AI erstellt maßgeschneiderte neuronale Netze für deinen spezifischen Anwendungsfall."
   },
   "orbitindustries.resultsInMinutes.label": {
     "message": "Ergebnisse in Minuten"
   },
   "orbitindustries.resultsInMinutes.description": {
     "message": "Kann von jedem Entwickler bedient werden. Erhalte produktionsreife KI-Modelle in Minuten statt Monaten - keine ML-Expertise erforderlich."
-  },
-  "careers.detail.location": {
-    "message": "Standort"
-  },
-  "careers.detail.startDate": {
-    "message": "Start"
-  },
-  "careers.detail.type": {
-    "message": "Typ"
-  },
-  "careers.detail.contact": {
-    "message": "Kontakt"
-  },
-  "careers.detail.applyNow": {
-    "message": "Jetzt Bewerben"
-  },
-  "careers.form.name": {
-    "message": "Name"
-  },
-  "careers.form.email": {
-    "message": "E-Mail"
-  },
-  "careers.form.github": {
-    "message": "GitHub Benutzername"
-  },
-  "careers.form.resume.drag": {
-    "message": "Lebenslauf hier ablegen oder klicken zum Hochladen"
-  },
-  "careers.form.resume.format": {
-    "message": "Nur PDF, max. 10MB"
-  },
-  "careers.form.submit": {
-    "message": "Bewerbung absenden"
-  },
-  "careers.form.submitting": {
-    "message": "Wird gesendet..."
-  },
-  "careers.form.success.title": {
-    "message": "Bewerbung eingereicht!"
-  },
-  "careers.form.success.message": {
-    "message": "Vielen Dank für Ihre Bewerbung. Wir werden sie prüfen und uns in Kürze bei Ihnen melden."
-  },
-  "careers.form.error": {
-    "message": "Beim Absenden Ihrer Bewerbung ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns unter career@one-ware.com."
-  },
-  "careers.form.alreadyApplied": {
-    "message": "Sie haben sich bereits mit dieser E-Mail-Adresse für diese Position beworben."
-  },
-  "careers.form.error.fileType": {
-    "message": "Bitte laden Sie eine PDF-Datei hoch"
-  },
-  "careers.form.error.fileSize": {
-    "message": "Die Dateigröße muss kleiner als 10MB sein"
-  },
-  "careers.form.error.resumeRequired": {
-    "message": "Bitte laden Sie Ihren Lebenslauf hoch"
-  },
-  "careers.form.privacy": {
-    "message": "Mit dem Absenden akzeptieren Sie unsere"
-  },
-  "careers.form.privacyLink": {
-    "message": "Datenschutzrichtlinie"
   }
 }

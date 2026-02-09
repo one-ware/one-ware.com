@@ -14,6 +14,7 @@ import initWebsiteEffects from "../components/startEffects";
 import ContactUs from "../components/ContactUs";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Head from "@docusaurus/Head";
+import ChatHero from "@site/src/components/ChatHero";
 import HomeHero from "@site/src/components/HomeHero";
 import VideoShowcase from "@site/src/components/VideoShowcase";
 import OrbitIndustries from "@site/src/components/OrbitIndustries";
@@ -344,13 +345,25 @@ export default function Home() {
         />
       </Head>
 
-      <HomeHero />
+      <ChatHero />
       <main className="overflow-x-hidden alternative-background ">
-        <div className="default-background pb-12">
+        <div className="default-background">
           <div id="video">
             <VideoShowcase />
           </div>
           <IndustryExamplesSection />
+        </div>
+        <div id="demo">
+          <HomeHero mode="chat" />
+        </div>
+        <div
+          className="default-background"
+          style={{
+            borderTop: '1px solid',
+            borderBottom: '1px solid',
+            borderColor: 'var(--ifm-toc-border-color)',
+          }}
+        >
           <OrbitIndustries />
         </div>
 

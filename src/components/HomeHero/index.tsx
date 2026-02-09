@@ -79,7 +79,11 @@ function useAdaptivePerformance() {
   };
 }
 
-export default function HomeHero() {
+interface HomeHeroProps {
+  mode?: 'demo' | 'chat';
+}
+
+export default function HomeHero({ mode = 'demo' }: HomeHeroProps) {
   const performanceValue = useAdaptivePerformance();
 
   const [isDragging, setIsDragging] = useState(false);
@@ -95,13 +99,25 @@ export default function HomeHero() {
   );
   const [showGhost, setShowGhost] = useState(false);
   const [isGhostHovering, setIsGhostHovering] = useState(false);
+  const [chatCompleted, setChatCompleted] = useState(false);
+
+  const handleChatComplete = useCallback(() => {
+    setChatCompleted(true);
+    setShowGhost(false);
+  }, []);
+
+  const isChatMode = mode === 'chat' && !chatCompleted;
 
   useEffect(() => {
+    if (isChatMode) {
+      setShowGhost(false);
+      return;
+    }
     const timer = setTimeout(() => {
       setShowGhost(true);
     }, 2000);
     return () => clearTimeout(timer);
-  }, []);
+  }, [isChatMode]);
 
   const handleDragStart = (e: React.MouseEvent) => {
     setIsDragging(true);
@@ -200,18 +216,14 @@ export default function HomeHero() {
     <PerformanceContext.Provider value={performanceValue}>
     <HeroBackground
       className="min-h-screen"
-      style={{
-        marginTop: "calc(var(--ifm-navbar-height) * -1)",
-        paddingTop: "var(--ifm-navbar-height)",
-      }}
     >
 
-      {isDragging && <DragPreview x={dragPos.x} y={dragPos.y} />}
+      {isDragging && !isChatMode && <DragPreview x={dragPos.x} y={dragPos.y} />}
 
       <GhostDragAnimation
         sourceRef={sourceFolderRef}
         targetRef={targetPanelRef}
-        show={!hasDropped && !isDragging && showGhost}
+        show={!isChatMode && !hasDropped && !isDragging && showGhost}
         onHoverChange={setIsGhostHovering}
       />
 
@@ -221,130 +233,115 @@ export default function HomeHero() {
         <div className="w-full max-w-[98%] sm:max-w-[95%] flex flex-col gap-10 sm:gap-12 2xl:gap-14">
             <div className="flex flex-col 2xl:flex-row items-center gap-2 sm:gap-4 2xl:gap-12">
             <div className="w-full 2xl:w-[40%] flex flex-col justify-center space-y-4 sm:space-y-6 2xl:space-y-8 text-center 2xl:text-left py-2 sm:py-4 2xl:py-0">
-              <div className="flex flex-col gap-1 sm:gap-2 mb-6 sm:mb-0">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-                  <span
-                    className="text-[var(--ifm-color-primary)] block"
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+                    <span
+                      className="dark:text-white text-gray-800 block"
+                      style={{
+                        animation: "fadeInUp 0.8s ease-out forwards",
+                        opacity: 0,
+                      }}
+                    >
+                      <Translate id="homehero.title1">How We Automate</Translate>
+                    </span>
+                    <span
+                      className="text-[var(--ifm-color-primary)] block"
+                      style={{
+                        animation: "fadeInUp 0.8s ease-out forwards",
+                        animationDelay: "0.1s",
+                        opacity: 0,
+                      }}
+                    >
+                      <Translate id="homehero.title2">AI Development</Translate>
+                    </span>
+                  </h1>
+                  <div
+                    className="flex flex-col sm:flex-row items-center justify-center 2xl:justify-start gap-4 sm:gap-6"
                     style={{
                       animation: "fadeInUp 0.8s ease-out forwards",
+                      animationDelay: "0.2s",
                       opacity: 0,
                     }}
                   >
-                    <Translate id="homehero.title1">Let ONE AI </Translate>
-                  </span>
-                  
-                  <span
-                    className="dark:text-white text-gray-800 block"
-                    style={{
-                      animation: "fadeInUp 0.8s ease-out forwards",
-                      animationDelay: "0.1s",
+                    <div className="flex items-center gap-2">
+                      <div className="w-6 h-6 text-[var(--ifm-color-primary)]" style={{ animation: "pulseScale 2s ease-in-out infinite" }}>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                          <path d="M2 17l10 5 10-5" />
+                          <path d="M2 12l10 5 10-5" />
+                        </svg>
+                      </div>
+                      <span className="dark:text-white text-gray-800 text-sm font-medium">
+                        <Translate id="homehero.benefit.application">Any Application</Translate>
+                      </span>
+                    </div>
 
-                      opacity: 0,
-                    }}
-                  >
-                    <Translate id="homehero.title2">Build Your Custom AI</Translate>
-                  </span>
-                </h1>
-                <div
-                  className="text-xl md:text-2xl font-light dark:text-gray-300 text-gray-700"
-                  style={{
-                    animation: "fadeInUp 0.8s ease-out forwards",
-                    opacity: 0,
-                  }}
-                >
-                  <Translate id="homehero.no_universal_models">No universal AI models.</Translate>
-                </div>
-                <div
-                  className="text-xl md:text-2xl font-light dark:text-gray-300 text-gray-700"
-                  style={{
-                    animation: "fadeInUp 0.8s ease-out forwards",
-                    opacity: 0,
-                  }}
-                >
-                  <Translate id="homehero.custom_vision_ai">Vision AI built exactly for your application.</Translate>
-                </div>
-              </div>
-              <div
-                className="hidden sm:flex flex-col sm:flex-row items-center justify-center 2xl:justify-start gap-4 sm:gap-6"
-                style={{
-                  animation: "fadeInUp 0.8s ease-out forwards",
-                  animationDelay: "0.2s",
-                  opacity: 0,
-                }}
-              >
-                <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 text-[var(--ifm-color-primary)]" style={{ animation: "pulseScale 2s ease-in-out infinite" }}>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                      <path d="M2 17l10 5 10-5" />
-                      <path d="M2 12l10 5 10-5" />
-                    </svg>
+                    <div className="flex items-center gap-2">
+                      <div className="w-6 h-6 text-[var(--ifm-color-primary)]" style={{ animation: "shrinkPulse 2s ease-in-out infinite" }}>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                          <rect x="4" y="4" width="16" height="16" rx="2" />
+                          <rect x="9" y="9" width="6" height="6" />
+                          <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3" />
+                        </svg>
+                      </div>
+                      <span className="dark:text-white text-gray-800 text-sm font-medium">
+                        <Translate id="homehero.benefit.hardware">Any Hardware</Translate>
+                      </span>
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                      <div className="w-6 h-6 text-[var(--ifm-color-primary)]" style={{ animation: "flashGlow 1.5s ease-in-out infinite" }}>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                        </svg>
+                      </div>
+                      <span className="dark:text-white text-gray-800 text-sm font-medium">
+                        <Translate id="homehero.benefit.requirements">Any Requirements</Translate>
+                      </span>
+                    </div>
                   </div>
-                  <span className="dark:text-white text-gray-800 text-sm font-medium">
-                    <Translate id="homehero.benefit.application">Any Application</Translate>
-                  </span>
-                </div>
 
-                <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 text-[var(--ifm-color-primary)]" style={{ animation: "shrinkPulse 2s ease-in-out infinite" }}>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="4" y="4" width="16" height="16" rx="2" />
-                      <rect x="9" y="9" width="6" height="6" />
-                      <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3" />
-                    </svg>
+                  <div className="hidden 2xl:flex flex-row items-center justify-center 2xl:justify-start gap-4 mt-8 w-full">
+                    <Link
+                      href="https://cloud.one-ware.com/Account/Register"
+                      style={{
+                        animation: "fadeInUp 0.8s ease-out forwards",
+                        animationDelay: "0.5s",
+                        opacity: 0,
+                      }}
+                    >
+                      <button className="button button--primary button--lg">
+                        <Translate id="homehero.button.download">Free Download</Translate>
+                      </button>
+                    </Link>
+                    <Link
+                      href="/one-ai"
+                      style={{
+                        animation: "fadeInUp 0.8s ease-out forwards",
+                        animationDelay: "0.6s",
+                        opacity: 0,
+                      }}
+                    >
+                      <button className="button button--primary button--outline button--lg">
+                        <Translate id="homehero.button.learnmore">Learn More</Translate>
+                      </button>
+                    </Link>
                   </div>
-                  <span className="dark:text-white text-gray-800 text-sm font-medium">
-                    <Translate id="homehero.benefit.hardware">Any Hardware</Translate>
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 text-[var(--ifm-color-primary)]" style={{ animation: "flashGlow 1.5s ease-in-out infinite" }}>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                    </svg>
-                  </div>
-                  <span className="dark:text-white text-gray-800 text-sm font-medium">
-                    <Translate id="homehero.benefit.requirements">Any Requirements</Translate>
-                  </span>
-                </div>
-              </div>
-
-              <div className="hidden 2xl:flex flex-row items-center justify-center 2xl:justify-start gap-4 mt-8 w-full">
-                <Link
-                  href="https://cloud.one-ware.com/Account/Register"
-                  style={{
-                    animation: "fadeInUp 0.8s ease-out forwards",
-                    animationDelay: "0.5s",
-                    opacity: 0,
-                  }}
-                >
-                  <button className="button button--primary button--lg">
-                    <Translate id="homehero.button.download">Get Started</Translate>
-                  </button>
-                </Link>
-                <Link
-                  href="/one-ai"
-                  style={{
-                    animation: "fadeInUp 0.8s ease-out forwards",
-                    animationDelay: "0.6s",
-                    opacity: 0,
-                  }}
-                >
-                  <button className="button button--primary button--outline button--lg">
-                    <Translate id="homehero.button.learnmore">Learn More</Translate>
-                  </button>
-                </Link>
-              </div>
             </div>
 
             <div className="relative flex items-center 2xl:items-end justify-center 2xl:justify-end w-full 2xl:w-[60%] h-auto select-none flex-1 2xl:flex-initial">
-              <div className="absolute 2xl:relative z-20 2xl:z-auto bottom-12 sm:bottom-10 2xl:bottom-auto left-4 sm:left-8 2xl:left-auto 2xl:mr-8 sm:2xl:mr-16">
+              <div
+                className="absolute 2xl:relative z-20 2xl:z-auto bottom-12 sm:bottom-10 2xl:bottom-auto left-4 sm:left-8 2xl:left-auto 2xl:mr-8 sm:2xl:mr-16"
+                style={{
+                  opacity: isChatMode ? 0 : 1,
+                  pointerEvents: isChatMode ? "none" : "auto",
+                  transition: "opacity 0.3s ease",
+                }}
+              >
                 <FolderWithApple
                   style={{
-                    animation: "fadeInUp 0.8s ease-out forwards",
+                    animation: isChatMode ? "none" : "fadeInUp 0.8s ease-out forwards",
                     animationDelay: "0.3s",
-                    opacity: 0,
+                    opacity: isChatMode ? 0 : undefined,
                   }}
                   isDragging={isDragging}
                   hasDropped={hasDropped}
@@ -367,36 +364,40 @@ export default function HomeHero() {
                 onDropTrainingData={handleDropSuccess}
                 hasTrainingData={hasDropped}
                 setTrainingPanelRef={setTargetPanelRef}
+                mode={mode}
+                onChatComplete={handleChatComplete}
               />
             </div>
           </div>
 
-            <div className="flex 2xl:hidden flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 2xl:gap-16 w-full mb-16 2xl:mb-0">
-            <Link
-              href="https://cloud.one-ware.com/Account/Register"
-              style={{
-                animation: "fadeInUp 0.8s ease-out forwards",
-                animationDelay: "0.5s",
-                opacity: 0,
-              }}
-            >
-              <button className="button button--primary button--outline button--lg w-full sm:w-auto">
-                <Translate id="homehero.button.download">Get Started</Translate>
-              </button>
-            </Link>
-            <Link
-              href="/one-ai"
-              style={{
-                animation: "fadeInUp 0.8s ease-out forwards",
-                animationDelay: "0.6s",
-                opacity: 0,
-              }}
-            >
-              <button className="button button--primary button--lg w-full sm:w-auto">
-                <Translate id="homehero.button.learnmore">Learn More</Translate>
-              </button>
-            </Link>
-            </div>
+            {!isChatMode && (
+              <div className="flex 2xl:hidden flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 2xl:gap-16 w-full mb-16 2xl:mb-0">
+                <Link
+                  href="https://cloud.one-ware.com/Account/Register"
+                  style={{
+                    animation: "fadeInUp 0.8s ease-out forwards",
+                    animationDelay: "0.5s",
+                    opacity: 0,
+                  }}
+                >
+                  <button className="button button--primary button--outline button--lg w-full sm:w-auto">
+                    <Translate id="homehero.button.download">Free Download</Translate>
+                  </button>
+                </Link>
+                <Link
+                  href="/one-ai"
+                  style={{
+                    animation: "fadeInUp 0.8s ease-out forwards",
+                    animationDelay: "0.6s",
+                    opacity: 0,
+                  }}
+                >
+                  <button className="button button--primary button--lg w-full sm:w-auto">
+                    <Translate id="homehero.button.learnmore">Learn More</Translate>
+                  </button>
+                </Link>
+              </div>
+            )}
         </div>
       </div>
 

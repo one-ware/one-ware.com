@@ -11,7 +11,7 @@ import Translate, { translate } from "@docusaurus/Translate";
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Head from '@docusaurus/Head';
 import HeroBackground from "../components/HeroBackground";
-import { useColorMode } from "@docusaurus/theme-common";
+import HomeHero from "../components/HomeHero";
 
 const sliders = [
   {
@@ -84,60 +84,7 @@ const sliders = [
   },
 ];
 
-function HomepageHeader() {
-  return (
-    <HeroBackground
-      className="w-full min-h-[400px] flex items-center justify-center"
-      style={{
-        marginTop: "calc(var(--ifm-navbar-height) * -1)",
-        paddingTop: "var(--ifm-navbar-height)",
-      }}
-    >
-      <div className="flex flex-col items-center justify-center w-full h-full px-4">
-        <div className="flex justify-center w-full">
-          <div className="flex-col max-w-5xl mx-auto mt-10">
-            <div className="text-center mt-10">
-              <h1 className="font-bold text-3xl md:text-4xl mb-4 dark:text-white text-gray-900">
-                <Translate id="oneai.hero.main.title">
-                  Let ONE AI Finish Your Vision and Edge AI Projects
-                </Translate>
-              </h1>
-              <h2 className="text-xl md:text-2xl mb-7 font-normal dark:text-white text-gray-800">
-                <Translate id="oneai.hero.main.subtitle">
-                  See the Power of your dataset with the Right AI.
-                </Translate>
-                <br />
-                <Translate id="oneai.hero.main.subtitle2">
-                  Automatically tailored to your needs and exported for any hardware.
-                </Translate>
-              </h2>
-
-              <div className="flex flex-col md:flex-row justify-center items-center space-y-3 md:space-y-0 md:space-x-5 mb-10">
-                <Link
-                  className="button button--primary button--outline button--lg text-sm md:text-lg"
-                  href="/docs/one-ai/demos/overview"
-                >
-                  <Translate id="oneai.hero.examples">Example Projects</Translate>
-                </Link>
-
-                <Link
-                  className="button button--primary button--lg text-sm md:text-lg"
-                  href="/docs/one-ai/getting-started/quick-start-guide"
-                >
-                  <Translate id="homepage.subtitle.ai.getstarted">Start Now for Free</Translate>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </HeroBackground>
-  );
-}
-
 function ComparisonSection() {
-  const { colorMode } = useColorMode();
-  const isDarkMode = colorMode === "dark";
   const [activeUseCase, setActiveUseCase] = useState(0);
 
   const useCases = [
@@ -147,7 +94,7 @@ function ComparisonSection() {
       subtitle: "ONE AI implements efficient AI on any FPGA with our open source AI to HDL libraries",
       subtitleId: "oneai.usecase.hdl.subtitle",
       backgroundImage: "/img/ai/one_ai_plugin/use_cases/chip/defect_1.png",
-      displayImage: isDarkMode ? "/img/ai/one_ai_plugin/use_cases/chip/integration.svg" : "/img/ai/one_ai_plugin/use_cases/chip/integration-light.svg",
+      displayImage: "/img/ai/one_ai_plugin/use_cases/chip/integration.png",
       description: "Next to the vendor tools for AI integration we offer a version for parallel AI integration on FPGAs that allows integration just like parallel image processing that doesn't need an additional processor and adds no overhead to the system. Together with our partner Altera we show how Altera's MAX® 10 with ONE AI and our HDL generator can now outperform Nvidia's Jetson Orin Nano with:",
       descriptionId: "oneai.usecase.hdl.description",
       metrics: [
@@ -166,7 +113,7 @@ function ComparisonSection() {
       subtitle: "Integration on any system with operating system and graphical interface",
       subtitleId: "oneai.usecase.ui.subtitle",
       backgroundImage: "/img/ai/one_ai_plugin/use_cases/capture/preview.png",
-      displayImage: isDarkMode ? "/img/ai/one_ai_plugin/use_cases/capture/integration.svg" : "/img/ai/one_ai_plugin/use_cases/capture/integration-light.svg",
+      displayImage: "/img/ai/one_ai_plugin/use_cases/capture/integration.png",
       description: "Eliminate months of development time. Integrate AI with our pre-build UI that supports monitoring, remote control and continuous improvement. Already in production with leading production companies and ready for your quality control or automation task with:",
       descriptionId: "oneai.usecase.ui.description",
       metrics: [
@@ -183,7 +130,7 @@ function ComparisonSection() {
       subtitle: "Deploy AI in Any Application",
       subtitleId: "oneai.usecase.sdk.subtitle",
       backgroundImage: "/img/ai/one_ai_plugin/demos/overlap-difference/image_000118_test.png",
-      displayImage: isDarkMode ? "/img/ai/one_ai_plugin/use_cases/pcb/integration.svg" : "/img/ai/one_ai_plugin/use_cases/pcb/integration-light.svg",
+      displayImage: "/img/ai/one_ai_plugin/use_cases/pcb/integration.png",
       description: "ONE AI can create generic ONNX or Tensorflow Lite models that can be integrated directly with your application using our SDK. One example AI model,that you can integrate, detects small objects on complex backgrounds and outperformes YOLOv8 with:",
       descriptionId: "oneai.usecase.sdk.description",
       metrics: [
@@ -201,7 +148,7 @@ function ComparisonSection() {
       subtitle: "Deploy AI with any CPU, TPU, GPU or MCU",
       subtitleId: "oneai.usecase.cpp.subtitle",
       backgroundImage: "/img/ai/one_ai_plugin/use_cases/pcb/pcb_1.png",
-      displayImage: isDarkMode ? "/img/ai/one_ai_plugin/use_cases/pcb/integration.svg" : "/img/ai/one_ai_plugin/use_cases/pcb/integration-light.svg",
+      displayImage: "/img/ai/one_ai_plugin/use_cases/pcb/integration.png",
       description: "ONE AI can create Tensorflow Lite based C++ projects or precompiled executables with API that run efficient with any kind of processor or AI accelerator. One example is a PCB quality control where the AI by ONE AI beat not only standard image processing and universal AI models by speed and accuracy, but also the AI model from the scientists with:",
       descriptionId: "oneai.usecase.cpp.description",
       metrics: [
@@ -234,7 +181,7 @@ function ComparisonSection() {
             </Translate>
           </h2>
 
-          <div className="p-6 sm:p-8 md:p-12 overflow-hidden bg-gray-100 dark:bg-[#161616]">
+          <div className="p-6 sm:p-8 md:p-12 overflow-hidden" style={{ backgroundColor: '#161616' }}>
             <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-8 lg:gap-12">
               <div className="order-first lg:order-none">
                 <div
@@ -246,17 +193,17 @@ function ComparisonSection() {
               </div>
 
               <div className="flex flex-col justify-center text-center lg:text-left">
-                <h3 className="text-gray-800 dark:text-white text-xl md:text-2xl font-medium mb-2">
+                <h3 className="text-white text-xl md:text-2xl font-medium mb-2">
                   <Translate id={currentUseCase.titleId}>
                     {currentUseCase.title}
                   </Translate>
                 </h3>
-                <h4 className="text-gray-600 dark:text-gray-300 text-base md:text-lg mb-4">
+                <h4 className="text-gray-300 text-base md:text-lg mb-4">
                   <Translate id={currentUseCase.subtitleId}>
                     {currentUseCase.subtitle}
                   </Translate>
                 </h4>
-                <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base leading-relaxed mb-6">
+                <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-6">
                   <Translate id={currentUseCase.descriptionId}>
                     {currentUseCase.description}
                   </Translate>
@@ -268,7 +215,7 @@ function ComparisonSection() {
                       <span className="text-[var(--ifm-color-primary)] text-2xl md:text-3xl font-light block">
                         {metric.value}
                       </span>
-                      <span className="text-gray-600 dark:text-gray-400 text-xs uppercase mt-1 block">
+                      <span className="text-gray-400 text-xs uppercase mt-1 block">
                         <Translate id={metric.labelId}>
                           {metric.label}
                         </Translate>
@@ -293,7 +240,7 @@ function ComparisonSection() {
               </div>
             </div>
 
-            <div className="flex justify-center items-center gap-8 mt-8 pt-6 border-t border-gray-300 dark:border-white/20">
+            <div className="flex justify-center items-center gap-8 mt-8 pt-6 border-t border-white/20">
               <svg
                 onClick={handlePrev}
                 className="w-5 h-5 cursor-pointer text-[var(--ifm-color-primary)] hover:-translate-x-1 transition-transform duration-300"
@@ -310,7 +257,7 @@ function ComparisonSection() {
                     key={index}
                     onClick={() => setActiveUseCase(index)}
                     className={`w-2 h-2 rounded-full cursor-pointer transition-all duration-300 ${
-                      index === activeUseCase ? "bg-[var(--ifm-color-primary)]" : "bg-gray-400 dark:bg-white/40 hover:bg-gray-500 dark:hover:bg-white/60"
+                      index === activeUseCase ? "bg-[var(--ifm-color-primary)]" : "bg-white/40 hover:bg-white/60"
                     }`}
                   />
                 ))}
@@ -672,35 +619,32 @@ function BenefitsSection() {
 }
 
 function InventionSection() {
-  const { colorMode } = useColorMode();
-  const isDarkMode = colorMode === "dark";
-
   const inventions = [
     {
       title: "Automated Analysis",
       titleId: "oneai.invention.training.title",
-      image: isDarkMode ? "/img/ai/Input.svg" : "/img/ai/Input-light.svg",
+      image: "/img/ai/Input.webp",
       description: "ONE AI gets the best results if the dataset focusses on a specific task. First it analyzes the data, labels, hardware constraints, needed performance and application context. For example, it analyzes the object sizes in images.",
       descriptionId: "oneai.invention.training.description"
     },
     {
       title: "AI Feature Prediction",
       titleId: "oneai.invention.architecture.title",
-      image: isDarkMode ? "/img/ai/Prediction.svg" : "/img/ai/Prediction-light.svg",
+      image: "/img/ai/Prediction.webp",
       description: "ONE AI then uses its knowledge about existing AI research and previously optimized AI models to predict the needed features for the AI model architecture. For example, bigger objects need larger receptive fields.",
       descriptionId: "oneai.invention.architecture.description"
     },
     {
       title: "Build & Train AI Model",
       titleId: "oneai.invention.generation.title",
-      image: isDarkMode ? "/img/ai/Architecture.svg" : "/img/ai/Architecture-light.svg",
+      image: "/img/ai/Architecture.webp",
       description: "ONE AI takes the predictions and then builds a custom neural network architecture that fits all predicted features. Then the AI is trained on the dataset and only learns the relevant information.",
       descriptionId: "oneai.invention.generation.description"
     },
     {
       title: "Deploy Anywhere",
       titleId: "oneai.invention.deployment.title",
-      image: isDarkMode ? "/img/ai/Export.svg" : "/img/ai/Export-light.svg",
+      image: "/img/ai/Export.webp",
       description: "Finally the AI can be deployed across FPGAs, microcontrollers, GPUs, and CPUs without modification. ONE AI handles all the complexity of hardware optimization and implementation automatically.",
       descriptionId: "oneai.invention.deployment.description"
     }
@@ -718,11 +662,11 @@ function InventionSection() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             {inventions.map((invention, index) => (
-              <div key={index} className="p-6 transition-all duration-300 hover:shadow-lg bg-gray-100 dark:bg-[#161616]">
+              <div key={index} className="p-6 transition-all duration-300 hover:shadow-lg" style={{ background: '#161616' }}>
                 <span className="text-[var(--ifm-color-primary)] text-xs font-medium uppercase tracking-wider">
                   Step {index + 1}
                 </span>
-                <h3 className="text-gray-800 dark:text-white text-lg font-medium mt-2 mb-4">
+                <h3 className="text-white text-lg font-medium mt-2 mb-4">
                   <Translate id={invention.titleId}>
                     {invention.title}
                   </Translate>
@@ -744,7 +688,7 @@ function InventionSection() {
                   />
                 </div>
 
-                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                <p className="text-gray-400 text-sm leading-relaxed">
                   <Translate id={invention.descriptionId}>
                     {invention.description}
                   </Translate>
@@ -755,7 +699,7 @@ function InventionSection() {
         </div>
 
         <div className="max-w-6xl mx-auto mt-16">
-          <div className="bg-[#00FFD1] p-8 md:p-12">
+          <div className="bg-[var(--ifm-color-primary)] p-8 md:p-12">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <h3 className="text-gray-800 text-2xl md:text-3xl font-medium">
                 <Translate id="oneai.examples.cta.title">
@@ -814,12 +758,11 @@ export default function OneAi() {
         <link rel="alternate" hrefLang="x-default" href="https://one-ware.com/one-ai" />
       </Head>
 
-      <HomepageHeader />
+      <HomeHero />
 
       <main>
         <BenefitsSection />
         <InventionSection />
-
 
         <section className="py-16 md:py-24 bg-gray-100 dark:bg-[#161616]">
           <div className="container mx-auto px-6">

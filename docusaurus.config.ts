@@ -91,10 +91,6 @@ const config: Config = {
           {
             from: '/webinar-2025-12-18',
             to: '/docs/one-ai/Webinars/webinar-2025-12-18',
-          },
-          {
-            from: '/webinar-2026-01-28',
-            to: '/docs/one-ai/Webinars/webinar-2026-01-28',
           }
         ],
       }],
@@ -168,21 +164,15 @@ const config: Config = {
           className: "navbar__dropdown--products",
           items: [
             {
-              to: "/one-ai",
-              label: "ONE AI",
+              to: "/",
+              label: "ONE AI Agent",
               className: "dropdown__link--highlight",
+              activeBasePath: "__none__",
             },
             {
-              to: "/docs/one-ai/getting-started/quick-start-guide",
-              label: "Get Started",
-            },
-            {
-              to: "/docs/one-ai/demos/overview",
-              label: "Demo Projects",
-            },
-            {
-              to: "/docs/one-ai/supported-vendors",
-              label: "Supported Hardware",
+              to: "/one-ai",
+              label: "ONE AI Desktop",
+              className: "dropdown__link--highlight",
             },
             {
               to: "/studio",
@@ -441,7 +431,7 @@ const config: Config = {
         cta: 'Register Now',
       },
     },
-    // activeAnnouncement: 'qualityControlWebinar',
+    activeAnnouncement: 'qualityControlWebinar',
   } satisfies Preset.ThemeConfig,
 };
 
