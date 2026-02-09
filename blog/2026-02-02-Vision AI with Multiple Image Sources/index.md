@@ -1,6 +1,6 @@
 ---
 slug: multi-image-vision-ai-object-detection
-title: "Vision AI with Multiple Image Sources: Multi-Image Approaches as a Key Enabler of Modern Vision AI Object Detection"
+title: "Vision AI Models that Understand Multiple Images & Videos"
 authors: [adurmaz]
 tags:
   [
