@@ -19,6 +19,8 @@ import videoUrl from './img/compare_architecture.webm';
 If you are building a computer vision system today, the default advice is usually: "Just fine-tune YOLO." If that doesn't work, "Just try this other universal AI model." These universal models are robust and easy to use for some standard tasks.
 We kept running into cases where "just fine-tune YOLO" was the wrong abstraction, especially for high-speed industrial inspection or edge robotics.
 
+{/* truncate */}
+
 **For these engineering applications generic assumptions often break down, and you can achieve significantly better results with a tailored approach.**
 
 We designed a software to bridge this gap. Instead of trying to force a pre-trained model to work on data it wasn't designed for (like 3D MRI scans or high-speed microscopic images), a task-specific neural network architecture is predicted based on your dataset and constraints.
@@ -42,7 +44,7 @@ ONE AI generates **Multi-Scale Architectures**. It combines an "Expert AI" branc
 Standard object detectors treat video feeds as a sequence of completely independent images. If an object becomes blurry, occluded, or rotates into an unrecognizable angle for a single frame, the detection fails.
 
 ONE AI solves this by analyzing **image differences** directly within the architecture. By comparing the current frame with previous frames (temporal motion), the model focuses on the *changes*.
-**The Result:** In our benchmarks, this approach achieved an **F1-Score of 95.7%** compared to just **56% with YOLOv8**, resulting in **10x fewer errors** while using significantly less compute. (Result: 95.7 F1 vs 56.0 with YOLOv8 on our benchmark — [details here](/docs/one-ai/demos/multi-image-demo))
+**The Result:** In our benchmarks, this approach achieved an **F1-Score of 95.7%** compared to just **56% with YOLOv8**, resulting in **10x fewer errors** while using significantly less compute. (Result: 95.7 F1 vs 56.0 with YOLOv8 on our benchmark — [details here](/docs/one-ai/demos/difference-image-demo))
 
 ### 3. Image Comparison (Reference QC)
 ![PCB Quality Control Demo](./img/pcb.jpeg)

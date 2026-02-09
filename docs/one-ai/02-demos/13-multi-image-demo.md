@@ -69,7 +69,7 @@ file also needs the **_test** extension (e.g. img1_test.txt). Example structure:
     - ...
 
 ## Setting up the Project
-The setup process is similar to the [Potato Chip Demo](/docs/one-ai/demos/potato-chip-demo#setting-up-the-project-and-loading-the-data).
+The setup process is similar to the [Potato Chip Demo](/docs/one-ai/demos/potato-chip-demo#setting-up-the-project).
 First, we create a new project and a new AI Generator.
 Then we open the project folder in a file manager to copy the training data.
 Since this demo deals with an object detection task, we leave the **Mode** at **Annotation**.
