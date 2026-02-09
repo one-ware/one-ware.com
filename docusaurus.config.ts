@@ -257,23 +257,9 @@ const config: Config = {
           ],
         },
         {
-          type: "dropdown",
+          to: "/pricing",
           position: "left",
           label: "Pricing",
-          items: [
-            {
-              to: "docs/one-ai/pricing",
-              label: "Pricing",
-            },
-            {
-              to: "docs/one-ai/services",
-              label: "Services",
-            },
-            {
-              to: "docs/one-ai/open-source-program",
-              label: "Open Source Program",
-            },
-          ],
         },
         {
           to: "/blog",
