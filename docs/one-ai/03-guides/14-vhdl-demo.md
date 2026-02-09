@@ -13,14 +13,14 @@ This guide shows how to run a OneAI model on an FPGA for a demo use case. The us
 
 As this tutorial is not for any specific FPGA chip or board, board or chip specific sections may be quite vague. Thus, this guide assumes a certain familiarity of the user with FPGA development and the board or chip the user wants to run this tutorial on.
 
-Please follow the [Handwritten Digit Classification Demo](/docs/one-ai/tutorials/handwritten-digits-demo) to obtain a CNN model. There are two necessary deviations pointed out in the next section. Stop the **Handwritten Digit Classification Demo** before exporting the model and then follow this tutorial here from the section [Model export](#export) onwards. Of course you can use a different model with this guide. Adapt necessary steps at your discretion.
+Please follow the [Handwritten Digit Classification Demo](/docs/one-ai/demos/handwritten-digits-demo) to obtain a CNN model. There are two necessary deviations pointed out in the next section. Stop the **Handwritten Digit Classification Demo** before exporting the model and then follow this tutorial here from the section [Model export](#export) onwards. Of course you can use a different model with this guide. Adapt necessary steps at your discretion.
 
 
 ## Deviations to Handwritten Digit Classification Demo
 
 ### Hardware settings
 
-Instead of the Altera™ Max® 10 16K use the correct settings for the FPGA you are using. In order to simplify parametrization feel free to use the **Extension Manager**, which offers pre-configurations for various FPGA families. Click on **Extras** > **Extensions** to open the **Extension Manager**, then go to the section **Hardware** > **OneAI Support**. Here, install the extension that includes your FPGA. If there is none, please follow the [Specifying custom hardware](/docs/one-ai/getting-started/hardware-settings#specifying-custom-hardware) guide.
+Instead of the Altera™ Max® 10 16K use the correct settings for the FPGA you are using. In order to simplify parametrization feel free to use the **Extension Manager**, which offers pre-configurations for various FPGA families. Click on **Extras** > **Extensions** to open the **Extension Manager**, then go to the section **Hardware** > **OneAI Support**. Here, install the extension that includes your FPGA. If there is none, please follow the [Specifying custom hardware](/docs/one-ai/documentation/hardware-settings#specifying-custom-hardware) guide.
 
 
 ### Training the model
@@ -30,7 +30,7 @@ As we want to export for an FPGA the option **Enable Quantization Optimization**
 
 ## Model export {#export}
 
-[🔗 model export guide](/docs/one-ai/getting-started/export)  
+[🔗 model export guide](/docs/one-ai/documentation/export)  
 After the training is completed, we need to export our model. To do so, we click on the **Export** button, which opens a new window (see image below) with configurations. In the **Export type** drop-down menu, we select **FPGA (VHDL)**.
 
 Next we can activate different settings, that change how our model is exported. If we check the **Export with pre- and postprocessing** checkbox, ONE AI will build all of our filters directly into the model. We activate this setting, because the filter pipeline is an important part of our model. Also activate **Enable post-processing optimization**. The next setting allows us to change between exporting a floating point or quantized model. As we want a quantized model, we leave this unchecked.
