@@ -53,7 +53,7 @@ const defaultDemos: ShowcaseItem[] = [
     title: "AI with Small Dataset",
     video: "/img/demos/cup.webm",
     image: "/img/ai/one_ai_plugin/demos/tea_cup_print/demo.png",
-    link: "/docs/one-ai/tutorials/teacup-print-detection",
+    link: "/docs/one-ai/demos/teacup-print-detection",
     metrics: {
       left: { value: 100, unit: " %", label: "Accuracy"},
       center: { value: "Efficient" as const, label: "AI Model" },

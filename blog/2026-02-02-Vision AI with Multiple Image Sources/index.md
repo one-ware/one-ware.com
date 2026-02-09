@@ -69,10 +69,10 @@ To quantitatively evaluate this approach, a synthetic dataset was created consis
 
 | Model                        | F1 Score (%) | Architecture Approach              |
 |-----------------------------|--------------|------------------------------------|
-| ONE AI (Overlap Difference) | 95.7         | Task-specific, Multi-Image         |
+| ONE AI (Overlap Difference) | 93.2         | Task-specific, Multi-Image         |
 | YOLOv8 (Single Image)       | 56.0         | Generic single-image model         |
 
-The benchmark results reveal a clear structural advantage of multi-image approaches over single-image Vision AI. With an F1 score of 95.7% compared to 56.0%, the multi-image method achieves an improvement of more than 39 percentage points, reducing the error rate by more than an order of magnitude.
+The benchmark results reveal a clear structural advantage of multi-image approaches over single-image Vision AI. With an F1 score of 93.2% compared to 56.0%, the multi-image method achieves an improvement of more than 39 percentage points, reducing the error rate by more than an order of magnitude.
 
 While single-image models such as YOLOv8 must infer relevant objects solely from the complete image content, the multi-image approach benefits from explicit reference context. The comparison between reference and test images performs a pre-selection of relevant regions before classification.
 

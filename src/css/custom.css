@@ -301,7 +301,7 @@ body {
   visibility: hidden !important;
 }
 
-@media (max-width: 1500px) and (min-width: 997px) {
+@media (max-width: 1580px) and (min-width: 997px) {
   .navbar__link {
     font-size: 0.8rem;
     padding: 6px 8px;
