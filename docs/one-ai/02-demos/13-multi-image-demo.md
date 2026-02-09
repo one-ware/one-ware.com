@@ -27,7 +27,7 @@ If you want to follow the tutorial step by step, including the annotations and a
   <Link className="button button--primary button--lg" href="https://onewarecom.sharepoint.com/:u:/s/Public/IQA70X-wIDJrRJN24qAk3NkOAalYtZ6bA8bCLcjhWZYUl64?e=ztkGKH" target="_blank" rel="noopener noreferrer">
     <p className="m-0 p-0">Download Dataset</p>
   </Link>
-  <Link className="button button--primary button--lg" href="https://onewarecom.sharepoint.com/:u:/s/Public/IQDN-ArnyVraQp6b99jjp7lSAV-erJCMPyuPQNzNPGu8viM?e=px9P02" target="_blank" rel="noopener noreferrer">
+  <Link className="button button--primary button--lg" href="oneware://oneai/quick-start/dronesAndBirds" target="_blank" rel="noopener noreferrer">
     <p className="m-0 p-0">Download Project</p>
   </Link>
 </div>
