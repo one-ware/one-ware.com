@@ -60,7 +60,7 @@ export default function PricingPage(): JSX.Element {
       <section className="default-background py-16 md:py-24">
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto gap-8 lg:gap-12 mb-20">
               
               {/* Free Plan */}
               <div className="rounded-2xl border border-[var(--ifm-color-primary)] p-8 text-center transition-all duration-300 hover:shadow-lg flex flex-col" style={{ background: "var(--ifm-background-surface-color)" }}>
@@ -75,7 +75,7 @@ export default function PricingPage(): JSX.Element {
                 </p>
                 <div className="space-y-4 mb-10 text-left flex-grow">
                   {[
-                    translate({ id: "pricing.free.feature.credits", message: "3,000 Free Credits per Month" }),
+                    translate({ id: "pricing.free.feature.credits", message: "5,000 Free Credits per Month" }),
                     translate({ id: "pricing.free.feature.projects", message: "Max. 10 Projects" }),
                     translate({ id: "pricing.free.feature.agent", message: "ONE AI Agent" }),
                     translate({ id: "pricing.free.feature.desktop", message: "ONE AI Desktop" }),
@@ -99,6 +99,7 @@ export default function PricingPage(): JSX.Element {
               </div>
 
                {/* Student Plan */}
+               {/*
               <div className="rounded-2xl border border-[var(--ifm-color-primary)] p-8 text-center transition-all duration-300 hover:shadow-lg flex flex-col" style={{ background: "var(--ifm-background-surface-color)" }}>
                 <p className="text-[var(--ifm-color-primary)] text-sm font-semibold uppercase tracking-widest mb-4">
                   <Translate id="pricing.student.label">Student</Translate>
@@ -111,7 +112,7 @@ export default function PricingPage(): JSX.Element {
                 </p>
                 <div className="space-y-4 mb-10 text-left flex-grow">
                   {[
-                    translate({ id: "pricing.student.feature.credits", message: "10,000 Free Credits per Month" }),
+                    translate({ id: "pricing.student.feature.credits", message: "15,000 Free Credits per Month" }),
                     translate({ id: "pricing.free.feature.projects", message: "Max. 10 Projects" }),
                     translate({ id: "pricing.free.feature.agent", message: "ONE AI Agent" }),
                     translate({ id: "pricing.free.feature.desktop", message: "ONE AI Desktop" }),
@@ -138,6 +139,7 @@ export default function PricingPage(): JSX.Element {
                   </button>
                 </Link>
               </div>
+              */}
 
                {/* Enterprise Plan */}
                <div className="rounded-2xl border border-[var(--ifm-color-primary)] p-8 text-center transition-all duration-300 hover:shadow-lg flex flex-col" style={{ background: "var(--ifm-background-surface-color)" }}>
