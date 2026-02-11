@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "@docusaurus/Link";
+import { useColorMode } from "@docusaurus/theme-common";
 
 export interface MetricData {
   value: number;
@@ -24,6 +25,7 @@ interface VideoShowcaseCardProps {
   title: string;
   metrics: Metrics;
   link: string;
+  architecture?: string;
   isActive: boolean;
   onMouseEnter: () => void;
   onMouseLeave: () => void;
@@ -35,10 +37,13 @@ export default function VideoShowcaseCard({
   title,
   metrics,
   link,
+  architecture,
   isActive,
   onMouseEnter,
   onMouseLeave,
 }: VideoShowcaseCardProps) {
+  const { colorMode } = useColorMode();
+  const isDarkMode = colorMode === "dark";
   const [leftCount, setLeftCount] = useState(metrics.left.value);
   const [rightCount, setRightCount] = useState(metrics.right.value);
   const [videoSrc, setVideoSrc] = useState<string | null>(null);
@@ -133,10 +138,10 @@ export default function VideoShowcaseCard({
   }, [isActive, metrics.left.value, metrics.right.value, metrics.left.startValue, metrics.right.startValue]);
 
   const complexityColor = {
-    Efficient: "text-green-400",
-    Balanced: "text-yellow-400",
-    Advanced: "text-red-400",
-    Any: "text-blue-400",
+    Efficient: isDarkMode ? "text-green-400" : "text-green-600",
+    Balanced: isDarkMode ? "text-yellow-400" : "text-yellow-600",
+    Advanced: isDarkMode ? "text-red-400" : "text-red-600",
+    Any: isDarkMode ? "text-blue-400" : "text-blue-600",
   };
 
   return (
@@ -152,10 +157,14 @@ export default function VideoShowcaseCard({
         <div
           className="relative overflow-hidden transition-all duration-500 h-full flex flex-col"
           style={{
-            background: "rgba(20, 20, 20, 0.85)",
-            border: isActive ? "1px solid rgba(0, 255, 209, 0.5)" : "1px solid rgba(255, 255, 255, 0.1)",
-            borderRadius: "14px",
-            boxShadow: isActive ? "0 8px 32px rgba(0, 255, 209, 0.15)" : "none",
+            background: isDarkMode ? "rgba(20, 20, 20, 0.85)" : "rgba(255, 255, 255, 0.95)",
+            border: isActive
+              ? (isDarkMode ? "1px solid rgba(0, 255, 209, 0.5)" : "1px solid rgba(0, 168, 138, 0.5)")
+              : (isDarkMode ? "1px solid rgba(255, 255, 255, 0.1)" : "1px solid rgba(0, 0, 0, 0.1)"),
+            borderRadius: 14,
+            boxShadow: isActive
+              ? (isDarkMode ? "0 8px 32px rgba(0, 255, 209, 0.15)" : "0 8px 32px rgba(0, 168, 138, 0.15)")
+              : "none",
             transform: isActive ? "scale(1.02)" : "scale(1)",
             opacity: isActive ? 1 : 0.6,
           }}
@@ -183,13 +192,50 @@ export default function VideoShowcaseCard({
                 style={{ zIndex: videoSrc && isActive ? 0 : 10 }}
               />
             )}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent z-20" />
+            
+            {architecture && (
+              <div
+                className="absolute inset-0 overflow-hidden z-30 pointer-events-none"
+                style={{
+                  opacity: !isActive ? 1 : 0,
+                  transition: "opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+                }}
+              >
+                {/* Backdrop Blur Gradient */}
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    backdropFilter: "blur(8px)",
+                    WebkitBackdropFilter: "blur(8px)",
+                    backgroundColor: "rgba(0,0,0,0.4)",
+                    maskImage: "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 45%)",
+                    WebkitMaskImage: "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 45%)",
+                  }}
+                />
+                
+                {/* Architecture Image on the Left */}
+                <div className="absolute inset-y-0 left-0 w-1/3 p-2 flex items-center justify-center">
+                  <img
+                    src={architecture}
+                    alt="Architecture"
+                    className="w-full h-full object-contain drop-shadow-xl"
+                    style={{
+                      filter: isDarkMode ? "brightness(1.2)" : "none",
+                      maskImage: "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
+                      WebkitMaskImage: "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
+                    }}
+                  />
+                </div>
+              </div>
+            )}
+
+            <div className={`absolute inset-0 bg-gradient-to-t ${isDarkMode ? "from-black/70" : "from-black/50"} via-transparent to-transparent z-20`} />
           </div>
 
-          <div className="p-3 sm:p-4 flex-grow flex flex-col" style={{ background: "rgba(20, 20, 20, 0.4)" }}>
+          <div className="p-3 sm:p-4 flex-grow flex flex-col" style={{ background: isDarkMode ? "rgba(20, 20, 20, 0.4)" : "rgba(245, 245, 245, 0.6)" }}>
             <h3
               className="text-sm sm:text-base lg:text-lg font-semibold mb-2 sm:mb-3 transition-colors duration-300"
-              style={{ color: isActive ? "#00FFD1" : "rgba(255, 255, 255, 0.9)" }}
+              style={{ color: isActive ? (isDarkMode ? "#00FFD1" : "#00a88a") : (isDarkMode ? "rgba(255, 255, 255, 0.9)" : "rgba(0, 0, 0, 0.9)") }}
             >
               {title}
             </h3>
@@ -198,18 +244,17 @@ export default function VideoShowcaseCard({
               <div
                 className="p-1.5 sm:p-2 text-center transition-all duration-300 flex flex-col justify-center h-full"
                 style={{
-                  background: "rgba(0, 0, 0, 0.3)",
-                  border: "1px solid rgba(255, 255, 255, 0.08)",
+                  background: isDarkMode ? "rgba(0, 0, 0, 0.3)" : "rgba(0, 0, 0, 0.05)",
                   borderRadius: "8px",
                 }}
               >
                 <div
                   className="text-sm sm:text-base lg:text-lg font-bold whitespace-nowrap"
-                  style={{ color: "#00FFD1" }}
+                  style={{ color: isDarkMode ? "#00FFD1" : "#00a88a" }}
                 >
                   {leftCount === metrics.left.value && metrics.left.prefix}{leftCount}{metrics.left.unit}
                 </div>
-                <div className="text-[0.6rem] sm:text-xs leading-tight mt-1" style={{ color: "rgba(255, 255, 255, 0.5)" }}>
+                <div className="text-[0.6rem] sm:text-xs leading-tight mt-1" style={{ color: isDarkMode ? "rgba(255, 255, 255, 0.5)" : "rgba(0, 0, 0, 0.5)" }}>
                   {metrics.left.label}
                 </div>
               </div>
@@ -217,15 +262,14 @@ export default function VideoShowcaseCard({
               <div
                 className="p-1.5 sm:p-2 text-center transition-all duration-300 flex flex-col justify-center h-full"
                 style={{
-                  background: "rgba(0, 0, 0, 0.3)",
-                  border: "1px solid rgba(255, 255, 255, 0.08)",
+                  background: isDarkMode ? "rgba(0, 0, 0, 0.3)" : "rgba(0, 0, 0, 0.05)",
                   borderRadius: "8px",
                 }}
               >
                 <div className={`text-sm sm:text-base lg:text-lg font-bold whitespace-nowrap ${complexityColor[metrics.center.value]}`}>
                   {metrics.center.value}
                 </div>
-                <div className="text-[0.6rem] sm:text-xs leading-tight mt-1" style={{ color: "rgba(255, 255, 255, 0.5)" }}>
+                <div className="text-[0.6rem] sm:text-xs leading-tight mt-1" style={{ color: isDarkMode ? "rgba(255, 255, 255, 0.5)" : "rgba(0, 0, 0, 0.5)" }}>
                   {metrics.center.label}
                 </div>
               </div>
@@ -233,18 +277,17 @@ export default function VideoShowcaseCard({
               <div
                 className="p-1.5 sm:p-2 text-center transition-all duration-300 flex flex-col justify-center h-full"
                 style={{
-                  background: "rgba(0, 0, 0, 0.3)",
-                  border: "1px solid rgba(255, 255, 255, 0.08)",
+                  background: isDarkMode ? "rgba(0, 0, 0, 0.3)" : "rgba(0, 0, 0, 0.05)",
                   borderRadius: "8px",
                 }}
               >
                 <div
                   className="text-sm sm:text-base lg:text-lg font-bold whitespace-nowrap"
-                  style={{ color: "#00FFD1" }}
+                  style={{ color: isDarkMode ? "#00FFD1" : "#00a88a" }}
                 >
                   {rightCount === metrics.right.value && metrics.right.prefix}{rightCount}{metrics.right.unit}
                 </div>
-                <div className="text-[0.6rem] sm:text-xs leading-tight mt-1" style={{ color: "rgba(255, 255, 255, 0.5)" }}>
+                <div className="text-[0.6rem] sm:text-xs leading-tight mt-1" style={{ color: isDarkMode ? "rgba(255, 255, 255, 0.5)" : "rgba(0, 0, 0, 0.5)" }}>
                   {metrics.right.label}
                 </div>
               </div>

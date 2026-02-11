@@ -8,11 +8,11 @@ sidebar_label: Reference-Based Object Detection
 
 In quality control and surveillance applications, detecting small differences between a reference image and a test image is crucial. Traditional AI approaches treat each image independently, requiring the model to learn the entire background and context. ONE AI's **overlap difference** capability enables direct comparison between spatially aligned images, dramatically improving detection accuracy while reducing computational costs.
 
-To demonstrate this capability, ONE AI was tested on a synthetically created [bird and drone detection dataset](/docs/one-ai/tutorials/difference-image-demo#dataset-overview) featuring small objects (7-10% of image size), complex city backgrounds with detailed buildings, and varying lighting conditions. The model was benchmarked against YOLOv8, a state-of-the-art object detection network.
+To demonstrate this capability, ONE AI was tested on a synthetically created [bird and drone detection dataset](/docs/one-ai/demos/difference-image-demo#dataset-overview) featuring small objects (7-10% of image size), complex city backgrounds with detailed buildings, and varying lighting conditions. The model was benchmarked against YOLOv8, a state-of-the-art object detection network.
 
 <div style={{display: 'flex', justifyContent: 'center', margin: '20px 0'}}>
-  <img src="/img/ai/one_ai_plugin/demos/overlap-difference/image_000118_temp.png" alt="Reference Template" style={{maxHeight: '250px', borderRadius: '8px', marginRight: '10px'}} />
-  <img src="/img/ai/one_ai_plugin/demos/overlap-difference/image_000118_test.png" alt="Test Image with Objects" style={{maxHeight: '250px', borderRadius: '8px'}} />
+  <img src="/img/ai/one_ai_plugin/demos/overlap-difference/image_000118_temp.png" alt="Reference Template" style={{maxHeight: '250px', marginRight: '10px', borderRadius:'8px'}} />
+  <img src="/img/ai/one_ai_plugin/demos/overlap-difference/image_000118_test.png" alt="Test Image with Objects" style={{maxHeight: '250px', borderRadius:'8px'}} />
 </div>
 
 ---
@@ -21,7 +21,7 @@ To demonstrate this capability, ONE AI was tested on a synthetically created [bi
 
 | Model                               | F1-Score (%) | Architecture Complexity |
 |-------------------------------------|--------------|-------------------------|
-| **ONE AI (with overlap difference)**| **95.7**     | Optimized, lightweight  |
+| **ONE AI (with overlap difference)**| **93.2**     | Optimized, lightweight  |
 | YOLOv8 (single image)               | 56.0         | Pre-trained, heavy      |
 
 *Results from internal benchmarking on birds and drones detection dataset with 259 image pairs.*
@@ -31,7 +31,7 @@ To demonstrate this capability, ONE AI was tested on a synthetically created [bi
 ## Analysis
 
 - **Superior Detection Accuracy**:  
-  With an F1-Score of **95.7%** (YOLOv8: 56%), ONE AI makes more than **10 times fewer errors** than YOLOv8, which can only process single images without reference context.
+  With an F1-Score of **93.2%** (YOLOv8: 56%), ONE AI makes more than **10 times fewer errors** than YOLOv8, which can only process single images without reference context.
 
 - **Architectural Advantage**:  
   By computing the pixel-wise difference between reference and test images, ONE AI's automatically optimized architecture focuses only on relevant changes, effectively cancelling out complex backgrounds. Additionally, all color channels from both the reference and test images are provided as input, giving the model access to both the original image information and the computed difference. This multi-channel approach provides significantly more information than single-image methods. YOLOv8 must learn to distinguish objects from the entire varying background using only the test image, making the task significantly harder.
@@ -54,7 +54,7 @@ To demonstrate this capability, ONE AI was tested on a synthetically created [bi
 
 The benchmark demonstrates that **multi-image comparison combined with automated architecture optimization** provides a significant advantage over traditional single-image approaches.
 
-With **95.7% F1-Score** vs. YOLOv8's 56% and a model **8× smaller**, ONE AI proves that:
+With **93.2% F1-Score** vs. YOLOv8's 56% and a model **8× smaller**, ONE AI proves that:
 * **Smarter input processing** (overlap difference) dramatically improves detection accuracy
 * **Automated architecture search** creates optimized, lightweight models tailored to the task
 * **Reference-based comparison** is superior for applications where spatially aligned images are available

@@ -39,6 +39,45 @@ Wir setzen technische und organisatorische Sicherheitsmaßnahmen ein, um Ihre Da
 
 ---
 
+## AI-Assistent / AI-Agent („ONE AI Agent“)
+
+**Art und Zweck der Verarbeitung**  
+Wir stellen im eingeloggten Bereich unserer Plattform ein KI-gestütztes Assistenzsystem (AI-Agent) zur Verfügung. Dieser Agent unterstützt Sie bei:
+- der Beantwortung von produkt- und funktionsbezogenen Fragen
+- technischen Fragen zu ONE AI / ONE WARE
+- der Erstellung von technischen Vorschlägen, Konfigurationsdateien und Parametrisierungen für ONE-WARE-Produkte
+
+Damit Sie frühere Gespräche einsehen und Konfigurationen wiederverwenden können, **werden die Konversationen inklusive Ihrer Eingaben (Prompts) und der Antworten des Agents dauerhaft gespeichert**, bis Sie diese löschen.
+
+**Kategorien der verarbeiteten Daten**  
+- Texteingaben des Nutzers (Prompts)
+- Antworten des AI-Agents
+- Metadaten (Zeitstempel, Nutzer-/Account-ID, Projekt- oder Kontext-ID)
+
+**Wichtig**: Die Eingabe personenbezogener Daten in den AI-Agent ist **nicht vorgesehen und untersagt**. Die Verarbeitung zielt nicht auf die Identifizierung natürlicher Personen ab.
+
+**Rechtsgrundlage**  
+- **Art. 6 Abs. 1 lit. b DSGVO** (Vertragserfüllung – Feature der Plattform)
+- **Art. 6 Abs. 1 lit. f DSGVO** (Berechtigtes Interesse an Benutzerfreundlichkeit, technischer Unterstützung und Dokumentation von Konfigurationen)
+
+**Empfänger & Ort der Verarbeitung**  
+Die Verarbeitung der AI-Anfragen erfolgt durch unseren Unterauftragsverarbeiter **Microsoft Ireland Operations Limited**. Die Verarbeitung findet ausschließlich in Rechenzentren innerhalb der **Europäischen Union (z. B. Schweden)** statt.  
+Es erfolgt hierfür keine Übermittlung in Drittstaaten.
+
+**Speicherdauer**  
+Konversationen werden gespeichert, bis Sie diese löschen oder Ihr Benutzerkonto gelöscht wird.
+- **Benutzerseitige Löschung**: Sie können einzelne Konversationen in der Benutzeroberfläche jederzeit löschen (Sofortwirkung).
+- **Kontolöschung**: Bei Löschung des Nutzerkontos werden alle gespeicherten Konversationen vollständig gelöscht.
+- **Backups**: Gelöschte Daten können kurzzeitig (z. B. max. 30 Tage) in gesicherten Backups verbleiben, werden aber nicht mehr produktiv genutzt.
+
+**Automatisierte Entscheidungsfindung**  
+Es findet keine automatisierte Entscheidungsfindung oder Profiling i. S. d. Art. 22 DSGVO statt. Die AI-Ausgaben sind unverbindliche technische Vorschläge und entfalten keine rechtliche Wirkung.
+
+**Nutzerkontrolle**  
+Sie haben die volle Kontrolle über Ihre gespeicherten Konversationen. Sie können diese jederzeit in Ihrer Historie einsehen und individuell löschen.
+
+---
+
 ## Serverseitige Speicherung von Trainingsdaten
 
 Im Rahmen der Nutzung der ONE AI Extension können Sie eigene Daten auf unseren Servern am Standort Osnabrück (Deutschland) hochladen und verarbeiten lassen. Dabei handelt es sich insbesondere um:

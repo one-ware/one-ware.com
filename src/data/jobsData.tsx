@@ -1,53 +1,19 @@
-import { JobCategory } from "../types/jobTypes";
-import Translate, { translate } from "@docusaurus/Translate";
+import { JobDetail } from "../types/jobTypes";
 
-export const JOBS_DATA: JobCategory[] = [
-  {
-    category: "Software Engineer",
-    positions: [
-      {
-        id: "software-engineer.1",
-        title: ".ASP.NET / Blazor Developer",
-        description: "Help us build and maintain the ONE WARE Cloud",
-        url: "Web.pdf",
-        type: "Full Time",
-        location: "Osnabrück - Hybrid",
-      },
-      {
-        id: "software-engineer.2",
-        title: ".NET Desktop Developer (Avalonia / WPF)",
-        description: "Help us develop ONE WARE Studio",
-        url: "Desktop.pdf",
-        type: "Full Time",
-        location: "Osnabrück - Hybrid",
-      }
-    ],
-  },
-  {
-    category: "AI Engineer",
-    positions: [
-      {
-        id: "ai-engineer.1",
-        title: "AI Engineer",
-        description: "Help us to build the next generation of AI development",
-        url: "AI.pdf",
-        type: "Full Time",
-        location: "Osnabrück - Hybrid",
-      }
-    ],
-  },
-  {
-    category: "Business & Management",
-    positions: [
-      {
-        id: "business.2",
-        title: "Product Owner",
-        description: "Translate technology into a scalable, market-ready product with excellent UX",
-        description_de: "Übersetze Technologie in ein skalierbares, marktfähiges Produkt mit exzellenter UX",
-        url: "Product Owner.pdf",
-        type: "Full Time",
-        location: "Osnabrück - Hybrid",
-      }
-    ],
-  },
+import { aiEngineer } from "./jobs/ai-engineer";
+import { webDeveloper } from "./jobs/web-developer";
+import { desktopDeveloper } from "./jobs/desktop-developer";
+import { productOwner } from "./jobs/product-owner";
+
+export const JOBS: JobDetail[] = [
+  webDeveloper,
+  desktopDeveloper,
+  aiEngineer,
+  productOwner,
 ];
+
+export const ACTIVE_JOBS = JOBS.filter(job => job.active !== false);
+
+export function getJobById(id: string): JobDetail | undefined {
+  return JOBS.find(job => job.id === id);
+}

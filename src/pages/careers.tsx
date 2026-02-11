@@ -1,11 +1,14 @@
 import React, { useState, useRef, useEffect } from "react";
 import Layout from "@theme/Layout";
 import Translate, { translate } from "@docusaurus/Translate";
-import { JOBS_DATA } from "../data/jobsData";
+import { useLocation, useHistory } from "@docusaurus/router";
+import { ACTIVE_JOBS, getJobById } from "../data/jobsData";
 import { EMPLOYEE_STORIES } from "../data/employeeStories";
 import NeuralNetworkSimple from "../components/NeuralNetworkSimple";
+import JobDetailPage from "../components/JobDetailPage";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { JSX } from "react";
+import HeroBackground from "../components/HeroBackground";
 
 function getLocalizedField<T extends Record<string, unknown>>(obj: T, field: keyof T, locale: string): unknown {
   if (locale === "de") {
@@ -20,6 +23,13 @@ function getLocalizedField<T extends Record<string, unknown>>(obj: T, field: key
 export default function CareersPage(): JSX.Element {
   const { i18n } = useDocusaurusContext();
   const locale = i18n.currentLocale;
+  const location = useLocation();
+  const history = useHistory();
+
+  const searchParams = new URLSearchParams(location.search);
+  const jobId = searchParams.get("job");
+  const selectedJob = jobId ? getJobById(jobId) : null;
+
   const [isPlaying, setIsPlaying] = useState(false);
   const [activeStory, setActiveStory] = useState(0);
   const [displayedStory, setDisplayedStory] = useState(0);
@@ -56,8 +66,14 @@ export default function CareersPage(): JSX.Element {
     return () => clearTimeout(timer);
   }, []);
 
-  const openLinkInNewWindow = (url: string) => {
-    window.open(url, "_blank", "noopener,noreferrer");
+  const careersPath = locale === "de" ? "/de/careers" : "/careers";
+
+  const handleJobClick = (jobId: string) => {
+    history.push(`${careersPath}?job=${jobId}`);
+  };
+
+  const handleBack = () => {
+    history.push(careersPath);
   };
 
   const scrollToJobs = () => {
@@ -70,10 +86,6 @@ export default function CareersPage(): JSX.Element {
       setIsPlaying(true);
     }
   };
-
-  const allJobs = JOBS_DATA.flatMap(({ positions }) =>
-    positions.map((position) => position)
-  );
 
   const whoWeAre = [
     {
@@ -176,31 +188,35 @@ export default function CareersPage(): JSX.Element {
     { key: "8", imageSrc: require("@site/static/img/Partner/altera_w.png").default, url: "https://go.altera.com/l/1090322/2025-04-18/2vvzbn" },
   ]
 
+  if (selectedJob) {
+    return (
+      <Layout
+        title={locale === "de" && selectedJob.title_de ? selectedJob.title_de : selectedJob.title}
+        description={locale === "de" && selectedJob.shortDescription_de ? selectedJob.shortDescription_de : selectedJob.shortDescription || "Job Details"}
+      >
+        <div style={{ marginTop: "calc(var(--ifm-navbar-height) * -1)" }}>
+          <JobDetailPage job={selectedJob} onBack={handleBack} />
+        </div>
+      </Layout>
+    );
+  }
+
   return (
     <Layout
       title={translate({ id: "careers.meta.title", message: "Careers at ONE WARE" })}
       description={translate({ id: "careers.meta.description", message: "Join ONE WARE and help to revolutionize Edge AI development." })}
     >
-      <section
-        className="relative min-h-[66vh] flex items-center"
+      <HeroBackground
+        className="min-h-[66vh] flex items-center"
         style={{
           marginTop: "calc(var(--ifm-navbar-height) * -1)",
           paddingTop: "var(--ifm-navbar-height)",
         }}
       >
-        <div className="absolute inset-0 z-0">
-          <img
-            src={require("@site/static/img/background.webp").default}
-            alt=""
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/50" />
-        </div>
-
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-0">
             <div className="w-full lg:w-1/2 text-center lg:text-left flex flex-col justify-center">
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-extralight text-white leading-none tracking-tight">
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-extralight dark:text-white text-gray-900 leading-none tracking-tight">
                 <span
                   className="block transition-all duration-700 ease-out"
                   style={{
@@ -225,7 +241,7 @@ export default function CareersPage(): JSX.Element {
 
             <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start justify-center">
               <p
-                className="text-lg md:text-xl text-gray-300 max-w-md text-center lg:text-left mb-8 transition-all duration-700 ease-out"
+                className="text-lg md:text-xl dark:text-gray-300 text-gray-600 max-w-md text-center lg:text-left mb-8 transition-all duration-700 ease-out"
                 style={{
                   opacity: heroVisible ? 1 : 0,
                   transform: heroVisible ? 'translateY(0)' : 'translateY(20px)',
@@ -251,7 +267,7 @@ export default function CareersPage(): JSX.Element {
             </div>
           </div>
         </div>
-      </section>
+      </HeroBackground>
 
       <section id="jobs" className="bg-white py-16 md:py-24">
         <div className="container mx-auto px-6">
@@ -298,14 +314,10 @@ export default function CareersPage(): JSX.Element {
             </div>
 
             <div className="mt-12 md:mt-16 w-full sm:w-4/5 mx-auto">
-              {allJobs.map((job, index) => (
+              {ACTIVE_JOBS.map((job, index) => (
                 <div
                   key={job.id}
-                  onClick={() =>
-                    openLinkInNewWindow(
-                      require(`@site/static/career/${locale}/${job.url}`).default
-                    )
-                  }
+                  onClick={() => handleJobClick(job.id)}
                   className="cursor-pointer group"
                 >
                   <div className="flex items-center pt-6 pb-2 pr-8 md:pr-12 transition-all duration-300" style={{ borderBottom: "1px solid #6b7280" }}>
@@ -330,6 +342,7 @@ export default function CareersPage(): JSX.Element {
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
+                        style={{ transform: 'translateZ(0)' }}
                       >
                         <path
                           strokeLinecap="round"
@@ -521,7 +534,7 @@ export default function CareersPage(): JSX.Element {
         </div>
       </section>
 
-      <section className="bg-[var(--ifm-color-primary)] py-16 md:py-24">
+      <section className="bg-[#00FFD1] py-16 md:py-24">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-gray-700 text-xl md:text-2xl font-light uppercase mb-12 text-center tracking-widest">

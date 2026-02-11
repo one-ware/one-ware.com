@@ -1,9 +1,15 @@
 {
   "homehero.title1": {
-    "message": "Erstelle deine"
+    "message": "Lass ONE AI"
   },
   "homehero.title2": {
-    "message": "Maßgeschneiderte KI"
+    "message": "deine KI entwickeln"
+  },
+  "homehero.no_universal_models": {
+    "message": "Keine universellen KI-Modelle."
+  },
+  "homehero.custom_vision_ai": {
+    "message": "Vision-AI, genau für deine Anwendung."
   },
   "homehero.subtitle1": {
     "message": "Vision und Edge AI Entwicklung,"
@@ -16,6 +22,15 @@
   },
   "homehero.button.learnmore": {
     "message": "Mehr Erfahren"
+  },
+  "homehero.benefit.application": {
+    "message": "Jede Anwendung"
+  },
+  "homehero.benefit.hardware": {
+    "message": "Jede Hardware"
+  },
+  "homehero.benefit.requirements": {
+    "message": "Jede Anforderung"
   },
   "homepage.every": {
     "message": "Jede "
@@ -481,25 +496,25 @@
     "message": "Verschwenden Sie Ihren individuellen Datensatz nicht an ein generisches KI-Modell. Unsere KI entwirft automatisch KI Modelle, die auf Ihre Daten zugeschnitten sind und Foundation-Modelle sowie NAS in nur 0,7 Sekunden übertreffen."
   },
   "oneai.invention.training.title": {
-    "message": "1. Anwendung Analysieren"
+    "message": "Anwendung Analysieren"
   },
   "oneai.invention.training.description": {
     "message": "ONE AI erzielt die besten Ergebnisse, wenn der Datensatz auf eine spezifische Aufgabe fokussiert ist. Zuerst analysiert es die Daten, Labels, Hardware-Beschränkungen, benötigte Leistung und den Anwendungskontext. Zum Beispiel analysiert es die Objektgrößen in Bildern."
   },
   "oneai.invention.architecture.title": {
-    "message": "2. KI-Features Vorhersagen"
+    "message": "KI-Features Vorhersagen"
   },
   "oneai.invention.architecture.description": {
     "message": "ONE AI nutzt dann sein Wissen über bestehende KI-Forschung und zuvor optimierte KI-Modelle, um die benötigten Features für die KI-Modell-Architektur vorherzusagen. Zum Beispiel benötigen größere Objekte größere rezeptive Felder."
   },
   "oneai.invention.generation.title": {
-    "message": "3. KI-Modell Erstellen & Trainieren"
+    "message": "KI-Modell Erstellen & Trainieren"
   },
   "oneai.invention.generation.description": {
     "message": "ONE AI nimmt die Vorhersagen und erstellt dann eine maßgeschneiderte neuronale Netzwerk-Architektur, die alle vorhergesagten Features erfüllt. Dann wird die KI auf dem Datensatz trainiert und lernt nur die relevanten Informationen."
   },
   "oneai.invention.deployment.title": {
-    "message": "4. Überall Implementieren"
+    "message": "Überall Implementieren"
   },
   "oneai.invention.deployment.description": {
     "message": "Schließlich kann die KI ohne Änderungen auf FPGAs, Mikrocontrollern, GPUs und CPUs bereitgestellt werden. ONE AI übernimmt automatisch die gesamte Komplexität der Hardware-Optimierung und -Implementierung."
@@ -1836,5 +1851,278 @@
   },
   "seminars.form.error.already_registered": {
     "message": "Sie sind bereits für dieses Event registriert."
+  },
+  "chathero.title": {
+    "message": "Erstelle deine maßgeschneiderte KI"
+  },
+  "chathero.subtitle": {
+    "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore."
+  },
+  "chathero.button.howitworks": {
+    "message": "So funktioniert's"
+  },
+  "chathero.button.showcase": {
+    "message": "Showcase"
+  },
+  "signupmodal.attach.title": {
+    "message": "Anmelden um Dateien hochzuladen"
+  },
+  "signupmodal.attach.subtitle": {
+    "message": "Unterstützung für bis zu 10 Dateien jedes Dateityps"
+  },
+  "signupmodal.send.title": {
+    "message": "Anmelden um deine KI zu erstellen"
+  },
+  "signupmodal.send.subtitle": {
+    "message": "Starte mit deinem maßgeschneiderten KI-Modell"
+  },
+  "signupmodal.button.signin": {
+    "message": "Anmelden"
+  },
+  "signupmodal.button.cancel": {
+    "message": "Abbrechen"
+  },
+    "orbitindustries.title": {
+    "message": "Entdecke unsere Vorteile"
+  },
+  "orbitindustries.subtitle": {
+    "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  "orbitindustries.anyHardware.label": {
+    "message": "Jede Hardware"
+  },
+  "orbitindustries.anyHardware.description": {
+    "message": "Bringe KI auf jede Hardware. Von CPUs bis FPGAs - ONE AI optimiert Modelle für Speicher, FPS und Genauigkeit."
+  },
+  "orbitindustries.anyRequirements.label": {
+    "message": "Jede Anforderung"
+  },
+  "orbitindustries.anyRequirements.description": {
+    "message": "Entwickelt für extreme Anforderungen mit ultra-niedriger Latenz, Echtzeitfähigkeit oder maximalem Durchsatz."
+  },
+  "orbitindustries.anyApplication.label": {
+    "message": "Jede Anwendung"
+  },
+  "orbitindustries.anyApplication.description": {
+    "message": "Von Robotern mit 3D-Kameras bis zu MRT-Systemen mit Dutzenden Bildern pro Analyse - ONE AI erstellt immer die beste KI für die Aufgabe."
+  },
+  "orbitindustries.resultsInMinutes.label": {
+    "message": "Ergebnisse in Minuten"
+  },
+  "orbitindustries.resultsInMinutes.description": {
+    "message": "Kann von jedem Entwickler bedient werden. Erhalte produktionsreife KI-Modelle in Minuten statt Monaten - keine ML-Expertise erforderlich."
+  },
+  "careers.detail.location": {
+    "message": "Standort"
+  },
+  "careers.detail.startDate": {
+    "message": "Start"
+  },
+  "careers.detail.type": {
+    "message": "Typ"
+  },
+  "careers.detail.contact": {
+    "message": "Kontakt"
+  },
+  "careers.detail.applyNow": {
+    "message": "Jetzt Bewerben"
+  },
+  "careers.form.name": {
+    "message": "Name"
+  },
+  "careers.form.email": {
+    "message": "E-Mail"
+  },
+  "careers.form.github": {
+    "message": "GitHub Benutzername"
+  },
+  "careers.form.resume.drag": {
+    "message": "Lebenslauf hier ablegen oder klicken zum Hochladen"
+  },
+  "careers.form.resume.format": {
+    "message": "Nur PDF, max. 10MB"
+  },
+  "careers.form.submit": {
+    "message": "Bewerbung absenden"
+  },
+  "careers.form.submitting": {
+    "message": "Wird gesendet..."
+  },
+  "careers.form.success.title": {
+    "message": "Bewerbung eingereicht!"
+  },
+  "careers.form.success.message": {
+    "message": "Vielen Dank für Ihre Bewerbung. Wir werden sie prüfen und uns in Kürze bei Ihnen melden."
+  },
+  "careers.form.error": {
+    "message": "Beim Absenden Ihrer Bewerbung ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns unter career@one-ware.com."
+  },
+  "careers.form.alreadyApplied": {
+    "message": "Sie haben sich bereits mit dieser E-Mail-Adresse für diese Position beworben."
+  },
+  "careers.form.error.fileType": {
+    "message": "Bitte laden Sie eine PDF-Datei hoch"
+  },
+  "careers.form.error.fileSize": {
+    "message": "Die Dateigröße muss kleiner als 10MB sein"
+  },
+  "careers.form.error.resumeRequired": {
+    "message": "Bitte laden Sie Ihren Lebenslauf hoch"
+  },
+  "careers.form.privacy": {
+    "message": "Mit dem Absenden akzeptieren Sie unsere"
+  },
+  "careers.form.privacyLink": {
+    "message": "Datenschutzrichtlinie"
+  },
+  "pricing.meta.title": {
+    "message": "Preise"
+  },
+  "pricing.meta.description": {
+    "message": "Erstelle deine individuelle KI kostenlos. Flexible Preise für jede Phase."
+  },
+  "pricing.hero.title": {
+    "message": "Preise"
+  },
+  "pricing.hero.subtitle": {
+    "message": "Erstelle deine individuelle KI kostenlos"
+  },
+  "pricing.free.label": {
+    "message": "Kostenlos"
+  },
+  "pricing.free.nocreditcard": {
+    "message": "Keine Kreditkarte erforderlich"
+  },
+  "pricing.free.feature.credits": {
+    "message": "3.000 kostenlose Credits pro Monat"
+  },
+  "pricing.free.feature.agent": {
+    "message": "ONE AI Agent"
+  },
+  "pricing.free.feature.desktop": {
+    "message": "ONE AI Desktop"
+  },
+  "pricing.free.feature.projects": {
+    "message": "Max. 10 Projekte"
+  },
+  "pricing.free.feature.mode": {
+    "message": "Einfacher und Experten-Modus"
+  },
+  "pricing.free.feature.gen": {
+    "message": "Datensatz-Generierung mit Kamera"
+  },
+  "pricing.free.feature.class": {
+    "message": "Klassifizierung, Objekterkennung und Segmentierung"
+  },
+  "pricing.free.feature.label": {
+    "message": "Automatisches Datensatz-Labeling"
+  },
+  "pricing.free.feature.pre": {
+    "message": "Vorfilter und Augmentierungen"
+  },
+  "pricing.free.feature.opt": {
+    "message": "Optimierung für jede Hardware"
+  },
+  "pricing.free.feature.train": {
+    "message": "Training und Test auf unserem Server (50 Credits pro Minute)"
+  },
+  "pricing.free.feature.export": {
+    "message": "Export zur Evaluierung (ONNX, TF-Lite, VHDL)"
+  },
+  "pricing.free.cta": {
+    "message": "Jetzt starten"
+  },
+  "pricing.credits.title": {
+    "message": "Credits nach Bedarf"
+  },
+  "pricing.credits.unit": {
+    "message": "Credits"
+  },
+  "pricing.credits.description": {
+    "message": "Mehr benötigt? Kaufe jederzeit zusätzliche Credits, um dein KI-Training zu skalieren."
+  },
+  "pricing.student.title": {
+    "message": "Studenten-Programm"
+  },
+  "pricing.student.description": {
+    "message": "Bewerbe dich für 10.000 kostenlose Credits pro Monat"
+  },
+  "pricing.student.cta": {
+    "message": "Jetzt bewerben"
+  },
+  "pricing.student.label": {
+    "message": "Student"
+  },
+  "pricing.student.verification": {
+    "message": "Verifizierung erforderlich"
+  },
+  "pricing.student.instruction": {
+    "message": "Erstelle ein kostenloses Konto und schreibe uns eine E-Mail von deiner Studenten-Adresse, um den Account hochstufen zu lassen."
+  },
+  "pricing.student.feature.credits": {
+    "message": "10.000 kostenlose Credits pro Monat"
+  },
+  "pricing.enterprise.label": {
+    "message": "Enterprise"
+  },
+  "pricing.enterprise.contact": {
+    "message": "Preis auf Anfrage"
+  },
+  "pricing.enterprise.cta": {
+    "message": "Vertrieb kontaktieren"
+  },
+  "pricing.enterprise.feature.credits": {
+    "message": "Unbegrenzte Projekte"
+  },
+  "pricing.enterprise.feature.monthly_credits": {
+    "message": "Credits pro Monat: Individuell"
+  },
+  "pricing.enterprise.feature.projects": {
+    "message": "Max. Projekte: Individuell"
+  },
+  "pricing.enterprise.feature.onprem": {
+    "message": "Optionales On-Premise Training"
+  },
+  "pricing.enterprise.feature.support": {
+    "message": "Priorisierter Support"
+  },
+  "pricing.enterprise.feature.custom": {
+    "message": "Individuelle Integrationen"
+  },
+  "pricing.enterprise.feature.export": {
+    "message": "Kommerzielle Lizenz für KI-Modelle"
+  },
+  "pricing.opensource.title": {
+    "message": "Open-Source-Programm"
+  },
+  "pricing.opensource.description": {
+    "message": "Bewerbe dich für kostenlose Credits für dein Open-Source-Projekt"
+  },
+  "pricing.opensource.cta": {
+    "message": "Mehr erfahren"
+  },
+  "pricing.commercial.title": {
+    "message": "Kommerzielle Nutzung von KI-Modellen"
+  },
+  "pricing.commercial.description": {
+    "message": "Benötigst du eine kommerzielle Lizenz für deine trainierten KI-Modelle? Kontaktiere unser Vertriebsteam."
+  },
+  "pricing.commercial.cta": {
+    "message": "Vertrieb kontaktieren"
+  },
+  "pricing.services.title": {
+    "message": "Unsere Dienstleistungen"
+  },
+  "pricing.services.description": {
+    "message": "Von Beratung und maßgeschneiderten Lösungen bis hin zu Hardware-Support — wir helfen dir, KI in deinen Workflow zu integrieren."
+  },
+  "pricing.services.cta": {
+    "message": "Dienstleistungen ansehen"
+  },
+  "pricing.services.subtitle": {
+    "message": "Beratung, maßgeschneiderte Lösungen und Hardware-Support"
+  },
+  "pricing.opensource.subtitle": {
+    "message": "Kostenlose Credits für nicht-kommerzielle Projekte"
   }
 }

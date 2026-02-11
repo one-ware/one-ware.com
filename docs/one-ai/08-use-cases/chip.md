@@ -91,7 +91,7 @@ The potato chip inspection demo is just one example. The broader lesson is clear
 * With HDL deployment, even a low-cost FPGA like MAX® 10 can **surpass a modern GPU**.  
 * The result is **real-time, energy-efficient, and cost-effective AI** — perfectly suited for industrial applications.  
 
-**You can also check out our other [use-cases](/docs/one-ai/use-cases/) for more examples.**
+**You can also check out our other [use-cases](/docs/one-ai/use-cases/overview) for more examples.**
 
 import SupportBanner from '@site/src/components/SupportBanner';
 

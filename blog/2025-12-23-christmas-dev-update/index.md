@@ -1,6 +1,6 @@
 ---
 slug: christmas-2025-devupdate
-title: "Christmas Update 🎄"
+title: "Dev Update: Christmas Improvements 🎄"
 authors: [hmennen]
 tags:
   [

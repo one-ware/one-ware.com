@@ -33,8 +33,8 @@ Dies vorausgeschickt, vereinbaren die Parteien Folgendes:
 
 1. ONE WARE gewährt dem Kunden während der Vertragslaufzeit für einen begrenzten Zeitraum Zugang zur Software über die One AI Extension. Ein Kunde ist berechtigt, mehrere Nutzer gemäß der Leistungsbeschreibung zu registrieren. Jedem Nutzer wird ein eigener Account zugewiesen.
 2. Der Kunde kann die Software in einem ersten Schritt („Trainingsvorbereitung“) nutzen, um Bilder lokal als Trainingsmaterial zu speichern. Der Kunde kann diesen Trainingsdatensatz bearbeiten und organisieren, um das Training des KI-Modells bestmöglich vorzubereiten. Insbesondere kann der Kunde die Bilder klassifizieren, relevante Bereiche markieren und Vorfilter (z.B. Farbverbesserung, Fokus, Zuschnitt) verwenden. Darüber hinaus kann der Kunde bereits Voreinstellungen für das gewünschte KI-Modell vornehmen und ggf. die Hardware-Ressourcen auswählen und definieren, auf denen das Modell später laufen soll.
-3. Sobald der Kunde seine Trainingsdaten entsprechend vorbereitet und alle notwendigen Modell- und Hardware-Einstellungen vorgenommen hat, kann der Kunde das **Training** starten und gegen Zahlung der in Abschnitt [5](#_page4_x68.00_y548.04) und in der Preisanlage in Anlage 3 beschriebenen Vergütung („Credits“) durch ONE WARE durchführen lassen. Hierzu lädt er die Trainingsdaten in die ONE AI Cloud hoch. Der Kunde kann Beginn, Zeitpunkt und Umfang des Trainings individuell bestimmen.
-4. Nach Abschluss des Trainings hat der Kunde die Möglichkeit, das KI-Modell zu testen („Testing“). Hierzu kann der Kunde in der ONE AI Extension einsehen, wie das KI-Modell Daten klassifiziert. Der Kunde kann auch neue Datensätze hochladen, um zu evaluieren, ob das KI-Modell für die gewünschte Anwendung funktioniert. Der Kunde hat zudem die Möglichkeit, eine Testlizenz für das KI-Modell zu erhalten, um zu testen, ob das KI-Modell auf der jeweiligen Hardware funktioniert („Hardware-Test“). Der Kunde kann diese Option durch Klicken auf den Button „Export“ auswählen. Einzelheiten zum Testing und insbesondere zum Hardware-Test sind in Abschnitt [8](#_page7_x68.00_y140.04) geregelt.
+3. Sobald der Kunde seine Trainingsdaten entsprechend vorbereitet und alle notwendigen Modell- und Hardware-Einstellungen vorgenommen hat, kann der Kunde das **Training** starten und gegen Zahlung der in Abschnitt [5](#5-vergütung) und in der Preisanlage in Anlage 3 beschriebenen Vergütung („Credits“) durch ONE WARE durchführen lassen. Hierzu lädt er die Trainingsdaten in die ONE AI Cloud hoch. Der Kunde kann Beginn, Zeitpunkt und Umfang des Trainings individuell bestimmen.
+4. Nach Abschluss des Trainings hat der Kunde die Möglichkeit, das KI-Modell zu testen („Testing“). Hierzu kann der Kunde in der ONE AI Extension einsehen, wie das KI-Modell Daten klassifiziert. Der Kunde kann auch neue Datensätze hochladen, um zu evaluieren, ob das KI-Modell für die gewünschte Anwendung funktioniert. Der Kunde hat zudem die Möglichkeit, eine Testlizenz für das KI-Modell zu erhalten, um zu testen, ob das KI-Modell auf der jeweiligen Hardware funktioniert („Hardware-Test“). Der Kunde kann diese Option durch Klicken auf den Button „Export“ auswählen. Einzelheiten zum Testing und insbesondere zum Hardware-Test sind in Abschnitt [8](#8-testing-hardware-test) geregelt.
 5. Ist der Kunde mit den Ergebnissen des Testings zufrieden, kann der Kunde von ONE WARE eine Lizenz zur Nutzung und zum Export des trainierten KI-Modells im Produktivbetrieb erwerben. Hierzu kontaktiert der Kunde ONE WARE nach Abschluss des Testings und fordert eine solche Lizenz an. Die Parteien vereinbaren die kommerziellen Bedingungen dieser Lizenz individuell. Mit Abschluss des Lizenzvertrages wird dieser als Anlage 4 integraler Bestandteil dieses Vertrages.
 6. Einzelheiten zu den Funktionen der Software zur Trainingsvorbereitung, zum Training, zum Testing, zum Export und zur Nutzung des KI-Modells sind in der Leistungsbeschreibung und der Spezifikation in **Anlage 1** geregelt. Über die vereinbarten Leistungen hinaus hat der Kunde keinen Anspruch auf eine bestimmte Ausgestaltung oder bestimmte Funktionalität der Software.
 7. ONE WARE ist für den Betrieb und die Wartung der Software verantwortlich. Das Rechenzentrum von ONE WARE. Der Kunde ist dafür verantwortlich, den Internetzugang und etwaige für den Zugriff auf die Software erforderliche Hardware (z.B. Router, Smart Device) sicherzustellen und die ONE AI Extension herunterzuladen. Der Kunde hat keinen Anspruch auf Zugang zum Quellcode der Software.
@@ -58,19 +58,19 @@ ONE WARE ist berechtigt, den Leistungsumfang in einem für den Kunden zumutbaren
 11.2.3 sie aufgrund von Änderungen der Gesetzgebung oder Rechtsprechung erforderlich ist, oder
 11.2.4 ähnliche wichtige Gründe vorliegen, die die Änderung nach Abwägung mit den Interessen des Kunden für diesen zumutbar machen.
 
-Vorbehaltlich Abschnitt [3.11.3](#_page4_x68.00_y86.04) müssen bei jeder Änderung des Funktionsumfangs die im jeweiligen Auftrag und in Anlage 1 definierten wesentlichen Leistungsmerkmale sowie die Hauptleistungspflichten von ONE WARE vollständig erhalten bleiben.
+Vorbehaltlich Abschnitt 3.11.3 müssen bei jeder Änderung des Funktionsumfangs die im jeweiligen Auftrag und in Anlage 1 definierten wesentlichen Leistungsmerkmale sowie die Hauptleistungspflichten von ONE WARE vollständig erhalten bleiben.
 
 11.3. Sonstige Änderungen
 
-ONE WARE ist berechtigt, Änderungen am Funktionsumfang der Dienste in anderen als den in den Abschnitten [3.11.1](#_page3_x68.00_y288.04) und [3.11.2](#_page3_x68.00_y424.04) genannten Fällen unter Berücksichtigung der Interessen beider Parteien vorzunehmen. In diesem Fall wird ONE WARE den Kunden zwei Monate vor Einführung der Änderungen über die geplanten Änderungen informieren. Während dieser Frist hat der Kunde das Recht zu erklären, ob er die geplanten Änderungen akzeptiert oder nicht. Reagiert der Kunde nicht innerhalb dieser Frist, gelten die Änderungen als genehmigt. Widerspricht der Kunde den Änderungen innerhalb der genannten Frist, ist ONE WARE berechtigt, nach eigenem Ermessen entweder den betroffenen Dienst ohne die geplanten Änderungen weiterzuführen oder den Vertrag mit dem Kunden mit einer Frist von einem Monat ab Zugang des Widerspruchs des Kunden zu kündigen.
+ONE WARE ist berechtigt, Änderungen am Funktionsumfang der Dienste in anderen als den in den Abschnitten 3.11.1 und 3.11.2 genannten Fällen unter Berücksichtigung der Interessen beider Parteien vorzunehmen. In diesem Fall wird ONE WARE den Kunden zwei Monate vor Einführung der Änderungen über die geplanten Änderungen informieren. Während dieser Frist hat der Kunde das Recht zu erklären, ob er die geplanten Änderungen akzeptiert oder nicht. Reagiert der Kunde nicht innerhalb dieser Frist, gelten die Änderungen als genehmigt. Widerspricht der Kunde den Änderungen innerhalb der genannten Frist, ist ONE WARE berechtigt, nach eigenem Ermessen entweder den betroffenen Dienst ohne die geplanten Änderungen weiterzuführen oder den Vertrag mit dem Kunden mit einer Frist von einem Monat ab Zugang des Widerspruchs des Kunden zu kündigen.
 
 **4 Nutzungsrechte**
 
 1. Mit Vertragsbeginn räumt ONE WARE dem Kunden das nicht ausschließliche, nicht übertragbare Recht ein, die Software vertragsgemäß für die Dauer des Vertrages zu nutzen. Das Nutzungsrecht darf nur unterlizenziert werden, soweit dies für die bestimmungsgemäße Nutzung der Software durch den Kunden zwingend erforderlich ist. Weitergehende gesetzliche Rechte des Kunden bleiben unberührt.
 2. Die Rechtseinräumung umfasst keine Bestandteile der Software, die für den Kunden als Gegenstand von Rechten Dritter, insbesondere Open-Source-Lizenzen, erkennbar sind. Solche Bestandteile gelten insbesondere dann als erkennbar, wenn sie von ONE WARE innerhalb der Software oder in begleitenden Textdateien als Inhalte Dritter ausgewiesen sind.
-3. Die vertraglichen Nutzungsrechte an KI-Modellen, die von ONE WARE im Auftrag des Kunden unter diesem Vertrag trainiert wurden, ergeben sich für die Testphase aus den Bestimmungen in Abschnitt [8](#_page7_x68.00_y140.04) (Testing: Hardware-Test) dieser zwischen den Parteien zu schließenden Vereinbarung, die diesem Vertrag bei dessen Abschluss als Anlage 4 beigefügt wird.
+3. Die vertraglichen Nutzungsrechte an KI-Modellen, die von ONE WARE im Auftrag des Kunden unter diesem Vertrag trainiert wurden, ergeben sich für die Testphase aus den Bestimmungen in Abschnitt [8](#8-testing-hardware-test) (Testing: Hardware-Test) dieser zwischen den Parteien zu schließenden Vereinbarung, die diesem Vertrag bei dessen Abschluss als Anlage 4 beigefügt wird.
 
-**5 Vergütung**
+## 5 Vergütung
 
 1. Der Kunde zahlt an ONE WARE die in der Preisanlage in Anlage 3 vereinbarte Vergütung für das Training und die Speicherung von Trainingsdaten und trainierten KI-Modellen.
 2. Die Vergütung für die Nutzung und den Export trainierter Modelle bestimmt sich nach dem zwischen den Parteien zu schließenden Lizenzvertrag, der diesem Vertrag bei dessen Abschluss als Anlage 4 beigefügt wird.
@@ -83,7 +83,7 @@ ONE WARE ist berechtigt, Änderungen am Funktionsumfang der Dienste in anderen a
 1. Der Kunde hat die Zugangsdaten für die Software sicher aufzubewahren und darf diese nur berechtigten Mitarbeitern zugänglich machen. Der Kunde verpflichtet sich, die Zugangsdaten vertraulich zu behandeln und ONE WARE unverzüglich zu informieren, wenn der Verdacht besteht, dass die Zugangsdaten unbefugten Personen bekannt geworden sein könnten. Des Weiteren verpflichtet sich der Kunde, alle Sicherheitsvorkehrungen, funktionalen und sonstigen Einschränkungen der Software einzuhalten. Insbesondere darf der Kunde keine Schutz- oder Authentifizierungsmechanismen entfernen, überwinden, deaktivieren oder anderweitig umgehen.
 1.1. Dem Kunden ist es untersagt, die Software an Dritte weiterzugeben, sofern nicht ausdrücklich etwas anderes vereinbart ist.
 1.2. Der Kunde ist verpflichtet, die bei der Registrierung gemachten Angaben aktuell zu halten und ONE WARE Änderungen unverzüglich mitzuteilen. Dies betrifft insbesondere Daten zu den Kontakt- und Geschäftsinformationen des Kunden.
-2. Der Kunde hat seine im Rahmen der Software gespeicherten, verarbeiteten und sonst an ONE WARE übermittelten Daten und Inhalte (im Sinne von Abschnitt [6.5.1](#_page5_x68.00_y660.04)) regelmäßig und risikoadäquat zu sichern, soweit dies technisch möglich ist.
+2. Der Kunde hat seine im Rahmen der Software gespeicherten, verarbeiteten und sonst an ONE WARE übermittelten Daten und Inhalte (im Sinne von Abschnitt 6.5.1) regelmäßig und risikoadäquat zu sichern, soweit dies technisch möglich ist.
 3. Der Kunde benennt einen Ansprechpartner in seinem Unternehmen, der berechtigt ist, Willenserklärungen im Zusammenhang mit dem Vertrag mit ONE WARE entgegenzunehmen und abzugeben.
 4. Es liegt in der Verantwortung des Kunden sicherzustellen, dass er die für das Training erforderlichen Trainingsdaten gemäß den technischen Anforderungen in der Spezifikation in Anlage 1 in die ONE AI Cloud hochlädt und damit ONE WARE für das Training des KI-Modells zur Verfügung stellt.
 4.1. Der Kunde verpflichtet sich, alle Maßnahmen zu unterlassen, die die Funktionsweise der Software gefährden oder stören, und nicht auf Daten zuzugreifen oder diese zu verarbeiten, zu deren Zugriff er nicht berechtigt ist.
@@ -96,6 +96,9 @@ ONE WARE ist berechtigt, Änderungen am Funktionsumfang der Dienste in anderen a
 5.3.3. personenbezogene Daten enthalten
 („**Verbotene Inhalte**“).
 
+5.4. **Eingaben in den AI-Agent (Prompts)**  
+Eingaben des Kunden an den AI-Assistenten („Prompts“) gelten ebenfalls als „Inhalte“ im Sinne dieser Ziffer 5. Dem Kunden ist es untersagt, personenbezogene Daten oder rechtswidrige Inhalte in den AI-Agent einzugeben. Der Kunde trägt die volle Verantwortung für die Inhalte seiner Prompts.
+
 **7 Vorübergehende Sperrung**
 
 1. ONE WARE ist berechtigt, den Zugang des Kunden zur Software zu sperren, wenn
@@ -104,11 +107,11 @@ ONE WARE ist berechtigt, Änderungen am Funktionsumfang der Dienste in anderen a
 1.3. die Sperrung aus technischen Gründen erforderlich ist;
 1.4. ONE WARE aufgrund geltender Gesetze oder durch gerichtliche oder behördliche Anordnung zur Sperrung verpflichtet ist;
 1.5. der Kunde verbotene Inhalte in die Software hochlädt;
-1.6. der Kunde mit der Zahlung der vereinbarten Gebühren gemäß Abschnitt [5](#_page4_x68.00_y548.04) des Vertrages mehr als zwei (2) Wochen in Verzug ist; oder
+1.6. der Kunde mit der Zahlung der vereinbarten Gebühren gemäß Abschnitt [5](#5-vergütung) des Vertrages mehr als zwei (2) Wochen in Verzug ist; oder
 1.7. der Kunde falsche oder ungültige Kontaktdaten angibt und eine Kommunikation zwischen ONE WARE und dem Kunden nicht mehr möglich ist.
 2. ONE WARE soll den Kunden mindestens einen Werktag vor Wirksamwerden der Sperrung in Text- oder Schriftform über die Sperrung informieren, sofern die Benachrichtigung unter Berücksichtigung der Interessen beider Parteien zumutbar und mit dem Zweck der Sperrung vereinbar ist.
 
-**8 Testing; Hardware-Test**
+## 8 Testing; Hardware-Test
 
 1. Der Kunde ist berechtigt, das KI-Modell nach Abschluss des Trainings in der ONE AI Extension kostenlos zu testen. Der Test beschränkt sich ausschließlich auf die Evaluierung der Funktion des Modells und darf nicht für den Produktivbetrieb genutzt werden.
 2. Der Kunde ist berechtigt, neue Inhalte hochzuladen, um das Modell zu testen, sofern dies ausschließlich zum Zweck der Evaluierung der Funktionsfähigkeit des Modells geschieht.
@@ -125,19 +128,20 @@ ONE WARE ist berechtigt, Änderungen am Funktionsumfang der Dienste in anderen a
 2. Im Übrigen leistet ONE WARE Gewähr für Mängel bei der Bereitstellung der Software ausschließlich nach Maßgabe der folgenden Bestimmungen.
 3. Sind die von ONE WARE nach diesem Vertrag zu erbringenden Leistungen mangelhaft, wird ONE WARE innerhalb einer angemessenen Frist und nach Zugang einer schriftlichen (E-Mail genügt) Mängelrüge des Kunden die Leistungen nach ihrer Wahl entweder nachbessern oder neu erbringen. Als Nachbesserung gilt auch die Bereitstellung von Nutzungshinweisen, mit denen der Kunde aufgetretene Mängel zumutbar umgehen kann, um die Software vertragsgemäß zu nutzen.
 4. Schlägt die mangelfreie Erbringung der Leistungen aus Gründen, die ONE WARE zu vertreten hat, auch innerhalb einer vom Kunden schriftlich gesetzten angemessenen Frist fehl, kann der Kunde die vereinbarte Vergütung um einen angemessenen Betrag mindern. Das Minderungsrecht ist auf die Höhe des auf den mangelhaften Teil der Leistung entfallenden monatlichen Festpreises beschränkt.
-5. Erreicht die Minderung gemäß Abschnitt [9.4](#_page8_x68.00_y188.04) in zwei aufeinanderfolgenden Monaten oder in zwei Monaten eines Quartals den in Abschnitt [9.4](#_page8_x68.00_y188.04) genannten Höchstbetrag, kann der Kunde den Vertrag fristlos kündigen.
+5. Erreicht die Minderung gemäß Abschnitt 9.4 in zwei aufeinanderfolgenden Monaten oder in zwei Monaten eines Quartals den in Abschnitt 9.4 genannten Höchstbetrag, kann der Kunde den Vertrag fristlos kündigen.
 6. Der Kunde hat ONE WARE etwaige auftretende Mängel unverzüglich schriftlich (E-Mail genügt) anzuzeigen. Des Weiteren hat der Kunde ONE WARE bei der Mängelbeseitigung unentgeltlich in zumutbarer Weise zu unterstützen und ONE WARE insbesondere alle Informationen und Unterlagen zur Verfügung zu stellen, die ONE WARE für die Analyse und Beseitigung von Mängeln benötigt.
-7. Neben Minderung und Kündigung kann der Kunde Schadensersatz nach Maßgabe der gesetzlichen Vorschriften und der Haftungsbeschränkung in Abschnitt [10](#_page8_x68.00_y532.04) verlangen.
+7. Neben Minderung und Kündigung kann der Kunde Schadensersatz nach Maßgabe der gesetzlichen Vorschriften und der Haftungsbeschränkung in Abschnitt [10](#10-schadensersatz-und-haftung) verlangen.
 8. Weitergehende Gewährleistungsansprüche sind ausgeschlossen.
 9. Die Verjährungsfrist für Gewährleistungsansprüche beträgt ein Jahr, es sei denn, sie beruhen auf Vorsatz oder grober Fahrlässigkeit oder betreffen Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit.
 
-**10 Schadensersatz und Haftung**
+## 10 Schadensersatz und Haftung
 
 1. ONE WARE haftet für kostenlose Dienste nach den gesetzlichen Vorschriften.
 2. Im Übrigen haftet ONE WARE unbeschränkt für Vorsatz und grobe Fahrlässigkeit sowie für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit.
 3. In Fällen einfacher Fahrlässigkeit haftet ONE WARE für die Verletzung einer wesentlichen Vertragspflicht. Eine wesentliche Vertragspflicht im Sinne dieser Ziffer ist eine Pflicht, deren Erfüllung die Durchführung des Vertrages überhaupt erst ermöglicht und auf deren Einhaltung der Kunde daher regelmäßig vertrauen darf.
 4. ONE WARE haftet nicht für mangelnden wirtschaftlichen Erfolg, entgangenen Gewinn oder mittelbare Schäden.
 5. Die Haftung ist auf den bei Vertragsschluss typischen, vorhersehbaren Schaden begrenzt.
+5.1. **Haftung für AI-Outputs**: Die vom AI-Agent generierten Ausgaben (z. B. Konfigurationsdateien, Code-Snippets, technische Antworten) sind automatisiert und unverbindlich. ONE WARE übernimmt keine Gewähr für die Richtigkeit, Vollständigkeit oder Eignung dieser Ausgaben für einen bestimmten Zweck. Die Nutzung von AI-generierten Ergebnissen, insbesondere der produktive Einsatz von Konfigurationsdateien, erfolgt auf eigenes Risiko des Kunden. ONE WARE schuldet bezüglich der AI-Beratung grundsätzlich keinen bestimmten Erfolg.
 6. Die Haftung für Schäden durch Datenverlust ist auf den Betrag der Wiederherstellung der Daten begrenzt, der auch bei regelmäßiger und risikoadäquater Datensicherung durch den Kunden angefallen wäre.
 7. Die Haftungsbeschränkungen gelten entsprechend zugunsten der Mitarbeiter, Beauftragten und Erfüllungsgehilfen von ONE WARE.
 8. Eine etwaige Haftung von ONE WARE für gegebene Garantien (die ausdrücklich als solche bezeichnet sein müssen) und für Ansprüche nach dem Produkthaftungsgesetz bleibt unberührt.
@@ -151,7 +155,7 @@ ONE WARE ist berechtigt, Änderungen am Funktionsumfang der Dienste in anderen a
 4. Die Geheimhaltungsverpflichtung gilt nicht, wenn die vertraulichen Informationen der empfangenden Partei bereits vor der Offenlegung bekannt waren, allgemein bekannt sind oder ohne Verschulden der empfangenden Partei bekannt werden, von der empfangenden Partei selbst ohne Zugriff auf die vertraulichen Informationen der offenlegenden Partei entwickelt wurden oder der empfangenden Partei von einem Dritten, der hierzu berechtigt ist, gutgläubig zur Kenntnis gebracht werden, oder wenn sie keine Rückschlüsse auf natürliche Personen oder die offenlegende Partei zulassen. Zwingende gesetzliche Offenlegungspflichten bleiben vorbehalten. Beruft sich die empfangende Partei auf einen oder mehrere der vorgenannten Gründe, so hat sie dies durch Vorlage geeigneter Nachweise zu belegen.
 5. Die Geheimhaltungsverpflichtung beginnt mit Erhalt der vertraulichen Informationen und bleibt für die gesamte Laufzeit dieses Vertrages bestehen. Darüber hinaus bleibt die Geheimhaltungsverpflichtung für einen Zeitraum von drei Jahren nach Beendigung oder Ablauf des Vertrages bestehen, es sei denn, gesetzlich sind längere Geheimhaltungsfristen vorgeschrieben. Insbesondere sind etwaige Geschäftsgeheimnisse so lange vertraulich zu behandeln, wie sie Geschäftsgeheimnisse bleiben.
 6. Sofern in der Leistungsbeschreibung vereinbart, ist ONE WARE berechtigt, den Kunden in Marketingmaterialien (einschließlich Websites) unter Angabe des vollständigen Firmennamens und unter Verwendung des Firmenlogos als Referenzkunden zu nennen.
-7. Mit Ausnahme von Abschnitt [11.6](#_page10_x68.00_y312.04) begründen die vorstehenden Bestimmungen keine gewerblichen Schutzrechte. Alle im Rahmen dieses Vertrages eingeräumten Nutzungsrechte bleiben von den vorstehenden Bestimmungen unberührt.
+7. Mit Ausnahme von Abschnitt 11.6 begründen die vorstehenden Bestimmungen keine gewerblichen Schutzrechte. Alle im Rahmen dieses Vertrages eingeräumten Nutzungsrechte bleiben von den vorstehenden Bestimmungen unberührt.
 
 **12 Daten**
 
@@ -162,7 +166,7 @@ ONE WARE ist berechtigt, Änderungen am Funktionsumfang der Dienste in anderen a
 1. Der Vertrag beginnt mit Vertragsschluss und läuft auf unbestimmte Zeit.
 2. Das Recht der Parteien zur Kündigung aus wichtigem Grund bleibt unberührt. Für ONE WARE liegt ein wichtiger Grund insbesondere vor, wenn:
 2.1. der Kunde trotz vorheriger Abmahnung durch ONE WARE wiederholt verbotene Inhalte in die Software einstellt;
-2.2. der Kunde mit der Zahlung der vereinbarten Vergütung gemäß Abschnitt [5](#_page4_x68.00_y548.04) mehr als sechs Wochen in Verzug ist und ONE WARE dem Kunden die Kündigung mit einer Frist von zwei Wochen in Text- oder Schriftform angedroht hat;
+2.2. der Kunde mit der Zahlung der vereinbarten Vergütung gemäß Abschnitt [5](#5-vergütung) mehr als sechs Wochen in Verzug ist und ONE WARE dem Kunden die Kündigung mit einer Frist von zwei Wochen in Text- oder Schriftform angedroht hat;
 
 **14 Schlussbestimmungen**
 
@@ -184,6 +188,10 @@ ONE WARE ist berechtigt, Änderungen am Funktionsumfang der Dienste in anderen a
 - **Maximales Datenvolumen pro Projekt:** 50 GB Upload-Limit
 - **Unterstützte Dateiformate:** PNG- und JPG-Bilder sowie TXT-Label-Dateien
 - **Maximale Bildauflösung:** KI-Modell-Vorhersagen werden nur für Bilder bis zu 8000x6000 Pixel unterstützt
+3.1 **AI-Assistent / AI-Agent**  
+Interaktive Unterstützung innerhalb der Plattform zur Beantwortung technischer Fragen und Generierung technischer Vorschläge (z. B. Konfigurationsdateien).  
+- **Speicherung**: Fragen und Antworten werden gespeichert, um Historie und Kontext zu ermöglichen.  
+- **Disclaimer**: Der AI-Agent generiert Antworten auf Basis von Wahrscheinlichkeiten.  Es besteht kein Anspruch auf Vollständigkeit, Fehlerfreiheit oder Eignung für einen bestimmten Zweck. Der Kunde ist verantwortlich, die Ergebnisse vor Verwendung technisch zu validieren.
 4) **Nicht geschuldete Leistungen**
 - Der Anbieter erbringt **keine persönliche oder individuelle Beratung**. Der Support beschränkt sich auf technische Anfragen, Fehlermeldungen und Hilfestellung bei der Nutzung der Plattform.
 - **Feature-Anpassungen, Hardware-Beratung oder KI-Entwicklung im Auftrag des Kunden** erfolgen nur nach gesonderter schriftlicher Vereinbarung.
@@ -204,7 +212,7 @@ Bei der Erbringung der Leistungen nach dem Hauptvertrag verarbeitet der Auftragn
 1. Der Auftragnehmer verarbeitet die Auftraggeberdaten ausschließlich im Auftrag und nach Weisung des Auftraggebers, es sei denn, der Auftragnehmer ist durch das Recht der Europäischen Union oder das Recht eines Mitgliedstaats zur Verarbeitung der Daten verpflichtet. In einem solchen Fall teilt der Auftragnehmer dem Auftraggeber diese rechtlichen Anforderungen vor der Verarbeitung mit, sofern das betreffende Recht eine solche Mitteilung nicht wegen eines wichtigen öffentlichen Interesses verbietet.
 2. Die Verarbeitung von Auftraggeberdaten durch den Auftragnehmer erfolgt ausschließlich in der Art, in dem Umfang und zu dem Zweck, wie in **Anlage 1** zu diesem AVV festgelegt; die Verarbeitung bezieht sich ausschließlich auf die dort genannten Arten personenbezogener Daten und Kategorien betroffener Personen.
 3. Die Dauer der Verarbeitung entspricht der Laufzeit des Hauptvertrags.
-4. Dem Auftragnehmer ist es gestattet, Auftraggeberdaten außerhalb des Europäischen Wirtschaftsraums („EWR“) zu verarbeiten oder durch andere Auftragsverarbeiter gemäß Abschnitt [5](#_page14_x68.00_y647.04) verarbeiten zu lassen, wenn die Voraussetzungen der Artikel 44 bis 48 DSGVO erfüllt sind oder eine Ausnahme nach Artikel 49 DSGVO greift.
+4. Dem Auftragnehmer ist es gestattet, Auftraggeberdaten außerhalb des Europäischen Wirtschaftsraums („EWR“) zu verarbeiten oder durch andere Auftragsverarbeiter gemäß Abschnitt 5 verarbeiten zu lassen, wenn die Voraussetzungen der Artikel 44 bis 48 DSGVO erfüllt sind oder eine Ausnahme nach Artikel 49 DSGVO greift.
 5. Die Weisungen sind im Hauptvertrag festgelegt. Der Auftraggeber ist nur dann berechtigt, weitere Weisungen zu Art, Umfang, Zwecken und Mitteln der Verarbeitung von Auftraggeberdaten zu erteilen, wenn solche Weisungen nach dem Recht der Europäischen Union oder der Mitgliedstaaten oder aufgrund einer gerichtlichen oder behördlichen Anordnung erforderlich sind.
 6. Weisungen sind schriftlich oder in Textform zu erteilen. Mündliche Weisungen hat der Auftraggeber schriftlich oder per E-Mail zu bestätigen.
 7. Ist der Auftragnehmer der Ansicht, dass eine Weisung des Auftraggebers gegen diesen AVV, die DSGVO oder andere Datenschutzvorschriften der Union oder der Mitgliedstaaten verstößt, so hat er den Auftraggeber unverzüglich schriftlich oder in Textform darauf hinzuweisen. Der Auftragnehmer ist berechtigt, die Ausführung einer solchen Weisung auszusetzen, bis der Auftraggeber diese schriftlich oder in Textform bestätigt. Besteht der Auftraggeber ungeachtet der vom Auftragnehmer geäußerten Bedenken auf der Ausführung einer Weisung, so stellt der Auftraggeber den Auftragnehmer von allen Schäden und Kosten frei, die dem Auftragnehmer durch die Ausführung der Weisung des Auftraggebers entstehen. Der Auftragnehmer wird den Auftraggeber über alle gegen ihn geltend gemachten Schäden und alle ihm entstandenen Kosten informieren und keine Ansprüche Dritter ohne Zustimmung des Auftraggebers anerkennen und sich nach eigenem Ermessen in Abstimmung mit dem Auftraggeber verteidigen oder die Verteidigung dem Auftraggeber überlassen.
@@ -253,7 +261,7 @@ Bei der Erbringung der Leistungen nach dem Hauptvertrag verarbeitet der Auftragn
 **8 Datenlöschung und Rückgabe**
 
 1. Nach Beendigung des Hauptvertrags löscht der Auftragnehmer alle Auftraggeberdaten vollständig, es sei denn, der Auftragnehmer ist nach dem Recht der Europäischen Union oder der Mitgliedstaaten zur weiteren Speicherung der Auftraggeberdaten verpflichtet.
-2. Der Auftragnehmer ist jedoch berechtigt, Sicherungskopien der Auftraggeberdaten für einen Zeitraum von 30 Tagen aufzubewahren, sofern die Löschung der Auftraggeberdaten aus diesen Sicherungskopien aus technischen Gründen oder im Hinblick auf Artikel 32 DSGVO nicht erforderlich ist. Für diesen Zeitraum gelten die Rechte und Pflichten der Parteien aus diesem AVV für die Sicherungskopien ungeachtet Abschnitt [2.3](#_page13_x68.00_y447.04).
+2. Der Auftragnehmer ist jedoch berechtigt, Sicherungskopien der Auftraggeberdaten für einen Zeitraum von 30 Tagen aufzubewahren, sofern die Löschung der Auftraggeberdaten aus diesen Sicherungskopien aus technischen Gründen oder im Hinblick auf Artikel 32 DSGVO nicht erforderlich ist. Für diesen Zeitraum gelten die Rechte und Pflichten der Parteien aus diesem AVV für die Sicherungskopien ungeachtet Abschnitt 2.3.
 3. Dokumentationen, die dem Nachweis der ordnungsgemäßen Datenverarbeitung dienen, sind durch den Auftragnehmer entsprechend der gesetzlichen Aufbewahrungsfristen über das Vertragsende hinaus aufzubewahren.
 
 **9 Nachweis und Überprüfungen**
