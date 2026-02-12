@@ -11,7 +11,7 @@ sidebar_label:  Changelog
   
 ## 1.0.0
 
-** This update breaks compatibility with existing plugins**
+**This update breaks compatibility with existing plugins**
 
 - New improved module loading system and dependency injection
 - New Project System (huge performance improvements with big projects)
