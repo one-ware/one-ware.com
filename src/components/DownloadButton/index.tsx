@@ -3,7 +3,7 @@ import { trackEvent } from '../../utils/tracking';
 import Translate from '@docusaurus/Translate';
 
 interface DownloadButtonProps {
-  os: 'windows' | 'mac-intel' | 'mac-arm';
+  os: 'windows' | 'windows-arm' | 'mac-intel' | 'mac-arm';
   className?: string;
 }
 
@@ -21,6 +21,8 @@ export default function DownloadButton({ os, className }: DownloadButtonProps) {
         let assetName = '';
         if (os === 'windows') {
           assetName = '-win-x64.msi';
+        } else if (os === 'windows-arm') {
+          assetName = '-win-arm64.msi';
         } else if (os === 'mac-intel') {
           assetName = '-osx-x64.dmg';
         } else if (os === 'mac-arm') {
