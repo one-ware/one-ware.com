@@ -242,7 +242,7 @@ export default function HomeHero() {
                       opacity: 0,
                     }}
                   >
-                    <Translate id="homehero.title2">Build Your Custom AI</Translate>
+                    <Translate id="homehero.title2">Build Your Custom Vision AI Model</Translate>
                   </span>
                 </h1>
                 <div
@@ -252,17 +252,9 @@ export default function HomeHero() {
                     opacity: 0,
                   }}
                 >
-                  <Translate id="homehero.no_universal_models">No universal AI models.</Translate>
+                  <Translate id="homehero.no_universal_models">From fast edge AI to medical imaging, go beyond generic models.</Translate>
                 </div>
-                <div
-                  className="text-xl md:text-2xl font-light dark:text-gray-300 text-gray-700"
-                  style={{
-                    animation: "fadeInUp 0.8s ease-out forwards",
-                    opacity: 0,
-                  }}
-                >
-                  <Translate id="homehero.custom_vision_ai">Vision AI built exactly for your application.</Translate>
-                </div>
+                
               </div>
               <div
                 className="hidden sm:flex flex-col sm:flex-row items-center justify-center 2xl:justify-start gap-4 sm:gap-6"
