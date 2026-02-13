@@ -4,6 +4,26 @@ title: ONE WARE Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 1.0.1
+
+- Copilot improvements and confirmation dialogues for sensitive actions
+- Windows Terminal fixes
+  
+## 1.0.0
+
+**This update breaks compatibility with existing plugins**
+
+- New improved module loading system and dependency injection
+- New Project System (huge performance improvements with big projects)
+- AI Chat with integrated Copilot
+- Search and Replace improvements
+- Better global command system (CTRL + T)
+- Setting Validation System+
+- VCD Viewer improvements and bugfixes
+- Added support for Windows ARM
+- Terminal Integration fixes and improvements
+- Unified Styles
+
 ## 0.21.28.0
 
 **The next update (1.0) will be a big rework of the plugin system and breaks compatibility with existing updates**
