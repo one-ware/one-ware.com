@@ -50,6 +50,18 @@ const defaultDemos: ShowcaseItem[] = [
     },
   },
   {
+    title: "Detect Tiny Objects",
+    video: "/img/demos/tennis_demo.webm",
+    image: "/img/demos/tennis_demo.webp",
+    architecture: "/img/demos/architecture/architecture_drones.png",
+    link: "/docs/one-ai/demos/tennis-ball-demo",
+    metrics: {
+      left: { value: 20, unit: " %", label: "More Detections" },
+      center: { value: "Efficient" as const, label: "AI Model" },
+      right: { value: 12, unit: " x", label: " Faster vs YOLO26n"},
+    },
+  },
+  {
     title: "AI with Small Dataset",
     video: "/img/demos/cup.webm",
     image: "/img/ai/one_ai_plugin/demos/tea_cup_print/demo.png",
@@ -60,17 +72,7 @@ const defaultDemos: ShowcaseItem[] = [
       right: { value: 16, unit: "", label: "Images for Training" , startValue: 20000 },
     },
   },
-  {
-    title: "Simple Classification",
-    video: "/img/demos/number.webm",
-    image: "/img/ai/one_ai_plugin/demos/handwritten-digits/nist_sd19_examples.jpg",
-    link: "https://cloud.one-ware.com/quick-start",
-    metrics: {
-      left: { value: 99, unit: " %", label: "Accuracy" },
-      center: { value: "Efficient" as const, label: "AI Model" },
-      right: { value: 100, unit: " x", label: " Faster vs ResNet18", prefix: ">"},
-    },
-  },
+  
   {
     title: "All-in-ONE Quality Control",
     image: "/img/ai/one_ai_plugin/use_cases/capture/preview.png",
