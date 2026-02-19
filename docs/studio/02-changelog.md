@@ -4,6 +4,22 @@ title: ONE WARE Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 1.0.4
+
+- Fix incomplete completionoffset
+- Update clangd
+- Increase default limit before cutting editing features in large files
+  
+## 1.0.3
+
+- Styling adjustments for docking system
+- Update OSS CAD SUITE
+
+## 1.0.2
+
+- Setting improvements
+- Copilot Update + Handling improvements
+
 ## 1.0.1
 
 - Copilot improvements and confirmation dialogues for sensitive actions
