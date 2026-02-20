@@ -47,6 +47,7 @@ export default function VideoShowcaseCard({
   const [leftCount, setLeftCount] = useState(metrics.left.value);
   const [rightCount, setRightCount] = useState(metrics.right.value);
   const [videoSrc, setVideoSrc] = useState<string | null>(null);
+  const [videoReady, setVideoReady] = useState(false);
   const animationRef = useRef<NodeJS.Timeout | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const prevActiveRef = useRef(false);
@@ -60,24 +61,27 @@ export default function VideoShowcaseCard({
   }, [video, isActive]);
 
   useEffect(() => {
+    if (!videoSrc) {
+      setVideoReady(false);
+    }
+  }, [videoSrc]);
+
+  useEffect(() => {
     const video = videoRef.current;
-    if (video) {
-      if (isActive) {
-        const playPromise = video.play();
-        if (playPromise !== undefined) {
-          playPromise.catch((error) => {
-            // Ignore AbortError which happens when pause() is called while playing
-            // or when the element is removed from the document
-            if (error.name === "AbortError" || error.message?.includes("removed from the document")) {
-              return;
-            }
-            console.error("Video playback failed:", error);
-          });
-        }
-      } else {
-        video.pause();
-        video.currentTime = 0;
+    if (!video) return;
+
+    if (isActive && videoReady) {
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch((error) => {
+          if (error.name === "AbortError" || error.message?.includes("removed from the document")) {
+            return;
+          }
+        });
       }
+    } else if (!isActive) {
+      video.pause();
+      video.currentTime = 0;
     }
 
     return () => {
@@ -85,7 +89,7 @@ export default function VideoShowcaseCard({
         video.pause();
       }
     };
-  }, [isActive]);
+  }, [isActive, videoReady]);
 
   useEffect(() => {
     if (isActive && !prevActiveRef.current) {
@@ -106,7 +110,7 @@ export default function VideoShowcaseCard({
       animationRef.current = setInterval(() => {
         currentStep++;
         const progress = currentStep / steps;
-        
+
         // Calculate current value based on start and end values
         const leftDiff = metrics.left.value - leftStart;
         const rightDiff = metrics.right.value - rightStart;
@@ -176,8 +180,14 @@ export default function VideoShowcaseCard({
                 loop
                 muted
                 playsInline
-                preload="metadata"
+                preload="auto"
                 className="w-full h-full object-cover absolute inset-0"
+                onCanPlay={() => setVideoReady(true)}
+                onError={() => {
+                  setVideoReady(false);
+                  setVideoSrc(null);
+                  hasLoadedVideo.current = false;
+                }}
               >
                 <source src={videoSrc} type="video/webm" />
               </video>
@@ -188,8 +198,8 @@ export default function VideoShowcaseCard({
                 alt={title}
                 loading="lazy"
                 decoding="async"
-                className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-300 ${videoSrc && isActive ? 'opacity-0' : 'opacity-100'}`}
-                style={{ zIndex: videoSrc && isActive ? 0 : 10 }}
+                className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-300 ${videoReady && isActive ? 'opacity-0' : 'opacity-100'}`}
+                style={{ zIndex: videoReady && isActive ? 0 : 10 }}
               />
             )}
             
