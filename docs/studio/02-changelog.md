@@ -4,6 +4,13 @@ title: ONE WARE Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 1.0.7
+
+- Improve OpenCV Runtime codec support
+- Add optional ONNX Runtime bootstrapper and runtime packages
+- Add cancellation to package installs
+- PackageService additions and improvements
+
 ## 1.0.4
 
 - Fix incomplete completionoffset
