@@ -152,7 +152,7 @@ export default function VideoShowcase({ items = defaultDemos, columns = 3 }: Vid
 
     autoPlayRef.current = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % demos.length);
-    }, 2000);
+    }, 5000);
 
     return () => {
       if (autoPlayRef.current) {
