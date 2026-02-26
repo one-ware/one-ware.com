@@ -21,19 +21,11 @@ To try this demo, click on the **Try Demo** button below. If you don’t have an
   <Link className="button button--primary button--lg" href="https://cloud.one-ware.com/quick-start" target="_blank" rel="noopener noreferrer">
     <p className="m-0 p-0">Try Demo</p>
   </Link>
-  <Link className="button button--primary button--lg" href="https://github.com/YOUR_REPOSITORY_LINK" target="_blank" rel="noopener noreferrer">
-    <p className="m-0 p-0">Raspberry Pi Script</p>
-  </Link>
 </div>
 
 ## About this demo
 
 This demo showcases a practical edge AI application: a **warning sign that glows when a person approaches a recording studio door**.
-
-The goal was simple:
-- Detect if a person is in front of the door.
-- If yes → turn on LED strips inside the printed sign.
-- If no → keep the sign off.
 
 The hardware setup:
 - **Raspberry Pi 5**
@@ -50,34 +42,31 @@ While accurate, it achieved only **4–5 FPS** on the Raspberry Pi. With that la
 Instead of optimizing a general-purpose detector, we built a **task-specific binary classification model using ONE AI**.
 
 The result:  
-🚀 **Over 2000 FPS on a Raspberry Pi 5.**
+**Over 2000 FPS on a Raspberry Pi 5.**
 
-This speed is possible because the task is simple and controlled:
-- Fixed camera
-- Constant background
-- Single decision (warn / don’t warn)
-- Same environment during training and inference
+<div style={{ marginBottom: '2rem' }}>
+  <LiteYouTubeEmbed 
+    videoId="pDhHQ9PLxis"
+    previewImage="/img/ai/one_ai_plugin/demos/studio-alert/thumbnail.png"
+    title="Raspberry Pi Person Warning Sign Demo"
+  />
+</div>
 
-Rather than solving a universal detection problem, we solve exactly one real-world scenario — and nothing more.
+## Results
 
-## Comparison: YOLOX vs. Custom ONE AI Model
+The custom ONE AI model dramatically outperformed YOLOX in this specific use case.
 
-### The Challenge with YOLOX
+| Metric | YOLOX Nano | ONE AI Custom Model |
+| :--- | :--- | :--- |
+| **Task Type** | Object Detection | Binary Classification |
+| **FPS (Raspberry Pi 5)** | 4–5 FPS | **2000+ FPS** |
+| **Decision Latency** | Too slow | Instant |
+| **Model Size** | 34k Param. | 910k Param. |
 
-YOLOX is designed for multi-class object detection across diverse environments. That flexibility comes with computational cost.
-
-In this setup:
-- **4–5 FPS** on Raspberry Pi 5
-- Unnecessary bounding box prediction
-- Model optimized for universality, not simplicity
-
-YOLO is not “bad” — it is simply solving a much bigger problem than required here.
-
-For this application, we only need one output:
-> **Person present → Warning ON**  
-> **No person → Warning OFF**
+This demonstrates how powerful task-specific model generation can be on edge devices.
 
 ### The Solution with ONE AI
+import LiteYouTubeEmbed from '@site/src/components/LiteYouTubeEmbed';
 
 We started a new ONE AI project by clicking on **ONE AI Project Generator** under the **AI** tab. Then we selected the **Controlled Environment** preset.
 
@@ -96,33 +85,6 @@ Using the **Video Import Tool** in ONE WARE Studio:
 With this dataset, ONE AI generated a compact CNN architecture tailored specifically for this binary decision task.
 
 Because the background and camera position remain constant, the model can focus purely on detecting behavioral changes in the scene.
-
-## Results
-
-The custom ONE AI model dramatically outperformed YOLOX in this specific use case.
-
-| Metric | YOLOX Nano | ONE AI Custom Model |
-| :--- | :--- | :--- |
-| **Task Type** | Object Detection | Binary Classification |
-| **FPS (Raspberry Pi 5)** | 4–5 FPS | **2000+ FPS** |
-| **Decision Latency** | Too slow | Instant |
-| **Model Size** | Larger | Extremely small |
-
-The efficiency gain comes from:
-- Reduced input resolution
-- Grayscale input
-- Channel reduction
-- Minimal architecture
-- Binary output layer
-
-This demonstrates how powerful task-specific model generation can be on edge devices.
-
-## Model Configuration
-
-<div style={{ textAlign: 'center' }}>
-  <img src="/img/ai/one_ai_plugin/tutorials/raspberry/model.png" alt="Model Architecture" style={{ maxHeight: '60vh' }} />
-  <p><em>The generated architecture is extremely compact due to the low complexity and reduced input resolution.</em></p>
-</div>
 
 ### Hardware Settings
 
@@ -190,23 +152,5 @@ Use the provided Python script (linked above) to:
 - Run inference via webcam
 - Control the MOSFET driver module
 - Switch the LED strips on/off in real time
-
-## Conclusion
-
-This project highlights an important principle in edge AI development:
-
-If your real-world problem is simple, your model should be simple too.
-
-General-purpose models like YOLO are excellent for complex detection tasks across varying environments. However, when the task is reduced to a single binary decision in a controlled setting, a custom architecture generated with ONE AI can be dramatically more efficient.
-
-With ONE AI you can:
-- Record a short real-world scenario
-- Automatically generate a task-specific CNN
-- Train in minutes
-- Export directly to TensorFlow Lite
-- Deploy on a Raspberry Pi
-- Achieve ultra-high FPS in production
-
-The result is a responsive, real-time warning system that operates instantly — finally allowing uninterrupted recording sessions in the studio.
 
 <SupportBanner subject="ONE AI Tutorial Support" />
