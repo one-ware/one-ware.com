@@ -4,6 +4,13 @@ title: ONE WARE Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 1.0.8
+
+- Fix Copilot Login issues
+- Add Chat History Feature
+- Improved Codec support for Linux OpenCV VideoWriter
+- Improved handling when the IDE does not have access to the internet
+
 ## 1.0.7
 
 - Improve OpenCV Runtime codec support
