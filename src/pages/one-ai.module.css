@@ -51,6 +51,10 @@
   background-color: #f3f4f6;
 }
 
+:global([data-theme='dark']) .activeslide {
+  background-color: #333;
+}
+
 .slickSlider :global(.slick-dots) li button:before {
   color: #9ca3af;
   opacity: 0.5;

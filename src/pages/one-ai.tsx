@@ -139,6 +139,7 @@ function ComparisonSection() {
   const { colorMode } = useColorMode();
   const isDarkMode = colorMode === "dark";
   const [activeUseCase, setActiveUseCase] = useState(0);
+  const touchStartX = useRef<number | null>(null);
 
   const useCases = [
     {
@@ -224,6 +225,20 @@ function ComparisonSection() {
     setActiveUseCase(activeUseCase + 1 >= useCases.length ? 0 : activeUseCase + 1);
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) handleNext();
+      else handlePrev();
+    }
+    touchStartX.current = null;
+  };
+
   return (
     <section id="comparison" className="py-16 md:py-24 bg-white dark:bg-[#1e1e1e]">
       <div className="container mx-auto px-6">
@@ -234,7 +249,11 @@ function ComparisonSection() {
             </Translate>
           </h2>
 
-          <div className="p-6 sm:p-8 md:p-12 overflow-hidden bg-gray-100 dark:bg-[#161616]">
+          <div
+            className="p-6 sm:p-8 md:p-12 overflow-hidden bg-gray-100 dark:bg-[#161616]"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
             <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-8 lg:gap-12">
               <div className="order-first lg:order-none">
                 <div
