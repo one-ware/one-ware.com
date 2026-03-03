@@ -19,6 +19,10 @@ interface Neural3DCanvasProps {
   currentFps: number;
   isSmallScreen: boolean;
   performanceTier: PerformanceTier;
+  maxNodes?: number;
+  maxTrainingNodes?: number;
+  skipTrainingCleanup?: boolean;
+  enableRotation?: boolean;
 }
 
 export default function Neural3DCanvas({
@@ -36,6 +40,10 @@ export default function Neural3DCanvas({
   currentFps,
   isSmallScreen,
   performanceTier,
+  maxNodes,
+  maxTrainingNodes,
+  skipTrainingCleanup,
+  enableRotation,
 }: Neural3DCanvasProps) {
   return (
     <Canvas
@@ -43,8 +51,6 @@ export default function Neural3DCanvas({
       style={style}
       resize={{ scroll: false, debounce: 0 }}
     >
-      <ambientLight intensity={0.3} />
-      <pointLight position={[10, 10, 10]} intensity={0.8} />
       <Neural3DNetwork
         isTraining={isTraining}
         isBuildingBase={isBuildingBase}
@@ -62,6 +68,10 @@ export default function Neural3DCanvas({
         currentFps={currentFps}
         isSmallScreen={isSmallScreen}
         performanceTier={performanceTier}
+        maxNodes={maxNodes}
+        maxTrainingNodes={maxTrainingNodes}
+        skipTrainingCleanup={skipTrainingCleanup}
+        enableRotation={enableRotation}
       />
       <OrbitControls enableZoom={false} enablePan={false} rotateSpeed={0.5} />
     </Canvas>

@@ -105,7 +105,7 @@ export default function HeroBackground({
         }}
       />
 
-      <div className="relative h-full w-full flex-1" style={{ zIndex: 2 }}>
+      <div className="relative h-full w-full flex-1 flex flex-col" style={{ zIndex: 2 }}>
         {children}
       </div>
     </section>

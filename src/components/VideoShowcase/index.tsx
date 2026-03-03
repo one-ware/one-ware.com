@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
 import { useColorMode } from "@docusaurus/theme-common";
 import VideoShowcaseCard, { Metrics } from "./VideoShowcaseCard";
@@ -189,6 +190,7 @@ export default function VideoShowcase({ items = defaultDemos, columns = 3 }: Vid
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
