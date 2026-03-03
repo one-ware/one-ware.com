@@ -41,6 +41,10 @@ interface Neural3DNetworkProps {
   trainingNodeCount?: number;
   physicsUpdateInterval?: number;
   performanceTier?: 'high' | 'low';
+  maxNodes?: number;
+  maxTrainingNodes?: number;
+  skipTrainingCleanup?: boolean;
+  enableRotation?: boolean;
 }
 
 export const Neural3DNetwork = memo(function Neural3DNetwork({
@@ -59,8 +63,20 @@ export const Neural3DNetwork = memo(function Neural3DNetwork({
   onRebuildComplete,
   currentFps = 50,
   isSmallScreen: isSmallScreenProp,
-  performanceTier = 'high'
+  performanceTier = 'high',
+  maxNodes,
+  maxTrainingNodes,
+  skipTrainingCleanup = false,
+  enableRotation,
 }: Neural3DNetworkProps) {
+  const nodeCounts = useMemo(() => {
+    const defaults = NODE_COUNTS[performanceTier];
+    return {
+      base: maxNodes != null ? Math.min(maxNodes, defaults.base) : defaults.base,
+      training: maxTrainingNodes != null ? maxTrainingNodes : maxNodes != null ? Math.min(maxNodes, defaults.training) : defaults.training,
+    };
+  }, [performanceTier, maxNodes, maxTrainingNodes]);
+
   const groupRef = useRef<THREE.Group>(null);
 
   const connectionPairsRef = useRef<Array<{ id: number; start: NeuralNode; end: NeuralNode; animationOffset: number }>>([]);
@@ -108,7 +124,10 @@ export const Neural3DNetwork = memo(function Neural3DNetwork({
 
   useEffect(() => {
     if (isCollapsingToCore) {
+      setOrangeNodesAdded(false);
+      setPurpleNodesAdded(false);
       setRedNodesAdded(false);
+      hasTriggeredTrainingComplete.current = false;
     }
   }, [isCollapsingToCore]);
 
@@ -139,6 +158,15 @@ export const Neural3DNetwork = memo(function Neural3DNetwork({
   const performanceTierRef = useRef(performanceTier);
   performanceTierRef.current = performanceTier;
 
+  const nodeCountsRef = useRef(nodeCounts);
+  nodeCountsRef.current = nodeCounts;
+
+  const skipTrainingCleanupRef = useRef(skipTrainingCleanup);
+  skipTrainingCleanupRef.current = skipTrainingCleanup;
+
+  const enableRotationRef = useRef(enableRotation);
+  enableRotationRef.current = enableRotation;
+
   useEffect(() => {
     if (blueprintRef.current.length > 0) return;
 
@@ -158,7 +186,7 @@ export const Neural3DNetwork = memo(function Neural3DNetwork({
       scale: 0,
     });
 
-    const totalNodes = NODE_COUNTS[performanceTier].base;
+    const totalNodes = nodeCounts.base;
     const radius = 3.5;
     const goldenRatio = (1 + Math.sqrt(5)) / 2;
     
@@ -278,20 +306,22 @@ export const Neural3DNetwork = memo(function Neural3DNetwork({
       isRebuildingBaseRef.current = true;
       rebuildBaseStartTimeRef.current = performance.now();
       hasTriggeredRebuildComplete.current = false;
-      rebuildBuiltCountRef.current = 0;
+      rebuildBuiltCountRef.current = 1;
 
-      const currentNodes = nodesRef.current;
-      for (let i = 0; i < currentNodes.length; i++) {
-        currentNodes[i].scale = i === 0 ? 1 : 0;
-      }
+      // Clear all connections and pairs — animation will rebuild from scratch
+      connectionPairsRef.current = [];
+      connectionIdCounterRef.current = 0;
+      animationOffsetsRef.current.clear();
 
-      const baseNodes: NeuralNode[] = [];
       for (let i = 0; i < blueprintRef.current.length; i++) {
-        if (blueprintRef.current[i].color === '#00FFD1') {
-          baseNodes.push(blueprintRef.current[i]);
-        }
+        blueprintRef.current[i].connections = [];
+        blueprintRef.current[i].scale = 0;
       }
-      nodesRef.current = baseNodes;
+
+      // Start with only the core node
+      const core = blueprintRef.current[0];
+      core.scale = 1;
+      nodesRef.current = [core];
 
     } else if (!isRebuildingBase) {
       isRebuildingBaseRef.current = false;
@@ -366,7 +396,8 @@ export const Neural3DNetwork = memo(function Neural3DNetwork({
     const delta = Math.min(state.clock.getDelta(), 0.1);
 
     if (groupRef.current) {
-        if (performanceTierRef.current !== 'low') {
+        const shouldRotate = enableRotationRef.current ?? (performanceTierRef.current !== 'low');
+        if (shouldRotate) {
             groupRef.current.rotation.y = time * 0.18;
         }
         let targetY = isExpanded ? 0.8 : 0;
@@ -447,7 +478,7 @@ export const Neural3DNetwork = memo(function Neural3DNetwork({
         const elapsed = performance.now() - buildBaseStartTimeRef.current;
         const progress = Math.min(elapsed / duration, 1);
 
-        const tierNodeCount = NODE_COUNTS[performanceTierRef.current].base + 1;
+        const tierNodeCount = nodeCountsRef.current.base + 1;
         const totalBlueprint = Math.min(tierNodeCount, blueprintRef.current.length);
         const targetCount = Math.max(1, Math.ceil(progress * totalBlueprint));
 
@@ -580,7 +611,7 @@ export const Neural3DNetwork = memo(function Neural3DNetwork({
         const elapsed = performance.now() - rebuildBaseStartTimeRef.current;
         const progress = Math.min(elapsed / duration, 1);
 
-        const tierNodeCount = NODE_COUNTS[performanceTierRef.current].base + 1;
+        const tierNodeCount = nodeCountsRef.current.base + 1;
         const totalBlueprint = Math.min(tierNodeCount, blueprintRef.current.length);
         const targetCount = Math.max(1, Math.ceil(progress * totalBlueprint));
 
@@ -632,8 +663,9 @@ export const Neural3DNetwork = memo(function Neural3DNetwork({
         setOrangeNodesAdded(true);
         isTrainingRef.current = true;
         trainingStartTimeRef.current = performance.now();
+        hasTriggeredTrainingComplete.current = false;
 
-        const totalNew = NODE_COUNTS[performanceTier].training;
+        const totalNew = nodeCounts.training;
         const radius = 4.5;
 
         for (let i = 0; i < totalNew; i++) {
@@ -674,6 +706,7 @@ export const Neural3DNetwork = memo(function Neural3DNetwork({
         trainingColorRef.current = 'purple';
         hasTriggeredTrainingComplete.current = false;
 
+        if (!skipTrainingCleanupRef.current) {
         const baseNodeIds = new Set<number>();
         let writeIdx = 0;
         for (let i = 0; i < nodesRef.current.length; i++) {
@@ -721,8 +754,9 @@ export const Neural3DNetwork = memo(function Neural3DNetwork({
             }
             node.connections.length = connWriteIdx;
         }
+        }
 
-        const totalNew = NODE_COUNTS[performanceTier].training;
+        const totalNew = nodeCounts.training;
         const radius = 4.5;
 
         for (let i = 0; i < totalNew; i++) {
@@ -762,6 +796,7 @@ export const Neural3DNetwork = memo(function Neural3DNetwork({
         trainingColorRef.current = 'red';
         hasTriggeredTrainingComplete.current = false;
 
+        if (!skipTrainingCleanupRef.current) {
         const baseNodeIds = new Set<number>();
         let writeIdx = 0;
         for (let i = 0; i < nodesRef.current.length; i++) {
@@ -809,8 +844,9 @@ export const Neural3DNetwork = memo(function Neural3DNetwork({
             }
             node.connections.length = connWriteIdx;
         }
+        }
 
-        const totalNew = NODE_COUNTS[performanceTier].training;
+        const totalNew = nodeCounts.training;
         const radius = 4.5;
 
         for (let i = 0; i < totalNew; i++) {
