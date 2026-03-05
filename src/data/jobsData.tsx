@@ -6,10 +6,10 @@ import { desktopDeveloper } from "./jobs/desktop-developer";
 import { productOwner } from "./jobs/product-owner";
 
 export const JOBS: JobDetail[] = [
-  webDeveloper,
-  desktopDeveloper,
-  aiEngineer,
-  productOwner,
+  // webDeveloper,
+  // desktopDeveloper,
+  // aiEngineer,
+  // productOwner,
 ];
 
 export const ACTIVE_JOBS = JOBS.filter(job => job.active !== false);

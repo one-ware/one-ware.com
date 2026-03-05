@@ -314,47 +314,53 @@ export default function CareersPage(): JSX.Element {
             </div>
 
             <div className="mt-12 md:mt-16 w-full sm:w-4/5 mx-auto">
-              {ACTIVE_JOBS.map((job, index) => (
-                <div
-                  key={job.id}
-                  onClick={() => handleJobClick(job.id)}
-                  className="cursor-pointer group"
-                >
-                  <div className="flex items-center pt-6 pb-2 pr-8 md:pr-12 transition-all duration-300" style={{ borderBottom: "1px solid #6b7280" }}>
-                    <span className="text-gray-600 text-sm md:text-base font-normal w-10 flex-shrink-0 transition-colors duration-300 group-hover:text-[var(--ifm-color-primary)]">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
+              {ACTIVE_JOBS.length === 0 ? (
+                <p className="text-gray-500 text-sm md:text-base font-normal text-left">
+                  {locale.startsWith("de") ? "Aktuell gibt es keine offenen Stellen." : "No offerings at the moment."}
+                </p>
+              ) : (
+                ACTIVE_JOBS.map((job, index) => (
+                  <div
+                    key={job.id}
+                    onClick={() => handleJobClick(job.id)}
+                    className="cursor-pointer group"
+                  >
+                    <div className="flex items-center pt-6 pb-2 pr-8 md:pr-12 transition-all duration-300" style={{ borderBottom: "1px solid #6b7280" }}>
+                      <span className="text-gray-600 text-sm md:text-base font-normal w-10 flex-shrink-0 transition-colors duration-300 group-hover:text-[var(--ifm-color-primary)]">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
 
-                    <span className="flex-grow flex justify-center">
-                      <span className="w-full sm:w-72 md:w-96 text-left">
-                        <span className="block text-gray-600 text-sm md:text-base font-normal transition-colors duration-300 group-hover:text-[var(--ifm-color-primary)]">
-                          {getLocalizedField(job, "title", locale) as string}
-                        </span>
-                        <span className="block text-gray-400 text-xs font-normal transition-colors duration-300 group-hover:text-gray-500">
-                          {getLocalizedField(job, "location", locale) as string}
+                      <span className="flex-grow flex justify-center">
+                        <span className="w-full sm:w-72 md:w-96 text-left">
+                          <span className="block text-gray-600 text-sm md:text-base font-normal transition-colors duration-300 group-hover:text-[var(--ifm-color-primary)]">
+                            {getLocalizedField(job, "title", locale) as string}
+                          </span>
+                          <span className="block text-gray-400 text-xs font-normal transition-colors duration-300 group-hover:text-gray-500">
+                            {getLocalizedField(job, "location", locale) as string}
+                          </span>
                         </span>
                       </span>
-                    </span>
 
-                    <span className="text-gray-600 flex-shrink-0 transition-all duration-300 group-hover:text-[var(--ifm-color-primary)] group-hover:translate-x-2">
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        style={{ transform: 'translateZ(0)' }}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M17 8l4 4m0 0l-4 4m4-4H3"
-                        />
-                      </svg>
-                    </span>
+                      <span className="text-gray-600 flex-shrink-0 transition-all duration-300 group-hover:text-[var(--ifm-color-primary)] group-hover:translate-x-2">
+                        <svg
+                          className="w-5 h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          style={{ transform: 'translateZ(0)' }}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={1.5}
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                          />
+                        </svg>
+                      </span>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))
+              )}
             </div>
 
             <div className="mt-20">
