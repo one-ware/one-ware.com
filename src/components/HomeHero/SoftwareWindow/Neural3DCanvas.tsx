@@ -23,6 +23,7 @@ interface Neural3DCanvasProps {
   maxTrainingNodes?: number;
   skipTrainingCleanup?: boolean;
   enableRotation?: boolean;
+  animationDuration?: number;
 }
 
 export default function Neural3DCanvas({
@@ -44,6 +45,7 @@ export default function Neural3DCanvas({
   maxTrainingNodes,
   skipTrainingCleanup,
   enableRotation,
+  animationDuration,
 }: Neural3DCanvasProps) {
   return (
     <Canvas
@@ -72,6 +74,7 @@ export default function Neural3DCanvas({
         maxTrainingNodes={maxTrainingNodes}
         skipTrainingCleanup={skipTrainingCleanup}
         enableRotation={enableRotation}
+        animationDuration={animationDuration}
       />
       <OrbitControls enableZoom={false} enablePan={false} rotateSpeed={0.5} />
     </Canvas>

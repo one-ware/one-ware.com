@@ -25,7 +25,7 @@ export const SECTORS: Sector[] = [
   { id: "agriculture", label: "Agriculture", labelId: "oneai.hero.sector.agriculture", trainingColor: "purple", icon: FaSeedling },
 ];
 
-const BUILD_DURATION = 4000;
+const BUILD_DURATION = 1500;
 
 export type Phase =
   | "building"
@@ -76,18 +76,25 @@ export function useSectorStateMachine(canvasReady: boolean) {
   }, []);
 
   const onRebuildComplete = useCallback(() => {
-    setPhase("retraining");
+    setPhase((prev) => (prev === "rebuilding" ? "retraining" : prev));
   }, []);
 
   const onTrainingComplete = useCallback(() => {
-    setPhase("idle");
+    setPhase((prev) => (prev === "retraining" || prev === "training" ? "idle" : prev));
   }, []);
 
   const selectSector = useCallback(
     (index: number) => {
-      if (phase !== "idle") return;
-      if (index === activeSectorIndex) return;
+      if (index === activeSectorIndex && phase === "idle") return;
+      // Already heading to this sector during animation
+      if (pendingSectorRef.current === index && phase !== "idle") return;
+
       pendingSectorRef.current = index;
+
+      // During collapse, just update the pending target — collapse continues
+      if (phase === "collapsing") return;
+
+      // During rebuilding/retraining, restart from collapse
       setPhase("collapsing");
     },
     [phase, activeSectorIndex]

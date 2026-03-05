@@ -30,7 +30,8 @@ function MountSignal({ onMount }: { onMount: () => void }) {
   return null;
 }
 
-const BUILD_DURATION = 4000;
+const STATIC_BUILD_DURATION = 700;
+const STATIC_ANIM_DURATION = 700;
 
 type StaticPhase = "build" | "orange" | "purple" | "red" | "done";
 
@@ -68,8 +69,6 @@ export default function OneAiHero() {
     onTrainingComplete,
   } = useSectorStateMachine(canvasReady);
 
-  const isAnimating = state.phase !== "idle";
-
   const [staticPhase, setStaticPhase] = useState<StaticPhase>("build");
 
   useEffect(() => {
@@ -77,7 +76,7 @@ export default function OneAiHero() {
     if (staticPhase !== "build") return;
     const timer = setTimeout(() => {
       setStaticPhase("orange");
-    }, BUILD_DURATION);
+    }, STATIC_BUILD_DURATION);
     return () => clearTimeout(timer);
   }, [canvasReady, staticPhase]);
 
@@ -95,7 +94,7 @@ export default function OneAiHero() {
   const staticTrainingColor: "orange" | "purple" | "red" =
     staticPhase === "purple" ? "purple" : staticPhase === "red" ? "red" : "orange";
 
-  const AUTO_INTERVAL = 8000;
+  const AUTO_INTERVAL = 6000;
   const pausedRef = useRef(false);
   const activeSectorRef = useRef(state.activeSectorIndex);
   activeSectorRef.current = state.activeSectorIndex;
@@ -169,7 +168,6 @@ export default function OneAiHero() {
           <div className="row-span-2 lg:row-span-1">
             <SectorSelector
               activeSectorIndex={state.activeSectorIndex}
-              isAnimating={isAnimating}
               onSelect={handleSectorClick}
             />
           </div>
@@ -209,6 +207,7 @@ export default function OneAiHero() {
                     maxTrainingNodes={2}
                     skipTrainingCleanup={true}
                     enableRotation={true}
+                    animationDuration={STATIC_ANIM_DURATION}
                   />
                 </Suspense>
               )}
@@ -252,6 +251,7 @@ export default function OneAiHero() {
                     performanceTier={tier}
                     maxNodes={10}
                     enableRotation={true}
+                    animationDuration={1200}
                   />
                 </Suspense>
               )}
