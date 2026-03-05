@@ -4,13 +4,11 @@ import { SECTORS } from "./useSectorStateMachine";
 
 interface SectorSelectorProps {
   activeSectorIndex: number;
-  isAnimating: boolean;
   onSelect: (index: number) => void;
 }
 
 export default function SectorSelector({
   activeSectorIndex,
-  isAnimating,
   onSelect,
 }: SectorSelectorProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -54,13 +52,11 @@ export default function SectorSelector({
           <button
             key={sector.id}
             ref={(el) => { buttonRefs.current[index] = el; }}
-            onClick={() => !isAnimating && onSelect(index)}
-            className={`relative z-10 flex flex-col items-center justify-center gap-1.5 flex-1 px-3 py-3 md:px-4 md:py-4 rounded-xl transition-all duration-300 border-0 bg-transparent ${
+            onClick={() => onSelect(index)}
+            className={`relative z-10 flex flex-col items-center justify-center gap-1.5 flex-1 px-3 py-3 md:px-4 md:py-4 rounded-xl transition-all duration-300 border-0 bg-transparent cursor-pointer ${
               isActive
                 ? "text-[var(--ifm-color-primary)]"
-                : isAnimating
-                ? "text-gray-300 dark:text-gray-600 cursor-default"
-                : "text-gray-400 dark:text-gray-500 hover:text-[var(--ifm-color-primary)] cursor-pointer"
+                : "text-gray-400 dark:text-gray-500 hover:text-[var(--ifm-color-primary)]"
             }`}
           >
             <Icon className="w-5 h-5 md:w-6 md:h-6 shrink-0" />

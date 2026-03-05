@@ -45,6 +45,7 @@ interface Neural3DNetworkProps {
   maxTrainingNodes?: number;
   skipTrainingCleanup?: boolean;
   enableRotation?: boolean;
+  animationDuration?: number;
 }
 
 export const Neural3DNetwork = memo(function Neural3DNetwork({
@@ -68,6 +69,7 @@ export const Neural3DNetwork = memo(function Neural3DNetwork({
   maxTrainingNodes,
   skipTrainingCleanup = false,
   enableRotation,
+  animationDuration = TOTAL_ANIMATION_DURATION,
 }: Neural3DNetworkProps) {
   const nodeCounts = useMemo(() => {
     const defaults = NODE_COUNTS[performanceTier];
@@ -166,6 +168,9 @@ export const Neural3DNetwork = memo(function Neural3DNetwork({
 
   const enableRotationRef = useRef(enableRotation);
   enableRotationRef.current = enableRotation;
+
+  const animationDurationRef = useRef(animationDuration);
+  animationDurationRef.current = animationDuration;
 
   useEffect(() => {
     if (blueprintRef.current.length > 0) return;
@@ -474,7 +479,7 @@ export const Neural3DNetwork = memo(function Neural3DNetwork({
     }
 
     if (isBuildingBaseRef.current) {
-        const duration = TOTAL_ANIMATION_DURATION;
+        const duration = animationDurationRef.current;
         const elapsed = performance.now() - buildBaseStartTimeRef.current;
         const progress = Math.min(elapsed / duration, 1);
 
@@ -524,8 +529,9 @@ export const Neural3DNetwork = memo(function Neural3DNetwork({
         }
 
         if (trainingNodes.length > 0) {
-            const DURATION = 800;
-            const STAGGER = Math.floor((TOTAL_ANIMATION_DURATION - DURATION) / trainingNodes.length);
+            const dur = animationDurationRef.current;
+            const DURATION = Math.min(800, Math.round(dur * 0.21));
+            const STAGGER = Math.floor((dur - DURATION) / trainingNodes.length);
             const totalAnimationTime = (trainingNodes.length * STAGGER) + DURATION;
 
             let scaleChanged = false;
@@ -550,7 +556,7 @@ export const Neural3DNetwork = memo(function Neural3DNetwork({
     }
 
     if (isCollapsingToCoreRef.current) {
-        const duration = TOTAL_ANIMATION_DURATION;
+        const duration = animationDurationRef.current;
         const elapsed = performance.now() - collapseStartTimeRef.current;
 
         const allNodes = nodesRef.current;
@@ -560,7 +566,7 @@ export const Neural3DNetwork = memo(function Neural3DNetwork({
         }
         nonCoreNodes.sort((a, b) => b.distance - a.distance);
 
-        const FADE_DURATION = 250;
+        const FADE_DURATION = Math.min(250, Math.round(duration * 0.07));
         const CORE_FADE_DURATION_INNER = 200;
         const STAGGER = nonCoreNodes.length > 0
             ? Math.floor((duration - FADE_DURATION - CORE_FADE_DURATION_INNER) / nonCoreNodes.length)
@@ -607,7 +613,7 @@ export const Neural3DNetwork = memo(function Neural3DNetwork({
     }
 
     if (isRebuildingBaseRef.current) {
-        const duration = TOTAL_ANIMATION_DURATION;
+        const duration = animationDurationRef.current;
         const elapsed = performance.now() - rebuildBaseStartTimeRef.current;
         const progress = Math.min(elapsed / duration, 1);
 
