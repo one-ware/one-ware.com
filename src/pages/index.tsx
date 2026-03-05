@@ -11,6 +11,7 @@ import HomeHero from "@site/src/components/HomeHero";
 import GetStarted from "@site/src/components/GetStarted";
 import VideoShowcase from "@site/src/components/VideoShowcase";
 import OrbitIndustries from "@site/src/components/OrbitIndustries";
+import ChatHero from "@site/src/components/ChatHero";
 
 function IndustryExamplesSection() {
   const items = [
@@ -331,6 +332,7 @@ export default function Home() {
           </div>
 
           <IndustryExamplesSection />
+          <ChatHero />
           <AiProcessSlider />
           <OrbitIndustries />
         </div>

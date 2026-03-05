@@ -316,18 +316,17 @@ export default function HomeHero() {
                     <Translate id="homehero.button.download">Get Started</Translate>
                   </button>
                 </Link>
-                <Link
-                  href="/one-ai"
+                <button
+                  className="button button--primary button--outline button--lg"
                   style={{
                     animation: "fadeInUp 0.8s ease-out forwards",
                     animationDelay: "0.6s",
                     opacity: 0,
                   }}
+                  onClick={() => document.getElementById("chatbot")?.scrollIntoView({ behavior: "smooth" })}
                 >
-                  <button className="button button--primary button--outline button--lg">
-                    <Translate id="homehero.button.learnmore">Learn More</Translate>
-                  </button>
-                </Link>
+                  <Translate id="homehero.button.askchatbot">Ask Chatbot</Translate>
+                </button>
               </div>
             </div>
 
@@ -377,18 +376,17 @@ export default function HomeHero() {
                 <Translate id="homehero.button.download">Get Started</Translate>
               </button>
             </Link>
-            <Link
-              href="/one-ai"
+            <button
+              className="button button--primary button--lg w-full sm:w-auto"
               style={{
                 animation: "fadeInUp 0.8s ease-out forwards",
                 animationDelay: "0.6s",
                 opacity: 0,
               }}
+              onClick={() => document.getElementById("chatbot")?.scrollIntoView({ behavior: "smooth" })}
             >
-              <button className="button button--primary button--lg w-full sm:w-auto">
-                <Translate id="homehero.button.learnmore">Learn More</Translate>
-              </button>
-            </Link>
+              <Translate id="homehero.button.askchatbot">Ask Chatbot</Translate>
+            </button>
             </div>
         </div>
 
