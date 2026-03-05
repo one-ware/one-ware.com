@@ -4,6 +4,14 @@ title: ONE WARE Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 1.0.10
+
+- Prevent logout on disconnect
+  
+## 1.0.9
+
+- Change Login flow (required to use OneWare Cloud)
+
 ## 1.0.8
 
 - Fix Copilot Login issues
