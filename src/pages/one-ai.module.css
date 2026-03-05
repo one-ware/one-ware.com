@@ -25,9 +25,13 @@
 }
 
 /* Prevent horizontal overflow without affecting container padding */
-:global(main), :global(section) {
+:global(section) {
   max-width: 100%;
   overflow-x: clip;
+}
+
+:global(main) {
+  max-width: 100%;
 }
 
 .slickSlider {
