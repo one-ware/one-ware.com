@@ -5,7 +5,7 @@ import { isResidualBlock } from "./types";
 export function LayerCard({ block }: { block: LayerBlock }) {
   return (
     <div
-      className="w-full rounded-lg overflow-hidden"
+      className="w-full rounded-lg px-4 py-2.5 text-center"
       style={{
         border: block.trainable
           ? "1px solid color-mix(in srgb, var(--ifm-color-primary) 30%, transparent)"
@@ -15,69 +15,15 @@ export function LayerCard({ block }: { block: LayerBlock }) {
           : "var(--arch-card-bg)",
       }}
     >
-      <div className="flex items-center justify-between px-4 py-2 gap-3">
-        <code className="text-[10px] sm:text-xs font-mono dark:text-gray-300 text-gray-700 truncate">
-          {block.name}
-        </code>
-        <div className="flex items-center gap-2 flex-shrink-0">
-          <span className="text-[9px] uppercase tracking-wider text-gray-400 dark:text-gray-500 font-semibold">Input</span>
-          <code className="text-[10px] sm:text-xs font-mono text-gray-500 dark:text-gray-400 whitespace-nowrap">
-            {block.inputShape}
-          </code>
-        </div>
-      </div>
-      <div className="flex items-center justify-between px-4 py-2 gap-3" style={{ borderTop: "1px solid var(--arch-card-border)" }}>
-        <code className="text-[10px] sm:text-xs font-mono font-semibold dark:text-white text-gray-800 truncate">
-          {block.type}
-        </code>
-        <div className="flex items-center gap-2 flex-shrink-0">
-          <span className="text-[9px] uppercase tracking-wider text-gray-400 dark:text-gray-500 font-semibold">Output</span>
-          <code className="text-[10px] sm:text-xs font-mono text-[var(--ifm-color-primary)] whitespace-nowrap">
-            {block.outputShape}
-          </code>
-        </div>
-      </div>
+      <code className="text-[10px] sm:text-xs font-mono font-medium dark:text-white text-gray-800 px-3 py-0.5">
+        {block.label}
+      </code>
     </div>
   );
 }
 
 export function CompactLayerCard({ block }: { block: LayerBlock }) {
-  return (
-    <div
-      className="w-full rounded-lg overflow-hidden"
-      style={{
-        border: block.trainable
-          ? "1px solid color-mix(in srgb, var(--ifm-color-primary) 30%, transparent)"
-          : "1px solid var(--arch-card-border)",
-        background: block.trainable
-          ? "color-mix(in srgb, var(--ifm-color-primary) 6%, transparent)"
-          : "var(--arch-card-bg)",
-      }}
-    >
-      <div className="px-4 py-2">
-        <code className="text-[10px] sm:text-xs font-mono dark:text-gray-300 text-gray-700 block truncate">
-          {block.name}
-        </code>
-        <div className="flex items-center gap-2 mt-1">
-          <span className="text-[9px] uppercase tracking-wider text-gray-400 dark:text-gray-500 font-semibold">Input</span>
-          <code className="text-[10px] sm:text-xs font-mono text-gray-500 dark:text-gray-400 truncate">
-            {block.inputShape}
-          </code>
-        </div>
-      </div>
-      <div className="px-4 py-2" style={{ borderTop: "1px solid var(--arch-card-border)" }}>
-        <code className="text-[10px] sm:text-xs font-mono font-semibold dark:text-white text-gray-800 block truncate">
-          {block.type}
-        </code>
-        <div className="flex items-center gap-2 mt-1">
-          <span className="text-[9px] uppercase tracking-wider text-gray-400 dark:text-gray-500 font-semibold">Output</span>
-          <code className="text-[10px] sm:text-xs font-mono text-[var(--ifm-color-primary)] truncate">
-            {block.outputShape}
-          </code>
-        </div>
-      </div>
-    </div>
-  );
+  return <LayerCard block={block} />;
 }
 
 export function ArrowDown() {

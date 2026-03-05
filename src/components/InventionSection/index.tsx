@@ -1,7 +1,6 @@
 import React from "react";
 import Translate from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import Link from "@docusaurus/Link";
 import { useColorMode } from "@docusaurus/theme-common";
 
 export default function InventionSection() {
@@ -43,12 +42,6 @@ export default function InventionSection() {
     <section className="py-16 md:py-24 bg-white dark:bg-[#1e1e1e]">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-gray-600 dark:text-gray-300 text-3xl md:text-4xl font-normal text-left mb-12">
-            <Translate id="oneai.invention.section.title">
-              How It Works:
-            </Translate>
-          </h2>
-
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             {inventions.map((invention, index) => (
               <div key={index} className="p-6 transition-all duration-300 hover:shadow-lg bg-gray-100 dark:bg-[#161616]">
@@ -87,39 +80,6 @@ export default function InventionSection() {
           </div>
         </div>
 
-        <div className="max-w-6xl mx-auto mt-16">
-          <div className="bg-[#00FFD1] p-8 md:p-12">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              <h3 className="text-gray-800 text-2xl md:text-3xl font-medium">
-                <Translate id="oneai.examples.cta.title">
-                  Ready to Start Now?
-                </Translate>
-              </h3>
-
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Link
-                  to="/docs/one-ai/demos/overview"
-                  className="inline-block bg-black text-white px-8 py-3 text-sm font-medium uppercase tracking-wider hover:bg-gray-800 transition-colors text-center no-underline hover:no-underline"
-                  style={{ borderRadius: 6 }}
-                >
-                  <Translate id="oneai.examples.cta.button.main">
-                    View Examples
-                  </Translate>
-                </Link>
-
-                <Link
-                  to="/docs/one-ai/getting-started/quick-start-guide"
-                  className="inline-block bg-transparent border-2 border-black text-black px-8 py-3 text-sm font-medium uppercase tracking-wider hover:bg-black hover:text-white transition-colors text-center no-underline hover:no-underline"
-                  style={{ borderRadius: 6 }}
-                >
-                  <Translate id="oneai.examples.cta.button.secondary">
-                    Get Started
-                  </Translate>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

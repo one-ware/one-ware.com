@@ -1,8 +1,5 @@
 export interface LayerBlock {
-  name: string;
-  type: string;
-  inputShape: string;
-  outputShape: string;
+  label: string;
   trainable?: boolean;
 }
 

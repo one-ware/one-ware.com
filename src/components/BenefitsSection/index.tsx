@@ -127,12 +127,6 @@ export default function BenefitsSection() {
     <section className="py-16 md:py-24 bg-gray-100 dark:bg-[#161616]">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-gray-600 dark:text-gray-300 text-3xl md:text-4xl font-normal text-left mb-12">
-            <Translate id="oneai.benefits.section.title">
-              Your Benefits as Developer:
-            </Translate>
-          </h2>
-
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-8 items-start">
             <div className="space-y-1">
               {benefits.map((benefit, index) => {
