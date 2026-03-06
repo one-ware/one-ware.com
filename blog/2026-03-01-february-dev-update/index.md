@@ -29,47 +29,46 @@ This February we have made huge progress in ONE AI with new features focused on 
 
 ## Smart Labeling
 
-By using Metas Open-Source Model SAM v3, you can create datasets much faster.
-Simply open the SAM tool in the annotation window and type the object that you want to detect, and after a few seconds of processing you will have pixel perfect segmentations of them.
-The SAM Models are executed directly on your machine, so we have multiple different models to chose from to fit your hardware. Alternatively you can select the smart fill brush, draw a
-bounding box around your target and select the label. SAM will automatically detect the shape and draws the segmentation for you.
+Using Meta's open-source SAM v3 model, you can create datasets much faster.
+Just open the SAM tool in the annotation window, type the object you want to detect, and within seconds you'll have pixel-perfect segmentations.
+The SAM models run directly on your machine, so we offer multiple models to choose from based on your hardware. You can also use the smart fill brush: draw a bounding box around your target, select the label, and SAM will automatically detect the shape and draw the segmentation for you.
+
+## ONNX Runtimes
+
+Since SAM Models are large and need a lot of computing power, it is now possible to install support your your GPU / NPU directly from OneWare Studio.
+
+![onnx-runtimes](img/onnx-runtimes.png)
+
+There will be a guide for this too. For Windows (with a strong GPU) I recommend using DirectML since it does not need any additional drivers.
 
 ## AI Wizard
 
-Building AI-powered workflows can sometimes feel overwhelming. To make the process smoother and more intuitive, we built the AI Wizard.
+Building AI-powered workflows can get complex quickly. That's why we built the AI Wizard.
 
+The AI Wizard is a guided setup experience inside ONE AI that walks you through creating and configuring your AI project from start to finish.
+No more jumping between menus or guessing what comes next. The Wizard is divided into sections, and each section shows your current progress, any issues you need to fix, guided actions, and helpful documentation links. New users can get started quickly and learn as they go. Regardless of experience level, everyone benefits from a guided approach to creating their custom AI model.
 
-The AI Wizard is a guided setup experience inside OneWare Studio AI that helps you create and configure your AI project from start to finish.
-Instead of navigating multiple menus or wondering which step comes next, the Wizard provides a clear path forward. It is divided into different sections, where
-each section provides a report of the current progress, possible issues, guided actions and helpful documentation links. This helps new users to get started quickly and
-get comfortable with the software. Independent of the experience, the user benefits from a guided way creating his powerful custom AI model 
-as easy as possible.
+### How to use the AI Wizard
 
-### How to use the AI Wizard?
-
-To access the AI Wizard, simply click on the "AI Wizard" button in the right sidebar.
+Access the AI Wizard by clicking the "AI Wizard" button in the right sidebar.
 
 ![wizard_001](img/wizard_001.png)
 
-The Wizard will appear initially with the Dataset section. If you are satisfied with
-the progress report (or section in general) and don't have any issues, you can click on the "Next" button to move to the next section. The progress will be saved in your ONE AI
-project location.
+The Wizard opens with the Dataset section. When you're satisfied with your progress and everything looks good, click "Next" to move forward. Your progress saves automatically to your ONE AI project folder.
 
 ![wizard_002](img/wizard_002.png)
-
-## ONNX Runtimes
 
 
 
 ## Segmentation Live Preview
 
-With the new Semantic Segmentation Live Preview, you can instantly see your model in action using your camera.
+The new Semantic Segmentation Live Preview lets you see your model in action instantly using your camera.
 
-Simply select a camera, and the system runs your segmentation model on the live video stream, displaying the predicted segmentation directly in real time. This allows you to quickly test how your model performs in real-world conditions without capturing or uploading images first.
+Select a camera and the system runs your segmentation model on the live video stream, showing predictions in real time. You can test how your model performs in real-world conditions without capturing or uploading images first.
 
-To ensure a smooth and responsive experience, the preview uses advanced shaders for real-time rendering, enabling fast visualization even during continuous video processing.
+The preview uses advanced shaders for real-time rendering, so you get fast visualization even during continuous video processing.
 
-The Live Preview makes it easy to validate results, spot issues early, and iterate faster while developing your computer vision project.
+Validate results, spot issues early, and iterate faster on your computer vision project.
 
 <video autoPlay loop muted playsInline style={{ maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto', marginBottom: '5px' }}>
   <source src={require('./img/segmentation-live-preview.webm').default} type="video/webm" />
@@ -77,13 +76,13 @@ The Live Preview makes it easy to validate results, spot issues early, and itera
 
 ## Video Record Feature
 
-Collecting image data for computer vision projects often requires multiple steps: recording footage, extracting frames, and uploading images to your dataset.
+Collecting image data usually means recording footage, extracting frames, and uploading images to your dataset.
 
-With the new Video Record feature, this process becomes much simpler.
+The new Video Record feature simplifies this.
 
-You can record a video directly from your camera and automatically import its frames into your dataset. Once the recording is finished, the frames are extracted and added as images, ready to be reviewed and annotated.
+Record a video directly from your camera and automatically import its frames into your dataset. When recording finishes, frames are extracted and added as images, ready for review and annotation.
 
-This makes it easy to quickly capture real-world scenarios and turn them into training data without leaving the platform.
+Capture real-world scenarios and turn them into training data without leaving the platform.
 
 <video autoPlay loop muted playsInline style={{ maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto', marginBottom: '5px' }}>
   <source src={require('./img/video-record-feature.webm').default} type="video/webm" />
@@ -91,9 +90,9 @@ This makes it easy to quickly capture real-world scenarios and turn them into tr
 
 ## Dataset Bulk Actions
 
-Managing datasets is one of the most time-consuming parts of building computer vision models. Large numbers of images need to be reviewed, labeled, organized, and cleaned before training can even begin.
+Managing datasets takes time. You need to review, label, organize, and clean large numbers of images before training can begin.
 
-To make this process faster and more efficient, we’re introducing Bulk Actions - a new feature that lets you perform common dataset operations on many images at once.
+Bulk Actions is a new feature that lets you perform common dataset operations on many images at once.
 
 With Bulk Actions, you can:
 
@@ -102,8 +101,12 @@ With Bulk Actions, you can:
 + Delete images
 + Remove annotations
 
-By enabling automatic labeling with SAM and ONE AI, you can bootstrap annotations quickly and focus your effort where it matters most—improving models and building intelligent applications.
+Automatic labeling with SAM and ONE AI helps you bootstrap annotations quickly so you can focus on improving models and building applications.
 
-Bulk Actions are available now, helping you move from raw images to ready-to-train datasets faster than ever.
+Bulk Actions is available now, helping you go from raw images to ready-to-train datasets faster.
 
 ![bulk_actions_001](img/bulk-actions_001.png)
+
+## OneWare Studio 1.0 Release
+
+We're also excited to announce OneWare Studio 1.0! This major release brings a completely reworked project system, stable plugin API, Windows ARM support, and built-in GitHub Copilot integration. Check out the full announcement [here](/blog/oneware-studio-1.0)!
