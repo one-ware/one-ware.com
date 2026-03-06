@@ -1,53 +1,31 @@
 ---
 slug: february-2026-dev-update
-title: "Dev Update: 1.0 Release!"
+title: "Dev Update: Smart Labeling"
 authors: [hmennen, mschanzenbach]
 tags:
   [
     One AI,
-    OneWare,
     Developer,
     VisionAI,
     QualityControl,
     Update,
-    EasyMode,
     SAM3,
-    AIWizard
+    AIWizard,
+    Segmentation,
+    Dataset
   ]
 ---
 
-Hello and welcome to the second dev update of this year!
+Hello and welcome to the February dev update!
 
-This february we have made huge progress in terms of usability, stability and performance.
+This February we have made huge progress in ONE AI with new features focused on making dataset creation and AI development faster and more intuitive.
 
 <video autoPlay loop muted playsInline style={{ maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto', marginBottom: '5px' }}>
   <source src={require('./img/sam-preview.webm').default} type="video/webm" />
 </video>
-**You can label datasets in OneWare Studio and ONE AI directly with a locally running Segment Anyting Model!**
+**You can label datasets in ONE AI directly with a locally running Segment Anything Model!**
 
 <!-- truncate -->
-
-## OneWare Studio 1.0
-
-### Improved Project System
-
-1.0 reworked how Projects are loaded in OneWare Studio. Since OneWare Studio offers to load multiple projects at once, the old system had some performance issues before.
-The new system uses full virtualization and a smart system that allows you to open projects with millions of files without suffering any performance penalty.
-
-### Stable Plugin API
-
-The goal in our 1.0 release was to have a stable plugin API, so developers can rely on a API that will work, allowing for long term plugin stability.
-
-### Windows ARM Release
-
-With addding Windows ARM to our supported platforms, we now support all 3 major Desktop Operating Systems on both x64 and arm64 architecture.
-
-### Chat Assistant Integration
-
-OneWare Studio now has an API that allows plugin developers to register their own Chat Assistans.
-The most popular, GitHub Copilot, is already included into OneWare Studio.
-
-![Copilot](img/copilot.png)
 
 ## Smart Labeling
 
