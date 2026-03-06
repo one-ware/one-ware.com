@@ -15,3 +15,9 @@ lbeier:
   title: CEO
   url: https://www.linkedin.com/in/leon-beier-123456789/
   image_url: /img/AboutUs/Leon.png
+
+mschanzenbach:
+  name: Matthias Schanzenbach
+  title: Software Engineer
+  url: https://www.linkedin.com/in/matthias-schanzenbach-35b212247/
+  image_url: /img/AboutUs/Matthias.png
