@@ -15,28 +15,40 @@ tags:
   ]
 ---
 
-We are excited to announce the release of OneWare Studio 1.0!
+Today marks a huge milestone: OneWare Studio 1.0 is officially here!
 
-This major milestone brings significant improvements in performance, stability, and cross-platform support, along with a stable plugin API that enables long-term plugin development.
+This release represents months of work to make OneWare Studio faster, more stable, and ready for serious plugin development. We've rebuilt the core, expanded platform support, and added some features you're going to love.
 
 <!-- truncate -->
 
-## Improved Project System
+## Lightning-Fast Project System
 
-1.0 reworked how Projects are loaded in OneWare Studio. Since OneWare Studio offers to load multiple projects at once, the old system had some performance issues before.
-The new system uses full virtualization and a smart system that allows you to open projects with millions of files without suffering any performance penalty.
+Opening massive projects used to slow things down. Not anymore.
+
+We completely rebuilt how OneWare Studio loads projects. The new system uses full virtualization with smart caching, so you can open projects with millions of files without any lag. Whether you're working on one project or juggling multiple, everything stays smooth and responsive.
 
 ## Stable Plugin API
 
-The goal in our 1.0 release was to have a stable plugin API, so developers can rely on a API that will work, allowing for long term plugin stability.
+1.0 means we're committed to long-term API stability.
 
-## Windows ARM Release
+Plugin developers can now build with confidence knowing their work won't break with every update. We've locked down the core APIs, so your plugins will keep working as OneWare Studio evolves.
 
-With adding Windows ARM to our supported platforms, we now support all 3 major Desktop Operating Systems on both x64 and arm64 architecture.
+## Windows ARM Support
+
+We now support all three major desktop operating systems on both x64 and ARM64 architectures.
+
+Windows ARM users, welcome to the party! OneWare Studio runs natively on your hardware, giving you the same fast, native experience as everyone else.
 
 ## Chat Assistant Integration
 
-OneWare Studio now has an API that allows plugin developers to register their own Chat Assistants.
-The most popular, GitHub Copilot, is already included into OneWare Studio.
+Need coding help while you work? We've got you covered.
+
+OneWare Studio now includes a Chat Assistant API, and we've baked in GitHub Copilot support from day one. Get AI-powered suggestions, explanations, and help right inside your workspace.
 
 ![Copilot](img/copilot.png)
+
+## Download Now
+
+Ready to try OneWare Studio 1.0?
+
+[Download OneWare Studio](https://one-ware.com/docs/one-ai/getting-started/installation#1-download-and-install-oneware-studio) and experience the upgrade for yourself.
