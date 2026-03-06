@@ -23,7 +23,7 @@ This February we have made huge progress in ONE AI with new features focused on 
 <video autoPlay loop muted playsInline style={{ maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto', marginBottom: '5px' }}>
   <source src={require('./img/sam-preview.webm').default} type="video/webm" />
 </video>
-**You can label datasets in ONE AI directly with a locally running Segment Anything Model!**
+**You can now label and segment datasets directly with a locally running Segment Anything Model!**
 
 <!-- truncate -->
 
