@@ -199,7 +199,7 @@ export default function HomeHero() {
   return (
     <PerformanceContext.Provider value={performanceValue}>
     <HeroBackground
-      className="min-h-screen"
+      className=""
       style={{
         marginTop: "calc(var(--ifm-navbar-height) * -1)",
         paddingTop: "var(--ifm-navbar-height)",
@@ -216,7 +216,8 @@ export default function HomeHero() {
       />
 
       <div
-        className="relative z-0 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 lg:px-16 min-h-screen"
+        className="relative z-0 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 lg:px-16"
+        style={{ minHeight: "calc(100vh - var(--ifm-navbar-height))" }}
       >
         <div className="w-full max-w-[98%] sm:max-w-[95%] flex flex-col gap-10 sm:gap-12 2xl:gap-14">
             <div className="flex flex-col 2xl:flex-row items-center gap-2 sm:gap-4 2xl:gap-12">
@@ -315,18 +316,17 @@ export default function HomeHero() {
                     <Translate id="homehero.button.download">Get Started</Translate>
                   </button>
                 </Link>
-                <Link
-                  href="/one-ai"
+                <button
+                  className="button button--primary button--outline button--lg"
                   style={{
                     animation: "fadeInUp 0.8s ease-out forwards",
                     animationDelay: "0.6s",
                     opacity: 0,
                   }}
+                  onClick={() => document.getElementById("chatbot")?.scrollIntoView({ behavior: "smooth" })}
                 >
-                  <button className="button button--primary button--outline button--lg">
-                    <Translate id="homehero.button.learnmore">Learn More</Translate>
-                  </button>
-                </Link>
+                  <Translate id="homehero.button.askchatbot">Ask Chatbot</Translate>
+                </button>
               </div>
             </div>
 
@@ -376,19 +376,50 @@ export default function HomeHero() {
                 <Translate id="homehero.button.download">Get Started</Translate>
               </button>
             </Link>
-            <Link
-              href="/one-ai"
+            <button
+              className="button button--primary button--lg w-full sm:w-auto"
               style={{
                 animation: "fadeInUp 0.8s ease-out forwards",
                 animationDelay: "0.6s",
                 opacity: 0,
               }}
+              onClick={() => document.getElementById("chatbot")?.scrollIntoView({ behavior: "smooth" })}
             >
-              <button className="button button--primary button--lg w-full sm:w-auto">
-                <Translate id="homehero.button.learnmore">Learn More</Translate>
-              </button>
-            </Link>
+              <Translate id="homehero.button.askchatbot">Ask Chatbot</Translate>
+            </button>
             </div>
+        </div>
+
+        <div
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-4 cursor-pointer group/scroll"
+          style={{ animation: "fadeInUp 0.8s ease-out forwards", animationDelay: "1.2s", opacity: 0 }}
+          onClick={() => document.getElementById("video")?.scrollIntoView({ behavior: "smooth" })}
+        >
+          <span
+            className="text-[10px] uppercase tracking-[0.25em] font-medium whitespace-nowrap"
+            style={{ color: "color-mix(in srgb, var(--ifm-color-primary) 50%, transparent)" }}
+          >
+            Scroll dummy text
+          </span>
+          <div
+            className="w-[24px] h-[40px] rounded-full relative overflow-hidden backdrop-blur-sm group-hover/scroll:scale-110 transition-transform duration-500"
+            style={{
+              border: "1.5px solid color-mix(in srgb, var(--ifm-color-primary) 40%, transparent)",
+              background: "color-mix(in srgb, var(--ifm-color-primary) 3%, transparent)",
+              boxShadow: "0 0 20px color-mix(in srgb, var(--ifm-color-primary) 8%, transparent), inset 0 0 12px color-mix(in srgb, var(--ifm-color-primary) 5%, transparent)",
+            }}
+          >
+            <div
+              className="absolute left-1/2 -translate-x-1/2 w-[2.5px] rounded-full"
+              style={{
+                height: "10px",
+                top: "7px",
+                background: "var(--ifm-color-primary)",
+                boxShadow: "0 0 6px var(--ifm-color-primary), 0 0 16px color-mix(in srgb, var(--ifm-color-primary) 50%, transparent)",
+                animation: "scrollWheel 2s ease infinite",
+              }}
+            />
+          </div>
         </div>
       </div>
 
@@ -429,6 +460,23 @@ export default function HomeHero() {
           }
           50% {
             transform: scale(0.75);
+          }
+        }
+        @keyframes scrollWheel {
+          0% {
+            transform: translateY(0);
+            opacity: 0;
+          }
+          15% {
+            opacity: 1;
+          }
+          50% {
+            transform: translateY(16px);
+            opacity: 0;
+          }
+          100% {
+            transform: translateY(0);
+            opacity: 0;
           }
         }
         @keyframes flashGlow {

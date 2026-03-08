@@ -1,22 +1,17 @@
-import clsx from "clsx";
-import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import HomepageFeatures from "@site/src/components/HomepageFeatures";
+import AiProcessSlider from "@site/src/components/AiProcessSlider";
 import "aos/dist/aos.css";
-import Typewriter from "typewriter-effect";
 import Translate, { translate } from "@docusaurus/Translate";
-import Marquee from "react-fast-marquee";
 import { useColorMode } from "@docusaurus/theme-common";
-
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import initWebsiteEffects from "../components/startEffects";
 import ContactUs from "../components/ContactUs";
-import useBaseUrl from "@docusaurus/useBaseUrl";
 import Head from "@docusaurus/Head";
 import HomeHero from "@site/src/components/HomeHero";
+import GetStarted from "@site/src/components/GetStarted";
 import VideoShowcase from "@site/src/components/VideoShowcase";
 import OrbitIndustries from "@site/src/components/OrbitIndustries";
+import ChatHero from "@site/src/components/ChatHero";
 
 function IndustryExamplesSection() {
   const items = [
@@ -106,15 +101,8 @@ function IndustryExamplesSection() {
     },
   ];
 
-  // immer 2 Bilder pro „Spalte“
-  const columns: (typeof items)[] = [];
-  for (let i = 0; i < items.length; i += 2) {
-    columns.push(items.slice(i, i + 2));
-  }
-
   return (
     <div id="industries" className="pt-4 md:pt-6">
-      {/* Überschrift mit normalem Container-Padding */}
       <div className="container mx-auto px-4 mb-8">
         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-left font-bold">
           <Translate id="homepage.industries.title">
@@ -123,7 +111,6 @@ function IndustryExamplesSection() {
         </p>
       </div>
 
-      {/* Grid über volle Breite ohne Container-Padding */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-0">
         {items.map((item) => (
           <a
@@ -162,7 +149,6 @@ function TestimonialsSection() {
       </h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Testimonial 1 */}
         <div className="bg-gray-300 hover:bg-gray-400 bg-opacity-95 p-6 rounded-lg shadow-xl relative min-h-[280px] transition-colors duration-300 cursor-pointer">
           <a
             href="https://go.altera.com/l/1090322/2025-04-18/2vvzbn"
@@ -205,7 +191,6 @@ function TestimonialsSection() {
           </a>
         </div>
 
-        {/* Testimonial 2 */}
         <div className="bg-gray-300 hover:bg-gray-400 bg-opacity-95 p-6 rounded-lg shadow-xl relative min-h-[280px] transition-colors duration-300 cursor-pointer">
           <a
             href="https://hdo-gmbh.com/"
@@ -246,7 +231,6 @@ function TestimonialsSection() {
           </a>
         </div>
 
-        {/* Testimonial 3 */}
         <div className="bg-gray-300 hover:bg-gray-400 bg-opacity-95 p-6 rounded-lg shadow-xl relative min-h-[280px] transition-colors duration-300 cursor-pointer">
           <a
             href="https://www.cuspcapital.com/"
@@ -292,8 +276,6 @@ function TestimonialsSection() {
 }
 
 export default function Home() {
-  const { siteConfig } = useDocusaurusContext();
-
   if (ExecutionEnvironment.canUseDOM) {
     initWebsiteEffects();
   }
@@ -311,7 +293,6 @@ export default function Home() {
       })}
     >
       <Head>
-        {/* Open Graph für Social Media */}
         <meta
           property="og:title"
           content={translate({
@@ -334,7 +315,6 @@ export default function Home() {
           content="https://one-ware.com/img/social-card.jpg"
         />
 
-        {/* International SEO */}
         <link rel="alternate" hrefLang="en" href="https://one-ware.com/" />
         <link rel="alternate" hrefLang="de" href="https://one-ware.com/de/" />
         <link
@@ -350,17 +330,18 @@ export default function Home() {
           <div id="video">
             <VideoShowcase />
           </div>
-          <IndustryExamplesSection />
-          <OrbitIndustries />
-        </div>
 
-        <div className="">
-          <HomepageFeatures />
+          <IndustryExamplesSection />
+          <ChatHero />
+          <AiProcessSlider />
+          <OrbitIndustries />
         </div>
 
         <div className="default-background pt-20 pb-32">
           <TestimonialsSection />
         </div>
+
+        <GetStarted />
 
         <div className="pt-20 pb-20 ">
           <ContactUs />

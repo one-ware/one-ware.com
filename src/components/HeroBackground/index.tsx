@@ -3,6 +3,7 @@ import { useColorMode } from "@docusaurus/theme-common";
 
 interface HeroBackgroundProps {
   children: React.ReactNode;
+  id?: string;
   className?: string;
   style?: React.CSSProperties;
   enableParallax?: boolean;
@@ -10,6 +11,7 @@ interface HeroBackgroundProps {
 
 export default function HeroBackground({
   children,
+  id,
   className = "",
   style = {},
   enableParallax = true,
@@ -38,6 +40,7 @@ export default function HeroBackground({
 
   return (
     <section
+      id={id}
       ref={sectionRef}
       className={`relative overflow-hidden ${className}`}
       style={{
@@ -105,7 +108,7 @@ export default function HeroBackground({
         }}
       />
 
-      <div className="relative h-full w-full flex-1" style={{ zIndex: 2 }}>
+      <div className="relative h-full w-full flex-1 flex flex-col" style={{ zIndex: 2 }}>
         {children}
       </div>
     </section>
