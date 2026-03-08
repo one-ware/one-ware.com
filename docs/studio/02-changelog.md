@@ -4,6 +4,15 @@ title: ONE WARE Studio Changelog
 sidebar_label:  Changelog
 ---
 
+## 1.0.12
+
+- Added device option for OpenVINO Onnx Runtime Provider
+- Fix PackageService not loading if there is a broken value in custom sources setting
+  
+## 1.0.11
+
+- Futher adjustments for new Auth System
+  
 ## 1.0.10
 
 - Prevent logout on disconnect
