@@ -1,0 +1,170 @@
+---
+id: lemon-detection-demo
+title: Lemon Detection Demo
+sidebar_label: Lemon Detection
+---
+
+import Link from '@docusaurus/Link';
+import SupportBanner from '@site/src/components/SupportBanner';
+
+# Lemon Detection Demo
+
+<video autoPlay loop muted playsInline style={{ maxWidth: '80%', height: 'auto', display: 'block', margin: '0 auto', marginBottom: '5px' }}>
+  <source src={require('/img/ai/one_ai_plugin/demos/lemons/lemon_demo_web.webm').default} type="video/webm" />
+</video>
+
+:::info Try it yourself
+To try the AI, simply click on the **Try Demo** button below. If you do not have an account yet, you will be prompted to sign up. Afterwards, the quick start projects overview will open where you can select **Lemon Detection**. After installing ONE WARE Studio, the project will open automatically.
+:::
+
+<div className="text--center" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+  <Link className="button button--primary button--lg" href="https://cloud.one-ware.com/quick-start" target="_blank" rel="noopener noreferrer">
+    Try Demo
+  </Link>
+  <Link className="button button--primary button--lg" href="https://onewarecom.sharepoint.com/:u:/s/Public/IQBZ5f23Fx6NQZ1nqsjN5Nj0AY-RdfC_H7AtUY6wEmYa14M?e=BAOBjn" target="_blank" rel="noopener noreferrer">
+    Dataset
+  </Link>
+</div>
+
+## About this demo
+
+This demo showcases a simple but realistic computer vision task: detecting **ripe** and **unripe lemons** in a production environment.
+
+The interesting part is that the entire dataset was created from a **single 9-second smartphone video**. Using the video import tool in ONE WARE Studio, the video was automatically split into **135 frames**, which were then used as the dataset for training.
+
+The goal of this demo is not just detection accuracy, but also demonstrating how **dataset creation and labeling can be accelerated dramatically by using the model itself during the annotation process**.
+
+## Project Setup
+
+To reproduce this demo, start a new project by clicking:
+
+**AI → ONE AI Project Generator**
+
+Then configure:
+
+- **Mode:** Detection  
+- **Task:** Object Detection  
+- **Template:** Controlled Environment
+
+This template is ideal for industrial setups where the **camera angle, background, and lighting remain relatively stable**.
+
+## Fast Labeling with Model-Assisted Annotation
+
+Instead of labeling all images manually, we used a much faster workflow where the model helps with the annotation.
+
+First, we manually labeled only **about 15 images** with two classes:
+
+- **ripe**
+- **unripe**
+
+Then we trained a quick preliminary model for **5 minutes**. During this step it is important to enable:
+
+**"Focus on images with objects"**
+
+![focus](/img/ai/one_ai_plugin/demos/lemons/training.jpg)
+
+Even though the model is still very rough at this point, it already learns the basic visual structure of the lemons.
+
+After exporting this temporary model, we used it to **automatically predict annotations for the remaining frames**. These predictions are not perfect, but they dramatically reduce manual labeling effort because the annotations only need small corrections.
+
+This process can be repeated several times:
+
+1. Label a small batch of images
+2. Train a short model
+3. Use the model to predict annotations
+4. Correct the predictions
+5. Train again
+
+Each iteration improves the prediction quality and **reduces manual labeling time significantly**.
+
+<video autoPlay loop muted playsInline style={{ maxWidth: '80%', height: 'auto', display: 'block', margin: '0 auto', marginBottom: '5px' }}>
+  <source src={require('/img/ai/one_ai_plugin/demos/lemons/annotation.webm').default} type="video/webm" />
+</video>
+
+After the dataset was fully annotated, we manually split it into:
+
+- **train**
+- **validation**
+- **test**
+
+This also allowed us to reuse the exact same dataset for training a YOLO model as a benchmark comparison.
+
+## Data Processing
+
+For prefilters we selected:
+
+**Resize to 25%**
+
+Since the lemons occupy a large part of the frame, downscaling significantly reduces computation while still preserving enough detail for reliable detection.
+
+For augmentations we used the default template settings for:
+
+- Move
+- Rotation
+- Size
+- Color
+
+The **Flip augmentation was disabled** because the production setup has a fixed orientation and flipping would introduce unrealistic samples.
+
+## Advanced Model Settings
+
+To make the benchmark transparent, we switched from the standard capability mode to **Advanced**:
+
+**AI → Capability Mode**
+
+![capability](/img/ai/one_ai_plugin/demos/lemons/capability.jpg)
+
+The following configuration was used:
+
+- **Size Precision Effort:** 65%
+- **Position Prediction Resolution:** 65%
+- **Allow Overlap:** enabled
+- **Surrounding Size Mode:** Relative to Image
+
+Estimated object dimensions:
+
+- **Min Width:** 10  
+- **Min Height:** 5  
+- **Max Width:** 30  
+- **Max Height:** 20  
+
+Complexity settings:
+
+- **Same Class Difference:** 15  
+- **Background Difference:** 20  
+- **Detect Complexity:** 40  
+
+These parameters are not strictly required, but they help ensure a **fair and transparent benchmark setup**.
+
+## Training
+
+After configuring the dataset and model settings, the model was trained using the **default training settings for 15 minutes**.
+
+Once training finished, the model was exported as **ONNX** and used in a Python benchmark script to compare performance against a YOLO model trained on the same dataset.
+
+## Results
+
+We compared the exported ONE AI model against **YOLO26-fast**, trained with Roboflow using the same dataset and similar augmentations. The YOLO model used an input resolution of **640 × 640** and was trained for approximately **145 epochs**.
+
+| Metric | YOLO26-fast | ONE AI Custom ONNX |
+| :--- | :--- | :--- |
+| **Average inference time** | 18.39 ms | **8.88 ms** |
+| **Throughput** | 54.38 images/sec | **112.66 images/sec** |
+| **Precision** | **0.901** | 0.889 |
+| **Recall** | 0.547 | **0.894** |
+| **F1 score** | 0.681 | **0.891** |
+| **mAP@0.50** | 0.476 | **0.578** |
+| **True positives** | 191 | **312** |
+| **False negatives** | 158 | **37** |
+
+While YOLO achieved slightly higher precision, the ONE AI model achieved **much higher recall and a significantly better F1 score**, meaning it detected far more lemons overall.
+
+The benchmark also showed a major performance advantage on CPU inference. With an average runtime of **8.88 ms per image**, the ONE AI model runs **more than twice as fast** as the YOLO baseline.
+
+This combination of **fast training, assisted labeling, and efficient inference** makes the approach particularly attractive for quickly deploying vision models in production environments.#
+
+The YOLO baseline model used in this comparison was trained using Roboflow and evaluated using a benchmark script that runs both models on the same dataset.
+
+Since parts of the YOLO tooling are licensed under AGPL-3.0, the full benchmark script used for this evaluation is publicly available in the repository linked above.
+
+<SupportBanner subject="ONE AI Tutorial Support" />
