@@ -185,7 +185,7 @@ export default function ChatHero() {
         </div>
 
         <div
-          className="flex flex-col sm:flex-row items-center gap-6 sm:gap-12 mt-4"
+          className="flex flex-col sm:flex-row items-center gap-6 sm:gap-12 mt-4 pb-16 sm:pb-0"
           style={{
             animation: "fadeInUp 0.8s ease-out forwards",
             animationDelay: "0.3s",

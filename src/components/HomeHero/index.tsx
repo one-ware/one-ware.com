@@ -363,7 +363,7 @@ export default function HomeHero() {
             </div>
           </div>
 
-            <div className="flex 2xl:hidden flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 2xl:gap-16 w-full mb-16 2xl:mb-0">
+            <div className="flex 2xl:hidden flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 2xl:gap-16 w-full mb-28 sm:mb-16 2xl:mb-0">
             <Link
               href="https://cloud.one-ware.com/Account/Register"
               style={{
@@ -391,13 +391,13 @@ export default function HomeHero() {
         </div>
 
         <div
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-4 cursor-pointer group/scroll"
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col sm:flex-row items-center gap-2 sm:gap-4 cursor-pointer group/scroll"
           style={{ animation: "fadeInUp 0.8s ease-out forwards", animationDelay: "1.2s", opacity: 0 }}
           onClick={() => document.getElementById("video")?.scrollIntoView({ behavior: "smooth" })}
         >
           <span
-            className="text-[10px] uppercase tracking-[0.25em] font-medium whitespace-nowrap"
-            style={{ color: "color-mix(in srgb, var(--ifm-color-primary) 50%, transparent)" }}
+            className="hidden sm:block text-[11px] uppercase tracking-[0.25em] font-medium whitespace-nowrap"
+            style={{ color: "color-mix(in srgb, var(--ifm-color-primary) 70%, transparent)" }}
           >
             Scroll dummy text
           </span>

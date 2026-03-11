@@ -192,6 +192,45 @@ export default function VideoShowcase({ items = defaultDemos, columns = 3 }: Vid
         </div>
 
       </div>
+
+      <Link
+        href="/one-ai"
+        className="no-underline hover:no-underline group block"
+      >
+        <div
+          className="relative overflow-hidden mt-10 md:mt-14 py-10 md:py-14"
+          style={{
+            background: isDarkMode
+              ? "linear-gradient(135deg, color-mix(in srgb, var(--ifm-color-primary) 10%, #0a0a0a), color-mix(in srgb, var(--ifm-color-primary) 4%, #0a0a0a))"
+              : "linear-gradient(135deg, color-mix(in srgb, var(--ifm-color-primary) 8%, #fff), color-mix(in srgb, var(--ifm-color-primary) 2%, #fff))",
+            borderTop: `1px solid color-mix(in srgb, var(--ifm-color-primary) ${isDarkMode ? "15%" : "12%"}, transparent)`,
+            borderBottom: `1px solid color-mix(in srgb, var(--ifm-color-primary) ${isDarkMode ? "15%" : "12%"}, transparent)`,
+          }}
+        >
+          <div
+            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
+            style={{
+              background: `radial-gradient(ellipse 80% 100% at 50% 50%, color-mix(in srgb, var(--ifm-color-primary) 6%, transparent), transparent)`,
+            }}
+          />
+          <div className="container mx-auto px-4 relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex-1 text-center md:text-left">
+              <p className={`text-lg md:text-xl font-semibold mb-1 ${isDarkMode ? "text-white" : "text-gray-900"}`}>
+                <Translate id="homepage.showcase.cta.title">Real-world benchmarks, custom architectures & one-click deployment</Translate>
+              </p>
+              <p className={`text-sm ${isDarkMode ? "text-gray-400" : "text-gray-500"}`}>
+                <Translate id="homepage.showcase.cta.description">
+                  See how ONE AI outperforms YOLO in side-by-side comparisons and deploy to FPGAs, GPUs, CPUs and more.
+                </Translate>
+              </p>
+            </div>
+            <span className={`flex-shrink-0 inline-flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-medium bg-[var(--ifm-color-primary)] group-hover:gap-3 transition-all duration-300 ${isDarkMode ? "text-gray-900" : "text-white"}`}>
+              <Translate id="homepage.showcase.cta.link">Explore ONE AI</Translate>
+              <span>&rarr;</span>
+            </span>
+          </div>
+        </div>
+      </Link>
     </section>
   );
 }

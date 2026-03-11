@@ -138,16 +138,15 @@ export default function OneAiHero() {
 
   return (
     <HeroBackground
-      className="w-full flex items-center justify-center"
+      className="w-full flex items-center justify-center lg:min-h-screen pb-8 lg:pb-0 relative z-10"
       style={{
         marginTop: "calc(var(--ifm-navbar-height) * -1)",
         paddingTop: "var(--ifm-navbar-height)",
-        minHeight: "100vh",
       }}
     >
       <div
         ref={sectionRef}
-        className="w-full h-full max-w-6xl mx-auto px-4 sm:px-6 flex flex-col justify-center"
+        className="w-full h-full max-w-6xl mx-auto px-4 sm:px-6 flex flex-col justify-center py-16 lg:py-0"
         onMouseEnter={pauseAutoRotation}
         onMouseLeave={resumeAutoRotation}
       >
@@ -164,8 +163,8 @@ export default function OneAiHero() {
           </p>
         </div>
 
-        <div className="grid grid-cols-[auto_1fr] lg:grid-cols-[auto_1fr_1fr] gap-3 md:gap-5">
-          <div className="row-span-2 lg:row-span-1">
+        <div className="flex flex-col lg:grid lg:grid-cols-[auto_1fr_1fr] gap-3 md:gap-5">
+          <div>
             <SectorSelector
               activeSectorIndex={state.activeSectorIndex}
               onSelect={handleSectorClick}
@@ -173,7 +172,7 @@ export default function OneAiHero() {
           </div>
 
           <div
-            className="relative flex flex-col items-center rounded-2xl p-4 md:p-6 bg-gradient-to-b from-gray-50/80 to-white/40 dark:from-white/[0.03] dark:to-transparent backdrop-blur-sm"
+            className="relative flex flex-col items-center rounded-2xl p-3 sm:p-4 md:p-6 bg-gradient-to-b from-gray-50/80 to-white/40 dark:from-white/[0.03] dark:to-transparent backdrop-blur-sm"
             style={{ border: "1px solid var(--ifm-color-primary)" }}
           >
             <div className="flex items-center gap-2 mb-3">
@@ -185,7 +184,7 @@ export default function OneAiHero() {
               </span>
             </div>
 
-            <div className="w-full aspect-square max-w-[240px] sm:max-w-[280px] md:max-w-[300px]">
+            <div className="w-full aspect-square max-w-[280px] md:max-w-[300px]">
               {isVisible && (
                 <Suspense fallback={<CanvasPlaceholder />}>
                   <Neural3DCanvas
@@ -221,7 +220,7 @@ export default function OneAiHero() {
           </div>
 
           <div
-            className="relative flex flex-col items-center rounded-2xl p-4 md:p-6 bg-gradient-to-b from-gray-50/80 to-white/40 dark:from-white/[0.03] dark:to-transparent backdrop-blur-sm"
+            className="relative flex flex-col items-center rounded-2xl p-3 sm:p-4 md:p-6 bg-gradient-to-b from-gray-50/80 to-white/40 dark:from-white/[0.03] dark:to-transparent backdrop-blur-sm"
             style={{ border: "1px solid var(--ifm-color-primary)" }}
           >
             <div className="flex items-center gap-2 mb-3">
@@ -230,7 +229,7 @@ export default function OneAiHero() {
               </span>
             </div>
 
-            <div className="w-full aspect-square max-w-[240px] sm:max-w-[280px] md:max-w-[300px]">
+            <div className="w-full aspect-square max-w-[280px] md:max-w-[300px]">
               {isVisible && (
                 <Suspense fallback={<CanvasPlaceholder />}>
                   <MountSignal onMount={handleCanvasReady} />
@@ -249,7 +248,7 @@ export default function OneAiHero() {
                     currentFps={60}
                     isSmallScreen={tier === "low"}
                     performanceTier={tier}
-                    maxNodes={10}
+                    maxNodes={state.maxNodes}
                     enableRotation={true}
                     animationDuration={1200}
                   />

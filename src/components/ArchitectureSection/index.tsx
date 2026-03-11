@@ -87,11 +87,10 @@ export default function ArchitectureSection() {
 
   return (
     <HeroBackground
-      className="flex flex-col"
-      style={{ height: "calc(100vh - var(--ifm-navbar-height))", maxHeight: "calc(100vh - var(--ifm-navbar-height))", overflow: "hidden" }}
+      className="flex flex-col lg:h-[calc(100vh-var(--ifm-navbar-height))] lg:max-h-[calc(100vh-var(--ifm-navbar-height))] lg:overflow-hidden"
       enableParallax={false}
     >
-      <div className="container mx-auto px-6 pt-6 pb-2 flex-shrink-0">
+      <div className="container mx-auto px-4 sm:px-6 pt-6 pb-2 flex-shrink-0">
         <div className="max-w-6xl mx-auto">
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-left mb-1">
             <Translate id="oneai.architecture.title">
@@ -106,9 +105,9 @@ export default function ArchitectureSection() {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 flex-1 min-h-0 overflow-hidden pb-6">
+      <div className="container mx-auto px-4 sm:px-6 flex-1 min-h-0 lg:overflow-hidden pb-6">
         <div className="max-w-6xl mx-auto h-full min-h-0">
-          <div className="grid grid-cols-[2fr_3fr] gap-8 h-full min-h-0">
+          <div className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-8 h-full min-h-0">
             <div className="flex flex-col min-h-0 overflow-hidden">
               <ArchModelSelector
                 models={models}
@@ -119,13 +118,15 @@ export default function ArchitectureSection() {
                 <img
                   src={useBaseUrl(currentModel.image)}
                   alt={currentModel.label}
-                  className="w-full max-h-full object-contain rounded-lg"
+                  className="w-full max-h-[300px] lg:max-h-full object-contain rounded-lg"
                 />
               </div>
             </div>
-            <ArchitectureViewer onExpand={() => setModalOpen(true)}>
-              {viewerContent}
-            </ArchitectureViewer>
+            <div className="relative min-h-[400px] lg:min-h-0">
+              <ArchitectureViewer onExpand={() => setModalOpen(true)}>
+                {viewerContent}
+              </ArchitectureViewer>
+            </div>
           </div>
         </div>
       </div>

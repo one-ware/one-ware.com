@@ -15,14 +15,15 @@ export interface Sector {
   labelId: string;
   trainingColor: "purple" | "orange" | "red";
   icon: IconType;
+  maxNodes: number;
 }
 
 export const SECTORS: Sector[] = [
-  { id: "healthcare", label: "Healthcare", labelId: "oneai.hero.sector.healthcare", trainingColor: "purple", icon: FaHeartPulse },
-  { id: "qualityControl", label: "Quality Control", labelId: "oneai.hero.sector.qc", trainingColor: "orange", icon: FaClipboardCheck },
-  { id: "medicalEngineering", label: "Medical Engineering", labelId: "oneai.hero.sector.medical", trainingColor: "red", icon: FaStethoscope },
-  { id: "drone", label: "Drone", labelId: "oneai.hero.sector.drone", trainingColor: "orange", icon: FaHelicopter },
-  { id: "agriculture", label: "Agriculture", labelId: "oneai.hero.sector.agriculture", trainingColor: "purple", icon: FaSeedling },
+  { id: "healthcare", label: "Healthcare", labelId: "oneai.hero.sector.healthcare", trainingColor: "purple", icon: FaHeartPulse, maxNodes: 24 },
+  { id: "qualityControl", label: "Quality Control", labelId: "oneai.hero.sector.qc", trainingColor: "orange", icon: FaClipboardCheck, maxNodes: 6 },
+  { id: "medicalEngineering", label: "Medical Engineering", labelId: "oneai.hero.sector.medical", trainingColor: "red", icon: FaStethoscope, maxNodes: 16 },
+  { id: "drone", label: "Drone", labelId: "oneai.hero.sector.drone", trainingColor: "orange", icon: FaHelicopter, maxNodes: 4 },
+  { id: "agriculture", label: "Agriculture", labelId: "oneai.hero.sector.agriculture", trainingColor: "purple", icon: FaSeedling, maxNodes: 10 },
 ];
 
 const BUILD_DURATION = 1500;
@@ -43,6 +44,7 @@ export interface SectorState {
   isRebuildingBase: boolean;
   isTraining: boolean;
   trainingColor: "purple" | "orange" | "red";
+  maxNodes: number;
 }
 
 export function useSectorStateMachine(canvasReady: boolean) {
@@ -66,6 +68,7 @@ export function useSectorStateMachine(canvasReady: boolean) {
     isRebuildingBase: phase === "rebuilding",
     isTraining: phase === "training" || phase === "retraining",
     trainingColor: SECTORS[activeSectorIndex].trainingColor,
+    maxNodes: SECTORS[activeSectorIndex].maxNodes,
   };
 
   const onCollapseComplete = useCallback(() => {

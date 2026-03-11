@@ -172,8 +172,11 @@ export const Neural3DNetwork = memo(function Neural3DNetwork({
   const animationDurationRef = useRef(animationDuration);
   animationDurationRef.current = animationDuration;
 
+  const prevNodeCountRef = useRef(nodeCounts.base);
+
   useEffect(() => {
-    if (blueprintRef.current.length > 0) return;
+    if (blueprintRef.current.length > 0 && nodeCounts.base === prevNodeCountRef.current) return;
+    prevNodeCountRef.current = nodeCounts.base;
 
     const generated: NeuralNode[] = [];
     nodeIdCounterRef.current = 0;
@@ -194,7 +197,7 @@ export const Neural3DNetwork = memo(function Neural3DNetwork({
     const totalNodes = nodeCounts.base;
     const radius = 3.5;
     const goldenRatio = (1 + Math.sqrt(5)) / 2;
-    
+
     for (let i = 0; i < totalNodes; i++) {
       const theta = 2 * Math.PI * i / goldenRatio;
       const phi = Math.acos(1 - 2 * (i + 0.5) / totalNodes);
@@ -219,7 +222,7 @@ export const Neural3DNetwork = memo(function Neural3DNetwork({
 
     blueprintRef.current = generated;
     nodesRef.current = [];
-  }, []);
+  }, [nodeCounts.base]);
 
   const connectNodeToExisting = (newNode: NeuralNode, existingNodes: NeuralNode[], pushToPairs = true) => {
       if (existingNodes.length === 0) return [];

@@ -48,7 +48,7 @@ export function ArchitectureViewer({ children, onExpand }: { children: React.Rea
   }, []);
 
   return (
-    <div className="relative rounded-lg h-full min-h-0 overflow-hidden backdrop-blur-sm bg-white/[0.03]" style={{ border: "1px solid var(--arch-card-border)" }}>
+    <div className="absolute inset-0 rounded-lg overflow-hidden backdrop-blur-sm bg-white/[0.03] lg:relative lg:h-full lg:min-h-0" style={{ border: "1px solid var(--arch-card-border)" }}>
       <div className="overflow-auto h-full p-6">
         <div style={{ height: contentHeight ? contentHeight * scale : "auto" }}>
           <div ref={contentRef} style={{ transformOrigin: "top center", minWidth: "fit-content", transform: `scale(${scale})` }}>
