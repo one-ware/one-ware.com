@@ -168,21 +168,15 @@ const config: Config = {
           className: "navbar__dropdown--products",
           items: [
             {
-              to: "/one-ai",
-              label: "ONE AI",
+              to: "/",
+              label: "ONE WARE AI",
               className: "dropdown__link--highlight",
+              activeBaseRegex: "^/$",
             },
             {
-              to: "/docs/one-ai/getting-started/quick-start-guide",
-              label: "Get Started",
-            },
-            {
-              to: "/docs/one-ai/demos/overview",
-              label: "Demo Projects",
-            },
-            {
-              to: "/docs/one-ai/supported-vendors",
-              label: "Supported Hardware",
+              to: "/one-ai",
+              label: "LucidNet",
+              className: "dropdown__link--highlight",
             },
             {
               to: "/studio",

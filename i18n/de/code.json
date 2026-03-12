@@ -2124,5 +2124,14 @@
   },
   "pricing.opensource.subtitle": {
     "message": "Kostenlose Credits für nicht-kommerzielle Projekte"
+  },
+  "homepage.showcase.cta.title": {
+    "message": "Praxisbenchmarks, maßgeschneiderte Architekturen & One-Click-Deployment"
+  },
+  "homepage.showcase.cta.description": {
+    "message": "Erfahre, wie ONE AI YOLO in direkten Vergleichen übertrifft — und deploye auf FPGAs, GPUs, CPUs und mehr."
+  },
+  "homepage.showcase.cta.link": {
+    "message": "ONE AI entdecken"
   }
 }
