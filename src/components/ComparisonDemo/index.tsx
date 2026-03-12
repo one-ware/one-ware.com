@@ -321,6 +321,17 @@ function DesktopComparisonDemo() {
     }, SLIDE_DURATION + 100);
   }, []);
 
+  const handleSelect = useCallback((next: number) => {
+    switchTo(next);
+    const wrapper = wrapperRef.current;
+    if (!wrapper) return;
+    const scrollableHeight = wrapper.offsetHeight - window.innerHeight;
+    if (scrollableHeight <= 0) return;
+    const targetProgress = (next + 0.5) / EXAMPLES.length;
+    const targetScrollY = wrapper.offsetTop + targetProgress * scrollableHeight;
+    window.scrollTo({ top: targetScrollY, behavior: "instant" });
+  }, [switchTo]);
+
   useEffect(() => {
     const handleScroll = () => {
       const wrapper = wrapperRef.current;
@@ -399,7 +410,7 @@ function DesktopComparisonDemo() {
 
             <ExampleSelector
               activeIndex={activeIndex}
-              onSelect={switchTo}
+              onSelect={handleSelect}
             />
           </div>
         </div>

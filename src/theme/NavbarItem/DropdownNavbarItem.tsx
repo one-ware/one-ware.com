@@ -6,9 +6,19 @@ import type { WrapperProps } from '@docusaurus/types';
 type Props = WrapperProps<typeof DropdownNavbarItemType>;
 
 const navbarIcons: Record<string, React.ReactNode> = {
-  'ONE AI': (
+  'ONE WARE AI': (
     <svg className="dropdown__link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+    </svg>
+  ),
+  'LucidNet': (
+    <svg className="dropdown__link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <circle cx="12" cy="12" r="3" />
+      <circle cx="4" cy="6" r="2" />
+      <circle cx="20" cy="6" r="2" />
+      <circle cx="4" cy="18" r="2" />
+      <circle cx="20" cy="18" r="2" />
+      <path d="M6 7l4.5 3.5M14.5 10.5L18 7M6 17l4.5-3.5M14.5 13.5L18 17" />
     </svg>
   ),
   'Get Started': (
